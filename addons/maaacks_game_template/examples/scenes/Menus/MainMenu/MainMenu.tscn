@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://byvydukidk6i2"]
+
+[ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/scenes/Menus/MainMenu/MainMenu.tscn" id="1_pss7b"]
+[ext_resource type="PackedScene" uid="uid://bdvdf5v87mmrr" path="res://addons/maaacks_game_template/examples/scenes/Menus/OptionsMenu/MasterOptionsMenuWithTabs.tscn" id="3_lqjmk"]
+[ext_resource type="PackedScene" uid="uid://c1g50h2avck3w" path="res://addons/maaacks_game_template/examples/scenes/Credits/Credits.tscn" id="3_vmius"]
+
+[node name="MainMenu" instance=ExtResource("1_pss7b")]
+texture_filter = 4
+game_scene_path = "res://Main.tscn"
+options_packed_scene = ExtResource("3_lqjmk")
+credits_packed_scene = ExtResource("3_vmius")
+
+[node name="BackgroundMusicPlayer" parent="." index="1"]
+bus = &"Master"
+
+[node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
+text = "Raising Sim"
+
+[node name="SubTitle" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="1"]
+text = "Test Project"

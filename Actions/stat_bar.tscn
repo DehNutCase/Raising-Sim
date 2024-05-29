@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0fobx2fd5f24"]
+
+[ext_resource type="Script" path="res://Actions/stat_bar.gd" id="1_p8p13"]
+[ext_resource type="Texture2D" uid="uid://c3fdxvqpt4d6c" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Fillbar_01_Block_Resized.png" id="2_qej04"]
+[ext_resource type="Texture2D" uid="uid://boa0e5ohjiy6s" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Fillbar_01_Flat_Resized.png" id="3_0n0pf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_icocv"]
+font_size = 28
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StatBar" type="Node2D" groups=["StatBars"]]
+script = ExtResource("1_p8p13")
+
+[node name="StatBar" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -80.0
+offset_right = 256.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+texture_over = ExtResource("2_qej04")
+texture_progress = ExtResource("3_0n0pf")
+
+[node name="StatLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 90.0
+offset_right = 250.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Stat Label"
+label_settings = SubResource("LabelSettings_icocv")
+horizontal_alignment = 1

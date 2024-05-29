@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbb64m6pku4ux"]
+
+[ext_resource type="Script" path="res://Actions/rest_button.gd" id="1_vrgoo"]
+[ext_resource type="Texture2D" uid="uid://dvx2x7tk3ob82" path="res://Art/Button/greenRectNormal.png" id="2_u7vtc"]
+[ext_resource type="Texture2D" uid="uid://cncj17g2lso6l" path="res://Art/Button/greenRectTapped.png" id="3_rqptl"]
+[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="4_riifn"]
+
+[node name="Margin" type="MarginContainer"]
+offset_right = 423.0
+offset_bottom = 226.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("1_vrgoo")
+
+[node name="Button" type="TextureButton" parent="."]
+texture_filter = 3
+layout_mode = 2
+texture_normal = ExtResource("2_u7vtc")
+texture_pressed = ExtResource("3_rqptl")
+
+[node name="Label" type="Label" parent="Button"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_riifn")
+text = "Job"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_job_button_pressed"]

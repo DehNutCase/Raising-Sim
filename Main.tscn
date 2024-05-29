@@ -1,0 +1,168 @@
+[gd_scene load_steps=18 format=3 uid="uid://dphq852upsasd"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_bqq6y"]
+[ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
+[ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
+[ext_resource type="Texture2D" uid="uid://d3dtnqb0chrin" path="res://Art/Cute Maid Portrait/Happy.png" id="3_00fav"]
+[ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
+[ext_resource type="Script" path="res://CtrlInventory.gd" id="8_cp80w"]
+[ext_resource type="Texture2D" uid="uid://b0tuu7ja243p2" path="res://Art/Button/blueBtnNormal.png" id="8_e60yo"]
+[ext_resource type="Texture2D" uid="uid://ca7g205vdwjm7" path="res://Art/Button/blueBtnTapped.png" id="9_jp02t"]
+[ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
+[ext_resource type="Script" path="res://DayMenu.gd" id="11_1yi6c"]
+[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
+[ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
+[ext_resource type="Script" path="res://Actions/Classes.gd" id="12_sb63u"]
+[ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
+[ext_resource type="PackedScene" uid="uid://b41yn518gd77p" path="res://Actions/Shop.tscn" id="16_vbgfp"]
+[ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Actions/Animation.tscn" id="17_5xmvy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_icocv"]
+font_size = 28
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D" groups=["Main"]]
+script = ExtResource("1_bqq6y")
+
+[node name="Ui" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BackgroundControl" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="Ui/BackgroundControl"]
+texture = ExtResource("2_r2e40")
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="StatLabel" type="Label" parent="Ui/MarginContainer"]
+texture_filter = 4
+layout_mode = 2
+text = "StatLabel"
+label_settings = SubResource("LabelSettings_icocv")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_7t2yx")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Ui"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="DayLabel" type="RichTextLabel" parent="Ui/MarginContainer2"]
+texture_filter = 4
+layout_mode = 2
+text = "DayLabel"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_3yben")
+
+[node name="TextureButton" type="TextureButton" parent="Ui"]
+offset_left = 972.0
+offset_top = 244.0
+offset_right = 1228.0
+offset_bottom = 515.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_e60yo")
+texture_pressed = ExtResource("9_jp02t")
+
+[node name="PlayerControl" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" type="Node2D" parent="Ui/PlayerControl"]
+
+[node name="Happy" type="Sprite2D" parent="Ui/PlayerControl/Player"]
+position = Vector2(0, 70)
+texture = ExtResource("3_00fav")
+
+[node name="CtrlInventory" type="Control" parent="Ui/PlayerControl/Player"]
+visible = false
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 340.0
+offset_top = 60.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("8_cp80w")
+
+[node name="MenuPanel" type="PanelContainer" parent="Ui"]
+visible = false
+custom_minimum_size = Vector2(1050, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.24783
+offset_top = -3.06659
+offset_right = 5.24783
+offset_bottom = 3.06659
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_sa3xm")
+
+[node name="Rest" parent="Ui/MenuPanel" instance=ExtResource("10_jdif8")]
+visible = false
+script = ExtResource("12_ktm7g")
+
+[node name="Classes" parent="Ui/MenuPanel" instance=ExtResource("10_jdif8")]
+visible = false
+script = ExtResource("12_sb63u")
+
+[node name="Work" parent="Ui/MenuPanel" instance=ExtResource("10_jdif8")]
+visible = false
+
+[node name="CloseButton" type="Button" parent="Ui/MenuPanel"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("15_odyat")
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="Animation" parent="Ui/MenuPanel" instance=ExtResource("17_5xmvy")]
+
+[node name="Shop" parent="Ui/MenuPanel" instance=ExtResource("16_vbgfp")]
+visible = false
+
+[node name="DayMenu" type="PopupMenu" parent="."]
+script = ExtResource("11_1yi6c")
+
+[connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="id_pressed" from="DayMenu" to="." method="_on_day_menu_id_pressed"]

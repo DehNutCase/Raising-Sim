@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ItemProtoset" load_steps=2 format=3 uid="uid://byhy2caoyo5q6"]
+
+[ext_resource type="Script" path="res://addons/gloot/core/item_protoset.gd" id="1_y24pw"]
+
+[resource]
+script = ExtResource("1_y24pw")
+json_data = "[
+    {
+        \"description\": \"A piece of furniture to sleep on.\",
+        \"height\": 2,
+        \"id\": \"bed\",
+        \"image\": \"res://Art/grey-kitten1.png\",
+        \"name\": \"Bed\",
+        \"width\": 2,
+		\"price\": 500,
+    },
+{
+        \"description\": \"A tutorial helper.\",
+        \"height\": 2,
+        \"id\": \"tutori\",
+        \"image\": \"res://Art/grey-kitten2.png\",
+        \"name\": \"Tutori\",
+        \"width\": 2,
+		\"price\": -1000,
+    },
+{
+        \"description\": \"A rich, lazy cat.\",
+        \"height\": 2,
+        \"id\": \"goldie\",
+        \"image\": \"res://Art/grey-kitten3.png\",
+        \"name\": \"Goldie\",
+        \"width\": 2,
+		\"price\": 5000,
+    },
+]"

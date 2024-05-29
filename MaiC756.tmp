@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://dphq852upsasd"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_bqq6y"]
+[ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
+[ext_resource type="Texture2D" uid="uid://d3dtnqb0chrin" path="res://Art/Cute Maid Portrait/Happy.png" id="3_00fav"]
+[ext_resource type="Script" path="res://Player.gd" id="3_k8nm8"]
+[ext_resource type="Texture2D" uid="uid://u47ybl0jjrtl" path="res://img14.jpg" id="4_m0owo"]
+[ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
+[ext_resource type="Texture2D" uid="uid://b0tuu7ja243p2" path="res://Art/Button/blueBtnNormal.png" id="8_e60yo"]
+[ext_resource type="Texture2D" uid="uid://ca7g205vdwjm7" path="res://Art/Button/blueBtnTapped.png" id="9_jp02t"]
+[ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
+[ext_resource type="Script" path="res://DayMenu.gd" id="11_1yi6c"]
+[ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
+[ext_resource type="Script" path="res://Actions/Classes.gd" id="12_sb63u"]
+
+[node name="Main" type="Node2D" groups=["Main"]]
+script = ExtResource("1_bqq6y")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("4_m0owo")
+centered = false
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="StatLabel" type="RichTextLabel" parent="Ui/MarginContainer"]
+layout_mode = 2
+text = "StatLabel"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("2_7t2yx")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Ui"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="DayLabel" type="RichTextLabel" parent="Ui/MarginContainer2"]
+layout_mode = 2
+text = "DayLabel"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_3yben")
+
+[node name="TextureButton" type="TextureButton" parent="Ui"]
+offset_left = 972.0
+offset_top = 244.0
+offset_right = 1228.0
+offset_bottom = 515.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("8_e60yo")
+texture_pressed = ExtResource("9_jp02t")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("3_k8nm8")
+
+[node name="Happy" type="Sprite2D" parent="Player"]
+position = Vector2(620, 377)
+texture = ExtResource("3_00fav")
+
+[node name="Work" parent="." instance=ExtResource("10_jdif8")]
+visible = false
+position = Vector2(26, 214)
+
+[node name="DayMenu" type="PopupMenu" parent="."]
+script = ExtResource("11_1yi6c")
+
+[node name="Classes" parent="." instance=ExtResource("10_jdif8")]
+visible = false
+position = Vector2(26, 214)
+script = ExtResource("12_sb63u")
+
+[node name="Rest" parent="." instance=ExtResource("10_jdif8")]
+visible = false
+position = Vector2(52, 428)
+script = ExtResource("12_ktm7g")
+
+[connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="id_pressed" from="DayMenu" to="." method="_on_day_menu_id_pressed"]
