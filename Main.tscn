@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=19 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
@@ -16,16 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
 [ext_resource type="PackedScene" uid="uid://b41yn518gd77p" path="res://Actions/Shop.tscn" id="16_vbgfp"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Actions/Animation.tscn" id="17_5xmvy"]
-[ext_resource type="Texture2D" uid="uid://u47ybl0jjrtl" path="res://img14.jpg" id="17_3806n"]
-[ext_resource type="Texture2D" uid="uid://d3qajhvbxfn0u" path="res://addons/gloot/images/icon_ctrl_inventory.svg" id="18_d082l"]
+[ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://count.tscn" id="17_im62w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
 font_size = 28
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_88227"]
-font_size = 32
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
@@ -180,33 +174,17 @@ theme = ExtResource("11_sa3xm")
 [node name="Counters" type="HBoxContainer" parent="GUI"]
 layout_mode = 2
 
-[node name="Count" type="MarginContainer" parent="GUI/Counters"]
+[node name="Count" parent="GUI/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="Background" type="NinePatchRect" parent="GUI/Counters/Count"]
-custom_minimum_size = Vector2(100, 60)
+[node name="Count2" parent="GUI/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
-texture = ExtResource("17_3806n")
 
-[node name="Icon" type="TextureRect" parent="GUI/Counters/Count/Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("18_d082l")
+[node name="Count3" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
 
-[node name="Number" type="Label" parent="GUI/Counters/Count/Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "10"
-label_settings = SubResource("LabelSettings_88227")
-vertical_alignment = 1
+[node name="Count4" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
 
 [connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
