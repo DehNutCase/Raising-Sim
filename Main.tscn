@@ -162,6 +162,12 @@ vertical_icon_alignment = 0
 [node name="Shop" parent="Ui/MenuPanel" instance=ExtResource("16_vbgfp")]
 visible = false
 
+[node name="Skip" type="CheckBox" parent="Ui/MenuPanel"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Skip"
+
 [node name="DayMenu" type="PopupMenu" parent="."]
 script = ExtResource("11_1yi6c")
 

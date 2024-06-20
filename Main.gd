@@ -15,6 +15,7 @@ extends Node2D
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var animation = $Ui/MenuPanel/Animation
+@onready var skip_checkbox = $Ui/MenuPanel/Skip
 
 @onready var menus = [work, lessons, rest, shop]
 
@@ -59,9 +60,11 @@ func process_day(character = player):
 	stat_label.display_stats(character)
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats", Player)
+	if(skip_checkbox.button_pressed):
+		_on_close_button_pressed()
+	
 
 func do_job(job: String, character = player) :
-	print (Player.stats['stress'])
 	var job_stats = Constants.jobs[job]['stats']
 	get_success_chance(job)
 	animation.stat_bars.load_stat_bars(job)
@@ -70,7 +73,6 @@ func do_job(job: String, character = player) :
 			character.gain_experience(job_stats['experience'])
 		else:
 			character.stats[stat] += job_stats[stat]
-	print (Player.stats['stress'])
 	work.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
