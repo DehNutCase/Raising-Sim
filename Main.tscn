@@ -180,16 +180,16 @@ theme = ExtResource("11_sa3xm")
 [node name="Counters" type="HBoxContainer" parent="GUI"]
 layout_mode = 2
 
-[node name="Count" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="strength" parent="GUI/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="Count2" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="magic" parent="GUI/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="Count3" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="defense" parent="GUI/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="Count4" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="resistance" parent="GUI/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
 [connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]

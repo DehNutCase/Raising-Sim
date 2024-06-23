@@ -32,8 +32,6 @@ func _ready():
 	Player.inventory = Inventory.new()
 	inventory.inventory = Player.inventory
 	Player.inventory.item_protoset = load('res://Constants/item_protoset.tres')
-	stat_label.display_stats(player)
-	day_label.display_day(day)
 
 	process_day()
 	pass # Replace with function body.
