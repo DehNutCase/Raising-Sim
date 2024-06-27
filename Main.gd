@@ -47,17 +47,23 @@ func _input(event):
 
 func process_day(character = player):
 	day +=1
-	get_tree().call_group("Job_Button", "update_difficulty_color")
+	
+	var items = inventory.inventory.get_items()
+	for item in items:
+		for stat in item.get_property('daily_stats'):
+			print(stat)
+			Player.stats[stat] += item.get_property('daily_stats')[stat]
+	
 	for stat in Player.stats:
 		if 'min' in Constants.stats[stat] && Player.stats[stat] < Constants.stats[stat]['min']:
 			Player.stats[stat] = Constants.stats[stat]['min']
 		if 'max' in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]['max']:
 			Player.stats[stat] = Constants.stats[stat]['max']
-		
 	
 	stat_label.display_stats(character)
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats", Player)
+	get_tree().call_group("Job_Button", "update_difficulty_color")	
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	
