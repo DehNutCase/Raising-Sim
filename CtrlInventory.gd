@@ -138,9 +138,19 @@ func _populate_list() -> void:
 			texture = default_item_icon
 		_item_list.add_item(_get_item_title(item), texture)
 		_item_list.set_item_metadata(_item_list.get_item_count() - 1, item)
+		
 		#TODO, update tooltips here
-		_item_list.set_item_tooltip(_item_list.get_item_count() - 1, item.get_property('description', 'Tooltip Error'))
-
+		var tooltip = item.get_property('description', 'Tooltip Error')
+		var daily_stats:Dictionary = item.get_property('daily_stats', '{}')
+		if (!daily_stats.keys().is_empty()):
+			tooltip += "\nDaily Stats:"
+			for stat in daily_stats.keys():
+				tooltip += ' '
+				if (daily_stats[stat] > 0):
+					tooltip += '+'
+				tooltip += ' ' + str(daily_stats[stat]) + ' ' + Constants.stats[stat].label
+		_item_list.set_item_tooltip(_item_list.get_item_count() - 1, tooltip)
+		
 
 func _get_item_title(item: InventoryItem) -> String:
 	if item == null:

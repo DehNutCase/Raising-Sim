@@ -171,25 +171,26 @@ text = "Skip"
 [node name="DayMenu" type="PopupMenu" parent="."]
 script = ExtResource("11_1yi6c")
 
-[node name="GUI" type="MarginContainer" parent="."]
+[node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 offset_left = 180.0
 offset_right = 360.0
 offset_bottom = 140.0
+mouse_filter = 2
 theme = ExtResource("11_sa3xm")
 
-[node name="Counters" type="HBoxContainer" parent="GUI"]
+[node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
 
-[node name="strength" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="strength" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="magic" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="magic" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="defense" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="defense" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
-[node name="resistance" parent="GUI/Counters" instance=ExtResource("17_im62w")]
+[node name="resistance" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
 [connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
