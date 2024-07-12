@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Raising Sim"
-run/main_scene="res://Opening.tscn"
+run/main_scene="res://Scenes/Opening.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
