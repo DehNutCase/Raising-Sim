@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=20 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
-[ext_resource type="Texture2D" uid="uid://d3dtnqb0chrin" path="res://Art/Cute Maid Portrait/Happy.png" id="3_00fav"]
 [ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="7_cp3kk"]
 [ext_resource type="Script" path="res://CtrlInventory.gd" id="8_cp80w"]
 [ext_resource type="Texture2D" uid="uid://b0tuu7ja243p2" path="res://Art/Button/blueBtnNormal.png" id="8_e60yo"]
 [ext_resource type="Texture2D" uid="uid://ca7g205vdwjm7" path="res://Art/Button/blueBtnTapped.png" id="9_jp02t"]
@@ -22,6 +22,9 @@
 font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
+viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_bqq6y")
@@ -101,10 +104,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Player" type="Node2D" parent="Ui/PlayerControl"]
-
-[node name="Happy" type="Sprite2D" parent="Ui/PlayerControl/Player"]
-position = Vector2(0, 70)
-texture = ExtResource("3_00fav")
+script = ExtResource("7_cp3kk")
 
 [node name="CtrlInventory" type="Control" parent="Ui/PlayerControl/Player"]
 visible = false
@@ -121,6 +121,185 @@ offset_bottom = 360.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("8_cp80w")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
+texture = SubResource("ViewportTexture_ltday")
+
+[node name="PlayerModel" type="GDCubismUserModel" parent="Ui/PlayerControl/Player/PlayerSprite"]
+assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
+anim_loop = false
+anim_loop_fade_in = true
+anim_expression = ""
+anim_motion = ""
+ParamAngleX = 7.02981
+ParamAngleY = -3.99948
+ParamAngleZ = -1.5146
+ParamCheek = 0.0
+ParamFaceInkOn = 0.0
+ParamEyeLOpen = 1.0
+ParamEyeLSmile = 0.0
+ParamEyeLForm = 0.0
+ParamEyeROpen = 1.0
+ParamEyeRSmile = 0.0
+ParamEyeRForm = 0.0
+ParamEyeBallX = 0.0
+ParamEyeBallY = 0.0
+ParamEyeBallForm = 0.0
+ParamEyeEffect = 0.0
+ParamBrowLY = 0.0
+ParamBrowRY = 0.0
+ParamBrowLX = 0.0
+ParamBrowRX = 0.0
+ParamBrowLAngle = 0.0
+ParamBrowRAngle = 0.0
+ParamBrowLForm = 0.0
+ParamBrowRForm = 0.0
+ParamA = 0.0
+ParamI = 0.0
+ParamU = 0.0
+ParamE = 0.0
+ParamO = 0.0
+ParamMouthUp = 1.0
+ParamMouthDown = 0.0
+ParamMouthAngry = 0.0
+ParamMouthAngryLine = 0.0
+ParamBodyAngleX = -1.99237
+ParamBodyAngleY = 0.0
+ParamBodyAngleZ = 0.0
+ParamBreath = 0.294361
+ParamLeftShoulderUp = 0.0
+ParamRightShoulderUp = 0.0
+ParamArmLA01 = 0.0
+ParamArmLA02 = 0.0
+ParamArmLA03 = 0.0
+ParamHandLA = 0.0
+ParamArmRA01 = 0.0
+ParamArmRA02 = 0.0
+ParamArmRA03 = 0.0
+ParamWandRotate = 0.0
+ParamHandRA = 0.0
+ParamInkDrop = 0.0
+ParamInkDropRotate = 0.0
+ParamInkDropOn = 0.0
+ParamArmLB01 = 0.0
+ParamArmLB02 = 0.0
+ParamArmLB03 = 0.0
+ParamHandLB = 0.0
+ParamHatForm = 0.0
+ParamArmRB01 = 0.0
+ParamArmRB02 = 0.0
+ParamArmRB02Y = 0.0
+ParamArmRB03 = 0.0
+ParamHandRB = 0.0
+ParamAllX = 0.0
+ParamAllY = 0.0
+ParamAllRotate = 0.0
+ParamHairFront = -0.00339631
+ParamHairSideL = -0.00419008
+ParamHairSideR = -0.00419008
+ParamHairBack = -0.00619597
+ParamHairBackR = -0.00511684
+ParamHairBackL = -0.00511684
+ParamoHairMesh = -0.00373483
+ParamHairFrontFuwa = -0.00384606
+ParamHairSideFuwa = -0.00329604
+ParamHairBackFuwa = -0.0084059
+ParamWing = -0.00546744
+ParamRibbon = -0.00280736
+ParamHatBrim = -0.00237269
+ParamHatTop = 0.00068773
+ParamAccessory1 = -0.000516709
+ParamAccessory2 = 0.000394055
+ParamString = -0.00036059
+ParamRobeL = -0.000620347
+ParamRobeR = -0.000620347
+ParamRobeFuwa = 0.0
+ParamHeartMissOn = 0.0
+ParamHeartBackMissOn = 0.0
+ParamHeartColorRainbow = 0.0
+ParamHeartHealOn = 0.0
+ParamHeartBackHealOn = 0.0
+ParamHeartColorHeal = 0.0
+ParamHeartDrow = 0.0
+ParamHeartSize = 0.0
+ParamHeartColorLight = 0.0
+ParamWandInkColorRainbow = 0.0
+ParamWandInkColorHeal = 0.0
+ParamWandInk = 0.0
+ParamSmokeOn = 0.0
+ParamSmoke = 0.0
+ParamExplosionChargeOn = 0.0
+ParamExplosionLightCharge = 0.0
+ParamExplosionOn = 0.0
+ParamExplosion = 0.0
+ParamRabbitX = 0.0
+ParamRabbitY = 1.0
+ParamRabbitRotate = 0.0
+ParamRabbitEliminationEffect = 0.0
+ParamRabbitAppearance = 0.0
+ParamRabbitSize = 0.0
+ParamRabbitDraworder = 0.0
+ParamRabbitEar = 0.0
+Param5 = 0.0
+ParamRabbitLight = 0.0
+ParamRabbitLightSize = 0.0
+ParamAuraOn = 0.0
+ParamAura = 0.0
+ParamAuraColor1 = 0.0
+ParamAuraColor2 = 0.0
+ParamHeartLightOn = 0.0
+ParamHeartLight = 0.0
+ParamHeartLightColor = 0.0
+ParamHealLightOn = 0.0
+ParamHealLight = 0.0
+ParamStrengthenLightOn = 0.0
+ParamStrengthenLight = 0.0
+ParamStrengthenLightMove = 0.0
+ParamMagicPositionX = 0.0
+ParamMagicPositionY = 0.0
+ParamAllColor1 = 0.0
+ParamAllColor2 = 0.0
+PartCore = 1.0
+Part = 1.0
+Part2 = 1.0
+PartInk = 1.0
+PartSmoke = 1.0
+PartExplosionLight = 1.0
+Partaura = 1.0
+PartLight = 1.0
+PartHeart = 1.0
+PartHat = 1.0
+PartHairSide = 1.0
+PartHairFront = 1.0
+PartHairBack = 1.0
+PartBrow = 1.0
+PartEye = 1.0
+PartCheek = 1.0
+PartNose = 1.0
+PartMouth = 1.0
+PartFace = 1.0
+PartEar = 1.0
+PartNeck = 1.0
+PartRobe = 1.0
+PartHoodie = 1.0
+PartLeg = 1.0
+PartArmLA = 1.0
+PartArmRA = 1.0
+PartArmLB = 0.0
+PartArmRB = 0.0
+PartEyeBall = 1.0
+PartWandA = 1.0
+PartWandB = 1.0
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+render_target_update_mode = 4
+
+[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
+
+[node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
+
+[node name="GDCubismEffectHitArea" type="GDCubismEffectHitArea" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
