@@ -1,19 +1,20 @@
 extends Node2D
 var cubism_model: GDCubismUserModel
-var last_motion = null
+var last_motion = { "group": "Idle", "no": 0 }
 var motion_dict: Dictionary = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cubism_model = $PlayerSprite/PlayerModel
 	var dict_motion = cubism_model.get_motions()
+	cubism_model.motion_finished.connect(_on_motion_finished)
 	for k in dict_motion:
 		for v in range(dict_motion[k]):
 			motion_dict["{0}_{1}".format([k, v])] = {"group": k, "no": v}
-	print(motion_dict)
 	
 	
 func _on_motion_finished():
+	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5,10)).timeout
 	cubism_model.start_motion(
 		last_motion.group,
 		last_motion.no,
