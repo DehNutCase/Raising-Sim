@@ -138,6 +138,9 @@ func _on_day_menu_id_pressed(id):
 		3:
 			inventory.visible = !inventory.visible
 			menu_panel.visible = true
+			#TODO More motion stuff (implement elsewhere)
+			var motion = { "group": "Idle", "no": 0 }
+			get_tree().call_group("Live2DPlayer", "start_motion", motion)
 		4:
 			shop.visible = !shop.visible
 	menu_panel.visible = !menu_panel.visible
