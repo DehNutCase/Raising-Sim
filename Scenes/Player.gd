@@ -2,6 +2,9 @@ extends Node2D
 var cubism_model: GDCubismUserModel
 var last_motion = { "group": "Idle", "no": 0 }
 var motion_dict: Dictionary = {}
+var content_motion = { "group": "Idle", "no": 0 }
+var happy_motion = { "group": "", "no": 5 }
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

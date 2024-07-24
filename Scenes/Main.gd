@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var player = $Ui/PlayerControl/Player
+@onready var player_model = $Ui/PlayerControl/Player
+@onready var player
 @onready var inventory = $Ui/PlayerControl/Player/CtrlInventory
 
 @onready var stat_label = $Ui/MarginContainer/StatLabel
@@ -67,6 +68,7 @@ func process_day(character = player):
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	
+	get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)
 
 func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
