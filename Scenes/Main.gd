@@ -67,8 +67,10 @@ func process_day(character = player):
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
-	
+		
+	#TODO add check for stress to decide animations
 	get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)
+	get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 
 func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
@@ -140,9 +142,6 @@ func _on_day_menu_id_pressed(id):
 		3:
 			inventory.visible = !inventory.visible
 			menu_panel.visible = true
-			#TODO More motion stuff (implement elsewhere)
-			var motion = { "group": "Idle", "no": 0 }
-			get_tree().call_group("Live2DPlayer", "start_motion", motion)
 		4:
 			shop.visible = !shop.visible
 	menu_panel.visible = !menu_panel.visible
