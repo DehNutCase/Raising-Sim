@@ -67,10 +67,14 @@ func process_day(character = player):
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
-		
+	
+	if (Player.stats['stress'] < 20):
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
+	if (Player.stats['stress'] < 1):
+		get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)	
 	#TODO add check for stress to decide animations
-	get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)
-	get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
+	if (Player.stats['stress'] > 80):
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 
 func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
