@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=23 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://b41yn518gd77p" path="res://Actions/Shop.tscn" id="16_vbgfp"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Actions/Animation.tscn" id="17_5xmvy"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/count.tscn" id="17_im62w"]
+[ext_resource type="Texture2D" uid="uid://co0nxq2ekveyb" path="res://Art/Kittens/Sleeping-Kittens-blanc/cute-kitten4.png" id="19_1gghe"]
+[ext_resource type="Texture2D" uid="uid://bdbdfxdgb1i3k" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten4.png" id="19_88f8e"]
+[ext_resource type="Texture2D" uid="uid://beda43km5h356" path="res://Art/Kittens/Sleeping-Kittens-outlines/outlines-kitten4.png" id="20_c7f2x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
 font_size = 28
@@ -131,9 +134,9 @@ anim_loop = false
 anim_loop_fade_in = true
 anim_expression = ""
 anim_motion = ""
-ParamAngleX = 7.10297
-ParamAngleY = -3.70159
-ParamAngleZ = 4.92613
+ParamAngleX = 7.49116
+ParamAngleY = -1.80842
+ParamAngleZ = -4.90582
 ParamCheek = 0.0
 ParamFaceInkOn = 0.0
 ParamEyeLOpen = 1.0
@@ -163,10 +166,10 @@ ParamMouthUp = 1.0
 ParamMouthDown = 0.0
 ParamMouthAngry = 0.0
 ParamMouthAngryLine = 0.0
-ParamBodyAngleX = 1.28958
+ParamBodyAngleX = 1.11536
 ParamBodyAngleY = 0.0
 ParamBodyAngleZ = 0.0
-ParamBreath = 0.421516
+ParamBreath = 0.0723526
 ParamLeftShoulderUp = 0.0
 ParamRightShoulderUp = 0.0
 ParamArmLA01 = 0.0
@@ -194,25 +197,25 @@ ParamHandRB = 0.0
 ParamAllX = 0.0
 ParamAllY = 0.0
 ParamAllRotate = 0.0
-ParamHairFront = 0.0201981
-ParamHairSideL = 0.0200555
-ParamHairSideR = 0.0200555
-ParamHairBack = 0.0194618
-ParamHairBackR = 0.0197597
-ParamHairBackL = 0.0197597
-ParamoHairMesh = 0.0215343
-ParamHairFrontFuwa = -0.00333118
-ParamHairSideFuwa = -0.00546711
-ParamHairBackFuwa = -0.00948481
-ParamWing = -0.0045287
-ParamRibbon = -0.00257003
-ParamHatBrim = -0.00389673
-ParamHatTop = 0.00329825
-ParamAccessory1 = -0.00377539
-ParamAccessory2 = 0.00384769
-ParamString = -0.00222959
-ParamRobeL = -0.00263588
-ParamRobeR = -0.00263588
+ParamHairFront = -0.0165707
+ParamHairSideL = -0.0167703
+ParamHairSideR = -0.0167703
+ParamHairBack = -0.017813
+ParamHairBackR = -0.0173825
+ParamHairBackL = -0.0173825
+ParamoHairMesh = -0.0163532
+ParamHairFrontFuwa = 1.92373e-05
+ParamHairSideFuwa = 0.000223135
+ParamHairBackFuwa = 0.000245611
+ParamWing = 0.00514313
+ParamRibbon = 0.00259487
+ParamHatBrim = 0.00179648
+ParamHatTop = 0.00200881
+ParamAccessory1 = -0.00411196
+ParamAccessory2 = 0.00417352
+ParamString = -0.00243556
+ParamRobeL = -0.00280043
+ParamRobeR = -0.00280043
 ParamRobeFuwa = 0.0
 ParamHeartMissOn = 0.0
 ParamHeartBackMissOn = 0.0
@@ -364,12 +367,26 @@ layout_mode = 2
 [node name="magic" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
+[node name="Icon" parent="GUI (Mouse Ignore)/Counters/magic/Background" index="0"]
+texture = ExtResource("19_1gghe")
+
 [node name="defense" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
+
+[node name="Icon" parent="GUI (Mouse Ignore)/Counters/defense/Background" index="0"]
+texture = ExtResource("19_88f8e")
 
 [node name="resistance" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 
+[node name="Icon" parent="GUI (Mouse Ignore)/Counters/resistance/Background" index="0"]
+texture = ExtResource("20_c7f2x")
+
 [connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="id_pressed" from="DayMenu" to="." method="_on_day_menu_id_pressed"]
+
+[editable path="GUI (Mouse Ignore)/Counters/strength"]
+[editable path="GUI (Mouse Ignore)/Counters/magic"]
+[editable path="GUI (Mouse Ignore)/Counters/defense"]
+[editable path="GUI (Mouse Ignore)/Counters/resistance"]
