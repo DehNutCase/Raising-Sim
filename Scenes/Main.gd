@@ -52,7 +52,6 @@ func process_day(character = player):
 	var items = inventory.inventory.get_items()
 	for item in items:
 		for stat in item.get_property('daily_stats'):
-			print(stat)
 			Player.stats[stat] += item.get_property('daily_stats')[stat]
 	
 	for stat in Player.stats:
@@ -78,13 +77,21 @@ func process_day(character = player):
 
 func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
-	get_success_chance(job)
+	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job)
-	for stat in job_stats:
-		if stat == 'experience':
-			character.gain_experience(job_stats['experience'])
-		else:
-			character.stats[stat] += job_stats[stat]
+	if ( get_success_chance(job) > rng.randf() * 100):
+		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)	
+		for stat in job_stats:
+			if stat == 'experience':
+				character.gain_experience(job_stats['experience'])
+			else:
+				character.stats[stat] += job_stats[stat]
+	else:
+		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
+		if 'stress' in job_stats:
+			character.stats['stress'] += job_stats['stress']
+
+
 	work.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")

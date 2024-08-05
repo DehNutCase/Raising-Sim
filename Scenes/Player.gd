@@ -3,6 +3,8 @@ var cubism_model: GDCubismUserModel
 var last_motion = { "group": "Idle", "no": 0 }
 var content_motion = { "group": "Idle", "no": 0 }
 var happy_motion = { "group": "", "no": 5 }
+var success_motion = { "group": "", "no": 3 }
+var failure_motion = { "group": "", "no": 4 }
 
 var content_expression = "exp_01"
 var happy_expression = "exp_02"
@@ -21,11 +23,14 @@ func _on_motion_finished():
 	cubism_model.start_motion(
 		last_motion.group,
 		last_motion.no,
-		GDCubismUserModel.PRIORITY_FORCE
+		GDCubismUserModel.PRIORITY_NORMAL
 	)
 
 func start_motion(motion):
-	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_NORMAL)
 
 func start_expression(expression):
 	cubism_model.start_expression(expression)
+
+func job_motion(motion):
+	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
