@@ -23,6 +23,7 @@ AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.t
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+ToastParty="*res://addons/toastparty/toast-autoload.gd"
 
 [display]
 
@@ -32,7 +33,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gloot/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/gloot/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [input]
 

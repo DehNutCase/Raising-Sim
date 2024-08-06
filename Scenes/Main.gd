@@ -33,7 +33,16 @@ func _ready():
 	Player.inventory = Inventory.new()
 	inventory.inventory = Player.inventory
 	Player.inventory.item_protoset = load('res://Constants/item_protoset.tres')
-
+	#TODO toast on acitons
+	ToastParty.show({
+		"text": "Toast test",           # Text (emojis can be used)
+		"bgcolor": Color(0, 0, 0, 0.7),     # Background Color
+		"color": Color(1, 1, 1, 1),         # Text Color
+		"gravity": "top",                   # top or bottom
+		"direction": "right",               # left or center or right
+		"text_size": 18,                    # [optional] Text (font) size // experimental (warning!)
+		"use_font": true                    # [optional] Use custom ToastParty font // experimental (warning!)
+	})
 	process_day()
 	pass # Replace with function body.
 
