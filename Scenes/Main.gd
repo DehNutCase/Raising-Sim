@@ -33,16 +33,6 @@ func _ready():
 	Player.inventory = Inventory.new()
 	inventory.inventory = Player.inventory
 	Player.inventory.item_protoset = load('res://Constants/item_protoset.tres')
-	#TODO toast on acitons
-	ToastParty.show({
-		"text": "Toast test",           # Text (emojis can be used)
-		"bgcolor": Color(0, 0, 0, 0.7),     # Background Color
-		"color": Color(1, 1, 1, 1),         # Text Color
-		"gravity": "top",                   # top or bottom
-		"direction": "right",               # left or center or right
-		"text_size": 18,                    # [optional] Text (font) size // experimental (warning!)
-		"use_font": true                    # [optional] Use custom ToastParty font // experimental (warning!)
-	})
 	process_day()
 	pass # Replace with function body.
 
@@ -88,9 +78,23 @@ func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
 	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job)
+	var job_toast = ""
 	if ( get_success_chance(job) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)	
 		for stat in job_stats:
+			
+			var label
+			if ( 'emoji' in Constants.stats[stat] ):
+				label = Constants.stats[stat].emoji
+			elif ( 'label' in Constants.stats[stat] ):
+				label = Constants.stats[stat].label
+			else:
+				label = stat
+			var sign = "+"
+			if (job_stats[stat] < 0):
+				sign = "-"
+			job_toast += "[" + sign + str(job_stats[stat]) + label + "] "
+			
 			if stat == 'experience':
 				character.gain_experience(job_stats['experience'])
 			else:
@@ -98,8 +102,20 @@ func do_job(job: String, character = player) :
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if 'stress' in job_stats:
-			character.stats['stress'] += job_stats['stress']
-
+			var stat = 'stress'
+			var label
+			if ( 'emoji' in Constants.stats[stat] ):
+				label = Constants.stats[stat].emoji
+			elif ( 'label' in Constants.stats[stat] ):
+				label = Constants.stats[stat].label
+			else:
+				label = stat
+			var sign = "+"
+			if (job_stats[stat] < 0):
+				sign = "-"
+			job_toast += "[" + sign + str(job_stats[stat]) + label + "] "
+			character.stats[stat] += job_stats[stat]
+	display_toast(job_toast, "top", "center")
 
 	work.visible = false
 	animation.animation.visible = true
@@ -174,3 +190,22 @@ func _on_close_button_pressed():
 	animation.stat_bars.remove_stat_bars()
 	animation.animation.visible = false
 	
+
+func display_toast(message, gravity = 'bottom', direction = 'right'):
+	ToastParty.show({
+		"text": message,           # Text (emojis can be used)
+		"gravity": gravity,                   # top or bottom
+		"direction": direction,               # left or center or right
+	})
+	
+	"""
+		ToastParty.show({
+		"text": "Toast test",           # Text (emojis can be used)
+		"bgcolor": Color(0, 0, 0, 0.7),     # Background Color
+		"color": Color(1, 1, 1, 1),         # Text Color
+		"gravity": "top",                   # top or bottom
+		"direction": "right",               # left or center or right
+		"text_size": 18,                    # [optional] Text (font) size // experimental (warning!)
+		"use_font": true                    # [optional] Use custom ToastParty font // experimental (warning!)
+	})
+	"""

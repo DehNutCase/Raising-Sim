@@ -157,38 +157,47 @@ const stats = {
 		'defense', 'resistance'],
 	'max_hp' = {
 		'label': 'Max HP',
+		'emoji': '❤',
 		'min' : 0,
 	},
 	'max_mp' = {
 		'label': 'Max MP',
+		'emoji': '💙',
 		'min' : 0,
 	},
 	'strength' = {
 		'label': 'Strength',
+		'emoji': '💪',
 		'min' : 0,
 	},
 	'magic' = {
 		'label': 'Magic',
+		'emoji': '🪄',
 		'min' : 0,
 	},
 	'skill' = {
 		'label': 'Skill',
+		'emoji': '🎯',
 		'min' : 0,
 	},
 	'speed' = {
 		'label': 'Speed',
+		'emoji': '⚡',
 		'min' : 0,
 	},
 	'defense' = {
 		'label': 'Defense',
+		'emoji': '🛡',
 		'min' : 0,
 	},
 	'resistance' = {
 		'label': 'Resistance',
+		'emoji': '🥽',
 		'min' : 0,
 	},
 	'stress' = {
 		'label': 'Stress',
+		'emoji': '😣',
 		'min' : 0,
 		'max' : 100,
 	},
@@ -202,6 +211,7 @@ const stats = {
 	},
 	'gold' = {
 		'label': 'Gold',
+		'emoji': '🪙',
 		'max': 1000000,
 	}
 }
