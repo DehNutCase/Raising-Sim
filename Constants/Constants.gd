@@ -129,7 +129,7 @@ const classes = {
 const rests = {
 	'free time': {
 	'stats': {
-			'experience' : 0,
+			'experience' : 1,
 			'stress' : -10,
 		}
 	},

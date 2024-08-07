@@ -70,7 +70,6 @@ func process_day(character = player):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
 	if (Player.stats['stress'] < 1):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)	
-	#TODO add check for stress to decide animations
 	if (Player.stats['stress'] > 80):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 
@@ -78,69 +77,32 @@ func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
 	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job)
-	var job_toast = ""
+	
 	if ( get_success_chance(job) > rng.randf() * 100):
-		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)	
-		for stat in job_stats:
-			
-			var label
-			if ( 'emoji' in Constants.stats[stat] ):
-				label = Constants.stats[stat].emoji
-			elif ( 'label' in Constants.stats[stat] ):
-				label = Constants.stats[stat].label
-			else:
-				label = stat
-			var sign = "+"
-			if (job_stats[stat] < 0):
-				sign = "-"
-			job_toast += "[" + sign + str(job_stats[stat]) + label + "] "
-			
-			if stat == 'experience':
-				character.gain_experience(job_stats['experience'])
-			else:
-				character.stats[stat] += job_stats[stat]
+		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
+		process_stats(job_stats, character)
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if 'stress' in job_stats:
-			var stat = 'stress'
-			var label
-			if ( 'emoji' in Constants.stats[stat] ):
-				label = Constants.stats[stat].emoji
-			elif ( 'label' in Constants.stats[stat] ):
-				label = Constants.stats[stat].label
-			else:
-				label = stat
-			var sign = "+"
-			if (job_stats[stat] < 0):
-				sign = "-"
-			job_toast += "[" + sign + str(job_stats[stat]) + label + "] "
-			character.stats[stat] += job_stats[stat]
-	display_toast(job_toast, "top", "center")
+			var stats = {'stress': job_stats['stress']}
+			process_stats(stats, character)
 
 	work.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
 	process_day(character)
 	
-
+#TODO, add animations for class and resting
 func do_class(lesson: String, character = player) :
 	#TODO add check for gold
 	var class_stats = Constants.classes[lesson]['stats']
-	for stat in class_stats:
-		if stat == 'experience':
-			character.gain_experience(class_stats['experience'])
-		else:
-			character.stats[stat] += class_stats[stat]
+	process_stats(class_stats, character)
 	process_day(character)
 
 func do_rest(rest: String, character = player) :
 	#TODO add check for gold
 	var rest_stats = Constants.rests[rest]['stats']
-	for stat in rest_stats:
-		if stat == 'experience':
-			character.gain_experience(rest_stats['experience'])
-		else:
-			character.stats[stat] += rest_stats[stat]
+	process_stats(rest_stats, character)
 	process_day(character)
 
 func get_success_chance(job, player = player):
@@ -209,3 +171,24 @@ func display_toast(message, gravity = 'bottom', direction = 'right'):
 		"use_font": true                    # [optional] Use custom ToastParty font // experimental (warning!)
 	})
 	"""
+
+func process_stats(stats, character = Player):
+	var toast = ""
+	for stat in stats:
+		var label
+		if ( 'emoji' in Constants.stats[stat] ):
+			label = Constants.stats[stat].emoji
+		elif ( 'label' in Constants.stats[stat] ):
+			label = Constants.stats[stat].label
+		else:
+			label = stat
+		var sign = "+"
+		if (stats[stat] < 0):
+			sign = ""
+		toast += "[" + sign + str(stats[stat]) + label + "] "
+		
+		if stat == 'experience':
+			character.gain_experience(stats['experience'])
+		else:
+			character.stats[stat] += stats[stat]
+	display_toast(toast, "top", "center")

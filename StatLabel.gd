@@ -13,4 +13,9 @@ func _process(delta):
 func display_stats(player):
 	text = "Stats:\n"
 	for stat in player.display_stats:
-		text += Constants.stats[stat]['label'] + ': ' + str(player.stats[stat]) + '\n'
+		var label = stat
+		if ('label' in Constants.stats[stat]):
+			label = Constants.stats[stat]['label']
+		if ('emoji' in Constants.stats[stat]):
+			label += " (" + Constants.stats[stat].emoji + ")"
+		text += label + ': ' + str(player.stats[stat]) + '\n'
