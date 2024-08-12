@@ -72,7 +72,7 @@ func process_day(character = player):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)	
 	if (Player.stats['stress'] > 80):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
-
+#TODO remove stat bars in job pages
 func do_job(job: String, character = player) :
 	var job_stats = Constants.jobs[job]['stats']
 	var rng = RandomNumberGenerator.new()
@@ -97,12 +97,18 @@ func do_class(lesson: String, character = player) :
 	#TODO add check for gold
 	var class_stats = Constants.classes[lesson]['stats']
 	process_stats(class_stats, character)
+	lessons.visible = false
+	animation.animation.visible = true
+	animation.animation.play("Run")
 	process_day(character)
 
 func do_rest(rest: String, character = player) :
 	#TODO add check for gold
 	var rest_stats = Constants.rests[rest]['stats']
 	process_stats(rest_stats, character)
+	rests.visible = false
+	animation.animation.visible = true
+	animation.animation.play("Run")
 	process_day(character)
 
 func get_success_chance(job, player = player):
