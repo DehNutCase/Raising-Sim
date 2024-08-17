@@ -68,8 +68,8 @@ func process_day(character = player):
 	
 	if (Player.stats['stress'] < 20):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
-	if (Player.stats['stress'] < 1):
-		get_tree().call_group("Live2DPlayer", "start_motion", player_model.happy_motion)	
+	if (Player.stats['stress'] < 10):
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)	
 	if (Player.stats['stress'] > 80):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 #TODO remove stat bars in job pages

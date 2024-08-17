@@ -46,8 +46,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="Sprite2D" parent="Ui/BackgroundControl"]
-position = Vector2(-18, -18)
 texture = ExtResource("2_r2e40")
+offset = Vector2(0, -50)
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
 offset_right = 40.0
@@ -98,13 +98,15 @@ texture_pressed = ExtResource("9_jp02t")
 
 [node name="PlayerControl" type="Control" parent="Ui"]
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="Player" type="Node2D" parent="Ui/PlayerControl" groups=["Live2DPlayer"]]
 script = ExtResource("7_cp3kk")
@@ -127,16 +129,18 @@ script = ExtResource("8_cp80w")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 texture = SubResource("ViewportTexture_ltday")
+centered = false
+offset = Vector2(-256, -512)
 
 [node name="PlayerModel" type="GDCubismUserModel" parent="Ui/PlayerControl/Player/PlayerSprite"]
 assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
 anim_loop = false
-anim_loop_fade_in = true
+anim_loop_fade_in = false
 anim_expression = ""
 anim_motion = ""
-ParamAngleX = 4.99015
-ParamAngleY = 3.89922
-ParamAngleZ = 3.78758
+ParamAngleX = 6.71773
+ParamAngleY = -0.975669
+ParamAngleZ = -3.98052
 ParamCheek = 0.0
 ParamFaceInkOn = 0.0
 ParamEyeLOpen = 1.0
@@ -166,10 +170,10 @@ ParamMouthUp = 1.0
 ParamMouthDown = 0.0
 ParamMouthAngry = 0.0
 ParamMouthAngryLine = 0.0
-ParamBodyAngleX = 0.602905
+ParamBodyAngleX = 0.969242
 ParamBodyAngleY = 0.0
 ParamBodyAngleZ = 0.0
-ParamBreath = 0.498748
+ParamBreath = 0.00991738
 ParamLeftShoulderUp = 0.0
 ParamRightShoulderUp = 0.0
 ParamArmLA01 = 0.0
@@ -197,25 +201,25 @@ ParamHandRB = 0.0
 ParamAllX = 0.0
 ParamAllY = 0.0
 ParamAllRotate = 0.0
-ParamHairFront = 0.0133687
-ParamHairSideL = 0.0161184
-ParamHairSideR = 0.0161184
-ParamHairBack = 0.0108684
-ParamHairBackR = 0.0137326
-ParamHairBackL = 0.0137326
-ParamoHairMesh = 0.0176084
-ParamHairFrontFuwa = 0.00620586
-ParamHairSideFuwa = 0.0134266
-ParamHairBackFuwa = 0.0109012
-ParamWing = 0.0101746
-ParamRibbon = 0.00131088
-ParamHatBrim = 0.000768843
-ParamHatTop = -0.00786198
-ParamAccessory1 = -0.00471597
-ParamAccessory2 = 0.00511003
-ParamString = -0.00252789
-ParamRobeL = -0.00113581
-ParamRobeR = -0.00113581
+ParamHairFront = -0.0119608
+ParamHairSideL = -0.0127458
+ParamHairSideR = -0.0127458
+ParamHairBack = -0.0122653
+ParamHairBackR = -0.0126224
+ParamHairBackL = -0.0126224
+ParamoHairMesh = -0.011421
+ParamHairFrontFuwa = 0.000900194
+ParamHairSideFuwa = 0.00118066
+ParamHairBackFuwa = 0.00231116
+ParamWing = 0.00796084
+ParamRibbon = 0.00464082
+ParamHatBrim = 0.00415437
+ParamHatTop = 0.00363299
+ParamAccessory1 = -0.00432905
+ParamAccessory2 = 0.00439237
+ParamString = -0.00258271
+ParamRobeL = -0.0030811
+ParamRobeR = -0.0030811
 ParamRobeFuwa = 0.0
 ParamHeartMissOn = 0.0
 ParamHeartBackMissOn = 0.0

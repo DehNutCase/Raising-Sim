@@ -25,6 +25,7 @@ func _on_motion_finished():
 		last_motion.no,
 		GDCubismUserModel.PRIORITY_NORMAL
 	)
+	last_motion = content_motion
 
 func start_motion(motion):
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_NORMAL)
@@ -34,3 +35,7 @@ func start_expression(expression):
 
 func job_motion(motion):
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+
+func queue_motion(motion):
+	last_motion = motion
+	
