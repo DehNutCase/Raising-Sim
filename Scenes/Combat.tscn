@@ -87,3 +87,28 @@ theme_override_constants/margin_bottom = 20
 [node name="MenuPanel" type="PanelContainer" parent="MarginContainer3"]
 layout_mode = 2
 theme = ExtResource("2_0v84i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/MenuPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack"
+
+[node name="Button2" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Skill
+"
+
+[node name="Button3" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+
+[node name="Button4" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Flee?"
