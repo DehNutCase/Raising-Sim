@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://df0p3tawo2arq"]
+[gd_scene load_steps=5 format=3 uid="uid://df0p3tawo2arq"]
 
+[ext_resource type="Script" path="res://Scenes/Combat.gd" id="1_d01bm"]
 [ext_resource type="Texture2D" uid="uid://dkkm2aamicapl" path="res://Art/Portraits/mao_portrait.png" id="1_wdsfu"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="2_0v84i"]
+[ext_resource type="Texture2D" uid="uid://doycqxwp1io2v" path="res://icon.svg" id="2_iqwhn"]
 
-[node name="VBoxContainer" type="VBoxContainer"]
+[node name="Combat" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d01bm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -26,7 +29,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-texture = ExtResource("1_wdsfu")
+texture = ExtResource("2_iqwhn")
 stretch_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
@@ -92,23 +95,23 @@ theme = ExtResource("2_0v84i")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Attack" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Attack"
 
-[node name="Button2" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Skill" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Skill
 "
 
-[node name="Button3" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Item" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Item"
 
-[node name="Button4" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Flee" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Flee?"
+text = "Flee"

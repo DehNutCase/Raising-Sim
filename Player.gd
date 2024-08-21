@@ -2,6 +2,13 @@ extends Character
 
 var inventory: Inventory
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _init():
+	base_stats = {
+		'max_hp': 100,
+		'strength': 10,
+		'magic': 10,
+		'defense': 5,
+		'resistance': 10,
+		'level': 1,
+		'gold': 1000,
+	}

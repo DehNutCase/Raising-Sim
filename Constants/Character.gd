@@ -1,4 +1,4 @@
-class_name Character extends Node2D
+class_name Character extends Node
 
 var base_stats = {
 	'max_hp': 12,
@@ -40,14 +40,8 @@ func level_up():
 	var random_stat = stats[randi() % stats.size()]
 	self.stats[random_stat] += randi() % 40 + 2
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-func _init():
 	for stat in display_stats:
 		if !(stat in base_stats):
 			stats[stat] = 0
