@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="7_cp3kk"]
+[ext_resource type="Script" path="res://Constants/Player.gd" id="7_cp3kk"]
 [ext_resource type="Script" path="res://CtrlInventory.gd" id="8_cp80w"]
 [ext_resource type="Texture2D" uid="uid://b0tuu7ja243p2" path="res://Art/Button/blueBtnNormal.png" id="8_e60yo"]
 [ext_resource type="Texture2D" uid="uid://ca7g205vdwjm7" path="res://Art/Button/blueBtnTapped.png" id="9_jp02t"]

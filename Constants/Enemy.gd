@@ -10,3 +10,4 @@ func _init():
 		'level': 1,
 		'gold': 100,
 	}
+	stats.current_hp = base_stats.max_hp
