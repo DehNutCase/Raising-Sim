@@ -8,6 +8,7 @@ func _ready():
 	add_item('Rest')
 	add_item('Inventory')
 	add_item('Shop')
+	add_item('Battle')
 	pass # Replace with function body.
 
 

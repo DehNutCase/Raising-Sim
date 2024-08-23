@@ -1,7 +1,9 @@
 extends VBoxContainer
 
 @onready var buttons = $MarginContainer3/MenuPanel/HBoxContainer
-@onready var pos1 = $MarginContainer/HBoxContainer/VBoxContainer
+@onready var pos1 = $MarginContainer/HBoxContainer/Enemy/PanelContainer/VBoxContainer
+@onready var pos2 = $MarginContainer/HBoxContainer/Enemy2/PanelContainer/VBoxContainer
+
 var enemy = Enemy.new()
 
 var base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
@@ -9,12 +11,12 @@ var base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
 		
 func _ready():
 	
-	#TODO dynamically load portraits based on enemies & make attack function
+	#TODO dynamically load portraits based on enemies & display or hide panel container to indicate target
 	var node = Enemy.new()
 	node.name = "Enemy"
-	pos1.get_node("TextureRect").texture = load(node.portrait)
-	pos1.add_child(node)
-	update_hp(pos1)
+	pos2.get_node("Portrait").texture = load(node.portrait)
+	pos2.add_child(node)
+	update_hp(pos2)
 	
 	for button in buttons.get_children():
 		button.pressed.connect(_on_button_pressed.bind(button))
@@ -29,8 +31,8 @@ func _on_button_pressed(button):
 	match button.text:
 		'Attack':
 			#TODO, add targeting
-			var damage = Player.stats.strength - pos1.get_node("Enemy").stats.defense
-			update_hp(pos1, -damage)
+			var damage = Player.stats.strength - pos2.get_node("Enemy").stats.defense
+			update_hp(pos2, -damage)
 		_:
 			print("hello else")
 

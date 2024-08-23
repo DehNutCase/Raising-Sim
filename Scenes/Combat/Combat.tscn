@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://df0p3tawo2arq"]
+[gd_scene load_steps=4 format=3 uid="uid://df0p3tawo2arq"]
 
-[ext_resource type="Script" path="res://Scenes/Combat.gd" id="1_d01bm"]
-[ext_resource type="Texture2D" uid="uid://dkkm2aamicapl" path="res://Art/Portraits/mao_portrait.png" id="1_wdsfu"]
-[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="2_0v84i"]
-[ext_resource type="Texture2D" uid="uid://doycqxwp1io2v" path="res://icon.svg" id="2_iqwhn"]
+[ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
+[ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
+[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="4_hv28o"]
 
 [node name="Combat" type="VBoxContainer"]
 anchors_preset = 15
@@ -11,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d01bm")
+script = ExtResource("1_i0ygr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -25,36 +24,14 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Enemy" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Enemy2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("2_iqwhn")
-stretch_mode = 2
 
-[node name="Hp" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Enemy3" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 layout_mode = 2
-text = "Hp:"
-horizontal_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("1_wdsfu")
-stretch_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("1_wdsfu")
-stretch_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -68,26 +45,14 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+[node name="Enemy" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("1_wdsfu")
-stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+[node name="Enemy2" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("1_wdsfu")
-stretch_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+[node name="Enemy3" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("1_wdsfu")
-stretch_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -99,7 +64,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="MenuPanel" type="PanelContainer" parent="MarginContainer3"]
 layout_mode = 2
-theme = ExtResource("2_0v84i")
+theme = ExtResource("4_hv28o")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/MenuPanel"]
 layout_mode = 2
