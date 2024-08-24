@@ -7,14 +7,13 @@ extends Node2D
 @onready var stat_label = $Ui/MarginContainer/StatLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
 
-@onready var button = $Ui/TextureButton
 @onready var work = $Ui/MenuPanel/Work
-@onready var day_menu = $DayMenu
 @onready var lessons = $Ui/MenuPanel/Classes
 @onready var rest = $Ui/MenuPanel/Rest
 @onready var shop = $Ui/MenuPanel/Shop
 
 @onready var menu_panel = $Ui/MenuPanel
+@onready var buttons = $MarginContainer3/MenuPanel/VBoxContainer
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
@@ -33,12 +32,10 @@ func _ready():
 	Player.inventory = Inventory.new()
 	inventory.inventory = Player.inventory
 	Player.inventory.item_protoset = load('res://Constants/item_protoset.tres')
+	#TODO attach day to player, process only if day 0
 	process_day()
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	for button in buttons.get_children():
+		button.pressed.connect(_on_action.bind(button))
 
 func _input(event):
 	if event.is_action_pressed("Key_X"):
@@ -129,31 +126,25 @@ func buy_item(item: String, price: int):
 		player.stats['gold'] -= price
 		player.inventory.create_and_add_item(item)
 	stat_label.display_stats(player)
-func _on_texture_button_pressed():
-	day_menu.position = get_viewport().get_mouse_position()
-	day_menu.popup()
-	pass # Replace with function body.
-
-
-func _on_day_menu_id_pressed(id):
-	match id:
-		0:
-			work.visible = !work.visible
-		1:
-			lessons.visible = !lessons.visible
-		2:
-			rest.visible = !rest.visible
-		3:
+	
+func _on_action(button):
+	match button.text:
+		'Jobs':
+			work.show()
+		'Classes':
+			lessons.show()
+		'Rest':
+			rest.show()
+		'Inventory':
 			inventory.visible = !inventory.visible
 			menu_panel.visible = true
-		4:
-			shop.visible = !shop.visible
-		5:
-			#TODO, add way to return from combat scene
-			var combat_scene: PackedScene = preload("uid://df0p3tawo2arq") #Combat scene uid
-			get_tree().change_scene_to_packed(combat_scene)
+		'Shop':
+			shop.show()
+		'Battle':
+			SceneLoader.load_scene("uid://df0p3tawo2arq")
+		_:
+			print("hello else")
 	menu_panel.visible = !menu_panel.visible
-
 
 func _on_close_button_pressed():
 	menu_panel.visible = false

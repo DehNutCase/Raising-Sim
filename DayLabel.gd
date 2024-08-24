@@ -5,10 +5,6 @@ extends RichTextLabel
 func _ready():
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func display_day(day: int):
 	day -= 1
 	var year: int = day / (4 * 28) + 1

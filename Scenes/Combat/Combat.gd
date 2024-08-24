@@ -44,9 +44,10 @@ func _ready():
 func _on_action(button):
 	match button.text:
 		'Attack':
-			print("hello")
 			var damage = Player.stats.strength - target.get_node("Enemy").stats.defense
 			target.update_hp(-damage)
+		'Flee':
+			exit_combat()
 		_:
 			print("hello else")
 
@@ -58,3 +59,6 @@ func _on_enemy_gui_input(event, clicked):
 			enemy.toggle_target(false)
 		clicked.toggle_target(true)
 		target = clicked
+
+func exit_combat() -> void:
+	SceneLoader.load_scene("uid://dphq852upsasd")

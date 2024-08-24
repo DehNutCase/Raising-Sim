@@ -10,8 +10,3 @@ func _ready():
 		self.get_child(i).position = Vector2(i * 200, 0)
 		self.get_child(i).update_label(rests.keys()[i])
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

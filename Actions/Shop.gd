@@ -13,8 +13,3 @@ func _ready():
 		self.get_child(i).item.prototype_id = items._prototypes.keys()[i]
 		self.get_child(i).update_labels()
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

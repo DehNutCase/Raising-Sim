@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=20 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
@@ -6,10 +6,7 @@
 [ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Constants/Player.gd" id="7_cp3kk"]
 [ext_resource type="Script" path="res://CtrlInventory.gd" id="8_cp80w"]
-[ext_resource type="Texture2D" uid="uid://b0tuu7ja243p2" path="res://Art/Button/blueBtnNormal.png" id="8_e60yo"]
-[ext_resource type="Texture2D" uid="uid://ca7g205vdwjm7" path="res://Art/Button/blueBtnTapped.png" id="9_jp02t"]
 [ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
-[ext_resource type="Script" path="res://DayMenu.gd" id="11_1yi6c"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Actions/Classes.gd" id="12_sb63u"]
@@ -86,15 +83,6 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 script = ExtResource("5_3yben")
-
-[node name="TextureButton" type="TextureButton" parent="Ui"]
-offset_left = 972.0
-offset_top = 244.0
-offset_right = 1228.0
-offset_bottom = 515.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("8_e60yo")
-texture_pressed = ExtResource("9_jp02t")
 
 [node name="PlayerControl" type="Control" parent="Ui"]
 layout_mode = 3
@@ -349,9 +337,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Skip"
 
-[node name="DayMenu" type="PopupMenu" parent="."]
-script = ExtResource("11_1yi6c")
-
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 offset_left = 180.0
 offset_right = 360.0
@@ -434,9 +419,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Battle"
 
-[connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="id_pressed" from="DayMenu" to="." method="_on_day_menu_id_pressed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/strength"]
 [editable path="GUI (Mouse Ignore)/Counters/magic"]
