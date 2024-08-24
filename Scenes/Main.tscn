@@ -119,10 +119,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 340.0
-offset_top = 60.0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = 220.0
+offset_top = -299.0
+offset_right = 520.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("8_cp80w")
@@ -138,15 +138,15 @@ anim_loop = false
 anim_loop_fade_in = false
 anim_expression = ""
 anim_motion = ""
-ParamAngleX = -5.52005
-ParamAngleY = 3.78069
-ParamAngleZ = 3.26815
+ParamAngleX = 0.0
+ParamAngleY = 0.0
+ParamAngleZ = 0.0
 ParamCheek = 0.0
 ParamFaceInkOn = 0.0
-ParamEyeLOpen = 0.0
+ParamEyeLOpen = 1.0
 ParamEyeLSmile = 0.0
 ParamEyeLForm = 0.0
-ParamEyeROpen = 0.0
+ParamEyeROpen = 1.0
 ParamEyeRSmile = 0.0
 ParamEyeRForm = 0.0
 ParamEyeBallX = 0.0
@@ -170,10 +170,10 @@ ParamMouthUp = 1.0
 ParamMouthDown = 0.0
 ParamMouthAngry = 0.0
 ParamMouthAngryLine = 0.0
-ParamBodyAngleX = 1.92595
+ParamBodyAngleX = 0.0
 ParamBodyAngleY = 0.0
 ParamBodyAngleZ = 0.0
-ParamBreath = 0.00983669
+ParamBreath = 0.0
 ParamLeftShoulderUp = 0.0
 ParamRightShoulderUp = 0.0
 ParamArmLA01 = 0.0
@@ -201,25 +201,25 @@ ParamHandRB = 0.0
 ParamAllX = 0.0
 ParamAllY = 0.0
 ParamAllRotate = 0.0
-ParamHairFront = 0.00731968
-ParamHairSideL = 0.00745839
-ParamHairSideR = 0.00745839
-ParamHairBack = 0.00696976
-ParamHairBackR = 0.00744553
-ParamHairBackL = 0.00744553
-ParamoHairMesh = 0.00513816
-ParamHairFrontFuwa = 0.00423348
-ParamHairSideFuwa = 0.00538584
-ParamHairBackFuwa = 0.0110456
-ParamWing = 0.000158072
-ParamRibbon = 0.0014962
-ParamHatBrim = 0.0036802
-ParamHatTop = -0.0041802
-ParamAccessory1 = -0.00127516
-ParamAccessory2 = 0.00137628
-ParamString = -0.00071128
-ParamRobeL = -0.000698545
-ParamRobeR = -0.000698545
+ParamHairFront = 0.0
+ParamHairSideL = 0.0
+ParamHairSideR = 0.0
+ParamHairBack = 0.0
+ParamHairBackR = 0.0
+ParamHairBackL = 0.0
+ParamoHairMesh = 0.0
+ParamHairFrontFuwa = 0.0
+ParamHairSideFuwa = 0.0
+ParamHairBackFuwa = 0.0
+ParamWing = 0.0
+ParamRibbon = 0.0
+ParamHatBrim = 0.0
+ParamHatTop = 0.0
+ParamAccessory1 = 0.0
+ParamAccessory2 = 0.0
+ParamString = 0.0
+ParamRobeL = 0.0
+ParamRobeR = 0.0
 ParamRobeFuwa = 0.0
 ParamHeartMissOn = 0.0
 ParamHeartBackMissOn = 0.0
@@ -303,10 +303,6 @@ gui_disable_input = true
 size = Vector2i(600, 600)
 render_target_update_mode = 4
 
-[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
-
-[node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
-
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
 custom_minimum_size = Vector2(1050, 500)
@@ -386,6 +382,57 @@ layout_mode = 2
 
 [node name="Icon" parent="GUI (Mouse Ignore)/Counters/resistance/Background" index="0"]
 texture = ExtResource("20_c7f2x")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+offset_left = 1160.0
+offset_top = 174.0
+offset_right = 1281.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MenuPanel" type="PanelContainer" parent="MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("11_sa3xm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/MenuPanel"]
+layout_mode = 2
+
+[node name="Jobs" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Jobs"
+
+[node name="Classes" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Classes"
+
+[node name="Rest" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Rest"
+
+[node name="Inventory" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Inventory"
+
+[node name="Shop" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Shop"
+
+[node name="Battle" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Battle"
 
 [connection signal="pressed" from="Ui/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]

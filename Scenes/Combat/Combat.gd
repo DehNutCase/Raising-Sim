@@ -1,43 +1,60 @@
 extends VBoxContainer
 
 @onready var buttons = $MarginContainer3/MenuPanel/HBoxContainer
-@onready var pos1 = $MarginContainer/HBoxContainer/Enemy/PanelContainer/VBoxContainer
-@onready var pos2 = $MarginContainer/HBoxContainer/Enemy2/PanelContainer/VBoxContainer
 
-var enemy = Enemy.new()
+@onready var pos1 = $MarginContainer/HBoxContainer/Enemy
+@onready var pos2 = $MarginContainer/HBoxContainer/Enemy2
+@onready var pos3 = $MarginContainer/HBoxContainer/Enemy3
+
+@onready var pos4 = $MarginContainer2/HBoxContainer/Enemy
+@onready var pos5 = $MarginContainer2/HBoxContainer/Enemy2
+@onready var pos6 = $MarginContainer2/HBoxContainer/Enemy3
+
+@onready var target = pos1
+
+@onready var positions= [pos1, pos2, pos3, pos4, pos5, pos6]
+var enemies: Array[Enemy] = []
 
 var base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
 		'defense', 'resistance']
 		
 func _ready():
 	
-	#TODO dynamically load portraits based on enemies & display or hide panel container to indicate target
-	var node = Enemy.new()
-	node.name = "Enemy"
-	pos2.get_node("Portrait").texture = load(node.portrait)
-	pos2.add_child(node)
-	update_hp(pos2)
+	#TODO dynamically display or hide panel container to indicate target
+	for i in range(4):
+		var node = Enemy.new()
+		node.name = "Enemy"
+		enemies.append(node)
+		
+	for enemy in positions:
+		enemy.gui_input.connect(_on_enemy_gui_input.bind(enemy))
+	
+	for i in range(len(enemies)):
+		positions[i].add_child(enemies[i])
+		positions[i].update_portrait()
+		positions[i].update_hp()
+		positions[i].show()
 	
 	for button in buttons.get_children():
-		button.pressed.connect(_on_button_pressed.bind(button))
+		button.pressed.connect(_on_action.bind(button))
+	
+	target.toggle_target(true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_button_pressed(button):
-	print(button.text)
+		
+func _on_action(button):
 	match button.text:
 		'Attack':
-			#TODO, add targeting
-			var damage = Player.stats.strength - pos2.get_node("Enemy").stats.defense
-			update_hp(pos2, -damage)
+			print("hello")
+			var damage = Player.stats.strength - target.get_node("Enemy").stats.defense
+			target.update_hp(-damage)
 		_:
 			print("hello else")
 
 	pass # Replace with function body.
 
-func update_hp(pos: Node, change: int = 0) -> void:
-	pos.get_node("Enemy").stats.current_hp += change
-	pos.get_node("Hp").text = "Hp: " + str(pos.get_node("Enemy").stats.current_hp)
+func _on_enemy_gui_input(event, clicked):
+	if event is InputEventMouseButton:
+		for enemy in positions:
+			enemy.toggle_target(false)
+		clicked.toggle_target(true)
+		target = clicked

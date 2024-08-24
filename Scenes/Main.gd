@@ -150,7 +150,7 @@ func _on_day_menu_id_pressed(id):
 			shop.visible = !shop.visible
 		5:
 			#TODO, add way to return from combat scene
-			var combat_scene: PackedScene = preload("res://Scenes/Combat.tscn")
+			var combat_scene: PackedScene = preload("uid://df0p3tawo2arq") #Combat scene uid
 			get_tree().change_scene_to_packed(combat_scene)
 	menu_panel.visible = !menu_panel.visible
 

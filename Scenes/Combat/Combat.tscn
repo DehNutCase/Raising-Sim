@@ -25,12 +25,15 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Enemy" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
+visible = false
 layout_mode = 2
 
 [node name="Enemy2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
+visible = false
 layout_mode = 2
 
 [node name="Enemy3" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -46,12 +49,15 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Enemy" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
+visible = false
 layout_mode = 2
 
 [node name="Enemy2" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
+visible = false
 layout_mode = 2
 
 [node name="Enemy3" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
