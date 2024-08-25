@@ -3,6 +3,7 @@ var cubism_model: GDCubismUserModel
 var effect_breath = GDCubismEffectBreath.new()
 var last_motion = { "group": "Idle", "no": 0 }
 var content_motion = { "group": "Idle", "no": 0 }
+var idle_motion = { "group": "Idle", "no": 0 }
 var happy_motion = { "group": "", "no": 5 }
 var success_motion = { "group": "", "no": 3 }
 var failure_motion = { "group": "", "no": 4 }
@@ -24,6 +25,7 @@ func _ready():
 func _on_motion_finished():
 	#TODO, figure out how to stop motion
 	cubism_model.add_child(effect_breath)
+	stop_motion()
 	
 	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5,10)).timeout
 	cubism_model.start_motion(
@@ -31,18 +33,25 @@ func _on_motion_finished():
 		last_motion.no,
 		GDCubismUserModel.PRIORITY_NORMAL
 	)
+	#TODO, change motion based on mood
 	last_motion = content_motion
 
 func start_motion(motion):
 	cubism_model.remove_child(effect_breath)
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_NORMAL)
-
+	
+func stop_motion():
+	cubism_model.start_motion(idle_motion.group, idle_motion.no, GDCubismUserModel.PRIORITY_FORCE)
+	await get_tree().create_timer(.5).timeout
+	cubism_model.stop_motion()
+	
 func start_expression(expression):
 	cubism_model.start_expression(expression)
 
 func job_motion(motion):
 	cubism_model.remove_child(effect_breath)
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+
 
 func queue_motion(motion):
 	last_motion = motion

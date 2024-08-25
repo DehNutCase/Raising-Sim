@@ -10,17 +10,15 @@ extends VBoxContainer
 @onready var pos5 = $MarginContainer2/HBoxContainer/Enemy2
 @onready var pos6 = $MarginContainer2/HBoxContainer/Enemy3
 
+@onready var positions= [pos1, pos2, pos3, pos4, pos5, pos6]
 @onready var target = pos1
 
-@onready var positions= [pos1, pos2, pos3, pos4, pos5, pos6]
 var enemies: Array[Enemy] = []
 
 var base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
 		'defense', 'resistance']
 		
 func _ready():
-	
-	#TODO dynamically display or hide panel container to indicate target
 	for i in range(4):
 		var node = Enemy.new()
 		node.name = "Enemy"

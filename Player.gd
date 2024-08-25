@@ -1,6 +1,7 @@
 extends Character
 
 var inventory: Inventory
+var day: int = 0
 
 func _init():
 	base_stats = {

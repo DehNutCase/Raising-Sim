@@ -311,7 +311,7 @@ theme = ExtResource("11_sa3xm")
 visible = false
 script = ExtResource("12_ktm7g")
 
-[node name="Classes" parent="Ui/MenuPanel" instance=ExtResource("10_jdif8")]
+[node name="Lessons" parent="Ui/MenuPanel" instance=ExtResource("10_jdif8")]
 visible = false
 script = ExtResource("12_sb63u")
 
@@ -387,13 +387,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Jobs"
+text = "Work"
 
 [node name="Classes" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Classes"
+text = "Lessons"
 
 [node name="Rest" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
 layout_mode = 2

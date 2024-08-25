@@ -6,12 +6,12 @@ var stat_name: String
 func _ready():
 	pass
 
-func display_stats(player):
+func display_stats():
 	text = "Stats:\n"
-	for stat in player.display_stats:
+	for stat in Player.display_stats:
 		var label = stat
 		if ('label' in Constants.stats[stat]):
 			label = Constants.stats[stat]['label']
 		if ('emoji' in Constants.stats[stat]):
 			label += " (" + Constants.stats[stat].emoji + ")"
-		text += label + ': ' + str(player.stats[stat]) + '\n'
+		text += label + ': ' + str(Player.stats[stat]) + '\n'
