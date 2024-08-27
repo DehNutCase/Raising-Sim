@@ -38,7 +38,7 @@ func _ready():
 	if (day == 0):
 		process_day()
 	else:
-		stat_label.display_stats(Player)
+		stat_label.display_stats()
 		day_label.display_day(day)
 		get_tree().call_group("StatBars", "display_stats", Player)
 		get_tree().call_group("Job_Button", "update_difficulty_color")	
