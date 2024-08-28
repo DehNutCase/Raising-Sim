@@ -103,14 +103,6 @@ func do_job(job: String) :
 #TODO, add animations for class and resting
 #TODO, display cost of rest and classes
 func do_class(lesson: String) :
-	#TODO add check for gold & toast message
-	"""
-	if Player.stats['gold'] > price:
-		Player.stats['gold'] -= price
-		Player.inventory.create_and_add_item(item)
-	else:
-		display_toast("Not enough gold!", "top", "center")
-	"""
 	var class_stats = Constants.classes[lesson]['stats']
 	var cost = 0
 	if'gold' in class_stats: cost = -class_stats.gold

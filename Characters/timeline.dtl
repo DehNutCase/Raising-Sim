@@ -1,3 +1,2 @@
-join Mao (mao_portrait) 1
-[wait_input]
+join Mao (mao_portrait) 1 [animation="Instant In Or Out"]
 Mao: Testing
