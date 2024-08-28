@@ -101,6 +101,7 @@ func do_job(job: String) :
 	process_day()
 	
 #TODO, add animations for class and resting
+#TODO, display cost of rest and classes
 func do_class(lesson: String) :
 	#TODO add check for gold & toast message
 	"""
@@ -111,15 +112,24 @@ func do_class(lesson: String) :
 		display_toast("Not enough gold!", "top", "center")
 	"""
 	var class_stats = Constants.classes[lesson]['stats']
+	var cost = 0
+	if'gold' in class_stats: cost = -class_stats.gold
+	if (cost > Player.stats['gold']):
+		display_toast("Not enough gold!", "top", "center")
+		return
 	process_stats(class_stats)
 	lessons.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
 	process_day()
 
-func do_rest(rest: String) :
-	#TODO add check for gold
+func do_rest(rest: String) -> void:
 	var rest_stats = Constants.rests[rest]['stats']
+	var cost = 0
+	if 'gold' in rest_stats: cost = -rest_stats.gold
+	if ( cost > Player.stats['gold']):
+		display_toast("Not enough gold!", "top", "center")
+		return
 	process_stats(rest_stats)
 	rests.visible = false
 	animation.animation.visible = true
@@ -140,7 +150,7 @@ func get_success_chance(job):
 	return 100.0 * adjusted_stats / task_total_stats - task['difficulty'] - Player.stats['stress']
 
 func buy_item(item: String, price: int):
-	if Player.stats['gold'] > price:
+	if Player.stats['gold'] >= price:
 		Player.stats['gold'] -= price
 		Player.inventory.create_and_add_item(item)
 	else:
