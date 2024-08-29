@@ -16,6 +16,7 @@ var annoyed_expression = "exp_08"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cubism_model = $PlayerSprite/PlayerModel
+	#For dev work only, remove this line and add assets to node when building
 	cubism_model.assets = 'res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json'
 	cubism_model.motion_finished.connect(_on_motion_finished)
 	effect_breath.name = "GDCubismEffectBreath"

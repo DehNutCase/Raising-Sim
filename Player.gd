@@ -2,6 +2,7 @@ extends Character
 
 var inventory: Inventory
 var day: int = 0
+var event_flags = {}
 
 func _init():
 	base_stats = {

@@ -7,6 +7,7 @@ extends DialogicPortrait
 func _ready():
 	set_meta('texture_holder_node', texture)
 	var node = get_meta('texture_holder_node')
+	#For dev work only, remove this line and add assets to node when building
 	model.assets = 'res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json'
 	#Due to the way dialogic works and issues with godot editor handling the camera, it's simpler
 	#To comment out the next line if you need to work on this scene

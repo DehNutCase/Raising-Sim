@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
+[ext_resource type="Script" path="res://Scenes/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Constants/Player.gd" id="7_cp3kk"]
-[ext_resource type="Script" path="res://CtrlInventory.gd" id="8_cp80w"]
 [ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
@@ -99,7 +99,7 @@ size_flags_vertical = 0
 [node name="Player" type="Node2D" parent="Ui/PlayerControl" groups=["Live2DPlayer"]]
 script = ExtResource("7_cp3kk")
 
-[node name="CtrlInventory" type="Control" parent="Ui/PlayerControl/Player"]
+[node name="PlayerInventory" type="Control" parent="Ui/PlayerControl/Player"]
 visible = false
 layout_mode = 3
 anchors_preset = 3
@@ -113,7 +113,7 @@ offset_right = 520.0
 offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
-script = ExtResource("8_cp80w")
+script = ExtResource("6_cueot")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 texture = SubResource("ViewportTexture_ltday")

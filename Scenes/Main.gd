@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player_model = $Ui/PlayerControl/Player
-@onready var inventory = $Ui/PlayerControl/Player/CtrlInventory
+@onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 
 @onready var stat_label = $Ui/MarginContainer/StatLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
@@ -31,12 +31,10 @@ var day: int:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Player.inventory = Inventory.new()
-	inventory.inventory = Player.inventory
-	Player.inventory.item_protoset = load('res://Constants/item_protoset.tres')
-	
+	#TODO, only do first time setup actions on day 0
 	if (day == 0):
 		process_day()
+		
 	else:
 		stat_label.display_stats()
 		day_label.display_day(day)
@@ -44,7 +42,8 @@ func _ready():
 		get_tree().call_group("Job_Button", "update_difficulty_color")	
 		
 	for button in buttons.get_children():
-		button.pressed.connect(_on_action.bind(button))
+		button.pressed.connect(_on_action.bind(button))	
+
 
 func _input(event):
 	if event.is_action_pressed("Key_X"):
