@@ -27,7 +27,8 @@ func _ready():
 	
 func _on_motion_finished():
 	#TODO, figure out how to stop motion
-	cubism_model.add_child(effect_breath)
+	if (!effect_breath.get_parent()):
+		cubism_model.add_child(effect_breath)
 	
 	if (last_motion != content_motion):
 		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(1,2)).timeout
@@ -41,7 +42,8 @@ func _on_motion_finished():
 	next_motion = content_motion
 
 func start_motion(motion):
-	cubism_model.remove_child(effect_breath)
+	if (effect_breath.get_parent()):
+		cubism_model.remove_child(effect_breath)
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_NORMAL)
 	
 	
@@ -49,7 +51,8 @@ func start_expression(expression):
 	cubism_model.start_expression(expression)
 
 func job_motion(motion):
-	cubism_model.remove_child(effect_breath)
+	if (effect_breath.get_parent()):
+		cubism_model.remove_child(effect_breath)
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
 
 
