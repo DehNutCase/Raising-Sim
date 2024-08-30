@@ -8,14 +8,14 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "mao_portrait",
+"default_portrait": "Mao",
 "description": "",
 "display_name": "Mao",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"mao_portrait": {
+"Mao": {
 "export_overrides": {
 "image": "\"\""
 },
@@ -23,7 +23,7 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1.0,
-"scene": "res://Characters/Mao.tscn"
+"scene": "res://Characters/Mao/Mao.tscn"
 }
 },
 "scale": 1.0

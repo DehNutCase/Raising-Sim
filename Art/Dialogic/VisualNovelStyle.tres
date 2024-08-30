@@ -20,13 +20,6 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_2cwwo"]
 script = ExtResource("2_b33rw")
 scene = ExtResource("3_mki4m")
-overrides = {
-"portrait_size_mode": "0"
-}
-
-[sub_resource type="Resource" id="Resource_u36ew"]
-script = ExtResource("2_b33rw")
-scene = ExtResource("4_fdkpq")
 overrides = {}
 
 [sub_resource type="Resource" id="Resource_jl832"]
@@ -40,6 +33,11 @@ overrides = {
 [sub_resource type="Resource" id="Resource_iw20j"]
 script = ExtResource("2_b33rw")
 scene = ExtResource("11_mn3sp")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_donri"]
+script = ExtResource("2_b33rw")
+scene = ExtResource("4_fdkpq")
 overrides = {}
 
 [sub_resource type="Resource" id="Resource_m0bqw"]
@@ -66,5 +64,5 @@ overrides = {}
 script = ExtResource("10_m83x8")
 name = "VisualNovelStyle"
 base_overrides = {}
-layers = Array[ExtResource("2_b33rw")]([SubResource("Resource_78cla"), SubResource("Resource_2cwwo"), SubResource("Resource_u36ew"), SubResource("Resource_jl832"), SubResource("Resource_iw20j"), SubResource("Resource_m0bqw"), SubResource("Resource_ax5gr"), SubResource("Resource_54hti"), SubResource("Resource_fapyf")])
+layers = Array[ExtResource("2_b33rw")]([SubResource("Resource_78cla"), SubResource("Resource_2cwwo"), SubResource("Resource_jl832"), SubResource("Resource_iw20j"), SubResource("Resource_donri"), SubResource("Resource_m0bqw"), SubResource("Resource_ax5gr"), SubResource("Resource_54hti"), SubResource("Resource_fapyf")])
 metadata/_latest_layer = 3

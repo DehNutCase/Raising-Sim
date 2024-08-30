@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1t7ya4n7qjuj"]
 
-[ext_resource type="Script" path="res://Characters/Mao.gd" id="1_5lmv2"]
+[ext_resource type="Script" path="res://Characters/Mao/Mao.gd" id="1_5lmv2"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ypy87"]
 viewport_path = NodePath("PlayerSprite/PlayerModel")
@@ -20,5 +20,3 @@ size = Vector2i(600, 600)
 render_target_update_mode = 4
 
 [node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="PlayerSprite/PlayerModel"]
-
-[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="PlayerSprite/PlayerModel"]

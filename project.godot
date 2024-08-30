@@ -19,18 +19,19 @@ config/icon="res://icon.svg"
 
 Constants="*res://Constants/Constants.gd"
 Player="*res://Player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Mao": "res://Characters/Mao.dch",
-"TestCharacter": "res://Characters/TestCharacter.dch"
+"Mao": "res://Characters/Mao/Mao.dch",
+"Mao_Portrait": "res://Characters/Mao/Mao_Portrait.dch",
+"Rice": "res://Characters/Rice/Rice.dch"
 }
 directories/dtl_directory={
 "timeline": "res://Characters/timeline.dtl"
