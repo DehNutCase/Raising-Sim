@@ -29,25 +29,26 @@ ToastParty="*res://addons/toastparty/toast-autoload.gd"
 [dialogic]
 
 directories/dch_directory={
-"Mao": "res://Characters/Mao.dch"
+"Mao": "res://Characters/Mao.dch",
+"TestCharacter": "res://Characters/TestCharacter.dch"
 }
 directories/dtl_directory={
 "timeline": "res://Characters/timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres"]
+layout/default_style="res://Art/Dialogic/VisualNovelStyle.tres"
 variables={}
-text/letter_speed=0.01
+text/letter_speed=0.0
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-animations/join_default_length=0.5
+animations/join_default_length=0.0
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
-animations/join_default_wait=true
+animations/join_default_wait=false
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
@@ -55,6 +56,9 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+history/simple_history_enabled=true
+history/full_history_enabled=false
+animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
 
 [display]
 

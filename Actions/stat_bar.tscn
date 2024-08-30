@@ -23,6 +23,7 @@ offset_right = 256.0
 offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 0
 value = 50.0
 texture_over = ExtResource("2_qej04")
 texture_progress = ExtResource("3_0n0pf")

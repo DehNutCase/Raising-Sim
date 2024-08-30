@@ -1,2 +1,10 @@
-join Mao (mao_portrait) 1 [animation="Instant In Or Out"]
-Mao: Testing
+join Mao (mao_portrait) 1 [animation="Instant In Or Out" length="0"]
+join TestCharacter 2 [animation="Instant In Or Out" length="0"]
+Mao: Start
+TestCharacter: Testing
+Test
+- 1
+	Mao: Choice
+- 2
+	TestCharacter: Choice2
+End
