@@ -213,5 +213,10 @@ const stats = {
 		'label': 'Gold',
 		'emoji': '🪙',
 		'max': 1000000,
-	}
+	},
+	'bonus_exp' = {
+		'label': 'Exp Bonus',
+		'emoji': '',
+		'min' : 0,
+	},
 }

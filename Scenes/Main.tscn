@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Scenes/PlayerInventory.gd" id="6_cueot"]
-[ext_resource type="Script" path="res://Constants/Player.gd" id="7_cp3kk"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="7_cp3kk"]
 [ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
