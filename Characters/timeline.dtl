@@ -1,3 +1,4 @@
+[background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
 join Mao 1 [animation="Instant In Or Out" length="0"]
 join Rice 2 [animation="Instant In Or Out" length="0"]
 Mao_Portrait: Start

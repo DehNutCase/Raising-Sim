@@ -31,11 +31,9 @@ func _on_motion_finished():
 		cubism_model.add_child(effect_breath)
 	
 	if (last_motion != content_motion):
-		print("Not content")
 		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(1,2)).timeout
 		start_motion(next_motion)
 	else:
-		print("Content")
 		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5, 15)).timeout
 		start_motion(next_motion)
 		

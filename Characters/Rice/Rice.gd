@@ -13,6 +13,8 @@ func _ready():
 	#Due to the way dialogic works and issues with godot editor handling the camera, it's simpler
 	#To comment out the next line if you need to work on this scene
 	texture.position = Vector2(model.get_viewport().size) * Vector2(-0.5, -1)
+	model.motion_finished.connect(_on_motion_finished)
+	_on_motion_finished()
 
 func _get_covered_rect() -> Rect2:
 	if has_meta('texture_holder_node') and get_meta('texture_holder_node', null) != null and is_instance_valid(get_meta('texture_holder_node')):
@@ -20,3 +22,7 @@ func _get_covered_rect() -> Rect2:
 		if node is Sprite2D:
 			return Rect2(texture.position, model.get_viewport().size)
 	return Rect2()
+	
+func _on_motion_finished():
+	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5, 15)).timeout
+	model.start_motion("Tap@Body", 0, GDCubismUserModel.PRIORITY_FORCE)
