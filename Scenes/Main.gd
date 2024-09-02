@@ -31,10 +31,10 @@ var day: int:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#TODO, only do first time setup actions on day 0
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if (day == 0):
 		process_day()
-		
+		Dialogic.start('timeline')
 	else:
 		display_stats()
 		day_label.display_day(day)
@@ -42,12 +42,10 @@ func _ready():
 	for button in buttons.get_children():
 		button.pressed.connect(_on_action.bind(button))	
 
-
 func _input(event):
 	if event.is_action_pressed("Key_X"):
 		print('x is pressed')
 	pass
-
 
 func process_day():
 	day +=1
@@ -231,5 +229,8 @@ func process_stats(stats):
 
 func display_stats() -> void:
 	stat_label.display_stats()
-	get_tree().call_group("StatBars", "display_stats", Player)
+	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
+
+func _on_dialogic_signal(item: String) -> void:
+	add_item(item)

@@ -4,8 +4,9 @@ join Rice 2 [animation="Instant In Or Out" length="0"]
 Mao_Portrait: Start
 Rice: Testing
 Rice: Test
-- 1
-	Mao_Portrait: Choice
+- Accept Robes
+	[signal arg="apprentice_robes"]
+	Mao_Portrait: Okay, thank you.
 - 2
-	Rice: Choice2
+	Rice: Hmm, if you say so.
 Rice: End

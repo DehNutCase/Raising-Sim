@@ -7,10 +7,10 @@ extends MarginContainer
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	display_stats(Player)
+	display_stats()
 	pass # Replace with function body.
 
-func display_stats(character):
+func display_stats():
 	label.text = str(Constants.stats[stat]['label'])
-	value.text = str(character.stats[stat])
+	value.text = str(Player.stats[stat])
 	pass
