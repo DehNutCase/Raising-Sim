@@ -7,6 +7,7 @@ script = ExtResource("1_y24pw")
 json_data = "[
     {
         \"daily_stats\": \"{}\",
+		\"stats\": \"{\\n\\\"strength\\\": 10\\n}\",
         \"description\": \"A piece of furniture to sleep on.\",
         \"height\": 2,
         \"id\": \"bed\",
@@ -16,7 +17,8 @@ json_data = "[
         \"width\": 2
     },
     {
-        \"daily_stats\": \"{\\\"strength\\\":10}\",
+        \"daily_stats\": \"{\\n\\\"strength\\\": 10\\n}\",
+		\"stats\": \"{}\",
         \"description\": \"A tutorial helper.\",
         \"height\": 2,
         \"id\": \"tutori\",
@@ -27,6 +29,7 @@ json_data = "[
     },
     {
         \"daily_stats\": \"{}\",
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\",
         \"description\": \"A rich, lazy cat.\",
         \"height\": 2,
         \"id\": \"goldie\",

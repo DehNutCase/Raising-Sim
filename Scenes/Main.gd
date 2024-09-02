@@ -36,10 +36,8 @@ func _ready():
 		process_day()
 		
 	else:
-		stat_label.display_stats()
+		display_stats()
 		day_label.display_day(day)
-		get_tree().call_group("StatBars", "display_stats", Player)
-		get_tree().call_group("Job_Button", "update_difficulty_color")	
 		
 	for button in buttons.get_children():
 		button.pressed.connect(_on_action.bind(button))	
@@ -65,10 +63,8 @@ func process_day():
 		if 'max' in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]['max']:
 			Player.stats[stat] = Constants.stats[stat]['max']
 	
-	stat_label.display_stats()
+	display_stats()
 	day_label.display_day(day)
-	get_tree().call_group("StatBars", "display_stats", Player)
-	get_tree().call_group("Job_Button", "update_difficulty_color")	
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	
@@ -143,11 +139,17 @@ func get_success_chance(job):
 func buy_item(item: String, price: int):
 	if Player.stats['gold'] >= price:
 		Player.stats['gold'] -= price
-		Player.inventory.create_and_add_item(item)
+		add_item(item)
 	else:
 		display_toast("Not enough gold!", "top", "center")
-	stat_label.display_stats()
-	
+	display_stats()
+
+func add_item(item_name: String):
+	Player.inventory.create_and_add_item(item_name)
+	var item = Player.inventory.get_item_by_id(item_name)
+	for stat in item.get_property('stats'):
+		Player.stats[stat] += item.get_property('stats')[stat]
+		
 func _on_action(button):
 	var open_menu: String
 	for menu in menus:
@@ -226,3 +228,8 @@ func process_stats(stats):
 		else:
 			Player.stats[stat] += stats[stat]
 	display_toast(toast, "top", "center")
+
+func display_stats() -> void:
+	stat_label.display_stats()
+	get_tree().call_group("StatBars", "display_stats", Player)
+	get_tree().call_group("Job_Button", "update_difficulty_color")	
