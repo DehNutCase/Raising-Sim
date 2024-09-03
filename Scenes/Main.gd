@@ -34,7 +34,8 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if (day == 0):
 		process_day()
-		Dialogic.start('timeline')
+		#TODO, uncomment this line
+		#Dialogic.start('timeline')
 	else:
 		display_stats()
 		day_label.display_day(day)
@@ -78,16 +79,16 @@ func do_job(job: String) :
 	var job_stats = Constants.jobs[job]['stats']
 	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job)
-	
 	if ( get_success_chance(job) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
 		process_stats(job_stats)
+		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if 'stress' in job_stats:
 			var stats = {'stress': job_stats['stress']}
 			process_stats(stats)
-
+		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain/2
 	work.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
@@ -131,7 +132,12 @@ func get_success_chance(job):
 			adjusted_stats += (Player.stats[stat] - task.required_stats[stat])/2
 		else:
 			adjusted_stats += Player.stats[stat] - task.required_stats[stat]
-	
+	task_total_stats += task.proficiency
+	if (job in Player.proficiencies):
+		adjusted_stats += Player.proficiencies[job]
+	else:
+		Player.proficiencies[job] = 0
+		
 	return 100.0 * adjusted_stats / task_total_stats - task['difficulty'] - Player.stats['stress']
 
 func buy_item(item: String, price: int):

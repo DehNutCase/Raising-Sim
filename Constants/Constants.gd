@@ -13,6 +13,8 @@ const jobs = {
 			'strength' : 5,
 		},
 		'difficulty' : -50,
+		'proficiency': 100,
+		'proficiency_gain': 10,
 	},
 	'masonry' : {
 		'stats': {
@@ -26,6 +28,8 @@ const jobs = {
 			'strength' : 200,
 		},
 		'difficulty' : -50,
+		'proficiency': 200,
+		'proficiency_gain': 10,
 	},
 	'tutoring' : {
 		'stats': {
@@ -39,6 +43,8 @@ const jobs = {
 			'magic' : 200,
 		},
 		'difficulty' : -50,
+		'proficiency': 200,
+		'proficiency_gain': 15,
 	},
 	"wizard's apprentice" : {
 		'stats': {
@@ -54,6 +60,8 @@ const jobs = {
 			'magic' : 300,
 		},
 		'difficulty' : -50,
+		'proficiency': 300,
+		'proficiency_gain': 20,
 	},
 	'acolyte' : {
 		'stats': {
@@ -68,6 +76,8 @@ const jobs = {
 			'max_mp': 200,
 		},
 		'difficulty' : -50,
+		'proficiency': 200,
+		'proficiency_gain': 25,
 	},
 }
 
