@@ -9,7 +9,7 @@ var stat_name = ""
 func _ready():
 	pass # Replace with function body.
 
-func display_stats(player):
+func display_stats():
 	var tween = create_tween()
-	tween.tween_property(stat_bar, 'value', player.stats[stat_name], .6)
-	stat_label.text = Constants.stats[stat_name]['label'] + ': ' + str(player.stats[stat_name])
+	tween.tween_property(stat_bar, 'value', Player.stats[stat_name], .6)
+	stat_label.text = Constants.stats[stat_name]['label'] + ': ' + str(Player.stats[stat_name])

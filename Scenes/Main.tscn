@@ -29,26 +29,51 @@ viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_bqq6y")
 
+[node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
+offset_left = 180.0
+offset_right = 1032.0
+offset_bottom = 160.0
+mouse_filter = 2
+theme = ExtResource("11_sa3xm")
+
+[node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
+layout_mode = 2
+
+[node name="strength" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+
+[node name="magic" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+
+[node name="Icon" parent="GUI (Mouse Ignore)/Counters/magic/Background" index="0"]
+texture = ExtResource("19_1gghe")
+
+[node name="defense" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+
+[node name="Icon" parent="GUI (Mouse Ignore)/Counters/defense/Background" index="0"]
+texture = ExtResource("19_88f8e")
+
+[node name="resistance" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+
+[node name="Icon" parent="GUI (Mouse Ignore)/Counters/resistance/Background" index="0"]
+texture = ExtResource("20_c7f2x")
+
 [node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="Ui"]
 layer = -1
 
-[node name="BackgroundControl" type="Control" parent="Ui"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Background" type="Sprite2D" parent="Ui/BackgroundControl"]
+[node name="Background" type="Sprite2D" parent="Ui/BackgroundLayer"]
+position = Vector2(640, 360)
 texture = ExtResource("2_r2e40")
 offset = Vector2(0, -50)
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -135,10 +160,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -5.24783
-offset_top = -3.06659
-offset_right = 5.24783
-offset_bottom = 3.06659
+offset_left = -525.0
+offset_top = -250.0
+offset_right = 525.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("11_sa3xm")
@@ -173,36 +198,9 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Skip"
 
-[node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
-offset_left = 180.0
-offset_right = 360.0
-offset_bottom = 140.0
-mouse_filter = 2
-theme = ExtResource("11_sa3xm")
-
-[node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
-layout_mode = 2
-
-[node name="strength" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-
-[node name="magic" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-
-[node name="Icon" parent="GUI (Mouse Ignore)/Counters/magic/Background" index="0"]
-texture = ExtResource("19_1gghe")
-
-[node name="defense" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-
-[node name="Icon" parent="GUI (Mouse Ignore)/Counters/defense/Background" index="0"]
-texture = ExtResource("19_88f8e")
-
-[node name="resistance" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-
-[node name="Icon" parent="GUI (Mouse Ignore)/Counters/resistance/Background" index="0"]
-texture = ExtResource("20_c7f2x")
+[node name="Stats" parent="Ui/MenuPanel" instance=ExtResource("16_vbgfp")]
+visible = false
+script = null
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 anchors_preset = 3
@@ -284,7 +282,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Work"
+text = "Stats"
 
 [node name="Classes" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2

@@ -10,6 +10,7 @@ extends Node2D
 @onready var lessons = $Ui/MenuPanel/Lessons
 @onready var rest = $Ui/MenuPanel/Rest
 @onready var shop = $Ui/MenuPanel/Shop
+@onready var stats = $Ui/MenuPanel/Stats
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var buttons = $MarginContainer3/MenuPanel/VBoxContainer
@@ -17,7 +18,7 @@ extends Node2D
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
-@onready var menus = [work, lessons, rest, shop]
+@onready var menus = [work, lessons, rest, shop, stats]
 
 var jobs = Constants.jobs
 var classes = Constants.classes
@@ -179,6 +180,8 @@ func _on_action(button):
 			shop.show()
 		'Battle':
 			SceneLoader.load_scene("uid://df0p3tawo2arq")
+		'Stats':
+			stats.show()
 		_:
 			print("hello else")
 			
