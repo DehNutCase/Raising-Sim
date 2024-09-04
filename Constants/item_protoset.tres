@@ -30,13 +30,13 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten3.png\",
         \"name\": \"Goldie\",
         \"price\": 5000,
-        \"stats\": \"\"
+        \"stats\": \"{}\"
     },
     {
         \"daily_stats\": \"{}\",
         \"description\": \"Well crafted robes suitable for an apprentice.\",
         \"id\": \"apprentice_robes\",
-        \"image\": \"\",
+        \"image\": \"res://Art/grey-kitten3.png\",
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
         \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"

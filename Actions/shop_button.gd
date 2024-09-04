@@ -23,3 +23,12 @@ func update_labels():
 			if (daily_stats[stat] > 0):
 				texture.tooltip_text += '+'
 			texture.tooltip_text += ' ' + str(daily_stats[stat]) + ' ' + Constants.stats[stat].label
+			
+	var stats:Dictionary = item.get_property('stats', '{}')
+	if (!stats.keys().is_empty()):
+		texture.tooltip_text += "\nStats:"
+		for stat in stats.keys():
+			texture.tooltip_text += ' '
+			if (stats[stat] > 0):
+				texture.tooltip_text += '+'
+			texture.tooltip_text += ' ' + str(stats[stat]) + ' ' + Constants.stats[stat].label
