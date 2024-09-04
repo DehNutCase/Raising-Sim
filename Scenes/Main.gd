@@ -13,6 +13,7 @@ extends Node2D
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var buttons = $MarginContainer3/MenuPanel/VBoxContainer
+@onready var buttons2 = $MarginContainer4/MenuPanel/VBoxContainer
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
@@ -41,6 +42,8 @@ func _ready():
 		day_label.display_day(day)
 		
 	for button in buttons.get_children():
+		button.pressed.connect(_on_action.bind(button))	
+	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))	
 
 func _input(event):
@@ -153,7 +156,8 @@ func add_item(item_name: String):
 	var item = Player.inventory.get_item_by_id(item_name)
 	for stat in item.get_property('stats'):
 		Player.stats[stat] += item.get_property('stats')[stat]
-		
+
+#TODO, edit new menu bar with new buttons (add stats page)
 func _on_action(button):
 	var open_menu: String
 	for menu in menus:

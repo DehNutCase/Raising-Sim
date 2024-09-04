@@ -205,10 +205,17 @@ layout_mode = 2
 texture = ExtResource("20_c7f2x")
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 1160.0
-offset_top = 174.0
-offset_right = 1281.0
+offset_top = 120.0
+offset_right = 1280.0
 offset_bottom = 720.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
@@ -250,6 +257,60 @@ size_flags_vertical = 3
 text = "Shop"
 
 [node name="Battle" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Battle"
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 720.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MenuPanel" type="PanelContainer" parent="MarginContainer4"]
+layout_mode = 2
+theme = ExtResource("11_sa3xm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4/MenuPanel"]
+layout_mode = 2
+
+[node name="Jobs" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Work"
+
+[node name="Classes" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Lessons"
+
+[node name="Rest" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Rest"
+
+[node name="Inventory" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Inventory"
+
+[node name="Shop" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Shop"
+
+[node name="Battle" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
