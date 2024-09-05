@@ -3,7 +3,7 @@ extends Node2D
 @onready var player_model = $Ui/PlayerControl/Player
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 
-@onready var stat_label = $Ui/MarginContainer/StatLabel
+@onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
 
 @onready var work = $Ui/MenuPanel/Work
@@ -159,6 +159,7 @@ func add_item(item_name: String):
 		Player.stats[stat] += item.get_property('stats')[stat]
 
 #TODO, edit new menu bar with new buttons (add stats page)
+#TODO, add 'Background' and 'Skills' inventories
 func _on_action(button):
 	var open_menu: String
 	for menu in menus:
@@ -241,7 +242,8 @@ func process_stats(stats):
 	display_toast(toast, "top", "center")
 
 func display_stats() -> void:
-	stat_label.display_stats()
+	stats.display_stats()
+	gold_label.display_gold()
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 

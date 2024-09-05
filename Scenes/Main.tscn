@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=21 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Scenes/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="7_cp3kk"]
+[ext_resource type="Script" path="res://Scenes/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
@@ -79,14 +80,14 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="StatLabel" type="Label" parent="Ui/MarginContainer"]
+[node name="GoldLabel" type="Label" parent="Ui/MarginContainer"]
 texture_filter = 4
 layout_mode = 2
 text = "StatLabel"
 label_settings = SubResource("LabelSettings_icocv")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_7t2yx")
+script = ExtResource("8_8l10c")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Ui"]
 anchors_preset = 1
@@ -198,9 +199,13 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Skip"
 
-[node name="Stats" parent="Ui/MenuPanel" instance=ExtResource("16_vbgfp")]
+[node name="Stats" type="Label" parent="Ui/MenuPanel"]
 visible = false
-script = null
+texture_filter = 4
+layout_mode = 2
+text = "StatLabel"
+label_settings = SubResource("LabelSettings_icocv")
+script = ExtResource("2_7t2yx")
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 anchors_preset = 3
