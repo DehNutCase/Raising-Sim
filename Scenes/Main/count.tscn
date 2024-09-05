@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://do8baktjfoyyj"]
 
 [ext_resource type="Texture2D" uid="uid://cqxfs6ybpw7c8" path="res://Art/Button/greyRectNormal.png" id="1_dwgca"]
-[ext_resource type="Script" path="res://Scenes/count.gd" id="1_wv4gm"]
+[ext_resource type="Script" path="res://Scenes/Main/count.gd" id="1_wv4gm"]
 [ext_resource type="Texture2D" uid="uid://cvdstmlv7cfba" path="res://Art/Kittens/Sleeping-Kittens-black/black-kitten4.png" id="2_thm8r"]
 [ext_resource type="LabelSettings" uid="uid://do4j8mhc6qeqr" path="res://Art/Background/LabelSettings.tres" id="3_6mbsd"]
 

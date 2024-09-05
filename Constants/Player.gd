@@ -1,6 +1,7 @@
 extends Character
 
 var inventory: Inventory
+var background_inventory: Inventory
 var day: int = 0
 var event_flags = {}
 var proficiencies = {}
@@ -13,6 +14,6 @@ func _init():
 		'defense': 5,
 		'resistance': 10,
 		'level': 1,
-		'gold': 1000,
-		'bonus_exp': 11, #in %, 100 bonus exp doubles exp gain
+		'gold': 0,
+		'bonus_exp': 10, #in %, 100 bonus exp doubles exp gain
 	}

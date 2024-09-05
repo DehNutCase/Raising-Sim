@@ -1,26 +1,32 @@
-[gd_scene load_steps=21 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=23 format=3 uid="uid://dphq852upsasd"]
 
-[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_bqq6y"]
-[ext_resource type="Script" path="res://StatLabel.gd" id="2_7t2yx"]
+[ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
+[ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
-[ext_resource type="Script" path="res://DayLabel.gd" id="5_3yben"]
-[ext_resource type="Script" path="res://Scenes/PlayerInventory.gd" id="6_cueot"]
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="7_cp3kk"]
-[ext_resource type="Script" path="res://Scenes/GoldLabel.gd" id="8_8l10c"]
+[ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
+[ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
+[ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
+[ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="PackedScene" uid="uid://i2jvgsn2dtdi" path="res://Actions/Work.tscn" id="10_jdif8"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Actions/Classes.gd" id="12_sb63u"]
+[ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
 [ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
 [ext_resource type="PackedScene" uid="uid://b41yn518gd77p" path="res://Actions/Shop.tscn" id="16_vbgfp"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Actions/Animation.tscn" id="17_5xmvy"]
-[ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/count.tscn" id="17_im62w"]
+[ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
 [ext_resource type="Texture2D" uid="uid://co0nxq2ekveyb" path="res://Art/Kittens/Sleeping-Kittens-blanc/cute-kitten4.png" id="19_1gghe"]
 [ext_resource type="Texture2D" uid="uid://bdbdfxdgb1i3k" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten4.png" id="19_88f8e"]
 [ext_resource type="Texture2D" uid="uid://beda43km5h356" path="res://Art/Kittens/Sleeping-Kittens-outlines/outlines-kitten4.png" id="20_c7f2x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
 font_size = 28
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8ogb"]
+font_size = 20
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
@@ -72,18 +78,18 @@ texture = ExtResource("2_r2e40")
 offset = Vector2(0, -50)
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 145.0
+offset_bottom = 59.0
 mouse_filter = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="GoldLabel" type="Label" parent="Ui/MarginContainer"]
 texture_filter = 4
 layout_mode = 2
-text = "StatLabel"
+text = "GoldLabel"
 label_settings = SubResource("LabelSettings_icocv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -96,18 +102,15 @@ anchor_right = 1.0
 offset_left = -64.0
 offset_bottom = 64.0
 grow_horizontal = 0
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="DayLabel" type="RichTextLabel" parent="Ui/MarginContainer2"]
-texture_filter = 4
+[node name="DayLabel" type="Label" parent="Ui/MarginContainer2"]
 layout_mode = 2
 text = "DayLabel"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+label_settings = SubResource("LabelSettings_k8ogb")
 script = ExtResource("5_3yben")
 
 [node name="PlayerControl" type="Control" parent="Ui"]
@@ -134,12 +137,23 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 220.0
-offset_top = -299.0
+offset_top = -300.0
 offset_right = 520.0
-offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("6_cueot")
+
+[node name="BackgroundInventory" type="Control" parent="Ui/PlayerControl/Player"]
+visible = false
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0
+offset_top = -300.0
+offset_right = -220.0
+grow_vertical = 0
+script = ExtResource("12_thnkb")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 texture = SubResource("ViewportTexture_ltday")
@@ -293,7 +307,7 @@ text = "Stats"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Lessons"
+text = "Background"
 
 [node name="Rest" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2

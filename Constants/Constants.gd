@@ -230,3 +230,9 @@ const stats = {
 		'min' : 0,
 	},
 }
+
+const constants = {
+	'days_in_month' = 28,
+	'months_in_year' = 4,
+	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
+}

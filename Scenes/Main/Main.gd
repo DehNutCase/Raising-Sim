@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player_model = $Ui/PlayerControl/Player
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
+@onready var background = $Ui/PlayerControl/Player/BackgroundInventory
 
 @onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
@@ -18,7 +19,7 @@ extends Node2D
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
-@onready var menus = [work, lessons, rest, shop, stats]
+@onready var menus = [work, lessons, rest, shop, stats,]
 
 var jobs = Constants.jobs
 var classes = Constants.classes
@@ -53,9 +54,16 @@ func _input(event):
 	pass
 
 func process_day():
+	if (day % Constants.constants.days_in_month == 0):
+		var items = inventory.inventory.get_items().duplicate()
+		items.append_array(background.inventory.get_items())
+		for item in items:
+			for stat in item.get_property('monthly_stats'):
+				Player.stats[stat] += item.get_property('monthly_stats')[stat]
+		
 	day +=1
-	
-	var items = inventory.inventory.get_items()
+	var items = inventory.inventory.get_items().duplicate()
+	items.append_array(background.inventory.get_items())
 	for item in items:
 		for stat in item.get_property('daily_stats'):
 			Player.stats[stat] += item.get_property('daily_stats')[stat]
@@ -183,6 +191,9 @@ func _on_action(button):
 			SceneLoader.load_scene("uid://df0p3tawo2arq")
 		'Stats':
 			stats.show()
+		'Background':
+			background.visible = !background.visible
+			menu_panel.visible = true
 		_:
 			print("hello else")
 			

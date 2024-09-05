@@ -3,7 +3,12 @@ extends Node2D
 @onready var texture = $TextureRect
 @onready var item = $InventoryItem
 @onready var button = $Button
-
+var tooltip:
+	get: 
+		return texture.tooltip_text
+	set(value):
+		texture.tooltip_text = value
+		
 func _ready():
 	update_labels()
 	
@@ -14,21 +19,32 @@ func _on_button_pressed():
 func update_labels():
 	texture.texture = item.get_texture();
 	button.text = 'Buy: ' + str(item.get_property('price', 0))
-	texture.tooltip_text = item.get_property('description', 'tooltip error')
-	var daily_stats:Dictionary = item.get_property('daily_stats', '{}')
+	tooltip = item.get_property('description', 'tooltip error')
+	var milliseconds: int = 0
+
+	var daily_stats:Dictionary = item.get_property('daily_stats', {})
 	if (!daily_stats.keys().is_empty()):
-		texture.tooltip_text += "\nDaily Stats:"
+		tooltip += "\nDaily Stats:"
 		for stat in daily_stats.keys():
-			texture.tooltip_text += ' '
+			tooltip += ' '
 			if (daily_stats[stat] > 0):
-				texture.tooltip_text += '+'
-			texture.tooltip_text += ' ' + str(daily_stats[stat]) + ' ' + Constants.stats[stat].label
-			
-	var stats:Dictionary = item.get_property('stats', '{}')
+				tooltip += '+'
+			tooltip += str(daily_stats[stat]) + ' ' + Constants.stats[stat].label
+	
+	var stats:Dictionary = item.get_property('stats', {})
 	if (!stats.keys().is_empty()):
-		texture.tooltip_text += "\nStats:"
+		tooltip += "\nStats:"
 		for stat in stats.keys():
-			texture.tooltip_text += ' '
+			tooltip += ' '
 			if (stats[stat] > 0):
-				texture.tooltip_text += '+'
-			texture.tooltip_text += ' ' + str(stats[stat]) + ' ' + Constants.stats[stat].label
+				tooltip += '+'
+			tooltip += str(stats[stat]) + ' ' + Constants.stats[stat].label
+			
+	var monthly_stats:Dictionary = item.get_property('monthly_stats', {})
+	if (!monthly_stats.keys().is_empty()):
+		tooltip += "\nMonthly Stats:"
+		for stat in monthly_stats.keys():
+			tooltip += ' '
+			if (monthly_stats[stat] > 0):
+				tooltip += '+'
+			tooltip += str(monthly_stats[stat]) + ' ' + Constants.stats[stat].label

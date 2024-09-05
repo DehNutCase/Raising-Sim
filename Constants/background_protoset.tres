@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemProtoset" load_steps=2 format=3 uid="uid://bsct3tdtvjgxe"]
+
+[ext_resource type="Script" path="res://addons/gloot/core/item_protoset.gd" id="1_nq8p2"]
+
+[resource]
+script = ExtResource("1_nq8p2")
+json_data = "[
+    {
+        \"daily_stats\": \"{}\",
+        \"description\": \"An employee of the royal family. Unconditional access to part time jobs and academy classes. Monthly salary of 1000g.\",
+        \"id\": \"royal_backing\",
+        \"image\": \"uid://doycqxwp1io2v\",
+        \"monthly_stats\": \"{\\n\\\"gold\\\": 1000\\n}\",
+        \"name\": \"Roya Backing\",
+        \"stats\": \"{}\"
+    }
+]"
