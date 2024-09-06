@@ -38,6 +38,7 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if (day == 0):
 		for inventory_name in Player.inventories:
+			Player[inventory_name].item_added.connect(_on_inventory_item_added)
 			for starting_item in Player.starting_items[inventory_name]:
 				Player[inventory_name].create_and_add_item(starting_item)
 		process_day()
@@ -161,16 +162,11 @@ func get_success_chance(job):
 func buy_item(item: String, price: int):
 	if Player.stats["gold"] >= price:
 		Player.stats["gold"] -= price
-		add_item(item)
+		Player.inventory.create_and_add_item(item)
 	else:
 		display_toast("Not enough gold!", "top", "center")
 	display_stats()
 
-func add_item(item_name: String):
-	Player.inventory.create_and_add_item(item_name)
-	var item = Player.inventory.get_item_by_id(item_name)
-	for stat in item.get_property("stats"):
-		Player.stats[stat] += item.get_property("stats")[stat]
 
 func _on_action(button):
 	var open_menu: String
@@ -268,8 +264,8 @@ func display_stats() -> void:
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 
 func _on_dialogic_signal(item: String) -> void:
-	add_item(item)
-
+	Player.inventory.create_and_add_item(item)
 
 func _on_inventory_item_added(item):
-	pass # Replace with function body.
+	for stat in item.get_property("stats"):
+		Player.stats[stat] += item.get_property("stats")[stat]
