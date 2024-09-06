@@ -11,5 +11,5 @@ func _ready():
 
 func display_stats():
 	var tween = create_tween()
-	tween.tween_property(stat_bar, 'value', Player.stats[stat_name], .6)
-	stat_label.text = Constants.stats[stat_name]['label'] + ': ' + str(Player.stats[stat_name])
+	tween.tween_property(stat_bar, "value", Player.stats[stat_name], .6)
+	stat_label.text = Constants.stats[stat_name]["label"] + ": " + str(Player.stats[stat_name])

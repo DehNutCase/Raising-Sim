@@ -8,10 +8,10 @@ func _ready():
 
 func display_gold():
 	text = ""
-	if ('gold' in Player.display_stats):
-		var label = 'gold'
-		if ('label' in Constants.stats.gold):
-			label = Constants.stats.gold['label']
-		if ('emoji' in Constants.stats.gold):
+	if ("gold" in Player.display_stats):
+		var label = "gold"
+		if ("label" in Constants.stats.gold):
+			label = Constants.stats.gold["label"]
+		if ("emoji" in Constants.stats.gold):
 			label += " (" + Constants.stats.gold.emoji + ")"
-		text += label + ': ' + str(Player.stats.gold) + '\n'
+		text += label + ": " + str(Player.stats.gold) + "\n"

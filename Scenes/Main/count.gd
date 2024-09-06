@@ -11,6 +11,6 @@ func _ready():
 	pass # Replace with function body.
 
 func display_stats():
-	label.text = str(Constants.stats[stat]['label'])
+	label.text = str(Constants.stats[stat]["label"])
 	value.text = str(Player.stats[stat])
 	pass

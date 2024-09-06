@@ -2,6 +2,13 @@ extends Character
 
 var inventory: Inventory
 var background_inventory: Inventory
+var skill_inventory: Inventory
+var inventories: Array[String] = ['inventory', 'background_inventory', 'skill_inventory',]
+var starting_items = { 
+	'inventory': [], 
+	'background_inventory': ['royal_backing'],
+	'skill_inventory': ['quick_learner'],
+	}
 var day: int = 0
 var event_flags = {}
 var proficiencies = {}
@@ -15,5 +22,5 @@ func _init():
 		'resistance': 10,
 		'level': 1,
 		'gold': 0,
-		'bonus_exp': 10, #in %, 100 bonus exp doubles exp gain
+		'bonus_exp': 0,
 	}

@@ -15,8 +15,8 @@ extends VBoxContainer
 
 var enemies: Array[Enemy] = []
 
-var base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
-		'defense', 'resistance']
+var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
+		"defense", "resistance"]
 		
 func _ready():
 	for i in range(4):
@@ -41,10 +41,10 @@ func _ready():
 		
 func _on_action(button):
 	match button.text:
-		'Attack':
+		"Attack":
 			var damage = Player.stats.strength - target.get_node("Enemy").stats.defense
 			target.update_hp(-damage)
-		'Flee':
+		"Flee":
 			exit_combat()
 		_:
 			print("hello else")

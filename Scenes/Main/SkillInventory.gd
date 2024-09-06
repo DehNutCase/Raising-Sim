@@ -26,7 +26,7 @@ func _ready():
 		inventory = get_node(inventory_path)
 	_queue_refresh()
 	
-	if (!Player.inventory):
-		Player.inventory = Inventory.new()
-		Player.inventory.item_protoset = load("res://Constants/item_protoset.tres")
-	inventory = Player.inventory
+	if (!Player.skill_inventory):
+		Player.skill_inventory = Inventory.new()
+		Player.skill_inventory.item_protoset = load("res://Constants/skill_protoset.tres")
+	inventory = Player.skill_inventory

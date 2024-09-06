@@ -28,7 +28,5 @@ func _ready():
 	
 	if (!Player.background_inventory):
 		Player.background_inventory = Inventory.new()
-		Player.background_inventory.item_protoset = load('res://Constants/background_protoset.tres')
-		Player.background_inventory.create_and_add_item("royal_backing")
-	
+		Player.background_inventory.item_protoset = load("res://Constants/background_protoset.tres")
 	inventory = Player.background_inventory

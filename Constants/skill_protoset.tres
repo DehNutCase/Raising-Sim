@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemProtoset" load_steps=2 format=3 uid="uid://bx0wvj2svwq7a"]
+
+[ext_resource type="Script" path="res://addons/gloot/core/item_protoset.gd" id="1_ivm18"]
+
+[resource]
+script = ExtResource("1_ivm18")
+json_data = "[
+    {
+        \"daily_stats\": \"{}\",
+        \"description\": \"Learns things quicker than most.\",
+        \"id\": \"quick_learner\",
+        \"image\": \"uid://doycqxwp1io2v\",
+        \"monthly_stats\": \"{}\",
+        \"name\": \"Quick Learner\",
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10,\\n\\\"magic\\\": 5\\n}\"
+    }
+]"

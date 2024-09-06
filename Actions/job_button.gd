@@ -31,7 +31,7 @@ func get_success_chance(job = button_label.text):
 	else:
 		Player.proficiencies[job] = 0
 	
-	return 100.0 * adjusted_stats / task_total_stats - task['difficulty'] - Player.stats['stress']
+	return 100.0 * adjusted_stats / task_total_stats - task["difficulty"] - Player.stats["stress"]
 	
 func _on_job_button_pressed():
 	get_tree().call_group("Main", "do_job", button_label.text)

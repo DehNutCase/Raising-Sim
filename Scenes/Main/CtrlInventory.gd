@@ -140,33 +140,33 @@ func _populate_list() -> void:
 		_item_list.add_item(_get_item_title(item), texture)
 		_item_list.set_item_metadata(_item_list.get_item_count() - 1, item)
 		
-		var tooltip = item.get_property('description', 'Tooltip Error')
-		var daily_stats:Dictionary = item.get_property('daily_stats', {})
+		var tooltip = item.get_property("description", "Tooltip Error")
+		var daily_stats:Dictionary = item.get_property("daily_stats", {})
 		if (!daily_stats.keys().is_empty()):
 			tooltip += "\nDaily Stats:"
 			for stat in daily_stats.keys():
-				tooltip += ' '
+				tooltip += " "
 				if (daily_stats[stat] > 0):
-					tooltip += '+'
-				tooltip += str(daily_stats[stat]) + ' ' + Constants.stats[stat].label
+					tooltip += "+"
+				tooltip += str(daily_stats[stat]) + " " + Constants.stats[stat].label
 		
-		var stats:Dictionary = item.get_property('stats', {})
+		var stats:Dictionary = item.get_property("stats", {})
 		if (!stats.keys().is_empty()):
 			tooltip += "\nStats:"
 			for stat in stats.keys():
-				tooltip += ' '
+				tooltip += " "
 				if (stats[stat] > 0):
-					tooltip += '+'
-				tooltip += str(stats[stat]) + ' ' + Constants.stats[stat].label
+					tooltip += "+"
+				tooltip += str(stats[stat]) + " " + Constants.stats[stat].label
 				
-		var monthly_stats:Dictionary = item.get_property('monthly_stats', {})
+		var monthly_stats:Dictionary = item.get_property("monthly_stats", {})
 		if (!monthly_stats.keys().is_empty()):
 			tooltip += "\nMonthly Stats:"
 			for stat in monthly_stats.keys():
-				tooltip += ' '
+				tooltip += " "
 				if (monthly_stats[stat] > 0):
-					tooltip += '+'
-				tooltip += str(monthly_stats[stat]) + ' ' + Constants.stats[stat].label
+					tooltip += "+"
+				tooltip += str(monthly_stats[stat]) + " " + Constants.stats[stat].label
 		
 		_item_list.set_item_tooltip(_item_list.get_item_count() - 1, tooltip)
 		

@@ -13,38 +13,38 @@ func _ready():
 	update_labels()
 	
 func _on_button_pressed():
-	get_tree().call_group("Main", "buy_item", item.get_property('id'), item.get_property('price'))
+	get_tree().call_group("Main", "buy_item", item.get_property("id"), item.get_property("price"))
 	pass
 
 func update_labels():
 	texture.texture = item.get_texture();
-	button.text = 'Buy: ' + str(item.get_property('price', 0))
-	tooltip = item.get_property('description', 'tooltip error')
+	button.text = "Buy: " + str(item.get_property("price", 0))
+	tooltip = item.get_property("description", "tooltip error")
 	var milliseconds: int = 0
 
-	var daily_stats:Dictionary = item.get_property('daily_stats', {})
+	var daily_stats:Dictionary = item.get_property("daily_stats", {})
 	if (!daily_stats.keys().is_empty()):
 		tooltip += "\nDaily Stats:"
 		for stat in daily_stats.keys():
-			tooltip += ' '
+			tooltip += " "
 			if (daily_stats[stat] > 0):
-				tooltip += '+'
-			tooltip += str(daily_stats[stat]) + ' ' + Constants.stats[stat].label
+				tooltip += "+"
+			tooltip += str(daily_stats[stat]) + " " + Constants.stats[stat].label
 	
-	var stats:Dictionary = item.get_property('stats', {})
+	var stats:Dictionary = item.get_property("stats", {})
 	if (!stats.keys().is_empty()):
 		tooltip += "\nStats:"
 		for stat in stats.keys():
-			tooltip += ' '
+			tooltip += " "
 			if (stats[stat] > 0):
-				tooltip += '+'
-			tooltip += str(stats[stat]) + ' ' + Constants.stats[stat].label
+				tooltip += "+"
+			tooltip += str(stats[stat]) + " " + Constants.stats[stat].label
 			
-	var monthly_stats:Dictionary = item.get_property('monthly_stats', {})
+	var monthly_stats:Dictionary = item.get_property("monthly_stats", {})
 	if (!monthly_stats.keys().is_empty()):
 		tooltip += "\nMonthly Stats:"
 		for stat in monthly_stats.keys():
-			tooltip += ' '
+			tooltip += " "
 			if (monthly_stats[stat] > 0):
-				tooltip += '+'
-			tooltip += str(monthly_stats[stat]) + ' ' + Constants.stats[stat].label
+				tooltip += "+"
+			tooltip += str(monthly_stats[stat]) + " " + Constants.stats[stat].label

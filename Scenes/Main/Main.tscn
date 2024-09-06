@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=24 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Actions/Classes.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
+[ext_resource type="Script" path="res://Scenes/Main/SkillInventory.gd" id="13_tkqcx"]
 [ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
 [ext_resource type="PackedScene" uid="uid://b41yn518gd77p" path="res://Actions/Shop.tscn" id="16_vbgfp"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Actions/Animation.tscn" id="17_5xmvy"]
@@ -154,6 +155,18 @@ offset_top = -300.0
 offset_right = -220.0
 grow_vertical = 0
 script = ExtResource("12_thnkb")
+
+[node name="SkillInventory" type="Control" parent="Ui/PlayerControl/Player"]
+visible = false
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0
+offset_top = -300.0
+offset_right = -220.0
+grow_vertical = 0
+script = ExtResource("13_tkqcx")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 texture = SubResource("ViewportTexture_ltday")
@@ -313,7 +326,7 @@ text = "Background"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Rest"
+text = "Skills"
 
 [node name="Inventory" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2

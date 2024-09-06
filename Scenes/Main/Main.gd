@@ -3,6 +3,7 @@ extends Node2D
 @onready var player_model = $Ui/PlayerControl/Player
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 @onready var background = $Ui/PlayerControl/Player/BackgroundInventory
+@onready var skills = $Ui/PlayerControl/Player/SkillInventory
 
 @onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
@@ -36,9 +37,12 @@ var day: int:
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if (day == 0):
+		for inventory_name in Player.inventories:
+			for starting_item in Player.starting_items[inventory_name]:
+				Player[inventory_name].create_and_add_item(starting_item)
 		process_day()
-		#TODO, uncomment this line
-		#Dialogic.start('timeline')
+		#TODO, uncomment this line (line commented out for dev purposes)
+		#Dialogic.start("timeline")
 	else:
 		display_stats()
 		day_label.display_day(day)
@@ -50,45 +54,47 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Key_X"):
-		print('x is pressed')
+		print("x is pressed")
 	pass
 
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
 		var items = inventory.inventory.get_items().duplicate()
 		items.append_array(background.inventory.get_items())
+		items.append_array(skills.inventory.get_items())
 		for item in items:
-			for stat in item.get_property('monthly_stats'):
-				Player.stats[stat] += item.get_property('monthly_stats')[stat]
+			for stat in item.get_property("monthly_stats"):
+				Player.stats[stat] += item.get_property("monthly_stats")[stat]
 		
 	day +=1
 	var items = inventory.inventory.get_items().duplicate()
 	items.append_array(background.inventory.get_items())
+	items.append_array(skills.inventory.get_items())
 	for item in items:
-		for stat in item.get_property('daily_stats'):
-			Player.stats[stat] += item.get_property('daily_stats')[stat]
+		for stat in item.get_property("daily_stats"):
+			Player.stats[stat] += item.get_property("daily_stats")[stat]
 	
 	for stat in Player.stats:
-		if 'min' in Constants.stats[stat] && Player.stats[stat] < Constants.stats[stat]['min']:
-			Player.stats[stat] = Constants.stats[stat]['min']
-		if 'max' in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]['max']:
-			Player.stats[stat] = Constants.stats[stat]['max']
+		if "min" in Constants.stats[stat] && Player.stats[stat] < Constants.stats[stat]["min"]:
+			Player.stats[stat] = Constants.stats[stat]["min"]
+		if "max" in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]["max"]:
+			Player.stats[stat] = Constants.stats[stat]["max"]
 	
 	display_stats()
 	day_label.display_day(day)
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	
-	if (Player.stats['stress'] < 20):
+	if (Player.stats["stress"] < 20):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
-	if (Player.stats['stress'] < 10):
+	if (Player.stats["stress"] < 10):
 		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)	
-	if (Player.stats['stress'] > 80):
+	if (Player.stats["stress"] > 80):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 
 #TODO remove stat bars in job pages
 func do_job(job: String) :
-	var job_stats = Constants.jobs[job]['stats']
+	var job_stats = Constants.jobs[job]["stats"]
 	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job)
 	if ( get_success_chance(job) > rng.randf() * 100):
@@ -97,8 +103,8 @@ func do_job(job: String) :
 		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
-		if 'stress' in job_stats:
-			var stats = {'stress': job_stats['stress']}
+		if "stress" in job_stats:
+			var stats = {"stress": job_stats["stress"]}
 			process_stats(stats)
 		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain/2
 	work.visible = false
@@ -109,10 +115,10 @@ func do_job(job: String) :
 #TODO, add animations for class and resting
 #TODO, display cost of rest and classes
 func do_class(lesson: String) :
-	var class_stats = Constants.classes[lesson]['stats']
+	var class_stats = Constants.classes[lesson]["stats"]
 	var cost = 0
-	if'gold' in class_stats: cost = -class_stats.gold
-	if (cost > Player.stats['gold']):
+	if"gold" in class_stats: cost = -class_stats.gold
+	if (cost > Player.stats["gold"]):
 		display_toast("Not enough gold!", "top", "center")
 		return
 	process_stats(class_stats)
@@ -122,10 +128,10 @@ func do_class(lesson: String) :
 	process_day()
 
 func do_rest(rest: String) -> void:
-	var rest_stats = Constants.rests[rest]['stats']
+	var rest_stats = Constants.rests[rest]["stats"]
 	var cost = 0
-	if 'gold' in rest_stats: cost = -rest_stats.gold
-	if ( cost > Player.stats['gold']):
+	if "gold" in rest_stats: cost = -rest_stats.gold
+	if ( cost > Player.stats["gold"]):
 		display_toast("Not enough gold!", "top", "center")
 		return
 	process_stats(rest_stats)
@@ -150,11 +156,11 @@ func get_success_chance(job):
 	else:
 		Player.proficiencies[job] = 0
 		
-	return 100.0 * adjusted_stats / task_total_stats - task['difficulty'] - Player.stats['stress']
+	return 100.0 * adjusted_stats / task_total_stats - task["difficulty"] - Player.stats["stress"]
 
 func buy_item(item: String, price: int):
-	if Player.stats['gold'] >= price:
-		Player.stats['gold'] -= price
+	if Player.stats["gold"] >= price:
+		Player.stats["gold"] -= price
 		add_item(item)
 	else:
 		display_toast("Not enough gold!", "top", "center")
@@ -163,11 +169,9 @@ func buy_item(item: String, price: int):
 func add_item(item_name: String):
 	Player.inventory.create_and_add_item(item_name)
 	var item = Player.inventory.get_item_by_id(item_name)
-	for stat in item.get_property('stats'):
-		Player.stats[stat] += item.get_property('stats')[stat]
+	for stat in item.get_property("stats"):
+		Player.stats[stat] += item.get_property("stats")[stat]
 
-#TODO, edit new menu bar with new buttons (add stats page)
-#TODO, add 'Background' and 'Skills' inventories
 func _on_action(button):
 	var open_menu: String
 	for menu in menus:
@@ -176,23 +180,28 @@ func _on_action(button):
 	_on_close_button_pressed()
 	
 	match button.text:
-		'Work':
+		"Work":
 			work.show()
-		'Lessons':
+		"Lessons":
 			lessons.show()
-		'Rest':
+		"Rest":
 			rest.show()
-		'Inventory':
+		"Inventory":
 			inventory.visible = !inventory.visible
 			menu_panel.visible = true
-		'Shop':
+		"Shop":
 			shop.show()
-		'Battle':
+		"Battle":
 			SceneLoader.load_scene("uid://df0p3tawo2arq")
-		'Stats':
+		"Stats":
 			stats.show()
-		'Background':
+		"Background":
 			background.visible = !background.visible
+			skills.visible = false
+			menu_panel.visible = true
+		"Skills":
+			skills.visible = !skills.visible
+			background.visible = false
 			menu_panel.visible = true
 		_:
 			print("hello else")
@@ -211,7 +220,7 @@ func _on_close_button_pressed():
 	animation.animation.visible = false
 	
 
-func display_toast(message, gravity = 'bottom', direction = 'center'):
+func display_toast(message, gravity = "bottom", direction = "center"):
 	ToastParty.show({
 		"text": message,           # Text (emojis can be used)
 		"gravity": gravity,                   # top or bottom
@@ -234,9 +243,9 @@ func process_stats(stats):
 	var toast = ""
 	for stat in stats:
 		var label
-		if ( 'emoji' in Constants.stats[stat] ):
+		if ( "emoji" in Constants.stats[stat] ):
 			label = Constants.stats[stat].emoji
-		elif ( 'label' in Constants.stats[stat] ):
+		elif ( "label" in Constants.stats[stat] ):
 			label = Constants.stats[stat].label
 		else:
 			label = stat
@@ -246,8 +255,8 @@ func process_stats(stats):
 			plus = ""
 		toast += "[" + plus + str(stats[stat]) + label + "] "
 		
-		if stat == 'experience':
-			Player.gain_experience(stats['experience'])
+		if stat == "experience":
+			Player.gain_experience(stats["experience"])
 		else:
 			Player.stats[stat] += stats[stat]
 	display_toast(toast, "top", "center")
@@ -260,3 +269,7 @@ func display_stats() -> void:
 
 func _on_dialogic_signal(item: String) -> void:
 	add_item(item)
+
+
+func _on_inventory_item_added(item):
+	pass # Replace with function body.
