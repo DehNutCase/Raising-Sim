@@ -6,7 +6,7 @@
 
 [node name="MainMenu" instance=ExtResource("1_5meab")]
 texture_filter = 4
-game_scene_path = "res://Scenes/Main.tscn"
+game_scene_path = "res://Scenes/Main/Main.tscn"
 options_packed_scene = ExtResource("2_mrems")
 credits_packed_scene = ExtResource("3_xbnof")
 
