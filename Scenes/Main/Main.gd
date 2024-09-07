@@ -43,6 +43,7 @@ func _ready():
 				Player[inventory_name].create_and_add_item(starting_item)
 		process_day()
 		#TODO, uncomment this line (line commented out for dev purposes)
+		#TODO, use smaller resolution player model for performance
 		#Dialogic.start("timeline")
 	else:
 		display_stats()
@@ -269,3 +270,4 @@ func _on_dialogic_signal(item: String) -> void:
 func _on_inventory_item_added(item):
 	for stat in item.get_property("stats"):
 		Player.stats[stat] += item.get_property("stats")[stat]
+

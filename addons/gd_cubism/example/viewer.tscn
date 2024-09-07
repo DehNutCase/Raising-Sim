@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/gd_cubism/example/viewer.gd" id="1_wysar"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_f35fx"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_40wde"]
 viewport_path = NodePath("Sprite2D/GDCubismUserModel")
 
 [node name="viewer" type="Control"]
@@ -63,7 +63,7 @@ grow_vertical = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(623, 369)
-texture = SubResource("ViewportTexture_f35fx")
+texture = SubResource("ViewportTexture_40wde")
 
 [node name="GDCubismUserModel" type="GDCubismUserModel" parent="Sprite2D"]
 disable_3d = true

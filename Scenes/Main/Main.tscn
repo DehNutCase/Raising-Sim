@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=27 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
+[ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
@@ -21,6 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://bdbdfxdgb1i3k" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten4.png" id="19_88f8e"]
 [ext_resource type="Texture2D" uid="uid://beda43km5h356" path="res://Art/Kittens/Sleeping-Kittens-outlines/outlines-kitten4.png" id="20_c7f2x"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
+font_size = 36
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
 font_size = 28
 outline_size = 2
@@ -31,11 +37,27 @@ font_size = 20
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_snc6d"]
+blend_mode = 4
+light_mode = 1
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_bqq6y")
+
+[node name="FPS" type="Label" parent="."]
+texture_filter = 4
+offset_left = 10.0
+offset_top = 63.0
+offset_right = 144.0
+offset_bottom = 113.0
+text = "FPS"
+label_settings = SubResource("LabelSettings_qc06n")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_h7wcs")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 offset_left = 180.0
@@ -169,6 +191,7 @@ grow_vertical = 0
 script = ExtResource("13_tkqcx")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
+material = SubResource("CanvasItemMaterial_snc6d")
 texture = SubResource("ViewportTexture_ltday")
 centered = false
 offset = Vector2(-300, -600)
