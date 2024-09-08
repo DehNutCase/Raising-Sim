@@ -13,6 +13,10 @@ var content_expression = "exp_01"
 var happy_expression = "exp_02"
 var annoyed_expression = "exp_08"
 
+var inventory: Inventory
+var background_inventory: Inventory
+var skill_inventory: Inventory
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cubism_model = $PlayerSprite/PlayerModel

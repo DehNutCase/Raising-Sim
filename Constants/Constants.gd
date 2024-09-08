@@ -15,6 +15,10 @@ const jobs = {
 		'difficulty' : -50,
 		'proficiency': 100,
 		'proficiency_gain': 10,
+		'skill':{
+			'proficiency_required': 50,
+			'id': 'apprentice_farmer',
+		},
 	},
 	'masonry' : {
 		'stats': {

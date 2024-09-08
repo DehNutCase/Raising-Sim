@@ -103,6 +103,11 @@ func do_job(job: String) :
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
 		process_stats(job_stats)
 		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain
+		if ('skill' in Constants.jobs[job]):
+			if (Player.proficiencies[job] >= Constants.jobs[job].skill.proficiency_required):
+				if (!Player.skill_inventory.get_item_by_id(Constants.jobs[job].skill.id)):
+					Player.skill_inventory.create_and_add_item(Constants.jobs[job].skill.id)
+			
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if "stress" in job_stats:

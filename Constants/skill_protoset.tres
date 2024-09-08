@@ -13,5 +13,14 @@ json_data = "[
         \"monthly_stats\": \"{}\",
         \"name\": \"Quick Learner\",
         \"stats\": \"{\\n\\\"bonus_exp\\\": 10,\\n\\\"magic\\\": 5\\n}\"
-    }
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 1}\",
+        \"description\": \"A novice in the field of farming\",
+        \"id\": \"apprentice_farmer\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"strength\\\": 5\\n}\",
+        \"name\": \"Apprentice Farmer\",
+        \"stats\": \"{}\"
+    },
 ]"
