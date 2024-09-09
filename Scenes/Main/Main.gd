@@ -121,6 +121,7 @@ func do_job(job: String) :
 	
 #TODO, add animations for class and resting
 #TODO, display cost of rest and classes
+#TODO, add general education, a class to improve scholarship
 func do_class(lesson: String) :
 	var class_stats = Constants.classes[lesson]["stats"]
 	var cost = 0
@@ -255,12 +256,18 @@ func process_stats(stats):
 		var plus = "+"
 		if (stats[stat] < 0):
 			plus = ""
-		toast += "[" + plus + str(stats[stat]) + label + "] "
 		
 		if stat == "experience":
 			Player.gain_experience(stats["experience"])
-		else:
+			toast += "[" + plus + str(stats[stat]) + label + "] "
+		elif stat == "gold" or stat == "stress":
 			Player.stats[stat] += stats[stat]
+			toast += "[" + plus + str(stats[stat]) + label + "] "
+		else:
+			var stat_gain = stats[stat] * (1 + Player.stats.scholarship/Constants.stats.scholarship.bonus_ratio)
+			Player.stats[stat] += stat_gain
+			toast += "[" + plus + str(stat_gain) + label + "] "
+			
 	display_toast(toast, "top", "center")
 
 func display_stats() -> void:
@@ -273,6 +280,7 @@ func _on_dialogic_signal(item: String) -> void:
 	Player.inventory.create_and_add_item(item)
 
 func _on_inventory_item_added(item):
+	#Note: Do not apply scholarhsip bonus to items
 	for stat in item.get_property("stats"):
 		Player.stats[stat] += item.get_property("stats")[stat]
 

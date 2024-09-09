@@ -23,4 +23,5 @@ func _init():
 		'level': 1,
 		'gold': 0,
 		'bonus_exp': 0,
+		'scholarship': 0,
 	}
