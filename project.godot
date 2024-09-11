@@ -75,6 +75,12 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloo
 
 theme/default_font_generate_mipmaps=true
 
+[importer_defaults]
+
+texture={
+"mipmaps/generate": true
+}
+
 [input]
 
 Key_X={

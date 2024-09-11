@@ -43,7 +43,8 @@ func _ready():
 				Player[inventory_name].create_and_add_item(starting_item)
 		process_day()
 		#TODO, uncomment this line (line commented out for dev purposes)
-		#TODO, use smaller resolution player model for performance
+		#TODO, Live2D performance seems to mostly be related to eyes 
+		#Note: Live2D Pro has resize model, check if that affects performance
 		#Dialogic.start("timeline")
 	else:
 		display_stats()

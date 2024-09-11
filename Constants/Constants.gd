@@ -28,12 +28,16 @@ const jobs = {
 			'stress': 6,
 		},
 		'required_stats': {
-			'max_hp': 400,
+			'max_hp': 200,
 			'strength': 200,
 		},
 		'difficulty': -50,
 		'proficiency': 200,
-		'proficiency_gain': 10,
+		'proficiency_gain': 20,
+		'skill':{
+			'proficiency_required': 160,
+			'id': 'apprentice_mason',
+		},
 	},
 	'tutoring': {
 		'stats': {
@@ -43,12 +47,16 @@ const jobs = {
 			'stress': 6,
 		},
 		'required_stats': {
-			'max_mp': 400,
+			'max_mp': 200,
 			'magic': 200,
 		},
 		'difficulty': -50,
 		'proficiency': 200,
-		'proficiency_gain': 15,
+		'proficiency_gain': 20,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'diligent_student',
+		},
 	},
 	"wizard's apprentice": {
 		'stats': {
@@ -59,13 +67,17 @@ const jobs = {
 			'stress': 12,
 		},
 		'required_stats': {
-			'max_mp': 600,
-			'resistance': 300,
-			'magic': 300,
+			'max_mp': 200,
+			'resistance': 200,
+			'magic': 200,
 		},
 		'difficulty': -50,
-		'proficiency': 300,
-		'proficiency_gain': 20,
+		'proficiency': 400,
+		'proficiency_gain': 50,
+		'skill':{
+			'proficiency_required': 500,
+			'id': 'wizarding_license_apprentice',
+		},
 	},
 	'acolyte': {
 		'stats': {
@@ -82,6 +94,10 @@ const jobs = {
 		'difficulty': -50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 200,
+			'id': 'church_helper',
+		},
 	},
 }
 
@@ -168,7 +184,7 @@ const rests = {
 
 const stats = {
 	base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
-		'defense', 'resistance', 'scholarship'],
+		'defense', 'resistance'],
 	'max_hp' = {
 		'label': 'Max HP',
 		'emoji': '❤',

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy5erb1lkxh7t"]
+[gd_scene load_steps=5 format=3 uid="uid://dy5erb1lkxh7t"]
 
 [ext_resource type="Script" path="res://addons/gd_cubism/example/viewer.gd" id="1_wysar"]
+[ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_ecoqy"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_40wde"]
 viewport_path = NodePath("Sprite2D/GDCubismUserModel")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mafw"]
+font_size = 36
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="viewer" type="Control"]
 layout_mode = 3
@@ -74,6 +80,19 @@ render_target_update_mode = 4
 [node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="Sprite2D/GDCubismUserModel"]
 
 [node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="Sprite2D/GDCubismUserModel"]
+
+[node name="FPS" type="Label" parent="."]
+texture_filter = 4
+layout_mode = 0
+offset_left = 10.0
+offset_top = 63.0
+offset_right = 144.0
+offset_bottom = 113.0
+text = "FPS"
+label_settings = SubResource("LabelSettings_7mafw")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ecoqy")
 
 [connection signal="item_selected" from="UI/OptModel" to="." method="_on_opt_model_item_selected"]
 [connection signal="item_selected" from="UI/ItemListMotion" to="." method="_on_item_list_motion_item_selected"]

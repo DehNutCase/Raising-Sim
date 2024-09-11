@@ -23,4 +23,40 @@ json_data = "[
         \"name\": \"Apprentice Farmer\",
         \"stats\": \"{}\"
     },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 5}\",
+        \"description\": \"Someone who often helps out at the local church.\",
+        \"id\": \"church_helper\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"resistance\\\": 5\\n}\",
+        \"name\": \"Church Helper\",
+        \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"magic\\\": 1,\\n\\\"experience\\\": 5\\n}\",
+        \"description\": \"A license to practice wizardy. Since it's an Apprentice's license, there's no need to take an exam.\",
+        \"id\": \"wizarding_license_apprentice\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"resistance\\\": 5\\n}\",
+        \"name\": \"Wizarding License (Apprentice)\",
+        \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"scholarship\\\": 5,\\n\\\"experience\\\": 1\\n}\",
+        \"description\": \"A diligent student who studies every day.\",
+        \"id\": \"diligent_student\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"experience\\\": 100\\n}\",
+        \"name\": \"Diligent Student\",
+        \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 2\\n}\",
+        \"description\": \"A novice in the field of masonry.\",
+        \"id\": \"apprentice_mason\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"max_hp\\\": 10\\n}\",
+        \"name\": \"Apprentice Mason\",
+        \"stats\": \"{}\"
+    },
 ]"

@@ -9,7 +9,7 @@ var base_stats = {
 }
 
 @export var stats = {}
-var display_stats = ['level', 'experience', 'gold', 'stress'] + Constants.stats.base_stats
+var display_stats = ['level', 'experience', 'gold', 'stress'] + Constants.stats.base_stats + ['scholarship']
 
 signal experience_gained(growth_data)
 
