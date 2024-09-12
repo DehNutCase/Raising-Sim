@@ -42,13 +42,15 @@ const jobs = {
 	'tutoring': {
 		'stats': {
 			'experience': 20,
-			'gold': 20,
+			'gold': 50,
 			'max_mp': 1,
+			'scholarship': 5,
 			'stress': 6,
 		},
 		'required_stats': {
-			'max_mp': 100,
-			'magic': 100,
+			'max_mp': 0,
+			'magic': 0,
+			'scholarship': 200,
 		},
 		'difficulty': -50,
 		'proficiency': 200,
