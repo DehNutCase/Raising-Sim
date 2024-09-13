@@ -12,6 +12,16 @@ json_data = "[
         \"image\": \"uid://doycqxwp1io2v\",
         \"monthly_stats\": \"{\\n\\\"gold\\\": 1000\\n}\",
         \"name\": \"Roya Backing\",
-        \"stats\": \"{}\"
-    }
+        \"stats\": \"{}\",
+    },
+    {
+        \"daily_stats\": \"{}\",
+        \"description\": \"A magician with an affinity for ink. A rare non-combat variant of the magician class. \\nAs a non-combat class, stat gains from leveling up is decreased, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.\",
+        \"id\": \"ink_mage\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{}\",
+        \"name\": \"Ink Mage\",
+        \"stats\": \"{}\",
+        \"level_up_stats\": \"{\\n\\\"magic\\\": 5\\n,\\n\\\"max_hp\\\": 3\\n,\\n\\\"max_mp\\\": 3\\n,\\n\\\"speed\\\": 2\\n,\\n\\\"resistance\\\": 2\\n}\",
+    },
 ]"

@@ -167,6 +167,15 @@ func _populate_list() -> void:
 				if (monthly_stats[stat] > 0):
 					tooltip += "+"
 				tooltip += str(monthly_stats[stat]) + " " + Constants.stats[stat].label
+
+		var level_up_stats:Dictionary = item.get_property("level_up_stats", {})
+		if (!level_up_stats.keys().is_empty()):
+			tooltip += "\nLevel Up Stats:"
+			for stat in level_up_stats.keys():
+				tooltip += " "
+				if (level_up_stats[stat] > 0):
+					tooltip += "+"
+				tooltip += str(level_up_stats[stat]) + " " + Constants.stats[stat].label
 		
 		_item_list.set_item_tooltip(_item_list.get_item_count() - 1, tooltip)
 		

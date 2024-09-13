@@ -284,4 +284,3 @@ func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items
 	for stat in item.get_property("stats"):
 		Player.stats[stat] += item.get_property("stats")[stat]
-

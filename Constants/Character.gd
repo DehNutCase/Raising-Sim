@@ -1,15 +1,15 @@
 class_name Character extends Node
 
 var base_stats = {
-	'max_hp': 12,
-	'strength': 8,
-	'magic': 9,
-	'level': 1,
-	'gold': 100,
+	"max_hp": 12,
+	"strength": 8,
+	"magic": 9,
+	"level": 1,
+	"gold": 100,
 }
 
 @export var stats = {}
-var display_stats = ['level', 'experience', 'gold', 'stress'] + Constants.stats.base_stats + ['scholarship']
+var display_stats = ["level", "experience", "gold", "stress"] + Constants.stats.base_stats + ["scholarship"]
 
 signal experience_gained(growth_data)
 
@@ -34,16 +34,16 @@ func gain_experience(amount: int) -> void:
 	
 	stats.experience = experience
 	growth_data.append([experience, experience_required])
-	emit_signal('experience_gained', growth_data)
+	emit_signal("experience_gained", growth_data)
 		
 func level_up() -> void:
-	stats['level'] += 1
-	experience_required = get_required_experience(stats['level'] - 1)
+	stats["level"] += 1
+	experience_required = get_required_experience(stats["level"] - 1)
 	var stats = Constants.stats.base_stats
-	var random_stat = stats[randi() % stats.size()]
-	self.stats[random_stat] += randi() % 40 + 2
+	for stat in stats:
+		self.stats[stat] += 1
+	
 # Called when the node enters the scene tree for the first time.
-
 func _ready():
 	for stat in display_stats:
 		if !(stat in base_stats):
