@@ -101,6 +101,24 @@ const jobs = {
 			'id': 'church_helper',
 		},
 	},
+	'hunting': {
+		'stats': {
+			'experience': 50,
+			'gold': 50,
+			'max_hp': 5,
+			'strength': 3,
+			'speed': 5,
+			'stress': 10,
+		},
+		'required_stats': {
+			'speed': 200,
+			'strength': 100,
+			'max_hp': 100,
+		},
+		'difficulty': 0,
+		'proficiency': 200,
+		'proficiency_gain': 25,
+	},
 }
 
 const classes = {

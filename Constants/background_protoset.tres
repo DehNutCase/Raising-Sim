@@ -16,7 +16,7 @@ json_data = "[
     },
     {
         \"daily_stats\": \"{}\",
-        \"description\": \"A magician with an affinity for ink. A rare non-combat variant of the magician class. \\nAs a non-combat class, stat gains from leveling up is decreased, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.\",
+        \"description\": \"A magician with an affinity for ink. A rare non-combat variant of the magician class. \\nAs a non-combat class, stat gains from leveling up is low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.\",
         \"id\": \"ink_mage\",
         \"image\": \"\",
         \"monthly_stats\": \"{}\",

@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://dwiyx4g8dr4ik"]
 
-[ext_resource type="Script" path="res://Actions/Animation.gd" id="1_k41a0"]
+[ext_resource type="Script" path="res://Scenes/UI/Actions/Animation.gd" id="1_k41a0"]
 [ext_resource type="Texture2D" uid="uid://bmgrbu0lftr0q" path="res://Art/Kittens/cute-kitten-animation-RUN/sheets_500px/grey.png" id="1_ycp64"]
 [ext_resource type="Texture2D" uid="uid://7wrihakc53op" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten1.png" id="2_djekv"]
 [ext_resource type="Texture2D" uid="uid://dpiklcn3jgp86" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten7.png" id="3_j8gj4"]
 [ext_resource type="Texture2D" uid="uid://gxjudxk1y8g6" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten8.png" id="4_vmwbi"]
 [ext_resource type="Texture2D" uid="uid://6vgjkmfar7lm" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten6.png" id="5_61plj"]
-[ext_resource type="Script" path="res://Actions/StatBars.gd" id="6_3dhc8"]
+[ext_resource type="Script" path="res://Scenes/UI/Actions/StatBars.gd" id="6_3dhc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6ylt"]
 atlas = ExtResource("1_ycp64")
