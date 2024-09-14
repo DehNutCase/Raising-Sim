@@ -32,6 +32,6 @@ theme = ExtResource("4_7hl6k")
 text = "Job"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [connection signal="pressed" from="Button" to="." method="_on_job_button_pressed"]

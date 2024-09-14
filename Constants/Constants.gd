@@ -173,7 +173,19 @@ const classes = {
 			'resistance': 50,
 		},
 		'difficulty': 0,
-	}
+	},
+	'general education': {
+		'stats': {
+			'experience': 100,
+			'gold': -100,
+			'scholarship': 50,
+			'stress': 10,
+		},
+		'required_stats': {
+			'scholarship': 500,
+		},
+		'difficulty': -50,
+	},
 }
 
 const rests = {

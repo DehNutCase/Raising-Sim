@@ -14,6 +14,7 @@ texture = ExtResource("4_vaig3")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
+Label/font_sizes/font_size = 54
 PanelContainer/styles/panel = ExtResource("2_3n83x")
 ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)

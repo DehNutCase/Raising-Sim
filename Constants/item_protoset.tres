@@ -40,5 +40,32 @@ json_data = "[
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
         \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
-    }
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 10\\n}\",
+        \"description\": \"A simple brush for painting..\",
+        \"id\": \"brush\",
+        \"image\": \"res://Art/grey-kitten3.png\",
+        \"name\": \"Brush\",
+        \"price\": 5000,
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\"
+    },
+    {
+        \"daily_stats\": \"{}\",
+        \"description\": \"Well crafted robes suitable for an apprentice.\",
+        \"id\": \"apprentice_robes1\",
+        \"image\": \"res://Art/grey-kitten3.png\",
+        \"name\": \"Apprentice Robes\",
+        \"price\": 25000,
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
+    },
+    {
+        \"daily_stats\": \"{}\",
+        \"description\": \"Well crafted robes suitable for an apprentice.\",
+        \"id\": \"apprentice_robes2\",
+        \"image\": \"res://Art/grey-kitten3.png\",
+        \"name\": \"Apprentice Robes\",
+        \"price\": 25000,
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
+    },
 ]"
