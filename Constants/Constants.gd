@@ -295,3 +295,22 @@ const constants = {
 	'months_in_year' = 4,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
 }
+const locations = {
+	'palace': {
+		'outcomes':
+			[{
+				'stats': {
+					'experience': 10,
+					'gold': 10,
+				},
+				'weight': 2,
+			},
+			{
+				'stats': {
+					'experience': 20,
+					'gold': 20,
+				},
+				'weight': 1,
+			},]
+	},
+}

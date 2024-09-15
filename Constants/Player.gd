@@ -10,6 +10,8 @@ var starting_items = {
 	"skill_inventory": ["quick_learner"],
 	}
 var day: int = 0
+var max_walks: int = 1
+var remaining_walks: int = 0
 var event_flags = {}
 var proficiencies = {}
 var player_class:String = "ink_mage"

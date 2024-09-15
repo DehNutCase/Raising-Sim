@@ -7,11 +7,13 @@ extends Node2D
 
 @onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
+@onready var walks_label = $RemainingWalks
 
 @onready var work = $Ui/MenuPanel/Work
 @onready var lessons = $Ui/MenuPanel/Lessons
 @onready var rest = $Ui/MenuPanel/Rest
 @onready var shop = $Ui/MenuPanel/Shop
+@onready var walk = $Ui/MenuPanel/Walk
 @onready var stats = $Ui/MenuPanel/Stats
 
 @onready var menu_panel = $Ui/MenuPanel
@@ -20,7 +22,7 @@ extends Node2D
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
-@onready var menus = [work, lessons, rest, shop, stats,]
+@onready var menus = [work, lessons, rest, shop, walk, stats,]
 
 var jobs = Constants.jobs
 var classes = Constants.classes
@@ -70,6 +72,8 @@ func process_day():
 				Player.stats[stat] += item.get_property("monthly_stats")[stat]
 		
 	day +=1
+	Player.remaining_walks = Player.max_walks
+	
 	var items = inventory.inventory.get_items().duplicate()
 	items.append_array(background.inventory.get_items())
 	items.append_array(skills.inventory.get_items())
@@ -96,25 +100,25 @@ func process_day():
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 
 #TODO remove stat bars in job pages
-func do_job(job: String) :
-	var job_stats = Constants.jobs[job]["stats"]
+func do_job(job_name: String) :
+	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
-	animation.stat_bars.load_stat_bars(job)
-	if ( get_success_chance(job) > rng.randf() * 100):
+	animation.stat_bars.load_stat_bars(job_name)
+	if ( get_success_chance(job_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
 		process_stats(job_stats)
-		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain
-		if ('skill' in Constants.jobs[job]):
-			if (Player.proficiencies[job] >= Constants.jobs[job].skill.proficiency_required):
-				if (!Player.skill_inventory.get_item_by_id(Constants.jobs[job].skill.id)):
-					Player.skill_inventory.create_and_add_item(Constants.jobs[job].skill.id)
+		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain
+		if ('skill' in Constants.jobs[job_name]):
+			if (Player.proficiencies[job_name] >= Constants.jobs[job_name].skill.proficiency_required):
+				if (!Player.skill_inventory.get_item_by_id(Constants.jobs[job_name].skill.id)):
+					Player.skill_inventory.create_and_add_item(Constants.jobs[job_name].skill.id)
 			
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if "stress" in job_stats:
 			var stats = {"stress": job_stats["stress"]}
 			process_stats(stats)
-		Player.proficiencies[job] += Constants.jobs[job].proficiency_gain/2
+		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
 	work.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
@@ -122,9 +126,8 @@ func do_job(job: String) :
 	
 #TODO, add animations for class and resting
 #TODO, display cost of rest and classes
-#TODO, add general education, a class to improve scholarship
-func do_class(lesson: String) :
-	var class_stats = Constants.classes[lesson]["stats"]
+func do_class(lesson_name: String) :
+	var class_stats = Constants.classes[lesson_name]["stats"]
 	var cost = 0
 	if"gold" in class_stats: cost = -class_stats.gold
 	if (cost > Player.stats["gold"]):
@@ -136,18 +139,36 @@ func do_class(lesson: String) :
 	animation.animation.play("Run")
 	process_day()
 
-func do_rest(rest: String) -> void:
-	var rest_stats = Constants.rests[rest]["stats"]
+func do_rest(rest_name: String) -> void:
+	var rest_stats = Constants.rests[rest_name]["stats"]
 	var cost = 0
 	if "gold" in rest_stats: cost = -rest_stats.gold
 	if ( cost > Player.stats["gold"]):
 		display_toast("Not enough gold!", "top", "center")
 		return
 	process_stats(rest_stats)
-	rests.visible = false
+	rest.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
 	process_day()
+	
+func do_walk(walk_name: String) -> void:
+	if Player.remaining_walks > 0:
+		var weights = []
+		var outcomes = Constants.locations[walk_name].outcomes
+		for outcome in outcomes:
+			if ('weight' in outcome):
+				weights.append(outcome.weight)
+			else:
+				weights.append(1)
+		var walk_stats = outcomes[rand_weighted(weights)].stats
+		walk.visible = false
+		process_stats(walk_stats)
+		animation.animation.visible = true
+		animation.animation.play("Run")
+		Player.remaining_walks -= 1
+	else:
+		display_toast("No walks left!")
 
 func get_success_chance(job):
 	var task = Constants.jobs[job]
@@ -195,6 +216,8 @@ func _on_action(button):
 			menu_panel.visible = true
 		"Shop":
 			shop.show()
+		"Walk":
+			walk.show()
 		"Battle":
 			SceneLoader.load_scene("uid://df0p3tawo2arq")
 		"Stats":
@@ -207,6 +230,7 @@ func _on_action(button):
 			skills.visible = !skills.visible
 			background.visible = false
 			menu_panel.visible = true
+		#TODO, add new walk menu
 		_:
 			print("hello else")
 			
@@ -260,20 +284,22 @@ func process_stats(stats):
 		
 		if stat == "experience":
 			Player.gain_experience(stats["experience"])
-			toast += "[" + plus + str(stats[stat]) + label + "] "
+			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
 		elif stat == "gold" or stat == "stress":
 			Player.stats[stat] += stats[stat]
-			toast += "[" + plus + str(stats[stat]) + label + "] "
+			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
 		else:
 			var stat_gain = stats[stat] * (1 + Player.stats.scholarship/Constants.stats.scholarship.bonus_ratio)
 			Player.stats[stat] += stat_gain
-			toast += "[" + plus + str(stat_gain) + label + "] "
+			toast += "[" + plus + str(stat_gain) + " " + label + "] "
 			
 	display_toast(toast, "top", "center")
+	display_stats()
 
 func display_stats() -> void:
 	stats.display_stats()
 	gold_label.display_gold()
+	walks_label.display_walks()
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 
@@ -284,3 +310,15 @@ func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items
 	for stat in item.get_property("stats"):
 		Player.stats[stat] += item.get_property("stats")[stat]
+
+func rand_weighted(weights) -> int:
+	var weight_sum = 0
+	for weight in weights:
+		weight_sum += weight
+	var rng = RandomNumberGenerator.new()
+	var choice = rng.randi_range(0, weight_sum)
+	for i in range(len(weights)):
+		if(choice <= weights[i]):
+			return i
+		choice -= weights[i]
+	return 0

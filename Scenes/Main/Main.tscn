@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=29 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
+[ext_resource type="Script" path="res://Scenes/Main/RemainingWalks.gd" id="3_3fb26"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
@@ -21,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://co0nxq2ekveyb" path="res://Art/Kittens/Sleeping-Kittens-blanc/cute-kitten4.png" id="19_1gghe"]
 [ext_resource type="Texture2D" uid="uid://bdbdfxdgb1i3k" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten4.png" id="19_88f8e"]
 [ext_resource type="Texture2D" uid="uid://beda43km5h356" path="res://Art/Kittens/Sleeping-Kittens-outlines/outlines-kitten4.png" id="20_c7f2x"]
+[ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 36
@@ -58,6 +60,14 @@ label_settings = SubResource("LabelSettings_qc06n")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_h7wcs")
+
+[node name="RemainingWalks" type="Label" parent="."]
+offset_left = 129.0
+offset_top = 454.0
+offset_right = 175.0
+offset_bottom = 477.0
+text = "Walks"
+script = ExtResource("3_3fb26")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 offset_left = 180.0
@@ -243,6 +253,10 @@ vertical_icon_alignment = 0
 [node name="Shop" parent="Ui/MenuPanel" instance=ExtResource("16_vbgfp")]
 visible = false
 
+[node name="Walk" parent="Ui/MenuPanel" instance=ExtResource("16_vbgfp")]
+visible = false
+script = ExtResource("21_psxgd")
+
 [node name="Skip" type="CheckBox" parent="Ui/MenuPanel"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -333,29 +347,29 @@ theme = ExtResource("11_sa3xm")
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4/MenuPanel"]
 layout_mode = 2
 
-[node name="Jobs" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Stats" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Stats"
 
-[node name="Classes" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Background" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Background"
 
-[node name="Rest" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Skills" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Skills"
 
-[node name="Inventory" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Walk" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Inventory"
+text = "Walk"
 
 [node name="Shop" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
 layout_mode = 2

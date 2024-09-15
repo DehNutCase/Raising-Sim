@@ -7,7 +7,7 @@ func _ready():
 func load_stat_bars(job = "farmwork"):
 	var stats = Constants.jobs[job]["stats"].keys()
 	for i in range(len(stats)):
-		var job_bar = load("res://Actions/stat_bar.tscn").instantiate()
+		var job_bar = load("res://Scenes/UI/Actions/stat_bar.tscn").instantiate()
 		job_bar.stat_name = str(stats[i])
 		add_child(job_bar)
 		self.get_child(i).position = Vector2((i%3  * 300) + 50, 200 * int(i/3))
