@@ -95,7 +95,9 @@ func process_day():
 	if (Player.stats["stress"] < 20):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
 	if (Player.stats["stress"] < 10):
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)	
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)
+	else:
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
 	if (Player.stats["stress"] > 80):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
 
@@ -161,14 +163,25 @@ func do_walk(walk_name: String) -> void:
 				weights.append(outcome.weight)
 			else:
 				weights.append(1)
-		var walk_stats = outcomes[rand_weighted(weights)].stats
+		var outcome = outcomes[rand_weighted(weights)]
+		var walk_stats = outcome.stats
 		walk.visible = false
-		process_stats(walk_stats)
 		animation.animation.visible = true
 		animation.animation.play("Run")
 		Player.remaining_walks -= 1
+		if(skip_checkbox.button_pressed):
+			_on_close_button_pressed()
+		if 'toasts' in outcome:
+			for toast in outcome.toasts:
+				display_toast(toast)
+				await(get_tree().create_timer(.5).timeout)
+		await(get_tree().create_timer(.5).timeout)
+		process_stats(walk_stats)
 	else:
-		display_toast("No walks left!")
+		display_toast("No walks left!", "top")
+		if(skip_checkbox.button_pressed):
+			_on_close_button_pressed()
+
 
 func get_success_chance(job):
 	var task = Constants.jobs[job]
@@ -311,6 +324,7 @@ func _on_inventory_item_added(item):
 	for stat in item.get_property("stats"):
 		Player.stats[stat] += item.get_property("stats")[stat]
 
+#helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0
 	for weight in weights:

@@ -61,5 +61,8 @@ func job_motion(motion):
 
 
 func queue_motion(motion):
-	next_motion = motion
+	if (cubism_model.get_cubism_motion_queue_entries()):
+		next_motion = motion
+	else:
+		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
 	

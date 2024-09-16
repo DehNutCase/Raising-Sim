@@ -300,9 +300,10 @@ const locations = {
 		'outcomes':
 			[{
 				'stats': {
-					'experience': 10,
+					'stress': -1,
 					'gold': 10,
 				},
+				'toasts': ["Found a shiny coin."],
 				'weight': 2,
 			},
 			{
