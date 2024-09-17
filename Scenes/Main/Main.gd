@@ -38,6 +38,8 @@ var day: int:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	Dialogic.timeline_started.connect(_on_timeline_started)
 	if (day == 0):
 		for inventory_name in Player.inventories:
 			Player[inventory_name].item_added.connect(_on_inventory_item_added)
@@ -47,7 +49,7 @@ func _ready():
 		#TODO, uncomment this line (line commented out for dev purposes)
 		#TODO, Live2D performance seems to mostly be related to eyes 
 		#Note: Live2D Pro has resize model, check if that affects performance
-		#Dialogic.start("timeline")
+		#Dialogic.start("timeine")
 	else:
 		display_stats()
 		day_label.display_day(day)
@@ -92,14 +94,7 @@ func process_day():
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	
-	if (Player.stats["stress"] < 20):
-		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
-	if (Player.stats["stress"] < 10):
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)
-	else:
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
-	if (Player.stats["stress"] > 80):
-		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
+	update_expressions()
 
 #TODO remove stat bars in job pages
 func do_job(job_name: String) :
@@ -171,6 +166,13 @@ func do_walk(walk_name: String) -> void:
 		Player.remaining_walks -= 1
 		if(skip_checkbox.button_pressed):
 			_on_close_button_pressed()
+		if 'timeline' in outcome:
+			var timeline = await Dialogic.preload_timeline(outcome.timeline)
+			#TODO, add loading bar for dialogic (wait until more optimized models)
+			$Loading.show()
+			await(get_tree().create_timer(.2).timeout)
+			#TODO, optimize loading screen
+			#Dialogic.start("timeline")
 		if 'toasts' in outcome:
 			for toast in outcome.toasts:
 				display_toast(toast)
@@ -318,7 +320,15 @@ func display_stats() -> void:
 
 func _on_dialogic_signal(item: String) -> void:
 	Player.inventory.create_and_add_item(item)
-
+	
+func _on_timeline_started() -> void:
+	player_model.cubism_model.assets = ""
+	$Loading.hide()
+	
+func _on_timeline_ended() -> void:
+	player_model.cubism_model.assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
+	update_expressions()
+	
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items
 	for stat in item.get_property("stats"):
@@ -336,3 +346,13 @@ func rand_weighted(weights) -> int:
 			return i
 		choice -= weights[i]
 	return 0
+
+func update_expressions() -> void:
+	if (Player.stats["stress"] < 20):
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
+	if (Player.stats["stress"] < 10):
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)
+	else:
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
+	if (Player.stats["stress"] > 80):
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)

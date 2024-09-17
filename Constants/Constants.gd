@@ -312,6 +312,7 @@ const locations = {
 					'gold': 20,
 				},
 				'weight': 1,
+				'timeline': 'res://Characters/timeline.dtl',
 			},]
 	},
 }
