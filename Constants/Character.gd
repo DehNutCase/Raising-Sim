@@ -1,11 +1,11 @@
 class_name Character extends Node
 
 var base_stats = {
-	"max_hp": 12,
-	"strength": 8,
-	"magic": 9,
-	"level": 1,
-	"gold": 100,
+	'max_hp': 100,
+	'strength': 10,
+	'defense': 5,
+	'level': 1,
+	'gold': 100,
 }
 
 @export var stats = {}

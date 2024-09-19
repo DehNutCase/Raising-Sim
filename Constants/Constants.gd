@@ -215,8 +215,8 @@ const rests = {
 }
 
 const stats = {
-	base_stats = ['max_hp', 'max_mp', 'strength', 'magic', 'skill', 'speed',
-		'defense', 'resistance'],
+	base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
+		"defense", "resistance"],
 	'max_hp' = {
 		'label': 'Max HP',
 		'emoji': '❤',
@@ -295,6 +295,7 @@ const constants = {
 	'months_in_year' = 4,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
 }
+
 const locations = {
 	'palace': {
 		'outcomes':
@@ -316,3 +317,40 @@ const locations = {
 			},]
 	},
 }
+
+const character_classes = {
+	'warrior': {
+		stats = {
+			'max_hp': 20,
+			'strength': 10,
+			'defense': 5,
+			'speed': 5,
+			'resistance': 1,
+			'gold': 50,
+			'exp': 10,
+		},
+	},
+}
+
+const races = {
+	'slime': {
+		base_stats = {
+			'max_hp': 50,
+			'strength': 5,
+			'defense': 5,
+			'speed': 5,
+			'resistance': 5,
+			'gold': 100,
+			'exp': 10,
+		},
+		stats = {
+			'exp': 1,
+		},
+	},
+}
+
+const default_enemy = {
+		"level": 1,
+		"character_class": "warrior",
+		"race": "slime",
+	}

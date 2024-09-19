@@ -245,7 +245,7 @@ func _on_action(button):
 			skills.visible = !skills.visible
 			background.visible = false
 			menu_panel.visible = true
-		#TODO, add new walk menu
+		#TODO, add new tower button, a series of combats
 		_:
 			print("hello else")
 			
