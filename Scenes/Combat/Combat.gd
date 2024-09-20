@@ -19,8 +19,16 @@ var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
 		
 func _ready():
-	for i in range(4):
-		var node = Enemy.new()
+	
+	var slime = {
+		"level": 1,
+		"character_class": "warrior",
+		"race": "slime",
+	}
+
+	for i in range(3):
+		var enemy_stats = calculate_stats(slime)
+		var node = Enemy.new({'stats': enemy_stats})
 		node.name = "Enemy"
 		enemies.append(node)
 		
@@ -49,8 +57,6 @@ func _on_action(button):
 		_:
 			print("hello else")
 
-	pass # Replace with function body.
-
 func _on_enemy_gui_input(event, clicked):
 	if event is InputEventMouseButton:
 		for enemy in positions:
@@ -59,4 +65,46 @@ func _on_enemy_gui_input(event, clicked):
 		target = clicked
 
 func exit_combat() -> void:
-	SceneLoader.load_scene("uid://dphq852upsasd")
+	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
+
+func calculate_stats(enemy) -> Variant:
+	var enemy_stats = {}
+	
+	if "race" in enemy:
+		var base_stats = {}
+		if "base_stats" in Constants.races[enemy.race]:
+			base_stats = Constants.races[enemy.race].base_stats
+		for stat in base_stats:
+			if stat in enemy_stats:
+				enemy_stats[stat] += base_stats[stat]
+			else:
+				enemy_stats[stat] = base_stats[stat]
+		
+		var level_stats = {}
+		if "level_stats" in Constants.races[enemy.race]:
+			level_stats = Constants.races[enemy.race].level_stats
+		for stat in level_stats:
+			if stat in enemy_stats:
+				enemy_stats[stat] += level_stats[stat] * enemy.level
+			else:
+				enemy_stats[stat] = level_stats[stat] * enemy.level
+
+	if "character_class" in enemy:
+		var base_stats = {}
+		if "base_stats" in Constants.character_classes[enemy.character_class]:
+			base_stats = Constants.character_classes[enemy.character_class].base_stats
+		for stat in base_stats:
+			if stat in enemy_stats:
+				enemy_stats[stat] += base_stats[stat]
+			else:
+				enemy_stats[stat] = base_stats[stat]
+				
+		var level_stats = {}
+		if "level_stats" in Constants.character_classes[enemy.character_class]:
+			level_stats = Constants.character_classes[enemy.character_class].level_stats
+		for stat in level_stats:
+			if stat in enemy_stats:
+				enemy_stats[stat] += level_stats[stat] * enemy.level
+			else:
+				enemy_stats[stat] = level_stats[stat] * enemy.level	
+	return enemy_stats

@@ -320,7 +320,7 @@ const locations = {
 
 const character_classes = {
 	'warrior': {
-		stats = {
+		level_stats = {
 			'max_hp': 20,
 			'strength': 10,
 			'defense': 5,
@@ -343,7 +343,7 @@ const races = {
 			'gold': 100,
 			'exp': 10,
 		},
-		stats = {
+		level_stats = {
 			'exp': 1,
 		},
 	},
