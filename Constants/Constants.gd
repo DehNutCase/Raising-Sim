@@ -349,8 +349,15 @@ const races = {
 	},
 }
 
-const default_enemy = {
-		"level": 1,
-		"character_class": "warrior",
-		"race": "slime",
-	}
+const tower_levels = [
+	{
+		'level': 0,
+		'enemies': [
+			{
+				"level": 1,
+				"character_class": "warrior",
+				"race": "slime",
+			},
+		],
+	},
+]
