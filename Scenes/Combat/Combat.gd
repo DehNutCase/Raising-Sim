@@ -25,11 +25,10 @@ func _ready():
 		"character_class": "warrior",
 		"race": "slime",
 	}
-
-	for i in range(3):
-		var enemy_stats = calculate_stats(slime)
+	
+	for i in range(len(Player.enemies)):
+		var enemy_stats = calculate_stats(Player.enemies[i])
 		var node = Enemy.new({'stats': enemy_stats})
-		node.name = "Enemy"
 		enemies.append(node)
 		
 	for enemy in positions:

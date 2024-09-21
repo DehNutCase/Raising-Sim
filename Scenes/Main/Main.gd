@@ -234,7 +234,7 @@ func _on_action(button):
 		"Walk":
 			walk.show()
 		"Battle":
-			SceneLoader.load_scene("uid://df0p3tawo2arq")
+			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 		"Stats":
 			stats.show()
 		"Background":
@@ -245,7 +245,11 @@ func _on_action(button):
 			skills.visible = !skills.visible
 			background.visible = false
 			menu_panel.visible = true
-		#TODO, add new tower button, a series of combats
+		"Tower":
+			#TODO, fetch enemies based on current tower level.
+			#TODO, add preview screen before starting tower combat
+			Player.enemies = Constants.tower_levels[0].enemies
+			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 		_:
 			print("hello else")
 			
