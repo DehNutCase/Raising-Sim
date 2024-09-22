@@ -8,3 +8,5 @@ func _init(enemy = {}, node_name = "Enemy"):
 		for stat in enemy.stats:
 			base_stats[stat] = enemy.stats[stat]
 	stats.current_hp = base_stats.max_hp
+	
+	display_stats = ["level", "experience", "gold",] + Constants.stats.base_stats

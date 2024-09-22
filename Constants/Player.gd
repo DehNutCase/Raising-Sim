@@ -27,16 +27,6 @@ var enemies = [
 		"character_class": "warrior",
 		"race": "slime",
 	},
-	{
-		"level": 1,
-		"character_class": "warrior",
-		"race": "slime",
-	},
-	{
-		"level": 1,
-		"character_class": "warrior",
-		"race": "slime",
-	},
 ]
 var tower_level = 0
 
@@ -46,12 +36,14 @@ func _init():
 		"strength": 10,
 		"magic": 15,
 		"defense": 5,
+		"speed": 1,
 		"resistance": 10,
 		"level": 1,
 		"gold": 0,
 		"bonus_exp": 0,
 		"scholarship": 0,
 	}
+	name = "Player"
 
 func level_up() -> void:
 	stats["level"] += 1

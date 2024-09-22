@@ -13,17 +13,22 @@ extends VBoxContainer
 @onready var positions= [pos1, pos2, pos3, pos4, pos5, pos6]
 @onready var target = pos1
 
+@onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
+
 var enemies: Array[Enemy] = []
+var order: Array[Character] = [Player]
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
-		
-func _ready():
 	
+func _ready():
+	Player.stats.current_hp = Player.stats.max_hp
+	update_player_hp()
 	for i in range(len(Player.enemies)):
 		var enemy_stats = calculate_stats(Player.enemies[i])
 		var node = Enemy.new({'stats': enemy_stats})
 		enemies.append(node)
+		order.append(node)
 		
 	for enemy in positions:
 		enemy.gui_input.connect(_on_enemy_gui_input.bind(enemy))
@@ -35,12 +40,26 @@ func _ready():
 		positions[i].show()
 	
 	for button in buttons.get_children():
+		if button.name == "PlayerStats":
+			continue
 		button.pressed.connect(_on_action.bind(button))
 	
 	target.toggle_target(true)
 
 		
 func _on_action(button):
+	#TODO, setup turns
+	order.sort_custom(speed_sort)
+	for node in order:
+		if node.name == "Player":
+			continue
+		var damage = max(1, node.stats.strength - Player.stats.defense)
+		var message = "Enemy attacked and dealt " + str(damage) + " damage."
+		display_toast(message)
+		update_player_hp(-damage)
+		await(get_tree().create_timer(.5).timeout)
+
+		
 	match button.text:
 		"Attack":
 			var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
@@ -110,3 +129,11 @@ func display_toast(message, gravity = "top", direction = "center"):
 		"gravity": gravity,                   # top or bottom
 		"direction": direction,               # left or center or right
 	})
+
+
+func speed_sort(a, b):
+	return a["stats"].speed > b["stats"].speed
+
+func update_player_hp(change: int = 0) -> void:
+	Player.stats.current_hp += change
+	player_stats_display.text = "Hp: " + str(Player.stats.current_hp)

@@ -327,7 +327,7 @@ const character_classes = {
 			'speed': 5,
 			'resistance': 1,
 			'gold': 50,
-			'exp': 10,
+			'experience': 10,
 		},
 	},
 }
@@ -341,10 +341,10 @@ const races = {
 			'speed': 5,
 			'resistance': 5,
 			'gold': 100,
-			'exp': 10,
+			'experience': 10,
 		},
 		level_stats = {
-			'exp': 1,
+			'experience': 1,
 		},
 	},
 }

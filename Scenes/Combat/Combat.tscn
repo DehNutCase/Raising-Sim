@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://df0p3tawo2arq"]
+[gd_scene load_steps=5 format=3 uid="uid://df0p3tawo2arq"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
 [ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="4_hv28o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbnm6"]
+font_size = 24
 
 [node name="Combat" type="VBoxContainer"]
 anchors_preset = 15
@@ -96,3 +99,12 @@ text = "Item"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Flee"
+
+[node name="PlayerStats" type="Label" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+custom_minimum_size = Vector2(240, 180)
+layout_mode = 2
+text = "Player Stats"
+label_settings = SubResource("LabelSettings_gbnm6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
