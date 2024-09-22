@@ -15,7 +15,30 @@ var remaining_walks: int = 0
 var event_flags = {}
 var proficiencies = {}
 var player_class:String = "ink_mage"
-var enemies = []
+
+var enemies = [
+	{
+		"level": 1,
+		"character_class": "warrior",
+		"race": "slime",
+	},
+	{
+		"level": 1,
+		"character_class": "warrior",
+		"race": "slime",
+	},
+	{
+		"level": 1,
+		"character_class": "warrior",
+		"race": "slime",
+	},
+	{
+		"level": 1,
+		"character_class": "warrior",
+		"race": "slime",
+	},
+]
+var tower_level = 0
 
 func _init():
 	base_stats = {

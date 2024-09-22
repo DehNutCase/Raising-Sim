@@ -248,7 +248,7 @@ func _on_action(button):
 		"Tower":
 			#TODO, fetch enemies based on current tower level.
 			#TODO, add preview screen before starting tower combat
-			Player.enemies = Constants.tower_levels[0].enemies
+			Player.enemies = Constants.tower_levels[Player.tower_level].enemies
 			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 		_:
 			print("hello else")

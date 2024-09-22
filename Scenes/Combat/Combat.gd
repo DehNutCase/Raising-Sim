@@ -20,12 +20,6 @@ var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		
 func _ready():
 	
-	var slime = {
-		"level": 1,
-		"character_class": "warrior",
-		"race": "slime",
-	}
-	
 	for i in range(len(Player.enemies)):
 		var enemy_stats = calculate_stats(Player.enemies[i])
 		var node = Enemy.new({'stats': enemy_stats})
@@ -49,7 +43,9 @@ func _ready():
 func _on_action(button):
 	match button.text:
 		"Attack":
-			var damage = Player.stats.strength - target.get_node("Enemy").stats.defense
+			var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
+			var message = "Attacked and dealt " + str(damage) + " damage."
+			display_toast(message)
 			target.update_hp(-damage)
 		"Flee":
 			exit_combat()
@@ -107,3 +103,10 @@ func calculate_stats(enemy) -> Variant:
 			else:
 				enemy_stats[stat] = level_stats[stat] * enemy.level	
 	return enemy_stats
+	
+func display_toast(message, gravity = "top", direction = "center"):
+	ToastParty.show({
+		"text": message,           # Text (emojis can be used)
+		"gravity": gravity,                   # top or bottom
+		"direction": direction,               # left or center or right
+	})
