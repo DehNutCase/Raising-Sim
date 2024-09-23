@@ -15,6 +15,9 @@ extends VBoxContainer
 
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
+enum states {READY, PROCESSING}
+var state = states.READY
+
 var enemies: Array[Enemy] = []
 var order: Array[Character] = [Player]
 
@@ -45,32 +48,44 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))
 	
 	target.toggle_target(true)
-
-		
-func _on_action(button):
-	#TODO, setup turns
+	
+#TODO, add skills
+#TODO, process victory/defeat
+#TODO, add action points system
+func process_turns(player_action: String):
 	order.sort_custom(speed_sort)
+	
 	for node in order:
 		if node.name == "Player":
+			player_attack()
+			await(get_tree().create_timer(.5).timeout)
 			continue
+			
 		var damage = max(1, node.stats.strength - Player.stats.defense)
 		var message = "Enemy attacked and dealt " + str(damage) + " damage."
 		display_toast(message)
 		update_player_hp(-damage)
 		await(get_tree().create_timer(.5).timeout)
-
 		
+func player_attack():
+	var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
+	var message = "Attacked and dealt " + str(damage) + " damage."
+	display_toast(message)
+	target.update_hp(-damage)
+	
+func _on_action(button):
+	if state != states.READY:
+		return
+	state = states.PROCESSING
 	match button.text:
 		"Attack":
-			var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
-			var message = "Attacked and dealt " + str(damage) + " damage."
-			display_toast(message)
-			target.update_hp(-damage)
+			await process_turns("Attack")
 		"Flee":
 			exit_combat()
 		_:
 			print("hello else")
-
+	state = states.READY
+	
 func _on_enemy_gui_input(event, clicked):
 	if event is InputEventMouseButton:
 		for enemy in positions:
