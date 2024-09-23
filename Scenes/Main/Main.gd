@@ -84,6 +84,9 @@ func process_day():
 			Player.stats[stat] += item.get_property("daily_stats")[stat]
 	
 	for stat in Player.stats:
+		if !stat in Constants.stats:
+			print(stat + " isn't in Constants.stats")
+			continue
 		if "min" in Constants.stats[stat] && Player.stats[stat] < Constants.stats[stat]["min"]:
 			Player.stats[stat] = Constants.stats[stat]["min"]
 		if "max" in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]["max"]:
