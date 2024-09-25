@@ -27,9 +27,9 @@ var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 func _ready():
 	Player.stats.current_hp = Player.stats.max_hp
 	update_player_hp()
+	
 	for i in range(len(Player.enemies)):
-		var enemy_stats = calculate_stats(Player.enemies[i])
-		var node = Enemy.new({'stats': enemy_stats})
+		var node = Enemy.new(Player.enemies[i])
 		enemies.append(node)
 		order.append(node)
 		
@@ -49,7 +49,6 @@ func _ready():
 	
 	target.toggle_target(true)
 	
-#TODO, add skills
 #TODO, process victory/defeat
 #TODO, add action points system
 func process_turns(player_action: String):
@@ -57,14 +56,28 @@ func process_turns(player_action: String):
 	
 	for node in order:
 		if node.name == "Player":
-			player_attack()
-			await(get_tree().create_timer(.5).timeout)
+			await player_attack()
 			continue
 			
-		var damage = max(1, node.stats.strength - Player.stats.defense)
-		var message = "Enemy attacked and dealt " + str(damage) + " damage."
-		display_toast(message)
-		update_player_hp(-damage)
+		var weights = []
+		for skill in node.combat_skills:
+			if 'weight' in Constants.combat_skills[skill]:
+				weights.append(Constants.combat_skills[skill].weight)
+			else:
+				printerr("missing weight for skill")
+				weights.append(1)
+		
+		#TODO, add action for buffing
+		var action = Constants.combat_skills[node.combat_skills[rand_weighted(weights)]]
+		match action.effect_type:
+			"attack":
+				var damage = max(1, ((node.stats.strength * action.attack_strength/100) - Player.stats.defense))
+				var message = "Enemy attacked and dealt " + str(damage) + " damage."
+				display_toast(message)
+				update_player_hp(-damage)
+			_:
+				printerr("Unknown action type")
+				
 		await(get_tree().create_timer(.5).timeout)
 		
 func player_attack():
@@ -72,6 +85,7 @@ func player_attack():
 	var message = "Attacked and dealt " + str(damage) + " damage."
 	display_toast(message)
 	target.update_hp(-damage)
+	await(get_tree().create_timer(.5).timeout)
 	
 func _on_action(button):
 	if state != states.READY:
@@ -95,48 +109,6 @@ func _on_enemy_gui_input(event, clicked):
 
 func exit_combat() -> void:
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
-
-func calculate_stats(enemy) -> Variant:
-	var enemy_stats = {}
-	
-	if "race" in enemy:
-		var base_stats = {}
-		if "base_stats" in Constants.races[enemy.race]:
-			base_stats = Constants.races[enemy.race].base_stats
-		for stat in base_stats:
-			if stat in enemy_stats:
-				enemy_stats[stat] += base_stats[stat]
-			else:
-				enemy_stats[stat] = base_stats[stat]
-		
-		var level_stats = {}
-		if "level_stats" in Constants.races[enemy.race]:
-			level_stats = Constants.races[enemy.race].level_stats
-		for stat in level_stats:
-			if stat in enemy_stats:
-				enemy_stats[stat] += level_stats[stat] * enemy.level
-			else:
-				enemy_stats[stat] = level_stats[stat] * enemy.level
-
-	if "character_class" in enemy:
-		var base_stats = {}
-		if "base_stats" in Constants.character_classes[enemy.character_class]:
-			base_stats = Constants.character_classes[enemy.character_class].base_stats
-		for stat in base_stats:
-			if stat in enemy_stats:
-				enemy_stats[stat] += base_stats[stat]
-			else:
-				enemy_stats[stat] = base_stats[stat]
-				
-		var level_stats = {}
-		if "level_stats" in Constants.character_classes[enemy.character_class]:
-			level_stats = Constants.character_classes[enemy.character_class].level_stats
-		for stat in level_stats:
-			if stat in enemy_stats:
-				enemy_stats[stat] += level_stats[stat] * enemy.level
-			else:
-				enemy_stats[stat] = level_stats[stat] * enemy.level	
-	return enemy_stats
 	
 func display_toast(message, gravity = "top", direction = "center"):
 	ToastParty.show({
@@ -145,10 +117,22 @@ func display_toast(message, gravity = "top", direction = "center"):
 		"direction": direction,               # left or center or right
 	})
 
-
 func speed_sort(a, b):
 	return a["stats"].speed > b["stats"].speed
 
 func update_player_hp(change: int = 0) -> void:
 	Player.stats.current_hp += change
 	player_stats_display.text = "Hp: " + str(Player.stats.current_hp)
+
+#helper function due to 4.2 lacking 4.3's weighted random chocie
+func rand_weighted(weights) -> int:
+	var weight_sum = 0
+	for weight in weights:
+		weight_sum += weight
+	var rng = RandomNumberGenerator.new()
+	var choice = rng.randi_range(0, weight_sum)
+	for i in range(len(weights)):
+		if(choice <= weights[i]):
+			return i
+		choice -= weights[i]
+	return 0

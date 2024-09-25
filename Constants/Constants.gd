@@ -320,7 +320,7 @@ const locations = {
 
 const character_classes = {
 	'warrior': {
-		level_stats = {
+		'level_stats': {
 			'max_hp': 20,
 			'strength': 10,
 			'defense': 5,
@@ -329,12 +329,13 @@ const character_classes = {
 			'gold': 50,
 			'experience': 10,
 		},
+		'combat_skills': ["warcry"],
 	},
 }
 
 const races = {
 	'slime': {
-		base_stats = {
+		'base_stats': {
 			'max_hp': 50,
 			'strength': 5,
 			'defense': 5,
@@ -343,7 +344,7 @@ const races = {
 			'gold': 100,
 			'experience': 10,
 		},
-		level_stats = {
+		'level_stats': {
 			'experience': 1,
 		},
 	},
@@ -361,3 +362,20 @@ const tower_levels = [
 		],
 	},
 ]
+
+const combat_skills = {
+	'warcry': {
+		'stats': {
+			'strength': 5,
+		},
+		'weight': 5,
+		'effect_target': 'allies',
+		'effect_type': 'buff',
+	},
+	'basic_attack': {
+		'weight': 10,
+		'effect_target': 'enemy',
+		'effect_type': 'attack',
+		'attack_strength': 100,
+	},
+}
