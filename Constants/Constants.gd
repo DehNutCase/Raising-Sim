@@ -369,13 +369,18 @@ const combat_skills = {
 			'strength': 5,
 		},
 		'weight': 5,
-		'effect_target': 'allies',
+		'effect_target': 'ally',
 		'effect_type': 'buff',
+		'effect_range': 'area',
+		'message': "Strength increased for the enemy party!",
+		'label': "Warcry",
 	},
 	'basic_attack': {
 		'weight': 10,
 		'effect_target': 'enemy',
 		'effect_type': 'attack',
+		'effect_range': 'single',
 		'attack_strength': 100,
+		'label': "Basic Attack"
 	},
 }

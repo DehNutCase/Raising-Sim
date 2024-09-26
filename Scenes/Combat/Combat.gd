@@ -75,9 +75,12 @@ func process_turns(player_action: String):
 				var message = "Enemy attacked and dealt " + str(damage) + " damage."
 				display_toast(message)
 				update_player_hp(-damage)
+			"buff":
+				var message = "Enemey used " + action.label + ". " + action.message
+				apply_buffs_enemy(action, node)
+				display_toast(message)
 			_:
-				printerr("Unknown action type")
-				
+				printerr("Unknown action.effect_type")
 		await(get_tree().create_timer(.5).timeout)
 		
 func player_attack():
@@ -86,6 +89,25 @@ func player_attack():
 	display_toast(message)
 	target.update_hp(-damage)
 	await(get_tree().create_timer(.5).timeout)
+	
+func apply_buffs_enemy(action, caster):
+	match action.effect_range:
+		"area":
+			for stat in action.stats:
+				for enemy in enemies:
+					enemy.stats[stat] += action.stats[stat]
+		"single":
+			var weights = []
+			for enemy in enemies:
+				weights.append(1)
+			target = enemies[rand_weighted(weights)]
+			for stat in action.stats:
+				target.stats[stat] += action.stats[stat]
+		"self":
+			for stat in action.stats:
+				caster.stats[stat] += action.stats[stat]
+		_:
+			printerr("Unmatched action.effect_range")
 	
 func _on_action(button):
 	if state != states.READY:
