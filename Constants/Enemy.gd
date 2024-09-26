@@ -2,6 +2,7 @@ class_name Enemy extends Character
 
 var portrait = "uid://dkkm2aamicapl" #res://Art/Portraits/mao_portrait.png
 var combat_skills = ["basic_attack"]
+var label = "Enemy"
 
 func _init(enemy: Variant, node_name = "Enemy"):
 	name = node_name
@@ -14,6 +15,7 @@ func calculate_stats(enemy) -> void:
 	var enemy_skills = []
 	
 	if "race" in enemy:
+		label = Constants.races[enemy.race].label
 		var base_stats = {}
 		if "base_stats" in Constants.races[enemy.race]:
 			base_stats = Constants.races[enemy.race].base_stats
@@ -37,6 +39,7 @@ func calculate_stats(enemy) -> void:
 				enemy_skills.append(combat_skill)
 
 	if "character_class" in enemy:
+		label += " " + Constants.character_classes[enemy.character_class].label
 		var base_stats = {}
 		if "base_stats" in Constants.character_classes[enemy.character_class]:
 			base_stats = Constants.character_classes[enemy.character_class].base_stats

@@ -288,6 +288,11 @@ const stats = {
 		'emoji': '',
 		'min': 0,
 	},
+	'action_points' = {
+		'label': 'Action Points',
+		'emoji': '',
+		'min': 1,
+	}
 }
 
 const constants = {
@@ -328,8 +333,10 @@ const character_classes = {
 			'resistance': 1,
 			'gold': 50,
 			'experience': 10,
+			'action_points': 2,
 		},
 		'combat_skills': ["warcry"],
+		'label': "Warrior",
 	},
 }
 
@@ -343,10 +350,12 @@ const races = {
 			'resistance': 5,
 			'gold': 100,
 			'experience': 10,
+			'action_points': 1,
 		},
 		'level_stats': {
 			'experience': 1,
 		},
+		'label': 'Slime',
 	},
 }
 

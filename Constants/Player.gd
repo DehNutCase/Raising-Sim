@@ -42,6 +42,7 @@ func _init():
 		"gold": 0,
 		"bonus_exp": 0,
 		"scholarship": 0,
+		"action_points": 1,
 	}
 	name = "Player"
 

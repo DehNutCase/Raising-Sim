@@ -15,6 +15,8 @@ extends VBoxContainer
 
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
+const TOAST_TIMEOUT_DURATION = .5
+
 enum states {READY, PROCESSING}
 var state = states.READY
 
@@ -50,7 +52,7 @@ func _ready():
 	target.toggle_target(true)
 	
 #TODO, process victory/defeat
-#TODO, add action points system
+#TODO, add action points system for Player
 func process_turns(player_action: String):
 	order.sort_custom(speed_sort)
 	
@@ -67,28 +69,31 @@ func process_turns(player_action: String):
 				printerr("missing weight for skill")
 				weights.append(1)
 		
-		#TODO, add action for buffing
-		var action = Constants.combat_skills[node.combat_skills[rand_weighted(weights)]]
-		match action.effect_type:
-			"attack":
-				var damage = max(1, ((node.stats.strength * action.attack_strength/100) - Player.stats.defense))
-				var message = "Enemy attacked and dealt " + str(damage) + " damage."
-				display_toast(message)
-				update_player_hp(-damage)
-			"buff":
-				var message = "Enemey used " + action.label + ". " + action.message
-				apply_buffs_enemy(action, node)
-				display_toast(message)
-			_:
-				printerr("Unknown action.effect_type")
-		await(get_tree().create_timer(.5).timeout)
+		var message = node.label + "'s turn!"
+		display_toast(message)
+		await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
+		for i in range(node.stats.action_points):
+			var action = Constants.combat_skills[node.combat_skills[rand_weighted(weights)]]
+			match action.effect_type:
+				"attack":
+					var damage = max(1, ((node.stats.strength * action.attack_strength/100) - Player.stats.defense))
+					message = "Enemy attacked and dealt " + str(damage) + " damage."
+					display_toast(message)
+					update_player_hp(-damage)
+				"buff":
+					message = "Enemey used " + action.label + ". " + action.message
+					apply_buffs_enemy(action, node)
+					display_toast(message)
+				_:
+					printerr("Unknown action.effect_type")
+			await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
 		
 func player_attack():
 	var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
 	display_toast(message)
 	target.update_hp(-damage)
-	await(get_tree().create_timer(.5).timeout)
+	await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
 	
 func apply_buffs_enemy(action, caster):
 	match action.effect_range:
@@ -119,7 +124,7 @@ func _on_action(button):
 		"Flee":
 			exit_combat()
 		_:
-			print("hello else")
+			printerr("hello else")
 	state = states.READY
 	
 func _on_enemy_gui_input(event, clicked):
