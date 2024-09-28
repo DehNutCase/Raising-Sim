@@ -369,6 +369,7 @@ const tower_levels = [
 				"race": "slime",
 			},
 		],
+		'description': "A Level One Slime Warrior.",
 	},
 ]
 

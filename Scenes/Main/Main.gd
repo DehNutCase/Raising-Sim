@@ -15,6 +15,7 @@ extends Node2D
 @onready var shop = $Ui/MenuPanel/Shop
 @onready var walk = $Ui/MenuPanel/Walk
 @onready var stats = $Ui/MenuPanel/Stats
+@onready var tower = $Ui/MenuPanel/Tower
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var buttons = $MarginContainer3/MenuPanel/VBoxContainer
@@ -249,12 +250,10 @@ func _on_action(button):
 			background.visible = false
 			menu_panel.visible = true
 		"Tower":
-			#TODO, fetch enemies based on current tower level.
-			#TODO, add preview screen before starting tower combat
-			Player.enemies = Constants.tower_levels[Player.tower_level].enemies
-			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+			tower.show()
+			tower.get_node("Description").text = Constants.tower_levels[Player.tower_level].description
 		_:
-			print("hello else")
+			printerr("_on_action failed to match")
 			
 	if open_menu == button.text:
 		_on_close_button_pressed()
@@ -363,3 +362,8 @@ func update_expressions() -> void:
 		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
 	if (Player.stats["stress"] > 80):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
+
+
+func _on_enter_tower_button_pressed() -> void:
+	Player.enemies = Constants.tower_levels[Player.tower_level].enemies
+	SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")

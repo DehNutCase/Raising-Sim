@@ -261,6 +261,19 @@ script = ExtResource("22_prvwr")
 visible = false
 script = ExtResource("21_psxgd")
 
+[node name="Tower" type="VBoxContainer" parent="Ui/MenuPanel"]
+visible = false
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/Tower"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnterTowerButton" type="Button" parent="Ui/MenuPanel/Tower"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Enter Tower"
+
 [node name="CloseButton" type="Button" parent="Ui/MenuPanel"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -395,6 +408,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Battle"
 
+[connection signal="pressed" from="Ui/MenuPanel/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/stress"]
