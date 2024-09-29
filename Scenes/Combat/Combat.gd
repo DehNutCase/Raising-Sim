@@ -58,6 +58,9 @@ func process_turns(player_action: String):
 	
 	for node in order:
 		if node.name == "Player":
+			var message = node.label + "'s turn!"
+			display_toast(message)
+			await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
 			await player_attack()
 			continue
 			
@@ -91,9 +94,10 @@ func process_turns(player_action: String):
 func player_attack():
 	var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
-	display_toast(message)
-	target.update_hp(-damage)
-	await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
+	for i in range(Player.stats.action_points):
+		display_toast(message)
+		target.update_hp(-damage)
+		await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
 	
 func apply_buffs_enemy(action, caster):
 	match action.effect_range:

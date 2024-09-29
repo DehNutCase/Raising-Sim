@@ -15,6 +15,7 @@ var remaining_walks: int = 0
 var event_flags = {}
 var proficiencies = {}
 var player_class:String = "ink_mage"
+var label = "Mao"
 
 var enemies = [
 	{
