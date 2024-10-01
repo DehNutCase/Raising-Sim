@@ -34,6 +34,7 @@ directories/dch_directory={
 "Rice": "res://Characters/Rice/Rice.dch"
 }
 directories/dtl_directory={
+"Day1Event": "res://Timelines/Day1Event.dtl",
 "timeline": "res://Timelines/timeline.dtl"
 }
 glossary/default_case_sensitive=true

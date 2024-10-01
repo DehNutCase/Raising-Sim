@@ -47,10 +47,6 @@ func _ready():
 			for starting_item in Player.starting_items[inventory_name]:
 				Player[inventory_name].create_and_add_item(starting_item)
 		process_day()
-		#TODO, uncomment this line (line commented out for dev purposes)
-		#TODO, Live2D performance seems to mostly be related to eyes 
-		#Note: Live2D Pro has resize model, check if that affects performance
-		#Dialogic.start("timeine")
 	else:
 		display_stats()
 		day_label.display_day(day)
@@ -67,10 +63,10 @@ func _input(event):
 
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
-		var items = inventory.inventory.get_items().duplicate()
-		items.append_array(background.inventory.get_items())
-		items.append_array(skills.inventory.get_items())
-		for item in items:
+		var monthly_items = inventory.inventory.get_items().duplicate()
+		monthly_items.append_array(background.inventory.get_items())
+		monthly_items.append_array(skills.inventory.get_items())
+		for item in monthly_items:
 			for stat in item.get_property("monthly_stats"):
 				Player.stats[stat] += item.get_property("monthly_stats")[stat]
 		
@@ -97,8 +93,9 @@ func process_day():
 	day_label.display_day(day)
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
-	
 	update_expressions()
+	
+	check_and_play_events()
 
 #TODO remove stat bars in job pages
 func do_job(job_name: String) :
@@ -117,8 +114,7 @@ func do_job(job_name: String) :
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if "stress" in job_stats:
-			var stats = {"stress": job_stats["stress"]}
-			process_stats(stats)
+			process_stats({"stress": job_stats["stress"]})
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
 	work.visible = false
 	animation.animation.visible = true
@@ -171,12 +167,11 @@ func do_walk(walk_name: String) -> void:
 		if(skip_checkbox.button_pressed):
 			_on_close_button_pressed()
 		if 'timeline' in outcome:
-			var timeline = await Dialogic.preload_timeline(outcome.timeline)
 			#TODO, add loading bar for dialogic (wait until more optimized models)
 			$Loading.show()
 			await(get_tree().create_timer(.2).timeout)
 			#TODO, optimize loading screen
-			#Dialogic.start("timeline")
+			Dialogic.start(outcome.timeline)
 		if 'toasts' in outcome:
 			for toast in outcome.toasts:
 				display_toast(toast)
@@ -367,3 +362,19 @@ func update_expressions() -> void:
 func _on_enter_tower_button_pressed() -> void:
 	Player.enemies = Constants.tower_levels[Player.tower_level].enemies
 	SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+
+func check_and_play_events() -> void:
+	#TODO, uncomment this line (line commented out for dev purposes)
+	#TODO, Live2D performance seems to mostly be related to eyes 
+	#Note: Live2D Pro has resize model, check if that affects performance
+	
+	if Player.day == 1 and !('Day1Event' in Player.event_flags):
+		Dialogic.start("Day1Event")
+		Player.event_flags['Day1Event'] = true
+		print(Player.event_flags)
+		
+	if Player.day == 5 and !('Day25Event' in Player.event_flags):
+		Dialogic.start("timeline")
+		Player.event_flags['timeline'] = true
+		print(Player.event_flags)
+		

@@ -2,7 +2,7 @@
 join Mao 1 [animation="Instant In Or Out" length="0"]
 join Rice 2 [animation="Instant In Or Out" length="0"]
 [history action="clear"]
-Mao_Portrait: This is timeline
+Mao_Portrait: Start
 Rice: Testing
 Rice: Test
 - Accept Robes
