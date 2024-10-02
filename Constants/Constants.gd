@@ -325,8 +325,8 @@ const locations = {
 
 const character_classes = {
 	'warrior': {
-		'level_stats': {
-			'max_hp': 20,
+		'base_stats': {
+			'max_hp': 50,
 			'strength': 10,
 			'defense': 5,
 			'speed': 5,
@@ -335,15 +335,47 @@ const character_classes = {
 			'experience': 10,
 			'action_points': 2,
 		},
+		'level_stats': {
+			'max_hp': 25,
+			'strength': 5,
+			'defense': 3,
+			'speed': 2,
+			'resistance': 1,
+			'gold': 10,
+			'experience': 25,
+		},
 		'combat_skills': ["warcry"],
 		'label': "Warrior",
+	},
+	'rogue': {
+		'base_stats': {
+			'max_hp': 20,
+			'strength': 10,
+			'defense': 5,
+			'speed': 10,
+			'resistance': 5,
+			'gold': 50,
+			'experience': 10,
+			'action_points': 2,
+		},
+		'level_stats': {
+			'max_hp': 15,
+			'strength': 3,
+			'defense': 2,
+			'speed': 5,
+			'resistance': 5,
+			'gold': 50,
+			'experience': 25,
+		},
+		'combat_skills': ["preparation"],
+		'label': "Rogue",
 	},
 }
 
 const races = {
 	'slime': {
 		'base_stats': {
-			'max_hp': 50,
+			'max_hp': 25,
 			'strength': 5,
 			'defense': 5,
 			'speed': 5,
@@ -356,6 +388,23 @@ const races = {
 			'experience': 1,
 		},
 		'label': 'Slime',
+	},
+	'goblin': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 10,
+			'defense': 10,
+			'speed': 10,
+			'resistance': 5,
+			'gold': 150,
+			'experience': 20,
+			'action_points': 1,
+		},
+		'level_stats': {
+			'experience': 2,
+			'gold': 5,
+		},
+		'label': 'Goblin',
 	},
 }
 
@@ -392,5 +441,16 @@ const combat_skills = {
 		'effect_range': 'single',
 		'attack_strength': 100,
 		'label': "Basic Attack"
+	},
+	'preparation': {
+		'stats': {
+			'action_points': 1,
+		},
+		'weight': 5,
+		'effect_target': 'self',
+		'effect_type': 'buff',
+		'effect_range': 'self',
+		'message': "Enemy action points increased!",
+		'label': "Preparation",
 	},
 }

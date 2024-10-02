@@ -25,8 +25,8 @@ var enemies = [
 	},
 	{
 		"level": 1,
-		"character_class": "warrior",
-		"race": "slime",
+		"character_class": "rogue",
+		"race": "goblin",
 	},
 ]
 var tower_level = 0
