@@ -79,13 +79,18 @@ func process_turns(player_action: String):
 			var action = Constants.combat_skills[node.combat_skills[rand_weighted(weights)]]
 			match action.effect_type:
 				"attack":
-					var damage = max(1, ((node.stats.strength * action.attack_strength/100) - Player.stats.defense))
+					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - Player.stats.defense))
 					message = "Enemy attacked and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
 				"buff":
 					message = "Enemey used " + action.label + ". " + action.message
 					apply_buffs_enemy(action, node)
+					display_toast(message)
+				"heal":
+					var heal_amount = max(1, ((node.stats.magic * action.effect_strength/100)))
+					message = "Enemy healed " + str(heal_amount) + " hit points."
+					heal_enemy(action, node, heal_amount)
 					display_toast(message)
 				_:
 					printerr("Unknown action.effect_type")
@@ -118,6 +123,22 @@ func apply_buffs_enemy(action, caster):
 		_:
 			printerr("Unmatched action.effect_range")
 	
+func heal_enemy(action, caster, amount):
+	match action.effect_range:
+		"area":
+			for enemy in enemies:
+				enemy.get_parent().update_hp(amount)
+		"single":
+			var weights = []
+			for enemy in enemies:
+				weights.append(1)
+			var heal_target = enemies[rand_weighted(weights)]
+			heal_target.get_parent().update_hp(amount)
+		"self":
+			caster.get_parent().update_hp(amount)
+		_:
+			printerr("Unmatched action.effect_range")
+			
 func _on_action(button):
 	if state != states.READY:
 		return

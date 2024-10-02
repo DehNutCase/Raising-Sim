@@ -28,6 +28,11 @@ var enemies = [
 		"character_class": "rogue",
 		"race": "goblin",
 	},
+	{
+		"level": 1,
+		"character_class": "priest",
+		"race": "slime",
+	},
 ]
 var tower_level = 0
 

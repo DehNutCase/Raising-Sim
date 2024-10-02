@@ -370,6 +370,31 @@ const character_classes = {
 		'combat_skills': ["preparation"],
 		'label': "Rogue",
 	},
+	'priest': {
+		'base_stats': {
+			'max_hp': 25,
+			'strength': 3,
+			'magic': 5,
+			'defense': 5,
+			'speed': 5,
+			'resistance': 10,
+			'gold': 25,
+			'experience': 50,
+			'action_points': 1,
+		},
+		'level_stats': {
+			'max_hp': 10,
+			'strength': 1,
+			'magic': 4,
+			'defense': 3,
+			'speed': 2,
+			'resistance': 5,
+			'gold': 25,
+			'experience': 25,
+		},
+		'combat_skills': ["heal"],
+		'label': "Priest",
+	},
 }
 
 const races = {
@@ -439,7 +464,7 @@ const combat_skills = {
 		'effect_target': 'enemy',
 		'effect_type': 'attack',
 		'effect_range': 'single',
-		'attack_strength': 100,
+		'effect_strength': 100,
 		'label': "Basic Attack"
 	},
 	'preparation': {
@@ -453,4 +478,12 @@ const combat_skills = {
 		'message': "Enemy action points increased!",
 		'label': "Preparation",
 	},
+	'heal': {
+		'weight': 10,
+		'effect_target': 'ally',
+		'effect_type': 'heal',
+		'effect_range': 'single',
+		'effect_strength': 100,
+		'label': "Heal"
+	}
 }
