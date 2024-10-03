@@ -101,7 +101,7 @@ func player_attack():
 	var message = "Attacked and dealt " + str(damage) + " damage."
 	for i in range(Player.stats.action_points):
 		display_toast(message)
-		target.update_hp(-damage)
+		update_enemy_hp(target, -damage)
 		await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
 	
 func apply_buffs_enemy(action, caster):
@@ -127,15 +127,15 @@ func heal_enemy(action, caster, amount):
 	match action.effect_range:
 		"area":
 			for enemy in enemies:
-				enemy.get_parent().update_hp(amount)
+				update_enemy_hp(enemy.get_parent(), amount)
 		"single":
 			var weights = []
 			for enemy in enemies:
 				weights.append(1)
 			var heal_target = enemies[rand_weighted(weights)]
-			heal_target.get_parent().update_hp(amount)
+			update_enemy_hp(heal_target.get_parent(), amount)
 		"self":
-			caster.get_parent().update_hp(amount)
+			update_enemy_hp(caster.get_parent(), amount)
 		_:
 			printerr("Unmatched action.effect_range")
 			
@@ -176,6 +176,14 @@ func update_player_hp(change: int = 0) -> void:
 	Player.stats.current_hp += change
 	player_stats_display.text = "Hp: " + str(Player.stats.current_hp)
 
+func update_enemy_hp(enemy, amount) -> void:
+	enemy.update_hp(amount)
+	#TODO, kill target if hp reaches 0
+	if enemy.get_hp() <= 0:
+		kill_enemy(enemy)
+	
+func kill_enemy(enemy) -> void:
+	pass
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0

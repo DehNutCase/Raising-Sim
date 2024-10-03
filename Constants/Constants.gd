@@ -443,7 +443,18 @@ const tower_levels = [
 				"race": "slime",
 			},
 		],
-		'description': "A Level One Slime Warrior.",
+		'description': "A Level One Slime Warrior. Starts weak, but often buffs itself to dangerous levels.",
+	},
+	{
+		'level': 1,
+		'enemies': [
+			{
+				"level": 1,
+				"character_class": "rogue",
+				"race": "goblin",
+			},
+		],
+		'description': "A Level One Goblin Rogue.",
 	},
 ]
 
