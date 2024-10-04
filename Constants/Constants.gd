@@ -395,6 +395,31 @@ const character_classes = {
 		'combat_skills': ["heal"],
 		'label': "Priest",
 	},
+	'mage': {
+		'base_stats': {
+			'max_hp': 10,
+			'strength': 1,
+			'magic': 10,
+			'defense': 5,
+			'speed': 5,
+			'resistance': 5,
+			'gold': 100,
+			'experience': 100,
+			'action_points': 2,
+		},
+		'level_stats': {
+			'max_hp': 10,
+			'strength': 1,
+			'magic': 5,
+			'defense': 1,
+			'speed': 3,
+			'resistance': 3,
+			'gold': 50,
+			'experience': 25,
+		},
+		'combat_skills': ["fireball", "brilliance"],
+		'label': "Mage",
+	},
 }
 
 const races = {
@@ -456,6 +481,33 @@ const tower_levels = [
 		],
 		'description': "A Level One Goblin Rogue.",
 	},
+	{
+		'level': 2,
+		'enemies': [
+			{
+				"level": 1,
+				"character_class": "mage",
+				"race": "slime",
+			},
+		],
+		'description': "A Level One Slime Mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick.",
+	},
+	{
+		'level': 3,
+		'enemies': [
+			{
+				"level": 1,
+				"character_class": "warrior",
+				"race": "slime",
+			},
+			{
+				"level": 1,
+				"character_class": "priest",
+				"race": "slime",
+			},
+		],
+		'description': "A Warrior and a Priest. Surprisingly, it might be better to take out the Warrior first.",
+	},
 ]
 
 const combat_skills = {
@@ -496,5 +548,24 @@ const combat_skills = {
 		'effect_range': 'single',
 		'effect_strength': 100,
 		'label': "Heal"
-	}
+	},
+	'brilliance': {
+		'stats': {
+			'magic': 5,
+		},
+		'weight': 10,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'area',
+		'message': "Magic increased for the enemy party!",
+		'label': "Brilliance",
+	},
+	'fireball': {
+		'weight': 15,
+		'effect_target': 'enemy',
+		'effect_type': 'magic_attack',
+		'effect_range': 'single',
+		'effect_strength': 200,
+		'label': "Fireball"
+	},
 }

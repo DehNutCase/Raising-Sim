@@ -83,6 +83,11 @@ func process_turns(player_action: String):
 					message = "Enemy attacked and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
+				"magic_attack":
+					var damage = max(1, ((node.stats.magic * action.effect_strength/100) - Player.stats.resistance))
+					message = "Enemy used " + action.label + " and dealt " + str(damage) + " damage."
+					display_toast(message)
+					update_player_hp(-damage)
 				"buff":
 					message = "Enemey used " + action.label + ". " + action.message
 					apply_buffs_enemy(action, node)
@@ -184,6 +189,7 @@ func update_enemy_hp(enemy, amount) -> void:
 	
 func kill_enemy(enemy) -> void:
 	pass
+	
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0
