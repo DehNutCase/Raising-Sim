@@ -64,6 +64,10 @@ func process_turns(player_action: String):
 			await player_attack()
 			continue
 			
+		if node.stats.current_hp <= 0:
+			printerr("Enemey should be dead already.")
+			continue
+			
 		var weights = []
 		for skill in node.combat_skills:
 			if 'weight' in Constants.combat_skills[skill]:
@@ -119,9 +123,9 @@ func apply_buffs_enemy(action, caster):
 			var weights = []
 			for enemy in enemies:
 				weights.append(1)
-			target = enemies[rand_weighted(weights)]
+			var buff_target = enemies[rand_weighted(weights)]
 			for stat in action.stats:
-				target.stats[stat] += action.stats[stat]
+				buff_target.stats[stat] += action.stats[stat]
 		"self":
 			for stat in action.stats:
 				caster.stats[stat] += action.stats[stat]
@@ -159,6 +163,8 @@ func _on_action(button):
 	
 func _on_enemy_gui_input(event, clicked):
 	if event is InputEventMouseButton:
+		if state != states.READY:
+			return
 		for enemy in positions:
 			enemy.toggle_target(false)
 		clicked.toggle_target(true)
@@ -183,12 +189,15 @@ func update_player_hp(change: int = 0) -> void:
 
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
-	#TODO, kill target if hp reaches 0
 	if enemy.get_hp() <= 0:
 		kill_enemy(enemy)
 	
 func kill_enemy(enemy) -> void:
-	pass
+	enemy.gui_input.disconnect(_on_enemy_gui_input.bind(enemy))
+	order.erase(enemy.get_node("Enemy"))
+	enemies.erase(enemy.get_node("Enemy"))
+	enemy.hide()
+	#TODO, end combat once all enemies gone from enemies
 	
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
