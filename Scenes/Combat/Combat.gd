@@ -22,6 +22,7 @@ var state = states.READY
 
 var enemies: Array[Enemy] = []
 var order: Array[Character] = [Player]
+var death_queue: Array[Enemy] = []
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
@@ -49,7 +50,7 @@ func _ready():
 			continue
 		button.pressed.connect(_on_action.bind(button))
 	
-	target.toggle_target(true)
+	update_target(pos1.get_node("Enemy"))
 	
 #TODO, process victory/defeat
 #TODO, add action points system for Player
@@ -60,12 +61,12 @@ func process_turns(player_action: String):
 		if node.name == "Player":
 			var message = node.label + "'s turn!"
 			display_toast(message)
-			await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
+			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 			await player_attack()
 			continue
-			
-		if node.stats.current_hp <= 0:
-			printerr("Enemey should be dead already.")
+		
+		#Skip dead enemy's turn
+		if node in death_queue:
 			continue
 			
 		var weights = []
@@ -104,14 +105,20 @@ func process_turns(player_action: String):
 				_:
 					printerr("Unknown action.effect_type")
 			await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
-		
+	
+	
+	for enemy in death_queue:
+		order.erase(enemy)
+	if not target.get_node("Enemy") in enemies and enemies:
+		update_target(enemies[0])
+	
 func player_attack():
 	var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
 	for i in range(Player.stats.action_points):
 		display_toast(message)
-		update_enemy_hp(target, -damage)
-		await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
+		await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
+		await update_enemy_hp(target, -damage)
 	
 func apply_buffs_enemy(action, caster):
 	match action.effect_range:
@@ -190,13 +197,20 @@ func update_player_hp(change: int = 0) -> void:
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
 	if enemy.get_hp() <= 0:
-		kill_enemy(enemy)
+		await kill_enemy(enemy)
+	
+func update_target(enemy) -> void:
+	target = enemy.get_parent()
+	target.toggle_target(true)
 	
 func kill_enemy(enemy) -> void:
 	enemy.gui_input.disconnect(_on_enemy_gui_input.bind(enemy))
-	order.erase(enemy.get_node("Enemy"))
+	death_queue.append(enemy.get_node("Enemy"))
 	enemies.erase(enemy.get_node("Enemy"))
 	enemy.hide()
+	var message = "Killed " + enemy.get_node("Enemy").label + "!"
+	display_toast(message)
+	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 	#TODO, end combat once all enemies gone from enemies
 	
 #helper function due to 4.2 lacking 4.3's weighted random chocie
