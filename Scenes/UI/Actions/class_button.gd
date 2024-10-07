@@ -13,5 +13,5 @@ func update_label(text: String):
 
 
 func _on_job_button_pressed():
-	get_tree().call_group("Main", "do_class", button_label.text)
+	get_tree().call_group("Main", "do_lesson", button_label.text)
 	pass # Replace with function body.

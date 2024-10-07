@@ -26,7 +26,6 @@ extends Node2D
 @onready var menus = [work, lessons, rest, shop, walk, stats,]
 
 var jobs = Constants.jobs
-var classes = Constants.classes
 var rests = Constants.rests
 
 var day: int:
@@ -41,6 +40,7 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
+	
 	if (day == 0):
 		for inventory_name in Player.inventories:
 			Player[inventory_name].item_added.connect(_on_inventory_item_added)
@@ -121,16 +121,19 @@ func do_job(job_name: String) :
 	animation.animation.play("Run")
 	process_day()
 	
-#TODO, add animations for class and resting
-#TODO, display cost of rest and classes
-func do_class(lesson_name: String) :
-	var class_stats = Constants.classes[lesson_name]["stats"]
+#TODO, add animations for lesson and resting
+#TODO, display cost of rest and lessons
+#TODO, add proficiency and skills for lessons
+func do_lesson(lesson_name: String) :
+	print(lesson_name)
+	print("Hello l")
+	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0
-	if"gold" in class_stats: cost = -class_stats.gold
+	if"gold" in lesson_stats: cost = -lesson_stats.gold
 	if (cost > Player.stats["gold"]):
 		display_toast("Not enough gold!", "top", "center")
 		return
-	process_stats(class_stats)
+	process_stats(lesson_stats)
 	lessons.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")

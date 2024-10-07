@@ -121,7 +121,7 @@ const jobs = {
 	},
 }
 
-const classes = {
+const lessons = {
 	'magic': {
 		'stats': {
 			'experience': 100,
@@ -185,6 +185,27 @@ const classes = {
 			'scholarship': 500,
 		},
 		'difficulty': -50,
+	},
+	'combat theory': {
+		'stats': {
+			'experience': 100,
+			'gold': -100,
+			'max_hp': 1,
+			'max_mp': 1,
+			'strength': 1,
+			'defense': 1,
+			'speed': 1,
+			'magic': 1,
+			'resistance': 1,
+			'stress': 5,
+		},
+		'required_stats': {
+			'max_hp': 100,
+			'max_mp': 100
+		},
+		'difficulty': 0,
+		'proficiency': 100,
+		'proficiency_gain': 25,
 	},
 }
 
