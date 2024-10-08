@@ -125,8 +125,6 @@ func do_job(job_name: String) :
 #TODO, display cost of rest and lessons
 #TODO, add proficiency and skills for lessons
 func do_lesson(lesson_name: String) :
-	print(lesson_name)
-	print("Hello l")
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0
 	if"gold" in lesson_stats: cost = -lesson_stats.gold
@@ -137,6 +135,13 @@ func do_lesson(lesson_name: String) :
 	lessons.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Run")
+	
+	if 'proficiency' in Constants.lessons[lesson_name]:
+		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain
+		if ('skill' in Constants.lessons[lesson_name]):
+			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
+				if (!Player.skill_inventory.get_item_by_id(Constants.lessons[lesson_name].skill.id)):
+					Player.skill_inventory.create_and_add_item(Constants.lessons[lesson_name].skill.id)
 	process_day()
 
 func do_rest(rest_name: String) -> void:
