@@ -63,6 +63,7 @@ func process_turns(player_action: String):
 			display_toast(message)
 			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 			await player_attack()
+			await process_followups()
 			continue
 		
 		#Skip dead enemy's turn
@@ -115,10 +116,9 @@ func process_turns(player_action: String):
 func player_attack():
 	var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
-	for i in range(Player.stats.action_points):
-		display_toast(message)
-		await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
-		await update_enemy_hp(target, -damage)
+	display_toast(message)
+	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
+	await update_enemy_hp(target, -damage)
 	
 func apply_buffs_enemy(action, caster):
 	match action.effect_range:
@@ -165,7 +165,7 @@ func _on_action(button):
 		"Flee":
 			exit_combat()
 		_:
-			printerr("hello else")
+			printerr("Button text match issue")
 	state = states.READY
 	
 func _on_enemy_gui_input(event, clicked):
@@ -225,3 +225,15 @@ func rand_weighted(weights) -> int:
 			return i
 		choice -= weights[i]
 	return 0
+
+func process_followups() -> void:
+	match Player.skill_flags.followup_attacks:
+		Player.followup_attacks.NO_FOLLOWUP:
+			return
+		Player.followup_attacks.BASIC_ATTACK:
+			if Player.stats.action_points > 1:
+				for i in range(Player.stats.action_points -1):
+					await player_attack()
+			return
+		_:
+			printerr("Followup issue")

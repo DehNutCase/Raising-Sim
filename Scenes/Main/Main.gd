@@ -25,6 +25,9 @@ extends Node2D
 
 @onready var menus = [work, lessons, rest, shop, walk, stats,]
 
+#Dev variable, remove when building
+var skip_movie = true
+
 var jobs = Constants.jobs
 var rests = Constants.rests
 
@@ -40,10 +43,11 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
-	
+	for inventory_name in Player.inventories:
+		Player[inventory_name].item_added.connect(_on_inventory_item_added)
+		
 	if (day == 0):
 		for inventory_name in Player.inventories:
-			Player[inventory_name].item_added.connect(_on_inventory_item_added)
 			for starting_item in Player.starting_items[inventory_name]:
 				Player[inventory_name].create_and_add_item(starting_item)
 		process_day()
@@ -133,10 +137,12 @@ func do_lesson(lesson_name: String) :
 		return
 	process_stats(lesson_stats)
 	lessons.visible = false
-	animation.animation.visible = true
+	animation.animation.show()
 	animation.animation.play("Run")
 	
 	if 'proficiency' in Constants.lessons[lesson_name]:
+		if !lesson_name in Player.proficiencies:
+			Player.proficiencies[lesson_name] = 0
 		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain
 		if ('skill' in Constants.lessons[lesson_name]):
 			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
@@ -340,9 +346,17 @@ func _on_timeline_ended() -> void:
 	
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items
-	for stat in item.get_property("stats"):
+	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
-
+	
+	for flag in item.get_property("flags", {}):
+		var value = item.get_property("flags")[flag]
+		if flag in Player.skill_flags:
+			if value > Player.skill_flags[flag]:
+				Player.skill_flags[flag] = value
+		else:
+			Player.skill_flags[flag] = value
+		
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0
@@ -375,7 +389,8 @@ func check_and_play_events() -> void:
 	#TODO, uncomment this line (line commented out for dev purposes)
 	#TODO, Live2D performance seems to mostly be related to eyes 
 	#Note: Live2D Pro has resize model, check if that affects performance
-	
+	if skip_movie:
+		return
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
 		Dialogic.start("Day1Event")
 		Player.event_flags['Day1Event'] = true

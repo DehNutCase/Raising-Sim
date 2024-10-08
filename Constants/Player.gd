@@ -13,9 +13,11 @@ var day: int = 0
 var max_walks: int = 1
 var remaining_walks: int = 0
 var event_flags = {}
+var skill_flags = {"followup_attacks": followup_attacks.NO_FOLLOWUP}
 var proficiencies = {}
 var player_class:String = "ink_mage"
 var label = "Mao"
+enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 
 var enemies = [
 	{

@@ -206,6 +206,10 @@ const lessons = {
 		'difficulty': 0,
 		'proficiency': 100,
 		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'basic_combat_training',
+		},
 	},
 }
 
