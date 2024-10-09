@@ -185,6 +185,12 @@ const lessons = {
 			'scholarship': 500,
 		},
 		'difficulty': -50,
+		'proficiency': 100,
+		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'diligent_student',
+		},
 	},
 	'combat theory': {
 		'stats': {

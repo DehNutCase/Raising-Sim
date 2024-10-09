@@ -1,6 +1,6 @@
 @tool
 @icon("res://addons/gloot/images/icon_ctrl_inventory.svg")
-class_name CtrlInventory
+#class_name CtrlInventory
 extends Control
 
 signal inventory_item_activated(item)
