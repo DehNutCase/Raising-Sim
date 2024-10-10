@@ -122,57 +122,74 @@ const jobs = {
 }
 
 const lessons = {
-	'magic': {
+	'Basic Magic Training': {
 		'stats': {
-			'experience': 100,
+			'experience': 50,
 			'gold': -100,
-			'magic': 3,
-			'max_mp': 3,
-			'resistance': 3,
+			'magic': 2,
+			'max_mp': 2,
+			'scholarship': 2,
+			'resistance': 1,
 			'stress': 5,
 		},
 		'required_stats': {
-			'magic': 100,
-			'max_mp': 100,
-			'resistance': 100
+			'magic': 10,
+			'max_mp': 10,
+			'resistance': 10
 		},
 		'difficulty': 0,
+		'proficiency': 100,
+		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'basic_magic_training',
+		},
 	},
-	'melee': {
+	'Basic Melee Training': {
 		'stats': {
-			'experience': 100,
-			'gold': -100,
-			'max_hp': 3,
-			'strength': 3,
-			'defense': 2,
+			'experience': 50,
+			'gold': -50,
+			'max_hp': 2,
+			'strength': 2,
+			'defense': 1,
 			'speed': 1,
 			'stress': 5,
 		},
 		'required_stats': {
-			'strength': 100,
-			'max_hp': 100,
-			'defense': 100
+			'strength': 10,
+			'max_hp': 10,
+			'defense': 10
 		},
 		'difficulty': 0,
+		'proficiency': 100,
+		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'basic_melee_training',
+		},
 	},
-	'faith': {
+	'Basic Theology': {
 		'stats': {
-			'experience': 100,
+			'experience': 50,
 			'gold': -100,
 			'max_hp': 3,
 			'max_mp': 2,
-			'defense': 2,
-			'resistance': 2,
+			'defense': 1,
+			'resistance': 1,
 			'skill': 1,
 			'stress': 5,
 		},
 		'required_stats': {
-			'max_hp': 100,
-			'max_mp': 100,
-			'defense': 50,
-			'resistance': 50,
+			'max_hp': 10,
+			'max_mp': 10,
+			'defense': 5,
+			'resistance': 5,
 		},
 		'difficulty': 0,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'basic_theology',
+		},
 	},
 	'general education': {
 		'stats': {

@@ -12,43 +12,43 @@ json_data = "[
         \"image\": \"uid://doycqxwp1io2v\",
         \"monthly_stats\": \"{}\",
         \"name\": \"Quick Learner\",
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 10,\\n\\\"magic\\\": 5\\n}\",
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10,\\n\\\"magic\\\": 5\\n}\"
     },
     {
-        \"daily_stats\": \"{\\n\\\"experience\\\": 1}\",
+        \"daily_stats\": \"{\\n\\\"experience\\\": 1\\n}\",
         \"description\": \"A novice in the field of farming\",
         \"id\": \"apprentice_farmer\",
         \"image\": \"\",
         \"monthly_stats\": \"{\\n\\\"strength\\\": 5\\n}\",
         \"name\": \"Apprentice Farmer\",
-        \"stats\": \"{}\",
+        \"stats\": \"{}\"
     },
     {
-        \"daily_stats\": \"{\\n\\\"experience\\\": 5}\",
+        \"daily_stats\": \"{\\n\\\"experience\\\": 5\\n}\",
         \"description\": \"Someone who often helps out at the local church.\",
         \"id\": \"church_helper\",
         \"image\": \"\",
         \"monthly_stats\": \"{\\n\\\"resistance\\\": 5\\n}\",
         \"name\": \"Church Helper\",
-        \"stats\": \"{}\",
+        \"stats\": \"{}\"
     },
     {
-        \"daily_stats\": \"{\\n\\\"magic\\\": 1,\\n\\\"experience\\\": 5\\n}\",
+        \"daily_stats\": \"{\\n\\\"experience\\\": 5,\\n\\\"magic\\\": 1\\n}\",
         \"description\": \"A license to practice wizardy. Since it's an Apprentice's license, there's no need to take an exam.\",
         \"id\": \"wizarding_license_apprentice\",
         \"image\": \"\",
         \"monthly_stats\": \"{\\n\\\"resistance\\\": 5\\n}\",
         \"name\": \"Wizarding License (Apprentice)\",
-        \"stats\": \"{}\",
+        \"stats\": \"{}\"
     },
     {
-        \"daily_stats\": \"{\\n\\\"scholarship\\\": 5,\\n\\\"experience\\\": 1\\n}\",
+        \"daily_stats\": \"{\\n\\\"experience\\\": 1,\\n\\\"scholarship\\\": 5\\n}\",
         \"description\": \"A diligent student who studies every day.\",
         \"id\": \"diligent_student\",
         \"image\": \"\",
         \"monthly_stats\": \"{\\n\\\"experience\\\": 100\\n}\",
         \"name\": \"Diligent Student\",
-        \"stats\": \"{}\",
+        \"stats\": \"{}\"
     },
     {
         \"daily_stats\": \"{\\n\\\"experience\\\": 2\\n}\",
@@ -57,15 +57,42 @@ json_data = "[
         \"image\": \"\",
         \"monthly_stats\": \"{\\n\\\"max_hp\\\": 10\\n}\",
         \"name\": \"Apprentice Mason\",
-        \"stats\": \"{}\",
+        \"stats\": \"{}\"
     },
     {
-        \"daily_stats\": \"{\\n\\\"max_hp\\\": 1\\n,\\n\\\"max_mp\\\": 1\\n}\",
-        \"description\": \"A novice in the field of masonry.\",
+        \"daily_stats\": \"{\\n\\\"max_hp\\\": 1,\\n\\\"max_mp\\\": 1\\n}\",
+        \"description\": \"Unlocked basic follow up attacks. (Excess action points are used to perform basic attacks.).\",
+        \"flags\": \"{\\n\\\"followup_attacks\\\": 1\\n}\",
         \"id\": \"basic_combat_training\",
         \"image\": \"\",
         \"name\": \"Basic Combat Training\",
-        \"stats\": \"{}\",
-        \"flags\":\"{\\n\\\"followup_attacks\\\": 1\\n}\",
+        \"stats\": \"{}\"
     },
+    {
+        \"daily_stats\": \"{\\n\\\"magic\\\": 1,\\n\\\"max_mp\\\": 1\\n}\",
+        \"description\": \"Someone who studied the basics of magic.\",
+        \"id\": \"basic_magic_training\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"scholarship\\\": 10\\n}\",
+        \"name\": \"Student Of Magic\",
+        \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"defense\\\": 1,\\n\\\"max_hp\\\": 1\\n}\",
+        \"description\": \"Someone who learned the basics of fighting in the front lines.\",
+        \"id\": \"basic_melee_training\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"strength\\\": 10\\n}\",
+        \"name\": \"Vanguard In Training\",
+        \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"max_hp\\\": 1,\\n\\\"resistance\\\": 1\\n}\",
+        \"description\": \"Someone who learned a little bit of theology.\",
+        \"id\": \"basic_theology\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"defense\\\": 10\\n}\",
+        \"name\": \"Apprentice Acolyte\",
+        \"stats\": \"{}\"
+    }
 ]"
