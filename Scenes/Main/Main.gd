@@ -106,7 +106,7 @@ func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job_name)
-	if ( get_success_chance(job_name) > rng.randf() * 100):
+	if (JobButton.get_success_chance(job_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
 		process_stats(job_stats)
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain
@@ -120,23 +120,37 @@ func do_job(job_name: String) :
 		if "stress" in job_stats:
 			process_stats({"stress": job_stats["stress"]})
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
-	work.visible = false
-	animation.animation.visible = true
+	work.hide()
+	animation.animation.show()
 	animation.animation.play("Run")
 	process_day()
 	
 #TODO, add animations for lesson and resting
 #TODO, display cost of rest and lessons
-#TODO, add proficiency and skills for lessons
+#TODO, add success chance check for lesson and button
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0
-	if"gold" in lesson_stats: cost = -lesson_stats.gold
+	if "gold" in lesson_stats: cost = -lesson_stats.gold
 	if (cost > Player.stats["gold"]):
 		display_toast("Not enough gold!", "top", "center")
 		return
-	process_stats(lesson_stats)
-	lessons.visible = false
+	var rng = RandomNumberGenerator.new()
+	if (LessonButton.get_success_chance(lesson_name) > rng.randf() * 100):
+		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
+		process_stats(lesson_stats)
+		if 'proficiency' in Constants.lessons[lesson_name]:
+			Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain
+		if ('skill' in Constants.lessons[lesson_name]):
+			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
+				if (!Player.skill_inventory.get_item_by_id(Constants.lessons[lesson_name].skill.id)):
+					Player.skill_inventory.create_and_add_item(Constants.lessons[lesson_name].skill.id)
+	else:
+		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
+		if "stress" in lesson_stats:
+			process_stats({"stress": lesson_stats["stress"], "gold": lesson_stats["gold"]})
+		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain/2
+	lessons.hide()
 	animation.animation.show()
 	animation.animation.play("Run")
 	
@@ -196,25 +210,6 @@ func do_walk(walk_name: String) -> void:
 		display_toast("No walks left!", "top")
 		if(skip_checkbox.button_pressed):
 			_on_close_button_pressed()
-
-
-func get_success_chance(job):
-	var task = Constants.jobs[job]
-	var task_total_stats = 1
-	var adjusted_stats = 1
-	for stat in task.required_stats:
-		task_total_stats += task.required_stats[stat]
-		if Player.stats[stat] >= task.required_stats[stat]:
-			adjusted_stats += (Player.stats[stat] - task.required_stats[stat])/2
-		else:
-			adjusted_stats += Player.stats[stat] - task.required_stats[stat]
-	task_total_stats += task.proficiency
-	if (job in Player.proficiencies):
-		adjusted_stats += Player.proficiencies[job]
-	else:
-		Player.proficiencies[job] = 0
-		
-	return 100.0 * adjusted_stats / task_total_stats - task["difficulty"] - Player.stats["stress"]
 
 func buy_item(item: String, price: int):
 	if Player.stats["gold"] >= price:
@@ -332,6 +327,7 @@ func display_stats() -> void:
 	walks_label.display_walks()
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
+	get_tree().call_group("Lesson_Button", "update_difficulty_color")	
 
 func _on_dialogic_signal(item: String) -> void:
 	Player.inventory.create_and_add_item(item)

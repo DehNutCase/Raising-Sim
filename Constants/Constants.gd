@@ -135,7 +135,8 @@ const lessons = {
 		'required_stats': {
 			'magic': 10,
 			'max_mp': 10,
-			'resistance': 10
+			'resistance': 10,
+			'scholarship': 0,
 		},
 		'difficulty': 0,
 		'proficiency': 100,
@@ -158,7 +159,8 @@ const lessons = {
 		'required_stats': {
 			'strength': 10,
 			'max_hp': 10,
-			'defense': 10
+			'defense': 10,
+			'scholarship': 0,
 		},
 		'difficulty': 0,
 		'proficiency': 100,
@@ -184,6 +186,7 @@ const lessons = {
 			'max_mp': 10,
 			'defense': 5,
 			'resistance': 5,
+			'scholarship': 0,
 		},
 		'difficulty': 0,
 		'skill':{
@@ -199,7 +202,7 @@ const lessons = {
 			'stress': 10,
 		},
 		'required_stats': {
-			'scholarship': 500,
+			'scholarship': 0,
 		},
 		'difficulty': -50,
 		'proficiency': 100,
@@ -224,7 +227,8 @@ const lessons = {
 		},
 		'required_stats': {
 			'max_hp': 100,
-			'max_mp': 100
+			'max_mp': 100,
+			'scholarship': 0,
 		},
 		'difficulty': 0,
 		'proficiency': 100,

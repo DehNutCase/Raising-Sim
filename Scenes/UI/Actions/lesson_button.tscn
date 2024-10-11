@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1h4kiu1ircoh"]
 
-[ext_resource type="Script" path="res://Scenes/UI/Actions/class_button.gd" id="1_a2mna"]
-[ext_resource type="Texture2D" uid="uid://dvx2x7tk3ob82" path="res://Art/Button/greenRectNormal.png" id="2_j08da"]
-[ext_resource type="Texture2D" uid="uid://cncj17g2lso6l" path="res://Art/Button/greenRectTapped.png" id="3_i82ix"]
-[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="4_52q5u"]
+[ext_resource type="Script" path="res://Scenes/UI/Actions/lesson_button.gd" id="1_51pw8"]
+[ext_resource type="Texture2D" uid="uid://dvx2x7tk3ob82" path="res://Art/Button/greenRectNormal.png" id="2_g4jh7"]
+[ext_resource type="Texture2D" uid="uid://cncj17g2lso6l" path="res://Art/Button/greenRectTapped.png" id="3_ng0tv"]
+[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="4_xgr0b"]
 
-[node name="Margin" type="MarginContainer"]
+[node name="Margin" type="MarginContainer" groups=["Lesson_Button"]]
 offset_right = 423.0
 offset_bottom = 226.0
 scale = Vector2(0.5, 0.5)
@@ -13,12 +13,12 @@ theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
-script = ExtResource("1_a2mna")
+script = ExtResource("1_51pw8")
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 2
-texture_normal = ExtResource("2_j08da")
-texture_pressed = ExtResource("3_i82ix")
+texture_normal = ExtResource("2_g4jh7")
+texture_pressed = ExtResource("3_ng0tv")
 
 [node name="Label" type="Label" parent="Button"]
 texture_filter = 4
@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_52q5u")
+theme = ExtResource("4_xgr0b")
 text = "Job"
 horizontal_alignment = 1
 vertical_alignment = 1

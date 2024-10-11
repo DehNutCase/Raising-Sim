@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
-[ext_resource type="Script" path="res://Scenes/UI/Actions/Classes.gd" id="12_sb63u"]
+[ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
 [ext_resource type="Script" path="res://Scenes/Main/SkillInventory.gd" id="13_tkqcx"]
 [ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
