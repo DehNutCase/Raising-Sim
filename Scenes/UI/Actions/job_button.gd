@@ -16,16 +16,8 @@ func update_difficulty_color():
 	var success = min(1, (max(0, get_success_chance(button_label.text)/100.0)))
 	modulate = Color(1,success,success)
 
-static func get_success_chance(name, type = 'job'):
-	var task
-	match type:
-		'job':
-			task = Constants.jobs[name]
-		'lesson':
-			task = Constants.lessons[name]
-		_:
-			printerr("JobButton get_success_chance match failure")
-			
+static func get_success_chance(name):
+	var task = Constants.jobs[name]
 	var task_total_stats = 1
 	var adjusted_stats = 1
 	for stat in task.required_stats:

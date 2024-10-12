@@ -102,6 +102,7 @@ func process_day():
 	check_and_play_events()
 
 #TODO remove stat bars in job pages
+#TODO add repeat checkbox (mutually exclusive with skip checkbox?)
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
@@ -127,7 +128,6 @@ func do_job(job_name: String) :
 	
 #TODO, add animations for lesson and resting
 #TODO, display cost of rest and lessons
-#TODO, add success chance check for lesson and button
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0

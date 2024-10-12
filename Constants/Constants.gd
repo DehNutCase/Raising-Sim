@@ -149,7 +149,7 @@ const lessons = {
 	'Basic Melee Training': {
 		'stats': {
 			'experience': 50,
-			'gold': -50,
+			'gold': -100,
 			'max_hp': 2,
 			'strength': 2,
 			'defense': 1,
@@ -189,12 +189,14 @@ const lessons = {
 			'scholarship': 0,
 		},
 		'difficulty': 0,
+		'proficiency': 100,
+		'proficiency_gain': 25,
 		'skill':{
 			'proficiency_required': 100,
 			'id': 'basic_theology',
 		},
 	},
-	'general education': {
+	'General Education': {
 		'stats': {
 			'experience': 100,
 			'gold': -100,
@@ -212,7 +214,7 @@ const lessons = {
 			'id': 'diligent_student',
 		},
 	},
-	'combat theory': {
+	'Combat Theory': {
 		'stats': {
 			'experience': 100,
 			'gold': -100,
@@ -237,6 +239,69 @@ const lessons = {
 			'proficiency_required': 100,
 			'id': 'basic_combat_training',
 		},
+	},
+	'Intermediate Magic Training': {
+		'stats': {
+			'experience': 100,
+			'gold': -250,
+			'magic': 5,
+			'max_mp': 5,
+			'scholarship': 2,
+			'speed': 2,
+			'resistance': 2,
+			'stress': 15,
+		},
+		'required_stats': {
+			'magic': 100,
+			'max_mp': 100,
+			'resistance': 100,
+			'scholarship': 0,
+		},
+		'difficulty': 50,
+		'proficiency': 200,
+		'proficiency_gain': 25,
+	},
+	'Intermediate Melee Training': {
+		'stats': {
+			'experience': 100,
+			'gold': -250,
+			'max_hp': 10,
+			'strength': 5,
+			'defense': 2,
+			'speed': 2,
+			'stress': 15,
+		},
+		'required_stats': {
+			'strength': 100,
+			'max_hp': 100,
+			'defense': 100,
+			'scholarship': 0,
+		},
+		'difficulty': 50,
+		'proficiency': 200,
+		'proficiency_gain': 25,
+	},
+	'Theology': {
+		'stats': {
+			'experience': 100,
+			'gold': -250,
+			'max_hp': 5,
+			'max_mp': 2,
+			'defense': 3,
+			'resistance': 3,
+			'skill': 2,
+			'stress': 15,
+		},
+		'required_stats': {
+			'max_hp': 100,
+			'max_mp': 100,
+			'defense': 50,
+			'resistance': 50,
+			'scholarship': 0,
+		},
+		'difficulty': 0,
+		'proficiency': 200,
+		'proficiency_gain': 25,
 	},
 }
 
