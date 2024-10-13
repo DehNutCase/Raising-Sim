@@ -71,7 +71,7 @@ func process_day():
 		monthly_items.append_array(background.inventory.get_items())
 		monthly_items.append_array(skills.inventory.get_items())
 		for item in monthly_items:
-			for stat in item.get_property("monthly_stats"):
+			for stat in item.get_property("monthly_stats", {}):
 				Player.stats[stat] += item.get_property("monthly_stats")[stat]
 		
 	day +=1
@@ -81,7 +81,7 @@ func process_day():
 	items.append_array(background.inventory.get_items())
 	items.append_array(skills.inventory.get_items())
 	for item in items:
-		for stat in item.get_property("daily_stats"):
+		for stat in item.get_property("daily_stats", {}):
 			Player.stats[stat] += item.get_property("daily_stats")[stat]
 	
 	for stat in Player.stats:
