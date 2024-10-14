@@ -1,10 +1,10 @@
 extends Node
 
 const jobs = {
-	'farmwork': {
+	'Farmwork': {
 		'stats': {
 			'experience': 10,
-			'gold': 10,
+			'gold': 100,
 			'max_hp': 1,
 			'stress': 3,
 		},
@@ -20,10 +20,10 @@ const jobs = {
 			'id': 'apprentice_farmer',
 		},
 	},
-	'masonry': {
+	'Masonry': {
 		'stats': {
 			'experience': 20,
-			'gold': 20,
+			'gold': 150,
 			'strength': 1,
 			'stress': 6,
 		},
@@ -39,10 +39,10 @@ const jobs = {
 			'id': 'apprentice_mason',
 		},
 	},
-	'tutoring': {
+	'Tutoring': {
 		'stats': {
 			'experience': 20,
-			'gold': 50,
+			'gold': 200,
 			'max_mp': 1,
 			'scholarship': 5,
 			'stress': 6,
@@ -52,7 +52,7 @@ const jobs = {
 			'magic': 0,
 			'scholarship': 200,
 		},
-		'difficulty': -50,
+		'difficulty': 0,
 		'proficiency': 200,
 		'proficiency_gain': 20,
 		'skill':{
@@ -60,10 +60,10 @@ const jobs = {
 			'id': 'diligent_student',
 		},
 	},
-	"wizard's apprentice": {
+	"Wizard's Apprentice": {
 		'stats': {
 			'experience': 40,
-			'gold': 10,
+			'gold': 200,
 			'resistance': 1,
 			'magic': 1,
 			'stress': 12,
@@ -73,7 +73,7 @@ const jobs = {
 			'resistance': 100,
 			'magic': 100,
 		},
-		'difficulty': -50,
+		'difficulty': 0,
 		'proficiency': 200,
 		'proficiency_gain': 25,
 		'skill':{
@@ -81,10 +81,10 @@ const jobs = {
 			'id': 'wizarding_license_apprentice',
 		},
 	},
-	'acolyte': {
+	'Acolyte': {
 		'stats': {
 			'experience': 10,
-			'gold': 1,
+			'gold': 50,
 			'max_hp': 1,
 			'max_mp': 1,
 			'stress': 1,
@@ -101,10 +101,10 @@ const jobs = {
 			'id': 'church_helper',
 		},
 	},
-	'hunting': {
+	'Hunting': {
 		'stats': {
 			'experience': 50,
-			'gold': 50,
+			'gold': 300,
 			'max_hp': 5,
 			'strength': 3,
 			'speed': 5,
@@ -115,7 +115,7 @@ const jobs = {
 			'strength': 100,
 			'max_hp': 100,
 		},
-		'difficulty': 0,
+		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
 	},
@@ -387,7 +387,7 @@ const lessons = {
 		'proficiency': 300,
 		'proficiency_gain': 25,
 	},
-	'Theology (Royal)': {
+	'Royal Lecture (Theology)': {
 		'stats': {
 			'experience': 200,
 			'gold': -1000,
@@ -507,7 +507,7 @@ const stats = {
 		'emoji': '📖',
 		'min': 0,
 		'max': 1000,
-		'bonus_ratio': 200,
+		'bonus_ratio': 200.0,
 	},
 	'bonus_exp' = {
 		'label': 'Exp Bonus',
