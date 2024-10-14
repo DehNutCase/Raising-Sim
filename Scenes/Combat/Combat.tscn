@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
 [ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
-[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="4_hv28o"]
+[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Themes/DefaultTheme.tres" id="4_hv28o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbnm6"]
 font_size = 24

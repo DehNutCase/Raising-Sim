@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
-[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Background/DefaultTheme.tres" id="11_sa3xm"]
+[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Themes/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
