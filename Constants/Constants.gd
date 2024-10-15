@@ -4,7 +4,7 @@ const jobs = {
 	'Farmwork': {
 		'stats': {
 			'experience': 10,
-			'gold': 100,
+			'gold': 50,
 			'max_hp': 1,
 			'stress': 3,
 		},
@@ -23,7 +23,7 @@ const jobs = {
 	'Masonry': {
 		'stats': {
 			'experience': 20,
-			'gold': 150,
+			'gold': 75,
 			'strength': 1,
 			'stress': 6,
 		},
@@ -42,7 +42,7 @@ const jobs = {
 	'Tutoring': {
 		'stats': {
 			'experience': 20,
-			'gold': 200,
+			'gold': 100,
 			'max_mp': 1,
 			'scholarship': 5,
 			'stress': 6,
@@ -63,7 +63,7 @@ const jobs = {
 	"Wizard's Apprentice": {
 		'stats': {
 			'experience': 40,
-			'gold': 200,
+			'gold': 100,
 			'resistance': 1,
 			'magic': 1,
 			'stress': 12,
@@ -84,7 +84,7 @@ const jobs = {
 	'Acolyte': {
 		'stats': {
 			'experience': 10,
-			'gold': 50,
+			'gold': 25,
 			'max_hp': 1,
 			'max_mp': 1,
 			'stress': 1,
@@ -104,7 +104,7 @@ const jobs = {
 	'Hunting': {
 		'stats': {
 			'experience': 50,
-			'gold': 300,
+			'gold': 150,
 			'max_hp': 5,
 			'strength': 3,
 			'speed': 5,
@@ -118,6 +118,70 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+	},
+	'Doodling': {
+		'stats': {
+			'experience': 50,
+			'gold': 10,
+			'art': 10,
+			'stress': 5,
+		},
+		'required_stats': {
+			'art': 10,
+		},
+		'difficulty': -50,
+		'proficiency': 100,
+		'proficiency_gain': 10,
+	},
+	'Painting': {
+		'stats': {
+			'experience': 100,
+			'gold': 100,
+			'art': 25,
+			'stress': 10,
+		},
+		'required_stats': {
+			'art': 250,
+		},
+		'difficulty': 0,
+		'proficiency': 200,
+		'proficiency_gain': 25,
+	},
+	'Painting (Palace)': {
+		'stats': {
+			'experience': 250,
+			'gold': 500,
+			'art': 50,
+			'stress': 25,
+		},
+		'required_stats': {
+			'art': 500,
+		},
+		'difficulty': 50,
+		'proficiency': 200,
+		'proficiency_gain': 10,
+	},
+	'Preach': {
+		'stats': {
+			'experience': 10,
+			'gold': 50,
+			'max_hp': 1,
+			'max_mp': 1,
+			'magic': 1,
+			'resistance': 1,
+			'stress': 5,
+		},
+		'required_stats': {
+			'max_hp': 200,
+			'max_mp': 200,
+		},
+		'difficulty': 0,
+		'proficiency': 100,
+		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 200,
+			'id': 'local_preacher',
+		},
 	},
 }
 
@@ -415,73 +479,81 @@ const lessons = {
 }
 
 const rests = {
-	'free time': {
+	'Free Time': {
 	'stats': {
 			'experience': 1,
 			'stress': -10,
 		}
 	},
-	'vacation': {
-		'stats': {
-			'experience': 5,
-			'gold': -20,
-			'magic': 1,
-			'max_mp': 1,
-			'stress': -20,
-		}
-	},
-	'crafting': {
+	'Library': {
 		'stats': {
 			'experience': 2,
-			'gold': 10,
-			'skill': 1,
-			'stress': -5,
+			'gold': -10,
+			'scholarship': 10,
+			'stress': -15,
 		}
-	}
+	},
+	'Vacation': {
+		'stats': {
+			'experience': 5,
+			'gold': -100,
+			'magic': 1,
+			'max_mp': 1,
+			'stress': -50,
+		}
+	},
 }
 
 const stats = {
 	base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
-		"defense", "resistance"],
+		"defense", "resistance", "art"],
 	'max_hp' = {
 		'label': 'Max HP',
 		'emoji': '❤',
 		'min': 0,
+		'max': 1000,
 	},
 	'max_mp' = {
 		'label': 'Max MP',
 		'emoji': '💙',
 		'min': 0,
+		'max': 1000,
 	},
 	'strength' = {
 		'label': 'Strength',
 		'emoji': '💪',
 		'min': 0,
+		'max': 1000,
 	},
 	'magic' = {
 		'label': 'Magic',
 		'emoji': '🪄',
 		'min': 0,
+		'max': 1000,
 	},
 	'skill' = {
 		'label': 'Skill',
 		'emoji': '🎯',
 		'min': 0,
+		'max': 1000,
 	},
 	'speed' = {
 		'label': 'Speed',
 		'emoji': '⚡',
 		'min': 0,
+		'max': 1000,
 	},
 	'defense' = {
 		'label': 'Defense',
 		'emoji': '🛡',
 		'min': 0,
+		'max': 1000,
 	},
 	'resistance' = {
 		'label': 'Resistance',
 		'emoji': '🥽',
 		'min': 0,
+		'max': 1000,
 	},
 	'stress' = {
 		'label': 'Stress',
@@ -492,6 +564,7 @@ const stats = {
 	'level' = {
 		'label': 'Level',
 		'min': 1,
+		'max': 1000,
 	},
 	'experience' = {
 		'label': 'Experience',
@@ -507,7 +580,12 @@ const stats = {
 		'emoji': '📖',
 		'min': 0,
 		'max': 1000,
-		'bonus_ratio': 200.0,
+		'bonus_ratio': 400.0,
+	},
+	'art' = {
+		'label': 'Art',
+		'emoji': '🎨',
+		'max': 1000,
 	},
 	'bonus_exp' = {
 		'label': 'Exp Bonus',

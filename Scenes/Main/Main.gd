@@ -310,6 +310,7 @@ func process_stats(stats):
 		if stat == "experience":
 			Player.gain_experience(stats["experience"])
 			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
+		#TODO, add list of stats scholarship doesn't affect to Constants
 		elif stat == "gold" or stat == "stress":
 			Player.stats[stat] += stats[stat]
 			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
@@ -342,6 +343,8 @@ func _on_timeline_ended() -> void:
 	
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items
+	var toast = "Obtained " + item.get_property("name")
+	display_toast(toast, "bottom", "center")
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
 	

@@ -94,5 +94,14 @@ json_data = "[
         \"monthly_stats\": \"{\\n\\\"defense\\\": 10\\n}\",
         \"name\": \"Apprentice Acolyte\",
         \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 10\\n,\\n\\\"max_hp\\\": 1\\n,\\n\\\"max_mp\\\": 1\\n}\",
+        \"description\": \"A familiar sight behind the pulpit.\",
+        \"id\": \"local_preacher\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"resistance\\\": 10\\n}\",
+        \"name\": \"Local Preacher\",
+        \"stats\": \"{}\"
     }
 ]"
