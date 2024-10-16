@@ -20,6 +20,25 @@ const jobs = {
 			'id': 'apprentice_farmer',
 		},
 	},
+	'Housework': {
+		'stats': {
+			'experience': 10,
+			'max_hp': 1,
+			'max_mp': 1,
+			'stress': 3,
+		},
+		'required_stats': {
+			'max_hp': 10,
+			'max_mp': 10,
+		},
+		'difficulty': -50,
+		'proficiency': 100,
+		'proficiency_gain': 10,
+		'skill':{
+			'proficiency_required': 50,
+			'id': 'maid_training',
+		},
+	},
 	'Masonry': {
 		'stats': {
 			'experience': 20,
@@ -41,7 +60,7 @@ const jobs = {
 	},
 	'Tutoring': {
 		'stats': {
-			'experience': 20,
+			'experience': 25,
 			'gold': 100,
 			'max_mp': 1,
 			'scholarship': 5,
@@ -121,7 +140,7 @@ const jobs = {
 	},
 	'Doodling': {
 		'stats': {
-			'experience': 50,
+			'experience': 25,
 			'gold': 10,
 			'art': 10,
 			'stress': 5,
@@ -131,7 +150,7 @@ const jobs = {
 		},
 		'difficulty': -50,
 		'proficiency': 100,
-		'proficiency_gain': 10,
+		'proficiency_gain': 25,
 	},
 	'Painting': {
 		'stats': {
@@ -147,7 +166,7 @@ const jobs = {
 		'proficiency': 200,
 		'proficiency_gain': 25,
 	},
-	'Painting (Palace)': {
+	'Court Painter': {
 		'stats': {
 			'experience': 250,
 			'gold': 500,
@@ -159,7 +178,7 @@ const jobs = {
 		},
 		'difficulty': 50,
 		'proficiency': 200,
-		'proficiency_gain': 10,
+		'proficiency_gain': 25,
 	},
 	'Preach': {
 		'stats': {
@@ -182,6 +201,64 @@ const jobs = {
 			'proficiency_required': 200,
 			'id': 'local_preacher',
 		},
+	},
+	'Teaching Assistant': {
+		'stats': {
+			'experience': 25,
+			'gold': 150,
+			'magic': 1,
+			'max_mp': 1,
+			'scholarship': 10,
+			'stress': 15,
+		},
+		'required_stats': {
+			'max_mp': 100,
+			'magic': 100,
+			'scholarship': 200,
+		},
+		'difficulty': 0,
+		'proficiency': 200,
+		'proficiency_gain': 20,
+	},
+	'Lecture': {
+		'stats': {
+			'experience': 50,
+			'gold': 250,
+			'magic': 1,
+			'max_mp': 1,
+			'scholarship': 5,
+			'art': 1,
+			'stress': 200,
+		},
+		'required_stats': {
+			'max_mp': 100,
+			'magic': 100,
+			'scholarship': 400,
+			'art': 100,
+		},
+		'difficulty': 50,
+		'proficiency': 200,
+		'proficiency_gain': 20,
+	},
+	'Architect': {
+		'stats': {
+			'experience': 50,
+			'gold': 250,
+			'art': 10,
+			'scholarship': 10,
+			'magic': 1,
+			'max_mp': 1,
+			'stress': 15,
+		},
+		'required_stats': {
+			'art': 200,
+			'scholarship': 200,
+			'magic': 100,
+			'max_mp': 100,
+		},
+		'difficulty': 50,
+		'proficiency': 200,
+		'proficiency_gain': 20,
 	},
 }
 

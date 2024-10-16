@@ -103,5 +103,14 @@ json_data = "[
         \"monthly_stats\": \"{\\n\\\"resistance\\\": 10\\n}\",
         \"name\": \"Local Preacher\",
         \"stats\": \"{}\"
-    }
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 1\\n}\",
+        \"description\": \"Someone who went through basic maid training for working in the palace. \\nThe training focused on speed and efficiency, doing more work in less time.\",
+        \"id\": \"maid_training\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{}\",
+        \"name\": \"Maid Training\",
+        \"stats\": \"{\\n\\\"action_points\\\": 1\\n}\"
+    },
 ]"
