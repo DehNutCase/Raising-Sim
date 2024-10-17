@@ -310,8 +310,7 @@ func process_stats(stats):
 		if stat == "experience":
 			Player.gain_experience(stats["experience"])
 			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
-		#TODO, add list of stats scholarship doesn't affect to Constants
-		elif stat == "gold" or stat == "stress":
+		elif stat in Constants.stats.scholarship_unaffected:
 			Player.stats[stat] += stats[stat]
 			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
 		else:

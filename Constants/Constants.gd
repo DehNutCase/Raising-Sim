@@ -553,6 +553,25 @@ const lessons = {
 		'proficiency': 300,
 		'proficiency_gain': 25,
 	},
+	'Royal Lecture (Magecraft)': {
+		'stats': {
+			'experience': 200,
+			'gold': -1000,
+			'max_mp': 10,
+			'magic': 30,
+			'resistance': 5,
+			'speed': 10,
+			'stress': 25,
+		},
+		'required_stats': {
+			'max_mp': 100,
+			'magic': 300,
+			'scholarship': 0,
+		},
+		'difficulty': 100,
+		'proficiency': 300,
+		'proficiency_gain': 25,
+	},
 }
 
 const rests = {
@@ -582,8 +601,9 @@ const rests = {
 }
 
 const stats = {
-	base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
+	'base_stats' = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance", "art"],
+	'scholarship_unaffected' = ["gold", "stress"],
 	'max_hp' = {
 		'label': 'Max HP',
 		'emoji': '❤',
