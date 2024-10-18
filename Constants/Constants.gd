@@ -138,7 +138,31 @@ const jobs = {
 		'proficiency': 200,
 		'proficiency_gain': 25,
 	},
-	'Doodling': {
+	'Cook': {
+		'stats': {
+			'experience': 50,
+			'gold': 150,
+			'max_hp': 2,
+			'max_mp': 2,
+			'magic': 1,
+			'speed': 2,
+			'stress': 15,
+		},
+		'required_stats': {
+			'speed': 100,
+			'max_mp': 100,
+			'max_hp': 100,
+			'magic': 100,
+		},
+		'difficulty': 25,
+		'proficiency': 200,
+		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 200,
+			'id': 'budding_chef',
+		},
+	},
+	'Doodle': {
 		'stats': {
 			'experience': 25,
 			'gold': 10,
