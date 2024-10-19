@@ -87,8 +87,7 @@ text = "Attack"
 [node name="Skill" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Skill
-"
+text = "Skill"
 
 [node name="Item" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
