@@ -78,6 +78,7 @@ theme = ExtResource("4_hv28o")
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/MenuPanel"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_hv28o")
 
 [node name="Attack" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
