@@ -345,6 +345,9 @@ func _on_inventory_item_added(item):
 				Player.skill_flags[flag] = value
 		else:
 			Player.skill_flags[flag] = value
+			
+	if item.get_property("combat_skill", {}):
+		Player.combat_skills.append(item.get_property("combat_skill", {}))
 		
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:

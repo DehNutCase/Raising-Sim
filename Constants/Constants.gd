@@ -425,6 +425,10 @@ const lessons = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'fireball',
+		},
 	},
 	'Intermediate Melee Training': {
 		'stats': {

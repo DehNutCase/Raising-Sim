@@ -13,6 +13,8 @@ extends VBoxContainer
 @onready var positions= [pos1, pos2, pos3, pos4, pos5, pos6]
 @onready var target = pos1
 
+@onready var skill_menu = $MarginContainer3/MenuPanel/HBoxContainer/Skill.get_popup()
+
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
 const TOAST_TIMEOUT_DURATION = .5
@@ -50,19 +52,53 @@ func _ready():
 			continue
 		button.pressed.connect(_on_action.bind(button))
 	
+	for skill in Player.combat_skills:
+		skill_menu.add_item(skill)
+	skill_menu.id_pressed.connect(_on_skill_press)
 	update_target(pos1.get_node("Enemy"))
+	
 	
 #TODO, process victory/defeat
 #TODO, add action points system for Player
 func process_turns(player_action: String):
 	order.sort_custom(speed_sort)
+	var message = ""
 	
 	for node in order:
 		if node.name == "Player":
-			var message = node.label + "'s turn!"
+			message = node.label + "'s turn!"
 			display_toast(message)
 			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
-			await player_attack()
+			
+			var action = Constants.combat_skills[player_action]
+			match action.effect_type:
+				"attack":
+					if target.get_node("Enemy") in death_queue:
+						return
+					var damage = max(1, (Player.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense)
+					message = "Attacked and dealt " + str(damage) + " damage."
+					display_toast(message)
+					await update_enemy_hp(target, -damage)
+				"magic_attack":
+					if target.get_node("Enemy") in death_queue:
+						return
+					var damage = max(1, ((Player.stats.magic * action.effect_strength/100) - target.get_node("Enemy").stats.resistance))
+					message = "Used " + action.label + " and dealt " + str(damage) + " damage."
+					display_toast(message)
+					await update_enemy_hp(target, -damage)
+				#TODO, update buff and heal for player
+				"buff":
+					message = "Enemey used " + action.label + ". " + action.message
+					apply_buffs_enemy(action, node)
+					display_toast(message)
+				"heal":
+					var heal_amount = max(1, ((node.stats.magic * action.effect_strength/100)))
+					message = "Enemy healed " + str(heal_amount) + " hit points."
+					heal_enemy(action, node, heal_amount)
+					display_toast(message)
+				_:
+					printerr("Unknown action.effect_type")
+			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 			await process_followups()
 			continue
 		
@@ -78,7 +114,7 @@ func process_turns(player_action: String):
 				printerr("missing weight for skill")
 				weights.append(1)
 		
-		var message = node.label + "'s turn!"
+		message = node.label + "'s turn!"
 		display_toast(message)
 		await(get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout)
 		for i in range(node.stats.action_points):
@@ -161,11 +197,22 @@ func _on_action(button):
 	state = states.PROCESSING
 	match button.text:
 		"Attack":
-			await process_turns("Attack")
+			await process_turns("basic_attack")
+		"Skill":
+			pass
+		"Item":
+			pass
 		"Flee":
 			exit_combat()
 		_:
-			printerr("Button text match issue")
+			printerr("Button text match issue: " + button.text)
+	state = states.READY
+	
+func _on_skill_press(id: int):
+	if state != states.READY:
+		return
+	state = states.PROCESSING
+	await process_turns(skill_menu.get_item_text(id).to_lower())
 	state = states.READY
 	
 func _on_enemy_gui_input(event, clicked):
@@ -204,13 +251,13 @@ func update_target(enemy) -> void:
 	target.toggle_target(true)
 	
 func kill_enemy(enemy) -> void:
+	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 	enemy.gui_input.disconnect(_on_enemy_gui_input.bind(enemy))
 	death_queue.append(enemy.get_node("Enemy"))
 	enemies.erase(enemy.get_node("Enemy"))
 	enemy.hide()
 	var message = "Killed " + enemy.get_node("Enemy").label + "!"
 	display_toast(message)
-	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 	#TODO, end combat once all enemies gone from enemies
 	
 #helper function due to 4.2 lacking 4.3's weighted random chocie
@@ -233,6 +280,8 @@ func process_followups() -> void:
 		Player.followup_attacks.BASIC_ATTACK:
 			if Player.stats.action_points > 1:
 				for i in range(Player.stats.action_points -1):
+					if target.get_node("Enemy") in death_queue:
+						return
 					await player_attack()
 			return
 		_:

@@ -118,8 +118,18 @@ json_data = "[
         \"description\": \"Ink magic was surprisingly useful in adding a bit of flair to cooking. \\nAn apprentice chef recognized by the head maid.\",
         \"id\": \"budding_chef\",
         \"image\": \"\",
-        \"monthly_stats\": \"{\\n\\\"gold\\\": 250\\n}\",
+        \"monthly_stats\": \"{\\n\\\"gold\\\": 500\\n}\",
         \"name\": \"Budding Chef\",
         \"stats\": \"{\\n\\\"action_points\\\": 1\\n}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 1\\n}\",
+        \"description\": \"Learned how to cast fireballs in combat.\",
+        \"id\": \"fireball\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"magic\\\": 1\\n}\",
+        \"name\": \"Fireball\",
+        \"stats\": \"{}\",
+        \"combat_skill\" : \"Fireball\"
     },
 ]"

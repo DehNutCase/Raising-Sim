@@ -84,15 +84,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Attack"
 
-[node name="Skill" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Skill" type="MenuButton" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Skill"
+flat = false
+switch_on_hover = true
 
-[node name="Item" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Item" type="MenuButton" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Item"
+flat = false
+switch_on_hover = true
 
 [node name="Flee" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2

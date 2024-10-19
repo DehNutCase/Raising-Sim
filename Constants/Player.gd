@@ -17,6 +17,7 @@ var skill_flags = {"followup_attacks": followup_attacks.NO_FOLLOWUP}
 var proficiencies = {}
 var player_class:String = "ink_mage"
 var label = "Mao"
+var combat_skills = []
 enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 
 var enemies = [
