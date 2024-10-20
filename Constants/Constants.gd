@@ -949,6 +949,7 @@ const combat_skills = {
 		'effect_type': 'buff',
 		'effect_range': 'area',
 		'message': "Strength increased for the enemy party!",
+		'message_player': "Strength increased!",
 		'label': "Warcry",
 	},
 	'basic_attack': {
@@ -968,6 +969,7 @@ const combat_skills = {
 		'effect_type': 'buff',
 		'effect_range': 'self',
 		'message': "Enemy action points increased!",
+		'message_player': "Action points increased!",
 		'label': "Preparation",
 	},
 	'heal': {
@@ -987,6 +989,7 @@ const combat_skills = {
 		'effect_type': 'buff',
 		'effect_range': 'area',
 		'message': "Magic increased for the enemy party!",
+		'message_player': "Magic increased!",
 		'label': "Brilliance",
 	},
 	'fireball': {

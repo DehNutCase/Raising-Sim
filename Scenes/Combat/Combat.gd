@@ -17,24 +17,28 @@ extends VBoxContainer
 
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
+#Copy player to prevent combat stat changes from affecting Player permanently
+@onready var player_combat_copy = Player.duplicate()
+
 const TOAST_TIMEOUT_DURATION = .5
 
 enum states {READY, PROCESSING}
 var state = states.READY
 
 var enemies: Array[Enemy] = []
-var order: Array[Character] = [Player]
+var order: Array[Character] = []
 var death_queue: Array[Enemy] = []
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
 	
 func _ready():
-	Player.stats.current_hp = Player.stats.max_hp
+	player_combat_copy.stats.current_hp = player_combat_copy.stats.max_hp
 	update_player_hp()
+	order.append(player_combat_copy)
 	
-	for i in range(len(Player.enemies)):
-		var node = Enemy.new(Player.enemies[i])
+	for i in range(len(player_combat_copy.enemies)):
+		var node = Enemy.new(player_combat_copy.enemies[i])
 		enemies.append(node)
 		order.append(node)
 		
@@ -52,7 +56,7 @@ func _ready():
 			continue
 		button.pressed.connect(_on_action.bind(button))
 	
-	for skill in Player.combat_skills:
+	for skill in player_combat_copy.combat_skills:
 		skill_menu.add_item(skill)
 	skill_menu.id_pressed.connect(_on_skill_press)
 	update_target(pos1.get_node("Enemy"))
@@ -75,26 +79,26 @@ func process_turns(player_action: String):
 				"attack":
 					if target.get_node("Enemy") in death_queue:
 						return
-					var damage = max(1, (Player.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense)
+					var damage = max(1, (player_combat_copy.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense)
 					message = "Attacked and dealt " + str(damage) + " damage."
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
 				"magic_attack":
 					if target.get_node("Enemy") in death_queue:
 						return
-					var damage = max(1, ((Player.stats.magic * action.effect_strength/100) - target.get_node("Enemy").stats.resistance))
+					var damage = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100) - target.get_node("Enemy").stats.resistance))
 					message = "Used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
-				#TODO, update buff and heal for player
 				"buff":
-					message = "Enemey used " + action.label + ". " + action.message
-					apply_buffs_enemy(action, node)
+					message = "Used " + action.label + ". " + action.message_player
+					for stat in action.stats:
+						player_combat_copy.stats[stat] += action.stats[stat]
 					display_toast(message)
 				"heal":
-					var heal_amount = max(1, ((node.stats.magic * action.effect_strength/100)))
-					message = "Enemy healed " + str(heal_amount) + " hit points."
-					heal_enemy(action, node, heal_amount)
+					var heal_amount = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100)))
+					message = "Healed " + str(heal_amount) + " hit points."
+					update_player_hp(heal_amount)
 					display_toast(message)
 				_:
 					printerr("Unknown action.effect_type")
@@ -121,12 +125,12 @@ func process_turns(player_action: String):
 			var action = Constants.combat_skills[node.combat_skills[rand_weighted(weights)]]
 			match action.effect_type:
 				"attack":
-					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - Player.stats.defense))
+					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - player_combat_copy.stats.defense))
 					message = "Enemy attacked and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
 				"magic_attack":
-					var damage = max(1, ((node.stats.magic * action.effect_strength/100) - Player.stats.resistance))
+					var damage = max(1, ((node.stats.magic * action.effect_strength/100) - player_combat_copy.stats.resistance))
 					message = "Enemy used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
@@ -150,7 +154,7 @@ func process_turns(player_action: String):
 		update_target(enemies[0])
 	
 func player_attack():
-	var damage = max(1, Player.stats.strength - target.get_node("Enemy").stats.defense)
+	var damage = max(1, player_combat_copy.stats.strength - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
 	display_toast(message)
 	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
@@ -174,7 +178,7 @@ func apply_buffs_enemy(action, caster):
 				caster.stats[stat] += action.stats[stat]
 		_:
 			printerr("Unmatched action.effect_range")
-	
+
 func heal_enemy(action, caster, amount):
 	match action.effect_range:
 		"area":
@@ -238,8 +242,8 @@ func speed_sort(a, b):
 	return a["stats"].speed > b["stats"].speed
 
 func update_player_hp(change: int = 0) -> void:
-	Player.stats.current_hp += change
-	player_stats_display.text = "Hp: " + str(Player.stats.current_hp)
+	player_combat_copy.stats.current_hp += change
+	player_stats_display.text = "Hp: " + str(player_combat_copy.stats.current_hp)
 
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
@@ -274,12 +278,12 @@ func rand_weighted(weights) -> int:
 	return 0
 
 func process_followups() -> void:
-	match Player.skill_flags.followup_attacks:
-		Player.followup_attacks.NO_FOLLOWUP:
+	match player_combat_copy.skill_flags.followup_attacks:
+		player_combat_copy.followup_attacks.NO_FOLLOWUP:
 			return
-		Player.followup_attacks.BASIC_ATTACK:
-			if Player.stats.action_points > 1:
-				for i in range(Player.stats.action_points -1):
+		player_combat_copy.followup_attacks.BASIC_ATTACK:
+			if player_combat_copy.stats.action_points > 1:
+				for i in range(player_combat_copy.stats.action_points -1):
 					if target.get_node("Enemy") in death_queue:
 						return
 					await player_attack()
