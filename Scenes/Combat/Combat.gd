@@ -18,6 +18,7 @@ extends VBoxContainer
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
 #Copy player to prevent combat stat changes from affecting Player permanently
+#Only variables marked with @export are copied
 @onready var player_combat_copy = Player.duplicate()
 
 const TOAST_TIMEOUT_DURATION = .5
@@ -73,7 +74,6 @@ func process_turns(player_action: String):
 			message = node.label + "'s turn!"
 			display_toast(message)
 			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
-			
 			var action = Constants.combat_skills[player_action]
 			match action.effect_type:
 				"attack":
@@ -102,8 +102,8 @@ func process_turns(player_action: String):
 					display_toast(message)
 				_:
 					printerr("Unknown action.effect_type")
-			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 			await process_followups()
+			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 			continue
 		
 		#Skip dead enemy's turn
@@ -156,8 +156,8 @@ func process_turns(player_action: String):
 func player_attack():
 	var damage = max(1, player_combat_copy.stats.strength - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
-	display_toast(message)
 	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
+	display_toast(message)
 	await update_enemy_hp(target, -damage)
 	
 func apply_buffs_enemy(action, caster):
@@ -288,5 +288,14 @@ func process_followups() -> void:
 						return
 					await player_attack()
 			return
+		player_combat_copy.followup_attacks.ADVANCED_ATTACK:
+			if player_combat_copy.stats.action_points > 1:
+				for i in range(player_combat_copy.stats.action_points -1):
+					if target.get_node("Enemy") in death_queue:
+						if enemies:
+							update_target(enemies[0])
+						else:
+							return
+					await player_attack()
 		_:
 			printerr("Followup issue")

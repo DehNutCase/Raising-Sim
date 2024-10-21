@@ -132,4 +132,13 @@ json_data = "[
         \"stats\": \"{}\",
         \"combat_skill\" : \"Fireball\"
     },
+    {
+        \"daily_stats\": \"{\\n\\\"strength\\\": 1,\\n\\\"max_hp\\\": 1\\n}\",
+        \"description\": \"Unlocked advanced follow up attacks. (Switches targets and continues attacking if target dies.)\",
+        \"flags\": \"{\\n\\\"followup_attacks\\\": 2\\n}\",
+        \"id\": \"intermediate_combat_training\",
+        \"image\": \"\",
+        \"name\": \"Intermediate Combat Training\",
+        \"stats\": \"{}\"
+    },
 ]"

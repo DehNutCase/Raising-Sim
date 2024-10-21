@@ -1,26 +1,26 @@
 extends Character
 
-var inventory: Inventory
-var background_inventory: Inventory
-var skill_inventory: Inventory
-var inventories: Array[String] = ["inventory", "background_inventory", "skill_inventory",]
-var starting_items = { 
+@export var inventory: Inventory
+@export var background_inventory: Inventory
+@export var skill_inventory: Inventory
+@export var inventories: Array[String] = ["inventory", "background_inventory", "skill_inventory",]
+@export var starting_items = { 
 	"inventory": [], 
 	"background_inventory": ["royal_backing", "ink_mage"],
 	"skill_inventory": ["quick_learner"],
 	}
-var day: int = 0
-var max_walks: int = 1
-var remaining_walks: int = 0
-var event_flags = {}
-var skill_flags = {"followup_attacks": followup_attacks.NO_FOLLOWUP}
-var proficiencies = {}
-var player_class:String = "ink_mage"
-var label = "Mao"
-var combat_skills = []
+@export var day: int = 0
+@export var max_walks: int = 1
+@export var remaining_walks: int = 0
+@export var event_flags = {}
 enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
+@export var skill_flags = {"followup_attacks": followup_attacks.NO_FOLLOWUP}
+@export var proficiencies = {}
+@export var player_class:String = "ink_mage"
+@export var label = "Mao"
+@export var combat_skills = []
 
-var enemies = [
+@export var enemies = [
 	{
 		"level": 1,
 		"character_class": "warrior",
@@ -32,7 +32,7 @@ var enemies = [
 		"race": "slime",
 	},
 ]
-var tower_level = 0
+@export var tower_level = 0
 
 func _init():
 	base_stats = {

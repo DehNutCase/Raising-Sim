@@ -449,6 +449,10 @@ const lessons = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'intermediate_combat_training',
+		},
 	},
 	'Theology': {
 		'stats': {
