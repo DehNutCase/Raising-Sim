@@ -364,13 +364,13 @@ func rand_weighted(weights) -> int:
 
 func update_expressions() -> void:
 	if (Player.stats["stress"] < 20):
-		get_tree().call_group("Live2DPlayer", "start_expression", player_model.happy_expression)
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.smile_expression)
 	if (Player.stats["stress"] < 10):
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.happy_motion)
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.enhance_motion)
 	else:
 		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
 	if (Player.stats["stress"] > 80):
-		get_tree().call_group("Live2DPlayer", "start_expression", player_model.annoyed_expression)
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.angry_expression)
 
 
 func _on_enter_tower_button_pressed() -> void:
