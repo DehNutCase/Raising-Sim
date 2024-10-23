@@ -23,6 +23,10 @@ var blush_expression = "exp_06"
 var surprised_expression = "exp_07"
 var angry_expression = "exp_08"
 
+var frame = 0
+var delta_sum = 0
+var frames_to_skip = 5
+
 var inventory: Inventory
 var background_inventory: Inventory
 var skill_inventory: Inventory
@@ -38,6 +42,19 @@ func _ready():
 	var node = GDCubismEffectEyeBlink.new()
 	node.name = "GDCubismEffectEyeBlink"
 	cubism_model.add_child(node)
+
+#TODO, use physics process to manage live2d CPU usage
+func _process(delta):
+	frame += 1
+	delta_sum += delta
+	if frame >= frames_to_skip:
+		cubism_model.advance(delta_sum)
+		if Engine.get_frames_per_second() > 50:
+			frames_to_skip = max(2, frames_to_skip - 1)
+		elif Engine.get_frames_per_second() < 10:
+			frames_to_skip = min(10, frames_to_skip + 1)
+		delta_sum = 0
+		frame = 0
 	
 func _on_motion_finished():
 	#TODO, figure out how to stop motion

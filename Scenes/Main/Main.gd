@@ -379,8 +379,7 @@ func _on_enter_tower_button_pressed() -> void:
 
 func check_and_play_events() -> void:
 	#TODO, uncomment this line (line commented out for dev purposes)
-	#TODO, Live2D performance seems to mostly be related to eyes 
-	#Note: Live2D Pro has resize model, check if that affects performance
+	#TODO, record and play live 2d animations for performance
 	if skip_movie:
 		return
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
