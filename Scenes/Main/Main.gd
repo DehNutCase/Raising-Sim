@@ -23,6 +23,8 @@ extends Node2D
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
+@onready var mao_animations = $Ui/MaoAnimation
+
 @onready var menus = [work, lessons, rest, shop, walk, stats,]
 
 #Dev variable, remove when building
@@ -59,6 +61,7 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))	
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))	
+	mao_animations.play()
 
 func _input(event):
 	if event.is_action_pressed("Key_X"):

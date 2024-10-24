@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=31 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Texture2D" uid="uid://cu077o7tqy8e8" path="res://Art/Background/livingRoomEvening-1600.png" id="24_k2ni7"]
+[ext_resource type="SpriteFrames" uid="uid://bj5t4m81a2f2k" path="res://Characters/Mao/Animations/Animations.tres" id="25_rea65"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 36
@@ -49,6 +50,13 @@ viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_bqq6y")
+
+[node name="MaoAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(440, 400)
+scale = Vector2(0.48, 0.48)
+sprite_frames = ExtResource("25_rea65")
+animation = &"enhance_motion"
+frame_progress = 0.88
 
 [node name="Loading" type="CanvasLayer" parent="."]
 layer = 10
