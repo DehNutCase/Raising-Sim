@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Texture2D" uid="uid://cu077o7tqy8e8" path="res://Art/Background/livingRoomEvening-1600.png" id="24_k2ni7"]
-[ext_resource type="SpriteFrames" uid="uid://bj5t4m81a2f2k" path="res://Characters/Mao/Animations/Animations.tres" id="25_rea65"]
+[ext_resource type="SpriteFrames" uid="uid://bj5t4m81a2f2k" path="res://Characters/Mao/Animations/mao_animations.tres" id="25_rea65"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 36
