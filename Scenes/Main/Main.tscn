@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=31 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Scenes/UI/Actions/Animation.tscn" id="17_5xmvy"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
+[ext_resource type="VideoStream" path="res://Characters/Mao/Videos/special_03.ogv" id="17_mcxk2"]
 [ext_resource type="Texture2D" uid="uid://co0nxq2ekveyb" path="res://Art/Kittens/Sleeping-Kittens-blanc/cute-kitten4.png" id="19_1gghe"]
 [ext_resource type="Texture2D" uid="uid://bdbdfxdgb1i3k" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten4.png" id="19_88f8e"]
 [ext_resource type="Texture2D" uid="uid://beda43km5h356" path="res://Art/Kittens/Sleeping-Kittens-outlines/outlines-kitten4.png" id="20_c7f2x"]
@@ -223,6 +224,24 @@ transparent_bg = true
 gui_disable_input = true
 size = Vector2i(600, 600)
 render_target_update_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
+clip_contents = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -625.0
+offset_right = 250.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+stream = ExtResource("17_mcxk2")
+autoplay = true
+expand = true
+loop = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
