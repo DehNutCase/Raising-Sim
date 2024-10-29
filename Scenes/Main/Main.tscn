@@ -52,7 +52,7 @@ viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pod5l"]
 shader = ExtResource("17_wgghp")
 shader_parameter/chroma_key_color = Color(0, 1, 0, 1)
-shader_parameter/pickup_range = 0.05
+shader_parameter/pickup_range = 0.1
 shader_parameter/fade_amount = 1.0
 
 [node name="Main" type="Node2D" groups=["Main"]]
@@ -232,27 +232,18 @@ gui_disable_input = true
 size = Vector2i(600, 600)
 render_target_update_mode = 4
 
-[node name="Control" type="Control" parent="Ui/PlayerControl/Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -250.0
-offset_top = -625.0
-offset_right = -210.0
-offset_bottom = -585.0
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player/Control"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
 material = SubResource("ShaderMaterial_pod5l")
 clip_contents = true
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 480.0
-offset_bottom = 586.0
+offset_left = -250.0
+offset_top = -625.0
+offset_right = 250.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 stream = ExtResource("17_mcxk2")
