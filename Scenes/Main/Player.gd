@@ -45,16 +45,20 @@ func _ready():
 
 #TODO, use physics process to manage live2d CPU usage
 func _process(delta):
-	frame += 1
-	delta_sum += delta
-	if frame >= frames_to_skip:
-		cubism_model.advance(delta_sum)
-		if Engine.get_frames_per_second() > 50:
-			frames_to_skip = max(2, frames_to_skip - 1)
-		elif Engine.get_frames_per_second() < 10:
-			frames_to_skip = min(10, frames_to_skip + 1)
-		delta_sum = 0
-		frame = 0
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
+		$PlayerSprite/VideoStreamPlayer.hide()
+		frame += 1
+		delta_sum += delta
+		if frame >= frames_to_skip:
+			cubism_model.advance(delta_sum)
+			if Engine.get_frames_per_second() > 50:
+				frames_to_skip = max(2, frames_to_skip - 1)
+			elif Engine.get_frames_per_second() < 10:
+				frames_to_skip = min(10, frames_to_skip + 1)
+			delta_sum = 0
+			frame = 0
+	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
+		$PlayerSprite/VideoStreamPlayer.show()
 	
 func _on_motion_finished():
 	#TODO, figure out how to stop motion

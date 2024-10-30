@@ -20,6 +20,10 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var label = "Mao"
 @export var combat_skills = []
 
+enum live2d_modes {LIVE2D, VIDEO}
+@export var live2d_mode = live2d_modes.VIDEO
+
+
 @export var enemies = [
 	{
 		"level": 1,
