@@ -47,18 +47,24 @@ func _ready():
 func _process(delta):
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		$PlayerSprite/VideoStreamPlayer.hide()
+		$PlayerSprite.show()
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
 			cubism_model.advance(delta_sum)
 			if Engine.get_frames_per_second() > 50:
-				frames_to_skip = max(2, frames_to_skip - 1)
+				frames_to_skip = max(1, frames_to_skip - 1)
 			elif Engine.get_frames_per_second() < 10:
 				frames_to_skip = min(10, frames_to_skip + 1)
+			if frames_to_skip > 9:
+				#Swap to video when framerate is low
+				#TODO, add option to force Video/Live2D
+				Player.live2d_mode = Player.live2d_modes.VIDEO
 			delta_sum = 0
 			frame = 0
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		$PlayerSprite/VideoStreamPlayer.show()
+		$PlayerSprite.hide()
 	
 func _on_motion_finished():
 	#TODO, figure out how to stop motion
