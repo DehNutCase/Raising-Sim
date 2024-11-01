@@ -186,10 +186,6 @@ func do_walk(walk_name: String) -> void:
 		if(skip_checkbox.button_pressed):
 			_on_close_button_pressed()
 		if 'timeline' in outcome:
-			#TODO, add loading bar for dialogic (wait until more optimized models)
-			$Loading.show()
-			await(get_tree().create_timer(.2).timeout)
-			#TODO, optimize loading screen
 			Dialogic.start(outcome.timeline)
 		if 'toasts' in outcome:
 			for toast in outcome.toasts:
@@ -324,11 +320,10 @@ func _on_dialogic_signal(item: String) -> void:
 	Player.inventory.create_and_add_item(item)
 	
 func _on_timeline_started() -> void:
-	player_model.cubism_model.assets = ""
-	$Loading.hide()
+	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	
 func _on_timeline_ended() -> void:
-	player_model.cubism_model.assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
+	get_tree().call_group("Live2DPlayer", "resume_live2d")
 	update_expressions()
 	
 func _on_inventory_item_added(item):
@@ -366,7 +361,7 @@ func update_expressions() -> void:
 	if (Player.stats["stress"] < 20):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.smile_expression)
 	if (Player.stats["stress"] < 10):
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.enhance_motion)
+		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.heal_motion)
 	else:
 		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
 	if (Player.stats["stress"] > 80):

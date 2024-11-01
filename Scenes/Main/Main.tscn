@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=32 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
@@ -25,7 +25,6 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
-[ext_resource type="Texture2D" uid="uid://cu077o7tqy8e8" path="res://Art/Background/livingRoomEvening-1600.png" id="24_k2ni7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 36
@@ -57,15 +56,6 @@ shader_parameter/fade_amount = 0.8
 
 [node name="Main" type="Node2D" groups=["Main"]]
 script = ExtResource("1_bqq6y")
-
-[node name="Loading" type="CanvasLayer" parent="."]
-layer = 10
-visible = false
-
-[node name="LoadingBackground" type="Sprite2D" parent="Loading"]
-position = Vector2(0, -50)
-texture = ExtResource("24_k2ni7")
-offset = Vector2(640, 360)
 
 [node name="FPS" type="Label" parent="."]
 texture_filter = 4

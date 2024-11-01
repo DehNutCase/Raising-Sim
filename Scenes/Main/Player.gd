@@ -1,18 +1,27 @@
 extends Node2D
 @onready var cubism_model: GDCubismUserModel = $PlayerSprite/PlayerModel
+var live2d_active = true
 var effect_breath = GDCubismEffectBreath.new()
 var last_motion = { "group": "", "no": 0 }
 var next_motion = { "group": "Idle", "no": 0 }
 
 var content_motion = { "group": "Idle", "no": 0 }
 var idle_motion = { "group": "Idle", "no": 0 }
-
 var bounce_motion = { "group": "", "no": 0 }
 var cheerful_motion = { "group": "", "no": 1 }
 var hat_tip_motion = { "group": "", "no": 2 }
 var success_motion = { "group": "", "no": 3 }
 var failure_motion = { "group": "", "no": 4 }
-var enhance_motion = { "group": "", "no": 5 }
+var heal_motion = { "group": "", "no": 5 }
+
+var content_motion_video = load("res://Characters/Mao/Videos/mtn_01.ogv")
+var idle_motion_video = load("res://Characters/Mao/Videos/mtn_01.ogv")
+var bounce_motion_video = load("res://Characters/Mao/Videos/mtn_02.ogv")
+var cheerful_motion_video = load("res://Characters/Mao/Videos/mtn_03.ogv")
+var hat_tip_motion_video = load("res://Characters/Mao/Videos/mtn_04.ogv")
+var success_motion_video = load("res://Characters/Mao/Videos/special_01.ogv")
+var failure_motion_video = load("res://Characters/Mao/Videos/special_02.ogv")
+var heal_motion_video = load("res://Characters/Mao/Videos/special_03.ogv")
 
 var normal_expression = "exp_01"
 var smile_expression = "exp_02"
@@ -43,7 +52,7 @@ func _ready():
 
 #TODO, use physics process to manage live2d CPU usage
 func _process(delta):
-	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D and live2d_active:
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
@@ -78,8 +87,7 @@ func _on_motion_finished():
 	last_motion = next_motion
 	next_motion = content_motion
 	
-func _update_live2d_display(live2d_mode):
-	print("hello update 2d")
+func _update_live2d_display(live2d_mode) -> void:
 	match live2d_mode:
 		Player.live2d_modes.LIVE2D:
 			$VideoStreamPlayer.hide()
@@ -90,24 +98,29 @@ func _update_live2d_display(live2d_mode):
 		_:
 			printerr("_update_live2d_display match error")
 			
-func start_motion(motion):
+func start_motion(motion) -> void:
 	if (effect_breath.get_parent()):
 		cubism_model.remove_child(effect_breath)
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_NORMAL)
 	
 	
-func start_expression(expression):
+func start_expression(expression) -> void:
 	cubism_model.start_expression(expression)
 
-func job_motion(motion):
+func job_motion(motion) -> void:
 	if (effect_breath.get_parent()):
 		cubism_model.remove_child(effect_breath)
 	cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
 
 
-func queue_motion(motion):
+func queue_motion(motion) -> void:
 	if (cubism_model.get_cubism_motion_queue_entries()):
 		next_motion = motion
 	else:
 		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
-	
+
+func pause_live2d() -> void:
+	live2d_active = false
+
+func resume_live2d() -> void:
+	live2d_active = true
