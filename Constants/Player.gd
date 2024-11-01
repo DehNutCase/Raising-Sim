@@ -21,7 +21,10 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var combat_skills = []
 
 enum live2d_modes {LIVE2D, VIDEO}
-@export var live2d_mode = live2d_modes.VIDEO
+@export var live2d_mode = live2d_modes.VIDEO:
+	set(value):
+		live2d_mode = value
+		get_tree().call_group("Live2DPlayer", "_update_live2d_display", value)
 
 
 @export var enemies = [

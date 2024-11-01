@@ -1,5 +1,5 @@
 extends Node2D
-var cubism_model: GDCubismUserModel
+@onready var cubism_model: GDCubismUserModel = $PlayerSprite/PlayerModel
 var effect_breath = GDCubismEffectBreath.new()
 var last_motion = { "group": "", "no": 0 }
 var next_motion = { "group": "Idle", "no": 0 }
@@ -33,9 +33,7 @@ var skill_inventory: Inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cubism_model = $PlayerSprite/PlayerModel
-	#For dev work only, remove this line and add assets to node when building
-	cubism_model.assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
+	_update_live2d_display(Player.live2d_mode)
 	cubism_model.motion_finished.connect(_on_motion_finished)
 	effect_breath.name = "GDCubismEffectBreath"
 	cubism_model.add_child(effect_breath)
@@ -46,8 +44,6 @@ func _ready():
 #TODO, use physics process to manage live2d CPU usage
 func _process(delta):
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
-		$PlayerSprite/VideoStreamPlayer.hide()
-		$PlayerSprite.show()
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
@@ -63,11 +59,11 @@ func _process(delta):
 			delta_sum = 0
 			frame = 0
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
-		$PlayerSprite/VideoStreamPlayer.show()
-		$PlayerSprite.hide()
+		pass
 	
 func _on_motion_finished():
 	#TODO, figure out how to stop motion
+	#TODO, use video when in video mode
 	if (!effect_breath.get_parent()):
 		cubism_model.add_child(effect_breath)
 	
@@ -81,7 +77,19 @@ func _on_motion_finished():
 	#TODO, change motion based on mood
 	last_motion = next_motion
 	next_motion = content_motion
-
+	
+func _update_live2d_display(live2d_mode):
+	print("hello update 2d")
+	match live2d_mode:
+		Player.live2d_modes.LIVE2D:
+			$VideoStreamPlayer.hide()
+			$PlayerSprite.show()
+		Player.live2d_modes.VIDEO:
+			$VideoStreamPlayer.show()
+			$PlayerSprite.hide()
+		_:
+			printerr("_update_live2d_display match error")
+			
 func start_motion(motion):
 	if (effect_breath.get_parent()):
 		cubism_model.remove_child(effect_breath)
