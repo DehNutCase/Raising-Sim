@@ -41,9 +41,9 @@ enum live2d_modes {LIVE2D, VIDEO}
 		"race": "slime",
 	},
 ]
-
 @export var tower_level = 0
 var in_tower = false
+var victory_stat_gain = {}
 
 func _init():
 	base_stats = {

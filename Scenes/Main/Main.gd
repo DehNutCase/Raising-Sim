@@ -92,13 +92,18 @@ func process_day():
 			Player.stats[stat] = Constants.stats[stat]["min"]
 		if "max" in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]["max"]:
 			Player.stats[stat] = Constants.stats[stat]["max"]
-	
+			
+	if Player.victory_stat_gain:
+		display_toast("Gained stats from combat!", "top")
+		await(get_tree().create_timer(.5).timeout)
+		process_stats(Player.victory_stat_gain)
+		Player.victory_stat_gain = {}
+		
 	display_stats()
 	day_label.display_day(day)
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	update_expressions()
-	
 	check_and_play_events()
 
 #TODO remove stat bars in job pages

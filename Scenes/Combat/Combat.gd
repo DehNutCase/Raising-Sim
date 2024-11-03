@@ -1,11 +1,11 @@
 extends VBoxContainer
 
 @onready var buttons = $MarginContainer3/MenuPanel/HBoxContainer
+@onready var flee_button = $MarginContainer3/MenuPanel/HBoxContainer/Flee
 
 @onready var pos1 = $MarginContainer/HBoxContainer/Enemy
 @onready var pos2 = $MarginContainer/HBoxContainer/Enemy2
 @onready var pos3 = $MarginContainer/HBoxContainer/Enemy3
-
 @onready var pos4 = $MarginContainer2/HBoxContainer/Enemy
 @onready var pos5 = $MarginContainer2/HBoxContainer/Enemy2
 @onready var pos6 = $MarginContainer2/HBoxContainer/Enemy3
@@ -14,7 +14,6 @@ extends VBoxContainer
 @onready var target = pos1
 
 @onready var skill_menu = $MarginContainer3/MenuPanel/HBoxContainer/Skill.get_popup()
-
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
 #Copy player to prevent combat stat changes from affecting Player permanently
@@ -30,6 +29,7 @@ var enemies: Array[Enemy] = []
 var order: Array[Character] = []
 var death_queue: Array[Enemy] = []
 var fight_won = false
+var victory_stat_gain = {}
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
@@ -153,6 +153,12 @@ func process_turns(player_action: String):
 		order.erase(enemy)
 	if not target.get_node("Enemy") in enemies and enemies:
 		update_target(enemies[0])
+	#Process victory if player is still alive when no enemies remain
+	if !enemies:
+		if player_combat_copy.stats.current_hp > 0:
+			display_toast("Victory!")
+			Player.victory_stat_gain = victory_stat_gain
+			flee_button.text = "Leave"
 	
 func player_attack():
 	var damage = max(1, player_combat_copy.stats.strength - target.get_node("Enemy").stats.defense)
@@ -209,6 +215,8 @@ func _on_action(button):
 			pass
 		"Flee":
 			exit_combat()
+		"Leave":
+			exit_combat()
 		_:
 			printerr("Button text match issue: " + button.text)
 	state = states.READY
@@ -230,7 +238,6 @@ func _on_enemy_gui_input(event, clicked):
 		target = clicked
 
 func exit_combat() -> void:
-	#TODO, more work on ending the fight
 	if Player.in_tower and fight_won:
 		Player.tower_level += 1
 	Player.in_tower = false
@@ -267,8 +274,18 @@ func kill_enemy(enemy) -> void:
 	enemy.hide()
 	var message = "Killed " + enemy.get_node("Enemy").label + "!"
 	display_toast(message)
-	#TODO, end combat once all enemies gone from enemies
 	
+	var enemy_stats = enemy.get_node("Enemy").stats
+	for stat in enemy_stats:
+		if stat == "gold" or stat == "experience":
+			if stat in victory_stat_gain:
+				victory_stat_gain[stat] =+ enemy_stats[stat]
+			else:
+				victory_stat_gain[stat] = enemy_stats[stat]
+			continue
+		if stat == "current_hp":
+			continue
+		
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0
