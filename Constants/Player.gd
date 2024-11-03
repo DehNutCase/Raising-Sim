@@ -21,10 +21,12 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var combat_skills = []
 
 enum live2d_modes {LIVE2D, VIDEO}
-@export var live2d_mode = live2d_modes.VIDEO:
+@export var live2d_mode = live2d_modes.LIVE2D:
 	set(value):
 		live2d_mode = value
-		get_tree().call_group("Live2DPlayer", "_update_live2d_display", value)
+		#Check to avoid issues with duplicated player from combat scene
+		if(get_parent()):
+			get_tree().call_group("Live2DPlayer", "_update_live2d_display", value)
 
 
 @export var enemies = [
@@ -39,7 +41,9 @@ enum live2d_modes {LIVE2D, VIDEO}
 		"race": "slime",
 	},
 ]
+
 @export var tower_level = 0
+var in_tower = false
 
 func _init():
 	base_stats = {
@@ -61,7 +65,7 @@ func level_up() -> void:
 	stats["level"] += 1
 	experience_required = get_required_experience(stats["level"] - 1)
 	var stats_list = Constants.stats.base_stats
-	if !player_class and !background_inventory.get_item_by_id(player_class):
+	if !player_class or !background_inventory.get_item_by_id(player_class):
 		for stat in stats_list:
 			stats[stat] += 1
 	else:

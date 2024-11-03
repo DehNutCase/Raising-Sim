@@ -29,6 +29,7 @@ var state = states.READY
 var enemies: Array[Enemy] = []
 var order: Array[Character] = []
 var death_queue: Array[Enemy] = []
+var fight_won = false
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
@@ -229,6 +230,10 @@ func _on_enemy_gui_input(event, clicked):
 		target = clicked
 
 func exit_combat() -> void:
+	#TODO, more work on ending the fight
+	if Player.in_tower and fight_won:
+		Player.tower_level += 1
+	Player.in_tower = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
 	
 func display_toast(message, gravity = "top", direction = "center"):

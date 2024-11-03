@@ -25,7 +25,7 @@ extends Node2D
 
 @onready var menus = [work, lessons, rest, shop, walk, stats,]
 
-#Dev variable, remove when building
+#TODO Dev variable, remove when building
 var skip_movie = true
 
 var jobs = Constants.jobs
@@ -242,7 +242,10 @@ func _on_action(button):
 			menu_panel.visible = true
 		"Tower":
 			tower.show()
-			tower.get_node("Description").text = Constants.tower_levels[Player.tower_level].description
+			if(Player.tower_level < len(Constants.tower_levels)):
+				tower.get_node("Description").text = Constants.tower_levels[Player.tower_level].description
+			else:
+				tower.get_node("Description").text = "The tower is cleared."
 		_:
 			printerr("_on_action failed to match")
 			
@@ -369,12 +372,14 @@ func update_expressions() -> void:
 
 
 func _on_enter_tower_button_pressed() -> void:
-	Player.enemies = Constants.tower_levels[Player.tower_level].enemies
-	SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+	if Player.tower_level < len(Constants.tower_levels):
+		Player.enemies = Constants.tower_levels[Player.tower_level].enemies
+		Player.in_tower = true
+		SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+	else:
+		display_toast("The tower is cleared", "top", "center")
 
 func check_and_play_events() -> void:
-	#TODO, uncomment this line (line commented out for dev purposes)
-	#TODO, record and play live 2d animations for performance
 	if skip_movie:
 		return
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
@@ -382,8 +387,8 @@ func check_and_play_events() -> void:
 		Player.event_flags['Day1Event'] = true
 		print(Player.event_flags)
 		
-	if Player.day == 5 and !('Day25Event' in Player.event_flags):
+	if Player.day == 5 and !('Day5Event' in Player.event_flags):
 		Dialogic.start("timeline")
-		Player.event_flags['timeline'] = true
+		Player.event_flags['Day5Event'] = true
 		print(Player.event_flags)
 		
