@@ -63,9 +63,6 @@ func _ready():
 	skill_menu.id_pressed.connect(_on_skill_press)
 	update_target(pos1.get_node("Enemy"))
 	
-	
-#TODO, process victory/defeat
-#TODO, add action points system for Player
 func process_turns(player_action: String):
 	if player_combat_copy.stats.current_hp <= 0:
 		display_toast("Mao is unconsious and can't act!", "top")
@@ -265,7 +262,7 @@ func speed_sort(a, b):
 func update_player_hp(change: int = 0) -> void:
 	player_combat_copy.stats.current_hp += change
 	player_stats_display.text = "Hp: " + str(player_combat_copy.stats.current_hp)
-	#TODO, process player defeat once hp is less than or equal to 0
+	#TODO, add unconsious status to play status box once hp drops to 0
 
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
