@@ -67,11 +67,18 @@ func _ready():
 #TODO, process victory/defeat
 #TODO, add action points system for Player
 func process_turns(player_action: String):
+	if player_combat_copy.stats.current_hp <= 0:
+		display_toast("Mao is unconsious and can't act!", "top")
+		return
 	order.sort_custom(speed_sort)
 	var message = ""
 	
 	for node in order:
 		if node.name == "Player":
+			#Skip player's turn if they're dead
+			if player_combat_copy.stats.current_hp <= 0:
+				await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
+				continue
 			message = node.label + "'s turn!"
 			display_toast(message)
 			await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
@@ -159,6 +166,8 @@ func process_turns(player_action: String):
 			display_toast("Victory!")
 			Player.victory_stat_gain = victory_stat_gain
 			flee_button.text = "Leave"
+	if player_combat_copy.stats.current_hp <= 0:
+		flee_button.text = "Leave"
 	
 func player_attack():
 	var damage = max(1, player_combat_copy.stats.strength - target.get_node("Enemy").stats.defense)
@@ -256,6 +265,7 @@ func speed_sort(a, b):
 func update_player_hp(change: int = 0) -> void:
 	player_combat_copy.stats.current_hp += change
 	player_stats_display.text = "Hp: " + str(player_combat_copy.stats.current_hp)
+	#TODO, process player defeat once hp is less than or equal to 0
 
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
