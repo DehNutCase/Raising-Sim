@@ -4,7 +4,7 @@ extends Node2D
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 @onready var background = $Ui/PlayerControl/Player/BackgroundInventory
 @onready var skills = $Ui/PlayerControl/Player/SkillInventory
-@onready var dialogic_viewport = $Ui/MenuPanel/DialogicViewportContainer
+@onready var dialogic_viewport = $Ui/MenuPanel/DialogicViewportContainer/DialogicViewport
 
 @onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
