@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
+[ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 36
@@ -406,7 +407,7 @@ expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
-custom_minimum_size = Vector2(1050, 500)
+custom_minimum_size = Vector2(1100, 600)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -476,6 +477,10 @@ layout_mode = 2
 text = "StatLabel"
 label_settings = SubResource("LabelSettings_icocv")
 script = ExtResource("2_7t2yx")
+
+[node name="DialogicViewportContainer" parent="Ui/MenuPanel" instance=ExtResource("26_25225")]
+visible = false
+layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 anchors_preset = 3

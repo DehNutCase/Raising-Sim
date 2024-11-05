@@ -1,7 +1,6 @@
 extends Node2D
 @onready var cubism_model: GDCubismUserModel = $PlayerSprite/PlayerModel
 @onready var live2d_video_player = $Live2dVideoPlayer
-var live2d_active = true
 var effect_breath = GDCubismEffectBreath.new()
 
 var motion_video_queue = []
@@ -56,7 +55,7 @@ func _ready():
 
 #TODO, use physics process to manage live2d CPU usage
 func _process(delta):
-	if Player.live2d_mode == Player.live2d_modes.LIVE2D and live2d_active:
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Player.live2d_active:
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
@@ -147,7 +146,7 @@ func queue_motion(motion) -> void:
 		motion_video_queue.append(motion.video)
 
 func pause_live2d() -> void:
-	live2d_active = false
+	Player.live2d_active = false
 
 func resume_live2d() -> void:
-	live2d_active = true
+	Player.live2d_active = true

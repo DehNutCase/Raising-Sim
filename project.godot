@@ -19,12 +19,12 @@ config/icon="res://icon.svg"
 
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -38,7 +38,7 @@ directories/dtl_directory={
 "timeline": "res://Timelines/timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres", "res://Art/Dialogic/NoBackgroundStyle.tres"]
+layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres", "res://Art/Dialogic/NoBackgroundStyle.tres", "res://Art/Dialogic/NoBackgroundNoPortraitStyle.tres"]
 layout/default_style="res://Art/Dialogic/VisualNovelStyle.tres"
 variables={}
 text/letter_speed=0.0

@@ -19,6 +19,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var player_class:String = "ink_mage"
 @export var label = "Mao"
 @export var combat_skills = []
+@export var live2d_active = true
 
 enum live2d_modes {LIVE2D, VIDEO}
 @export var live2d_mode = live2d_modes.LIVE2D:
