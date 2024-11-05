@@ -4,6 +4,7 @@ extends Node2D
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 @onready var background = $Ui/PlayerControl/Player/BackgroundInventory
 @onready var skills = $Ui/PlayerControl/Player/SkillInventory
+@onready var dialogic_viewport = $Ui/MenuPanel/DialogicViewportContainer
 
 @onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
@@ -40,6 +41,7 @@ var day: int:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Dialogic.Styles.load_style("NoBackgroundStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)

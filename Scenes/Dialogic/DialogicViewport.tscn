@@ -1,12 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bulj0juk270wj"]
-
-[ext_resource type="Script" path="res://Scenes/Dialogic/DialogicViewport.gd" id="1_gkfgb"]
+[gd_scene format=3 uid="uid://bulj0juk270wj"]
 
 [node name="DialogicViewportContainer" type="SubViewportContainer"]
 offset_right = 1000.0
 offset_bottom = 600.0
 stretch = true
-script = ExtResource("1_gkfgb")
 
 [node name="DialogicViewport" type="SubViewport" parent="."]
 transparent_bg = true
