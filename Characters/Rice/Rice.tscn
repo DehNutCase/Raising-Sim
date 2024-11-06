@@ -156,5 +156,3 @@ size = Vector2i(1500, 1500)
 render_target_update_mode = 4
 
 [node name="GDCubismEffectEyeBlink" type="GDCubismEffectEyeBlink" parent="PlayerSprite/PlayerModel"]
-
-[node name="GDCubismEffectBreath" type="GDCubismEffectBreath" parent="PlayerSprite/PlayerModel"]

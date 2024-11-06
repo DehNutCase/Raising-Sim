@@ -4,7 +4,9 @@ extends Node2D
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 @onready var background = $Ui/PlayerControl/Player/BackgroundInventory
 @onready var skills = $Ui/PlayerControl/Player/SkillInventory
-@onready var dialogic_viewport = $Ui/MenuPanel/DialogicViewportContainer/DialogicViewport
+@onready var dialogic_viewport = $Ui/DialogicPanel/DialogicViewportContainer/DialogicViewport
+@onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
+@onready var dialogic_panel = $Ui/DialogicPanel
 
 @onready var gold_label = $Ui/MarginContainer/GoldLabel
 @onready var day_label = $Ui/MarginContainer2/DayLabel
@@ -27,7 +29,7 @@ extends Node2D
 @onready var menus = [work, lessons, rest, shop, walk, stats,]
 
 #TODO Dev variable, remove when building
-var skip_movie = true
+var skip_movie = false
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -38,10 +40,12 @@ var day: int:
 	set(value):
 		Player.day = value
 
+enum states {READY, DIALOGIC, BUSY}
+var current_state = states.READY
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Dialogic.Styles.load_style("NoBackgroundStyle", dialogic_viewport)
+	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
@@ -215,6 +219,9 @@ func buy_item(item: String, price: int):
 
 
 func _on_action(button):
+	if current_state != states.READY:
+		printerr("_on_action state not READY")
+		return
 	var open_menu: String
 	for menu in menus:
 		if menu.visible:
@@ -331,10 +338,16 @@ func _on_dialogic_signal(item: String) -> void:
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
+	dialogic_panel.show()
+	dialogic_viewport_container.show()
+	current_state = states.DIALOGIC
 	
 func _on_timeline_ended() -> void:
 	get_tree().call_group("Live2DPlayer", "resume_live2d")
 	update_expressions()
+	dialogic_panel.hide()
+	dialogic_viewport_container.hide()
+	current_state = states.READY
 	
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items

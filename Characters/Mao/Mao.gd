@@ -19,7 +19,6 @@ func _ready():
 
 func _process(delta):
 	if !visibility_checker.is_on_screen():
-		print("not visible")
 		return
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		frame += 1

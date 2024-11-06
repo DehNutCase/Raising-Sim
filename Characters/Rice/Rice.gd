@@ -19,7 +19,6 @@ func _ready():
 	
 func _process(delta):
 	if !visibility_checker.is_on_screen():
-		print("not visible")
 		return
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		frame += 1
@@ -41,5 +40,5 @@ func _get_covered_rect() -> Rect2:
 	return Rect2()
 	
 func _on_motion_finished():
-	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(0, 10)).timeout
+	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(3, 13)).timeout
 	model.start_motion("Tap@Body", 0, GDCubismUserModel.PRIORITY_FORCE)
