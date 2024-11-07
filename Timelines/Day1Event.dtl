@@ -7,11 +7,11 @@ leave Mao
 join Mao (Normal) 1
 leave Rice
 join Rice (Normal) 2
-Rice: Testing
-Rice: Test
+Rice_Portrait: Testing
+Rice_Portrait: Test
 - Accept Robes
 	[signal arg="apprentice_robes"]
 	Mao_Portrait: Okay, thank you.
 - 2
-	Rice: Hmm, if you say so.
-Rice: End
+	Rice_Portrait: Hmm, if you say so.
+Rice_Portrait: End

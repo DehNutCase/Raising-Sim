@@ -8,16 +8,79 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "Happy",
-"description": "",
+"default_portrait": "Normal",
+"description": "Portrait",
 "display_name": "Mao",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Happy": {
+"Angry": {
 "export_overrides": {
-"image": "\"res://Art/Portraits/mao_portrait.png\""
+"image": "\"res://Characters/Mao/Images/Portrait/exp_08_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Blush": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_06_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Excited": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_04_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"EyesClosed": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_03_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Normal": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_01_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_05_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Smile": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_02_000.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surprised": {
+"export_overrides": {
+"image": "\"res://Characters/Mao/Images/Portrait/exp_07_000.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

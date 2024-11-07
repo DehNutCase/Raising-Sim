@@ -31,7 +31,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "Mao": "res://Characters/Mao/Mao.dch",
 "Mao_Portrait": "res://Characters/Mao/Mao_Portrait.dch",
-"Rice": "res://Characters/Rice/Rice.dch"
+"Rice": "res://Characters/Rice/Rice.dch",
+"Rice_Portrait": "res://Characters/Rice/Rice_Portrait.dch"
 }
 directories/dtl_directory={
 "Day1Event": "res://Timelines/Day1Event.dtl",
