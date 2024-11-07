@@ -53,4 +53,4 @@ script = ExtResource("10_8npvo")
 name = "NoPortraitNoBackgroundStyle"
 base_overrides = {}
 layers = Array[ExtResource("2_kpt4g")]([SubResource("Resource_u0syk"), SubResource("Resource_lshf0"), SubResource("Resource_kp5jp"), SubResource("Resource_yaeg6"), SubResource("Resource_xdyvl"), SubResource("Resource_tmsxc"), SubResource("Resource_3ndjf")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 0

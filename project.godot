@@ -48,9 +48,9 @@ text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.0
-animations/leave_default_length=0.5
+animations/leave_default_length=0.0
 animations/leave_default_wait=true
-animations/join_default_wait=false
+animations/join_default_wait=true
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
@@ -61,6 +61,8 @@ text/autopauses={}
 history/simple_history_enabled=true
 history/full_history_enabled=false
 animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
+animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
+layout/end_behaviour=0
 
 [display]
 

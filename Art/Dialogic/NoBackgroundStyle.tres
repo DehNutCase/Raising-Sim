@@ -59,4 +59,4 @@ script = ExtResource("11_hrorm")
 name = "NoBackgroundStyle"
 base_overrides = {}
 layers = Array[ExtResource("2_to1yj")]([SubResource("Resource_2hfp1"), SubResource("Resource_4vi30"), SubResource("Resource_mkvso"), SubResource("Resource_ahdq2"), SubResource("Resource_x3lwr"), SubResource("Resource_mm64q"), SubResource("Resource_eij2a"), SubResource("Resource_jvu5n")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 0

@@ -1,8 +1,12 @@
 [background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
-join Mao 1 [animation="Instant In Or Out" length="0"]
-join Rice 2 [animation="Instant In Or Out" length="0"]
+join Mao (Live2D) 1
+join Rice (Live2D) 2 [animation="Instant In Or Out" length="0"]
 [history action="clear"]
 Mao_Portrait: Start
+leave Mao
+join Mao (Normal) 1
+leave Rice
+join Rice (Normal) 2
 Rice: Testing
 Rice: Test
 - Accept Robes
