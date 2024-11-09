@@ -53,9 +53,9 @@ func _ready():
 	node.name = "GDCubismEffectEyeBlink"
 	cubism_model.add_child(node)
 
-#TODO, use physics process to manage live2d CPU usage
 func _process(delta):
-	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Player.live2d_active:
+	#TODO, enable live2d for PHONE mode under certain circumstances
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Player.live2d_active and Constants.mode == "PC":
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
@@ -70,7 +70,7 @@ func _process(delta):
 				Player.live2d_mode = Player.live2d_modes.VIDEO
 			delta_sum = 0
 			frame = 0
-	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
+	else:
 		#Making sure motion_video_queue doesn't grow out of control
 		if len(motion_video_queue) > 10:
 			motion_video_queue.pop_back()

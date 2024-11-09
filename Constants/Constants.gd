@@ -1,5 +1,7 @@
 extends Node
 
+const mode = "PC" #PC, PHONE, HTML. Change this before exporting.
+
 const jobs = {
 	'Farmwork': {
 		'stats': {

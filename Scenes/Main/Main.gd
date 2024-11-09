@@ -113,7 +113,6 @@ func process_day():
 	check_and_play_events()
 
 #TODO remove stat bars in job pages
-#TODO add repeat checkbox (mutually exclusive with skip checkbox?)
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
