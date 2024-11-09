@@ -891,6 +891,25 @@ const races = {
 		},
 		'label': 'Goblin',
 	},
+	'orc': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 25,
+			'defense': 25,
+			'speed': 25,
+			'resistance': 10,
+			'gold': 250,
+			'experience': 50,
+			'action_points': 2,
+		},
+		'level_stats': {
+			'max_hp': 2,
+			'strength': 1,
+			'experience': 10,
+			'gold': 10,
+		},
+		'label': 'Orc',
+	},
 }
 
 const tower_levels = [
@@ -903,45 +922,162 @@ const tower_levels = [
 				"race": "slime",
 			},
 		],
-		'description': "A Level One Slime Warrior. Starts weak, but often buffs itself to dangerous levels.",
+		'description': "A slime warrior. Starts weak, but often buffs itself to dangerous levels. Ex",
 	},
 	{
 		'level': 1,
 		'enemies': [
 			{
-				"level": 1,
+				"level": 2,
 				"character_class": "rogue",
 				"race": "goblin",
 			},
 		],
-		'description': "A Level One Goblin Rogue.",
+		'description': "A goblin rogue. Gets faster and faster as the fight goes on.",
 	},
 	{
 		'level': 2,
 		'enemies': [
 			{
-				"level": 1,
+				"level": 3,
 				"character_class": "mage",
 				"race": "slime",
 			},
 		],
-		'description': "A Level One Slime Mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick.",
+		'description': "A slime mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick.",
 	},
 	{
 		'level': 3,
 		'enemies': [
 			{
-				"level": 1,
+				"level": 4,
+				"character_class": "warrior",
+				"race": "orc",
+			},
+		],
+		'description': "An orc warrior. Orcs are naturally stronger and faster than slimes or goblins.",
+	},
+	{
+		'level': 4,
+		'enemies': [
+			{
+				"level": 5,
 				"character_class": "warrior",
 				"race": "slime",
 			},
 			{
-				"level": 1,
+				"level": 5,
 				"character_class": "priest",
 				"race": "slime",
 			},
 		],
-		'description': "A Warrior and a Priest. Surprisingly, it might be better to take out the Warrior first.",
+		'description': "A slime warrior and a slime priest. Surprisingly, it might be better to take out the Warrior first.",
+	},
+	{
+		'level': 5,
+		'enemies': [
+			{
+				"level": 6,
+				"character_class": "mage",
+				"race": "orc",
+			},
+			{
+				"level": 6,
+				"character_class": "warrior",
+				"race": "goblin",
+			},
+		],
+		'description': "A goblin warrior and an orc mage. Orcs are naturally stronger and faster than slimes or goblins. Counterintuitively, this means they also make excellent mages.",
+	},
+	{
+		'level': 6,
+		'enemies': [
+			{
+				"level": 7,
+				"character_class": "warrior",
+				"race": "orc",
+			},
+			{
+				"level": 7,
+				"character_class": "rogue",
+				"race": "goblin",
+			},
+		],
+		'description': "An orc warrior and a goblin rogue. Warriors make excellent party leaders and rogues become quite dangerous if their strength increases.",
+	},
+	{
+		'level': 7,
+		'enemies': [
+			{
+				"level": 8,
+				"character_class": "mage",
+				"race": "orc",
+			},
+			{
+				"level": 8,
+				"character_class": "priest",
+				"race": "orc",
+			},
+		],
+		'description': "An orc mage and an orc priest. Combined with a mage, a priest's healing becomes stronger and stronger as time goes on. Watch out for fireballs.",
+	},
+	{
+		'level': 8,
+		'enemies': [
+			{
+				"level": 9,
+				"character_class": "mage",
+				"race": "orc",
+			},
+			{
+				"level": 9,
+				"character_class": "mage",
+				"race": "slime",
+			},
+		],
+		'description': "An orc mage and a slime mage. Fireballs hurt, and buffed fireballs hurt even more.",
+	},
+	{
+		'level': 9,
+		'enemies': [
+			{
+				"level": 10,
+				"character_class": "warrior",
+				"race": "orc",
+			},
+			{
+				"level": 10,
+				"character_class": "warrior",
+				"race": "orc",
+			},
+		],
+		'description': "Two orc warriors. Although not as painful as fireballs, warrior attacks are still quite dangerous.",
+	},
+	{
+		'level': 10,
+		'enemies': [
+			{
+				"level": 11,
+				"character_class": "warrior",
+				"race": "slime",
+			},
+			{
+				"level": 11,
+				"character_class": "rogue",
+				"race": "slime",
+			},
+			{
+				"level": 11,
+				"character_class": "mage",
+				"race": "slime",
+			},
+			{
+				"level": 11,
+				"character_class": "priest",
+				"race": "slime",
+			},
+		],
+		'description': "A slime adventuring party! Even slimes get to go on adventures.",
 	},
 ]
 

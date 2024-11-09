@@ -29,7 +29,7 @@ extends Node2D
 @onready var menus = [work, lessons, rest, shop, walk, stats,]
 
 #TODO Dev variable, remove when building
-var skip_movie = false
+var skip_movie = true
 
 var jobs = Constants.jobs
 var rests = Constants.rests
