@@ -143,7 +143,7 @@ func do_lesson(lesson_name: String) :
 	var cost = 0
 	if "gold" in lesson_stats: cost = -lesson_stats.gold
 	if (cost > Player.stats["gold"]):
-		display_toast("Not enough gold!", "top", "center")
+		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 		return
 	var rng = RandomNumberGenerator.new()
 	if (LessonButton.get_success_chance(lesson_name) > rng.randf() * 100):
@@ -170,7 +170,7 @@ func do_rest(rest_name: String) -> void:
 	var cost = 0
 	if "gold" in rest_stats: cost = -rest_stats.gold
 	if ( cost > Player.stats["gold"]):
-		display_toast("Not enough gold!", "top", "center")
+		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 		return
 	process_stats(rest_stats)
 	rest.visible = false
