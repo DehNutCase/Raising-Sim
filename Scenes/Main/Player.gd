@@ -66,7 +66,6 @@ func _process(delta):
 				frames_to_skip = min(20, frames_to_skip + 1)
 			if frames_to_skip > 19:
 				#Swap to video when framerate is low
-				#TODO, add option to force Video/Live2D
 				Player.live2d_mode = Player.live2d_modes.VIDEO
 			delta_sum = 0
 			frame = 0
@@ -91,15 +90,13 @@ func _on_motion_finished():
 		#TODO, change motion based on mood
 		last_motion = next_motion
 		next_motion = content_motion
-	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
+	else:
 		if len(motion_video_queue):
 			live2d_video_player.stream = motion_video_queue.pop_front()
 			live2d_video_player.play()
 		else:
 			live2d_video_player.stream = idle_motion_video
 			live2d_video_player.play()
-	else:
-		printerr("_on_motion_finished wrong live2d_mode")
 	
 func _update_live2d_display(live2d_mode) -> void:
 	match live2d_mode:
