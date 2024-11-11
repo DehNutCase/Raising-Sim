@@ -66,11 +66,6 @@ func _ready():
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))	
 
-func _input(event):
-	if event.is_action_pressed("Key_X"):
-		print("x is pressed")
-	pass
-
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()
