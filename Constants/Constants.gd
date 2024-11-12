@@ -855,6 +855,29 @@ const character_classes = {
 		'combat_skills': ["fireball", "brilliance"],
 		'label': "Mage",
 	},
+	'assassin': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 50,
+			'defense': 25,
+			'speed': 50,
+			'resistance': 25,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 4,
+		},
+		'level_stats': {
+			'max_hp': 50,
+			'strength': 10,
+			'defense': 5,
+			'speed': 15,
+			'resistance': 12,
+			'gold': 100,
+			'experience': 50,
+		},
+		'combat_skills': ["preparation", "finishing_blow"],
+		'label': "Assassin",
+	},
 }
 
 const races = {
@@ -1043,15 +1066,25 @@ const tower_levels = [
 			{
 				"level": 10,
 				"character_class": "warrior",
-				"race": "orc",
+				"race": "slime",
 			},
 			{
 				"level": 10,
-				"character_class": "warrior",
-				"race": "orc",
+				"character_class": "rogue",
+				"race": "slime",
+			},
+			{
+				"level": 10,
+				"character_class": "mage",
+				"race": "slime",
+			},
+			{
+				"level": 10,
+				"character_class": "priest",
+				"race": "slime",
 			},
 		],
-		'description': "Two orc warriors. Although not as painful as fireballs, warrior attacks are still quite dangerous.",
+		'description': "A slime adventuring party! Even slimes get to go on adventures.",
 	},
 	{
 		'level': 10,
@@ -1059,25 +1092,20 @@ const tower_levels = [
 			{
 				"level": 11,
 				"character_class": "warrior",
-				"race": "slime",
+				"race": "orc",
 			},
 			{
 				"level": 11,
-				"character_class": "rogue",
-				"race": "slime",
+				"character_class": "warrior",
+				"race": "orc",
 			},
 			{
 				"level": 11,
-				"character_class": "mage",
-				"race": "slime",
-			},
-			{
-				"level": 11,
-				"character_class": "priest",
-				"race": "slime",
+				"character_class": "assassin",
+				"race": "goblin",
 			},
 		],
-		'description': "A slime adventuring party! Even slimes get to go on adventures.",
+		'description': "Two orc warriors and a goblin assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
 	},
 ]
 
@@ -1141,5 +1169,13 @@ const combat_skills = {
 		'effect_range': 'single',
 		'effect_strength': 200,
 		'label': "Fireball"
+	},
+	'finishing_blow': {
+		'weight': 5,
+		'effect_target': 'enemy',
+		'effect_type': 'physical_attack',
+		'effect_range': 'single',
+		'effect_strength': 300,
+		'label': "Finishing Blow"
 	},
 }

@@ -58,8 +58,11 @@ func _ready():
 			continue
 		button.pressed.connect(_on_action.bind(button))
 	
+	var index = 0
 	for skill in player_combat_copy.combat_skills:
-		skill_menu.add_item(skill)
+		skill_menu.add_item(Constants.combat_skills[skill].label)
+		skill_menu.set_item_metadata(index, {"name": skill})
+		index += 1
 	skill_menu.id_pressed.connect(_on_skill_press)
 	update_target(pos1.get_node("Enemy"))
 	
@@ -86,6 +89,13 @@ func process_turns(player_action: String):
 						return
 					var damage = max(1, (player_combat_copy.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense)
 					message = "Attacked and dealt " + str(damage) + " damage."
+					display_toast(message)
+					await update_enemy_hp(target, -damage)
+				"physical_attack":
+					if target.get_node("Enemy") in death_queue:
+						return
+					var damage = max(1, ((player_combat_copy.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense))
+					message = "Used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
 				"magic_attack":
@@ -132,6 +142,11 @@ func process_turns(player_action: String):
 				"attack":
 					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - player_combat_copy.stats.defense))
 					message = "Enemy attacked and dealt " + str(damage) + " damage."
+					display_toast(message)
+					update_player_hp(-damage)
+				"physical_attack":
+					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - player_combat_copy.stats.defense))
+					message = "Enemy used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
 				"magic_attack":
@@ -231,7 +246,7 @@ func _on_skill_press(id: int):
 	if state != states.READY:
 		return
 	state = states.PROCESSING
-	await process_turns(skill_menu.get_item_text(id).to_lower())
+	await process_turns(skill_menu.get_item_metadata(id).name.to_lower())
 	state = states.READY
 	
 func _on_enemy_gui_input(event, clicked):
