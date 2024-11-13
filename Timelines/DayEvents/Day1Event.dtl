@@ -1,17 +1,36 @@
 [background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
-join Mao (Live2D) 1
-join Rice (Live2D) 2 [animation="Instant In Or Out" length="0"]
-[history action="clear"]
-Mao_Portrait: Start
-leave Mao
 join Mao (Normal) 1
-leave Rice
-join Rice (Normal) 2
-Rice_Portrait: Testing
-Rice_Portrait: Test
+join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
+[history action="clear"]
+Mao_Portrait (Normal): Hey Rice, happy New Year's.
+Rice_Portrait (Normal): Sure. Here's your belated birthday present.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Um, didn't you already give me your present yesterday?
+Rice_Portrait (Normal): That was your birthday present. This is your belated birthday present.
+Rice_Portrait (Normal): And it's not from me, her majesty asked me to give it to you on New Year's. Apparently it's supposed to help with your new job.
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): (But her majesty was also at the party yesterday? I already recieved her present.)
 - Accept Robes
-	[signal arg="apprentice_robes"]
-	Mao_Portrait: Okay, thank you.
-- 2
+	[signal arg="{"item": "apprentice_robes"}"]
+	update Mao (Normal)
+	Mao_Portrait (Normal): Well, I don't really get it, but thank you.
+- Decline
+	update Mao (Normal)
+	Mao_Portrait (Normal): I already got my present yesterday, so I think you should double check this is for me.
 	Rice_Portrait: Hmm, if you say so.
-Rice_Portrait: End
+	Rice_Portrait: (I was wondering why her majesty told me what to do if Mao refused the present, but I suppose this counts as a rejection. I'll go ahead and send a message to HR.)
+	[signal arg="{"stats": {"gold": 10000}}"]
+update Mao (Normal)
+Rice_Portrait (Normal): One more thing. I'll be escorting you from today onwards.
+Rice_Portrait (Normal): I'll stay out of sight unless something serious happens, so you can just pretend I'm not here.
+update Mao (Excited)
+Mao_Portrait (Excited): Oh wow, a bodyguard. I guess I'm someone important now. But why?
+update Mao (Normal)
+Rice_Portrait (Normal): I didn't ask. Now if you don't mind, it's time for me to start working.
+leave Rice
+update Mao (Normal)
+Mao_Portrait (Normal): Don't you have a---
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wait, she vanished!?
+update Mao (Angry)
+Mao_Portrait (Angry): (Why is everyone from the palace a weirdo?)

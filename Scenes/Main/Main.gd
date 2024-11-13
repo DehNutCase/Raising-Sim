@@ -327,8 +327,14 @@ func display_stats() -> void:
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")	
 
-func _on_dialogic_signal(item: String) -> void:
-	Player.inventory.create_and_add_item(item)
+func _on_dialogic_signal(dialogic_signal) -> void:
+	dialogic_signal = JSON.parse_string(dialogic_signal)
+	if "item" in dialogic_signal:
+		Player.inventory.create_and_add_item(dialogic_signal.item)
+	if "stats" in dialogic_signal:
+		process_stats(dialogic_signal.stats)
+		for stat in dialogic_signal.stats:
+			Player.stats[stat] += dialogic_signal.stats[stat]
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
