@@ -115,9 +115,9 @@ texture = ExtResource("20_c7f2x")
 layer = -1
 
 [node name="Background" type="Sprite2D" parent="Ui/BackgroundLayer"]
-position = Vector2(640, 360)
 texture = ExtResource("2_r2e40")
-offset = Vector2(0, -50)
+centered = false
+offset = Vector2(0, -400)
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
 offset_right = 145.0
@@ -480,16 +480,16 @@ script = ExtResource("2_7t2yx")
 
 [node name="DialogicPanel" type="PanelContainer" parent="Ui"]
 visible = false
-custom_minimum_size = Vector2(1100, 600)
+custom_minimum_size = Vector2(1500, 850)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -550.0
-offset_top = -300.0
-offset_right = 550.0
-offset_bottom = 300.0
+offset_left = -600.0
+offset_top = -150.0
+offset_right = 600.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("11_sa3xm")

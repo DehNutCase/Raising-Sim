@@ -44,6 +44,8 @@ var skill_inventory: Inventory
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Constants.mode != "PC":
+		Player.live2d_mode = Player.live2d_modes.VIDEO
 	_update_live2d_display(Player.live2d_mode)
 	cubism_model.motion_finished.connect(_on_motion_finished)
 	live2d_video_player.finished.connect(_on_motion_finished)
@@ -55,7 +57,7 @@ func _ready():
 
 func _process(delta):
 	#TODO, enable live2d for PHONE mode under certain circumstances
-	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Player.live2d_active and Constants.mode == "PC":
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Player.live2d_active:
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:

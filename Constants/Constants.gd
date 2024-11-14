@@ -201,6 +201,8 @@ const jobs = {
 		},
 		'required_stats': {
 			'art': 500,
+			'skill': 0,
+			'scholarship': 0,
 		},
 		'difficulty': 50,
 		'proficiency': 200,
@@ -254,7 +256,7 @@ const jobs = {
 			'max_mp': 1,
 			'scholarship': 5,
 			'art': 1,
-			'stress': 200,
+			'stress': 20,
 		},
 		'required_stats': {
 			'max_mp': 100,

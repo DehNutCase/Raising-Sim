@@ -24,11 +24,11 @@ const TOAST_TIMEOUT_DURATION = .5
 
 enum states {READY, PROCESSING}
 var state = states.READY
+var fight_won = false
 
 var enemies: Array[Enemy] = []
 var order: Array[Character] = []
 var death_queue: Array[Enemy] = []
-var fight_won = false
 var victory_stat_gain = {}
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
@@ -178,6 +178,7 @@ func process_turns(player_action: String):
 			display_toast("Victory!")
 			Player.victory_stat_gain = victory_stat_gain
 			flee_button.text = "Leave"
+			fight_won = true
 	if player_combat_copy.stats.current_hp <= 0:
 		flee_button.text = "Leave"
 	
@@ -226,6 +227,11 @@ func heal_enemy(action, caster, amount):
 func _on_action(button):
 	if state != states.READY:
 		return
+	if fight_won:
+		if button.text == "Leave" or button.text == "Flee":
+			exit_combat()
+		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		
 	state = states.PROCESSING
 	match button.text:
 		"Attack":

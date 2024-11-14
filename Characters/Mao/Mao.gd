@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 	if !visibility_checker.is_on_screen():
 		return
-	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Constants.mode == "PC":
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
