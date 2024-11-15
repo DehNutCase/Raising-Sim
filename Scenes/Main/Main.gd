@@ -334,9 +334,7 @@ func display_stats() -> void:
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")	
 
 func _on_dialogic_signal(dialogic_signal) -> void:
-	print(dialogic_signal)
 	dialogic_signal = JSON.parse_string(dialogic_signal)
-	print(dialogic_signal)
 	if "item" in dialogic_signal:
 		Player.inventory.create_and_add_item(dialogic_signal.item)
 	if "stats" in dialogic_signal:

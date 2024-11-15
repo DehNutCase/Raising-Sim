@@ -86,15 +86,22 @@ func save_game():
 		save_data[inventory] = self[inventory].serialize()
 	
 	#TODO, modify save name based on which save it is
-	var save_file = FileAccess.open("./Saves/save.json", FileAccess.WRITE)
+	var save_file
+	if Constants.mode != "PC":
+		save_file = FileAccess.open("user://save.json", FileAccess.WRITE)
+	else:
+		DirAccess.make_dir_recursive_absolute("./Saves")
+		save_file = FileAccess.open("./Saves/save.json", FileAccess.WRITE)
 	save_file.store_line(JSON.stringify(save_data))
 
 func load_game():
-	if not FileAccess.file_exists("./Saves/save.json"):
-		printerr("No save to load for load_game")
+	var save_file
+	if Constants.mode != "PC":
+		save_file = FileAccess.open("user://save.json", FileAccess.READ)
+	else:
+		save_file = FileAccess.open("./Saves/save.json", FileAccess.READ)
+	if !save_file:
 		return
-
-	var save_file = FileAccess.open("./Saves/save.json", FileAccess.READ)
 	var json_string = save_file.get_line()
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
@@ -111,3 +118,4 @@ func load_game():
 	for inventory in data.inventories:
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
+		print(self[inventory].serialize())

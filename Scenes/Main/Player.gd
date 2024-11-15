@@ -38,10 +38,6 @@ var frame = 0
 var delta_sum = 0
 var frames_to_skip = 5
 
-var inventory: Inventory
-var background_inventory: Inventory
-var skill_inventory: Inventory
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Constants.mode != "PC":

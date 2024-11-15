@@ -1,2 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+# Ignore save files
+Saves/save.json
