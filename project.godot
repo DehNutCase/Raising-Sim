@@ -63,7 +63,7 @@ history/simple_history_enabled=true
 history/full_history_enabled=false
 animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
 animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
-layout/end_behaviour=0
+layout/end_behaviour=1
 
 [display]
 

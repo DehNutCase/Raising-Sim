@@ -46,6 +46,7 @@ var current_state = states.READY
 #TODO, add saving and loading
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Player.load_game()
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -63,9 +64,9 @@ func _ready():
 		day_label.display_day(day)
 		
 	for button in buttons.get_children():
-		button.pressed.connect(_on_action.bind(button))	
+		button.pressed.connect(_on_action.bind(button))
 	for button in buttons2.get_children():
-		button.pressed.connect(_on_action.bind(button))	
+		button.pressed.connect(_on_action.bind(button))
 
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
@@ -255,6 +256,10 @@ func _on_action(button):
 				tower.get_node("Description").text = Constants.tower_levels[Player.tower_level].description
 			else:
 				tower.get_node("Description").text = "The tower is cleared."
+		"Save":
+			Player.save_game()
+			background.visible = false
+			menu_panel.visible = true
 		_:
 			printerr("_on_action failed to match")
 			
@@ -329,7 +334,9 @@ func display_stats() -> void:
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")	
 
 func _on_dialogic_signal(dialogic_signal) -> void:
+	print(dialogic_signal)
 	dialogic_signal = JSON.parse_string(dialogic_signal)
+	print(dialogic_signal)
 	if "item" in dialogic_signal:
 		Player.inventory.create_and_add_item(dialogic_signal.item)
 	if "stats" in dialogic_signal:

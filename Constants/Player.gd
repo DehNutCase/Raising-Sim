@@ -1,5 +1,7 @@
 extends Character
 
+#List of variables to save, update when adding new variables
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "experience", "experience_total", "experience_required"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -73,3 +75,39 @@ func level_up() -> void:
 		stats_list = background_inventory.get_item_by_id(player_class).get_property("level_up_stats")
 		for stat in stats_list:
 			stats[stat] += stats_list[stat]
+
+func save_game():
+	var save_data = {}
+	for data in save_list:
+		save_data[data] = self[data]
+
+	#serialize inventories
+	for inventory in inventories:
+		save_data[inventory] = self[inventory].serialize()
+	
+	#TODO, modify save name based on which save it is
+	var save_file = FileAccess.open("./Saves/save.json", FileAccess.WRITE)
+	save_file.store_line(JSON.stringify(save_data))
+
+func load_game():
+	if not FileAccess.file_exists("./Saves/save.json"):
+		printerr("No save to load for load_game")
+		return
+
+	var save_file = FileAccess.open("./Saves/save.json", FileAccess.READ)
+	var json_string = save_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		printerr("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	var data = json.get_data()
+	
+	for variable in data:
+		if variable == "inventories" or variable in data.inventories:
+			continue
+		Player[variable] = data[variable]
+	
+	for inventory in data.inventories:
+		if !self[inventory].deserialize(data[inventory]):
+			printerr("failed to deserialize inventory during load_game")

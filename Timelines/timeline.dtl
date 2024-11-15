@@ -6,7 +6,7 @@ Mao_Portrait: This is timeline
 Rice: Testing
 Rice: Test
 - Accept Robes
-	[signal arg="apprentice_robes"]
+	[signal arg="{"item": "apprentice_robes"}"]
 	Mao_Portrait: Okay, thank you.
 - 2
 	Rice: Hmm, if you say so.

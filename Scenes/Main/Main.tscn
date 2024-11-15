@@ -551,7 +551,7 @@ text = "Shop"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Battle"
+text = "Save"
 
 [node name="MarginContainer4" type="MarginContainer" parent="."]
 anchors_preset = 2

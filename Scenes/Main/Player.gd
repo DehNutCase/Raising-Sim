@@ -101,6 +101,7 @@ func _on_motion_finished():
 			live2d_video_player.play()
 	
 func _update_live2d_display(live2d_mode) -> void:
+	live2d_mode = int(live2d_mode)
 	match live2d_mode:
 		Player.live2d_modes.LIVE2D:
 			live2d_video_player.hide()
