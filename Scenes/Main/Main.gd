@@ -43,6 +43,7 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
+#TODO, add saving and loading
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)

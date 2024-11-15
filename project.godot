@@ -78,6 +78,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloo
 [gui]
 
 theme/default_font_generate_mipmaps=true
+timers/tooltip_delay_sec=0.0
 
 [importer_defaults]
 

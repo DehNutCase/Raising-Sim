@@ -231,6 +231,7 @@ func _on_action(button):
 		if button.text == "Leave" or button.text == "Flee":
 			exit_combat()
 		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		return
 		
 	state = states.PROCESSING
 	match button.text:

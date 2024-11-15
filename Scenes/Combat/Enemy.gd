@@ -11,7 +11,7 @@ func _ready():
 
 func update_hp(change: int = 0) -> void:
 	get_node("Enemy").stats.current_hp += change
-	hp.text = "Hp: " + str(get_node("Enemy").stats.current_hp)
+	hp.text = get_node("Enemy").label + "\n" + "Hp: " + str(get_node("Enemy").stats.current_hp)
 
 func get_hp() -> int:
 	return get_node("Enemy").stats.current_hp

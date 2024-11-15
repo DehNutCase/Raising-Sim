@@ -1,7 +1,7 @@
 extends Node
 
 const mode = "PC" #PC, PHONE, HTML. Change this before exporting.
-
+#TODO, Replace emojis with pictures (display issues on different systems)
 const jobs = {
 	'Farmwork': {
 		'stats': {
@@ -947,7 +947,7 @@ const tower_levels = [
 				"race": "slime",
 			},
 		],
-		'description': "A slime warrior. Starts weak, but often buffs itself to dangerous levels. Ex",
+		'description': "A slime warrior. Starts weak, but can buff itself to dangerous levels.",
 	},
 	{
 		'level': 1,

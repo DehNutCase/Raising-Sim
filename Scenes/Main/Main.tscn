@@ -52,7 +52,7 @@ viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pod5l"]
 shader = ExtResource("17_wgghp")
 shader_parameter/chroma_key_color = Color(0, 1, 0, 1)
-shader_parameter/pickup_range = 0.0
+shader_parameter/pickup_range = 0.05
 shader_parameter/fade_amount = 0.8
 
 [node name="Main" type="Node2D" groups=["Main"]]
@@ -80,7 +80,7 @@ script = ExtResource("3_3fb26")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 offset_left = 180.0
-offset_right = 1032.0
+offset_right = 1420.0
 offset_bottom = 160.0
 mouse_filter = 2
 theme = ExtResource("11_sa3xm")
@@ -90,21 +90,25 @@ layout_mode = 2
 
 [node name="stress" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="level" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Icon" parent="GUI (Mouse Ignore)/Counters/level/Background" index="0"]
 texture = ExtResource("19_1gghe")
 
 [node name="experience" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Icon" parent="GUI (Mouse Ignore)/Counters/experience/Background" index="0"]
 texture = ExtResource("19_88f8e")
 
 [node name="scholarship" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Icon" parent="GUI (Mouse Ignore)/Counters/scholarship/Background" index="0"]
 texture = ExtResource("20_c7f2x")
@@ -173,27 +177,27 @@ script = ExtResource("7_cp3kk")
 [node name="PlayerInventory" type="Control" parent="Ui/PlayerControl/Player"]
 visible = false
 layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 220.0
-offset_top = -300.0
-offset_right = 520.0
-grow_horizontal = 0
+offset_left = 310.0
+offset_top = -350.0
+offset_right = 660.0
 grow_vertical = 0
 script = ExtResource("6_cueot")
 
 [node name="BackgroundInventory" type="Control" parent="Ui/PlayerControl/Player"]
 visible = false
 layout_mode = 3
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -520.0
-offset_top = -300.0
-offset_right = -220.0
+offset_left = -660.0
+offset_top = -350.0
+offset_right = -310.0
+grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("12_thnkb")
 
@@ -203,9 +207,9 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -520.0
-offset_top = -300.0
-offset_right = -220.0
+offset_left = -660.0
+offset_top = -350.0
+offset_right = -310.0
 grow_vertical = 0
 script = ExtResource("13_tkqcx")
 
@@ -213,7 +217,7 @@ script = ExtResource("13_tkqcx")
 material = SubResource("CanvasItemMaterial_snc6d")
 texture = SubResource("ViewportTexture_ltday")
 centered = false
-offset = Vector2(-300, -600)
+offset = Vector2(-350, -700)
 
 [node name="PlayerModel" type="GDCubismUserModel" parent="Ui/PlayerControl/Player/PlayerSprite"]
 assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
@@ -384,7 +388,7 @@ PartWandB = 1.0
 disable_3d = true
 transparent_bg = true
 gui_disable_input = true
-size = Vector2i(600, 600)
+size = Vector2i(700, 700)
 render_target_update_mode = 4
 
 [node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
@@ -395,10 +399,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -280.0
-offset_top = -675.0
-offset_right = 280.0
-offset_bottom = 25.0
+offset_left = -320.0
+offset_top = -770.0
+offset_right = 320.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 0
 stream = ExtResource("18_q463u")
@@ -499,17 +503,10 @@ visible = false
 layout_mode = 2
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1160.0
-offset_top = 120.0
-offset_right = 1280.0
-offset_bottom = 720.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 1460.0
+offset_top = 200.0
+offset_right = 1600.0
+offset_bottom = 900.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
@@ -560,9 +557,9 @@ text = "Battle"
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 120.0
-offset_right = 120.0
-offset_bottom = 720.0
+offset_top = 200.0
+offset_right = 140.0
+offset_bottom = 900.0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
