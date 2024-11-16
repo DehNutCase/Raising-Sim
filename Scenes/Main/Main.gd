@@ -43,9 +43,9 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
-#TODO, add saving and loading
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#TODO, add loading from intro screen instead
 	Player.load_game()
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -134,7 +134,6 @@ func do_job(job_name: String) :
 	process_day()
 	
 #TODO, add animations for lesson and resting
-#TODO, display cost of rest and lessons
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0

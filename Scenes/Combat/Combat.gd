@@ -179,6 +179,8 @@ func process_turns(player_action: String):
 			Player.victory_stat_gain = victory_stat_gain
 			flee_button.text = "Leave"
 			fight_won = true
+			#Used to update status message
+			update_player_hp(0)
 	if player_combat_copy.stats.current_hp <= 0:
 		flee_button.text = "Leave"
 	
@@ -284,7 +286,10 @@ func speed_sort(a, b):
 func update_player_hp(change: int = 0) -> void:
 	player_combat_copy.stats.current_hp += change
 	player_stats_display.text = "Hp: " + str(player_combat_copy.stats.current_hp)
-	#TODO, add unconsious status to play status box once hp drops to 0
+	if player_combat_copy.stats.current_hp <= 0:
+		player_stats_display.text = player_stats_display.text + "\nStatus: Unconsious"
+	elif fight_won:
+		player_stats_display.text = player_stats_display.text + "\nStatus: Victorious"
 
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
