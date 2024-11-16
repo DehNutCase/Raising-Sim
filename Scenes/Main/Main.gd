@@ -26,7 +26,7 @@ extends Node2D
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
-@onready var menus = [work, lessons, rest, shop, walk, stats,]
+@onready var menus = [work, lessons, rest, shop, walk, stats, tower,]
 
 #TODO Dev variable, remove when building
 var skip_movie = false

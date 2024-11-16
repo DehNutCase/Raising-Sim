@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
-[ext_resource type="FontFile" uid="uid://865wdbswk5y5" path="res://Art/Fonts/seguiemj.ttf" id="10_6707k"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Themes/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
@@ -33,11 +32,7 @@ font_size = 36
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_btm34"]
-fallbacks = Array[Font]([ExtResource("10_6707k")])
-
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
-font = SubResource("FontVariation_btm34")
 font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)

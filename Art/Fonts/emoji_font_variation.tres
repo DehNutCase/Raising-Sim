@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bampel0ostwmy"]
+
+[ext_resource type="FontFile" uid="uid://865wdbswk5y5" path="res://Art/Fonts/seguiemj.ttf" id="1_et481"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_et481")])
