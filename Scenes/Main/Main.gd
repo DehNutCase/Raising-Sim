@@ -8,8 +8,8 @@ extends Node2D
 @onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
 @onready var dialogic_panel = $Ui/DialogicPanel
 
-@onready var gold_label = $Ui/MarginContainer/GoldLabel
-@onready var day_label = $Ui/MarginContainer2/DayLabel
+@onready var gold_label = $Ui/GoldLabelContainer/GoldLabel
+@onready var day_label = $Ui/DayLabelContainer/DayLabel
 @onready var walks_label = $RemainingWalks
 
 @onready var work = $Ui/MenuPanel/Work
@@ -21,8 +21,8 @@ extends Node2D
 @onready var tower = $Ui/MenuPanel/Tower
 
 @onready var menu_panel = $Ui/MenuPanel
-@onready var buttons = $MarginContainer3/MenuPanel/VBoxContainer
-@onready var buttons2 = $MarginContainer4/MenuPanel/VBoxContainer
+@onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
+@onready var buttons2 = $RightMenuContainer/MenuPanel/VBoxContainer
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
@@ -43,6 +43,7 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
+#TODO, work on layout changes for different aspect ratios under expand
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#TODO, add loading from intro screen instead
@@ -89,7 +90,7 @@ func process_day():
 	
 	for stat in Player.stats:
 		if !stat in Constants.stats:
-			print(stat + " isn't in Constants.stats")
+			printerr(stat + " isn't in Constants.stats")
 			continue
 		if "min" in Constants.stats[stat] && Player.stats[stat] < Constants.stats[stat]["min"]:
 			Player.stats[stat] = Constants.stats[stat]["min"]
@@ -410,10 +411,8 @@ func check_and_play_events() -> void:
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
 		Dialogic.start("Day1Event")
 		Player.event_flags['Day1Event'] = true
-		print(Player.event_flags)
 		
 	if Player.day == 5 and !('Day5Event' in Player.event_flags):
 		Dialogic.start("timeline")
 		Player.event_flags['Day5Event'] = true
-		print(Player.event_flags)
 		

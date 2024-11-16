@@ -1,7 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
-[ext_resource type="Script" path="res://Scenes/Main/StatLabel.gd" id="2_7t2yx"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://Scenes/Main/RemainingWalks.gd" id="3_3fb26"]
@@ -25,6 +24,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
+[ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
@@ -123,7 +123,7 @@ texture = ExtResource("2_r2e40")
 centered = false
 offset = Vector2(0, -400)
 
-[node name="MarginContainer" type="MarginContainer" parent="Ui"]
+[node name="GoldLabelContainer" type="MarginContainer" parent="Ui"]
 offset_right = 145.0
 offset_bottom = 59.0
 mouse_filter = 2
@@ -132,7 +132,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GoldLabel" type="Label" parent="Ui/MarginContainer"]
+[node name="GoldLabel" type="Label" parent="Ui/GoldLabelContainer"]
 texture_filter = 4
 layout_mode = 2
 text = "GoldLabel"
@@ -141,7 +141,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_8l10c")
 
-[node name="MarginContainer2" type="MarginContainer" parent="Ui"]
+[node name="DayLabelContainer" type="MarginContainer" parent="Ui"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -153,7 +153,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="DayLabel" type="Label" parent="Ui/MarginContainer2"]
+[node name="DayLabel" type="Label" parent="Ui/DayLabelContainer"]
 layout_mode = 2
 text = "DayLabel"
 label_settings = SubResource("LabelSettings_k8ogb")
@@ -474,13 +474,26 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Skip"
 
-[node name="Stats" type="Label" parent="Ui/MenuPanel"]
+[node name="Stats" type="HBoxContainer" parent="Ui/MenuPanel"]
 visible = false
+layout_mode = 2
+script = ExtResource("25_7vaom")
+
+[node name="Stats" type="Label" parent="Ui/MenuPanel/Stats"]
 texture_filter = 4
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 text = "StatLabel"
 label_settings = SubResource("LabelSettings_icocv")
-script = ExtResource("2_7t2yx")
+
+[node name="Stats2" type="Label" parent="Ui/MenuPanel/Stats"]
+texture_filter = 4
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "StatLabel"
+label_settings = SubResource("LabelSettings_icocv")
 
 [node name="DialogicPanel" type="PanelContainer" parent="Ui"]
 visible = false
@@ -502,7 +515,7 @@ theme = ExtResource("11_sa3xm")
 visible = false
 layout_mode = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="."]
+[node name="LeftMenuContainer" type="MarginContainer" parent="."]
 offset_left = 1460.0
 offset_top = 200.0
 offset_right = 1600.0
@@ -510,50 +523,50 @@ offset_bottom = 900.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="MenuPanel" type="PanelContainer" parent="MarginContainer3"]
+[node name="MenuPanel" type="PanelContainer" parent="LeftMenuContainer"]
 layout_mode = 2
 theme = ExtResource("11_sa3xm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer3/MenuPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftMenuContainer/MenuPanel"]
 layout_mode = 2
 
-[node name="Jobs" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+[node name="Jobs" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Work"
 
-[node name="Classes" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+[node name="Classes" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Lessons"
 
-[node name="Rest" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+[node name="Rest" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Rest"
 
-[node name="Inventory" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+[node name="Inventory" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Inventory"
 
-[node name="Shop" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+[node name="Shop" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Shop"
 
-[node name="Battle" type="Button" parent="MarginContainer3/MenuPanel/VBoxContainer"]
+[node name="Battle" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Save"
 
-[node name="MarginContainer4" type="MarginContainer" parent="."]
+[node name="RightMenuContainer" type="MarginContainer" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -564,44 +577,44 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="MenuPanel" type="PanelContainer" parent="MarginContainer4"]
+[node name="MenuPanel" type="PanelContainer" parent="RightMenuContainer"]
 layout_mode = 2
 theme = ExtResource("11_sa3xm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer4/MenuPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="RightMenuContainer/MenuPanel"]
 layout_mode = 2
 
-[node name="Stats" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Stats" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Stats"
 
-[node name="Background" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Background" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Background"
 
-[node name="Skills" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Skills" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Skills"
 
-[node name="Walk" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Walk" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Walk"
 
-[node name="Shop" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Shop" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tower"
 
-[node name="Battle" type="Button" parent="MarginContainer4/MenuPanel/VBoxContainer"]
+[node name="Battle" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

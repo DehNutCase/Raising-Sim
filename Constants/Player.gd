@@ -118,4 +118,3 @@ func load_game():
 	for inventory in data.inventories:
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
-		print(self[inventory].serialize())
