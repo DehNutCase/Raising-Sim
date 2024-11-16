@@ -71,7 +71,6 @@ window/size/viewport_width=1600
 window/size/viewport_height=900
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -80,7 +79,6 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloo
 [gui]
 
 theme/default_font_generate_mipmaps=true
-timers/tooltip_delay_sec=0.0
 
 [importer_defaults]
 
@@ -106,7 +104,7 @@ disable_plugin_dialogues=true
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
