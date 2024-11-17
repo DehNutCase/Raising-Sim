@@ -5,12 +5,12 @@ signal remove_label(ToastLabel)
 var resolution = Vector2.ZERO
 
 # Text margin with box parent
-const margins = {"left": 12, "top": 7, "right": 12, "bottom": 7}
+const margins = {"left": 10, "top": 5, "right": 10, "bottom": 5}
 # margin between buttons
 const margin_between = 23
 
 # offset position box with screen position
-const offset_position = Vector2(10, 10)
+const offset_position = Vector2(18, 18)
 
 var button_size
 var _tween_in: Tween
@@ -75,7 +75,7 @@ func update_text(_text: String) -> void:
 func move_to(index: int) -> void:
 	update_x_position()
 
-	var offset_y = (margin_between + button_size.y) * index
+	var offset_y = (margin_between * get_visible_line_count() + button_size.y) * index
 	var _y = get_y_pos(offset_y, gravity)
 
 	# bottom
@@ -123,9 +123,9 @@ func get_y_pos(offset = 0, _gravity = "top") -> float:
 	# left position.x = margins.left + offset_position.x
 	var _y_pos = 0
 	if _gravity == "top":
-		_y_pos = margins.top + offset_position.y + offset
+		_y_pos = margins.top + offset_position.y * get_visible_line_count() + offset
 	else:
-		_y_pos = resolution.y - margins.top - button_size.y - offset_position.y - offset
+		_y_pos = resolution.y - margins.top - button_size.y - offset_position.y * get_visible_line_count() - offset
 	return _y_pos
 
 
@@ -133,11 +133,11 @@ func update_x_position() -> void:
 	_set_resolution()
 
 	if direction == "left":
-		position.x = margins.left + offset_position.x
+		position.x = margins.left + offset_position.x * get_visible_line_count()
 	elif direction == "center":
 		position.x = (resolution.x / 2) - (size.x / 2)
 	else:
-		position.x = resolution.x - margins.left - size.x - offset_position.x
+		position.x = resolution.x - margins.left - size.x - offset_position.x * get_visible_line_count()
 
 func _set_color(color: Color) -> void:
 	# set color

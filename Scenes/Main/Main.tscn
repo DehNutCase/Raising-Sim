@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
-font_size = 36
+font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
@@ -71,11 +71,15 @@ vertical_alignment = 1
 script = ExtResource("2_h7wcs")
 
 [node name="RemainingWalks" type="Label" parent="."]
-offset_left = 129.0
-offset_top = 454.0
-offset_right = 175.0
-offset_bottom = 477.0
+texture_filter = 4
+offset_left = 10.0
+offset_top = 126.0
+offset_right = 144.0
+offset_bottom = 176.0
 text = "Walks"
+label_settings = SubResource("LabelSettings_qc06n")
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("3_3fb26")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
@@ -620,6 +624,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Battle"
 
+[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="pressed" from="Ui/MenuPanel/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 

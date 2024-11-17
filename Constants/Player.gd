@@ -93,6 +93,7 @@ func save_game():
 		DirAccess.make_dir_recursive_absolute("./Saves")
 		save_file = FileAccess.open("./Saves/save.json", FileAccess.WRITE)
 	save_file.store_line(JSON.stringify(save_data))
+	ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
 
 func load_game():
 	var save_file

@@ -14,7 +14,6 @@ func _ready():
 	
 func _on_button_pressed():
 	get_tree().call_group("Main", "buy_item", item.get_property("id"), item.get_property("price"))
-	pass
 
 func update_labels():
 	texture.texture = item.get_texture();
@@ -48,3 +47,14 @@ func update_labels():
 			if (monthly_stats[stat] > 0):
 				tooltip += "+"
 			tooltip += str(monthly_stats[stat]) + " " + Constants.stats[stat].label
+
+#Display tooltip as a toast for mobile
+func _on_texture_rect_gui_input(event):
+	if Constants.mode != "PHONE":
+		return
+	if event is InputEventMouseButton and event.pressed:
+		ToastParty.show({
+			"text": tooltip,
+			"gravity": "bottom",
+			"direction": "center",
+		})

@@ -416,3 +416,7 @@ func check_and_play_events() -> void:
 		Dialogic.start("timeline")
 		Player.event_flags['Day5Event'] = true
 		
+#Tooltip replacement for mobile which doesn't have hover tooltips
+func _on_player_inventory_item_activated(tooltip):
+	if Constants.mode == "PHONE":
+		display_toast(tooltip, "bottom", "center")

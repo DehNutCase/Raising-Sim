@@ -99,8 +99,10 @@ func _on_list_item_activated(index: int) -> void:
 
 
 func _on_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	if mouse_button_index == MOUSE_BUTTON_RIGHT:
-		inventory_item_context_activated.emit(_get_inventory_item(index))
+	#if mouse_button_index == MOUSE_BUTTON_RIGHT:
+		#inventory_item_context_activated.emit(_get_inventory_item(index))
+	#Modified to emit tooltip when item is clicked
+	inventory_item_context_activated.emit(_item_list.get_item_tooltip(index))
 
 
 func _on_item_modified(_item: InventoryItem) -> void:
