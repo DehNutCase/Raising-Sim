@@ -108,7 +108,7 @@ func process_day():
 	if(skip_checkbox.button_pressed):
 		_on_close_button_pressed()
 	update_expressions()
-	check_and_play_events()
+	check_and_play_daily_events()
 
 #TODO remove stat bars in job pages
 func do_job(job_name: String) :
@@ -192,12 +192,12 @@ func do_walk(walk_name: String) -> void:
 		Player.remaining_walks -= 1
 		if(skip_checkbox.button_pressed):
 			_on_close_button_pressed()
-		if 'timeline' in outcome:
-			Dialogic.start(outcome.timeline)
 		if 'toasts' in outcome:
 			for toast in outcome.toasts:
 				display_toast(toast)
 				await(get_tree().create_timer(.5).timeout)
+		if 'timeline' in outcome:
+			Dialogic.start(outcome.timeline)
 		await(get_tree().create_timer(.5).timeout)
 		process_stats(walk_stats)
 	else:
@@ -379,7 +379,7 @@ func rand_weighted(weights) -> int:
 	for weight in weights:
 		weight_sum += weight
 	var rng = RandomNumberGenerator.new()
-	var choice = rng.randi_range(0, weight_sum)
+	var choice = rng.randf_range(0, weight_sum)
 	for i in range(len(weights)):
 		if(choice <= weights[i]):
 			return i
@@ -405,7 +405,7 @@ func _on_enter_tower_button_pressed() -> void:
 	else:
 		display_toast("The tower is cleared", "top", "center")
 
-func check_and_play_events() -> void:
+func check_and_play_daily_events() -> void:
 	if skip_movie:
 		return
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):

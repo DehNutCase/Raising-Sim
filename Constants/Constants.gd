@@ -755,7 +755,8 @@ const locations = {
 					'gold': 20,
 				},
 				'weight': 1,
-				'timeline': 'res://Timelines/timeline.dtl',
+				'toasts': ["Found an interesting door, let's go in."],
+				'timeline': 'res://Timelines/WalkEvents/HiyoriCorner.dtl',
 			},]
 	},
 }

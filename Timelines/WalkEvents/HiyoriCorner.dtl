@@ -1,0 +1,3 @@
+[background arg="res://Characters/Hiyori/Images/Background/background.jpg" fade="0.0"]
+join Hiyori (Desk) 2
+Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner.

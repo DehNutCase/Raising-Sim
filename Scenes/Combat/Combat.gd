@@ -326,7 +326,7 @@ func rand_weighted(weights) -> int:
 	for weight in weights:
 		weight_sum += weight
 	var rng = RandomNumberGenerator.new()
-	var choice = rng.randi_range(0, weight_sum)
+	var choice = rng.randf_range(0, weight_sum )
 	for i in range(len(weights)):
 		if(choice <= weights[i]):
 			return i
