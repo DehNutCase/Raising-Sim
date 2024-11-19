@@ -1,0 +1,11 @@
+[background arg="res://Characters/Hiyori/Images/Background/background.jpg" fade="0.0"]
+join Hiyori (Desk) 2
+Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner.
+Mao_Portrait (Surprised): Why is there a classroom here?
+Hiyori_Portrait (Normal): It's not a classroom! This is Hiyori's Corner, a helpful hideout that provides facts and tips to the lost and confused.
+Mao_Portrait (EyesClosed): (I might as well play along.)
+Mao_Portrait (Normal): Then do you have any tips for me?
+Hiyori_Portrait (Normal): Of course! Since this is your first visit here, I'll start with something basic. Did you know Scholarship📖 increases how fast your stats go up?
+Hiyori_Portrait (Normal): The fastest way to increase Scholarship is the General Education class, but you can also try working as a tutor.
+Hiyori_Portrait (Smile): That's all for this time's consultation, we hope to see you again.
+[signal arg="{"stats": {"scholarship": 10}}"]

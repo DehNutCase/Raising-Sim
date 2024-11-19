@@ -193,11 +193,22 @@ func do_walk(walk_name: String) -> void:
 		if(skip_checkbox.button_pressed):
 			_on_close_button_pressed()
 		if 'toasts' in outcome:
-			for toast in outcome.toasts:
-				display_toast(toast)
-				await(get_tree().create_timer(.5).timeout)
+			if 'first_toasts' in outcome and !(outcome.flag in Player.event_flags):
+				for toast in outcome.first_toasts:
+					display_toast(toast)
+					await(get_tree().create_timer(.5).timeout)
+				if !'first_timeline' in outcome:
+					Player.event_flags[outcome.flag] = true
+			else:
+				for toast in outcome.toasts:
+					display_toast(toast)
+					await(get_tree().create_timer(.5).timeout)
 		if 'timeline' in outcome:
-			Dialogic.start(outcome.timeline)
+			if 'first_timeline' in outcome and !(outcome.flag in Player.event_flags):
+				Dialogic.start(outcome.first_timeline)
+				Player.event_flags[outcome.flag] = true
+			else:
+				Dialogic.start(outcome.timeline)
 		await(get_tree().create_timer(.5).timeout)
 		process_stats(walk_stats)
 	else:
@@ -297,6 +308,8 @@ func display_toast(message, gravity = "bottom", direction = "center"):
 	"""
 
 func process_stats(stats):
+	if !stats:
+		return
 	var toast = ""
 	for stat in stats:
 		var label

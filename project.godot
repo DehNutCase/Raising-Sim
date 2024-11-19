@@ -39,6 +39,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "Day1Event": "res://Timelines/DayEvents/Day1Event.dtl",
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
+"HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
 "timeline": "res://Timelines/timeline.dtl"
 }
 glossary/default_case_sensitive=true

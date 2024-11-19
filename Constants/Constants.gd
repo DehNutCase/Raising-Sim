@@ -751,12 +751,13 @@ const locations = {
 			},
 			{
 				'stats': {
-					'experience': 20,
-					'gold': 20,
 				},
 				'weight': 1,
-				'toasts': ["Found an interesting door, let's go in."],
+				'toasts': ["Found Hiyori's Corner, let's visit."],
 				'timeline': 'res://Timelines/WalkEvents/HiyoriCorner.dtl',
+				'first_toasts': ["Found an interesting door, let's go in."],
+				'first_timeline': 'res://Timelines/WalkEvents/HiyoriCornerFirst.dtl',
+				'flag': "hiyori_corner"
 			},]
 	},
 }
