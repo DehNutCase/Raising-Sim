@@ -30,6 +30,9 @@ var enemies: Array[Enemy] = []
 var order: Array[Character] = []
 var death_queue: Array[Enemy] = []
 var victory_stat_gain = {}
+var enemy_skill_use_flags = {}
+@onready var center_container: CenterContainer = get_parent().get_node("CenterContainer")
+@onready var video_stream_player: VideoStreamPlayer = get_parent().get_node("CenterContainer/VideoPanel/VideoStreamPlayer")
 
 var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
@@ -154,6 +157,26 @@ func process_turns(player_action: String):
 					message = "Enemy used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
+				"special_fixed":
+					if action in enemy_skill_use_flags:
+						var damage = max(1, action.effect_strength)
+						message = "Enemy used " + action.label + " and dealt " + str(damage) + " damage."
+						display_toast(message)
+						update_player_hp(-damage)
+					else:
+						enemy_skill_use_flags[action] = true
+						var damage = max(1, action.effect_strength)
+						message = "Enemy used " + action.label + "!"
+						display_toast(message)
+						video_stream_player.custom_minimum_size = action.animation_size
+						center_container.show()
+						video_stream_player.stream = load(action.animation)
+						video_stream_player.play()
+						await(get_tree().create_timer(action.animation_length).timeout)
+						center_container.hide()
+						message = action.label + " dealt " + str(damage) + " damage!"
+						display_toast(message)
+						update_player_hp(-damage)
 				"buff":
 					message = "Enemey used " + action.label + ". " + action.message
 					apply_buffs_enemy(action, node)

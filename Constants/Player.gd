@@ -40,8 +40,8 @@ enum live2d_modes {LIVE2D, VIDEO}
 	},
 	{
 		"level": 1,
-		"character_class": "mage",
-		"race": "slime",
+		"character_class": "rice",
+		"race": "lesser_phantom",
 	},
 ]
 @export var tower_level = 0

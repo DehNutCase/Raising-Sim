@@ -882,6 +882,31 @@ const character_classes = {
 		'combat_skills': ["preparation", "finishing_blow"],
 		'label': "Assassin",
 	},
+	'rice': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 50,
+			'defense': 50,
+			'speed': 50,
+			'magic': 50,
+			'resistance': 50,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 4,
+		},
+		'level_stats': {
+			'experience': 100,
+			'gold': 100,
+			'max_hp': 30,
+			'strength': 25,
+			'defense': 25,
+			'speed': 40,
+			'magic': 50,
+			'resistance': 25,
+		},
+		'combat_skills': ["judgement"],
+		'label': "Rice",
+	},
 }
 
 const races = {
@@ -936,6 +961,30 @@ const races = {
 			'gold': 10,
 		},
 		'label': 'Orc',
+	},
+	'lesser_phantom': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 10,
+			'defense': 10,
+			'speed': 10,
+			'resistance': 10,
+			'magic': 10,
+			'gold': 200,
+			'experience': 100,
+			'action_points': -3,
+		},
+		'level_stats': {
+			'gold': 50,
+			'experience': 25,
+			'max_hp': -20,
+			'strength': -10,
+			'defense': -10,
+			'speed': -10,
+			'magic': -10,
+			'resistance': -10,
+		},
+		'label': 'Lesser Phantom:',
 	},
 }
 
@@ -1111,6 +1160,17 @@ const tower_levels = [
 		],
 		'description': "Two orc warriors and a goblin assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
 	},
+	{
+		'level': 14,
+		'enemies': [
+			{
+				"level": 15,
+				"character_class": "rice",
+				"race": "lesser_phantom",
+			},
+		],
+		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a lesser phantom, so it's far weaker and slower than the original. Unfortunately this one is a phantom of Rice, whose favorite skill happens to deal extreme damage while ignoring defenses. Consider asking Rice for advice if you lose.",
+	},
 ]
 
 const combat_skills = {
@@ -1181,5 +1241,16 @@ const combat_skills = {
 		'effect_range': 'single',
 		'effect_strength': 300,
 		'label': "Finishing Blow"
+	},
+	'judgement': {
+		'weight': 100,
+		'effect_target': 'enemy',
+		'effect_type': 'special_fixed',
+		'effect_range': 'single',
+		'effect_strength': 1000,
+		'label': "Judgement",
+		'animation': "res://Characters/Rice/Videos/mtn_03.ogv",
+		'animation_length': 4,
+		'animation_size': Vector2(900, 750),
 	},
 }

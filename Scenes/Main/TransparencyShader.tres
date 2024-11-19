@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bw7t51yw4ntnn"]
+
+[ext_resource type="Shader" path="res://Scenes/Main/Transparency.gdshader" id="1_xhvg0"]
+
+[resource]
+shader = ExtResource("1_xhvg0")
+shader_parameter/chroma_key_color = Color(0, 1, 0, 1)
+shader_parameter/pickup_range = 0.05
+shader_parameter/fade_amount = 0.8

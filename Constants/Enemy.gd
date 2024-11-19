@@ -1,5 +1,6 @@
 class_name Enemy extends Character
 
+#TODO, use portrait based on enemy race or class
 var portrait = "uid://dkkm2aamicapl" #res://Art/Portraits/mao_portrait.png
 var combat_skills = ["basic_attack"]
 var label = "Enemy"

@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://df0p3tawo2arq"]
+[gd_scene load_steps=6 format=3 uid="uid://df0p3tawo2arq"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
 [ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
 [ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Themes/DefaultTheme.tres" id="4_hv28o"]
+[ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="4_ws6am"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbnm6"]
 font_size = 24
 
-[node name="Combat" type="VBoxContainer"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Combat" type="VBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i0ygr")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Combat"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 200
@@ -23,23 +26,23 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Enemy" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
+[node name="Enemy" parent="Combat/MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
 layout_mode = 2
 
-[node name="Enemy2" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
+[node name="Enemy2" parent="Combat/MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
 layout_mode = 2
 
-[node name="Enemy3" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
+[node name="Enemy3" parent="Combat/MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="Combat"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 200
@@ -47,23 +50,23 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Enemy" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
+[node name="Enemy" parent="Combat/MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
 layout_mode = 2
 
-[node name="Enemy2" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
+[node name="Enemy2" parent="Combat/MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
 layout_mode = 2
 
-[node name="Enemy3" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
+[node name="Enemy3" parent="Combat/MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
 layout_mode = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="."]
+[node name="MarginContainer3" type="MarginContainer" parent="Combat"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
@@ -71,40 +74,40 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="MenuPanel" type="PanelContainer" parent="MarginContainer3"]
+[node name="MenuPanel" type="PanelContainer" parent="Combat/MarginContainer3"]
 layout_mode = 2
 theme = ExtResource("4_hv28o")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3/MenuPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer3/MenuPanel"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_hv28o")
 
-[node name="Attack" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Attack" type="Button" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Attack"
 
-[node name="Skill" type="MenuButton" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Skill" type="MenuButton" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Skill"
 flat = false
 switch_on_hover = true
 
-[node name="Item" type="MenuButton" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Item" type="MenuButton" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Item"
 flat = false
 switch_on_hover = true
 
-[node name="Flee" type="Button" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="Flee" type="Button" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Flee"
 
-[node name="PlayerStats" type="Label" parent="MarginContainer3/MenuPanel/HBoxContainer"]
+[node name="PlayerStats" type="Label" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 custom_minimum_size = Vector2(240, 180)
 layout_mode = 2
 text = "Player Stats"
@@ -112,3 +115,20 @@ label_settings = SubResource("LabelSettings_gbnm6")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoPanel" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("4_hv28o")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer/VideoPanel"]
+material = ExtResource("4_ws6am")
+layout_mode = 2
+expand = true
