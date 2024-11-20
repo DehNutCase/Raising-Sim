@@ -43,7 +43,7 @@ directories/dtl_directory={
 "timeline": "res://Timelines/timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres", "res://Art/Dialogic/NoBackgroundStyle.tres", "res://Art/Dialogic/NoBackgroundNoPortraitStyle.tres"]
+layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres"]
 layout/default_style="res://Art/Dialogic/VisualNovelStyle.tres"
 variables={}
 text/letter_speed=0.0

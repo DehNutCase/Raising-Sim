@@ -1,3 +1,23 @@
 [background arg="res://Characters/Hiyori/Images/Background/background.jpg" fade="0.0"]
 join Hiyori (Desk) 2
-Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner.
+Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner, the helpful hideout that provides facts and tips to the lost and confused.
+Mao_Portrait (Normal): Hello Hiyori.
+Hiyori_Portrait (Normal): So what would you like to learn about today?
+- I can't find Rice.
+	Hiyori_Portrait (Surprised): Isn't she right next to you?
+	Mao_Portrait (Angry): She won't talk to me.
+	Hiyori_Portrait (Normal): Hmm... I don't think she's ignoring you to be mean, so you can try visiting her house. TODO, add Rice's House to Locations after this.
+	[signal]
+- I'm trying to climb the tower, do you have any advice?
+	Hiyori_Portrait (Surprised): Your class isn't suited for fighting and the tower is all about fighting your way up, so I'm against it, personally.
+	Hiyori_Portrait (Normal): But I'll give you some basic advice anyway. As a civilian, your stats don't grow very much from fighting and leveling up, so you should focus on working hard day by day to build them up.
+	Hiyori_Portrait (Normal): Early on having enough Speed⚡ to attack first and Strength💪 to quickly take out a single target is probably enough.
+	Hiyori_Portrait (Normal): Once you start seeing more than one enemy you'll want enough HP❤, Defense🛡, and Resistance🥽 to slowly clear them over multiple turns.
+	Hiyori_Portrait (Normal): Past that you'll need to work on dealing as much damage as possible. You won't get any combat skills by leveling up, so you'll need to learn them the hard way.
+	Hiyori_Portrait (Normal): You can learn Fireball from Intermediate Magic Training if you want to work on the magic side of things.
+	Hiyori_Portrait (Normal): It's hard to learn special moves on the physical side, so it might be easier to just attack as much as possible every turn. To do that you'll need to take some classes on Combat Theory and also get more Action Points from somewhere.
+	Hiyori_Portrait (Smile): You won't get more Action Points from leveling up, so have you tried cleaning my room?
+	Hiyori_Portrait (Normal): I'm joking, but the maids here are really amazing. You might get some tips on how to move faster if you work with them.
+	Hiyori_Portrait (Normal): If you want higher level advice you can try asking Rice. Did you know that she's a Ranker?
+- So why is there a classroom here, anyway?
+Hiyori_Portrait (Smile): That's all for this time's consultation, we hope to see you again.
