@@ -1,6 +1,7 @@
 extends MarginContainer
 
 @onready var button_label = $Button/Label
+var walk_name = ""
 
 signal pressed
 
@@ -11,7 +12,5 @@ func _ready():
 func update_label(text: String):
 	button_label.text = text
 
-
 func _on_job_button_pressed():
-	get_tree().call_group("Main", "do_walk", button_label.text)
-	pass # Replace with function body.
+	get_tree().call_group("Main", "do_walk", walk_name)

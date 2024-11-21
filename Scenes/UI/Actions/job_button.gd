@@ -2,6 +2,7 @@ class_name JobButton
 extends MarginContainer
 
 @onready var button_label = $Button/Label
+var job_name = ""
 
 signal pressed
 
@@ -11,9 +12,10 @@ func _ready():
 
 func update_label(text: String = button_label.text):
 	button_label.text = text
+	update_difficulty_color()
 	
 func update_difficulty_color():
-	var success = min(1, (max(0, get_success_chance(button_label.text)/100.0)))
+	var success = min(1, (max(0, get_success_chance(job_name)/100.0)))
 	modulate = Color(1,success,success)
 
 static func get_success_chance(name):
@@ -35,5 +37,4 @@ static func get_success_chance(name):
 	return 100.0 * adjusted_stats / task_total_stats - task["difficulty"] - Player.stats["stress"]
 	
 func _on_job_button_pressed():
-	get_tree().call_group("Main", "do_job", button_label.text)
-	pass # Replace with function body.
+	get_tree().call_group("Main", "do_job", job_name)

@@ -740,6 +740,7 @@ const constants = {
 
 const locations = {
 	'palace': {
+		'label': 'Palace',
 		'outcomes':
 			[{
 				'stats': {
@@ -758,7 +759,19 @@ const locations = {
 				'first_toasts': ["Found an interesting door, let's go in."],
 				'first_timeline': 'res://Timelines/WalkEvents/HiyoriCornerFirst.dtl',
 				'flag': "hiyori_corner"
-			},]
+			},],
+	},
+	'rice_house': {
+		"label": "Rice's House",
+		'location_flag': "rice_house",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -5,
+				},
+				'toasts': ["Had a relaxing walk."],
+				'weight': 2,
+			},],
 	},
 }
 

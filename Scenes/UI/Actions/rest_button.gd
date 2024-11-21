@@ -1,6 +1,7 @@
 extends MarginContainer
 
 @onready var button_label = $Button/Label
+var rest_name = ""
 
 signal pressed
 
@@ -8,11 +9,8 @@ signal pressed
 func _ready():
 	pass # Replace with function body.
 
-
 func update_label(text: String):
 	button_label.text = text
 
-
 func _on_job_button_pressed():
-	get_tree().call_group("Main", "do_rest", button_label.text)
-	pass # Replace with function body.
+	get_tree().call_group("Main", "do_rest", rest_name)

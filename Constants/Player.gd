@@ -1,7 +1,7 @@
 extends Character
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "experience", "experience_total", "experience_required"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "experience", "experience_total", "experience_required",]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -15,6 +15,11 @@ extends Character
 @export var max_walks: int = 1
 @export var remaining_walks: int = 0
 @export var event_flags = {}
+@export var rest_flags = {}
+@export var lesson_flags = {}
+@export var job_flags = {}
+@export var shop_flags = {}
+@export var location_flags = {}
 enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var skill_flags = {"followup_attacks": followup_attacks.NO_FOLLOWUP}
 @export var proficiencies = {}

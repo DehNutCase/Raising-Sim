@@ -423,25 +423,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("11_sa3xm")
 
-[node name="Rest" type="Node2D" parent="Ui/MenuPanel"]
+[node name="Animation" parent="Ui/MenuPanel" instance=ExtResource("17_5xmvy")]
+
+[node name="Rest" type="Node2D" parent="Ui/MenuPanel" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("12_ktm7g")
 
-[node name="Lessons" type="Node2D" parent="Ui/MenuPanel"]
+[node name="Lessons" type="Node2D" parent="Ui/MenuPanel" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("12_sb63u")
 
-[node name="Work" type="Node2D" parent="Ui/MenuPanel"]
+[node name="Work" type="Node2D" parent="Ui/MenuPanel" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("20_derlk")
 
-[node name="Animation" parent="Ui/MenuPanel" instance=ExtResource("17_5xmvy")]
-
-[node name="Shop" type="Node2D" parent="Ui/MenuPanel"]
+[node name="Shop" type="Node2D" parent="Ui/MenuPanel" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("22_prvwr")
 
-[node name="Walk" type="Node2D" parent="Ui/MenuPanel"]
+[node name="Walk" type="Node2D" parent="Ui/MenuPanel" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("21_psxgd")
 

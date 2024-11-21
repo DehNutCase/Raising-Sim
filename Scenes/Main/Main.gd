@@ -109,6 +109,7 @@ func process_day():
 		_on_close_button_pressed()
 	update_expressions()
 	check_and_play_daily_events()
+	get_tree().call_group("ButtonMenu", "update_buttons")
 
 #TODO remove stat bars in job pages
 func do_job(job_name: String) :
@@ -352,8 +353,9 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 		Player.inventory.create_and_add_item(dialogic_signal.item)
 	if "stats" in dialogic_signal:
 		process_stats(dialogic_signal.stats)
-	if "flags" in dialogic_signal:
-		pass
+	if "location_flags" in dialogic_signal:
+		for flag in dialogic_signal.location_flags:
+			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
