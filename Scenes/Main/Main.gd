@@ -352,8 +352,8 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 		Player.inventory.create_and_add_item(dialogic_signal.item)
 	if "stats" in dialogic_signal:
 		process_stats(dialogic_signal.stats)
-		for stat in dialogic_signal.stats:
-			Player.stats[stat] += dialogic_signal.stats[stat]
+	if "flags" in dialogic_signal:
+		pass
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
