@@ -20,4 +20,9 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 	Hiyori_Portrait (Normal): I'm joking, but the maids here are really amazing. You might get some tips on how to move faster if you work with them.
 	Hiyori_Portrait (Normal): If you want higher level advice you can try asking Rice. Did you know that she's a Ranker?
 - So why is there a classroom here, anyway?
+	Hiyori_Portrait (Normal): It's not a classroom! Hiyori's Corner is a helpful hideout that provides facts and tips to the lost and confused.
+	Mao_Portrait (Normal): If you say so. Why is Hiyori's Corner here, then?
+	Hiyori_Portrait (Normal): I asked one of the maids to build a secret hideout for me, and this is how it ended up.
+	Mao_Portrait (EyesClosed): (That still doesn't tell me why it's a classroom. Oh well.)
 Hiyori_Portrait (Smile): That's all for this time's consultation, we hope to see you again.
+[signal arg="{"stats": {"scholarship": 10}}"]
