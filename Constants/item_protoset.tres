@@ -12,7 +12,8 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten1.png\",
         \"name\": \"Bed\",
         \"price\": 500,
-        \"stats\": \"{\\n\\\"strength\\\": 10\\n}\"
+        \"stats\": \"{\\n\\\"strength\\\": 10\\n}\",
+        \"limit\": 1
     },
     {
         \"daily_stats\": \"{\\n\\\"strength\\\": 10\\n}\",
@@ -21,7 +22,8 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten2.png\",
         \"name\": \"Tutori\",
         \"price\": -1000,
-        \"stats\": \"{}\"
+        \"stats\": \"{}\",
+        \"limit\": 10
     },
     {
         \"daily_stats\": \"{}\",
@@ -39,7 +41,9 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten3.png\",
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\",
+        \"limit\": 1
+
     },
     {
         \"daily_stats\": \"{\\n\\\"experience\\\": 10\\n}\",
@@ -48,7 +52,8 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten3.png\",
         \"name\": \"Brush\",
         \"price\": 5000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\"
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\",
+        \"limit\": 1
     },
     {
         \"daily_stats\": \"{}\",
@@ -57,7 +62,8 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten3.png\",
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\",
+        \"limit\": 1
     },
     {
         \"daily_stats\": \"{}\",
@@ -66,6 +72,7 @@ json_data = "[
         \"image\": \"res://Art/grey-kitten3.png\",
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\",
+        \"limit\": 1
     },
 ]"

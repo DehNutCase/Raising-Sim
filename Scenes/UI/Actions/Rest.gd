@@ -14,7 +14,7 @@ func update_buttons():
 	for key in rests.keys():
 		#Don't display rests that aren't unlocked yet
 		if "rest_flag" in rests[key] and !(rests[key].rest_flag in Player.rest_flags):
-			return
+			continue
 		var button = load("res://Scenes/UI/Actions/rest_button.tscn").instantiate()
 		add_child(button)
 		self.get_child(i).position = Vector2( i%5 * 200, 100 * (i/5) )

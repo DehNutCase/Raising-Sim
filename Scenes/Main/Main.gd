@@ -68,6 +68,7 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))
+	get_tree().call_group("ButtonMenu", "update_buttons")
 
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
@@ -388,6 +389,7 @@ func _on_inventory_item_added(item):
 	if item.get_property("combat_skill", {}):
 		Player.combat_skills.append(item.get_property("combat_skill", {}))
 		
+	get_tree().call_group("ButtonMenu", "update_buttons")
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0

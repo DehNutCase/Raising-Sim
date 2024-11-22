@@ -14,7 +14,7 @@ func update_buttons():
 	for key in lessons.keys():
 		#Don't display lessons that aren't unlocked yet
 		if "lesson_flag" in lessons[key] and !(lessons[key].lesson_flag in Player.lesson_flags):
-			return
+			continue
 		var button = load("res://Scenes/UI/Actions/lesson_button.tscn").instantiate()
 		add_child(button)
 		self.get_child(i).position = Vector2( i%5 * 200, 100 * (i/5) )
