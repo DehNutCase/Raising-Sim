@@ -748,7 +748,7 @@ const locations = {
 					'gold': 10,
 				},
 				'toasts': ["Found a shiny coin."],
-				'weight': 2,
+				'weight': 1,
 			},
 			{
 				'stats': {
@@ -771,6 +771,19 @@ const locations = {
 				},
 				'toasts': ["Had a relaxing walk."],
 				'weight': 2,
+			},],
+	},
+	'atelier': {
+		"label": "Atelier",
+		'location_flag': "atelier",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -3,
+					'art': 5,
+				},
+				'toasts': ["Wandered around look at the sculptures since Hiyori wasn't in."],
+				'weight': 1,
 			},],
 	},
 }
