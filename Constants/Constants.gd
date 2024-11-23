@@ -761,18 +761,6 @@ const locations = {
 				'flag': "hiyori_corner"
 			},],
 	},
-	'rice_house': {
-		"label": "Rice's House",
-		'location_flag': "rice_house",
-		'outcomes':
-			[{
-				'stats': {
-					'stress': -5,
-				},
-				'toasts': ["Had a relaxing walk."],
-				'weight': 2,
-			},],
-	},
 	'atelier': {
 		"label": "Atelier",
 		'location_flag': "atelier",
@@ -784,6 +772,30 @@ const locations = {
 				},
 				'toasts': ["Wandered around look at the sculptures since Hiyori wasn't in."],
 				'weight': 1,
+			},],
+	},
+	'reception_hall': {
+		"label": "Reception Hall",
+		'location_flag': "reception_hall",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -5,
+				},
+				'toasts': ["Got a cookie from the maid cleaning the hall. It was delicious"],
+				'weight': 1,
+			},],
+	},
+	'rice_house': {
+		"label": "Rice's House",
+		'location_flag': "rice_house",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -5,
+				},
+				'toasts': ["Had a relaxing walk."],
+				'weight': 2,
 			},],
 	},
 }
