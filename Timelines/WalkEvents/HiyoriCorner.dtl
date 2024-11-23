@@ -26,6 +26,14 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 	Mao_Portrait (Excited): Wow. Can I take a look at them?
 	Hiyori_Portrait (Normal): Maybe later, they look really embarassing right now.
 	[signal arg="{"location_flags": {"atelier": true}}"]
+- I'm having money problems, do you know a good job that pays a lot?
+	Hiyori_Portrait (Normal): I don't know if I can call it a job, but there's a reason lots of people end up adventurers. High leveled monsters tend to be worth a lot of money.
+	Hiyori_Portrait (Surprised): It's a bit dangerous to go out looking for them, but you have Rice with you so it should be fine.
+	Hiyori_Portrait (Normal): You can also try helping out in the kitchen. I heard they're looking for a cook lately, so maybe you'll get a salary bump for working there.
+	Hiyori_Portrait (Surprised): But why do you even have money problems? I'm sure mom'll be happy to cover the tuition if you're trying to take classes.
+	Mao_Portrait (Surprised): Wait, really? Why?
+	Hiyori_Portrait (Normal): Did she really not tell you? It might be better to hear from her personally then. Maybe make an appointment later.
+	[signal arg="{"location_flags": {"reception_hall": true}}"]
 - So why is there a classroom here, anyway?
 	Hiyori_Portrait (Normal): It's not a classroom! Hiyori's Corner is a helpful hideout that provides facts and tips to the lost and confused.
 	Mao_Portrait (Normal): If you say so. Why is Hiyori's Corner here, then?
