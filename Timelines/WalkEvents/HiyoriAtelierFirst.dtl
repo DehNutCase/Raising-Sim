@@ -28,5 +28,5 @@ Hiyori_Portrait (Normal): It's the difference between rolling up your sleeves an
 Mao_Portrait (EyesClosed): There's nothing wrong with that.
 update Mao (Smile)
 Mao_Portrait (Smile): Haha, her fur is so soft.
-Hiyori_Portrait (Normal): (Looks like Mao turned stupid from being so close to the golem. I'll leave her alone for now.)
+Hiyori_Portrait (Normal): (Looks like she's having fun. I'll leave her alone for now.)
 [signal arg="{"stats": {"stress": -50}}"]
