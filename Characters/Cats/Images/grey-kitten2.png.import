@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3beklwbb4slr"
-path="res://.godot/imported/grey-kitten2.png-56270fec4697f323eeea83dd22607915.ctex"
+path="res://.godot/imported/grey-kitten2.png-c41ef1a3358eaa220ebaf15d0b6a2a27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/grey-kitten2.png"
-dest_files=["res://.godot/imported/grey-kitten2.png-56270fec4697f323eeea83dd22607915.ctex"]
+source_file="res://Characters/Cats/Images/grey-kitten2.png"
+dest_files=["res://.godot/imported/grey-kitten2.png-c41ef1a3358eaa220ebaf15d0b6a2a27.ctex"]
 
 [params]
 

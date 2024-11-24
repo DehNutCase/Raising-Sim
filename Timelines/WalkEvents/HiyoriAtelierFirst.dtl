@@ -1,0 +1,32 @@
+join Mao (Normal) 1
+join Hiyori (Normal) 3
+[history action="clear"]
+Hiyori_Portrait (Surprised): Mao? What are you doing here?
+Mao_Portrait (Normal): Didn't you say I could come take a look?
+Hiyori_Portrait (Normal): I said the exact opposite of that, actually. But welcome.
+update Mao (Excited)
+Mao_Portrait (Excited): Yay! So is there anything you've been working on recently?
+update Mao (Normal)
+Hiyori_Portrait (Surprised): Well there's this, I suppose, but it's not really a sculpture.
+join Gray (Normal) 2
+Hiyori_Portrait (Normal): Here.
+update Mao (Smile)
+Mao_Portrait (Smile): Awww.
+update Mao (Excited)
+Mao_Portrait (Excited): Can I pet it?
+Hiyori_Portrait (Normal): Sure, but it's just a golem.
+# Z-index is based on last movement, so move last the portrait meant to be on top
+update Gray 1
+update Mao (Smile) 2 [animation="Tada" move_time="0.3"]
+update Gray 2
+Mao_Portrait (Smile): So why were you embarassed anyway? She's so cute!
+Hiyori_Portrait (Surprised): (She?)
+update Mao (EyesClosed)
+Hiyori_Portrait (Normal): Like I said, this one isn't really a sculpture. It's more like something I cheated out, so it doesn't count.
+Mao_Portrait (EyesClosed): Cheated?
+Hiyori_Portrait (Normal): It's the difference between rolling up your sleeves and working hard to make a painting and waving your brush once to poof into existence. This one is the second kind.
+Mao_Portrait (EyesClosed): There's nothing wrong with that.
+update Mao (Smile)
+Mao_Portrait (Smile): Haha, her fur is so soft.
+Hiyori_Portrait (Normal): (Looks like Mao turned stupid from being so close to the golem. I'll leave her alone for now.)
+[signal arg="{"stats": {"stress": -50}}"]

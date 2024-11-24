@@ -10,30 +10,39 @@
 },
 "default_portrait": "Normal",
 "description": "",
-"display_name": "Hiyori",
+"display_name": "Gray",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(0, -400),
 "portraits": {
-"Desk": {
+"Back": {
 "export_overrides": {
-"image": "\"res://Characters/Hiyori/Images/hiyori_desk_mtn_01_200.png\""
+"image": "\"res://Characters/Cats/Images/grey-kitten3.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1,
+"scene": ""
+},
+"Hanging": {
+"export_overrides": {
+"image": "\"res://Characters/Cats/Images/grey-kitten2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
 "scene": ""
 },
 "Normal": {
 "export_overrides": {
-"image": "\"res://Characters/Hiyori/Images/hiyori_m01_000.png\""
+"image": "\"res://Characters/Cats/Images/grey-kitten1.png\""
 },
-"ignore_char_scale": true,
+"ignore_char_scale": false,
 "mirror": false,
-"offset": Vector2(0, 10),
-"scale": 0.8,
+"offset": Vector2(0, 0),
+"scale": 1,
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.1
 }

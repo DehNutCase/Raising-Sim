@@ -772,6 +772,16 @@ const locations = {
 				},
 				'toasts': ["Wandered around look at the sculptures since Hiyori wasn't in."],
 				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Hiyori's here, let's go say hi."],
+				'timeline': 'res://Timelines/WalkEvents/HiyoriAtelier.dtl',
+				'first_toasts': ["Hiyori's here, let's go say hi."],
+				'first_timeline': 'res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl',
+				'flag': "hiyori_corner"
 			},],
 	},
 	'reception_hall': {

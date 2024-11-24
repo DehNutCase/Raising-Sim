@@ -29,6 +29,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Gray": "res://Characters/Cats/Gray.dch",
 "Hiyori": "res://Characters/Hiyori/Hiyori.dch",
 "Hiyori_Portrait": "res://Characters/Hiyori/Hiyori_Portrait.dch",
 "Mao": "res://Characters/Mao/Mao.dch",
@@ -38,6 +39,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Day1Event": "res://Timelines/DayEvents/Day1Event.dtl",
+"HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
+"HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
 "timeline": "res://Timelines/timeline.dtl"
