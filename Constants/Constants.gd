@@ -781,7 +781,9 @@ const locations = {
 				'timeline': 'res://Timelines/WalkEvents/HiyoriAtelier.dtl',
 				'first_toasts': ["Hiyori's here, let's go say hi."],
 				'first_timeline': 'res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl',
-				'flag': "hiyori_corner"
+				'second_toasts': ["Hiyori's here, let's go say hi."],
+				'second_timeline': 'res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl',
+				'flag': "hiyori_atelier"
 			},],
 	},
 	'reception_hall': {

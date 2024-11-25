@@ -41,6 +41,7 @@ directories/dtl_directory={
 "Day1Event": "res://Timelines/DayEvents/Day1Event.dtl",
 "HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
 "HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
+"HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
 "timeline": "res://Timelines/timeline.dtl"

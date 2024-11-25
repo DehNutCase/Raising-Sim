@@ -200,7 +200,13 @@ func do_walk(walk_name: String) -> void:
 					display_toast(toast)
 					await(get_tree().create_timer(.5).timeout)
 				if !'first_timeline' in outcome:
-					Player.event_flags[outcome.flag] = true
+					Player.event_flags[outcome.flag] = 1
+			elif 'second_toasts' in outcome and !(Player.event_flags[outcome.flag] > 1):
+				for toast in outcome.second_toasts:
+					display_toast(toast)
+					await(get_tree().create_timer(.5).timeout)
+				if !'second_timeline' in outcome:
+					Player.event_flags[outcome.flag] = 2
 			else:
 				for toast in outcome.toasts:
 					display_toast(toast)
@@ -208,7 +214,10 @@ func do_walk(walk_name: String) -> void:
 		if 'timeline' in outcome:
 			if 'first_timeline' in outcome and !(outcome.flag in Player.event_flags):
 				Dialogic.start(outcome.first_timeline)
-				Player.event_flags[outcome.flag] = true
+				Player.event_flags[outcome.flag] = 1
+			elif 'second_timeline' in outcome and !(Player.event_flags[outcome.flag] > 1):
+				Dialogic.start(outcome.second_timeline)
+				Player.event_flags[outcome.flag] = 2
 			else:
 				Dialogic.start(outcome.timeline)
 		await(get_tree().create_timer(.5).timeout)
