@@ -786,6 +786,29 @@ const locations = {
 				'flag': "hiyori_atelier"
 			},],
 	},
+	'storage_room': {
+		"label": "Storage Room",
+		'location_flag': "storage_room",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -5,
+					'art': 3,
+				},
+				'toasts': ["Had a bit of fun looking around."],
+				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Hiyori's here, let's go say hi."],
+				'timeline': 'res://Timelines/WalkEvents/HiyoriAtelier.dtl',
+				'first_toasts': ["Found Gray in the storage room."],
+				'first_timeline': 'res://Timelines/WalkEvents/StorageRoomFirst.dtl',
+				'flag': "storage_room"
+			},],
+	},
 	'reception_hall': {
 		"label": "Reception Hall",
 		'location_flag': "reception_hall",

@@ -8,5 +8,6 @@ Mao_Portrait (Excited): By the way, where's Gray?
 Hiyori_Portrait (Surprised): Who's Gray?
 update Mao (Normal)
 Mao_Portrait (Normal): You know, the cat from the other day.
-Hiyori_Portrait (Normal): Who's Gray?
-[signal arg="{"stats": {"stress": -10, "art": 10}, "location_flags": {"reception_hall": true}}"]
+Hiyori_Portrait (Surprised): (What should I even say to that?)
+Hiyori_Portrait (Normal): Its mana ran out, so I moved it to the storage room. You can ask one of the maids to lead you there, I don't mind if you take it.
+[signal arg="{"stats": {"stress": -10, "art": 10}, "location_flags": {"storage_room": true}}"]

@@ -439,7 +439,7 @@ func check_and_play_daily_events() -> void:
 		Player.event_flags['Day1Event'] = true
 		
 	if Player.day == 5 and !('Day5Event' in Player.event_flags):
-		Dialogic.start("timeline")
+		Dialogic.start("Day1Event")
 		Player.event_flags['Day5Event'] = true
 		
 #Tooltip replacement for mobile which doesn't have hover tooltips
