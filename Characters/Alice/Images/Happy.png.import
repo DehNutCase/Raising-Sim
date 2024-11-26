@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c04yp0b21qjl5"
-path="res://.godot/imported/Neutral.png-247e7d8462e0e01086ccb3c2d2b101d6.ctex"
+uid="uid://d3dtnqb0chrin"
+path="res://.godot/imported/Happy.png-252763f11d2d8a7d60f65e196cd948e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cute Maid Portrait/Neutral.png"
-dest_files=["res://.godot/imported/Neutral.png-247e7d8462e0e01086ccb3c2d2b101d6.ctex"]
+source_file="res://Characters/Alice/Images/Happy.png"
+dest_files=["res://.godot/imported/Happy.png-252763f11d2d8a7d60f65e196cd948e2.ctex"]
 
 [params]
 

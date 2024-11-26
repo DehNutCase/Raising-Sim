@@ -13,7 +13,9 @@ config_version=5
 config/name="Raising Sim"
 run/main_scene="res://Scenes/GameTemplate/Opening/Opening.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="res://Art/Background/livingRoomNight-1600.png"
+config/icon="res://Mao.png"
+config/windows_native_icon="res://Mao.ico"
 
 [autoload]
 
@@ -29,6 +31,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Alice": "res://Characters/Alice/Alice.dch",
+"Alice_Portrait": "res://Characters/Alice/Alice_Portrait.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
 "Hiyori": "res://Characters/Hiyori/Hiyori.dch",
 "Hiyori_Portrait": "res://Characters/Hiyori/Hiyori_Portrait.dch",

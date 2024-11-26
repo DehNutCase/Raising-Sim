@@ -1,6 +1,10 @@
 join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
-Hiyori_Portrait (Normal): I don't mind if you want to come over to relax, but I don't think there's anything interesting here.
 Mao_Portrait (Normal): Hello Hiyori.
+Hiyori_Portrait (Normal): Welcome, I guess.
+- So what are you working on now?
+	Hiyori_Portrait (Normal): Nothing, actually.
+	Hiyori_Portrait (Smile): Classes have been a bit tiring lately so I've been hiding here.
+- 
 [signal arg="{"stats": {"stress": -10}}"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtrqs63c727c"
-path="res://.godot/imported/Angry.png-cb5851517072016779b3bfef27dd978b.ctex"
+uid="uid://dgn0rvwu7njjx"
+path="res://.godot/imported/Cover.png-ff3ebe4848296e1ee9545b6c2d539133.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cute Maid Portrait/Angry.png"
-dest_files=["res://.godot/imported/Angry.png-cb5851517072016779b3bfef27dd978b.ctex"]
+source_file="res://Characters/Alice/Images/Cover.png"
+dest_files=["res://.godot/imported/Cover.png-ff3ebe4848296e1ee9545b6c2d539133.ctex"]
 
 [params]
 

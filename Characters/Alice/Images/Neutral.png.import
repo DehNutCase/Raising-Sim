@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0hkj2gxp5agx"
-path="res://.godot/imported/Maid Faceset.png-6d8fab28cad5f1ec1ca278ba92e8860c.ctex"
+uid="uid://c04yp0b21qjl5"
+path="res://.godot/imported/Neutral.png-d34039be02eddbbce1bb97b0c88c5260.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cute Maid Portrait/Maid Faceset.png"
-dest_files=["res://.godot/imported/Maid Faceset.png-6d8fab28cad5f1ec1ca278ba92e8860c.ctex"]
+source_file="res://Characters/Alice/Images/Neutral.png"
+dest_files=["res://.godot/imported/Neutral.png-d34039be02eddbbce1bb97b0c88c5260.ctex"]
 
 [params]
 

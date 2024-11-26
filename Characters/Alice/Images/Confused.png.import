@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgn0rvwu7njjx"
-path="res://.godot/imported/Cover.png-f623004adf8fd160c953a1875cc47d29.ctex"
+uid="uid://cbmyne10ppmrq"
+path="res://.godot/imported/Confused.png-86dae37c11ae7e24a1abdce78504ce06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cute Maid Portrait/Cover.png"
-dest_files=["res://.godot/imported/Cover.png-f623004adf8fd160c953a1875cc47d29.ctex"]
+source_file="res://Characters/Alice/Images/Confused.png"
+dest_files=["res://.godot/imported/Confused.png-86dae37c11ae7e24a1abdce78504ce06.ctex"]
 
 [params]
 

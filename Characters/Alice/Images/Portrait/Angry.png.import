@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qibyp3tsisov"
-path="res://.godot/imported/Sad.png-11326992f0d8d4215d82540aaf11d5a5.ctex"
+uid="uid://c50lecoasx2ui"
+path="res://.godot/imported/Angry.png-517c189acd5ccdab642373fd9d2be809.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cute Maid Portrait/Sad.png"
-dest_files=["res://.godot/imported/Sad.png-11326992f0d8d4215d82540aaf11d5a5.ctex"]
+source_file="res://Characters/Alice/Images/Portrait/Angry.png"
+dest_files=["res://.godot/imported/Angry.png-517c189acd5ccdab642373fd9d2be809.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbmyne10ppmrq"
-path="res://.godot/imported/Confused.png-1c92378351b34f746d54d5b7c8c281ec.ctex"
+uid="uid://dm44quqfojjmy"
+path="res://.godot/imported/Mao.png-fcf120a1a5f32b280a439d01b650a9fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cute Maid Portrait/Confused.png"
-dest_files=["res://.godot/imported/Confused.png-1c92378351b34f746d54d5b7c8c281ec.ctex"]
+source_file="res://Mao.png"
+dest_files=["res://.godot/imported/Mao.png-fcf120a1a5f32b280a439d01b650a9fd.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
