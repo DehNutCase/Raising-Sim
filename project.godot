@@ -13,9 +13,12 @@ config_version=5
 config/name="Raising Sim"
 run/main_scene="res://Scenes/GameTemplate/Opening/Opening.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-boot_splash/image="res://Art/Background/livingRoomNight-1600.png"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://Art/Live2DLogo/Live2D logo rectangle.png"
+boot_splash/fullsize=false
 config/icon="res://Mao.png"
 config/windows_native_icon="res://Mao.ico"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
@@ -121,3 +124,4 @@ textures/canvas_textures/default_texture_filter=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)

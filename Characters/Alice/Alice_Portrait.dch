@@ -10,10 +10,10 @@
 },
 "default_portrait": "Normal",
 "description": "",
-"display_name": "Alice_Portrait",
+"display_name": "Alice",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(-10, -20),
 "portraits": {
 "Angry": {
 "export_overrides": {
@@ -70,5 +70,5 @@
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.8
 }

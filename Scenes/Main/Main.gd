@@ -48,6 +48,7 @@ var current_state = states.READY
 func _ready():
 	#TODO, add loading from intro screen instead
 	Player.load_game()
+	Player.max_walks = 100
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -366,6 +367,9 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 	if "location_flags" in dialogic_signal:
 		for flag in dialogic_signal.location_flags:
 			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
+	#TODO, verify 'gray' background
+	if "background" in dialogic_signal:
+		Player.background_inventory.create_and_add_item(dialogic_signal.background)
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
