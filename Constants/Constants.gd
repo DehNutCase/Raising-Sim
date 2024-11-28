@@ -563,6 +563,10 @@ const lessons = {
 		'difficulty': 100,
 		'proficiency': 300,
 		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 200,
+			'id': 'honorary_officer',
+		},
 	},
 	'Royal Lecture (Theology)': {
 		'stats': {
@@ -641,13 +645,13 @@ const stats = {
 		"defense", "resistance", "art"],
 	'scholarship_unaffected' = ["gold", "stress"],
 	'max_hp' = {
-		'label': 'Max HP',
+		'label': 'Health Points',
 		'emoji': '❤',
 		'min': 0,
 		'max': 1000,
 	},
 	'max_mp' = {
-		'label': 'Max MP',
+		'label': 'Mana Points',
 		'emoji': '💙',
 		'min': 0,
 		'max': 1000,

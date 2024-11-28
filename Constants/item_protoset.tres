@@ -9,7 +9,7 @@ json_data = "[
         \"daily_stats\": \"{}\",
         \"description\": \"A piece of furniture to sleep on.\",
         \"id\": \"bed\",
-        \"image\": \"res://Art/grey-kitten1.png\",
+        \"image\": \"res://Characters/Cats/Images/grey-kitten1.png\",
         \"name\": \"Bed\",
         \"price\": 500,
         \"stats\": \"{\\n\\\"strength\\\": 10\\n}\",

@@ -26,6 +26,8 @@ extends Node2D
 @onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
+@onready var gray_portrait = $Ui/PlayerControl/Player/Gray
+
 @onready var menus = [work, lessons, rest, shop, walk, stats, tower,]
 
 #TODO Dev variable, remove when building
@@ -48,6 +50,8 @@ var current_state = states.READY
 func _ready():
 	#TODO, add loading from intro screen instead
 	Player.load_game()
+	if (Player.background_inventory.has_item_by_id("gray")):
+		gray_portrait.show()
 	Player.max_walks = 100
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -112,6 +116,8 @@ func process_day():
 	update_expressions()
 	check_and_play_daily_events()
 	get_tree().call_group("ButtonMenu", "update_buttons")
+	if (Player.background_inventory.has_item_by_id("gray")):
+		gray_portrait.show()
 
 #TODO remove stat bars in job pages
 func do_job(job_name: String) :
@@ -367,7 +373,6 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 	if "location_flags" in dialogic_signal:
 		for flag in dialogic_signal.location_flags:
 			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
-	#TODO, verify 'gray' background
 	if "background" in dialogic_signal:
 		Player.background_inventory.create_and_add_item(dialogic_signal.background)
 	

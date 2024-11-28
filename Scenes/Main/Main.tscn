@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
+[ext_resource type="Texture2D" uid="uid://b1napua58pspf" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten2.png" id="27_wb2qf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -171,6 +172,12 @@ size_flags_vertical = 0
 
 [node name="Player" type="Node2D" parent="Ui/PlayerControl" groups=["Live2DPlayer"]]
 script = ExtResource("7_cp3kk")
+
+[node name="Gray" type="Sprite2D" parent="Ui/PlayerControl/Player"]
+visible = false
+position = Vector2(-450, -270)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("27_wb2qf")
 
 [node name="PlayerInventory" type="Control" parent="Ui/PlayerControl/Player"]
 visible = false

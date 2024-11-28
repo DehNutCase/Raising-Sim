@@ -29,7 +29,7 @@ json_data = "[
         \"description\": \"An autonomous combat golem created by Hiyori.\\nHas a surprisingly high power level, but Mao would never let her fight.\\nA small amount of mana is used daily for recharging.\",
         \"id\": \"gray\",
         \"image\": \"res://Characters/Cats/Images/grey-kitten1.png\",
-        \"monthly_stats\": \"\",
+        \"monthly_stats\": \"{}\",
         \"name\": \"Gray\",
         \"stats\": \"{}\",
     },

@@ -141,4 +141,14 @@ json_data = "[
         \"name\": \"Intermediate Combat Training\",
         \"stats\": \"{}\"
     },
+    {
+        \"daily_stats\": \"{\\n\\\"max_mp\\\": 5\\n}\",
+        \"monthly_stats\": \"{\\n\\\"gold\\\": 500\\n}\",
+        \"description\": \"A shiny certificate proving honorary officerhood.\\nIt's almost certain her majesty signed this as a joke. Signatures from Rice and Hiyori are also present.\\nUnlocks advanced follow up attacks. (Switches targets and continues attacking if target dies.)\",
+        \"flags\": \"{\\n\\\"followup_attacks\\\": 2\\n}\",
+        \"id\": \"honorary_officer\",
+        \"image\": \"\",
+        \"name\": \"Honorary Magic Officer\",
+        \"stats\": \"{}\"
+    },
 ]"

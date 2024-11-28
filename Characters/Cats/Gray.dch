@@ -13,11 +13,38 @@
 "display_name": "Gray",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, -400),
+"offset": Vector2(0, -350),
 "portraits": {
 "Back": {
 "export_overrides": {
-"image": "\"res://Characters/Cats/Images/grey-kitten3.png\""
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"BackCurled": {
+"export_overrides": {
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten6.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Bow": {
+"export_overrides": {
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten7.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Curled": {
+"export_overrides": {
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten8.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,7 +53,16 @@
 },
 "Hanging": {
 "export_overrides": {
-"image": "\"res://Characters/Cats/Images/grey-kitten2.png\""
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"HangingFlat": {
+"export_overrides": {
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten4.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,14 +71,22 @@
 },
 "Normal": {
 "export_overrides": {
-"image": "\"res://Characters/Cats/Images/grey-kitten1.png\""
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten1.png\""
 },
-"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"PawsTogether": {
+"export_overrides": {
+"image": "\"res://Characters/Cats/Images/FullSize/grey-kitten5.png\""
+},
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 }
 },
-"scale": 0.1
+"scale": 0.15
 }
