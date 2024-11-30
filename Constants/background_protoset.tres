@@ -32,5 +32,6 @@ json_data = "[
         \"monthly_stats\": \"{}\",
         \"name\": \"Gray\",
         \"stats\": \"{}\",
+		\"flags\": \"{\\n\\\"gray\\\": true\\n}\",
     },
 ]"

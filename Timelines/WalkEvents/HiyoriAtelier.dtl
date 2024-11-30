@@ -2,6 +2,10 @@ join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
 Mao_Portrait (Normal): Hello Hiyori.
+if Player.stats.max_hp >= 5:
+	Great 5
+if Player.skill_flags.gray:
+	Gray
 Hiyori_Portrait (Normal): Welcome, I guess.
 - So what are you working on now?
 	Hiyori_Portrait (Normal): Nothing, actually.
