@@ -2,6 +2,15 @@
 join Hiyori (Desk) 2
 Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner, the helpful hideout that provides facts and tips to the lost and confused.
 Mao_Portrait (Normal): Hello Hiyori.
+# Use get to return null rather than throw an error if index isn't present
+if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_event"):
+	Hiyori_Portrait (Normal): (What was the name again? I think it was Gray.)
+	Hiyori_Portrait (Surprised): You picked up Gray, right?
+	Hiyori_Portrait (Normal): You should get a golem handler's license if you're planning to keep it. You don't absolutely need it, but it's the rules.
+	Mao_Portrait (Surprised): Oh, I didn't know that.
+	Hiyori_Portrait (Normal): It's not a big deal, really.
+	[signal arg="{"location_flags": {"testing_center": true}}"]
+	do Player.set_event_flag("atelier_gray_event")
 Hiyori_Portrait (Normal): So what would you like to learn about today?
 - I can't find Rice.
 	Hiyori_Portrait (Surprised): Isn't she right next to you?
@@ -11,7 +20,7 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 - I'm trying to climb the tower, do you have any advice?
 	Hiyori_Portrait (Surprised): Your class isn't suited for fighting and the tower is all about fighting your way up, so I'm against it, personally.
 	Hiyori_Portrait (Normal): But I'll give you some basic advice anyway. As a civilian, your stats don't grow very much from fighting and leveling up, so you should focus on working hard day by day to build them up.
-	Hiyori_Portrait (Normal): Early on having enough Speed⚡ to attack first and Strength💪 to quickly take out a single target is probably enough.
+	Hiyori_Portrait (Normal): Early on, having enough Speed⚡ to attack first and Strength💪 to quickly take out a single target is probably enough.
 	Hiyori_Portrait (Normal): Once you start seeing more than one enemy you'll want enough HP❤, Defense🛡, and Resistance🥽 to slowly clear them over multiple turns.
 	Hiyori_Portrait (Normal): Past that you'll need to work on dealing as much damage as possible. You won't get any combat skills by leveling up, so you'll need to learn them the hard way.
 	Hiyori_Portrait (Normal): You can learn Fireball from Intermediate Magic Training if you want to work on the magic side of things.

@@ -9,7 +9,7 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Surprised): You picked up Gray, right?
 	Hiyori_Portrait (Normal): You should get a golem handler's license if you're planning to keep it. You don't absolutely need it, but it's the rules.
 	Mao_Portrait (Surprised): Oh, I didn't know that.
-	Hiyori_Portrait (Normal): It's not a big deal, just go take the test when you feel like it.
+	Hiyori_Portrait (Normal): It's not a big deal, really.
 	[signal arg="{"location_flags": {"testing_center": true}}"]
 	do Player.set_event_flag("atelier_gray_event")
 # Need a line between condition and choice or else Dialogic bugs out

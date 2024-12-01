@@ -100,6 +100,7 @@ func save_game():
 	save_file.store_line(JSON.stringify(save_data))
 	ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
 
+#Helper function to allow Dialogic to set flags
 func set_event_flag(flag: String):
 	event_flags[flag] = true
 	
