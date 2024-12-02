@@ -1,0 +1,119 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Grin",
+"description": "Portrait",
+"display_name": "Morgan",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Blush": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-9.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Frown": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-0.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Grin": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-4.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Laugh": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-8.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Shocked": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-6.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sigh": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-7.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Silhouette": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-10.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surprise": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sweatdrop": {
+"export_overrides": {
+"image": "\"res://Characters/Morgan/Images/Portrait/crop-5.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

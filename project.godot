@@ -25,11 +25,11 @@ boot_splash/minimum_display_time=1000
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -41,6 +41,8 @@ directories/dch_directory={
 "Hiyori_Portrait": "res://Characters/Hiyori/Hiyori_Portrait.dch",
 "Mao": "res://Characters/Mao/Mao.dch",
 "Mao_Portrait": "res://Characters/Mao/Mao_Portrait.dch",
+"Morgan": "res://Characters/Morgan/Morgan.dch",
+"Morgan_Portrait": "res://Characters/Morgan/Morgan_Portrait.dch",
 "Rice": "res://Characters/Rice/Rice.dch",
 "Rice_Portrait": "res://Characters/Rice/Rice_Portrait.dch"
 }
