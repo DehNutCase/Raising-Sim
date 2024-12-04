@@ -16,5 +16,8 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 - So what are you working on now?
 	Hiyori_Portrait (Normal): Nothing, actually.
 	Hiyori_Portrait (Smile): Classes have been a bit tiring lately so I've been hiding here.
+	update Mao (Sad)
+	Mao_Portrait (Sad): So no more cats?
+	Hiyori_Portrait (Normal): Classes have been a bit tiring lately so I've been hiding here.
 - 
 [signal arg="{"stats": {"stress": -10}}"]
