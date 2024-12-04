@@ -15,7 +15,6 @@ func _ready():
 	_vbox_container.anchor_bottom = 1.0
 	add_child(_vbox_container)
 	
-	#TODO, update ItemList to SkillList. Update SkillList with better tooltip
 	_item_list = ItemList.new()
 	_item_list.size_flags_horizontal = SIZE_EXPAND_FILL
 	_item_list.size_flags_vertical = SIZE_EXPAND_FILL

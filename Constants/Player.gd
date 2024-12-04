@@ -90,15 +90,14 @@ func save_game():
 	for inventory in inventories:
 		save_data[inventory] = self[inventory].serialize()
 	
-	#TODO, modify save name based on which save it is
 	var save_file
-	if Constants.mode != "PC":
-		save_file = FileAccess.open("user://save.json", FileAccess.WRITE)
+	DirAccess.make_dir_recursive_absolute("user://Saves")
+	save_file = FileAccess.open("user://Saves/save.json", FileAccess.WRITE)
+	if save_file:
+		save_file.store_line(JSON.stringify(save_data))
+		ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
 	else:
-		DirAccess.make_dir_recursive_absolute("./Saves")
-		save_file = FileAccess.open("./Saves/save.json", FileAccess.WRITE)
-	save_file.store_line(JSON.stringify(save_data))
-	ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
+		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
 
 #Helper function to allow Dialogic to set flags
 func set_event_flag(flag: String):
@@ -106,10 +105,7 @@ func set_event_flag(flag: String):
 	
 func load_game():
 	var save_file
-	if Constants.mode != "PC":
-		save_file = FileAccess.open("user://save.json", FileAccess.READ)
-	else:
-		save_file = FileAccess.open("./Saves/save.json", FileAccess.READ)
+	save_file = FileAccess.open("user://Saves/save.json", FileAccess.READ)
 	if !save_file:
 		return
 	var json_string = save_file.get_line()
