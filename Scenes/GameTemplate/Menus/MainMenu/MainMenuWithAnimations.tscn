@@ -373,3 +373,11 @@ modulate = Color(1, 1, 1, 0)
 [node name="MenuButtons" parent="MenuContainer/VBoxContainer/MenuMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
 lock = true
+
+[node name="OptionsContainer" parent="." index="7"]
+custom_minimum_size = Vector2(800, 450)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

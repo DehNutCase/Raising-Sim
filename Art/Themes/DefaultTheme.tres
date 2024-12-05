@@ -1,27 +1,13 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c6i1lbsrl20i0"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c6i1lbsrl20i0"]
 
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_q8hd6"]
 [ext_resource type="StyleBox" uid="uid://c7hy834hboyd1" path="res://Art/Background/MenuBackground.tres" id="2_3n83x"]
-[ext_resource type="Texture2D" uid="uid://ppafyw8mmx44" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Fillbar_01_Block.png" id="3_f3kss"]
-[ext_resource type="Texture2D" uid="uid://bd1fod0rslwm1" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Fillbar_01_Flat.png" id="4_vaig3"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jne86"]
-texture = ExtResource("3_f3kss")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgrpi"]
-texture = ExtResource("4_vaig3")
 
 [resource]
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
-Label/font_sizes/font_size = 50
+Label/font_sizes/font_size = 38
 Label/fonts/font = ExtResource("1_q8hd6")
 PanelContainer/styles/panel = ExtResource("2_3n83x")
 PopupMenu/font_sizes/font_size = 32
-ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
-ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)
-ProgressBar/constants/outline_size = 0
-ProgressBar/font_sizes/font_size = 16
-ProgressBar/styles/background = SubResource("StyleBoxTexture_jne86")
-ProgressBar/styles/fill = SubResource("StyleBoxTexture_cgrpi")
