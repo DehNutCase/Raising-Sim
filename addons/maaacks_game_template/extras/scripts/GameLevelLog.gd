@@ -21,5 +21,4 @@ static func set_current_level(level_number : int) -> void:
 	Config.set_config(GAME_LOG_SECTION, CURRENT_LEVEL, level_number)
 
 static func reset_game_data() -> void:
-	Config.set_config(GAME_LOG_SECTION, CURRENT_LEVEL, 0)
-	Config.set_config(GAME_LOG_SECTION, MAX_LEVEL_REACHED, 0)
+	Player.delete_game()

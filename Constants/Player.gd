@@ -124,3 +124,6 @@ func load_game():
 	for inventory in data.inventories:
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
+			
+func delete_game():
+	DirAccess.remove_absolute("user://Saves/save.json")
