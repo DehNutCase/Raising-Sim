@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm44quqfojjmy"
-path="res://.godot/imported/Mao.png-fcf120a1a5f32b280a439d01b650a9fd.ctex"
+uid="uid://drj4ed44moshg"
+path="res://.godot/imported/Cat.png-4d22ecfebdef3f7c21bc0838efdc736b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mao.png"
-dest_files=["res://.godot/imported/Mao.png-fcf120a1a5f32b280a439d01b650a9fd.ctex"]
+source_file="res://Cat.png"
+dest_files=["res://.godot/imported/Cat.png-4d22ecfebdef3f7c21bc0838efdc736b.ctex"]
 
 [params]
 

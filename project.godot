@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://Art/Live2DLogo/Live2D logo rectangle.png"
 boot_splash/fullsize=false
-config/icon="res://Mao.png"
-config/windows_native_icon="res://Mao.ico"
+config/icon="res://Cat.png"
+config/windows_native_icon="res://Cat.ico"
 boot_splash/minimum_display_time=1000
 
 [autoload]
