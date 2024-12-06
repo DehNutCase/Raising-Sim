@@ -823,7 +823,17 @@ const locations = {
 				},
 				'toasts': ["Got a cookie from the maid cleaning the hall. It was delicious"],
 				'weight': 1,
-			},],
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Her majesty is here."],
+				'timeline': 'res://Timelines/WalkEvents/ReceptionHall.dtl',
+				'first_toasts': ["There's an omnious presence."],
+				'first_timeline': 'res://Timelines/WalkEvents/ReceptionHallFirst.dtl',
+				'flag': "reception_hall"
+			}],
 	},
 	'rice_house': {
 		"label": "Rice's House",
