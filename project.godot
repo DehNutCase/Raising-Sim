@@ -53,6 +53,9 @@ directories/dtl_directory={
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
+"ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
+"ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
+"StorageRoom": "res://Timelines/WalkEvents/StorageRoom.dtl",
 "StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl"
 }
 glossary/default_case_sensitive=true

@@ -74,8 +74,10 @@ func _ready():
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("ButtonMenu", "update_buttons")
-	Player.background_inventory.create_and_add_item("gray")
-	Dialogic.start("HiyoriAtelier")
+	
+	#TODO, delete below, dev use only
+	#Player.background_inventory.create_and_add_item("gray")
+	#Dialogic.start("HiyoriAtelier")
 
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
