@@ -1,31 +1,6 @@
 join Mao (Normal) 1
+join Morgan (Silhouette) 3
 [history action="clear"]
 update Mao (Sad)
 Mao_Portrait (Sad): What happened to all the maids? There's nobody here today.
-Mao_Portrait (Sad): (Ugh, it feels kind of spooky.)
-join Morgan (Silhouette) 3 [animation="Fade In Up" length="0.2"]
-update Mao (Surprised)
-Morgan_Portrait (Silhouette): I like to think I'm somebody.
-Mao_Portrait (Surprised): Gah! What the heck?
-Morgan_Portrait (Silhouette): It's fine to say 'what the hell' in front of me.
-update Mao (Angry)
-Mao_Portrait (Angry): What are you doing, your majesty?
-Morgan_Portrait (Silhouette): Considering the time, I should be asking you that question. Do you have an appointment?
-update Mao (Sad)
-Mao_Portrait (Sad): No, I mean, why do you look like that?
-Morgan_Portrait (Silhouette): Like what?
-update Mao (Angry)
-Mao_Portrait (Angry): Your majesty...
-Morgan_Portrait (Silhouette): Fufufu. Doesn't it make me look dark and mysterious?
-Mao_Portrait (Angry): (Only if you kept quiet. Let's just play along.)
-update Mao (Normal)
-Mao_Portrait (Normal): Of course, your majesty. Very, um, magnificent and awe inspiring.
-Morgan_Portrait (Silhouette): Somehow, I don't think your heart was in it. We'll talk later.
-Morgan_Portrait (Silhouette): So what brings you here today?
-Mao_Portrait (Normal): I asked Hiyori about making money and she said something about you covering my tuition? Not sure why.
-Morgan_Portrait (Silhouette): You don't know why, you say...
-Morgan_Portrait (Silhouette): Well, I believe it would be meaningful for you to work for your tuition, at least for the time being. But here's some pocket money regardless.
-update Mao (Sad)
-Mao_Portrait (Sad): (Was I supposed to know why?)
-Morgan_Portrait (Silhouette): I don't mind if you visited once in a while, but try to make an appointment next time.
 [signal arg="{"stats": {"stress": 10, "gold":1000,}}"]

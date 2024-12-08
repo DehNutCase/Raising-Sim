@@ -3,8 +3,8 @@ join Mao (Normal) 1
 update Mao (Sad)
 Mao_Portrait (Sad): What happened to all the maids? There's nobody here today.
 Mao_Portrait (Sad): (Ugh, it feels kind of spooky.)
-join Morgan (Silhouette) 3 [animation="Fade In Up" length="0.2"]
-update Mao (Surprised)
+join Morgan (Silhouette) 3 [animation="Bounce In" length="0.3" wait="true"]
+update Mao (Surprised) [animation="Bounce" length="1"]
 Morgan_Portrait (Silhouette): I like to think I'm somebody.
 Mao_Portrait (Surprised): Gah! What the heck?
 Morgan_Portrait (Silhouette): It's fine to say 'what the hell' in front of me.
@@ -24,8 +24,8 @@ Morgan_Portrait (Silhouette): Somehow, I don't think your heart was in it. We'll
 Morgan_Portrait (Silhouette): So what brings you here today?
 Mao_Portrait (Normal): I asked Hiyori about making money and she said something about you covering my tuition? Not sure why.
 Morgan_Portrait (Silhouette): You don't know why, you say...
-Morgan_Portrait (Silhouette): Well, I believe it would be meaningful for you to work for your tuition, at least for the time being. But here's some pocket money regardless.
+Morgan_Portrait (Silhouette): Well, I believe it would be meaningful for you to work for your tuition, at least for the time being. But I'll give you some pocket money.
 update Mao (Sad)
-Mao_Portrait (Sad): (Was I supposed to know why?)
+Mao_Portrait (Sad): (Did I forget something? She's talking like I should know about the tuition thing already.)
 Morgan_Portrait (Silhouette): I don't mind if you visited once in a while, but try to make an appointment next time.
-[signal arg="{"stats": {"stress": 10, "gold":1000,}}"]
+[signal arg="{"stats": {"stress": 5, "gold":1000,}}"]
