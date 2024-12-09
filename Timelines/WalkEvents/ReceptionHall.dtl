@@ -1,6 +1,26 @@
 join Mao (Normal) 1
 join Morgan (Silhouette) 3
 [history action="clear"]
+Morgan_Portrait (Silhouette): I see you still don't have an appointment. What can I do for you?
+update Mao (Blush)
+Mao_Portrait (Blush): Haha, sorry.
+- Can I have some pocket money?
+	Morgan_Portrait (Silhouette): I don't mind, but you really should work for it.
+	[signal arg="{"stats": {"gold":250,}}"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Yay!
+	Morgan_Portrait (Silhouette): I hope that wasn't all you were here for.
+	update Mao (Blush)
+	Mao_Portrait (Blush): Um... no?
+	Morgan_Portrait (Silhouette): Don't worry, I was joking.
+	Morgan_Portrait (Silhouette): Take care of yourself. You too, Rice.
+	Rice_Portrait (Normal): Yes, your majesty.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Gah!
+	[signal arg="{"stats": {"stress": 10}}"]
+	[end_timeline]
+- 
+- 
 update Mao (Sad)
-Mao_Portrait (Sad): What happened to all the maids? There's nobody here today.
-[signal arg="{"stats": {"stress": 10, "gold":1000,}}"]
+Mao_Portrait (Sad): (I don't know why, but it's kind of scary when her majesty is all shadowy like this. It's weird, since she's still just as nice as usual.)
+[signal arg="{"stats": {"stress": 10}}"]
