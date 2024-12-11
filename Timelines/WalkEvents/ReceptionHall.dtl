@@ -47,8 +47,33 @@ Mao_Portrait (Blush): Haha, sorry.
 	Mao_Portrait (Normal): I don't really need anything right now.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Oh, actually, can you teach me some spells?
-	Morgan_Portrait (Silhouette): Fufufu. I am in a good mood right now, so I will allow most requests.
-	[signal arg="{"stats": {"stress": 10, "magic": 10, "max_mp":10}}"]
+	update Mao (Normal)
+	if Player.stats.get("magic") > 500:
+		Morgan_Portrait (Silhouette): I don't particularly mind.
+		update Mao (Excited)
+		Mao_Portrait (Excited): Yay!
+		[signal arg="{"stats": {"stress": 10, "magic": 10}, "skill":"blessing"}"]
+		Morgan_Portrait (Silhouette): It would be better not to use this in front of priests or clerics. Speaking from experience, it could get quite annoying.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): What do you mean? Would they hunt me down or something?
+		update Mao (Normal)
+		Morgan_Portrait (Silhouette): In a manner of speaking. Fufufu.
+		update Mao (Sad)
+		Mao_Portrait (Sad): Should I be worried?
+		update Mao (Excited)
+		Mao_Portrait (Excited): Wait, I have Rice. You'll keep me safe, right?
+		Rice_Portrait (Normal): Of course.
+		update Mao (Normal)
+		Morgan_Portrait (Silhouette): Oh, what's this? Getting attached?
+		Rice_Portrait (Normal): Please don't tease her too much, your majesty.
+		update Mao (Sad)
+		Mao_Portrait (Sad): (I have no idea what's going on anymore.)
+	else:
+		Morgan_Portrait (Silhouette): I don't particularly mind, but you don't quite have the foundation for them. How about a quick magic lesson instead?
+		update Mao (Excited)
+		Mao_Portrait (Excited): Yay!
+		[signal arg="{"stats": {"stress": 10, "magic": 10, "max_mp":10}}"]
+update Mao (Normal)
 Morgan_Portrait (Silhouette): That will be all for today.
 update Mao (Sad)
 Mao_Portrait (Sad): (I don't know why, but it's kind of scary when her majesty is all shadowy like this. It's weird, since she's still just as nice as usual.)
