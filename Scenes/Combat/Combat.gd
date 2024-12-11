@@ -31,6 +31,7 @@ var order: Array[Character] = []
 var death_queue: Array[Enemy] = []
 var victory_stat_gain = {}
 var enemy_skill_use_flags = {}
+var player_skill_use_flags = {}
 @onready var center_container: CenterContainer = get_parent().get_node("CenterContainer")
 @onready var video_stream_player: VideoStreamPlayer = get_parent().get_node("CenterContainer/VideoPanel/VideoStreamPlayer")
 
@@ -109,10 +110,23 @@ func process_turns(player_action: String):
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
 				"buff":
-					message = "Used " + action.label + ". " + action.message_player
+					if action.get('animation_player') and not action in player_skill_use_flags:
+						player_skill_use_flags[action] = true
+						message = "Used " + action.label + "!"
+						display_toast(message)
+						video_stream_player.custom_minimum_size = action.animation_size
+						center_container.show()
+						video_stream_player.stream = load(action.animation_player)
+						video_stream_player.play()
+						await(get_tree().create_timer(action.animation_length_player).timeout)
+						center_container.hide()
+						message = action.message_player
+						display_toast(message)
+					else:
+						message = "Used " + action.label + ". " + action.message_player
+						display_toast(message)
 					for stat in action.stats:
 						player_combat_copy.stats[stat] += action.stats[stat]
-					display_toast(message)
 				"heal":
 					var heal_amount = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100)))
 					message = "Healed " + str(heal_amount) + " hit points."

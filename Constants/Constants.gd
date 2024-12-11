@@ -1355,6 +1355,10 @@ const combat_skills = {
 		'effect_range': 'area',
 		'message': "Stats drastically increased for enemy party!",
 		'message_player': "Stats drastically increased!",
+		'animation': "res://Characters/Rice/Videos/mtn_03.ogv", #TODO, replace with enemy animation
+		'animation_player': "res://Characters/Mao/Videos/special_03.ogv",
+		'animation_length_player': 8,
+		'animation_size': Vector2(600, 750),
 		'label': "Blessing",
 	},
 }
