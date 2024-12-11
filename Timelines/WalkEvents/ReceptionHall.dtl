@@ -5,6 +5,7 @@ Morgan_Portrait (Silhouette): I see you still don't have an appointment. What ca
 update Mao (Blush)
 Mao_Portrait (Blush): Haha, sorry.
 - Can I have some pocket money?
+	update Mao (Normal)
 	Morgan_Portrait (Silhouette): I don't mind, but you really should work for it.
 	[signal arg="{"stats": {"gold":250,}}"]
 	update Mao (Excited)
@@ -12,15 +13,43 @@ Mao_Portrait (Blush): Haha, sorry.
 	Morgan_Portrait (Silhouette): I hope that wasn't all you were here for.
 	update Mao (Blush)
 	Mao_Portrait (Blush): Um... no?
-	Morgan_Portrait (Silhouette): Don't worry, I was joking.
+	Morgan_Portrait (Silhouette): Fufufu, don't worry.
 	Morgan_Portrait (Silhouette): Take care of yourself. You too, Rice.
 	Rice_Portrait (Normal): Yes, your majesty.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Gah!
 	[signal arg="{"stats": {"stress": 10}}"]
 	[end_timeline]
-- 
-- 
+- Do you have any advice for me?
+	update Mao (Normal)
+	Morgan_Portrait (Silhouette): Advice, you say.
+	Morgan_Portrait (Silhouette): If you ask whether I have any or not, I do. Yet I believe it would be meaningful for you to do as you wished, at least for now.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Um...?
+	Morgan_Portrait (Silhouette): If you truly wished for it. If you wish for me to control all your choices for the forseeable future. Certainly, I can give you 'advice',
+	update Mao (Sad)
+	Mao_Portrait (Sad): You're starting to sound creepy, your majesty.
+	Morgan_Portrait (Silhouette): Fufufu.
+	Morgan_Portrait (Silhouette): For the time being, doing what I wouldn't do should be informative in its own way.
+	update Mao (Angry)
+	Mao_Portrait (Angry): Aren't you just too lazy to bother?
+	Morgan_Portrait (Silhouette): Fufufu.
+	[signal arg="{"stats": {"scholarship": 10}}"]
+- How have you been?
+	update Mao (Normal)
+	Morgan_Portrait (Silhouette): Oh, are you trying to kiss up to me?
+	Morgan_Portrait (Silhouette): Well I'll have you know what you've succeeded.
+	Morgan_Portrait (Silhouette): So what did you want from me? More pocket money, perhaps?
+	update Mao (Angry)
+	Mao_Portrait (Angry): Your majesty...
+	Morgan_Portrait (Silhouette): Fufufu. I am in a good mood right now, so I will allow most requests.
+	update Mao (Normal)
+	Mao_Portrait (Normal): I don't really need anything right now.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Oh, actually, can you teach me some spells?
+	Morgan_Portrait (Silhouette): Fufufu. I am in a good mood right now, so I will allow most requests.
+	[signal arg="{"stats": {"stress": 10, "magic": 10, "max_mp":10}}"]
+Morgan_Portrait (Silhouette): That will be all for today.
 update Mao (Sad)
 Mao_Portrait (Sad): (I don't know why, but it's kind of scary when her majesty is all shadowy like this. It's weird, since she's still just as nice as usual.)
-[signal arg="{"stats": {"stress": 10}}"]
+[signal arg="{"stats": {"stress": 10, "max_hp": 1, "max_mp":1}}"]
