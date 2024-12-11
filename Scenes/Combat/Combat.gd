@@ -277,6 +277,9 @@ func _on_action(button):
 func _on_skill_press(id: int):
 	if state != states.READY:
 		return
+	if fight_won:
+		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		return
 	state = states.PROCESSING
 	await process_turns(skill_menu.get_item_metadata(id).name.to_lower())
 	state = states.READY
@@ -312,7 +315,7 @@ func update_player_hp(change: int = 0) -> void:
 	if player_combat_copy.stats.current_hp <= 0:
 		player_stats_display.text = player_stats_display.text + "\nStatus: Unconsious"
 	elif fight_won:
-		player_stats_display.text = player_stats_display.text + "\nStatus: Victorious"
+		player_stats_display.text = player_stats_display.text + "\nStatus: Victory"
 
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)

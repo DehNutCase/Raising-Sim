@@ -378,7 +378,11 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 		for flag in dialogic_signal.location_flags:
 			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
 	if "background" in dialogic_signal:
-		Player.background_inventory.create_and_add_item(dialogic_signal.background)
+		if (!Player.background_inventory.get_item_by_id(dialogic_signal.background)):
+			Player.background_inventory.create_and_add_item(dialogic_signal.background)
+	if "skill" in dialogic_signal:
+		if (!Player.skill_inventory.get_item_by_id(dialogic_signal.background)):
+			Player.skill_inventory.create_and_add_item(dialogic_signal.background)
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")

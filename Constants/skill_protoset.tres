@@ -130,7 +130,7 @@ json_data = "[
         \"monthly_stats\": \"{\\n\\\"magic\\\": 1\\n}\",
         \"name\": \"Fireball\",
         \"stats\": \"{}\",
-        \"combat_skill\" : \"Fireball\"
+        \"combat_skill\" : \"fireball\"
     },
     {
         \"daily_stats\": \"{\\n\\\"strength\\\": 1,\\n\\\"max_hp\\\": 1\\n}\",
@@ -150,5 +150,15 @@ json_data = "[
         \"image\": \"\",
         \"name\": \"Honorary Magic Officer\",
         \"stats\": \"{}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"experience\\\": 10\\n,\\n\\\"scholarship\\\": 1\\n}\",
+        \"description\": \"An excellent buff spell mostly used by high level priests. \\nLearning this proably took a few twists and turns.\",
+        \"id\": \"blessing\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"magic\\\": 10\\n,\\n\\\"max_mp\\\": 10\\n}\",
+        \"name\": \"Blessing\",
+        \"stats\": \"{}\",
+        \"combat_skill\" : \"blessing\"
     },
 ]"

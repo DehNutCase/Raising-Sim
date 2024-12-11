@@ -86,11 +86,13 @@ theme = ExtResource("4_hv28o")
 [node name="Attack" type="Button" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
 text = "Attack"
 
 [node name="Skill" type="MenuButton" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
 text = "Skill"
 flat = false
 switch_on_hover = true
@@ -98,6 +100,7 @@ switch_on_hover = true
 [node name="Item" type="MenuButton" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
 text = "Item"
 flat = false
 switch_on_hover = true
@@ -105,6 +108,7 @@ switch_on_hover = true
 [node name="Flee" type="Button" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
 text = "Flee"
 
 [node name="PlayerStats" type="Label" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]

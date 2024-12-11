@@ -1340,4 +1340,21 @@ const combat_skills = {
 		'animation_length': 4,
 		'animation_size': Vector2(900, 750),
 	},
+	'blessing': {
+		'stats': {
+			'magic': 100,
+			'strength': 100,
+			'defense': 100,
+			'resistance': 100,
+			'speed': 100,
+			'skill': 100,
+		},
+		'weight': 10,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'area',
+		'message': "Stats drastically increased for enemy party!",
+		'message_player': "Stats drastically increased!",
+		'label': "Blessing",
+	},
 }
