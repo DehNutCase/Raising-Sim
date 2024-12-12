@@ -1,0 +1,34 @@
+join Mao (Normal) 2
+[history action="clear"]
+Mao_Portrait (Normal): Knock, knock.
+update Mao (Normal) [animation="Shake X" length="4"]
+update Mao (Normal) [animation="Tada" length="4" repeat="0"]
+Mao_Portrait (Normal): *Humming*
+update Mao (Smile) [animation="Shake X" length="4" repeat="0"]
+update Mao (Smile) [animation="Tada" length="4" repeat="0"]
+Mao_Portrait (Smile): Knock, knock.
+update Mao (Excited) [animation="Shake X" length="4" repeat="0"]
+update Mao (Excited) [animation="Tada" length="4" repeat="0"]
+Mao_Portrait (Excited): Knock! Knock!
+Rice_Portrait (Normal): Should I... bring you to the hospital?
+Rice_Portrait (Normal): What are you doing?
+update Mao (Normal)
+Mao_Portrait (Normal): I'm waiting for you to answer the door.
+update Mao (Normal) [animation="Shake X" length="4"]
+update Mao (Normal) [animation="Tada" length="4" repeat="0"]
+Mao_Portrait (Normal): *Humming*
+Rice_Portrait (Normal): (There's so much I want to say to that. She wasn't even knocking, just saying 'knock' over and over.)
+join Rice (Normal) 4 [animation="Instant In Or Out" length="0"]
+update Rice (Normal) 2 [ move_time="1"]
+update Mao (Normal) 1 [ move_time="1"]
+[background arg="res://Art/Background/livingRoomEvening-1600.png" fade="1.0" transition="Swipe Right To Left"]
+Rice_Portrait (Normal): You might as well come in, then.
+update Mao (Excited)
+Mao_Portrait (Excited): Yay!
+update Mao (Normal)
+Mao_Portrait (Normal): So why do you live in the woods anyway? It's relaxing and all, but isn't it inconvenient to go to work?
+Rice_Portrait (Normal): I don't.
+Rice_Portrait (Normal): You've been to my room before, so I'm not sure why you're even asking this.
+Mao_Portrait (Normal): What's this place, then?
+Rice_Portrait (Normal): Vacation house.
+[signal arg="{"stats": {"stress": -10, "scholarship": 10}}"]

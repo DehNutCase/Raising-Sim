@@ -1,0 +1,10 @@
+join Mao (Normal) 1
+join Rice (Normal) 2
+[history action="clear"]
+Hiyori_Portrait (Surprised): Mao? What are you doing here?
+Mao_Portrait (Normal): Didn't you say I could come take a look?
+Hiyori_Portrait (Normal): I said the exact opposite of that, actually. But welcome.
+update Mao (Excited)
+Mao_Portrait (Excited): Yay! So is there anything you've been working on recently?
+update Mao (Normal)
+[signal arg="{"stats": {"stress": -50}}"]

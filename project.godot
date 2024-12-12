@@ -55,6 +55,8 @@ directories/dtl_directory={
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
+"RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",
+"RiceHouseFirst": "res://Timelines/WalkEvents/RiceHouseFirst.dtl",
 "StorageRoom": "res://Timelines/WalkEvents/StorageRoom.dtl",
 "StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl"
 }

@@ -819,7 +819,7 @@ const locations = {
 		'outcomes':
 			[{
 				'stats': {
-					'stress': -5,
+					'stress': -10,
 				},
 				'toasts': ["Got a cookie from the maid cleaning the hall. It was delicious"],
 				'weight': 1,
@@ -833,7 +833,7 @@ const locations = {
 				'first_toasts': ["There's an omnious presence."],
 				'first_timeline': 'res://Timelines/WalkEvents/ReceptionHallFirst.dtl',
 				'flag': "reception_hall"
-			}],
+			},],
 	},
 	'rice_house': {
 		"label": "Rice's House",
@@ -842,9 +842,21 @@ const locations = {
 			[{
 				'stats': {
 					'stress': -5,
+					'speed': 1,
+					'max_hp': 1,
 				},
 				'toasts': ["Had a relaxing walk."],
-				'weight': 2,
+				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Found Rice's house, let's go visit."],
+				'timeline': 'res://Timelines/WalkEvents/RiceHouse.dtl',
+				'first_toasts': ["Found a pleasant looking cottage in the woods."],
+				'first_timeline': 'res://Timelines/WalkEvents/RiceHourFirst.dtl',
+				'flag': "rice_house"
 			},],
 	},
 }
@@ -1357,8 +1369,8 @@ const combat_skills = {
 		'message_player': "Stats drastically increased!",
 		'animation': "res://Characters/Rice/Videos/mtn_03.ogv", #TODO, replace with enemy animation
 		'animation_player': "res://Characters/Mao/Videos/special_03.ogv",
-		'animation_length_player': 8,
-		'animation_size': Vector2(600, 750),
+		'animation_length_player': 7.7,
+		'animation_size_player': Vector2(600, 750),
 		'label': "Blessing",
 	},
 }

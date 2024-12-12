@@ -114,7 +114,7 @@ func process_turns(player_action: String):
 						player_skill_use_flags[action] = true
 						message = "Used " + action.label + "!"
 						display_toast(message)
-						video_stream_player.custom_minimum_size = action.animation_size
+						video_stream_player.custom_minimum_size = action.animation_size_player
 						center_container.show()
 						video_stream_player.stream = load(action.animation_player)
 						video_stream_player.play()
