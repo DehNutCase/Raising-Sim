@@ -31,4 +31,14 @@ Rice_Portrait (Normal): I don't.
 Rice_Portrait (Normal): You've been to my room before, so I'm not sure why you're even asking this.
 Mao_Portrait (Normal): What's this place, then?
 Rice_Portrait (Normal): Vacation house.
-[signal arg="{"stats": {"stress": -10, "scholarship": 10}}"]
+Rice_Portrait (Normal): So, care to explain why you're here?
+Mao_Portrait (Normal): Oh yeah, I wanted to ask you something. How come you never answer when I call you?
+Rice_Portrait (Normal): I answer when there's a reason. I'm your escort, not your maid.
+update Mao (Sad)
+Mao_Portrait (Sad): But we're friends.
+Rice_Portrait (Normal): Not when I'm working.
+update Mao (Angry)
+leave Mao [animation="Slide Out Left" length="2"]
+Mao_Portrait (Angry): Well fine!
+Rice_Portrait (Normal): (I should buy her a snack on the way back.)
+[signal arg="{"stats": {"stress": -10, "max_hp": 1, "speed":1}}"]
