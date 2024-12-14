@@ -1,10 +1,13 @@
+[background arg="res://Art/Background/livingRoomEvening-1600.png" fade="0.0" transition="Simple Fade"]
 join Mao (Normal) 1
 join Rice (Normal) 2
 [history action="clear"]
-Hiyori_Portrait (Surprised): Mao? What are you doing here?
-Mao_Portrait (Normal): Didn't you say I could come take a look?
-Hiyori_Portrait (Normal): I said the exact opposite of that, actually. But welcome.
-update Mao (Excited)
-Mao_Portrait (Excited): Yay! So is there anything you've been working on recently?
+Rice_Portrait (Normal): Come in.
+update Mao (Smile)
+Mao_Portrait (Smile): Hey Rice.
 update Mao (Normal)
-[signal arg="{"stats": {"stress": -50}}"]
+Rice_Portrait (Normal): Sure.
+Rice_Portrait (Normal): So why are you here again?
+Mao_Portrait (Normal): Can't I just visit?
+Rice_Portrait (Normal): So why are you here again?
+[signal arg="{"stats": {"stress": -10, "max_hp": 1, "speed": 1}}"]
