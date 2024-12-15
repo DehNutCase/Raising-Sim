@@ -8,6 +8,33 @@ Mao_Portrait (Smile): Hey Rice.
 update Mao (Normal)
 Rice_Portrait (Normal): Sure.
 Rice_Portrait (Normal): So why are you here again?
-Mao_Portrait (Normal): Can't I just visit?
-Rice_Portrait (Normal): So why are you here again?
+Mao_Portrait (Normal): Can't I visit?
+Rice_Portrait (Normal): I don't even live here, Mao.
+- So why do you have a house in the woods, anyway?
+	Rice_Portrait (Normal): It was quiet and out of the way until the princess started handing out my address to everyone she talked to.
+- Can I have something to eat?
+	Rice_Portrait (Normal): ...Sure.
+- Thanks.
+	Rice_Portrait (Normal): For what?
+- What's a Ranker?
+	Rice_Portrait (Normal): ...Someone on a ranking board somewhere?
+	Rice_Portrait (Normal): Apologies, I don't really know what you're talking about.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Hiyori said you were a Ranker.
+	update Mao (Normal)
+	Rice_Portrait (Normal): Ah.
+	Rice_Portrait (Normal): Strictly speaking, I'm not. But I know what you're referring to now.
+	Rice_Portrait (Normal): That kind of 'Ranker' is simply someone who climbed to the top of a tower.
+	Rice_Portrait (Normal): The title doesn't mean much, but it can serve as a basic proof of competence.
+	Rice_Portrait (Normal): I did climb to the most recently completed floor of one such tower, once, but now it's taller.
+	update Mao (Excited)
+	Mao_Portrait (Excited): Wow! Does that mean you're someone amazing?
+	Rice_Portrait (Normal): For entirely unrelated reasons.
+- I'm trying to climb the tower.
+	Rice_Portrait (Normal): Don't.
+update Mao (Normal)
+Rice_Portrait (Normal): I still think it's a waste of time to come here.
+update Mao (Smile)
+Mao_Portrait (Smile): It was fun!
+Rice_Portrait (Normal): If you say so.
 [signal arg="{"stats": {"stress": -10, "max_hp": 1, "speed": 1}}"]
