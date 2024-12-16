@@ -11,7 +11,14 @@ Rice_Portrait (Normal): So why are you here again?
 Mao_Portrait (Normal): Can't I visit?
 Rice_Portrait (Normal): I don't even live here, Mao.
 - So why do you have a house in the woods, anyway?
-	Rice_Portrait (Normal): It was quiet and out of the way until the princess started handing out my address to everyone she talked to.
+	Rice_Portrait (Normal): It was quiet and out of the way until the princess started handing out my address to everyone she knew.
+	update Mao (Smile)
+	Mao_Portrait (Smile): So I should thank her for you?
+	Rice_Portrait (Normal): No. No you should not.
+	Rice_Portrait (Normal): If you have nothing else to joke about, have some tea instead.
+	[signal arg="{"stats": { "stress": -10}}"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Yay!
 - Can I have something to eat?
 	Rice_Portrait (Normal): ...Sure.
 - Thanks.
@@ -37,4 +44,4 @@ Rice_Portrait (Normal): I still think it's a waste of time to come here.
 update Mao (Smile)
 Mao_Portrait (Smile): It was fun!
 Rice_Portrait (Normal): If you say so.
-[signal arg="{"stats": {"stress": -10, "max_hp": 1, "speed": 1}}"]
+[signal arg="{"stats": {"stress": -5, "max_hp": 1, "speed": 1}}"]
