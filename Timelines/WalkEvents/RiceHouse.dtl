@@ -21,6 +21,17 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	Mao_Portrait (Excited): Yay!
 - Can I have something to eat?
 	Rice_Portrait (Normal): ...Sure.
+	update Mao (Excited) [animation="Tada" length="1" wait="true"]
+	[signal arg="{"stats": { "stress": -5, "max_hp":1,"max_mp":1}}"]
+	Mao_Portrait (Excited): Oh wow, these are great!
+	update Mao (Normal)
+	Rice_Portrait (Normal): You say that like you expected them to be terrible.
+	update Mao (Smile)
+	Mao_Portrait (Smile): Teehee.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): But why don't you cook more when you can make something like this?
+	update Mao (Normal)
+	Rice_Portrait (Normal): Why would I? If I wanted something to eat I'd ring for a maid.
 - Thanks.
 	Rice_Portrait (Normal): For what?
 - What's a Ranker?
