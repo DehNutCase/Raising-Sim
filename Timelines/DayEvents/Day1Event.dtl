@@ -18,7 +18,7 @@ Mao_Portrait (EyesClosed): (But her majesty was also at the party yesterday? I a
 	update Mao (Normal)
 	Mao_Portrait (Normal): I already got my present yesterday, so I think you should double check this is for me.
 	Rice_Portrait: Hmm, if you say so.
-	Rice_Portrait: (I was wondering why her majesty told me what to do if Mao refused the present, but I suppose this counts as a rejection. I'll go ahead and send a message to HR.)
+	Rice_Portrait: (I should go ahead and let her majesty know. For the time being, I'll have Payroll send her the resale value.)
 	[signal arg="{"stats": {"gold": 10000}}"]
 update Mao (Normal)
 Rice_Portrait (Normal): One more thing. I'll be escorting you from today onwards.

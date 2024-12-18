@@ -31,9 +31,13 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): But why don't you cook more when you can make something like this?
 	update Mao (Normal)
-	Rice_Portrait (Normal): Why would I? If I wanted something to eat I'd ring for a maid.
+	Rice_Portrait (Normal): I have no reason to. If I wanted something to eat I would ring for a maid.
 - Thanks.
 	Rice_Portrait (Normal): For what?
+	update Mao (Smile)
+	Mao_Portrait (Smile): <Empty Text Event>
+	Rice_Portrait (Normal): I see.
+	Rice_Portrait (Normal): You're welcome.
 - What's a Ranker?
 	Rice_Portrait (Normal): ...Someone on a ranking board somewhere?
 	Rice_Portrait (Normal): Apologies, I don't really know what you're talking about.
@@ -44,13 +48,16 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	Rice_Portrait (Normal): Strictly speaking, I'm not. But I know what you're referring to now.
 	Rice_Portrait (Normal): That kind of 'Ranker' is simply someone who climbed to the top of a tower.
 	Rice_Portrait (Normal): The title doesn't mean much, but it can serve as a basic proof of competence.
-	Rice_Portrait (Normal): I did climb to the most recently completed floor of one such tower, once, but now it's taller.
+	Rice_Portrait (Normal): I did climb to the most recently completed floor of one such tower, once, but its grown since then.
 	update Mao (Excited)
 	Mao_Portrait (Excited): Wow! Does that mean you're someone amazing?
 	Rice_Portrait (Normal): For entirely unrelated reasons.
+	[signal arg="{"stats": {"scholarship": 10}}"]
 - I'm trying to climb the tower.
 	Rice_Portrait (Normal): Don't.
 update Mao (Normal)
+# Show outside background here
+[background fade="1.0" transition="Swipe Left To Right"]
 Rice_Portrait (Normal): I still think it's a waste of time to come here.
 update Mao (Smile)
 Mao_Portrait (Smile): It was fun!
