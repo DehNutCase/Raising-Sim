@@ -35,9 +35,24 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 - Thanks.
 	Rice_Portrait (Normal): For what?
 	update Mao (Smile)
-	Mao_Portrait (Smile): <Empty Text Event>
+	Mao_Portrait (Smile): Haven't you been taking care of me recently?
 	Rice_Portrait (Normal): I see.
 	Rice_Portrait (Normal): You're welcome.
+	update Mao (Normal)
+	Mao_Portrait (Normal): ...Well?
+	Rice_Portrait (Normal): Yes?
+	update Mao (Blush)
+	Mao_Portrait (Blush): Don't I get a reward?
+	Rice_Portrait (Normal): I believe you have a fundamental misunderstanding of what thanking someone entails.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Aww...
+	Rice_Portrait (Normal): *Sigh*
+	Rice_Portrait (Normal): What do you want?
+	update Mao (Smile)
+	Mao_Portrait (Smile): Let's have lunch together! There's a great restaurant on the way back.
+	Rice_Portrait (Normal): Fine.
+	[signal arg="{"stats": {"stress": -15, "max_hp": 1, "speed": 1}}"]
+	[end_timeline]
 - What's a Ranker?
 	Rice_Portrait (Normal): ...Someone on a ranking board somewhere?
 	Rice_Portrait (Normal): Apologies, I don't really know what you're talking about.
