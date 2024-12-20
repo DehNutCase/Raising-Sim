@@ -42,6 +42,7 @@ overrides = {}
 script = ExtResource("2_b33rw")
 scene = ExtResource("7_seiyv")
 overrides = {
+"boxes_v_separation": "20.0",
 "sounds_volume": "-20.0"
 }
 
