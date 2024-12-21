@@ -69,7 +69,47 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	Rice_Portrait (Normal): For entirely unrelated reasons.
 	[signal arg="{"stats": {"scholarship": 10}}"]
 - I'm trying to climb the tower.
-	Rice_Portrait (Normal): Don't.
+	if Player.tower_level == 14:
+		# TODO, add check for defeat at stage 14
+		update Mao (Sad)
+		Mao_Portrait (Sad): And you're kicking my ass.
+		Rice_Portrait (Normal): I'm sorry?
+		Mao_Portrait (Sad): Weren't you there? Your went all woosh and bam and there was a bright light and then I got knocked out.
+		update Mao (Normal)
+		Rice_Portrait (Normal): Oh, you mean the phantom.
+		Mao_Portrait (Normal): Yeah, so can you help me fight it?
+		Rice_Portrait (Normal): I can. I won't.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Why not?
+		Rice_Portrait (Normal): Like I mentioned before, I don't think you're suited for something like climbing the tower.
+		update Mao (Normal)
+		Rice_Portrait (Normal): Besides, her majesty gave you the access pass because she thought it would be meaningful for you to do your best own your own.
+		update Mao (Sad)
+		Mao_Portrait (Sad): Aww. Can you at least give me some advice?
+		Rice_Portrait (Normal): Hit it until it's dead.
+		update Mao (Angry)
+		Mao_Portrait (Angry): Rice...
+		update Mao (Normal)
+		Rice_Portrait (Normal): A lesser phantom isn't particularly dangerous, just knock it down before it can do anything.
+		Mao_Portrait (Normal): But it's so fast!
+		Rice_Portrait (Normal): Not at all. About five or six hundred standard units should be enough.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Standard units?
+		Rice_Portrait (Normal): Of Speed. Six hundred points of speed.
+		update Mao (Normal)
+		Mao_Portrait (Normal): No, I mean, what's a standard unit?
+		Rice_Portrait (Normal): The phrase should be self explanatory; it's just a unit of measurement. You can find the conversions to and from in 'An Introduction to Stats'.
+		Mao_Portrait (Normal): Oh, I think I have that book!
+		update Mao (Angry)
+		Mao_Portrait (Angry): I remember the equations being stupid hard.
+		Rice_Portrait (Normal): The standard units for stats other than Hit Points and Mana aren't linear, so it can't be helped.
+		update Mao (Normal)
+		[signal arg="{"stats": {"scholarship": 20}}"]
+	elif Player.tower_level > 10:
+		Rice_Portrait (Normal): Don't.
+	else:
+		Rice_Portrait (Normal): Don't.
+	Rice_Portrait (Normal): <Empty Text Event>
 update Mao (Normal)
 # Show outside background here
 [background fade="1.0" transition="Swipe Left To Right"]
