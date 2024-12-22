@@ -109,7 +109,10 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): Don't.
 	else:
 		Rice_Portrait (Normal): Don't.
-	Rice_Portrait (Normal): <Empty Text Event>
+		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out it.
+		update Mao (Normal)
+		Mao_Portrait (Normal): I remember the equations being stupid hard.
+		Rice_Portrait (Normal): <Empty Text Event>
 update Mao (Normal)
 # Show outside background here
 [background fade="1.0" transition="Swipe Left To Right"]
