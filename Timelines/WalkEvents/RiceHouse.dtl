@@ -55,7 +55,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	[end_timeline]
 - What's a Ranker?
 	Rice_Portrait (Normal): ...Someone on a ranking board somewhere?
-	Rice_Portrait (Normal): Apologies, I don't really know what you're talking about.
+	Rice_Portrait (Normal): Apologies, I don't know what you're talking about.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Hiyori said you were a Ranker.
 	update Mao (Normal)
@@ -106,13 +106,19 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 20}}"]
 	elif Player.tower_level > 10:
-		Rice_Portrait (Normal): Don't.
+		Rice_Portrait (Normal): Don't. You've done
 	else:
 		Rice_Portrait (Normal): Don't.
-		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out it.
+		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out of it.
 		update Mao (Normal)
-		Mao_Portrait (Normal): I remember the equations being stupid hard.
-		Rice_Portrait (Normal): <Empty Text Event>
+		Mao_Portrait (Normal): But it's fun!
+		Rice_Portrait (Normal): Fun?
+		update Mao (Excited)
+		Mao_Portrait (Excited): Yeah! I go bonk, bonk, bonk on their heads and then they fall down.
+		Rice_Portrait (Normal): I see...
+		update Mao (Normal)
+		Rice_Portrait (Normal): Well, I won't stop you, but I don't have any advice for now.
+		[signal arg="{"stats": {"scholarship": 10}}"]
 update Mao (Normal)
 # Show outside background here
 [background fade="1.0" transition="Swipe Left To Right"]
