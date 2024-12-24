@@ -106,7 +106,20 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 20}}"]
 	elif Player.tower_level > 10:
-		Rice_Portrait (Normal): Don't. You've done
+		Rice_Portrait (Normal): Do you really need help? You seem to be doing well so far.
+		update Mao (Normal)
+		Mao_Portrait (Normal): Hehe. Bonk, bonk, bonk.
+		Mao_Portrait (Normal): I think it's getting harder, though.
+		Rice_Portrait (Normal): Your class isn't suited for fighting. I would suggest changing to a combat class if you seriously wanted to climb.
+		Rice_Portrait (Normal): But your contract with her majesty prevents that, correct?
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Um, I think so?
+		Rice_Portrait (Normal): Please tell me you didn't forget.
+		update Mao (Blush)
+		Mao_Portrait (Blush): Teehee.
+		Rice_Portrait (Normal): Please tell me you didn't forget.
+		update Mao (Normal)
+		[signal arg="{"stats": {"scholarship": 10}}"]
 	else:
 		Rice_Portrait (Normal): Don't.
 		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out of it.
