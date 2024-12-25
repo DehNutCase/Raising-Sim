@@ -117,9 +117,10 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): Please tell me you didn't forget.
 		update Mao (Blush)
 		Mao_Portrait (Blush): Teehee.
-		Rice_Portrait (Normal): Please tell me you didn't forget.
+		Rice_Portrait (Normal): (There's something odd here. I don't believe Mao would forget something like that.)
+		Rice_Portrait (Normal): (I'll ask her majesty later.)
 		update Mao (Normal)
-		[signal arg="{"stats": {"scholarship": 10}}"]
+		[signal arg="{"stats": {"scholarship": 15}}"]
 	else:
 		Rice_Portrait (Normal): Don't.
 		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out of it.
