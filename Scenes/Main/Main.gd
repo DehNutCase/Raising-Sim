@@ -48,7 +48,7 @@ var current_state = states.READY
 #TODO, work on layout changes for different aspect ratios under expand
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#TODO, add loading from intro screen instead
+	#Game needs to be loaded here
 	Player.load_game()
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
