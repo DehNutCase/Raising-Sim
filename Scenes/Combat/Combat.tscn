@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
 [ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
-[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Themes/DefaultTheme.tres" id="4_hv28o"]
+[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="3_f7su6"]
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="4_ws6am"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbnm6"]
@@ -76,12 +76,12 @@ theme_override_constants/margin_bottom = 20
 
 [node name="MenuPanel" type="PanelContainer" parent="Combat/MarginContainer3"]
 layout_mode = 2
-theme = ExtResource("4_hv28o")
+theme = ExtResource("3_f7su6")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer3/MenuPanel"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_hv28o")
+theme = ExtResource("3_f7su6")
 
 [node name="Attack" type="Button" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
@@ -130,7 +130,7 @@ grow_vertical = 2
 
 [node name="VideoPanel" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
-theme = ExtResource("4_hv28o")
+theme = ExtResource("3_f7su6")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer/VideoPanel"]
 material = ExtResource("4_ws6am")

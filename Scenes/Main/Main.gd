@@ -50,6 +50,7 @@ var current_state = states.READY
 func _ready():
 	#Game needs to be loaded here
 	Player.load_game()
+	get_tree().call_group("BackgroundMusicPlayer", "play_song", "autumn")
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
 	Player.max_walks = 100

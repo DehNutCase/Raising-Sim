@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://Scenes/Main/RemainingWalks.gd" id="3_3fb26"]
+[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="4_xov8c"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
-[ext_resource type="Theme" uid="uid://c6i1lbsrl20i0" path="res://Art/Themes/DefaultTheme.tres" id="11_sa3xm"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
@@ -82,7 +82,7 @@ offset_left = 180.0
 offset_right = 1420.0
 offset_bottom = 160.0
 mouse_filter = 2
-theme = ExtResource("11_sa3xm")
+theme = ExtResource("4_xov8c")
 
 [node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
@@ -428,7 +428,7 @@ offset_right = 525.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("11_sa3xm")
+theme = ExtResource("4_xov8c")
 
 [node name="Animation" parent="Ui/MenuPanel" instance=ExtResource("17_5xmvy")]
 
@@ -514,7 +514,7 @@ offset_right = 600.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("11_sa3xm")
+theme = ExtResource("4_xov8c")
 
 [node name="DialogicViewportContainer" parent="Ui/DialogicPanel" instance=ExtResource("26_25225")]
 visible = false
@@ -530,7 +530,7 @@ size_flags_vertical = 8
 
 [node name="MenuPanel" type="PanelContainer" parent="LeftMenuContainer"]
 layout_mode = 2
-theme = ExtResource("11_sa3xm")
+theme = ExtResource("4_xov8c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LeftMenuContainer/MenuPanel"]
 layout_mode = 2
@@ -584,7 +584,7 @@ size_flags_vertical = 8
 
 [node name="MenuPanel" type="PanelContainer" parent="RightMenuContainer"]
 layout_mode = 2
-theme = ExtResource("11_sa3xm")
+theme = ExtResource("4_xov8c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RightMenuContainer/MenuPanel"]
 layout_mode = 2
