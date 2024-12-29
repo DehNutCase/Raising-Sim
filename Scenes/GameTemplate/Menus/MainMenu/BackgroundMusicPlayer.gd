@@ -11,9 +11,10 @@ var songs = {
 }
 
 func _ready():
-	play_song("spring")
+	play_song("Spring")
 	
 func play_song(song:String) -> void:
+	song = song.to_lower()
 	#TODO, add fadein/out
 	if stream != songs[song]:
 		stream = songs[song]

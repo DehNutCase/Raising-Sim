@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Raising Sim"
+config/name="Witch Maker"
 run/main_scene="res://Scenes/GameTemplate/Opening/Opening.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)
