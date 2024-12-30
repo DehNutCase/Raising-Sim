@@ -1,7 +1,7 @@
 class_name Enemy extends Character
 
 #TODO, use portrait based on enemy race or class
-var portrait = "res://icon.svg"
+var portrait = "res://icon.svg" #Placeholder
 var combat_skills = ["basic_attack"]
 var label = "Enemy"
 
@@ -38,6 +38,9 @@ func calculate_stats(enemy) -> void:
 		if "combat_skills" in Constants.races[enemy.race]:
 			for combat_skill in Constants.races[enemy.race].combat_skills:
 				enemy_skills.append(combat_skill)
+			
+		if "portrait" in Constants.races[enemy.race]:
+			portrait = Constants.races[enemy.race].portrait
 
 	if "character_class" in enemy:
 		label += " " + Constants.character_classes[enemy.character_class].label
@@ -62,6 +65,10 @@ func calculate_stats(enemy) -> void:
 		if "combat_skills" in Constants.character_classes[enemy.character_class]:
 			for combat_skill in Constants.character_classes[enemy.character_class].combat_skills:
 				enemy_skills.append(combat_skill)
+				
+		if "portrait" in Constants.character_classes[enemy.character_class]:
+			if enemy.race in Constants.character_classes[enemy.character_class].portrait:
+				portrait = Constants.character_classes[enemy.character_class].portrait[enemy.race]
 	
 	for stat in enemy_stats:
 		base_stats[stat] = enemy_stats[stat]

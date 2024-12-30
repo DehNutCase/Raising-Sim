@@ -907,6 +907,9 @@ const character_classes = {
 		},
 		'combat_skills': ["preparation"],
 		'label': "Rogue",
+		'portrait': {
+			'slime': 'res://Art/Temporary Placeholder/RO_Poporing(SD).png',
+		},
 	},
 	'priest': {
 		'base_stats': {
@@ -932,6 +935,9 @@ const character_classes = {
 		},
 		'combat_skills': ["heal"],
 		'label': "Priest",
+		'portrait': {
+			'slime': 'res://Art/Temporary Placeholder/RO_Drops(SD).png',
+		},
 	},
 	'mage': {
 		'base_stats': {
@@ -957,6 +963,9 @@ const character_classes = {
 		},
 		'combat_skills': ["fireball", "brilliance"],
 		'label': "Mage",
+		'portrait': {
+			'slime': 'res://Art/Temporary Placeholder/RO_Marin(SD).png',
+		},
 	},
 	'assassin': {
 		'base_stats': {
@@ -1024,6 +1033,7 @@ const races = {
 			'experience': 1,
 		},
 		'label': 'Slime',
+		'portrait': 'res://Art/Temporary Placeholder/RO_Poring.png',
 	},
 	'goblin': {
 		'base_stats': {
