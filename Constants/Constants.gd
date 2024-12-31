@@ -1051,6 +1051,7 @@ const races = {
 			'gold': 5,
 		},
 		'label': 'Goblin',
+		'portrait': 'res://Art/Temporary Placeholder/RO_Goblin3Portrait.png',
 	},
 	'orc': {
 		'base_stats': {
@@ -1070,6 +1071,7 @@ const races = {
 			'gold': 10,
 		},
 		'label': 'Orc',
+		'portrait': 'res://Art/Temporary Placeholder/RO_OrcWarriorPortrait.png',
 	},
 	'lesser_phantom': {
 		'base_stats': {
