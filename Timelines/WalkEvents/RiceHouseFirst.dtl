@@ -1,3 +1,4 @@
+[background arg="res://Art/Background/MISC Backgrounds Set by Konett/Fantasy-Forrest2.png" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
 Mao_Portrait (Normal): Knock, knock.
@@ -18,11 +19,11 @@ update Mao (Normal) [animation="Shake X" length="4"]
 update Mao (Normal) [animation="Tada" length="4" repeat="0"]
 Mao_Portrait (Normal): *Humming*
 Rice_Portrait (Normal): (There's so much I want to say to that. She wasn't even knocking, just saying 'knock' over and over.)
+Rice_Portrait (Normal): You might as well come in, then.
 join Rice (Normal) 4 [animation="Instant In Or Out" length="0"]
 update Rice (Normal) 2 [ move_time="1"]
 update Mao (Normal) 1 [ move_time="1"]
-[background arg="res://Art/Background/livingRoomEvening-1600.png" fade="1.0" transition="Swipe Right To Left"]
-Rice_Portrait (Normal): You might as well come in, then.
+[background arg="res://Art/Background/NoranekoGames/Livingroom_Day.png" fade="1.0" transition="Swipe Right To Left"]
 update Mao (Excited)
 Mao_Portrait (Excited): Yay!
 update Mao (Normal)

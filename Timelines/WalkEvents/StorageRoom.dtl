@@ -1,13 +1,4 @@
+[background arg="res://Art/Background/NoranekoGames/Futon_Room.png" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
-Alice_Portrait (Normal): Here's the storage room. Ring the bell next to the door if you need help finding something.
-Mao_Portrait (Normal): Thank you.
-update Mao (Excited)
-Mao_Portrait (Excited): (Time to find Gray!)
-update Mao (Normal) [animation="Tada" length="3"]
-update Mao [animation="Shake X" length="3" wait="true"]
-join Gray 2
-update Mao (Smile)
-Mao_Portrait (Smile): Here you are!
-update Mao (Excited)
-Mao_Portrait (Excited): (Okay, let's bring you home.)
+# Unfinished

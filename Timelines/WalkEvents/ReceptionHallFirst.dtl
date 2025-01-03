@@ -1,3 +1,4 @@
+[background arg="res://Art/Background/Arabian Inspired Backgrounds by Konett/Arabian-Courtyard1.png" fade="0.0" transition="Simple Fade"]
 join Mao (Normal) 1
 [history action="clear"]
 update Mao (Sad)
@@ -17,7 +18,7 @@ Morgan_Portrait (Silhouette): Like what?
 update Mao (Angry)
 Mao_Portrait (Angry): Your majesty...
 Morgan_Portrait (Silhouette): Fufufu. Doesn't it make me look dark and mysterious?
-Mao_Portrait (Angry): (Only if you kept quiet. Let's just play along.)
+Mao_Portrait (Angry): (Only if you kept quiet... Let's just play along.)
 update Mao (Normal)
 Mao_Portrait (Normal): Of course, your majesty. Very, um, magnificent and awe inspiring.
 Morgan_Portrait (Silhouette): Somehow, I don't think your heart was in it. We'll talk later.
