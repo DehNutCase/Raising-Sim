@@ -19,9 +19,29 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Smile): Classes have been a bit tiring lately so I've been hiding here.
 	update Mao (Sad)
 	Mao_Portrait (Sad): So no more cats?
-	Hiyori_Portrait (Surprised): What is with you and cats? I don't usually make animal sculptures, so no, no more cats.
+	Hiyori_Portrait (Surprised): What's with you and cats? I don't usually make animal sculptures, so no, no more cats.
 	Mao_Portrait (Sad): Aww...
 	update Mao (Normal)
 	[signal arg="{"stats": {"scholarship": 10}}"]
-- 
+- Want to go out with me?
+	Hiyori_Portrait (Surprised): Phrasing.
+	Hiyori_Portrait (Smile): I'd love to, but I'm actually grounded right now.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): But who would stop you from just walking out the front door?
+	Rice_Portrait (Normal): I would, for one.
+	Mao_Portrait (Surprised): Gah!
+	update Mao (Angry)
+	Mao_Portrait (Angry): Please stop doing that!
+	update Mao (Normal)
+	Hiyori_Portrait (Smile): Yes, something like that.
+	Hiyori_Portrait (Normal): I think I can break out if I really needed to, but hanging out isn't a big enough emergency to go breaking down doors for.
+	Mao_Portrait (Normal): Oh, then do you have anything to do here?
+	Hiyori_Portrait (Normal): I have some boardgames in here somewhere if you'd like to play those.
+	update Mao (Excited)
+	Mao_Portrait (Excited): Sure!
+	update Mao (Normal)
+	[signal arg="{"stats": {"stress": -10}}"]
+Hiyori_Portrait (Normal): See you.
+update Mao (Smile)
+Mao_Portrait (Smile): It was fun!
 [signal arg="{"stats": {"stress": -5, "art": 10,}}"]
