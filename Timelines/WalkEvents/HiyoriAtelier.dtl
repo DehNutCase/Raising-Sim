@@ -2,7 +2,6 @@
 join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
-# Unfinished
 Mao_Portrait (Normal): Hello Hiyori.
 Hiyori_Portrait (Normal): Welcome, I guess.
 # Use get to return null rather than throw an error if index isn't present
@@ -20,5 +19,9 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Smile): Classes have been a bit tiring lately so I've been hiding here.
 	update Mao (Sad)
 	Mao_Portrait (Sad): So no more cats?
-	Hiyori_Portrait (Normal): Classes have been a bit tiring lately so I've been hiding here.
+	Hiyori_Portrait (Surprised): What is with you and cats? I don't usually make animal sculptures, so no, no more cats.
+	Mao_Portrait (Sad): Aww...
+	update Mao (Normal)
+	[signal arg="{"stats": {"scholarship": 10}}"]
 - 
+[signal arg="{"stats": {"stress": -5, "art": 10,}}"]

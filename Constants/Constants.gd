@@ -855,7 +855,7 @@ const locations = {
 				'toasts': ["Found Rice's house, let's go visit."],
 				'timeline': 'res://Timelines/WalkEvents/RiceHouse.dtl',
 				'first_toasts': ["Found a pleasant looking cottage in the woods."],
-				'first_timeline': 'res://Timelines/WalkEvents/RiceHourFirst.dtl',
+				'first_timeline': 'res://Timelines/WalkEvents/RiceHouseFirst.dtl',
 				'flag': "rice_house"
 			},],
 	},
