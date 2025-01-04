@@ -63,7 +63,9 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres"]
 layout/default_style="res://Art/Dialogic/VisualNovelStyle.tres"
-variables={}
+variables={
+"StorageRoomWheelbarrel": false
+}
 text/letter_speed=0.0
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1

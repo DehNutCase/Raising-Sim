@@ -36,7 +36,7 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Smile): Yes, something like that.
 	Hiyori_Portrait (Normal): I think I can break out if I really needed to, but hanging out isn't a big enough emergency to go breaking down doors for.
 	Mao_Portrait (Normal): Oh, then do you have anything to do here?
-	Hiyori_Portrait (Normal): I have some boardgames in here somewhere if you'd like to play those.
+	Hiyori_Portrait (Normal): I have some boardgames somewhere if you'd like to play those.
 	update Mao (Excited)
 	Mao_Portrait (Excited): Sure!
 	update Mao (Normal)
