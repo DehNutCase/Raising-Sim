@@ -39,6 +39,7 @@ var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance"]
 	
 func _ready():
+	get_tree().call_group("BackgroundMusicPlayer", "play_song", "battle")
 	player_combat_copy.stats.current_hp = player_combat_copy.stats.max_hp
 	update_player_hp()
 	order.append(player_combat_copy)
