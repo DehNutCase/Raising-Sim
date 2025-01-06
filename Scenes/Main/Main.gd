@@ -396,6 +396,8 @@ func _on_timeline_ended() -> void:
 	dialogic_panel.hide()
 	dialogic_viewport_container.hide()
 	current_state = states.READY
+	#Close open menus after timeline ends
+	_on_close_button_pressed()
 	
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items

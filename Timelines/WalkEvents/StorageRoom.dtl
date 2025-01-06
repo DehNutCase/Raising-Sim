@@ -5,14 +5,28 @@ join Mao (Normal) 2
 Alice_Portrait (Normal): Here's the storage room. It's fine to look around, but please let us know if you take anything.
 update Mao (Surprised)
 Mao_Portrait (Surprised): Wait, so I can just take stuff?
-Alice_Portrait (Normal): It's all Hiyori's old projects in here, and she gave you permission already. You just need to let us know so we can keep proper inventory.
+Alice_Portrait (Normal): It's all Miss Hiyori's old projects in here, and she already gave you permission. You just need to let us know so we can keep proper inventory.
 update Mao (Normal)
 Alice_Portrait (Normal): Some of her projects are also a little dangerous, so we can warn you about anything you need to pay attention to.
 Mao_Portrait (Normal): Oh. Okay.
-Mao_Portrait (Normal): (I'm not going to take anything, but it should be fun to look around.)
+Mao_Portrait (Normal): (I'm not going to take anything, but it'll be fun to look around.)
 label Choice
-- Time to cart things away by the wheelbarrow! [if {StorageRoomWheelbarrel} == false]
+- Look at Hiyori's paintings
+	update Mao (Normal) [animation="Tada" length="3"]
+	update Mao [animation="Shake X" length="3" wait="true"]
+	Mao_Portrait (Normal): (Looks like it's mostly landscapes.)
+	Mao_Portrait (Normal): (Oh, a portrait of her majesty.)
+	update Mao (Excited)
+	Mao_Portrait (Excited): (A lion!)
+	update Mao (Smile)
+	Mao_Portrait (Smile): (Looks like that was it. Hiyori doesn't seem to paint much.)
+	[signal arg="{"stats": {"art": 15,}}"]
+- Wander around the sculptures
+- Check out the music sheets
+- Play with Hiyori's stuffed dolls
+- Time to take everything and cart them away! [if {StorageRoomWheelbarrel} == false]
 	set {StorageRoomWheelbarrel} = true
 	update Mao (Angry)
 	Mao_Portrait (Angry): (I'm not going to do that. Why would I do that?)
 	jump Choice
+[signal arg="{"stats": {"stress": -5, "art": 10,}}"]
