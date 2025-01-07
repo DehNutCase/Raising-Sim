@@ -18,10 +18,13 @@ label Choice
 	Mao_Portrait (Normal): (Oh, a portrait of her majesty.)
 	update Mao (Excited)
 	Mao_Portrait (Excited): (A lion!)
-	update Mao (Smile)
-	Mao_Portrait (Smile): (Looks like that was it. Hiyori doesn't seem to paint much.)
+	update Mao (Normal)
+	Mao_Portrait (Normal): (I wonder how she got the time to paint so much.)
 	[signal arg="{"stats": {"art": 15,}}"]
 - Wander around the sculptures
+	update Mao (Normal) [animation="Tada" length="3"]
+	update Mao [animation="Shake X" length="3" wait="true"]
+	Mao_Portrait (Normal): *Humming*
 - Check out the music sheets
 - Play with Hiyori's stuffed dolls
 - Time to take everything and cart them away! [if {StorageRoomWheelbarrel} == false]
@@ -29,4 +32,6 @@ label Choice
 	update Mao (Angry)
 	Mao_Portrait (Angry): (I'm not going to do that. Why would I do that?)
 	jump Choice
+update Mao (Smile)
+Mao_Portrait (Smile): (That was fun.)
 [signal arg="{"stats": {"stress": -5, "art": 10,}}"]
