@@ -1,14 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyjhnhiiq3roq"]
+[gd_scene load_steps=6 format=3 uid="uid://dyjhnhiiq3roq"]
 
 [ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/scenes/Menus/MainMenu/MainMenu.tscn" id="1_5meab"]
+[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="2_fgaw1"]
 [ext_resource type="PackedScene" uid="uid://bdvdf5v87mmrr" path="res://addons/maaacks_game_template/examples/scenes/Menus/OptionsMenu/MasterOptionsMenuWithTabs.tscn" id="2_mrems"]
 [ext_resource type="PackedScene" uid="uid://c1g50h2avck3w" path="res://addons/maaacks_game_template/examples/scenes/Credits/Credits.tscn" id="3_xbnof"]
+[ext_resource type="Script" path="res://Scenes/GameTemplate/Menus/MainMenu/BackgroundMusicPlayer.gd" id="4_tyn6f"]
 
 [node name="MainMenu" instance=ExtResource("1_5meab")]
 texture_filter = 4
+theme = ExtResource("2_fgaw1")
 game_scene_path = "res://Scenes/Main/Main.tscn"
 options_packed_scene = ExtResource("2_mrems")
 credits_packed_scene = ExtResource("3_xbnof")
+
+[node name="BackgroundMusicPlayer" parent="." index="1" groups=["BackgroundMusicPlayer"]]
+script = ExtResource("4_tyn6f")
+
+[node name="BackgroundTextureRect" parent="." index="2"]
+texture = null
 
 [node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
 text = "Raising Sim"

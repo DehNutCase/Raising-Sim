@@ -6,7 +6,7 @@
 
 [node name="Opening" instance=ExtResource("1_61ryd")]
 script = ExtResource("2_3kr6l")
-next_scene = "res://Scenes/GameTemplate/Menus/MainMenu/MainMenuWithAnimations.tscn"
+next_scene = "res://Scenes/GameTemplate/Menus/MainMenu/MainMenu.tscn"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="." index="0"]
 layout_mode = 2

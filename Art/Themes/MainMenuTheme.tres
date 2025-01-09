@@ -1,13 +1,20 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ca6asxvhlbu51"]
 
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_wg31n"]
-[ext_resource type="StyleBox" uid="uid://c7hy834hboyd1" path="res://Art/Background/MenuBackground.tres" id="2_e4nnb"]
+[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/UI/ThemeComponents/Button_Normal.tres" id="2_3rlq6"]
+[ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/UI/ThemeComponents/Button_Pressed.tres" id="2_q3ase"]
 
 [resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.357479, 0.700425, 0.895395, 1)
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 18
+Button/styles/hover = ExtResource("2_3rlq6")
+Button/styles/normal = ExtResource("2_3rlq6")
+Button/styles/pressed = ExtResource("2_q3ase")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_wg31n")
-PanelContainer/styles/panel = ExtResource("2_e4nnb")
 PopupMenu/font_sizes/font_size = 32
