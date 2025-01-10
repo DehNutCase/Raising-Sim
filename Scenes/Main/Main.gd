@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @onready var player_model = $Ui/PlayerControl/Player
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory

@@ -1,20 +1,51 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://ca6asxvhlbu51"]
 
+[ext_resource type="StyleBox" uid="uid://cftn0vvm1j57q" path="res://Art/UI/ThemeComponents/Button_Disabled.tres" id="1_f4rig"]
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_wg31n"]
 [ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/UI/ThemeComponents/Button_Normal.tres" id="2_3rlq6"]
 [ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/UI/ThemeComponents/Button_Pressed.tres" id="2_q3ase"]
+[ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/UI/ThemeComponents/SmallHighlightPanel.tres" id="5_y0joq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ya021"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixcyc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75f58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc5tr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27ta3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cha08"]
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.357479, 0.700425, 0.895395, 1)
 Button/constants/outline_size = 3
-Button/font_sizes/font_size = 18
+Button/font_sizes/font_size = 22
+Button/styles/disabled = ExtResource("1_f4rig")
 Button/styles/hover = ExtResource("2_3rlq6")
 Button/styles/normal = ExtResource("2_3rlq6")
 Button/styles/pressed = ExtResource("2_q3ase")
+CheckBox/styles/hover_pressed = ExtResource("2_q3ase")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_ya021")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_ixcyc")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_75f58")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_fc5tr")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_27ta3")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_cha08")
 Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/constants/outline_size = 2
-Label/font_sizes/font_size = 20
+Label/colors/font_outline_color = Color(0.110774, 0.347023, 0.468814, 1)
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 24
 Label/fonts/font = ExtResource("1_wg31n")
+Panel/styles/panel = ExtResource("5_y0joq")
 PopupMenu/font_sizes/font_size = 32
+TabContainer/colors/font_outline_color = Color(0.356863, 0.701961, 0.894118, 1)
+TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)
+TabContainer/constants/outline_size = 4
+TabContainer/styles/panel = ExtResource("5_y0joq")
+TabContainer/styles/tab_hovered = ExtResource("2_3rlq6")
+TabContainer/styles/tab_selected = ExtResource("2_3rlq6")
+TabContainer/styles/tab_unselected = ExtResource("2_q3ase")

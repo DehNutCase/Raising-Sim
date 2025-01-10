@@ -1,9 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://df0p3tawo2arq"]
+[gd_scene load_steps=11 format=3 uid="uid://df0p3tawo2arq"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
 [ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
-[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="3_f7su6"]
+[ext_resource type="Texture2D" uid="uid://cyfs2o5pbfd46" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g966.png" id="3_b5mlk"]
+[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/UI/ThemeComponents/Button_Normal.tres" id="4_oa33l"]
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="4_ws6am"]
+[ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/UI/ThemeComponents/Button_Pressed.tres" id="5_6qiim"]
+[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="6_4gih7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28rpo"]
+texture = ExtResource("3_b5mlk")
+modulate_color = Color(0.733005, 0.733005, 0.733005, 1)
+
+[sub_resource type="Theme" id="Theme_e26wc"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.357479, 0.700425, 0.895395, 1)
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 24
+Button/styles/disabled = SubResource("StyleBoxTexture_28rpo")
+Button/styles/hover = ExtResource("4_oa33l")
+Button/styles/normal = ExtResource("4_oa33l")
+Button/styles/pressed = ExtResource("5_6qiim")
+CheckBox/styles/hover_pressed = ExtResource("5_6qiim")
+CheckButton/styles/hover_pressed = ExtResource("5_6qiim")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("6_4gih7")
+PopupMenu/font_sizes/font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_gbnm6"]
 font_size = 24
@@ -76,12 +101,12 @@ theme_override_constants/margin_bottom = 20
 
 [node name="MenuPanel" type="PanelContainer" parent="Combat/MarginContainer3"]
 layout_mode = 2
-theme = ExtResource("3_f7su6")
+theme = SubResource("Theme_e26wc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer3/MenuPanel"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("3_f7su6")
+theme = SubResource("Theme_e26wc")
 
 [node name="Attack" type="Button" parent="Combat/MarginContainer3/MenuPanel/HBoxContainer"]
 layout_mode = 2
@@ -130,7 +155,7 @@ grow_vertical = 2
 
 [node name="VideoPanel" type="PanelContainer" parent="CenterContainer"]
 layout_mode = 2
-theme = ExtResource("3_f7su6")
+theme = SubResource("Theme_e26wc")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer/VideoPanel"]
 material = ExtResource("4_ws6am")

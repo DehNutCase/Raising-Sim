@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://do8baktjfoyyj"]
 
-[ext_resource type="Texture2D" uid="uid://cqxfs6ybpw7c8" path="res://Art/Button/greyRectNormal.png" id="1_dwgca"]
 [ext_resource type="Script" path="res://Scenes/Main/count.gd" id="1_wv4gm"]
+[ext_resource type="Texture2D" uid="uid://brdrhdswj6e5q" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g943.png" id="2_spud5"]
 [ext_resource type="Texture2D" uid="uid://cvdstmlv7cfba" path="res://Art/Kittens/Sleeping-Kittens-black/black-kitten4.png" id="2_thm8r"]
 [ext_resource type="LabelSettings" uid="uid://do4j8mhc6qeqr" path="res://Art/Fonts/LabelSettings.tres" id="3_6mbsd"]
 
@@ -20,8 +20,8 @@ script = ExtResource("1_wv4gm")
 
 [node name="Background" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_dwgca")
-region_rect = Rect2(0, 0, 359, 162)
+texture = ExtResource("2_spud5")
+region_rect = Rect2(0, 0, 221, 215)
 patch_margin_left = 40
 patch_margin_top = 40
 patch_margin_right = 40

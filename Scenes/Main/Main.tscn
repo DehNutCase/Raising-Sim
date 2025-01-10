@@ -1,19 +1,22 @@
-[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=38 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
+[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://Scenes/Main/RemainingWalks.gd" id="3_3fb26"]
-[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="4_xov8c"]
+[ext_resource type="Texture2D" uid="uid://cyfs2o5pbfd46" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g966.png" id="4_u7p3o"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
+[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/UI/ThemeComponents/Button_Normal.tres" id="5_x735p"]
+[ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/UI/ThemeComponents/Button_Pressed.tres" id="6_5heda"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
+[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_hnd0u"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
 [ext_resource type="Script" path="res://Scenes/Main/SkillInventory.gd" id="13_tkqcx"]
-[ext_resource type="Texture2D" uid="uid://cmhmd531yl0ml" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Cross_Large.png" id="15_odyat"]
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="16_3c6c7"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Scenes/UI/Actions/Animation.tscn" id="17_5xmvy"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
@@ -33,6 +36,28 @@ font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28rpo"]
+texture = ExtResource("4_u7p3o")
+modulate_color = Color(0.733005, 0.733005, 0.733005, 1)
+
+[sub_resource type="Theme" id="Theme_e26wc"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0.357479, 0.700425, 0.895395, 1)
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 24
+Button/styles/disabled = SubResource("StyleBoxTexture_28rpo")
+Button/styles/hover = ExtResource("5_x735p")
+Button/styles/normal = ExtResource("5_x735p")
+Button/styles/pressed = ExtResource("6_5heda")
+CheckBox/styles/hover_pressed = ExtResource("6_5heda")
+CheckButton/styles/hover_pressed = ExtResource("6_5heda")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("7_hnd0u")
+PopupMenu/font_sizes/font_size = 32
+
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
 font_size = 28
 outline_size = 2
@@ -50,7 +75,10 @@ light_mode = 1
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 
-[node name="Main" type="Node2D" groups=["Main"]]
+[node name="Main" type="Control" groups=["Main"]]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_tshxl")
 script = ExtResource("1_bqq6y")
 
 [node name="FPS" type="Label" parent="."]
@@ -82,7 +110,7 @@ offset_left = 180.0
 offset_right = 1420.0
 offset_bottom = 160.0
 mouse_filter = 2
-theme = ExtResource("4_xov8c")
+theme = SubResource("Theme_e26wc")
 
 [node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
@@ -428,7 +456,7 @@ offset_right = 525.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_xov8c")
+theme = SubResource("Theme_e26wc")
 
 [node name="Animation" parent="Ui/MenuPanel" instance=ExtResource("17_5xmvy")]
 
@@ -469,7 +497,6 @@ text = "Enter Tower"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-icon = ExtResource("15_odyat")
 icon_alignment = 2
 vertical_icon_alignment = 0
 
@@ -514,7 +541,7 @@ offset_right = 600.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_xov8c")
+theme = SubResource("Theme_e26wc")
 
 [node name="DialogicViewportContainer" parent="Ui/DialogicPanel" instance=ExtResource("26_25225")]
 visible = false
@@ -528,12 +555,13 @@ offset_bottom = 900.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="MenuPanel" type="PanelContainer" parent="LeftMenuContainer"]
+[node name="MenuPanel" type="Control" parent="LeftMenuContainer"]
 layout_mode = 2
-theme = ExtResource("4_xov8c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LeftMenuContainer/MenuPanel"]
 layout_mode = 2
+offset_right = 140.0
+offset_bottom = 700.0
 
 [node name="Jobs" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
@@ -572,6 +600,7 @@ size_flags_vertical = 3
 text = "Save"
 
 [node name="RightMenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -582,12 +611,13 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="MenuPanel" type="PanelContainer" parent="RightMenuContainer"]
+[node name="MenuPanel" type="Control" parent="RightMenuContainer"]
 layout_mode = 2
-theme = ExtResource("4_xov8c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RightMenuContainer/MenuPanel"]
 layout_mode = 2
+offset_right = 140.0
+offset_bottom = 700.0
 
 [node name="Stats" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2

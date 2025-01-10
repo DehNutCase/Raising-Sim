@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cwne627km41g6"]
+
+[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/UI/ThemeComponents/Button_Normal.tres" id="1_60tss"]
+[ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/UI/ThemeComponents/Button_Pressed.tres" id="2_uyj0f"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/normal = ExtResource("1_60tss")
+Button/styles/pressed = ExtResource("2_uyj0f")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 6
+Label/font_sizes/font_size = 52
