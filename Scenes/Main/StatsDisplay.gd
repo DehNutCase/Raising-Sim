@@ -8,7 +8,6 @@ var text2: String
 func _ready():
 	pass
 
-#TODO, display stats in 2 labels
 func display_stats():
 	text1 = "Stats:\n"
 	text2 = "\n"

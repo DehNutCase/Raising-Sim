@@ -16,9 +16,6 @@ credits_packed_scene = ExtResource("3_xbnof")
 [node name="BackgroundMusicPlayer" parent="." index="1" groups=["BackgroundMusicPlayer"]]
 script = ExtResource("4_tyn6f")
 
-[node name="BackgroundTextureRect" parent="." index="2"]
-texture = null
-
 [node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
 text = "Raising Sim"
 

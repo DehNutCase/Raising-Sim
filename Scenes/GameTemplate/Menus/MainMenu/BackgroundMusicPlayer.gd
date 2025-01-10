@@ -4,12 +4,14 @@ var summer_song = preload("res://Music/Chiptune Dream Loop.wav")
 var autumn_song = preload("res://Music/New Road Loop.wav")
 var winter_song = preload("res://Music/Walk Alone 80 no afterglow.wav")
 var battle_song = preload("res://Music/8Bit DNA Loop.wav")
+var no_exit_song = preload("res://Music/No Exit 106 no afterglow.wav")
 var songs = {
 	"spring": spring_song,
 	"summer": summer_song,
 	"autumn": autumn_song,
 	"winter": winter_song,
 	"battle": battle_song,
+	"no_exit": no_exit_song,
 }
 
 func _ready():

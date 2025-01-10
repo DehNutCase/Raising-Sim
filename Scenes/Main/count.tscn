@@ -1,14 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://do8baktjfoyyj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/count.gd" id="1_wv4gm"]
-[ext_resource type="Texture2D" uid="uid://brdrhdswj6e5q" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g943.png" id="2_spud5"]
-[ext_resource type="Texture2D" uid="uid://cvdstmlv7cfba" path="res://Art/Kittens/Sleeping-Kittens-black/black-kitten4.png" id="2_thm8r"]
+[ext_resource type="Texture2D" uid="uid://bwhrcqexejtjj" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-2-5-5-2-8-0.png" id="2_4r2hb"]
+[ext_resource type="LabelSettings" uid="uid://ch6je8m00hvq8" path="res://Art/Fonts/StatLabelSettings.tres" id="2_syv24"]
 [ext_resource type="LabelSettings" uid="uid://do4j8mhc6qeqr" path="res://Art/Fonts/LabelSettings.tres" id="3_6mbsd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_88227"]
-font_size = 32
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://d23tjhw6qu4in" path="res://Art/Fonts/EmojiLabelSettings.tres" id="3_e43f5"]
 
 [node name="Count" type="MarginContainer" groups=["StatBars"]]
 custom_minimum_size = Vector2(200, 120)
@@ -20,42 +16,38 @@ script = ExtResource("1_wv4gm")
 
 [node name="Background" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_spud5")
-region_rect = Rect2(0, 0, 221, 215)
+texture = ExtResource("2_4r2hb")
+region_rect = Rect2(0, 0, 169, 164)
 patch_margin_left = 40
 patch_margin_top = 40
 patch_margin_right = 40
 patch_margin_bottom = 40
 
-[node name="Icon" type="TextureRect" parent="Background"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 2.99999
-offset_top = -53.0
-offset_right = 1001.0
-offset_bottom = 489.0
+offset_left = -52.5
+offset_right = 52.5
+offset_bottom = 55.0
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_thm8r")
+alignment = 1
 
-[node name="Value" type="Label" parent="Background"]
+[node name="Value" type="Label" parent="Background/HBoxContainer"]
 texture_filter = 6
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 10.0
-offset_top = -22.5
-offset_right = 46.0
-offset_bottom = 22.5
-grow_vertical = 2
+layout_mode = 2
 text = "10"
-label_settings = SubResource("LabelSettings_88227")
+label_settings = ExtResource("2_syv24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Emoji" type="Label" parent="Background/HBoxContainer"]
+texture_filter = 6
+layout_mode = 2
+text = "📖"
+label_settings = ExtResource("3_e43f5")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Background"]
@@ -67,10 +59,11 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -100.0
+offset_top = -55.0
 offset_right = 100.0
-offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Str"
 label_settings = ExtResource("3_6mbsd")
 horizontal_alignment = 1
+vertical_alignment = 1

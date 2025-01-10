@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=41 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -17,9 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Scenes/UI/Actions/Animation.tscn" id="17_5xmvy"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
 [ext_resource type="VideoStream" path="res://Characters/Mao/Videos/special_01.ogv" id="18_q463u"]
-[ext_resource type="Texture2D" uid="uid://co0nxq2ekveyb" path="res://Art/Kittens/Sleeping-Kittens-blanc/cute-kitten4.png" id="19_1gghe"]
-[ext_resource type="Texture2D" uid="uid://bdbdfxdgb1i3k" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten4.png" id="19_88f8e"]
-[ext_resource type="Texture2D" uid="uid://beda43km5h356" path="res://Art/Kittens/Sleeping-Kittens-outlines/outlines-kitten4.png" id="20_c7f2x"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
@@ -49,6 +46,28 @@ light_mode = 1
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwgbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in7em"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80aij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_en1ia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apv3e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nc7hd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w8ax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h24mw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46vva"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7l7x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8es6"]
 
 [node name="Main" type="Control" groups=["Main"]]
 layout_mode = 3
@@ -92,7 +111,7 @@ mouse_filter = 2
 [node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
 
-[node name="stress" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+[node name="mood" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -100,22 +119,13 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Icon" parent="GUI (Mouse Ignore)/Counters/level/Background" index="0"]
-texture = ExtResource("19_1gghe")
-
 [node name="experience" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Icon" parent="GUI (Mouse Ignore)/Counters/experience/Background" index="0"]
-texture = ExtResource("19_88f8e")
-
 [node name="scholarship" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Icon" parent="GUI (Mouse Ignore)/Counters/scholarship/Background" index="0"]
-texture = ExtResource("20_c7f2x")
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
@@ -475,6 +485,11 @@ custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fwgbm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_in7em")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80aij")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_en1ia")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_apv3e")
 icon = ExtResource("25_dofej")
 icon_alignment = 2
 vertical_icon_alignment = 0
@@ -484,11 +499,18 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nc7hd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2w8ax")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h24mw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_46vva")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_x7l7x")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r8es6")
 text = "Skip"
 
 [node name="Stats" type="HBoxContainer" parent="Ui/MenuPanel"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 script = ExtResource("25_7vaom")
 
 [node name="Stats" type="Label" parent="Ui/MenuPanel/Stats"]
@@ -639,7 +661,7 @@ text = "Battle"
 [connection signal="pressed" from="Ui/MenuPanel/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
-[editable path="GUI (Mouse Ignore)/Counters/stress"]
+[editable path="GUI (Mouse Ignore)/Counters/mood"]
 [editable path="GUI (Mouse Ignore)/Counters/level"]
 [editable path="GUI (Mouse Ignore)/Counters/experience"]
 [editable path="GUI (Mouse Ignore)/Counters/scholarship"]

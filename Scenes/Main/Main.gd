@@ -45,7 +45,6 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
-#TODO, work on layout changes for different aspect ratios under expand
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Game needs to be loaded here
@@ -53,8 +52,8 @@ func _ready():
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
 	#TODO, remove this, testing section
-	Player.max_walks = 100
-	Player.tower_level = 3
+	#Player.max_walks = 100
+	#Player.tower_level = 9
 	#TODO, end testing section
 	
 	
@@ -80,6 +79,8 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("ButtonMenu", "update_buttons")
 	
+	
+	Dialogic.start("StorageRoom")
 	#TODO, delete below, dev use only
 	#Player.background_inventory.create_and_add_item("gray")
 	#Dialogic.start("HiyoriAtelier")
@@ -128,7 +129,6 @@ func process_day():
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
 
-#TODO remove stat bars in job pages
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
@@ -152,7 +152,6 @@ func do_job(job_name: String) :
 	animation.animation.play("Run")
 	process_day()
 	
-#TODO, add animations for lesson and resting
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0
@@ -371,6 +370,7 @@ func display_stats() -> void:
 	stats.display_stats()
 	gold_label.display_gold()
 	walks_label.display_walks()
+	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")	
@@ -390,6 +390,8 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 	if "skill" in dialogic_signal:
 		if (!Player.skill_inventory.get_item_by_id(dialogic_signal.background)):
 			Player.skill_inventory.create_and_add_item(dialogic_signal.background)
+	if "music" in dialogic_signal:
+		get_tree().call_group("BackgroundMusicPlayer", "play_song", dialogic_signal.music)
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
@@ -403,6 +405,7 @@ func _on_timeline_ended() -> void:
 	dialogic_panel.hide()
 	dialogic_viewport_container.hide()
 	current_state = states.READY
+	display_stats()
 	#Close open menus after timeline ends
 	_on_close_button_pressed()
 	

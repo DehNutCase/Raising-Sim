@@ -19,13 +19,30 @@ label Choice
 	update Mao (Excited)
 	Mao_Portrait (Excited): (A lion!)
 	update Mao (Normal)
-	Mao_Portrait (Normal): (I wonder how she got the time to paint so much.)
+	Mao_Portrait (Normal): (I wonder how Hiyori found the time to paint so much.)
 	[signal arg="{"stats": {"art": 15,}}"]
 - Wander around the sculptures
 	update Mao (Normal) [animation="Tada" length="3"]
 	update Mao [animation="Shake X" length="3" wait="true"]
 	Mao_Portrait (Normal): *Humming*
+	Mao_Portrait (Normal): (There aren't as many scupltures as I thought.)
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): (Lots of empty pedestals though, did they take some out?)
+	update Mao (Normal)
+	Mao_Portrait (Normal): (I wonder if any of these move.)
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): (Ah, I should probably ask a maid before trying to make these move. I'll do that later.)
+	[signal arg="{"stats": {"scholarship": 10, "art": 5,}}"]
 - Check out the music sheets
+	update Mao (Sad)
+	Mao_Portrait (Sad): (Why am I looking at these? I don't know how to read sheet music.)
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): (Oh there's one of those music sampler things.)
+	[signal arg="{"music": "no_exit"}"]
+	update Mao (Normal)
+	Mao_Portrait (Normal): Hehe. Poke!
+	update Mao (Smile)
+	Mao_Portrait (Smile): (I can't tell if this is good or not. It sounds nice though.)
 - Play with Hiyori's stuffed dolls
 - Time to take everything and cart them away! [if {StorageRoomWheelbarrel} == false]
 	set {StorageRoomWheelbarrel} = true
@@ -33,5 +50,5 @@ label Choice
 	Mao_Portrait (Angry): (I'm not going to do that. Why would I do that?)
 	jump Choice
 update Mao (Smile)
-Mao_Portrait (Smile): (That was fun.)
+Mao_Portrait (Smile): (That was fun, but I should get going.)
 [signal arg="{"stats": {"stress": -5, "art": 10,}}"]

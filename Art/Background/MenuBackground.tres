@@ -1,9 +1,6 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c7hy834hboyd1"]
-
-[ext_resource type="Texture2D" uid="uid://docptb43rp6k6" path="res://Art/UI/01_Flat_Theme/Sprites/UI_Flat_Frame_01_Standard.png" id="1_tjuvi"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://c7hy834hboyd1"]
 
 [resource]
-texture = ExtResource("1_tjuvi")
 texture_margin_left = 5.3517
 texture_margin_top = 5.0
 texture_margin_right = 5.14396
