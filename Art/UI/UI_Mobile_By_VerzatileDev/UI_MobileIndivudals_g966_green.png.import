@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfaliijyh76xv"
-path="res://.godot/imported/UI_MobileIndivudals_rect432.png-d9c92764310588b5383748723edfdbee.ctex"
+uid="uid://bhnen6cn1eq0k"
+path="res://.godot/imported/UI_MobileIndivudals_g966_green.png-8c9b68699a13819661f5c99de22088a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect432.png"
-dest_files=["res://.godot/imported/UI_MobileIndivudals_rect432.png-d9c92764310588b5383748723edfdbee.ctex"]
+source_file="res://Art/UI/UI_Mobile_By_VerzatileDev/UI_MobileIndivudals_g966_green.png"
+dest_files=["res://.godot/imported/UI_MobileIndivudals_g966_green.png-8c9b68699a13819661f5c99de22088a2.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -52,7 +52,12 @@ func _ready():
 	Player.load_game()
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
+	#TODO, remove this, testing section
 	Player.max_walks = 100
+	Player.tower_level = 3
+	#TODO, end testing section
+	
+	
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -151,6 +156,7 @@ func do_job(job_name: String) :
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0
+	animation.stat_bars.load_stat_bars(lesson_name, "lessons")
 	if "gold" in lesson_stats: cost = -lesson_stats.gold
 	if (cost > Player.stats["gold"]):
 		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
@@ -178,6 +184,7 @@ func do_lesson(lesson_name: String) :
 func do_rest(rest_name: String) -> void:
 	var rest_stats = Constants.rests[rest_name]["stats"]
 	var cost = 0
+	animation.stat_bars.load_stat_bars(rest_name, "rests")
 	if "gold" in rest_stats: cost = -rest_stats.gold
 	if ( cost > Player.stats["gold"]):
 		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")

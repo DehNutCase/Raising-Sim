@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://joothuohgl4b"]
+
+[ext_resource type="Texture2D" uid="uid://bwhrcqexejtjj" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-2-5-5-2-8-0.png" id="1_3aw8j"]
+
+[resource]
+texture = ExtResource("1_3aw8j")
+region_rect = Rect2(20, 20, 100, 100)

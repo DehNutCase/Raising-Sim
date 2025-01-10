@@ -55,7 +55,7 @@ var victory_stat_gain = {}
 
 func _init():
 	base_stats = {
-		"max_hp": 100,
+		"max_hp": 100, #TODO, set to 20 after combat tests
 		"strength": 10,
 		"magic": 15,
 		"defense": 5,

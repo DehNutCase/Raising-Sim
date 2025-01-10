@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c5vy7q783e5ew"]
+
+[ext_resource type="StyleBox" uid="uid://dyrucspdd1nyc" path="res://Art/Themes/ThemeComponents/Combat_Button_Normal.tres" id="1_62863"]
+[ext_resource type="StyleBox" uid="uid://rqk6xeq1es5u" path="res://Art/Themes/ThemeComponents/Combat_Button_Pressed.tres" id="2_h7pjr"]
+[ext_resource type="StyleBox" uid="uid://joothuohgl4b" path="res://Art/Themes/ThemeComponents/Popup_Menu_Panel.tres" id="3_hwcd4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyp6f"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.796242, 0.796243, 0.796244, 1)
+Button/colors/font_outline_color = Color(0.356863, 0.701961, 0.894118, 1)
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 36
+Button/styles/hover = ExtResource("1_62863")
+Button/styles/normal = ExtResource("1_62863")
+Button/styles/pressed = ExtResource("2_h7pjr")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_qyp6f")
+PopupMenu/colors/font_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_outline_color = Color(0.356863, 0.701961, 0.894118, 1)
+PopupMenu/constants/h_separation = 20
+PopupMenu/constants/outline_size = 4
+PopupMenu/font_sizes/font_size = 36
+PopupMenu/styles/panel = ExtResource("3_hwcd4")

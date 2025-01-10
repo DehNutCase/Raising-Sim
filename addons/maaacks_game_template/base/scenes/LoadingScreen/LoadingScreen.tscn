@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd0jbh4metflb"]
+[gd_scene load_steps=4 format=3 uid="uid://cd0jbh4metflb"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/LoadingScreen/LoadingScreen.gd" id="1_gbk34"]
+[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="2_c68tp"]
 [ext_resource type="LabelSettings" uid="uid://do4j8mhc6qeqr" path="res://Art/Fonts/LabelSettings.tres" id="3_4bphh"]
 
 [node name="LoadingScreen" type="CanvasLayer"]
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_c68tp")
 
 [node name="BackPanel" type="Panel" parent="Control"]
 visible = false
@@ -33,6 +35,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.501961)
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

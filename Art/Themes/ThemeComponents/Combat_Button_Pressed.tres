@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://rqk6xeq1es5u"]
+
+[ext_resource type="Texture2D" uid="uid://delnvblxfdksb" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-21-8-0-9-0.png" id="1_531lt"]
+
+[resource]
+texture = ExtResource("1_531lt")
+modulate_color = Color(1, 1, 0.607843, 1)

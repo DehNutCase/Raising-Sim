@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbb64m6pku4ux"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Actions/rest_button.gd" id="1_vrgoo"]
-[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/UI/ThemeComponents/Job_Buttons.tres" id="2_k277r"]
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="2_k277r"]
 
 [node name="Margin" type="MarginContainer"]
 offset_right = 423.0

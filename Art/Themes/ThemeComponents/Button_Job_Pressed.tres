@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cuo5qmh7jtir8"]
+
+[ext_resource type="Texture2D" uid="uid://bhnen6cn1eq0k" path="res://Art/UI/UI_Mobile_By_VerzatileDev/UI_MobileIndivudals_g966_green.png" id="1_7m1y6"]
+
+[resource]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("1_7m1y6")
+region_rect = Rect2(0, 0, 470, 213)
+modulate_color = Color(0.843137, 0.843137, 0.843137, 1)

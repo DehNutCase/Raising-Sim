@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba4nxyxfux4mr"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Actions/walk_button.gd" id="1_1e4lv"]
-[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/UI/ThemeComponents/Job_Buttons.tres" id="2_q0tes"]
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="2_q0tes"]
 
 [node name="Margin" type="MarginContainer" groups=["Job_Button"]]
 offset_right = 423.0

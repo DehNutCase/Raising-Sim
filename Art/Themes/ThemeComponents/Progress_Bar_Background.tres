@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c7vgqg4bs5tes"]
+
+[ext_resource type="Texture2D" uid="uid://drag8hvkq7uyb" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect447.png" id="1_dh40y"]
+
+[resource]
+texture = ExtResource("1_dh40y")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 145, 38)

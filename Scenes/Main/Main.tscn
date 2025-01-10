@@ -1,17 +1,13 @@
-[gd_scene load_steps=38 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=33 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://Scenes/Main/RemainingWalks.gd" id="3_3fb26"]
-[ext_resource type="Texture2D" uid="uid://cyfs2o5pbfd46" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g966.png" id="4_u7p3o"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
-[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/UI/ThemeComponents/Button_Normal.tres" id="5_x735p"]
-[ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/UI/ThemeComponents/Button_Pressed.tres" id="6_5heda"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_hnd0u"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
@@ -28,6 +24,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
+[ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="25_dofej"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
 [ext_resource type="Texture2D" uid="uid://b1napua58pspf" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten2.png" id="27_wb2qf"]
 
@@ -35,28 +32,6 @@
 font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28rpo"]
-texture = ExtResource("4_u7p3o")
-modulate_color = Color(0.733005, 0.733005, 0.733005, 1)
-
-[sub_resource type="Theme" id="Theme_e26wc"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0.357479, 0.700425, 0.895395, 1)
-Button/constants/outline_size = 4
-Button/font_sizes/font_size = 24
-Button/styles/disabled = SubResource("StyleBoxTexture_28rpo")
-Button/styles/hover = ExtResource("5_x735p")
-Button/styles/normal = ExtResource("5_x735p")
-Button/styles/pressed = ExtResource("6_5heda")
-CheckBox/styles/hover_pressed = ExtResource("6_5heda")
-CheckButton/styles/hover_pressed = ExtResource("6_5heda")
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/constants/outline_size = 4
-Label/font_sizes/font_size = 24
-Label/fonts/font = ExtResource("7_hnd0u")
-PopupMenu/font_sizes/font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
 font_size = 28
@@ -83,6 +58,7 @@ script = ExtResource("1_bqq6y")
 
 [node name="FPS" type="Label" parent="."]
 texture_filter = 4
+layout_mode = 0
 offset_left = 10.0
 offset_top = 63.0
 offset_right = 144.0
@@ -95,6 +71,7 @@ script = ExtResource("2_h7wcs")
 
 [node name="RemainingWalks" type="Label" parent="."]
 texture_filter = 4
+layout_mode = 0
 offset_left = 10.0
 offset_top = 126.0
 offset_right = 144.0
@@ -106,11 +83,11 @@ vertical_alignment = 1
 script = ExtResource("3_3fb26")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 180.0
 offset_right = 1420.0
 offset_bottom = 160.0
 mouse_filter = 2
-theme = SubResource("Theme_e26wc")
 
 [node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
@@ -450,13 +427,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -525.0
-offset_top = -250.0
-offset_right = 525.0
-offset_bottom = 250.0
+offset_left = -550.0
+offset_top = -300.0
+offset_right = 550.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_e26wc")
+theme = ExtResource("1_tshxl")
 
 [node name="Animation" parent="Ui/MenuPanel" instance=ExtResource("17_5xmvy")]
 
@@ -494,11 +471,14 @@ size_flags_horizontal = 0
 text = "Enter Tower"
 
 [node name="CloseButton" type="Button" parent="Ui/MenuPanel"]
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+icon = ExtResource("25_dofej")
 icon_alignment = 2
 vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="Skip" type="CheckBox" parent="Ui/MenuPanel"]
 layout_mode = 2
@@ -541,13 +521,14 @@ offset_right = 600.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_e26wc")
+theme = ExtResource("1_tshxl")
 
 [node name="DialogicViewportContainer" parent="Ui/DialogicPanel" instance=ExtResource("26_25225")]
 visible = false
 layout_mode = 2
 
 [node name="LeftMenuContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 1460.0
 offset_top = 200.0
 offset_right = 1600.0

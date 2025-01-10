@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1h4kiu1ircoh"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Actions/lesson_button.gd" id="1_51pw8"]
-[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/UI/ThemeComponents/Job_Buttons.tres" id="2_2ramq"]
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="2_2ramq"]
 
 [node name="Margin" type="MarginContainer" groups=["Lesson_Button"]]
 offset_right = 423.0
