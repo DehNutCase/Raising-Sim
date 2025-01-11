@@ -55,9 +55,9 @@ const jobs = {
 		},
 		'difficulty': -50,
 		'proficiency': 200,
-		'proficiency_gain': 20,
+		'proficiency_gain': 25,
 		'skill':{
-			'proficiency_required': 160,
+			'proficiency_required': 140,
 			'id': 'apprentice_mason',
 		},
 	},
@@ -76,7 +76,7 @@ const jobs = {
 		},
 		'difficulty': 0,
 		'proficiency': 200,
-		'proficiency_gain': 20,
+		'proficiency_gain': 25,
 		'skill':{
 			'proficiency_required': 100,
 			'id': 'diligent_student',
@@ -99,7 +99,7 @@ const jobs = {
 		'proficiency': 200,
 		'proficiency_gain': 25,
 		'skill':{
-			'proficiency_required': 250,
+			'proficiency_required': 100,
 			'id': 'wizarding_license_apprentice',
 		},
 	},
@@ -119,7 +119,7 @@ const jobs = {
 		'proficiency': 100,
 		'proficiency_gain': 25,
 		'skill':{
-			'proficiency_required': 200,
+			'proficiency_required': 150,
 			'id': 'church_helper',
 		},
 	},
@@ -161,7 +161,7 @@ const jobs = {
 		'proficiency': 200,
 		'proficiency_gain': 25,
 		'skill':{
-			'proficiency_required': 200,
+			'proficiency_required': 100,
 			'id': 'budding_chef',
 		},
 	},
@@ -227,7 +227,7 @@ const jobs = {
 		'proficiency': 100,
 		'proficiency_gain': 25,
 		'skill':{
-			'proficiency_required': 200,
+			'proficiency_required': 100,
 			'id': 'local_preacher',
 		},
 	},
@@ -541,6 +541,10 @@ const lessons = {
 		'difficulty': 100,
 		'proficiency': 300,
 		'proficiency_gain': 25,
+		'skill':{
+			'proficiency_required': 100,
+			'id': 'meteor',
+		},
 	},
 	'Magic Officer Training': {
 		'stats': {
@@ -565,7 +569,7 @@ const lessons = {
 		'proficiency': 300,
 		'proficiency_gain': 25,
 		'skill':{
-			'proficiency_required': 200,
+			'proficiency_required': 100,
 			'id': 'honorary_officer',
 		},
 	},
