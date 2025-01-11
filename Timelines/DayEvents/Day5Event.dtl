@@ -1,0 +1,30 @@
+[background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
+join Mao (Normal) 1
+join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
+[history action="clear"]
+Rice_Portrait (Normal): Can I have a moment?
+update Mao (Normal)
+Mao_Portrait (Normal): Sure, what did you need?
+if not Player.event_flags.get("apprentice_robes_event"):
+	[signal arg="{"stats": {"gold": 10000,}}"]
+	Rice_Portrait (Normal): First of all, here.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Oh wow! What's all this money for?
+	update Mao (Normal)
+	Rice_Portrait (Normal): You.
+	Rice_Portrait (Normal): Her majesty asked me to give this to you in place of your belated birthday present.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Isn't this way too much money?
+	update Mao (Normal)
+	Rice_Portrait (Normal): Not at all.
+Rice_Portrait (Normal): Please remember that as part of your agreement with her majesty she'll be checking up on you near the end of month.
+update Mao (Sad)
+Mao_Portrait (Sad): Am I in trouble?
+Rice_Portrait (Normal): I hope you're joking.
+Mao_Portrait (Sad): This is one of those performance review things, right?
+Rice_Portrait (Normal): Not in the way you're thinking of. As far as I know, her majesty wouldn't care even if you did nothing except sleep for the entire month.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Oh.
+Rice_Portrait (Normal): Please at least take a walk once in a while if you decide to do that.
+update Mao (Angry)
+Mao_Portrait (Angry): I'm not going to lay on my bed for an entire month, jeez!

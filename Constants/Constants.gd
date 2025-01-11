@@ -1,5 +1,6 @@
 extends Node
 
+#TODO, move mode to config file
 const mode = "PC" #PC, PHONE, HTML. Change this before exporting.
 #TODO, Replace emojis with pictures (display issues on different systems)
 const jobs = {
@@ -1337,6 +1338,14 @@ const combat_skills = {
 		'message_player': "Magic increased!",
 		'label': "Brilliance",
 	},
+	'paintball': {
+		'weight': 10,
+		'effect_target': 'enemy',
+		'effect_type': 'magic_attack',
+		'effect_range': 'single',
+		'effect_strength': 50,
+		'label': "Paintball"
+	},
 	'fireball': {
 		'weight': 15,
 		'effect_target': 'enemy',
@@ -1344,6 +1353,17 @@ const combat_skills = {
 		'effect_range': 'single',
 		'effect_strength': 200,
 		'label': "Fireball"
+	},
+	'meteor': {
+		'weight': 10,
+		'effect_target': 'enemy',
+		'effect_type': 'magic_attack',
+		'effect_range': 'area',
+		'effect_strength': 150,
+		'label': "Meteor",
+		'animation_player': "res://Characters/Mao/Videos/mtn_04.ogv",
+		'animation_length_player': 2.0,
+		'animation_size_player': Vector2(600, 750),
 	},
 	'finishing_blow': {
 		'weight': 5,
@@ -1379,7 +1399,7 @@ const combat_skills = {
 		'effect_range': 'area',
 		'message': "Stats drastically increased for enemy party!",
 		'message_player': "Stats drastically increased!",
-		'animation': "res://Characters/Rice/Videos/mtn_03.ogv", #TODO, replace with enemy animation
+		#'animation': "res://Characters/Rice/Videos/mtn_03.ogv", #TODO, replace with enemy animation
 		'animation_player': "res://Characters/Mao/Videos/special_03.ogv",
 		'animation_length_player': 7.7,
 		'animation_size_player': Vector2(600, 750),

@@ -133,6 +133,16 @@ json_data = "[
         \"combat_skill\" : \"fireball\"
     },
     {
+        \"daily_stats\": \"{\\n\\\"magic\\\": 1\\n}\",
+        \"description\": \"Learned how to cast meteor in combat. \\nShould they really be teaching something like this in school?\",
+        \"id\": \"meteor\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{}\",
+        \"name\": \"Meteor\",
+        \"stats\": \"{}\",
+        \"combat_skill\" : \"meteor\"
+    },
+    {
         \"daily_stats\": \"{\\n\\\"strength\\\": 1,\\n\\\"max_hp\\\": 1\\n}\",
         \"description\": \"Unlocked advanced follow up attacks. (Switches targets and continues attacking if target dies.)\",
         \"flags\": \"{\\n\\\"followup_attacks\\\": 2\\n}\",

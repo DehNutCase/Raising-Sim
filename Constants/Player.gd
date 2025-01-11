@@ -25,7 +25,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var proficiencies = {}
 @export var player_class:String = "ink_mage"
 @export var label = "Mao"
-@export var combat_skills = []
+@export var combat_skills = ['paintball',]
 @export var live2d_active = true
 
 enum live2d_modes {LIVE2D, VIDEO}
@@ -55,11 +55,11 @@ var victory_stat_gain = {}
 
 func _init():
 	base_stats = {
-		"max_hp": 100, #TODO, set to 20 after combat tests
+		"max_hp": 20,
 		"strength": 10,
 		"magic": 15,
 		"defense": 5,
-		"speed": 1,
+		"speed": 10,
 		"resistance": 10,
 		"level": 1,
 		"gold": 0,

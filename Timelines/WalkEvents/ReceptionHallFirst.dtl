@@ -1,11 +1,11 @@
 [background arg="res://Art/Background/Arabian Inspired Backgrounds by Konett/Arabian-Courtyard1.png" fade="0.0" transition="Simple Fade"]
-join Mao (Normal) 1
+join Mao (Normal) 2
 [history action="clear"]
 update Mao (Sad)
 Mao_Portrait (Sad): What happened to all the maids? There's nobody here today.
 Mao_Portrait (Sad): (Ugh, it feels kind of spooky.)
 join Morgan (Silhouette) 3 [animation="Bounce In" length="0.3" wait="true"]
-update Mao (Surprised) [animation="Bounce" length="1"]
+update Mao (Surprised) 1 [animation="Bounce" length="1" move_time="1"]
 Morgan_Portrait (Silhouette): I like to think I'm somebody.
 Mao_Portrait (Surprised): Gah! What the heck?
 Morgan_Portrait (Silhouette): It's fine to say 'what the hell' in front of me.

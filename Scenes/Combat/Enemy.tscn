@@ -14,6 +14,7 @@ size_flags_vertical = 3
 script = ExtResource("1_gf4qc")
 
 [node name="TargetPanel" type="PanelContainer" parent="."]
+visible = false
 z_index = -1
 custom_minimum_size = Vector2(150, 155)
 layout_mode = 0

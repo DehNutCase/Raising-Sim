@@ -43,7 +43,6 @@ label Choice
 	Mao_Portrait (Normal): Hehe. Poke!
 	update Mao (Smile)
 	Mao_Portrait (Smile): (I can't tell if this is good or not. It sounds nice though.)
-- Play with Hiyori's stuffed dolls
 - Time to take everything and cart them away! [if {StorageRoomWheelbarrel} == false]
 	set {StorageRoomWheelbarrel} = true
 	update Mao (Angry)

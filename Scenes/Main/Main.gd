@@ -80,7 +80,6 @@ func _ready():
 	get_tree().call_group("ButtonMenu", "update_buttons")
 	
 	
-	Dialogic.start("StorageRoom")
 	#TODO, delete below, dev use only
 	#Player.background_inventory.create_and_add_item("gray")
 	#Dialogic.start("HiyoriAtelier")
@@ -466,9 +465,10 @@ func check_and_play_daily_events() -> void:
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
 		Dialogic.start("Day1Event")
 		Player.event_flags['Day1Event'] = true
-		
+	
+	#TODO, add day 5 event
 	if Player.day == 5 and !('Day5Event' in Player.event_flags):
-		Dialogic.start("Day1Event")
+		Dialogic.start("Day5Event")
 		Player.event_flags['Day5Event'] = true
 		
 #Tooltip replacement for mobile which doesn't have hover tooltips

@@ -18,18 +18,17 @@ boot_splash/image="res://Art/Live2DLogo/Live2D logo rectangle.png"
 boot_splash/fullsize=false
 config/icon="res://Cat.png"
 config/windows_native_icon="res://Cat.ico"
-boot_splash/minimum_display_time=1000
 
 [autoload]
 
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -48,6 +47,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Day1Event": "res://Timelines/DayEvents/Day1Event.dtl",
+"Day30Event": "res://Timelines/DayEvents/Day30Event.dtl",
+"Day5Event": "res://Timelines/DayEvents/Day5Event.dtl",
 "HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
 "HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",

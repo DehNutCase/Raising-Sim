@@ -104,12 +104,36 @@ func process_turns(player_action: String):
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
 				"magic_attack":
-					if target.get_node("Enemy") in death_queue:
-						return
-					var damage = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100) - target.get_node("Enemy").stats.resistance))
-					message = "Used " + action.label + " and dealt " + str(damage) + " damage."
-					display_toast(message)
-					await update_enemy_hp(target, -damage)
+					if action.get('animation_player') and not action in player_skill_use_flags:
+						player_skill_use_flags[action] = true
+						message = "Used " + action.label + "!"
+						display_toast(message)
+						video_stream_player.custom_minimum_size = action.animation_size_player
+						center_container.show()
+						video_stream_player.stream = load(action.animation_player)
+						video_stream_player.play()
+						await(get_tree().create_timer(action.animation_length_player).timeout)
+						center_container.hide()
+					elif action.get('animation_player'):
+						message = "Used " + action.label + "!"
+						display_toast(message)
+						
+					if action.effect_range == "area":
+						for enemy in enemies:
+							await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
+							if enemy in death_queue:
+								return
+							var damage = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100) - enemy.stats.resistance))
+							message = "Dealt " + str(damage) + " damage."
+							display_toast(message)
+							await update_enemy_hp(enemy.get_parent(), -damage)
+					else:
+						if target.get_node("Enemy") in death_queue:
+							return
+						var damage = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100) - target.get_node("Enemy").stats.resistance))
+						message = "Used " + action.label + " and dealt " + str(damage) + " damage."
+						display_toast(message)
+						await update_enemy_hp(target, -damage)
 				"buff":
 					if action.get('animation_player') and not action in player_skill_use_flags:
 						player_skill_use_flags[action] = true

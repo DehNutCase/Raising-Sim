@@ -14,12 +14,12 @@ Mao_Portrait (EyesClosed): (But her majesty was also at the party yesterday? I a
 	[signal arg="{"item": "apprentice_robes"}"]
 	update Mao (Normal)
 	Mao_Portrait (Normal): Well, I don't really get it, but thank you.
+	do Player.set_event_flag("apprentice_robes_event")
 - Decline
 	update Mao (Normal)
 	Mao_Portrait (Normal): I already got my present yesterday, so I think you should double check this is for me.
 	Rice_Portrait: Hmm, if you say so.
-	Rice_Portrait: (I should go ahead and let her majesty know. For the time being, I'll have Payroll send her the resale value.)
-	[signal arg="{"stats": {"gold": 10000}}"]
+	Rice_Portrait: (I should go ahead and let her majesty know.)
 update Mao (Normal)
 Rice_Portrait (Normal): One more thing. I'll be escorting you from today onwards.
 Rice_Portrait (Normal): I'll stay out of sight unless something serious happens, so you can just pretend I'm not here.
