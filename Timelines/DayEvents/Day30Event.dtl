@@ -2,3 +2,52 @@
 join Mao (Normal) 1
 join Morgan (Silhouette) 3
 [history action="clear"]
+update Mao (Surprised)
+Mao_Portrait (Surprised): Your majesty? Why are you in my room?
+Morgan_Portrait (Silhouette): Is there a reason I can't be here?
+Morgan_Portrait (Silhouette): I'll be quick. First of all, your current score is {Player.calculate_ending()[0]}.
+Mao_Portrait (Surprised): Score?
+Morgan_Portrait (Silhouette): Hmm?
+Morgan_Portrait (Silhouette): Oh, so that's what happened. This could be a problem.
+update Mao (Sad)
+Mao_Portrait (Sad): Umm, am I in trouble?
+Morgan_Portrait (Silhouette): Don't worry. I'm not angry, nor are you in danger.
+update Mao (Normal)
+Morgan_Portrait (Silhouette): For the time being, I'll give 'you' an explaination.
+Morgan_Portrait (Silhouette): Right now, this is our monthly review session. A quick meeting where I rate your current progress and answer some questions while I'm here.
+Mao_Portrait (Normal): Like why you've been walking around all shadowy recently?
+Morgan_Portrait (Silhouette): Sure. Would you like to use a question on that?
+update Mao (Sad)
+Mao_Portrait (Sad): Do the questions cost something?
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wait, that was a question too! Nevermind!
+update Mao (Sad)
+Morgan_Portrait (Silhouette): Fufufu. (I'll stop messing with her now.)
+update Morgan (Grin) [animation="Tada" length="0.2"]
+Morgan_Portrait (Grin): Is this better? And no, questions don't cost anything.
+update Mao (Normal)
+Mao_Portrait (Normal): Much better. So why were you all shadowy anyway?
+Morgan_Portrait (Grin): I would say it's the other way around. You simply became capable of seeing something you couldn't before, hence my previous appreance.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Oh.
+update Mao (Excited)
+Mao_Portrait (Excited): Wait, is this like a fairy tale curse? Am I supposed to be rounding up a ragtag team right now to find a magic wish machine to save you?
+update Morgan (Laugh)
+Morgan_Portrait (Laugh): Sure. I'll be waiting.
+update Mao (Angry)
+Mao_Portrait (Angry): Your majesty...
+update Morgan (Grin)
+Morgan_Portrait (Grin): At least in this case, I wasn't making fun of you. If you need a place to start, I left a ring which grants wishes at the top of the tower.
+Morgan_Portrait (Grin): I'll be quite impressed if you manage to reach it.
+Mao_Portrait (Angry): Please stop making fun of me.
+update Morgan (Laugh)
+Morgan_Portrait (Laugh): Fufufu.
+label Choice
+update Morgan (Grin)
+Morgan_Portrait (Grin): Do you have any other questions?
+- 
+- I don't have any more questions
+	jump End of Choice
+label End of Choice
+update Morgan (Grin)
+Morgan_Portrait (Grin): Then that'll be all.

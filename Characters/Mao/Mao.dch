@@ -51,16 +51,6 @@
 "scale": 1,
 "scene": ""
 },
-"Live2D": {
-"export_overrides": {
-"image": "\"\""
-},
-"ignore_char_scale": false,
-"mirror": false,
-"offset": Vector2(0, 25),
-"scale": 1.0,
-"scene": "res://Characters/Mao/Mao.tscn"
-},
 "Normal": {
 "export_overrides": {
 "image": "\"res://Characters/Mao/Images/exp_01_000.png\""

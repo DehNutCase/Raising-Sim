@@ -1,7 +1,6 @@
 [background arg="res://Art/Background/NoranekoGames/Futon_Room.png" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
-# Unfinished
 Alice_Portrait (Normal): Here's the storage room. It's fine to look around, but please let us know if you take anything.
 update Mao (Surprised)
 Mao_Portrait (Surprised): Wait, so I can just take stuff?
