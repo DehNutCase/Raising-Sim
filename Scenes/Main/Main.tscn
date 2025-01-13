@@ -115,15 +115,15 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="level" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="experience" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="scholarship" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="walks" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="level" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -662,6 +662,6 @@ text = "Battle"
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/mood"]
-[editable path="GUI (Mouse Ignore)/Counters/level"]
-[editable path="GUI (Mouse Ignore)/Counters/experience"]
 [editable path="GUI (Mouse Ignore)/Counters/scholarship"]
+[editable path="GUI (Mouse Ignore)/Counters/walks"]
+[editable path="GUI (Mouse Ignore)/Counters/level"]
