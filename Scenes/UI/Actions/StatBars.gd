@@ -14,6 +14,8 @@ func load_stat_bars(job = "farmwork", type = "jobs"):
 		self.get_child(i).stat_bar["value"] = Player.stats[job_bar.stat_name]
 		if "max" in Constants.stats[job_bar.stat_name]:
 			self.get_child(i).stat_bar.max_value = Constants.stats[job_bar.stat_name]["max"]
+		if job_bar.stat_name == "experience":
+			self.get_child(i).stat_bar.max_value = Player.get_required_experience(Player.stats.level - 1)
 		if "minx" in Constants.stats[job_bar.stat_name]:
 			self.get_child(i).stat_bar.min_value = Constants.stats[job_bar.stat_name]["min"]
 	pass # Replace with function body.

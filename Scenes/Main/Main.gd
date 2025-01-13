@@ -353,7 +353,11 @@ func process_stats(stats):
 		
 		if stat == "experience":
 			Player.gain_experience(stats["experience"])
-			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
+			var stat_gain = stats[stat]
+			if "bonus_exp" in Player.stats:
+				stat_gain *= (1 + Player.stats.bonus_exp/100.0)
+				stat_gain = int(stat_gain)
+			toast += "[" + plus + str(stat_gain) + " " + label + "] "
 		elif stat in Constants.stats.scholarship_unaffected:
 			Player.stats[stat] += stats[stat]
 			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
