@@ -40,8 +40,9 @@ var frames_to_skip = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Constants.mode != "PC":
-		Player.live2d_mode = Player.live2d_modes.VIDEO
+	#Use OS.has_feature to detect current deployment
+	#if OS.has_feature("mobile"):
+		#Player.live2d_mode = Player.live2d_modes.VIDEO
 	_update_live2d_display(Player.live2d_mode)
 	cubism_model.motion_finished.connect(_on_motion_finished)
 	live2d_video_player.finished.connect(_on_motion_finished)

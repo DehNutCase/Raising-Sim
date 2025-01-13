@@ -1,8 +1,4 @@
 extends Node
-
-#TODO, move mode to config file
-const mode = "PC" #PC, PHONE, HTML. Change this before exporting.
-#TODO, Replace emojis with pictures (display issues on different systems)
 const jobs = {
 	'Farmwork': {
 		'stats': {
@@ -654,59 +650,69 @@ const stats = {
 		'emoji': '❤',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'max_mp' = {
 		'label': 'Mana Points',
 		'emoji': '💙',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'strength' = {
 		'label': 'Strength',
 		'emoji': '💪',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'magic' = {
 		'label': 'Magic',
 		'emoji': '🪄',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'skill' = {
 		'label': 'Skill',
 		'emoji': '🎯',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'speed' = {
 		'label': 'Speed',
 		'emoji': '⚡',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'defense' = {
 		'label': 'Defense',
 		'emoji': '🛡',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'resistance' = {
 		'label': 'Resistance',
 		'emoji': '🥽',
 		'min': 0,
 		'max': 1000,
+		'value': 1,
 	},
 	'stress' = {
 		'label': 'Stress',
 		'emoji': '😣',
 		'min': 0,
 		'max': 100,
+		'value': -10,
 	},
 	'level' = {
 		'label': 'Level',
 		'min': 1,
 		'max': 1000,
+		'value': 20,
 	},
 	'experience' = {
 		'label': 'Experience',
@@ -716,6 +722,7 @@ const stats = {
 		'label': 'Gold',
 		'emoji': '🪙',
 		'max': 1000000,
+		'value': .01,
 	},
 	'scholarship' = {
 		'label': 'Scholarship',
@@ -723,11 +730,13 @@ const stats = {
 		'min': 0,
 		'max': 1000,
 		'bonus_ratio': 400.0,
+		'value': 1,
 	},
 	'art' = {
 		'label': 'Art',
 		'emoji': '🎨',
 		'max': 1000,
+		'value': 2,
 	},
 	'bonus_exp' = {
 		'label': 'Exp Bonus',

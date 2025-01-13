@@ -49,7 +49,7 @@ func update_labels():
 
 #Display tooltip as a toast for mobile
 func _on_texture_rect_gui_input(event):
-	if Constants.mode != "PHONE":
+	if !OS.has_feature("mobile"):
 		return
 	if event is InputEventMouseButton and event.pressed:
 		ToastParty.show({

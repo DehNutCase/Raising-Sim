@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=42 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
+[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_rlk5e"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
@@ -31,6 +32,7 @@ outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_icocv"]
+font = ExtResource("7_rlk5e")
 font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
@@ -400,8 +402,8 @@ PartHoodie = 1.0
 PartLeg = 1.0
 PartArmLA = 1.0
 PartArmRA = 1.0
-PartArmLB = 0.0
-PartArmRB = 0.0
+PartArmLB = 1.0
+PartArmRB = 1.0
 PartEyeBall = 1.0
 PartWandA = 1.0
 PartWandB = 1.0
@@ -658,6 +660,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Battle"
 
+[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="pressed" from="Ui/MenuPanel/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 

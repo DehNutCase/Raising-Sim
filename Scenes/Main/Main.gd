@@ -477,5 +477,6 @@ func check_and_play_daily_events() -> void:
 		
 #Tooltip replacement for mobile which doesn't have hover tooltips
 func _on_player_inventory_item_activated(tooltip):
-	if Constants.mode == "PHONE":
+	#Check if mobile and replace tooltips with toast
+	if OS.has_feature("mobile"):
 		display_toast(tooltip, "bottom", "center")
