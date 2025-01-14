@@ -401,6 +401,8 @@ func _on_timeline_started() -> void:
 	dialogic_panel.show()
 	dialogic_viewport_container.show()
 	current_state = states.DIALOGIC
+	#Clear temporary flags
+	Player.dialogic_temporary_flags = {}
 	
 func _on_timeline_ended() -> void:
 	get_tree().call_group("Live2DPlayer", "resume_live2d")
@@ -409,6 +411,8 @@ func _on_timeline_ended() -> void:
 	dialogic_viewport_container.hide()
 	current_state = states.READY
 	display_stats()
+	#Clear temporary flags
+	Player.dialogic_temporary_flags = {}
 	#Close open menus after timeline ends
 	_on_close_button_pressed()
 	

@@ -37,7 +37,7 @@ Morgan_Portrait (Laugh): Sure. I'll be waiting.
 update Mao (Angry)
 Mao_Portrait (Angry): Your majesty...
 update Morgan (Grin)
-Morgan_Portrait (Grin): At least in this case, I wasn't making fun of you. If you need a place to start, I left a ring which grants wishes at the top of the tower.
+Morgan_Portrait (Grin): At least in this case, I wasn't making fun of you. If you need a place to start, I left a wish granting ring at the top of the tower.
 Morgan_Portrait (Grin): I'll be quite impressed if you manage to reach it.
 Mao_Portrait (Angry): Please stop making fun of me.
 update Morgan (Laugh)
@@ -45,9 +45,67 @@ Morgan_Portrait (Laugh): Fufufu.
 label Choice
 update Morgan (Grin)
 Morgan_Portrait (Grin): Do you have any other questions?
-- 
-- I don't have any more questions
-	jump End of Choice
-label End of Choice
-update Morgan (Grin)
-Morgan_Portrait (Grin): Then that'll be all.
+# Use the below to prevent multiple selections of same question
+- So what am I supposed to be doing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Doing"))][else="hide"]
+	do Player.set_dialogic_temporary_flag("Choice_Doing")
+	Morgan_Portrait (Grin): Whatever you'd like.
+	Morgan_Portrait (Grin): I'd be lying if I said I didn't have any plans, but there's no need to feel pressured.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Shouldn't you at least tell me what your plans are?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Maybe later.
+- So what's my score about? [if !Player.dialogic_temporary_flags.get("Choice_Score"))][else="hide"]
+	do Player.set_dialogic_temporary_flag("Choice_Score")
+	Morgan_Portrait (Grin): Ah, yes, 'you' still need an explaination.
+	Morgan_Portrait (Grin): It's a quick way to measure your current progress, and I do take it into account somewhat when I'm assigning tasks. But you don't have to worry about that second half for the time being.
+	# Add evaluation based on score here
+	Morgan_Portrait (Grin): Your current score is {Player.calculate_ending()[0]}.
+	if Player.calculate_ending()[0] < 500:
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): Did you perhaps sleep the entire month away? Let me know if you managed to learn something from the experience.
+		update Mao (Blush)
+		Mao_Portrait (Blush): Sorry.
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): Part of freedom is discovering the so called wrong choices. By all means, do as you please.
+		[signal arg="{"stats": {"stress": -20, "scholarship": 100,}}"]
+	elif Player.calculate_ending()[0] < 1000:
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): This seems neither good nor bad. Frankly, it's a little boring.
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): You should have made a little less effort.
+		update Mao (Angry)
+		Mao_Portrait (Angry): Hmph.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): There, there. A reward seems to be in order, here's some extra pocket money.
+		[signal arg="{"stats": {"gold": 1000, "stress":  -10,}}"]
+	elif Player.calculate_ending()[0]  <  5000:
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Not bad. Not bad at all.
+		update Mao (Smile)
+		Mao_Portrait (Smile): I worked hard.
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+		[signal arg="{"stats": {"gold": 2500, "stress":  -25,}}"]
+	elif Player.calculate_ending()[0]  <  10000:
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Not bad. Not bad at all.
+		update Mao (Smile)
+		Mao_Portrait (Smile): I worked hard.
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+		Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+	else:
+		update Morgan (Surprise)
+		Morgan_Portrait (Surprise): Oh my, this result is a little unbelievable.
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): Still, I'll congratulate you for a very good job.
+		update Mao (Smile)
+		Mao_Portrait (Smile): I worked hard.
+	- I don't have any more questions
+		jump End of Choice
+	update Mao (Normal)
+	update Morgan (Grin)
+	jump Choice
+	label End of Choice
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Then that will be all.

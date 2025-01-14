@@ -12,7 +12,15 @@ func _ready():
 	pass # Replace with function body.
 
 func display_stats():
-	if !stat == "mood":
+	if stat == "mood":
+		label.text = "Mood"
+		value.text = str(100 - Player.stats["stress"])
+		emoji.text = '🫠'
+	elif stat == "walks":
+		label.text = "Walks"
+		value.text = str(Player.remaining_walks)
+		emoji.text = '👟'
+	else:
 		label.text = str(Constants.stats[stat]["label"])
 		value.text = str(Player.stats[stat])
 		
@@ -20,8 +28,3 @@ func display_stats():
 			emoji.text = Constants.stats[stat].emoji
 		else:
 			emoji.text = ''
-	else:
-		label.text = "Mood"
-		value.text = str(100 - Player.stats["stress"])
-		emoji.text = '🫠'
-		pass

@@ -27,6 +27,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var label = "Mao"
 @export var combat_skills = ['paintball',]
 @export var live2d_active = true
+var dialogic_temporary_flags = {}
 
 enum live2d_modes {LIVE2D, VIDEO}
 @export var live2d_mode = live2d_modes.LIVE2D:
@@ -100,8 +101,19 @@ func save_game():
 		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
 
 #Helper function to allow Dialogic to set flags
-func set_event_flag(flag: String):
+func set_event_flag(flag: String) -> void:
 	event_flags[flag] = true
+	
+#Helper function to calculate ending type and score
+func calculate_ending():
+	#need to return a number score and a string for ending name
+	#give every stat a score value which is multiplied to get added to score in constants
+	#TODO, add ending requirements to constants
+	return [0, "Ending Name"]
+
+#Helper function to set dialogic flags
+func set_dialogic_temporary_flag(flag:String) -> void:
+	dialogic_temporary_flags[flag] = true
 	
 func load_game():
 	var save_file
