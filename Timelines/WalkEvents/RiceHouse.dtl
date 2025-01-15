@@ -108,7 +108,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): The standard units for stats other than Hit Points and Mana aren't linear, so it can't be helped.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 20}}"]
-	elif Player.tower_level > 10:
+	elif Player.tower_level  >  8:
 		Rice_Portrait (Normal): Do you really need help? You seem to be doing well so far.
 		update Mao (Normal)
 		Mao_Portrait (Normal): Hehe. Bonk, bonk, bonk.
@@ -122,6 +122,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Mao_Portrait (Blush): Teehee.
 		Rice_Portrait (Normal): (There's something odd here. I don't believe Mao would forget something like that.)
 		Rice_Portrait (Normal): (I'll ask her majesty later.)
+		Rice_Portrait (Normal): If you haven't already, taking some Artillerist classes will teach you Meteor, which is quite useful for wiping out a large group at once.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 15}}"]
 	else:

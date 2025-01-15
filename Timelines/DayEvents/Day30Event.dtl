@@ -13,7 +13,7 @@ update Mao (Sad)
 Mao_Portrait (Sad): Umm, am I in trouble?
 Morgan_Portrait (Silhouette): Don't worry. I'm not angry, nor are you in danger.
 update Mao (Normal)
-Morgan_Portrait (Silhouette): For the time being, I'll give 'you' an explaination.
+Morgan_Portrait (Silhouette): For the time being, I'll give 'you' an explanation.
 Morgan_Portrait (Silhouette): Right now, this is our monthly review session. A quick meeting where I rate your current progress and answer some questions while I'm here.
 Mao_Portrait (Normal): Like why you've been walking around all shadowy recently?
 Morgan_Portrait (Silhouette): Sure. Would you like to use a question on that?
@@ -27,7 +27,7 @@ update Morgan (Grin) [animation="Tada" length="0.2"]
 Morgan_Portrait (Grin): Is this better? And no, questions don't cost anything.
 update Mao (Normal)
 Mao_Portrait (Normal): Much better. So why were you all shadowy anyway?
-Morgan_Portrait (Grin): I would say it's the other way around. You simply became capable of seeing something you couldn't before, hence my previous appreance.
+Morgan_Portrait (Grin): I would say it's the other way around. You simply became capable of seeing something you couldn't before, hence my previous appearance.
 update Mao (Surprised)
 Mao_Portrait (Surprised): Oh.
 update Mao (Excited)
@@ -54,9 +54,9 @@ Morgan_Portrait (Grin): Do you have any other questions?
 	Mao_Portrait (Surprised): Shouldn't you at least tell me what your plans are?
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): Maybe later.
-- So what's my score about? [if !Player.dialogic_temporary_flags.get("Choice_Score"))][else="hide"]
+- What's my score about? [if !Player.dialogic_temporary_flags.get("Choice_Score"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Score")
-	Morgan_Portrait (Grin): Ah, yes, 'you' still need an explaination.
+	Morgan_Portrait (Grin): Ah, yes, 'you' still need an explanation.
 	Morgan_Portrait (Grin): It's a quick way to measure your current progress, and I do take it into account somewhat when I'm assigning tasks. But you don't have to worry about that second half for the time being.
 	# Add evaluation based on score here
 	Morgan_Portrait (Grin): Your current score is {Player.calculate_ending()[0]}.
@@ -76,7 +76,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Mao (Angry)
 		Mao_Portrait (Angry): Hmph.
 		update Morgan (Grin)
-		Morgan_Portrait (Grin): There, there. A reward seems to be in order, here's some extra pocket money.
+		Morgan_Portrait (Grin): There, there. A reward seems to be in order.
 		[signal arg="{"stats": {"gold": 1000, "stress":  -10,}}"]
 	elif Player.calculate_ending()[0]  <  5000:
 		update Morgan (Grin)
@@ -85,15 +85,35 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		Mao_Portrait (Smile): I worked hard.
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Here's some pocket money, go buy yourself something delicious.
 		[signal arg="{"stats": {"gold": 2500, "stress":  -25,}}"]
 	elif Player.calculate_ending()[0]  <  10000:
-		update Morgan (Grin)
-		Morgan_Portrait (Grin): Not bad. Not bad at all.
-		update Mao (Smile)
-		Mao_Portrait (Smile): I worked hard.
+		update Morgan (Surprise)
+		Morgan_Portrait (Surprise): Oh my, this is quite excellent.
+		update Mao (Excited)
+		Mao_Portrait (Excited): I'm great, aren't I?
 		update Morgan (Laugh)
-		Morgan_Portrait (Laugh): Don't push yourself too hard, now.
-		Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+		Morgan_Portrait (Laugh): Sure.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Normally I'd tell you to start preparing for a class change at this point, but let's keep going like this for a while longer.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Class change?
+		update Mao (Normal)
+		Morgan_Portrait (Grin): It's a little early for you to think about right now, but it's a way to break past your limits. Or rather, raise them.
+		update Morgan (Happy)
+		Morgan_Portrait (Happy): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
+		update Mao (Angry)
+		Mao_Portrait (Angry): Doesn't that make everything I've done so far a waste of time?
+		Morgan_Portrait (Grin): Not at all. You'll keep everything else.
+		update Mao (Normal)
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Anyway, you did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
+		[signal arg="{"stats": {"gold": 4000, "stress":  -30,}}"]
 	else:
 		update Morgan (Surprise)
 		Morgan_Portrait (Surprise): Oh my, this result is a little unbelievable.
@@ -101,11 +121,36 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		Morgan_Portrait (Laugh): Still, I'll congratulate you for a very good job.
 		update Mao (Smile)
 		Mao_Portrait (Smile): I worked hard.
-	- I don't have any more questions
-		jump End of Choice
-	update Mao (Normal)
-	update Morgan (Grin)
-	jump Choice
-	label End of Choice
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Then that will be all.
+		update Mao (Normal)
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Indeed. I'll have Miss Glassfield send you the class change information.
+		# use class_change_information_event to trigger timeline or menu for class change info
+		do Player.set_event_flag("class_change_information_event")
+		if Player.event_flags.get("apprentice_robes_event") and not Player.event_flags.get("witch_class_change_flag"):
+			do Player.set_event_flag("witch_class_change_flag")
+			update Morgan (Frown)
+			Morgan_Portrait (Frown): By the way, would you like to apprentice under me?
+			Morgan_Portrait (Frown): Not for my class as Saintess, but rather Albion's Witch.
+			update Mao (Sad)
+			Mao_Portrait (Sad): Umm.
+			Morgan_Portrait (Frown): There's no need to answer immediately, think it over. This offer isn't necessarily a good thing.
+			update Morgan (Grin)
+			update Mao (Normal)
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Well, that's the serious side of things. Here's some pocket money, you should take a break and celebrate. There's a few things I need to prepare on my end, so I won't be able to join with you.
+		update Mao (Sad)
+		Mao_Portrait (Sad): Aww.
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): I'm sure Miss Glassfield will be happy to keep you company.
+		[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
+-  [if !Player.dialogic_temporary_flags.get("Choice_Doing"))][else="hide"]
+	do Player.set_dialogic_temporary_flag("Choice_Doing")
+- I don't have any more questions
+	jump End of Choice
+update Mao (Normal)
+update Morgan (Grin)
+jump Choice
+label End of Choice
+update Morgan (Grin)
+Morgan_Portrait (Grin): Then that will be all.
+

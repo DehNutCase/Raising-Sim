@@ -12,7 +12,7 @@ Hiyori_Portrait (Surprised): Well there's this, I suppose, but it's not really a
 join Gray (Normal) 2
 Hiyori_Portrait (Normal): Here.
 update Mao (Smile)
-Mao_Portrait (Smile): Awww.
+Mao_Portrait (Smile): Aww.
 update Mao (Excited)
 Mao_Portrait (Excited): Can I pet it?
 Hiyori_Portrait (Normal): Sure, but it's just a golem.
@@ -20,7 +20,7 @@ Hiyori_Portrait (Normal): Sure, but it's just a golem.
 update Gray 1
 update Mao (Smile) 2 [animation="Tada" move_time="0.3"]
 update Gray 2
-Mao_Portrait (Smile): So why were you embarassed anyway? She's so cute!
+Mao_Portrait (Smile): So why were you embarrassed anyway? She's so cute!
 Hiyori_Portrait (Surprised): (She?)
 update Mao (EyesClosed)
 Hiyori_Portrait (Normal): Like I said, this one isn't really a sculpture. It's more like something I cheated out, so it doesn't count.
@@ -31,3 +31,4 @@ update Mao (Smile)
 Mao_Portrait (Smile): Haha, her fur is so soft.
 Hiyori_Portrait (Normal): (Looks like she's having fun. I'll leave her alone for now.)
 [signal arg="{"stats": {"stress": -50}}"]
+

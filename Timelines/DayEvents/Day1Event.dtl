@@ -9,7 +9,7 @@ Mao_Portrait (Surprised): Um, didn't you already give me your present yesterday?
 Rice_Portrait (Normal): That was your birthday present. This is your belated birthday present.
 Rice_Portrait (Normal): And it's not from me, her majesty asked me to give it to you on New Year's. Apparently it's supposed to help with your new job.
 update Mao (EyesClosed)
-Mao_Portrait (EyesClosed): (But her majesty was also at the party yesterday? I already recieved her present.)
+Mao_Portrait (EyesClosed): (But her majesty was also at the party yesterday? I already received her present.)
 - Accept Robes
 	[signal arg="{"item": "apprentice_robes"}"]
 	update Mao (Normal)
@@ -34,3 +34,4 @@ update Mao (Surprised)
 Mao_Portrait (Surprised): Wait, she vanished!?
 update Mao (Angry)
 Mao_Portrait (Angry): (Why is everyone from the palace a weirdo?)
+

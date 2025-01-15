@@ -27,7 +27,7 @@ Mao_Portrait (Blush): Haha, sorry.
 	Morgan_Portrait (Silhouette): If you ask whether I have any or not, I do. Yet I believe it would be meaningful for you to do as you wished, at least for now.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Um...?
-	Morgan_Portrait (Silhouette): If you truly wished for it. If you wish for me to control all your choices for the forseeable future. Certainly, I can give you 'advice',
+	Morgan_Portrait (Silhouette): If you truly wished for it. If you wish for me to control all your choices for the foreseeable future. Certainly, I can give you 'advice',
 	update Mao (Sad)
 	Mao_Portrait (Sad): You're starting to sound creepy, your majesty.
 	Morgan_Portrait (Silhouette): Fufufu.
@@ -79,3 +79,4 @@ Morgan_Portrait (Silhouette): That will be all for today.
 update Mao (Sad)
 Mao_Portrait (Sad): (I don't know why, but it's kind of scary when her majesty is all shadowy like this. It's weird, since she's still just as nice as usual.)
 [signal arg="{"stats": {"stress": 10, "max_hp": 1, "max_mp":1}}"]
+
