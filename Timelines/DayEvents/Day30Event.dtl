@@ -137,14 +137,55 @@ Morgan_Portrait (Grin): Do you have any other questions?
 			update Morgan (Grin)
 			update Mao (Normal)
 		update Morgan (Grin)
-		Morgan_Portrait (Grin): Well, that's the serious side of things. Here's some pocket money, you should take a break and celebrate. There's a few things I need to prepare on my end, so I won't be able to join with you.
+		Morgan_Portrait (Grin): Well, that's the serious side of things. Here's some pocket money, you should take a break and celebrate. There's a few things I need to prepare on my end, so I won't be able to join you.
 		update Mao (Sad)
 		Mao_Portrait (Sad): Aww.
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): I'm sure Miss Glassfield will be happy to keep you company.
 		[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
--  [if !Player.dialogic_temporary_flags.get("Choice_Doing"))][else="hide"]
-	do Player.set_dialogic_temporary_flag("Choice_Doing")
+- Can you teach me a super invincible spell? [if !Player.dialogic_temporary_flags.get("Choice_Super_Move"))][else="hide"]
+	do Player.set_dialogic_temporary_flag("Choice_Super_Move")
+	update Mao (Excited)
+	Mao_Portrait (Excited): ⠀
+	update Morgan (Surprise)
+	Morgan_Portrait (Surprise): Even if I did, would you be able to use it?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): It would be much faster to ask Miss Glassfield to take care of anything you can't handle with a simple Fireball.
+	update Mao (Excited)
+	Mao_Portrait (Excited): ⠀
+	update Morgan (Sigh)
+	Morgan_Portrait (Sigh): If you must know, I do have quite the library of the kind of flashy, inefficient, and ostentatious spells you're asking for.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): But I won't teach you.
+	update Mao (Sad)
+	Mao_Portrait (Sad): ⠀
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Maybe when you're older.
+- So why are we doing this whole thing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Why"))]
+	do Player.set_dialogic_temporary_flag("Choice_Why")
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Oh my. It's a little early to talk about why, but I can tell you the original reason, at least.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): My level is too high.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Huh?
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): It's the nature of a combat class. It's difficult to grow outside of fighting, and even when you do fight, anyone more than five levels below you is worth nothing.
+	update Morgan (Happy)
+	Morgan_Portrait (Happy): So it's only natural to try to find ways to mass produce high leveled people, dont you think?
+	update Morgan (Grin)
+	update Mao (Sad)
+	Mao_Portrait (Sad): Wait, so are you raising me up just to drink me like an experience potion later?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Why would I do that?
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Even if we set aside the fact I'm very fond of you, you are my subject. Why I would spend so much time and resources to make you a productive member of society only to use you up immediately?
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Then what's the point?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Maybe there is no point? That was only the original reason, after all.
+	update Mao (Angry)
+	Mao_Portrait (Angry): Hmph.
 - I don't have any more questions
 	jump End of Choice
 update Mao (Normal)
@@ -153,4 +194,3 @@ jump Choice
 label End of Choice
 update Morgan (Grin)
 Morgan_Portrait (Grin): Then that will be all.
-

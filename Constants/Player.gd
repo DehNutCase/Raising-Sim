@@ -109,7 +109,11 @@ func calculate_ending():
 	#need to return a number score and a string for ending name
 	#give every stat a score value which is multiplied to get added to score in constants
 	#TODO, add ending requirements to constants
-	return [0, "Ending Name"]
+	var score = 0
+	for stat in stats:
+		if "value" in Constants.stats[stat]:
+			score += Constants.stats[stat].value * stats[stat]
+	return [score, "Ending Name"]
 
 #Helper function to set dialogic flags
 func set_dialogic_temporary_flag(flag:String) -> void:

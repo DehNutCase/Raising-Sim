@@ -706,7 +706,7 @@ const stats = {
 		'emoji': '😣',
 		'min': 0,
 		'max': 100,
-		'value': -10,
+		'value': -30,
 	},
 	'level' = {
 		'label': 'Level',
