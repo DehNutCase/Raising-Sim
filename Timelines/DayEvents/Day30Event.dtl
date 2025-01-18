@@ -14,7 +14,7 @@ Mao_Portrait (Sad): Umm, am I in trouble?
 Morgan_Portrait (Silhouette): Don't worry. I'm not angry, nor are you in danger.
 update Mao (Normal)
 Morgan_Portrait (Silhouette): For the time being, I'll give 'you' an explanation.
-Morgan_Portrait (Silhouette): Right now, this is our monthly review session. A quick meeting where I rate your current progress and answer some questions while I'm here.
+Morgan_Portrait (Silhouette): As part of our agreement, I'll be coming over every month or so to rate your current progress and answer some questions while I'm here.
 Mao_Portrait (Normal): Like why you've been walking around all shadowy recently?
 Morgan_Portrait (Silhouette): Sure. Would you like to use a question on that?
 update Mao (Sad)
@@ -22,7 +22,7 @@ Mao_Portrait (Sad): Do the questions cost something?
 update Mao (Surprised)
 Mao_Portrait (Surprised): Wait, that was a question too! Nevermind!
 update Mao (Sad)
-Morgan_Portrait (Silhouette): Fufufu. (I'll stop messing with her now.)
+Morgan_Portrait (Silhouette): Fufufu.
 update Morgan (Grin) [animation="Tada" length="0.2"]
 Morgan_Portrait (Grin): Is this better? And no, questions don't cost anything.
 update Mao (Normal)
@@ -112,7 +112,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
 		update Morgan (Grin)
-		Morgan_Portrait (Grin): Anyway, you did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
+		Morgan_Portrait (Grin): You did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
 		[signal arg="{"stats": {"gold": 4000, "stress":  -30,}}"]
 	else:
 		update Morgan (Surprise)
@@ -137,7 +137,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 			update Morgan (Grin)
 			update Mao (Normal)
 		update Morgan (Grin)
-		Morgan_Portrait (Grin): Well, that's the serious side of things. Here's some pocket money, you should take a break and celebrate. There's a few things I need to prepare on my end, so I won't be able to join you.
+		Morgan_Portrait (Grin): Well, that's the business side of things. Here's some pocket money, go take a break and celebrate. There's a few things I need to prepare on my end, so I won't be able to join you.
 		update Mao (Sad)
 		Mao_Portrait (Sad): Aww.
 		update Morgan (Laugh)
@@ -170,7 +170,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Huh?
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): It's the nature of a combat class. It's difficult to grow outside of fighting, and even when you do fight, anyone more than five levels below you is worth nothing.
+	Morgan_Portrait (Grin): It's the nature of a combat class. It's difficult to grow outside of fighting, and even when you do fight, anyone more than five levels below you isn't worth anything.
 	update Morgan (Happy)
 	Morgan_Portrait (Happy): So it's only natural to try to find ways to mass produce high leveled people, dont you think?
 	update Morgan (Grin)
