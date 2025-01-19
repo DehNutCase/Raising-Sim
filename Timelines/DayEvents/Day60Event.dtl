@@ -15,6 +15,7 @@ if Player.calculate_ending()[0] < 500:
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): In its own way, this is quite the accomplishment. A reward is in order.
 	[signal arg="{"stats": {"stress": -20, "scholarship": 100, "gold": 25000,}}"]
+	jump Choice
 elif Player.calculate_ending()[0] < 1000:
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Looks like you've been taking it easy.
@@ -26,6 +27,7 @@ elif Player.calculate_ending()[0] < 1000:
 	Morgan_Portrait (Grin): There's no need to feel pressured, it's perfectly fine to go at your own pace.
 	update Mao (Normal)
 	[signal arg="{"stats": {"gold": 2000, "stress":  -20,}}"]
+	jump Choice
 elif Player.calculate_ending()[0]  <  5000:
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Not bad.
@@ -36,6 +38,7 @@ elif Player.calculate_ending()[0]  <  5000:
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Here's some pocket money, go buy yourself something delicious.
 	[signal arg="{"stats": {"gold": 2500, "stress":  -25,}}"]
+	jump Choice
 elif Player.calculate_ending()[0]  <  10000:
 	update Morgan (Surprise)
 	Morgan_Portrait (Surprise): Oh my, this is quite excellent.
@@ -64,6 +67,7 @@ elif Player.calculate_ending()[0]  <  10000:
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): You did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
 	[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
+	jump Choice
 else:
 	update Morgan (Surprise)
 	Morgan_Portrait (Surprise): Oh my, this result quite excellent.
@@ -94,67 +98,80 @@ else:
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): I'm sure Miss Glassfield will be happy to keep you company.
 	[signal arg="{"stats": {"gold": 6000, "stress":  -30,}}"]
+	jump Choice
 label Choice
 update Mao (Normal)
 update Morgan (Grin)
 Morgan_Portrait (Grin): Do you have any questions?
-# Use the below to prevent multiple selections of same question
-- So what am I supposed to be doing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Doing"))][else="hide"]
-	do Player.set_dialogic_temporary_flag("Choice_Doing")
-	Morgan_Portrait (Grin): Whatever you'd like.
-	Morgan_Portrait (Grin): I'd be lying if I said I didn't have any plans, but there's no need to feel pressured.
-	update Mao (Surprised)
-	Mao_Portrait (Surprised): Shouldn't you at least tell me what your plans are?
+- So what should I do now? [if !Player.dialogic_temporary_flags.get("Choice_Do_Now"))][else="hide"]
+	do Player.set_dialogic_temporary_flag("Choice_Do_Now")
+	Morgan_Portrait (Grin): Let's see, by now you should have settled yourself somewhat.
+	Morgan_Portrait (Grin): I don't know what you want to do in the future, so I'll just give some general advice.
+	Morgan_Portrait (Grin): By now you should start preparing for a class change. The requirements are quite low, so there's no need to rush.
+	Morgan_Portrait (Grin): Instead, you should bear in mind that a class change would reset your level and status, but leave everything else the same.
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Maybe later.
-	do Player.set_dialogic_temporary_flag("Choice_Temporary")
+	Morgan_Portrait (Laugh): You can try hoarding a dragon's nest worth of gold, for example.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Or you can learn skills to prepare for what you want to do. Spells for fighting and support, techniques for making things, or maybe just getting used to a job you'd like to do.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Do I have to change my class?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Not at all.
+	update Mao (Normal)
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): What you should be doing is what you want to do.
 - Can you teach me a super invincible spell? [if !Player.dialogic_temporary_flags.get("Choice_Super_Move"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Super_Move")
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
-	update Morgan (Surprise)
-	Morgan_Portrait (Surprise): Even if I did, would you be able to use it?
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): It would be much faster to ask Miss Glassfield to take care of anything you can't handle with a simple Fireball.
+	Morgan_Portrait (Laugh): I would be happy to have a staring contest with you, but I'll go ahead an admit defeat.
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
-	update Morgan (Sigh)
-	Morgan_Portrait (Sigh): If you must know, I do have quite the library of the kind of flashy, inefficient, and ostentatious spells you're asking for.
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): But I won't teach you.
+	Morgan_Portrait (Grin): However, I won't teach you just because I lost.
 	update Mao (Sad)
 	Mao_Portrait (Sad): ⠀
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Maybe when you're older.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Sorry, not sorry.
 - So why are we doing this whole thing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Why"))]
 	do Player.set_dialogic_temporary_flag("Choice_Why")
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Oh my. It's a little early to talk about why, but I can tell you the original reason, at least.
+	Morgan_Portrait (Grin): It's still a little early to talk about the current reason, but I can tell you the previous reason, at least.
+	Morgan_Portrait (Grin): You are an SSR.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Huh?
+	Morgan_Portrait (Grin): Or a five star, if you prefer.
+	Morgan_Portrait (Grin): It's like this, if a bag had ninety-nine black marbles and a single white marble, you would be that single white marble.
+	update Mao (Excited)
+	Mao_Portrait (Excited): Does that mean I'm someone awesome?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Sure.
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): My level is too high.
+	Morgan_Portrait (Grin): Except you aren't.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Huh?
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): It's the nature of a combat class. It's difficult to grow outside of fighting, and even when you do fight, anyone more than five levels below you isn't worth anything.
-	update Morgan (Happy)
-	Morgan_Portrait (Happy): So it's only natural to try to find ways to mass produce high leveled people, dont you think?
-	update Morgan (Grin)
-	update Mao (Sad)
-	Mao_Portrait (Sad): Wait, so are you raising me up just to drink me like an experience potion later?
+	Morgan_Portrait (Grin): To be an SSR, two requirements have to be met. First, you need to have more than a thousand points. Second, you need a special trait or skill at the SSR level.
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Why would I do that?
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Even if we set aside the fact I'm very fond of you, you are my subject. Why I would spend so much time and resources to make you a productive member of society only to use you up immediately?
-	update Mao (Surprised)
-	Mao_Portrait (Surprised): Then what's the point?
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Maybe there is no point? That was only the original reason, after all.
+	Morgan_Portrait (Laugh): By the way, you have so many points that it wouldn't be wrong to call you a hypothetical six star, or an SSSR.
 	update Mao (Angry)
-	Mao_Portrait (Angry): Hmph.
+	Mao_Portrait (Angry): Please stop messing with me, your majesty.
+	Morgan_Portrait (Laugh): Sorry. But I am being quite serious.
+	update Mao (Normal)
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Anyway, the problem is the second requirement. As far as I can tell, you don't have anything at the SSR level.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Doesn't that just make me a four star? Um... an SR?
+	Morgan_Portrait (Grin): An SR is limited to eight hundred points at most. In other words, your SSR trait is something that can hide itself.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Oh. So what does that mean, exactly?
+	Morgan_Portrait (Grin): It meant I was curious. That was the previous reason.
+	update Mao (Angry)
+	Mao_Portrait (Angry): Why do I get the feeling you've been making fun of me this whole time?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Fufufu.
 - I don't have any more questions
 	jump End of Choice
-update Mao (Normal)
-update Morgan (Grin)
 jump Choice
 label End of Choice
 update Morgan (Grin)

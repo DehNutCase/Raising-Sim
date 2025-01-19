@@ -43,6 +43,7 @@ Mao_Portrait (Angry): Please stop making fun of me.
 update Morgan (Laugh)
 Morgan_Portrait (Laugh): Fufufu.
 label Choice
+update Mao (Normal)
 update Morgan (Grin)
 Morgan_Portrait (Grin): Do you have any other questions?
 # Use the below to prevent multiple selections of same question
@@ -68,6 +69,8 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): Part of freedom is discovering the so called wrong choices. By all means, do as you please.
 		[signal arg="{"stats": {"stress": -20, "scholarship": 100,}}"]
+		jump Choice
+		# Nested ifs cause issues down the line without using jumps
 	elif Player.calculate_ending()[0] < 1000:
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): This seems neither good nor bad. Frankly, it's a little boring.
@@ -78,6 +81,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): There, there. A reward seems to be in order.
 		[signal arg="{"stats": {"gold": 1000, "stress":  -10,}}"]
+		jump Choice
 	elif Player.calculate_ending()[0]  <  5000:
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): Not bad. Not bad at all.
@@ -88,6 +92,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): Here's some pocket money, go buy yourself something delicious.
 		[signal arg="{"stats": {"gold": 2500, "stress":  -25,}}"]
+		jump Choice
 	elif Player.calculate_ending()[0]  <  10000:
 		update Morgan (Surprise)
 		Morgan_Portrait (Surprise): Oh my, this is quite excellent.
@@ -114,6 +119,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): You did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
 		[signal arg="{"stats": {"gold": 4000, "stress":  -30,}}"]
+		jump Choice
 	else:
 		update Morgan (Surprise)
 		Morgan_Portrait (Surprise): Oh my, this result is a little unbelievable.
@@ -143,6 +149,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): I'm sure Miss Glassfield will be happy to keep you company.
 		[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
+		jump Choice
 - Can you teach me a super invincible spell? [if !Player.dialogic_temporary_flags.get("Choice_Super_Move"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Super_Move")
 	update Mao (Excited)
@@ -188,8 +195,6 @@ Morgan_Portrait (Grin): Do you have any other questions?
 	Mao_Portrait (Angry): Hmph.
 - I don't have any more questions
 	jump End of Choice
-update Mao (Normal)
-update Morgan (Grin)
 jump Choice
 label End of Choice
 update Morgan (Grin)
