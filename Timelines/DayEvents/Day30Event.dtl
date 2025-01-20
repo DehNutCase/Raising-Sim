@@ -46,7 +46,6 @@ label Choice
 update Mao (Normal)
 update Morgan (Grin)
 Morgan_Portrait (Grin): Do you have any other questions?
-# Use the below to prevent multiple selections of same question
 - So what am I supposed to be doing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Doing"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Doing")
 	Morgan_Portrait (Grin): Whatever you'd like.
@@ -104,8 +103,8 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		Morgan_Portrait (Grin): Normally I'd tell you to start preparing for a class change at this point, but let's keep going like this for a while longer.
 		update Mao (Surprised)
 		Mao_Portrait (Surprised): Class change?
-		update Mao (Normal)
 		Morgan_Portrait (Grin): It's a little early for you to think about right now, but it's a way to break past your limits. Or rather, raise them.
+		update Mao (Normal)
 		update Morgan (Happy)
 		Morgan_Portrait (Happy): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
 		update Morgan (Grin)
@@ -128,10 +127,24 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		update Mao (Smile)
 		Mao_Portrait (Smile): I worked hard.
 		update Mao (Normal)
-		update Morgan (Grin)
-		Morgan_Portrait (Grin): Indeed. I'll have Miss Glassfield send you the class change information.
-		# use class_change_information_event to trigger timeline or menu for class change info
-		do Player.set_event_flag("class_change_information_event")
+		if not Player.event_flags.get("class_change_information_event"):
+			do Player.set_event_flag("class_change_information_event")
+			update Morgan (Grin)
+			Morgan_Portrait (Grin): Indeed. I'll have Miss Glassfield send you the class change information.
+			update Mao (Surprised)
+			Mao_Portrait (Surprised): Class change?
+			Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
+			update Mao (Normal)
+			update Morgan (Happy)
+			Morgan_Portrait (Happy): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+			update Morgan (Grin)
+			Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
+			update Mao (Angry)
+			Mao_Portrait (Angry): Doesn't that make everything I've done so far a waste of time?
+			Morgan_Portrait (Grin): Not at all. You'll keep everything else.
+			update Mao (Normal)
+			update Morgan (Laugh)
+			Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
 		if Player.event_flags.get("apprentice_robes_event") and not Player.event_flags.get("witch_class_change_flag"):
 			do Player.set_event_flag("witch_class_change_flag")
 			update Morgan (Frown)

@@ -5,22 +5,22 @@ join Morgan (Grin) 3
 Morgan_Portrait (Grin): Good morning, Mao. Your current score is {Player.calculate_ending()[0]}.
 if Player.calculate_ending()[0] < 500:
 	update Morgan (Surprise)
-	Morgan_Portrait (Surprise): Oh my. It's quite amazing that you've managed this.
+	Morgan_Portrait (Surprise): Oh my. This is a truly outrageous achievement.
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): I would have gone crazy doing nothing for so long.
+	Morgan_Portrait (Laugh): I'm not entirely sure how you even managed this.
 	update Mao (Angry)
-	Mao_Portrait (Angry): Please don't make fun of me.
+	Mao_Portrait (Angry): Please stop it, your majesty.
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): Fufufu.
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): In its own way, this is quite the accomplishment. A reward is in order.
-	[signal arg="{"stats": {"stress": -20, "scholarship": 100, "gold": 25000,}}"]
+	Morgan_Portrait (Grin): I should really stop rewarding you for this, but I won't.
+	[signal arg="{"stats": {"stress": -30, "scholarship": 200, "gold": 30000,}}"]
 	jump Choice
 elif Player.calculate_ending()[0] < 1000:
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Looks like you've been taking it easy.
+	Morgan_Portrait (Grin): Oh dear, I'm not quite sure what I should say here.
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): It's good that you aren't pushing yourself.
+	Morgan_Portrait (Laugh): Still, it's good that you aren't pushing yourself.
 	update Mao (Blush)
 	Mao_Portrait (Blush): Sorry.
 	update Morgan (Grin)
@@ -30,16 +30,47 @@ elif Player.calculate_ending()[0] < 1000:
 	jump Choice
 elif Player.calculate_ending()[0]  <  5000:
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Not bad.
-	update Mao (Smile)
-	Mao_Portrait (Smile): Hehe.
+	Morgan_Portrait (Grin): Hmm, this is neither here nor there. But it's by no means bad.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Umm...
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+	Morgan_Portrait (Laugh): There's no rush, so don't worry if you feel like you're falling behind. Because you aren't.
+	update Mao (Normal)
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Here's some pocket money, go buy yourself something delicious.
-	[signal arg="{"stats": {"gold": 2500, "stress":  -25,}}"]
+	[signal arg="{"stats": {"gold": 3000, "stress":  -30,}}"]
 	jump Choice
 elif Player.calculate_ending()[0]  <  10000:
+	update Morgan (Surprise)
+	Morgan_Portrait (Surprise): Good job.
+	update Mao (Blush)
+	Mao_Portrait (Blush): Hehe.
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Don't push yourself too hard, now.
+	update Mao (Normal)
+	if not Player.event_flags.get("class_change_information_event"):
+		do Player.set_event_flag("class_change_information_event")
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): You can start getting ready for your class change now, I'll have Miss Glassfield send you the class change information.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Class change?
+		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
+		update Mao (Normal)
+		update Morgan (Happy)
+		Morgan_Portrait (Happy): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
+		update Mao (Angry)
+		Mao_Portrait (Angry): Doesn't that make everything I've done so far a waste of time?
+		Morgan_Portrait (Grin): Not at all. You'll keep everything else.
+		update Mao (Normal)
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Why don't you go out and relax somewhere? Here's some pocket money.
+	[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
+	jump Choice
+elif Player.calculate_ending()[0]  <  20000:
 	update Morgan (Surprise)
 	Morgan_Portrait (Surprise): Oh my, this is quite excellent.
 	update Mao (Excited)
@@ -67,7 +98,7 @@ elif Player.calculate_ending()[0]  <  10000:
 		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): You did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
-	[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
+	[signal arg="{"stats": {"gold": 10000, "stress":  -30,}}"]
 	jump Choice
 else:
 	update Morgan (Surprise)
@@ -76,13 +107,13 @@ else:
 	Morgan_Portrait (Laugh): I'll congratulate you for a very good job.
 	update Mao (Smile)
 	Mao_Portrait (Smile): I worked hard.
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Indeed. 
 	update Mao (Normal)
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Indeed.
 	if not Player.event_flags.get("class_change_information_event"):
 		do Player.set_event_flag("class_change_information_event")
 		update Morgan (Grin)
-		Morgan_Portrait (Grin): You can start getting ready for your class change now, I'll have Miss Glassfield send you the class change information.
+		Morgan_Portrait (Grin):I'll have Miss Glassfield send you the class change information.
 		update Mao (Surprised)
 		Mao_Portrait (Surprised): Class change?
 		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
@@ -179,8 +210,8 @@ Morgan_Portrait (Grin): Do you have any questions?
 	update Mao (Normal)
 	Mao_Portrait (Normal): Doesn't that just make me a four star? Um... an SR?
 	Morgan_Portrait (Grin): An SR is limited to eight hundred points at most. In other words, your SSR trait is something that can hide itself.
-	update Mao (Surprised)
-	Mao_Portrait (Surprised): Oh. So what does that mean, exactly?
+	update Mao (Normal)
+	Mao_Portrait (Normal): Oh. So what does that mean, exactly?
 	Morgan_Portrait (Grin): It meant I was curious. That was the previous reason.
 	update Mao (Angry)
 	Mao_Portrait (Angry): Why do I get the feeling you've been making fun of me this whole time?
