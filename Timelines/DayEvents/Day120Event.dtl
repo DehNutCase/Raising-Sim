@@ -1,3 +1,4 @@
+# Place this a few days before the end of the game/year
 [background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
 join Mao (Normal) 1
 join Morgan (Grin) 3
@@ -5,16 +6,16 @@ join Morgan (Grin) 3
 Morgan_Portrait (Grin): Good morning, Mao. Your current score is {Player.calculate_ending()[0]}.
 if Player.calculate_ending()[0] < 500:
 	update Morgan (Surprise)
-	Morgan_Portrait (Surprise): Oh my. This is a truly outrageous achievement.
+	Morgan_Portrait (Surprise): Oh my. This is truly unbelievable.
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): I'm not entirely sure how you even managed this.
+	Morgan_Portrait (Laugh): I don't think I can manage something like this even if I wanted to.
 	update Mao (Angry)
 	Mao_Portrait (Angry): Please stop it, your majesty.
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): Fufufu.
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): I should really stop rewarding you for this, but I won't.
-	[signal arg="{"stats": {"stress": -30, "scholarship": 200, "gold": 30000,}}"]
+	[signal arg="{"stats": {"stress": -30, "scholarship": 400, "gold": 50000,}}"]
 	jump Choice
 elif Player.calculate_ending()[0] < 1000:
 	update Morgan (Grin)
@@ -26,19 +27,25 @@ elif Player.calculate_ending()[0] < 1000:
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): There's no need to feel pressured, it's perfectly fine to go at your own pace.
 	update Mao (Normal)
-	[signal arg="{"stats": {"gold": 2000, "stress":  -20,}}"]
+	[signal arg="{"stats": {"gold": 3000, "stress":  -30,}}"]
 	jump Choice
 elif Player.calculate_ending()[0]  <  5000:
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Hmm, this is neither here nor there. But it's by no means bad.
+	Morgan_Portrait (Grin): Hmm, this is neither here nor there.
 	update Mao (Sad)
 	Mao_Portrait (Sad): Umm...
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): There's no rush, so don't worry if you feel like you're falling behind.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Well, you might need to hurry if you want to class change before next year.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Sorry.
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Most people stay in the same class their entire lives, don't rush just because New Year's is coming up.
 	update Mao (Normal)
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Here's some pocket money, go buy yourself something delicious.
-	[signal arg="{"stats": {"gold": 3000, "stress":  -30,}}"]
+	[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
 	jump Choice
 elif Player.calculate_ending()[0]  <  10000:
 	update Morgan (Surprise)
@@ -68,7 +75,7 @@ elif Player.calculate_ending()[0]  <  10000:
 		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Why don't you go out and relax somewhere? Here's some pocket money.
-	[signal arg="{"stats": {"gold": 5000, "stress":  -30,}}"]
+	[signal arg="{"stats": {"gold": 8000, "stress":  -30,}}"]
 	jump Choice
 elif Player.calculate_ending()[0]  <  20000:
 	update Morgan (Surprise)
@@ -98,7 +105,7 @@ elif Player.calculate_ending()[0]  <  20000:
 		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): You did a great job. Why don't you go out and relax somewhere? Here's some pocket money.
-	[signal arg="{"stats": {"gold": 8000, "stress":  -30,}}"]
+	[signal arg="{"stats": {"gold": 10000, "stress":  -40,}}"]
 	jump Choice
 else:
 	update Morgan (Surprise)
@@ -113,7 +120,7 @@ else:
 	if not Player.event_flags.get("class_change_information_event"):
 		do Player.set_event_flag("class_change_information_event")
 		update Morgan (Grin)
-		Morgan_Portrait (Grin):I'll have Miss Glassfield send you the class change information.
+		Morgan_Portrait (Grin): I'll have Miss Glassfield send you the class change information.
 		update Mao (Surprised)
 		Mao_Portrait (Surprised): Class change?
 		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
@@ -144,7 +151,7 @@ else:
 	Mao_Portrait (Sad): Aww.
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): I'm sure Miss Glassfield will be happy to keep you company.
-	[signal arg="{"stats": {"gold": 10000, "stress":  -40,}}"]
+	[signal arg="{"stats": {"gold": 15000, "stress":  -50,}}"]
 	jump Choice
 label Choice
 update Mao (Normal)
@@ -152,21 +159,32 @@ update Morgan (Grin)
 Morgan_Portrait (Grin): Do you have any questions?
 - So what should I do now? [if !Player.dialogic_temporary_flags.get("Choice_Do_Now"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Do_Now")
-	Morgan_Portrait (Grin): Let's see, by now you should have settled yourself somewhat.
-	Morgan_Portrait (Grin): I don't know what you want to do in the future, so I'll just give some general advice.
-	Morgan_Portrait (Grin): By now you should start preparing for a class change. The requirements are quite low, so there's no need to rush.
-	Morgan_Portrait (Grin): Instead, you should bear in mind that a class change would reset your level and status, but leave everything else the same.
+	Morgan_Portrait (Grin): Let's see, at this point you're at the final stretch if you're planning to class change before the end of year.
+	if not Player.event_flags.get("class_change_information_event"):
+		do Player.set_event_flag("class_change_information_event")
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): I'll have Miss Glassfield send you the class change information.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Class change?
+		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
+		update Mao (Normal)
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
+		update Mao (Angry)
+		Mao_Portrait (Angry): Doesn't that make everything I've done so far a waste of time?
+		Morgan_Portrait (Grin): Not at all. You'll keep everything else.
+		update Mao (Normal)
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
+	Morgan_Portrait (Grin): Since a class change would reset your level and status, you can consider taking a well deserved break after meeting the requirements for the class you want.
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): You can try hoarding a dragon's nest worth of gold, for example.
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Or you can learn skills to prepare for what you want to do. Spells for fighting and support, techniques for making things, or maybe just getting used to a job you'd like to do.
-	update Mao (Sad)
-	Mao_Portrait (Sad): Do I have to change my class?
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Not at all.
+	Morgan_Portrait (Laugh): If you don't want to rest, learning new skills or building up your savings is also an option.
 	update Mao (Normal)
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): What you should be doing is what you want to do.
+	Mao_Portrait (Normal): Do I have to change my class?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Not at all. Feel free to relax and treat the rest of this month as your winter break, if you'd like. I wouldn't mind signing a royal order telling you to slack off.
 - Can you teach me a super invincible spell? [if !Player.dialogic_temporary_flags.get("Choice_Super_Move"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Super_Move")
 	update Mao (Excited)

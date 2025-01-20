@@ -55,8 +55,8 @@ elif Player.calculate_ending()[0]  <  10000:
 		Mao_Portrait (Surprised): Class change?
 		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
 		update Mao (Normal)
-		update Morgan (Happy)
-		Morgan_Portrait (Happy): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
 		update Mao (Angry)
@@ -87,8 +87,8 @@ else:
 		Mao_Portrait (Surprised): Class change?
 		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
 		update Mao (Normal)
-		update Morgan (Happy)
-		Morgan_Portrait (Happy): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
 		update Morgan (Grin)
 		Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
 		update Mao (Angry)
@@ -113,7 +113,7 @@ else:
 	Mao_Portrait (Sad): Aww.
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): I'm sure Miss Glassfield will be happy to keep you company.
-	[signal arg="{"stats": {"gold": 6000, "stress":  -30,}}"]
+	[signal arg="{"stats": {"gold": 8000, "stress":  -40,}}"]
 	jump Choice
 label Choice
 update Mao (Normal)
@@ -181,7 +181,8 @@ Morgan_Portrait (Grin): Do you have any questions?
 	Morgan_Portrait (Grin): An SR is limited to eight hundred points at most. In other words, your SSR trait is something that can hide itself.
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Oh. So what does that mean, exactly?
-	Morgan_Portrait (Grin): It meant I was curious. That was the previous reason.
+	Morgan_Portrait (Grin): It meant I was curious.
+ That was the previous reason.
 	update Mao (Angry)
 	Mao_Portrait (Angry): Why do I get the feeling you've been making fun of me this whole time?
 	update Morgan (Laugh)

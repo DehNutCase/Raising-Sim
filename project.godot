@@ -47,6 +47,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
+"Day120Event": "res://Timelines/DayEvents/Day120Event.dtl",
 "Day1Event": "res://Timelines/DayEvents/Day1Event.dtl",
 "Day30Event": "res://Timelines/DayEvents/Day30Event.dtl",
 "Day5Event": "res://Timelines/DayEvents/Day5Event.dtl",
