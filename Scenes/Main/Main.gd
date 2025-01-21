@@ -391,8 +391,8 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 		if (!Player.background_inventory.get_item_by_id(dialogic_signal.background)):
 			Player.background_inventory.create_and_add_item(dialogic_signal.background)
 	if "skill" in dialogic_signal:
-		if (!Player.skill_inventory.get_item_by_id(dialogic_signal.background)):
-			Player.skill_inventory.create_and_add_item(dialogic_signal.background)
+		if (!Player.skill_inventory.get_item_by_id(dialogic_signal.skill)):
+			Player.skill_inventory.create_and_add_item(dialogic_signal.skill)
 	if "music" in dialogic_signal:
 		get_tree().call_group("BackgroundMusicPlayer", "play_song", dialogic_signal.music)
 	

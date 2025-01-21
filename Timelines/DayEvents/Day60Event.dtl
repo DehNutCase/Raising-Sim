@@ -77,7 +77,7 @@ else:
 	update Mao (Smile)
 	Mao_Portrait (Smile): I worked hard.
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Indeed. 
+	Morgan_Portrait (Grin): Indeed.
 	update Mao (Normal)
 	if not Player.event_flags.get("class_change_information_event"):
 		do Player.set_event_flag("class_change_information_event")
@@ -141,7 +141,7 @@ Morgan_Portrait (Grin): Do you have any questions?
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): I would be happy to have a staring contest with you, but I'll go ahead an admit defeat.
+	Morgan_Portrait (Laugh): I would be happy to have a staring contest with you, but I'll go ahead and admit defeat.
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
 	update Morgan (Grin)
@@ -182,7 +182,7 @@ Morgan_Portrait (Grin): Do you have any questions?
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): Oh. So what does that mean, exactly?
 	Morgan_Portrait (Grin): It meant I was curious.
- That was the previous reason.
+	Morgan_Portrait (Grin): That was the previous reason.
 	update Mao (Angry)
 	Mao_Portrait (Angry): Why do I get the feeling you've been making fun of me this whole time?
 	update Morgan (Laugh)

@@ -153,6 +153,16 @@ func process_turns(player_action: String):
 					for stat in action.stats:
 						player_combat_copy.stats[stat] += action.stats[stat]
 				"heal":
+					if action.get('animation_player') and not action in player_skill_use_flags:
+						player_skill_use_flags[action] = true
+						message = "Used " + action.label + "!"
+						display_toast(message)
+						video_stream_player.custom_minimum_size = action.animation_size_player
+						center_container.show()
+						video_stream_player.stream = load(action.animation_player)
+						video_stream_player.play()
+						await(get_tree().create_timer(action.animation_length_player).timeout)
+						center_container.hide()
 					var heal_amount = max(1, ((player_combat_copy.stats.magic * action.effect_strength/100)))
 					message = "Healed " + str(heal_amount) + " hit points."
 					update_player_hp(heal_amount)

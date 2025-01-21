@@ -171,4 +171,14 @@ json_data = "[
         \"stats\": \"{}\",
         \"combat_skill\" : \"blessing\"
     },
+    {
+        \"daily_stats\": \"{\\n\\\"magic\\\": 1\\n,\\n\\\"max_mp\\\": 1\\n}\",
+        \"description\": \"A 'super invincible spell'. \\nIn theory, it's hard to lose a fight after casting this.\",
+        \"id\": \"light_barrier\",
+        \"image\": \"\",
+        \"monthly_stats\": \"{\\n\\\"magic\\\": 10\\n,}\",
+        \"name\": \"Light Barrier\",
+        \"stats\": \"{}\",
+        \"combat_skill\" : \"light_barrier\"
+    },
 ]"

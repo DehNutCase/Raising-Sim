@@ -1339,6 +1339,18 @@ const combat_skills = {
 		'effect_strength': 100,
 		'label': "Heal"
 	},
+	'light_barrier': {
+		'weight': 10,
+		'effect_target': 'ally',
+		'effect_type': 'heal',
+		'effect_range': 'single',
+		'effect_strength': 250,
+		'label': "Light Barrier",
+		#'animation': "res://Characters/Rice/Videos/mtn_03.ogv", #TODO, replace with enemy animation
+		'animation_player': "res://Characters/Mao/Videos/special_01.ogv",
+		'animation_length_player': 3.8,
+		'animation_size_player': Vector2(600, 750),
+	},
 	'brilliance': {
 		'stats': {
 			'magic': 5,

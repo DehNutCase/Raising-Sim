@@ -43,7 +43,7 @@ Mao_Portrait (Blush): Haha, sorry.
 	Morgan_Portrait (Silhouette): So what did you want from me? More pocket money, perhaps?
 	update Mao (Angry)
 	Mao_Portrait (Angry): Your majesty...
-	Morgan_Portrait (Silhouette): Fufufu. I am in a good mood right now, so I will allow most requests.
+	Morgan_Portrait (Silhouette): Fufufu. I'm in a good mood right now, so I will allow most requests.
 	update Mao (Normal)
 	Mao_Portrait (Normal): I don't really need anything right now.
 	update Mao (Surprised)
@@ -79,4 +79,3 @@ Morgan_Portrait (Silhouette): That will be all for today.
 update Mao (Sad)
 Mao_Portrait (Sad): (I don't know why, but it's kind of scary when her majesty is all shadowy like this. It's weird, since she's still just as nice as usual.)
 [signal arg="{"stats": {"stress": 10, "max_hp": 1, "max_mp":1}}"]
-

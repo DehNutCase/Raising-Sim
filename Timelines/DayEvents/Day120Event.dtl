@@ -135,16 +135,16 @@ else:
 		update Mao (Normal)
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
-		if Player.event_flags.get("apprentice_robes_event") and not Player.event_flags.get("witch_class_change_flag"):
-			do Player.set_event_flag("witch_class_change_flag")
-			update Morgan (Frown)
-			Morgan_Portrait (Frown): By the way, would you like to apprentice under me?
-			Morgan_Portrait (Frown): Not for my class as Saintess, but rather Albion's Witch.
-			update Mao (Sad)
-			Mao_Portrait (Sad): Umm.
-			Morgan_Portrait (Frown): There's no need to answer immediately, think it over. This offer isn't necessarily a good thing.
-			update Morgan (Grin)
-			update Mao (Normal)
+	if Player.event_flags.get("apprentice_robes_event") and not Player.event_flags.get("witch_class_change_flag"):
+		do Player.set_event_flag("witch_class_change_flag")
+		update Morgan (Frown)
+		Morgan_Portrait (Frown): By the way, would you like to apprentice under me?
+		Morgan_Portrait (Frown): Not for my class as Saintess, but rather Albion's Witch.
+		update Mao (Sad)
+		Mao_Portrait (Sad): Umm.
+		Morgan_Portrait (Frown): There's no need to answer immediately, think it over. This offer isn't necessarily a good thing.
+		update Morgan (Grin)
+		update Mao (Normal)
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): Here's some pocket money, go take a break and celebrate. I have a few things to take care of, so I won't be able to join you.
 	update Mao (Sad)
@@ -184,57 +184,43 @@ Morgan_Portrait (Grin): Do you have any questions?
 	update Mao (Normal)
 	Mao_Portrait (Normal): Do I have to change my class?
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Not at all. Feel free to relax and treat the rest of this month as your winter break, if you'd like. I wouldn't mind signing a royal order telling you to slack off.
+	Morgan_Portrait (Laugh): Not at all. Feel free to relax and treat the rest of this month as your winter break. I wouldn't mind signing a royal order telling you to slack off.
 - Can you teach me a super invincible spell? [if !Player.dialogic_temporary_flags.get("Choice_Super_Move"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Super_Move")
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): I would be happy to have a staring contest with you, but I'll go ahead an admit defeat.
+	Morgan_Portrait (Laugh): Sure.
+	update Morgan (Grin)
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): ⠀Wait, really?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): It's almost your birthday, so let's call it an early birthday present.
+	update Mao (Smile)
+	Mao_Portrait (Smile): ⠀Yay!
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): However, I won't teach you just because I lost.
-	update Mao (Sad)
-	Mao_Portrait (Sad): ⠀
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Sorry, not sorry.
+	Morgan_Portrait (Grin): It won't be as flashy as summoning a meteor, if that's what you were expecting, but it should be more or less 'super invincible'.
+	[signal arg="{"stats": {"stress": 20, "magic": 100}, "skill":"light_barrier"}"]
 - So why are we doing this whole thing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Why"))]
 	do Player.set_dialogic_temporary_flag("Choice_Why")
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): It's still a little early to talk about the current reason, but I can tell you the previous reason, at least.
-	Morgan_Portrait (Grin): You are an SSR.
-	update Mao (Normal)
-	Mao_Portrait (Normal): Huh?
-	Morgan_Portrait (Grin): Or a five star, if you prefer.
-	Morgan_Portrait (Grin): It's like this, if a bag had ninety-nine black marbles and a single white marble, you would be that single white marble.
-	update Mao (Excited)
-	Mao_Portrait (Excited): Does that mean I'm someone awesome?
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Sure.
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Except you aren't.
+	Morgan_Portrait (Grin): Sure. We've talked about the original reason and the previous reason, so it's time for the current reason.
 	update Mao (Surprised)
-	Mao_Portrait (Surprised): Huh?
-	Morgan_Portrait (Grin): To be an SSR, two requirements have to be met. First, you need to have more than a thousand points. Second, you need a special trait or skill at the SSR level.
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): By the way, you have so many points that it wouldn't be wrong to call you a hypothetical six star, or an SSSR.
-	update Mao (Angry)
-	Mao_Portrait (Angry): Please stop messing with me, your majesty.
-	Morgan_Portrait (Laugh): Sorry. But I am being quite serious.
+	update Morgan (Silhouette)
+	Morgan_Portrait (Silhouette): Remember this?
+	Mao_Portrait (Surprised): Um, yes.
 	update Mao (Normal)
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Anyway, the problem is the second requirement. As far as I can tell, you don't have anything at the SSR level.
-	update Mao (Normal)
-	Mao_Portrait (Normal): Doesn't that just make me a four star? Um... an SR?
-	Morgan_Portrait (Grin): An SR is limited to eight hundred points at most. In other words, your SSR trait is something that can hide itself.
-	update Mao (Normal)
-	Mao_Portrait (Normal): Oh. So what does that mean, exactly?
-	Morgan_Portrait (Grin): It meant I was curious. That was the previous reason.
-	update Mao (Angry)
-	Mao_Portrait (Angry): Why do I get the feeling you've been making fun of me this whole time?
+	Morgan_Portrait (Grin): In fact, the requirement to be able to see that is quite strict. In your case, it should be because 'you' are an outsider.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Am I in trouble?
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Fufufu.
+	Morgan_Portrait (Laugh): There's no need to worry, I went through something similar when I was younger.
+	update Mao (Normal)
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): There's no need to worry, I went through something similar when I was younger.
 - I don't have any more questions
 	jump End of Choice
 jump Choice
