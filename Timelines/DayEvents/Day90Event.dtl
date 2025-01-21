@@ -102,7 +102,7 @@ elif Player.calculate_ending()[0]  <  20000:
 	jump Choice
 else:
 	update Morgan (Surprise)
-	Morgan_Portrait (Surprise): Oh my, this result quite excellent.
+	Morgan_Portrait (Surprise): Oh my, this is rather amazing.
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): I'll congratulate you for a very good job.
 	update Mao (Smile)
@@ -113,7 +113,7 @@ else:
 	if not Player.event_flags.get("class_change_information_event"):
 		do Player.set_event_flag("class_change_information_event")
 		update Morgan (Grin)
-		Morgan_Portrait (Grin):I'll have Miss Glassfield send you the class change information.
+		Morgan_Portrait (Grin): I'll have Miss Glassfield send you the class change information.
 		update Mao (Surprised)
 		Mao_Portrait (Surprised): Class change?
 		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
@@ -152,71 +152,102 @@ update Morgan (Grin)
 Morgan_Portrait (Grin): Do you have any questions?
 - So what should I do now? [if !Player.dialogic_temporary_flags.get("Choice_Do_Now"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Do_Now")
-	Morgan_Portrait (Grin): Let's see, by now you should have settled yourself somewhat.
-	Morgan_Portrait (Grin): I don't know what you want to do in the future, so I'll just give some general advice.
-	Morgan_Portrait (Grin): By now you should start preparing for a class change. The requirements are quite low, so there's no need to rush.
-	Morgan_Portrait (Grin): Instead, you should bear in mind that a class change would reset your level and status, but leave everything else the same.
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): You can try hoarding a dragon's nest worth of gold, for example.
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Or you can learn skills to prepare for what you want to do. Spells for fighting and support, techniques for making things, or maybe just getting used to a job you'd like to do.
-	update Mao (Sad)
-	Mao_Portrait (Sad): Do I have to change my class?
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Not at all.
+	Morgan_Portrait (Grin): Let's see, we have a month left before the end of the year, so you should be finishing your class change requirements and preparing for what comes after.
+	if not Player.event_flags.get("class_change_information_event"):
+		do Player.set_event_flag("class_change_information_event")
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): I'll have Miss Glassfield send you the class change information.
+		update Mao (Surprised)
+		Mao_Portrait (Surprised): Class change?
+		Morgan_Portrait (Grin): It's a way to break past your limits. Or rather, raise them.
+		update Mao (Normal)
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): Traditionally, combat classes have a hard time raising their level, but few limits. A non-combat class like yours have an easy time growing, but reach their limits quickly.
+		update Morgan (Grin)
+		Morgan_Portrait (Grin): There are a few different ways to change your class, but the most appropriate one for you would reset your level and status back to the beginning.
+		update Mao (Angry)
+		Mao_Portrait (Angry): Doesn't that make everything I've done so far a waste of time?
+		Morgan_Portrait (Grin): Not at all. You'll keep everything else.
+		update Mao (Normal)
+		update Morgan (Laugh)
+		Morgan_Portrait (Laugh): You have it far better than a combat class, at least. Can you imagine losing every skill you learned just to class change?
 	update Mao (Normal)
+	Mao_Portrait (Normal): Do I have to change my class?
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): What you should be doing is what you want to do.
+	Morgan_Portrait (Grin): Not at all. I'm laying out a natural progression for you, but you don't have to follow it.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): If you do decide to prepare for a class change, remember that you'll keep everything aside from your status and level. So consider focusing on skills or building up your savings.
+	Morgan_Portrait (Grin): If you decide not to, hmm... I'm not sure why you wouldn't, to be honest.
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Are you planning to show off your excellent stat limits?
+	update Mao (Normal)
+	Mao_Portrait (Normal): Stat limits?
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Maybe you've felt it already? Your current class and rarity would typically limit your stats to around eight hundred or nine hundred. You have a full thousand across the board, but that's becuase you're...
+	update Mao (Excited)
+	Mao_Portrait (Excited): I am...?
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): A freak.
+	update Mao (Sad)
+	Mao_Portrait (Sad): ⠀
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Fufufu. I mean that in the best possible way.
+	update Mao (Angry)
+	Mao_Portrait (Angry): ⠀
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): There, there.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): I'm strongly suggesting a class change for you because it's the easiest way to raise your stat limits. But there's no harm in playing around.
+	update Mao (Normal)
 - Can you teach me a super invincible spell? [if !Player.dialogic_temporary_flags.get("Choice_Super_Move"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Super_Move")
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): I would be happy to have a staring contest with you, but I'll go ahead an admit defeat.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): ⠀
 	update Mao (Excited)
 	Mao_Portrait (Excited): ⠀
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): However, I won't teach you just because I lost.
+	Morgan_Portrait (Grin): ⠀
+	update Mao (Excited)
+	Mao_Portrait (Excited): ⠀
+	update Morgan (Laugh)
+	Morgan_Portrait (Laugh): Well, that was fun.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): But I won't teach you this time either.
 	update Mao (Sad)
 	Mao_Portrait (Sad): ⠀
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Sorry, not sorry.
+	Morgan_Portrait (Grin): Is there a reason you want to learn a 'super invincible' spell? I've already relaxed the restrictions on what spells could be taught at the academy, so I'm sure you can learn something big and flashy without going through me.
+	update Mao (Normal)
+	Mao_Portrait (Normal): It's just not the same.
+	update Mao (Normal)
 - So why are we doing this whole thing, anyway? [if !Player.dialogic_temporary_flags.get("Choice_Why"))]
 	do Player.set_dialogic_temporary_flag("Choice_Why")
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): It's still a little early to talk about the current reason, but I can tell you the previous reason, at least.
-	Morgan_Portrait (Grin): You are an SSR.
-	update Mao (Normal)
-	Mao_Portrait (Normal): Huh?
-	Morgan_Portrait (Grin): Or a five star, if you prefer.
-	Morgan_Portrait (Grin): It's like this, if a bag had ninety-nine black marbles and a single white marble, you would be that single white marble.
-	update Mao (Excited)
-	Mao_Portrait (Excited): Does that mean I'm someone awesome?
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Sure.
-	update Morgan (Grin)
-	Morgan_Portrait (Grin): Except you aren't.
+	Morgan_Portrait (Grin): Sure. We've talked about the original reason and the previous reason, so it's time for the current reason.
 	update Mao (Surprised)
-	Mao_Portrait (Surprised): Huh?
-	Morgan_Portrait (Grin): To be an SSR, two requirements have to be met. First, you need to have more than a thousand points. Second, you need a special trait or skill at the SSR level.
-	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): By the way, you have so many points that it wouldn't be wrong to call you a hypothetical six star, or an SSSR.
-	update Mao (Angry)
-	Mao_Portrait (Angry): Please stop messing with me, your majesty.
-	Morgan_Portrait (Laugh): Sorry. But I am being quite serious.
+	Mao_Portrait (Surprised): ⠀Ah, wait a second!
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Yes?
+	update Mao (Normal)
+	Mao_Portrait (Normal): So did you ever figure out what my SSR skill is supposed to be?
+	update Mao (Excited)
+	Mao_Portrait (Excited): Is it something super special awesome?
 	update Mao (Normal)
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): Anyway, the problem is the second requirement. As far as I can tell, you don't have anything at the SSR level.
-	update Mao (Normal)
-	Mao_Portrait (Normal): Doesn't that just make me a four star? Um... an SR?
-	Morgan_Portrait (Grin): An SR is limited to eight hundred points at most. In other words, your SSR trait is something that can hide itself.
-	update Mao (Normal)
-	Mao_Portrait (Normal): Oh. So what does that mean, exactly?
-	Morgan_Portrait (Grin): It meant I was curious. That was the previous reason.
-	update Mao (Angry)
-	Mao_Portrait (Angry): Why do I get the feeling you've been making fun of me this whole time?
+	Morgan_Portrait (Grin): It depends on your viewpoint. It's an eight hundred point skill, so it's objectively one of the strongest.
+	Morgan_Portrait (Grin): For reference, the cheapest SSR skills are worth two hundred points, and the most expensive ones top out at one thousand.
+	update Mao (Excited)
+	Mao_Portrait (Excited): So what is it?
+	Morgan_Portrait (Grin): Its name is a bit dangerous, so I'll just tell you what it does. People like you more.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Why would that be dangerous?
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): Fufufu.
+	Morgan_Portrait (Laugh): When you can protect yourself without needing Miss Glassfield to follow you around everywhere, I'll tell you. For now, just know that a skill's name doesn't always match its effect.
+	update Mao (Normal)
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Hmm... looks like I've digressed. We can talk about the current reason next time.
 - I don't have any more questions
 	jump End of Choice
 jump Choice
