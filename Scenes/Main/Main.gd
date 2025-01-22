@@ -12,26 +12,23 @@ extends Node
 @onready var day_label = $Ui/DayLabelContainer/DayLabel
 @onready var walks_label = $RemainingWalks
 
-@onready var work = $Ui/MenuPanel/Work
-@onready var lessons = $Ui/MenuPanel/Lessons
-@onready var rest = $Ui/MenuPanel/Rest
-@onready var shop = $Ui/MenuPanel/Shop
-@onready var walk = $Ui/MenuPanel/Walk
-@onready var stats = $Ui/MenuPanel/Stats
-@onready var tower = $Ui/MenuPanel/Tower
-
 @onready var menu_panel = $Ui/MenuPanel
+@onready var animation = $Ui/MenuPanel/MarginContainer/Animation
+@onready var rest = $Ui/MenuPanel/MarginContainer/Rest
+@onready var lessons = $Ui/MenuPanel/MarginContainer/Lessons
+@onready var work = $Ui/MenuPanel/MarginContainer/Work
+@onready var shop = $Ui/MenuPanel/MarginContainer/Shop
+@onready var walk = $Ui/MenuPanel/MarginContainer/Walk
+@onready var tower = $Ui/MenuPanel/MarginContainer/Tower
+@onready var stats = $Ui/MenuPanel/MarginContainer/Stats
+
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
 @onready var buttons2 = $RightMenuContainer/MenuPanel/VBoxContainer
-@onready var animation = $Ui/MenuPanel/Animation
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
 @onready var menus = [work, lessons, rest, shop, walk, stats, tower,]
-
-#TODO Dev variable, remove when building
-var skip_movie = false
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -51,11 +48,6 @@ func _ready():
 	Player.load_game()
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
-	#TODO, remove this, testing section
-	#Player.max_walks = 100
-	#Player.tower_level = 9
-	#TODO, end testing section
-	
 	
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -82,7 +74,10 @@ func _ready():
 	
 	#TODO, delete below, dev use only
 	#Player.background_inventory.create_and_add_item("gray")
-	#Dialogic.start("HiyoriAtelier")
+	#Dialogic.start("Day120Event")
+	#Player.max_walks = 100
+	#Player.tower_level = 9
+	#TODO, end dev use section
 
 func process_day():
 	if (day % Constants.constants.days_in_month == 0):
@@ -468,8 +463,6 @@ func _on_enter_tower_button_pressed() -> void:
 		display_toast("The tower is cleared", "top", "center")
 
 func check_and_play_daily_events() -> void:
-	if skip_movie:
-		return
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
 		Dialogic.start("Day1Event")
 		Player.event_flags['Day1Event'] = true
