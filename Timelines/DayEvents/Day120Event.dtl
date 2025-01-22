@@ -213,14 +213,24 @@ Morgan_Portrait (Grin): Do you have any questions?
 	Mao_Portrait (Surprised): Um, yes.
 	update Mao (Normal)
 	update Morgan (Grin)
-	Morgan_Portrait (Grin): In fact, the requirement to be able to see that is quite strict. In your case, it should be because 'you' are an outsider.
+	Morgan_Portrait (Grin): In fact, the requirements to be able to see that are quite strict. In your case, it should be because 'you' are an outsider.
 	update Mao (Sad)
 	Mao_Portrait (Sad): Am I in trouble?
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): There's no need to worry, I went through something similar when I was younger.
 	update Mao (Normal)
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): I would have handled it directly if I thought it was dangerous.
+	update Mao (Normal)
+	Mao_Portrait (Normal): I see?
+	update Mao (Blush)
+	Mao_Portrait (Blush): Sorry, I don't really know what you're talking about.
+	update Mao (Normal)
 	update Morgan (Laugh)
-	Morgan_Portrait (Laugh): There's no need to worry, I went through something similar when I was younger.
+	Morgan_Portrait (Laugh): It doesn't matter much from your perspective, although it does mean Miss Glassfield needs to keep an eye on you for the time being.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): But do let me know if you'd rather have some privacy, I'll take care of it in that case.
+	Mao_Portrait (Normal): Oh, okay.
 - I don't have any more questions
 	jump End of Choice
 jump Choice
