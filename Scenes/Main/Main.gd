@@ -20,6 +20,7 @@ extends Node
 @onready var shop = $Ui/MenuPanel/MarginContainer/Shop
 @onready var walk = $Ui/MenuPanel/MarginContainer/Walk
 @onready var tower = $Ui/MenuPanel/MarginContainer/Tower
+@onready var class_change = $"Ui/MenuPanel/MarginContainer/Class Change"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
@@ -28,7 +29,7 @@ extends Node
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
-@onready var menus = [work, lessons, rest, shop, walk, stats, tower,]
+@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change]
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -135,15 +136,16 @@ func do_job(job_name: String) :
 			if (Player.proficiencies[job_name] >= Constants.jobs[job_name].skill.proficiency_required):
 				if (!Player.skill_inventory.get_item_by_id(Constants.jobs[job_name].skill.id)):
 					Player.skill_inventory.create_and_add_item(Constants.jobs[job_name].skill.id)
-			
+		animation.animation.show()
+		animation.animation.play("Run")
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if "stress" in job_stats:
 			process_stats({"stress": job_stats["stress"]})
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
+		animation.animation.show()
+		animation.animation.play("Sleep")
 	work.hide()
-	animation.animation.show()
-	animation.animation.play("Run")
 	process_day()
 	
 func do_lesson(lesson_name: String) :
@@ -164,14 +166,16 @@ func do_lesson(lesson_name: String) :
 			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
 				if (!Player.skill_inventory.get_item_by_id(Constants.lessons[lesson_name].skill.id)):
 					Player.skill_inventory.create_and_add_item(Constants.lessons[lesson_name].skill.id)
+		animation.animation.show()
+		animation.animation.play("Run")
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
 		if "stress" in lesson_stats:
 			process_stats({"stress": lesson_stats["stress"], "gold": lesson_stats["gold"]})
 		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain/2
+		animation.animation.show()
+		animation.animation.play("Sleep")
 	lessons.hide()
-	animation.animation.show()
-	animation.animation.play("Run")
 	process_day()
 
 func do_rest(rest_name: String) -> void:
@@ -185,7 +189,7 @@ func do_rest(rest_name: String) -> void:
 	process_stats(rest_stats)
 	rest.visible = false
 	animation.animation.visible = true
-	animation.animation.play("Run")
+	animation.animation.play("Sleep")
 	process_day()
 	
 func do_walk(walk_name: String) -> void:
@@ -257,7 +261,7 @@ func _on_action(button):
 			open_menu = menu.name
 	_on_close_button_pressed()
 	
-	match button.text:
+	match button.name:
 		"Work":
 			work.show()
 		"Lessons":

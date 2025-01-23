@@ -487,6 +487,15 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Enter Tower"
 
+[node name="Class Change" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Class Change"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+
 [node name="Stats" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 layout_mode = 2
@@ -573,13 +582,13 @@ layout_mode = 2
 offset_right = 140.0
 offset_bottom = 700.0
 
-[node name="Jobs" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Work" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Work"
 
-[node name="Classes" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Lessons" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -603,7 +612,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Shop"
 
-[node name="Battle" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Save" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -653,17 +662,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Walk"
 
-[node name="Shop" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Tower" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tower"
 
-[node name="Battle" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Class Change" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Battle"
+text = "Class
+Change"
 
 [connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
