@@ -293,6 +293,10 @@ func _on_action(button):
 				tower.get_node("Description").text = Constants.tower_levels[Player.tower_level].description
 			else:
 				tower.get_node("Description").text = "The tower is cleared."
+		"Class Change":
+			#TODO, add class change code here
+			load_class_change_text("ink_mage_journeyman")
+			class_change.show()
 		"Save":
 			Player.save_game()
 			background.visible = false
@@ -300,7 +304,7 @@ func _on_action(button):
 		_:
 			printerr("_on_action failed to match")
 			
-	if open_menu == button.text:
+	if open_menu == button.name:
 		_on_close_button_pressed()
 	else:
 		menu_panel.visible = !menu_panel.visible
@@ -481,3 +485,11 @@ func _on_player_inventory_item_activated(tooltip):
 	#Check if mobile and replace tooltips with toast
 	if OS.has_feature("mobile"):
 		display_toast(tooltip, "bottom", "center")
+
+func load_class_change_text(player_class: String):
+	var font = load("res://Art/Fonts/emoji_font_variation.tres")
+	var desc = $"Ui/MenuPanel/MarginContainer/Class Change/Description"
+	desc.clear()
+	desc.push_font(font, 24)
+	#use append text to get description
+	desc.append_text(Constants.player_classes.ink_mage_journeyman.description)

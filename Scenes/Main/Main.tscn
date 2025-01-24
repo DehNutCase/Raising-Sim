@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=43 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
+[ext_resource type="Texture2D" uid="uid://b62ogu5fqh08x" path="res://Characters/Cats/Images/grey-kitten3.png" id="23_c70sc"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="25_dofej"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
@@ -492,9 +493,35 @@ visible = false
 layout_mode = 2
 
 [node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Class Change"]
+clip_contents = false
+custom_minimum_size = Vector2(1100, 600)
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer/Class Change"]
+clip_contents = false
+custom_minimum_size = Vector2(1100, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ScrollContainer"]
+custom_minimum_size = Vector2(1100, 200)
+layout_mode = 2
+clip_tabs = false
+
+[node name="Non-combat" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ScrollContainer/TabContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/MenuPanel/MarginContainer/Class Change/ScrollContainer/TabContainer/Non-combat"]
+texture = ExtResource("23_c70sc")
+
+[node name="Hybrid" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ScrollContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Ui/MenuPanel/MarginContainer/Class Change/ScrollContainer/TabContainer/Hybrid"]
+texture = ExtResource("23_c70sc")
 
 [node name="Stats" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false

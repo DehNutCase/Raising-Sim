@@ -643,8 +643,9 @@ const rests = {
 
 const stats = {
 	'base_stats' = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
-		"defense", "resistance", "art"],
-	'scholarship_unaffected' = ["gold", "stress"],
+		"defense", "resistance", "art",],
+	'scholarship_unaffected' = ["gold", "stress",],
+	"class_change_unaffected" = ["gold", "action_points", "bonus_exp",],
 	'max_hp' = {
 		'label': 'Health Points',
 		'emoji': '❤',
@@ -1429,5 +1430,30 @@ const combat_skills = {
 		'animation_length_player': 7.7,
 		'animation_size_player': Vector2(600, 750),
 		'label': "Blessing",
+	},
+}
+
+const player_classes = {
+	"ink_mage": {
+		"description": "A magician with an affinity for ink. A rare non-combat variant of the magician class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
+		"id": "ink_mage",
+		"tier": 0,
+	},
+	"ink_mage_journeyman": {
+		"description": "A promoted ink mage. As a natural promotion to the basic ink mage class, requirements are low and stats are similar across the board. \nThe ink mage series has access to most types of magic, but won't learn spells naturally.",
+		"id": "ink_mage_journeyman",
+		"tier": 1,
+		"required_stats": {
+			"level": 1,
+			"max_hp": 100,
+			"max_mp": 50,
+			"strength": 20,
+			"magic": 50,
+			"defense": 20,
+			"speed": 25,
+			"resistance": 30,
+			"scholarship": 100,
+			"art": 50,
+		},
 	},
 }
