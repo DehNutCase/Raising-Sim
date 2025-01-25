@@ -1437,12 +1437,16 @@ const player_classes = {
 	"ink_mage": {
 		"description": "A magician with an affinity for ink. A rare non-combat variant of the magician class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
 		"id": "ink_mage",
+		"label": "Ink Mage",
 		"tier": 0,
+		"type": "Hybrid", #TODO test type, remove and replace later
 	},
 	"ink_mage_journeyman": {
-		"description": "A promoted ink mage. As a natural promotion to the basic ink mage class, requirements are low and stats are similar across the board. \nThe ink mage series has access to most types of magic, but won't learn spells naturally.",
+		"description": "A promoted ink mage. As a natural promotion to the basic ink mage class, requirements are low and stats are similar across the board. \nThe ink mage series has access to most types of magic, but won't learn spells from level ups.",
 		"id": "ink_mage_journeyman",
+		"label": "Ink Mage (Journeyman)",
 		"tier": 1,
+		"type": "Non-combat",
 		"required_stats": {
 			"level": 1,
 			"max_hp": 100,

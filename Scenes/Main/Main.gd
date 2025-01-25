@@ -10,7 +10,6 @@ extends Node
 
 @onready var gold_label = $Ui/GoldLabelContainer/GoldLabel
 @onready var day_label = $Ui/DayLabelContainer/DayLabel
-@onready var walks_label = $RemainingWalks
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var animation = $Ui/MenuPanel/MarginContainer/Animation
@@ -375,7 +374,6 @@ func process_stats(stats):
 func display_stats() -> void:
 	stats.display_stats()
 	gold_label.display_gold()
-	walks_label.display_walks()
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")	
@@ -488,8 +486,17 @@ func _on_player_inventory_item_activated(tooltip):
 
 func load_class_change_text(player_class: String):
 	var font = load("res://Art/Fonts/emoji_font_variation.tres")
-	var desc = $"Ui/MenuPanel/MarginContainer/Class Change/Description"
+	var desc = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Description"
+	var req = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"
 	desc.clear()
-	desc.push_font(font, 24)
-	#use append text to get description
-	desc.append_text(Constants.player_classes.ink_mage_journeyman.description)
+	#use below format to make columns
+	var text = Constants.player_classes[player_class].description
+	desc.append_text(text)
+	
+	text = ""
+	text += "[table=2][cell]"
+	text += Constants.player_classes[player_class].description
+	text += "[/cell][cell]"
+	text += Constants.player_classes[player_class].description
+	text += "[/cell][/table]"
+	req.append_text(text)

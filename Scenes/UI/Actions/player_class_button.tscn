@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c77s6bkqocbfi"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Actions/player_class_button.gd" id="1_fabv8"]
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="2_ogpwy"]
+
+[node name="Margin" type="MarginContainer"]
+custom_minimum_size = Vector2(212, 113)
+offset_right = 212.0
+offset_bottom = 113.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_fabv8")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_ogpwy")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Job"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_job_button_pressed"]
