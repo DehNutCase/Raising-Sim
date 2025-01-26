@@ -496,7 +496,7 @@ layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 
-[node name="ClassChangeClassesContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Class Change"]
+[node name="ClassChangeClassesContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Class Change" groups=["ButtonMenu"]]
 custom_minimum_size = Vector2(1100, 200)
 layout_mode = 2
 clip_tabs = false

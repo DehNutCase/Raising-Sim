@@ -488,15 +488,35 @@ func load_class_change_text(player_class: String):
 	var font = load("res://Art/Fonts/emoji_font_variation.tres")
 	var desc = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Description"
 	var req = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"
-	desc.clear()
-	#use below format to make columns
 	var text = Constants.player_classes[player_class].description
+	desc.clear()
 	desc.append_text(text)
 	
+	var text1 = "Required Stats:\n"
+	var text2 = "\n"
+	var counter = 0
+	if "required_stats" in Constants.player_classes[player_class]:
+		for stat in Constants.player_classes[player_class].required_stats:
+			var label = stat
+			if ("label" in Constants.stats[stat]):
+				label = Constants.stats[stat]["label"]
+			if ("emoji" in Constants.stats[stat]):
+				label += " (" + Constants.stats[stat].emoji + ")"
+			if counter > 0:
+				counter = 0
+				text2 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + "\n"
+			else:
+				counter += 1
+				text1 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + "\t\n"
+	else:
+		text1 = "This class has no required stats."
+	
 	text = ""
-	text += "[table=2][cell]"
-	text += Constants.player_classes[player_class].description
-	text += "[/cell][cell]"
-	text += Constants.player_classes[player_class].description
+	#Using p tab_stops and \t for dividing columns currently, see if there's better method
+	text += "[table=2][cell][p tab_stops=550.0]"
+	text += text1
+	text += "[/p][/cell][cell]"
+	text += text2
 	text += "[/cell][/table]"
+	req.clear()
 	req.append_text(text)
