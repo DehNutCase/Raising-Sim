@@ -492,10 +492,12 @@ func load_class_change_text(player_class: String):
 	desc.clear()
 	desc.append_text(text)
 	
-	var text1 = "Required Stats:\n"
-	var text2 = "\n"
-	var counter = 0
+		
+		
 	if "required_stats" in Constants.player_classes[player_class]:
+		var text1 = "Required Stats:\n"
+		var text2 = "\n"
+		var counter = 0
 		for stat in Constants.player_classes[player_class].required_stats:
 			var label = stat
 			if ("label" in Constants.stats[stat]):
@@ -508,15 +510,30 @@ func load_class_change_text(player_class: String):
 			else:
 				counter += 1
 				text1 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + "\t\n"
+		text = ""
+		#Using p tab_stops and \t for dividing columns currently, see if there's better method
+		text += "[table=2][cell][p tab_stops=525.0]"
+		text += text1
+		text += "[/p][/cell][cell]"
+		text += text2
+		text += "[/cell][/table]"
+		req.clear()
+		req.append_text(text)
 	else:
-		text1 = "This class has no required stats."
-	
-	text = ""
-	#Using p tab_stops and \t for dividing columns currently, see if there's better method
-	text += "[table=2][cell][p tab_stops=550.0]"
-	text += text1
-	text += "[/p][/cell][cell]"
-	text += text2
-	text += "[/cell][/table]"
-	req.clear()
-	req.append_text(text)
+		text = "This class has no required stats."
+		req.clear()
+		req.append_text(text)
+		
+	if "required_skills" in Constants.player_classes[player_class]:
+		var skills = []
+		for skill in Constants.player_classes[player_class].required_skills:
+			var prototype = Player.skill_inventory.item_protoset.get_prototype(skill)
+			if prototype and prototype.get("name"):
+				skills.append(prototype.get("name"))
+		text = "\n\nRequired Skills: " + str(skills) + "\n"
+		req.append_text(text)
+		print(text)
+		
+func display_player_class_info(player_class:String) -> void:
+	load_class_change_text(player_class)
+

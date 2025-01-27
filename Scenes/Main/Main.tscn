@@ -487,6 +487,7 @@ clip_tabs = false
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/outline_size = 0
 bbcode_enabled = true
 
 [node name="Requirements" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer"]
