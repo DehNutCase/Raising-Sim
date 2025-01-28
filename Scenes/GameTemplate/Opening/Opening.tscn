@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://sikc02ddepyt" path="res://addons/maaacks_game_template/extras/scenes/Opening/Opening.tscn" id="1_61ryd"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/examples/scenes/Opening/Opening.gd" id="2_3kr6l"]
-[ext_resource type="Texture2D" uid="uid://cu077o7tqy8e8" path="res://Art/Background/livingRoomEvening-1600.png" id="3_71teu"]
+[ext_resource type="Texture2D" uid="uid://dhmldhigqbyaj" path="res://Art/Background/Background material shop/bg007b.bmp" id="3_vg67f"]
 
 [node name="Opening" instance=ExtResource("1_61ryd")]
 script = ExtResource("2_3kr6l")
 next_scene = "res://Scenes/GameTemplate/Menus/MainMenu/MainMenu.tscn"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="." index="0"]
-layout_mode = 2
-offset_top = -350.0
-offset_right = 1600.0
-offset_bottom = 1250.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_71teu")
+texture = ExtResource("3_vg67f")
 stretch_mode = 5

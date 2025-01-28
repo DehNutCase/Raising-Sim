@@ -530,9 +530,8 @@ func load_class_change_text(player_class: String):
 			var prototype = Player.skill_inventory.item_protoset.get_prototype(skill)
 			if prototype and prototype.get("name"):
 				skills.append(prototype.get("name"))
-		text = "\n\nRequired Skills: " + str(skills) + "\n"
+		text = "\n\nRequired Skills: " + ", ".join(skills) + "\n"
 		req.append_text(text)
-		print(text)
 		
 func display_player_class_info(player_class:String) -> void:
 	load_class_change_text(player_class)

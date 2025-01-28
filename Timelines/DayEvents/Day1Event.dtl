@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 1
 join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
 [history action="clear"]
@@ -34,4 +34,3 @@ update Mao (Surprised)
 Mao_Portrait (Surprised): Wait, she vanished!?
 update Mao (Angry)
 Mao_Portrait (Angry): (Why is everyone from the palace a weirdo?)
-

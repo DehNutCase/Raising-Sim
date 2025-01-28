@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/livingRoomDay-1600.png" fade="0.0"]
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 1
 join Morgan (Silhouette) 3
 [history action="clear"]

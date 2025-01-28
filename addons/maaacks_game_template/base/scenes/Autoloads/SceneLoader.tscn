@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbwmrnp0af35y"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.gd" id="1_l0dhx"]
-[ext_resource type="Texture2D" uid="uid://cu077o7tqy8e8" path="res://Art/Background/livingRoomEvening-1600.png" id="2_kcjel"]
+[ext_resource type="Texture2D" uid="uid://dhmldhigqbyaj" path="res://Art/Background/Background material shop/bg007b.bmp" id="2_s75f8"]
 
 [node name="SceneLoader" type="Node"]
 script = ExtResource("1_l0dhx")
@@ -14,9 +14,7 @@ layer = -2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -350.0
-offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_kcjel")
+texture = ExtResource("2_s75f8")
 stretch_mode = 5

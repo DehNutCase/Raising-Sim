@@ -17,7 +17,8 @@ credits_packed_scene = ExtResource("3_xbnof")
 script = ExtResource("4_tyn6f")
 
 [node name="Title" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="0"]
-text = "Raising Sim"
+text = "Witch Maker
+"
 
 [node name="SubTitle" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="1"]
-text = "Test Project"
+text = "Raising Sim"

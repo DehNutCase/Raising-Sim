@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
-[ext_resource type="Texture2D" uid="uid://dm1j216n0fuwj" path="res://Art/Background/livingRoomDay-1600.png" id="2_r2e40"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
+[ext_resource type="Texture2D" uid="uid://sjmioxscvkib" path="res://Art/Background/Background material shop/bg007a.bmp" id="5_iokpw"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_rlk5e"]
@@ -86,8 +86,6 @@ offset_right = 144.0
 offset_bottom = 113.0
 text = "FPS"
 label_settings = SubResource("LabelSettings_qc06n")
-horizontal_alignment = 1
-vertical_alignment = 1
 script = ExtResource("2_h7wcs")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
@@ -122,9 +120,9 @@ size_flags_horizontal = 3
 layer = -1
 
 [node name="Background" type="Sprite2D" parent="Ui/BackgroundLayer"]
-texture = ExtResource("2_r2e40")
+texture = ExtResource("5_iokpw")
 centered = false
-offset = Vector2(0, -400)
+offset = Vector2(-160, -90)
 
 [node name="GoldLabelContainer" type="MarginContainer" parent="Ui"]
 offset_right = 145.0
@@ -140,8 +138,6 @@ texture_filter = 4
 layout_mode = 2
 text = "GoldLabel"
 label_settings = SubResource("LabelSettings_icocv")
-horizontal_alignment = 1
-vertical_alignment = 1
 script = ExtResource("8_8l10c")
 
 [node name="DayLabelContainer" type="MarginContainer" parent="Ui"]
@@ -179,7 +175,7 @@ script = ExtResource("7_cp3kk")
 
 [node name="Gray" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 visible = false
-position = Vector2(-450, -270)
+position = Vector2(-376, -235)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("27_wb2qf")
 
