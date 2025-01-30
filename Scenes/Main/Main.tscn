@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=43 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -19,6 +19,7 @@
 [ext_resource type="VideoStream" path="res://Characters/Mao/Videos/special_01.ogv" id="18_q463u"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
+[ext_resource type="Theme" uid="uid://ba5dcdbdgkdgu" path="res://Art/Themes/BorderlessTextTheme.tres" id="22_1jgxs"]
 [ext_resource type="Script" path="res://Scenes/Main/ClassChangeClassesContainer.gd" id="22_gnm4m"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
@@ -460,6 +461,7 @@ script = ExtResource("21_psxgd")
 [node name="Tower" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 layout_mode = 2
+theme = ExtResource("22_1jgxs")
 
 [node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Tower"]
 layout_mode = 2
@@ -483,7 +485,7 @@ clip_tabs = false
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/outline_size = 0
+theme = ExtResource("22_1jgxs")
 bbcode_enabled = true
 
 [node name="Requirements" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer"]

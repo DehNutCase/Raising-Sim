@@ -1,30 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://yrt34rtqrinn"]
+[gd_scene load_steps=5 format=3 uid="uid://yrt34rtqrinn"]
 
 [ext_resource type="Theme" uid="uid://nxlludp50pcy" path="res://Art/Themes/DefaultFontTheme.tres" id="1_fpc2t"]
 [ext_resource type="Script" path="res://Scenes/Combat/Enemy.gd" id="1_gf4qc"]
-[ext_resource type="Texture2D" uid="uid://doycqxwp1io2v" path="res://icon.svg" id="1_os8wo"]
+[ext_resource type="Texture2D" uid="uid://bwhrcqexejtjj" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-2-5-5-2-8-0.png" id="2_ovfc1"]
+[ext_resource type="Texture2D" uid="uid://c3cnll5gacj8l" path="res://Art/It Came From The Swam/f_candle.png" id="3_3e41l"]
 
 [node name="Enemy" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 150.0
-offset_bottom = 155.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_gf4qc")
 
-[node name="TargetPanel" type="PanelContainer" parent="."]
+[node name="TargetPanel" type="TextureRect" parent="."]
 visible = false
 z_index = -1
 custom_minimum_size = Vector2(150, 155)
-layout_mode = 0
-offset_right = 150.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
 offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
+texture = ExtResource("2_ovfc1")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-offset_right = 150.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
 offset_bottom = 193.0
 grow_horizontal = 2
 size_flags_horizontal = 6
@@ -33,10 +47,11 @@ size_flags_vertical = 4
 [node name="Portrait" type="TextureRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_os8wo")
-expand_mode = 3
+texture = ExtResource("3_3e41l")
+expand_mode = 4
+stretch_mode = 5
 
 [node name="Hp" type="Label" parent="VBoxContainer"]
 layout_mode = 2

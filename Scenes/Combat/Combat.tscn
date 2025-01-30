@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://df0p3tawo2arq"]
+[gd_scene load_steps=13 format=3 uid="uid://df0p3tawo2arq"]
 
+[ext_resource type="Texture2D" uid="uid://blwikybiv1vto" path="res://Art/Background/Background material shop/bg016a.jpg" id="1_bhxea"]
 [ext_resource type="Script" path="res://Scenes/Combat/Combat.gd" id="1_i0ygr"]
 [ext_resource type="PackedScene" uid="uid://yrt34rtqrinn" path="res://Scenes/Combat/Enemy.tscn" id="2_bxbvl"]
 [ext_resource type="Texture2D" uid="uid://cyfs2o5pbfd46" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g966.png" id="3_b5mlk"]
@@ -36,6 +37,20 @@ PopupMenu/font_sizes/font_size = 32
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bhxea")
+
 [node name="Combat" type="VBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,7 +69,6 @@ theme_override_constants/margin_bottom = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Enemy" parent="Combat/MarginContainer/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false
@@ -78,7 +92,6 @@ theme_override_constants/margin_bottom = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Combat/MarginContainer2"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Enemy" parent="Combat/MarginContainer2/HBoxContainer" instance=ExtResource("2_bxbvl")]
 visible = false

@@ -289,7 +289,11 @@ func _on_action(button):
 		"Tower":
 			tower.show()
 			if(Player.tower_level < len(Constants.tower_levels)):
-				tower.get_node("Description").text = Constants.tower_levels[Player.tower_level].description
+				tower.get_node("Description").text = ""
+				if "image" in Constants.tower_levels[Player.tower_level]:
+					var image = load(Constants.tower_levels[Player.tower_level].image)
+					tower.get_node("Description").add_image(image, 150)
+				tower.get_node("Description").add_text(Constants.tower_levels[Player.tower_level].description)
 			else:
 				tower.get_node("Description").text = "The tower is cleared."
 		"Class Change":

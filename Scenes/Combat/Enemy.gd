@@ -2,7 +2,7 @@ extends Control
 
 @onready var portrait = $VBoxContainer/Portrait
 @onready var hp = $VBoxContainer/Hp
-@onready var target_panel:PanelContainer = $TargetPanel
+@onready var target_panel = $TargetPanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,9 +18,7 @@ func get_hp() -> int:
 	
 func update_portrait() -> void:
 	portrait.texture = load(get_node("Enemy").portrait)
-	#TODO, figure out how to properly size target panel
-	target_panel.custom_minimum_size = Vector2(150 + 20, + (150/portrait.texture.get_size().x * portrait.texture.get_size().y) + 20)
-	target_panel.position = Vector2(-10, 0)
+	target_panel.custom_minimum_size = Vector2((150 * portrait.texture.get_size().x/portrait.texture.get_size().y) + 20, 150 + 20 )
 
 func toggle_target(toggle: bool) -> void:
 	target_panel.visible = toggle;

@@ -41,11 +41,26 @@ enum live2d_modes {LIVE2D, VIDEO}
 @export var enemies = [
 	{
 		"level": 1,
-		"character_class": "warrior",
-		"race": "slime",
+		"character_class": "mage",
+		"race": "dumpling",
 	},
 	{
 		"level": 1,
+		"character_class": "warrior",
+		"race": "skeleton",
+	},
+	{
+		"level": 1,
+		"character_class": "priest",
+		"race": "dumpling",
+	},
+	{
+		"level": 1,
+		"character_class": "rogue",
+		"race": "dumpling",
+	},
+	{
+		"level": 15,
 		"character_class": "rice",
 		"race": "lesser_phantom",
 	},

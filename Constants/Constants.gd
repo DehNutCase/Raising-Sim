@@ -924,7 +924,8 @@ const character_classes = {
 		'combat_skills': ["preparation"],
 		'label': "Rogue",
 		'portrait': {
-			'slime': 'res://Art/Temporary Placeholder/RO_Poporing(SD).png',
+			'dumpling': 'res://Art/It Came From The Swam/f_Yakimarsh.png',
+			'skeleton': 'res://Art/It Came From The Swam/f_MinionsB.png',
 		},
 	},
 	'priest': {
@@ -952,7 +953,7 @@ const character_classes = {
 		'combat_skills': ["heal"],
 		'label': "Priest",
 		'portrait': {
-			'slime': 'res://Art/Temporary Placeholder/RO_Drops(SD).png',
+			'dumpling': 'res://Art/It Came From The Swam/f_LunaChime.png',
 		},
 	},
 	'mage': {
@@ -980,7 +981,7 @@ const character_classes = {
 		'combat_skills': ["fireball", "brilliance"],
 		'label': "Mage",
 		'portrait': {
-			'slime': 'res://Art/Temporary Placeholder/RO_Marin(SD).png',
+			'dumpling': 'res://Art/It Came From The Swam/f_candle.png',
 		},
 	},
 	'assassin': {
@@ -1005,6 +1006,9 @@ const character_classes = {
 		},
 		'combat_skills': ["preparation", "finishing_blow"],
 		'label': "Assassin",
+		'portrait': {
+			'dumpling': 'res://Art/It Came From The Swam/f_Yakimarsh.png',
+		},
 	},
 	'rice': {
 		'base_stats': {
@@ -1030,11 +1034,14 @@ const character_classes = {
 		},
 		'combat_skills': ["judgement"],
 		'label': "Rice",
+		'portrait': {
+			'lesser_phantom': 'res://Characters/Rice/Images/Portrait/idle_000.png',
+		},
 	},
 }
 
 const races = {
-	'slime': {
+	'dumpling': {
 		'base_stats': {
 			'max_hp': 25,
 			'strength': 5,
@@ -1048,10 +1055,10 @@ const races = {
 		'level_stats': {
 			'experience': 1,
 		},
-		'label': 'Slime',
-		'portrait': 'res://Art/Temporary Placeholder/RO_Poring.png',
+		'label': 'Dumpling',
+		'portrait': 'res://Art/It Came From The Swam/f_manju.png',
 	},
-	'goblin': {
+	'skeleton': {
 		'base_stats': {
 			'max_hp': 50,
 			'strength': 10,
@@ -1066,8 +1073,8 @@ const races = {
 			'experience': 2,
 			'gold': 5,
 		},
-		'label': 'Goblin',
-		'portrait': 'res://Art/Temporary Placeholder/RO_Goblin3Portrait.png',
+		'label': 'Skeleton',
+		'portrait': 'res://Art/It Came From The Swam/f_MinionsA.png',
 	},
 	'orc': {
 		'base_stats': {
@@ -1122,10 +1129,11 @@ const tower_levels = [
 			{
 				"level": 1,
 				"character_class": "warrior",
-				"race": "slime",
+				"race": "dumpling",
 			},
 		],
-		'description': "A slime warrior. Starts weak, but can buff itself to dangerous levels.",
+		'image': "res://Art/It Came From The Swam/f_manju.png",
+		'description': "A Dumpling Warrior. Starts weak, but can buff itself to dangerous levels.\n\nDumplings are a variety of slime. Domesticated Dumplings have a fluffy texture and slightly sweet taste, but wild Dumplings are rubbery and bitter. It's considered extremely rude to nibble on Dumplings without asking permission first.",
 	},
 	{
 		'level': 1,
@@ -1133,10 +1141,11 @@ const tower_levels = [
 			{
 				"level": 2,
 				"character_class": "rogue",
-				"race": "goblin",
+				"race": "skeleton",
 			},
 		],
-		'description': "A goblin rogue. Gets faster and faster as the fight goes on.",
+		'description': "A skeleton rogue. Gets faster and faster as the fight goes on.\n\n",
+		'image': "res://Art/It Came From The Swam/f_MinionsB.png",
 	},
 	{
 		'level': 2,
@@ -1144,10 +1153,10 @@ const tower_levels = [
 			{
 				"level": 3,
 				"character_class": "mage",
-				"race": "slime",
+				"race": "dumpling",
 			},
 		],
-		'description': "A slime mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick.",
+		'description': "A dumpling mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick. Don't ask where the stick came from.",
 	},
 	{
 		'level': 3,
@@ -1158,7 +1167,7 @@ const tower_levels = [
 				"race": "orc",
 			},
 		],
-		'description': "An orc warrior. Orcs are naturally stronger and faster than slimes or goblins.",
+		'description': "An orc warrior. Orcs are naturally stronger and faster than dumplings or skeletons.",
 	},
 	{
 		'level': 4,
@@ -1166,15 +1175,15 @@ const tower_levels = [
 			{
 				"level": 5,
 				"character_class": "warrior",
-				"race": "slime",
+				"race": "dumpling",
 			},
 			{
 				"level": 5,
 				"character_class": "priest",
-				"race": "slime",
+				"race": "dumpling",
 			},
 		],
-		'description': "A slime warrior and a slime priest. Surprisingly, it might be better to take out the Warrior first.",
+		'description': "A dumpling warrior and a dumpling priest. Surprisingly, it might be better to take out the Warrior first.",
 	},
 	{
 		'level': 5,
@@ -1187,10 +1196,10 @@ const tower_levels = [
 			{
 				"level": 6,
 				"character_class": "warrior",
-				"race": "goblin",
+				"race": "skeleton",
 			},
 		],
-		'description': "A goblin warrior and an orc mage. Orcs are naturally stronger and faster than slimes or goblins. Counterintuitively, this means they also make excellent mages.",
+		'description': "A skeleton warrior and an orc mage. Orcs are naturally stronger and faster than dumplings or skeletons. Counterintuitively, this means they also make excellent mages.",
 	},
 	{
 		'level': 6,
@@ -1203,10 +1212,10 @@ const tower_levels = [
 			{
 				"level": 7,
 				"character_class": "rogue",
-				"race": "goblin",
+				"race": "skeleton",
 			},
 		],
-		'description': "An orc warrior and a goblin rogue. Warriors make excellent party leaders and rogues become quite dangerous if their strength increases.",
+		'description': "An orc warrior and a skeleton rogue. Warriors make excellent party leaders and rogues become quite dangerous if their strength increases.",
 	},
 	{
 		'level': 7,
@@ -1235,10 +1244,10 @@ const tower_levels = [
 			{
 				"level": 9,
 				"character_class": "mage",
-				"race": "slime",
+				"race": "dumpling",
 			},
 		],
-		'description': "An orc mage and a slime mage. Fireballs hurt, and buffed fireballs hurt even more.",
+		'description': "An orc mage and a dumpling mage. Fireballs hurt, and buffed fireballs hurt even more.",
 	},
 	{
 		'level': 9,
@@ -1246,25 +1255,25 @@ const tower_levels = [
 			{
 				"level": 10,
 				"character_class": "warrior",
-				"race": "slime",
+				"race": "dumpling",
 			},
 			{
 				"level": 10,
 				"character_class": "rogue",
-				"race": "slime",
+				"race": "dumpling",
 			},
 			{
 				"level": 10,
 				"character_class": "mage",
-				"race": "slime",
+				"race": "dumpling",
 			},
 			{
 				"level": 10,
 				"character_class": "priest",
-				"race": "slime",
+				"race": "dumpling",
 			},
 		],
-		'description': "A slime adventuring party! Even slimes get to go on adventures.",
+		'description': "A dumpling adventuring party! Even dumplings get to go on adventures.",
 	},
 	{
 		'level': 10,
@@ -1282,10 +1291,10 @@ const tower_levels = [
 			{
 				"level": 11,
 				"character_class": "assassin",
-				"race": "goblin",
+				"race": "skeleton",
 			},
 		],
-		'description': "Two orc warriors and a goblin assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
+		'description': "Two orc warriors and a skeleton assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
 	},
 	{
 		'level': 14,
