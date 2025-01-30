@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/NoranekoGames/Futon_Room.png" fade="0.0"]
+[background arg="res://Art/Background/Background material shop/bg019a.bmp" fade="0.0"]
 join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]

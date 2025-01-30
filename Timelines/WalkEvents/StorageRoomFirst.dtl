@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/NoranekoGames/Futon_Room.png" fade="0.0"]
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
 Alice_Portrait (Normal): Here's the storage room. Ring the bell next to the door if you need help finding something.

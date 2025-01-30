@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/NoranekoGames/Futon_Room.png" fade="0.0"]
+[background arg="res://Art/Background/Background material shop/bg019a.bmp" fade="0.0"]
 join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
@@ -31,4 +31,3 @@ update Mao (Smile)
 Mao_Portrait (Smile): Haha, her fur is so soft.
 Hiyori_Portrait (Normal): (Looks like she's having fun. I'll leave her alone for now.)
 [signal arg="{"stats": {"stress": -50}}"]
-

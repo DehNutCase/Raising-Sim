@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/MISC Backgrounds Set by Konett/Fantasy-Forrest2.png" fade="0.0" transition="Simple Fade"]
+[background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0" transition="Simple Fade"]
 join Mao (Normal) 2
 [history action="clear"]
 Rice_Portrait (Normal): Come in.
@@ -138,7 +138,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): Well, I won't stop you, but I don't have any advice for now.
 		[signal arg="{"stats": {"scholarship": 10}}"]
 update Mao (Normal)
-[background arg="res://Art/Background/MISC Backgrounds Set by Konett/Fantasy-Forrest2.png" fade="1.0" transition="Swipe Left To Right"]
+[background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="1.0" transition="Swipe Left To Right"]
 Rice_Portrait (Normal): I still think it's a waste of time to come here.
 update Mao (Smile)
 Mao_Portrait (Smile): It was fun!
