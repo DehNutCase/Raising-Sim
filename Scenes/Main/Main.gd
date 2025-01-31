@@ -293,6 +293,7 @@ func _on_action(button):
 				if "image" in Constants.tower_levels[Player.tower_level]:
 					var image = load(Constants.tower_levels[Player.tower_level].image)
 					tower.get_node("Description").add_image(image, 150)
+					tower.get_node("Description").add_text("\n")
 				tower.get_node("Description").add_text(Constants.tower_levels[Player.tower_level].description)
 			else:
 				tower.get_node("Description").text = "The tower is cleared."

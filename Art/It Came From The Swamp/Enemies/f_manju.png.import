@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://budanfo0scyu1"
-path="res://.godot/imported/f_Sunon.png-be1ae8281d998ff9883835a1423e577f.ctex"
+uid="uid://djeu37k768ji1"
+path="res://.godot/imported/f_manju.png-c47c65c659dba7778ca48a42241efa89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_Sunon.png"
-dest_files=["res://.godot/imported/f_Sunon.png-be1ae8281d998ff9883835a1423e577f.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_manju.png"
+dest_files=["res://.godot/imported/f_manju.png-c47c65c659dba7778ca48a42241efa89.ctex"]
 
 [params]
 

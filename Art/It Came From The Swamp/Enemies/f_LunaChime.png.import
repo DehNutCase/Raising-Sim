@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djeu37k768ji1"
-path="res://.godot/imported/f_manju.png-1cbbbfa388814e11a0a83c135731a45d.ctex"
+uid="uid://by233jvt2t4ro"
+path="res://.godot/imported/f_LunaChime.png-d2a78a49b5bf5f3d8d9c0e43ae46bad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_manju.png"
-dest_files=["res://.godot/imported/f_manju.png-1cbbbfa388814e11a0a83c135731a45d.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_LunaChime.png"
+dest_files=["res://.godot/imported/f_LunaChime.png-d2a78a49b5bf5f3d8d9c0e43ae46bad7.ctex"]
 
 [params]
 

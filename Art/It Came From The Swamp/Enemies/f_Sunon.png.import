@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjiqmrnesye78"
-path="res://.godot/imported/f_Teruko.png-ca80c12ae122bf4da98caa83938f938d.ctex"
+uid="uid://budanfo0scyu1"
+path="res://.godot/imported/f_Sunon.png-98436c26964db5b3c76c10ec88db53a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_Teruko.png"
-dest_files=["res://.godot/imported/f_Teruko.png-ca80c12ae122bf4da98caa83938f938d.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_Sunon.png"
+dest_files=["res://.godot/imported/f_Sunon.png-98436c26964db5b3c76c10ec88db53a8.ctex"]
 
 [params]
 

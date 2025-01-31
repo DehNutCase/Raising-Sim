@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dccx0yv1crc5p"
-path="res://.godot/imported/f_CaoptainB.png-65191b3bbf3946b56f42fa47212889da.ctex"
+uid="uid://c3cnll5gacj8l"
+path="res://.godot/imported/f_candle.png-a7f208e5f6fb34e0d7579c94a61f7ceb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_CaoptainB.png"
-dest_files=["res://.godot/imported/f_CaoptainB.png-65191b3bbf3946b56f42fa47212889da.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_candle.png"
+dest_files=["res://.godot/imported/f_candle.png-a7f208e5f6fb34e0d7579c94a61f7ceb.ctex"]
 
 [params]
 

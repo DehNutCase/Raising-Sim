@@ -924,8 +924,8 @@ const character_classes = {
 		'combat_skills': ["preparation"],
 		'label': "Rogue",
 		'portrait': {
-			'dumpling': 'res://Art/It Came From The Swam/f_Yakimarsh.png',
-			'skeleton': 'res://Art/It Came From The Swam/f_MinionsB.png',
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
+			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_MinionsB.png',
 		},
 	},
 	'priest': {
@@ -953,7 +953,8 @@ const character_classes = {
 		'combat_skills': ["heal"],
 		'label': "Priest",
 		'portrait': {
-			'dumpling': 'res://Art/It Came From The Swam/f_LunaChime.png',
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_LunaChime.png',
+			'teru': 'res://Art/It Came From The Swamp/Enemies/f_Teruko.png',
 		},
 	},
 	'mage': {
@@ -981,7 +982,8 @@ const character_classes = {
 		'combat_skills': ["fireball", "brilliance"],
 		'label': "Mage",
 		'portrait': {
-			'dumpling': 'res://Art/It Came From The Swam/f_candle.png',
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_candle.png',
+			'teru': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
 		},
 	},
 	'assassin': {
@@ -1007,7 +1009,8 @@ const character_classes = {
 		'combat_skills': ["preparation", "finishing_blow"],
 		'label': "Assassin",
 		'portrait': {
-			'dumpling': 'res://Art/It Came From The Swam/f_Yakimarsh.png',
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
+			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
 		},
 	},
 	'rice': {
@@ -1056,7 +1059,7 @@ const races = {
 			'experience': 1,
 		},
 		'label': 'Dumpling',
-		'portrait': 'res://Art/It Came From The Swam/f_manju.png',
+		'portrait': 'res://Art/It Came From The Swamp/Enemies/f_manju.png',
 	},
 	'skeleton': {
 		'base_stats': {
@@ -1074,9 +1077,9 @@ const races = {
 			'gold': 5,
 		},
 		'label': 'Skeleton',
-		'portrait': 'res://Art/It Came From The Swam/f_MinionsA.png',
+		'portrait': 'res://Art/It Came From The Swamp/Enemies/f_MinionsA.png',
 	},
-	'orc': {
+	'teru': {
 		'base_stats': {
 			'max_hp': 100,
 			'strength': 25,
@@ -1093,8 +1096,8 @@ const races = {
 			'experience': 10,
 			'gold': 10,
 		},
-		'label': 'Orc',
-		'portrait': 'res://Art/Temporary Placeholder/RO_OrcWarriorPortrait.png',
+		'label': 'Teru',
+		'portrait': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
 	},
 	'lesser_phantom': {
 		'base_stats': {
@@ -1132,7 +1135,7 @@ const tower_levels = [
 				"race": "dumpling",
 			},
 		],
-		'image': "res://Art/It Came From The Swam/f_manju.png",
+		'image': "res://Art/It Came From The Swamp/Enemies/f_manju.png",
 		'description': "A Dumpling Warrior. Starts weak, but can buff itself to dangerous levels.\n\nDumplings are a variety of slime. Domesticated Dumplings have a fluffy texture and slightly sweet taste, but wild Dumplings are rubbery and bitter. It's considered extremely rude to nibble on Dumplings without asking permission first.",
 	},
 	{
@@ -1144,8 +1147,8 @@ const tower_levels = [
 				"race": "skeleton",
 			},
 		],
-		'description': "A skeleton rogue. Gets faster and faster as the fight goes on.\n\n",
-		'image': "res://Art/It Came From The Swam/f_MinionsB.png",
+		'image': "res://Art/It Came From The Swamp/Enemies/f_MinionsB.png",
+		'description': "A Skeleton Rogue. Gets faster and faster as the fight goes on.\n\nAnimated Skeletons are a common sight anywhere animals have died. Regardless of where the bones came from, all Skeletons share the same basic shape. Surprisingly fond of alcohol, so remember to bring a mop if you invite one to a party. Not a good source of calcium.",
 	},
 	{
 		'level': 2,
@@ -1156,7 +1159,8 @@ const tower_levels = [
 				"race": "dumpling",
 			},
 		],
-		'description': "A dumpling mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick. Don't ask where the stick came from.",
+		'image': "res://Art/It Came From The Swamp/Enemies/f_candle.png",
+		'description': "A Dumpling Mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick. Don't ask where the stick came from.",
 	},
 	{
 		'level': 3,
@@ -1164,10 +1168,11 @@ const tower_levels = [
 			{
 				"level": 4,
 				"character_class": "warrior",
-				"race": "orc",
+				"race": "teru",
 			},
 		],
-		'description': "An orc warrior. Orcs are naturally stronger and faster than dumplings or skeletons.",
+		'description': "A Teru Warrior. Teru are naturally stronger and faster than Dumplings or Skeletons.\n\nTeru, or 'teru teru bōzu', are a relatively new variety of ghost. Small and friendly, they are commonly thought to be signs of good weather. Likes hanging themselves on string and often surprise people accidentally while doing so. Non-edible, so please stop trying.",
+		'image': "res://Art/It Came From The Swamp/Enemies/f_TeruoB.png",
 	},
 	{
 		'level': 4,
@@ -1183,23 +1188,25 @@ const tower_levels = [
 				"race": "dumpling",
 			},
 		],
-		'description': "A dumpling warrior and a dumpling priest. Surprisingly, it might be better to take out the Warrior first.",
+		'image': "res://Art/It Came From The Swamp/Enemies/f_LunaChime.png",
+		'description': "A Dumpling Warrior and a Dumpling Priest. Surprisingly, it might be better to take out the Warrior first.\n\nA Dumpling's taste changes depending on its class. Unfortunately, wild varieties get less palatable from changing to a rarer class. Domesticated Dumplings, on the other hand, are too expensive to be affordable outside of the most common Warrior class.",
 	},
 	{
 		'level': 5,
 		'enemies': [
 			{
 				"level": 6,
-				"character_class": "mage",
-				"race": "orc",
-			},
-			{
-				"level": 6,
 				"character_class": "warrior",
 				"race": "skeleton",
 			},
+			{
+				"level": 6,
+				"character_class": "mage",
+				"race": "teru",
+			},
 		],
-		'description': "A skeleton warrior and an orc mage. Orcs are naturally stronger and faster than dumplings or skeletons. Counterintuitively, this means they also make excellent mages.",
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_MinionsA.png',
+		'description': "A Skeleton Warrior and a Teru Mage. Although Teru don't have any specific advantages in casting magic, their high speed means they make excellent mages nontheless.",
 	},
 	{
 		'level': 6,
@@ -1207,7 +1214,7 @@ const tower_levels = [
 			{
 				"level": 7,
 				"character_class": "warrior",
-				"race": "orc",
+				"race": "teru",
 			},
 			{
 				"level": 7,
@@ -1215,7 +1222,8 @@ const tower_levels = [
 				"race": "skeleton",
 			},
 		],
-		'description': "An orc warrior and a skeleton rogue. Warriors make excellent party leaders and rogues become quite dangerous if their strength increases.",
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
+		'description': "A Teru Warrior and a Skeleton Rogue. Warriors make excellent party leaders and Rogues become quite dangerous if their strength increases.",
 	},
 	{
 		'level': 7,
@@ -1223,15 +1231,16 @@ const tower_levels = [
 			{
 				"level": 8,
 				"character_class": "mage",
-				"race": "orc",
+				"race": "teru",
 			},
 			{
 				"level": 8,
 				"character_class": "priest",
-				"race": "orc",
+				"race": "teru",
 			},
 		],
-		'description': "An orc mage and an orc priest. Combined with a mage, a priest's healing becomes stronger and stronger as time goes on. Watch out for fireballs.",
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
+		'description': "A Teru Mage and a Teru priest. Combined with a mage, a priest's healing becomes stronger and stronger as time goes on. Watch out for Fireballs.\n\nIt's a common belief that seeing a Teru holding an umbrella is a sign of rain. In fact, however, all Teru have umbrellas, but only Teru Mages carry them even when the sun is shining. Although they'll happily share if asked, it's hard to see how such a tiny umbrella can be helpful when you're being rained on.",
 	},
 	{
 		'level': 8,
@@ -1239,7 +1248,7 @@ const tower_levels = [
 			{
 				"level": 9,
 				"character_class": "mage",
-				"race": "orc",
+				"race": "teru",
 			},
 			{
 				"level": 9,
@@ -1247,7 +1256,8 @@ const tower_levels = [
 				"race": "dumpling",
 			},
 		],
-		'description': "An orc mage and a dumpling mage. Fireballs hurt, and buffed fireballs hurt even more.",
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_candle.png',
+		'description': "A Teru Mage and a Dumpling Mage. Fireballs hurt, and buffed Fireballs hurt even more.",
 	},
 	{
 		'level': 9,
@@ -1273,7 +1283,8 @@ const tower_levels = [
 				"race": "dumpling",
 			},
 		],
-		'description': "A dumpling adventuring party! Even dumplings get to go on adventures.",
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
+		'description': "A Dumpling adventuring party! Even Dumplings get to go on adventures. Although the road ahead is long, they've taken their first steps to becoming Heroes.\n\nAccording to a certain King of Demons, Dumpling Heroes are surprisingly delicious. Apparently the Dumpling Hero regressed back to being a Dumpling Swordmaster afterwards, although it's not certain if it's because it lost or because she took a bite.",
 	},
 	{
 		'level': 10,
@@ -1281,12 +1292,12 @@ const tower_levels = [
 			{
 				"level": 11,
 				"character_class": "warrior",
-				"race": "orc",
+				"race": "teru",
 			},
 			{
 				"level": 11,
 				"character_class": "warrior",
-				"race": "orc",
+				"race": "teru",
 			},
 			{
 				"level": 11,
@@ -1294,7 +1305,9 @@ const tower_levels = [
 				"race": "skeleton",
 			},
 		],
-		'description': "Two orc warriors and a skeleton assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
+		#TODO, continue work here
+		'description': "Two Teru Warriors and a Skeleton Assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
 	},
 	{
 		'level': 14,

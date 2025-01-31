@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coxvlnpvvibcm"
-path="res://.godot/imported/f_Yakimarsh.png-24c0994f5b70b438c1dab4b5cb5d8aa8.ctex"
+uid="uid://88ts7ovi6is7"
+path="res://.godot/imported/f_TeruoB.png-98147e473cf5c0220bbc196cc569fffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_Yakimarsh.png"
-dest_files=["res://.godot/imported/f_Yakimarsh.png-24c0994f5b70b438c1dab4b5cb5d8aa8.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_TeruoB.png"
+dest_files=["res://.godot/imported/f_TeruoB.png-98147e473cf5c0220bbc196cc569fffe.ctex"]
 
 [params]
 

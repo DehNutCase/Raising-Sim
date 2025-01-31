@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jx160m6oowjx"
-path="res://.godot/imported/f_Teruo.png-884eb916423ad5b9db99417db9346c96.ctex"
+uid="uid://dccx0yv1crc5p"
+path="res://.godot/imported/f_CaoptainB.png-530e26a6fd919a9d9568e34c2544fb01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_Teruo.png"
-dest_files=["res://.godot/imported/f_Teruo.png-884eb916423ad5b9db99417db9346c96.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png"
+dest_files=["res://.godot/imported/f_CaoptainB.png-530e26a6fd919a9d9568e34c2544fb01.ctex"]
 
 [params]
 

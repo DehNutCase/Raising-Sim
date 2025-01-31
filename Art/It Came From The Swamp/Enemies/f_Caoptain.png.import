@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmvnew5iwqyr8"
-path="res://.godot/imported/f_MinionsB.png-08a83e59d0341d2cd66e719d12433aa9.ctex"
+uid="uid://136l8twx3r2k"
+path="res://.godot/imported/f_Caoptain.png-e55682a867bdec87bab455d5bafc4001.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/It Came From The Swam/f_MinionsB.png"
-dest_files=["res://.godot/imported/f_MinionsB.png-08a83e59d0341d2cd66e719d12433aa9.ctex"]
+source_file="res://Art/It Came From The Swamp/Enemies/f_Caoptain.png"
+dest_files=["res://.godot/imported/f_Caoptain.png-e55682a867bdec87bab455d5bafc4001.ctex"]
 
 [params]
 
