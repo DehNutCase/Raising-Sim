@@ -1010,6 +1010,33 @@ const character_classes = {
 		'label': "Assassin",
 		'portrait': {
 			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
+			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_MinionsB.png',
+		},
+	},
+	'knight': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 75,
+			'defense': 50,
+			'speed': 25,
+			'resistance': 25,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 2,
+		},
+		'level_stats': {
+			'max_hp': 75,
+			'strength': 15,
+			'defense': 10,
+			'speed': 10,
+			'resistance': 10,
+			'gold': 100,
+			'experience': 50,
+		},
+		'combat_skills': ["rally", "finishing_blow"],
+		'label': "Knight",
+		'portrait': {
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
 			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
 		},
 	},
@@ -1028,7 +1055,7 @@ const character_classes = {
 		'level_stats': {
 			'experience': 100,
 			'gold': 100,
-			'max_hp': 30,
+			'max_hp': 50,
 			'strength': 25,
 			'defense': 25,
 			'speed': 40,
@@ -1171,7 +1198,7 @@ const tower_levels = [
 				"race": "teru",
 			},
 		],
-		'description': "A Teru Warrior. Teru are naturally stronger and faster than Dumplings or Skeletons.\n\nTeru, or 'teru teru bōzu', are a relatively new variety of ghost. Small and friendly, they are commonly thought to be signs of good weather. Likes hanging themselves on string and often surprise people accidentally while doing so. Non-edible, so please stop trying.",
+		'description': "A Teru Warrior. Teru are naturally stronger and faster than Dumplings or Skeletons.\n\nTeru, or 'teru teru bōzu', are a relatively new variety of ghost. Small and friendly, they are commonly thought to be signs of good weather. Likes hanging themselves on string, often surprising people by accident while doing so. Non-edible, so please stop trying.",
 		'image': "res://Art/It Came From The Swamp/Enemies/f_TeruoB.png",
 	},
 	{
@@ -1189,7 +1216,7 @@ const tower_levels = [
 			},
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_LunaChime.png",
-		'description': "A Dumpling Warrior and a Dumpling Priest. Surprisingly, it might be better to take out the Warrior first.\n\nA Dumpling's taste changes depending on its class. Unfortunately, wild varieties get less palatable from changing to a rarer class. Domesticated Dumplings, on the other hand, are too expensive to be affordable outside of the most common Warrior class.",
+		'description': "A Dumpling Warrior and a Dumpling Priest. Surprisingly, it might be better to take out the Warrior first.\n\nA Dumpling's taste changes depending on its class. Unfortunately, wild varieties get less palatable from changing to a rarer class. Domesticated Dumplings, on the other hand, are too expensive to be affordable outside of the most common classes.",
 	},
 	{
 		'level': 5,
@@ -1284,7 +1311,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
-		'description': "A Dumpling adventuring party! Even Dumplings get to go on adventures. Although the road ahead is long, they've taken their first steps to becoming Heroes.\n\nAccording to a certain King of Demons, Dumpling Heroes are surprisingly delicious. Apparently the Dumpling Hero regressed back to being a Dumpling Swordmaster afterwards, although it's not certain if it's because it lost or because she took a bite.",
+		'description': "A Dumpling adventuring party! Even Dumplings get to go on adventures. Although the road ahead is long, they've taken their first steps to becoming Heroes.\n\nAccording to a certain King of Demons, a Dumpling Hero is surprisingly delicious. It seems like the Dumpling Hero regressed back to a Dumpling Swordmaster afterwards, although it's not certain if it's because it lost or because she took a bite.",
 	},
 	{
 		'level': 10,
@@ -1323,9 +1350,17 @@ const tower_levels = [
 ]
 
 const combat_skills = {
+	'basic_attack': {
+		'weight': 10,
+		'effect_target': 'enemy',
+		'effect_type': 'attack',
+		'effect_range': 'single',
+		'effect_strength': 100,
+		'label': "Basic Attack"
+	},
 	'warcry': {
 		'stats': {
-			'strength': 5,
+			'strength': 10,
 		},
 		'weight': 5,
 		'effect_target': 'ally',
@@ -1335,13 +1370,19 @@ const combat_skills = {
 		'message_player': "Strength increased!",
 		'label': "Warcry",
 	},
-	'basic_attack': {
-		'weight': 10,
-		'effect_target': 'enemy',
-		'effect_type': 'attack',
-		'effect_range': 'single',
-		'effect_strength': 100,
-		'label': "Basic Attack"
+	'rally': {
+		'stats': {
+			'strength': 50,
+			'defense': 50,
+			'resistance': 25,
+		},
+		'weight': 5,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'area',
+		'message': "Strength, defense, and resistance increased for the enemy party!",
+		'message_player': "Strength, defense, and resistance increased!",
+		'label': "Rally",
 	},
 	'preparation': {
 		'stats': {
@@ -1377,7 +1418,7 @@ const combat_skills = {
 	},
 	'brilliance': {
 		'stats': {
-			'magic': 5,
+			'magic': 10,
 		},
 		'weight': 10,
 		'effect_target': 'ally',

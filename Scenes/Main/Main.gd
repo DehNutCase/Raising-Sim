@@ -45,7 +45,15 @@ var current_state = states.READY
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Game needs to be loaded here
-	Player.load_game()
+	if !Player.save_loaded:
+		Player.load_game()
+	Player.save_loaded = true
+	if Player.victory_stat_gain:
+		display_toast("Gained stats from combat!", "top")
+		await(get_tree().create_timer(.5).timeout)
+		process_stats(Player.victory_stat_gain)
+		Player.victory_stat_gain = {}
+	
 	if (Player.background_inventory.has_item_by_id("gray")):
 		gray_portrait.show()
 	
@@ -106,13 +114,7 @@ func process_day():
 			Player.stats[stat] = Constants.stats[stat]["min"]
 		if "max" in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]["max"]:
 			Player.stats[stat] = Constants.stats[stat]["max"]
-			
-	if Player.victory_stat_gain:
-		display_toast("Gained stats from combat!", "top")
-		await(get_tree().create_timer(.5).timeout)
-		process_stats(Player.victory_stat_gain)
-		Player.victory_stat_gain = {}
-		
+	
 	display_stats()
 	day_label.display_day(day)
 	if(skip_checkbox.button_pressed):
@@ -288,8 +290,8 @@ func _on_action(button):
 			menu_panel.visible = true
 		"Tower":
 			tower.show()
+			tower.get_node("Description").clear()
 			if(Player.tower_level < len(Constants.tower_levels)):
-				tower.get_node("Description").text = ""
 				if "image" in Constants.tower_levels[Player.tower_level]:
 					var image = load(Constants.tower_levels[Player.tower_level].image)
 					tower.get_node("Description").add_image(image, 150)

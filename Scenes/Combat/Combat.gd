@@ -119,7 +119,8 @@ func process_turns(player_action: String):
 						display_toast(message)
 						
 					if action.effect_range == "area":
-						for enemy in enemies:
+						var enemies_copy = enemies.duplicate()
+						for enemy in enemies_copy:
 							await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 							if enemy in death_queue:
 								return

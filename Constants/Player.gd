@@ -26,10 +26,11 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var player_class:String = "ink_mage"
 @export var label = "Mao"
 @export var combat_skills = ['paintball',]
+
 @export var live2d_active = true
 var dialogic_temporary_flags = {}
-
 enum live2d_modes {LIVE2D, VIDEO}
+
 @export var live2d_mode = live2d_modes.LIVE2D:
 	set(value):
 		live2d_mode = value
@@ -68,6 +69,8 @@ enum live2d_modes {LIVE2D, VIDEO}
 @export var tower_level = 0
 var in_tower = false
 var victory_stat_gain = {}
+
+var save_loaded = false
 
 func _init():
 	base_stats = {
