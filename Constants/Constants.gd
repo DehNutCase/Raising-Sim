@@ -1318,34 +1318,78 @@ const tower_levels = [
 		'enemies': [
 			{
 				"level": 11,
-				"character_class": "warrior",
-				"race": "teru",
-			},
-			{
-				"level": 11,
-				"character_class": "warrior",
-				"race": "teru",
-			},
-			{
-				"level": 11,
-				"character_class": "assassin",
-				"race": "skeleton",
-			},
-		],
-		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
-		#TODO, continue work here
-		'description': "Two Teru Warriors and a Skeleton Assassin. Assassin is an advanced class with extreme speed and damage. Due to being an advanced class, even their 'weak' stats are quite high. (It's not a good idea to fight advanced classes as a non-combat class, but part of Mao's contract is to stay in her original class)",
-	},
-	{
-		'level': 14,
-		'enemies': [
-			{
-				"level": 15,
 				"character_class": "rice",
 				"race": "lesser_phantom",
 			},
 		],
-		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a lesser phantom, so it's far weaker and slower than the original. Unfortunately this one is a phantom of Rice, whose favorite skill happens to deal extreme damage while ignoring defenses. Consider asking Rice for advice if you lose.",
+		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
+		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a lesser phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to make their living in the service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
+	},
+	{
+		'level': 11,
+		'enemies': [
+			{
+				"level": 12,
+				"character_class": "warrior",
+				"race": "teru",
+			},
+			{
+				"level": 12,
+				"character_class": "warrior",
+				"race": "teru",
+			},
+			{
+				"level": 12,
+				"character_class": "assassin",
+				"race": "skeleton",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_MinionsB.png',
+		'description': "Two Teru Warriors and a Skeleton Assassin. Assassin is an advanced class with high speed and damage. Due to being an advanced class, their stats are high across the board. It's not recommended to fight an advanced class as a non-combat class.",
+	},
+	{
+		'level': 12,
+		'enemies': [
+			{
+				"level": 13,
+				"character_class": "knight",
+				"race": "skeleton",
+			},
+			{
+				"level": 13,
+				"character_class": "mage",
+				"race": "teru",
+			},
+			{
+				"level": 13,
+				"character_class": "priest",
+				"race": "teru",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
+		'description': "A Skeleton Knight, Teru Mage, and Teru Priest. Knight is an advanced class with strong skills and well-rounded stats.",
+	},
+	{
+		'level': 13,
+		'enemies': [
+			{
+				"level": 14,
+				"character_class": "knight",
+				"race": "dumpling",
+			},
+			{
+				"level": 14,
+				"character_class": "knight",
+				"race": "dumpling",
+			},
+			{
+				"level": 14,
+				"character_class": "assassin",
+				"race": "dumpling",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
+		'description': "Two Dumpling Knights and a Dumpling Asassin.\n\nDumpling Knights, as you might expect from their appearance, have a bitter, chocolatey taste. Although wild varieties are unpalatably bitter, domesticated Dumpling Knights are considered a prime tea time snack, pairing well with the sweetness of Dumpling Assassins. Assuming, of course, that you could afford the expense.",
 	},
 ]
 

@@ -72,7 +72,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	Rice_Portrait (Normal): For entirely unrelated reasons.
 	[signal arg="{"stats": {"scholarship": 10}}"]
 - I'm trying to climb the tower.
-	if Player.tower_level == 14:
+	if Player.tower_level == 10:
 		# TODO, add check for defeat at stage 14
 		update Mao (Sad)
 		Mao_Portrait (Sad): And you're kicking my ass.
@@ -95,10 +95,10 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		update Mao (Normal)
 		Rice_Portrait (Normal): A lesser phantom isn't particularly dangerous, just knock it down before it can do anything.
 		Mao_Portrait (Normal): But it's so fast!
-		Rice_Portrait (Normal): Not at all. About five or six hundred standard units should be enough.
+		Rice_Portrait (Normal): Not at all. About four hundred standard units should be enough.
 		update Mao (Surprised)
 		Mao_Portrait (Surprised): Standard units?
-		Rice_Portrait (Normal): Of Speed. Six hundred points of speed.
+		Rice_Portrait (Normal): Of Speed. Four hundred points of speed.
 		update Mao (Normal)
 		Mao_Portrait (Normal): No, I mean, what's a standard unit?
 		Rice_Portrait (Normal): The phrase should be self explanatory; it's just a unit of measurement. You can find the conversions to and from in 'An Introduction to Stats'.
@@ -108,7 +108,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): The standard units for stats other than Hit Points and Mana aren't linear, so it can't be helped.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 20}}"]
-	elif Player.tower_level  >  8:
+	elif Player.tower_level  >  7:
 		Rice_Portrait (Normal): Do you really need help? You seem to be doing well so far.
 		update Mao (Normal)
 		Mao_Portrait (Normal): Hehe. Bonk, bonk, bonk.
