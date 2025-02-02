@@ -161,3 +161,5 @@ func load_game():
 			
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
+	OS.set_restart_on_exit(true)
+	get_tree().quit()
