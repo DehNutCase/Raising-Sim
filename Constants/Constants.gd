@@ -1066,6 +1066,36 @@ const character_classes = {
 		'label': "High Priest",
 		'portrait': {
 			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png',
+			'teru': 'res://Art/It Came From The Swamp/Enemies/f_Teruko.png',
+		},
+	},
+	'wizard': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 15,
+			'magic': 75,
+			'defense': 10,
+			'speed': 25,
+			'resistance': 35,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 1,
+		},
+		'level_stats': {
+			'max_hp': 25,
+			'strength': 5,
+			'magic': 20,
+			'defense': 5,
+			'speed': 15,
+			'resistance': 10,
+			'gold': 100,
+			'experience': 50,
+		},
+		'combat_skills': ["fireball", "lightning_bolt", "amplify_magic"],
+		'label': "Wizard",
+		'portrait': {
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_curry.png',
+			'teru': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
 		},
 	},
 	'rice': {
@@ -1441,6 +1471,88 @@ const tower_levels = [
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png',
 		'description': "A Dumpling Knight and two Dumpling High Priests. If left alone, the Knight will continually buff the team's defenses, so it's best to defeat it quickly.\n\nDespite appearances, Dumpling High Priests are not vegetables. Although they're nutritious, even domesticated varieties are exceptionally bitter. Some are quite sensitive about their appearance, so it's best not to mistake them for broccoli.",
 	},
+	{
+		'level': 15,
+		'enemies': [
+			{
+				"level": 16,
+				"character_class": "wizard",
+				"race": "dumpling",
+			},
+			{
+				"level": 16,
+				"character_class": "mage",
+				"race": "teru",
+			},
+			{
+				"level": 16,
+				"character_class": "mage",
+				"race": "teru",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_curry.png',
+		'description': "A Dumpling Wizard and two Teru Mages. It's best to defeat the wizard before it can buff the mages to dangerous levels.\n\nAs a rare exception, even wild Dumpling Wizards have a sweet, mellow taste, making them extremely popular. It's unknown whether the rice portion or the curry portion is the main body. ...What do you mean curry isn't a type of dumpling?",
+	},
+	{
+		'level': 16,
+		'enemies': [
+			{
+				"level": 17,
+				"character_class": "knight",
+				"race": "teru",
+			},
+			{
+				"level": 17,
+				"character_class": "wizard",
+				"race": "teru",
+			},
+			{
+				"level": 17,
+				"character_class": "high_priest",
+				"race": "teru",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
+		'description': "A Teru adventuring party! Not really. It seems like a trio of Teru gathered together to play pretend adventurers. Please consider buying a demon king costume and getting defeated, it'll make their day.",
+	},
+	{
+		'level': 17,
+		'enemies': [
+			{
+				"level": 18,
+				"character_class": "knight",
+				"race": "skeleton",
+			},
+			{
+				"level": 18,
+				"character_class": "warrior",
+				"race": "skeleton",
+			},
+			{
+				"level": 18,
+				"character_class": "rogue",
+				"race": "skeleton",
+			},
+			{
+				"level": 18,
+				"character_class": "knight",
+				"race": "skeleton",
+			},
+			{
+				"level": 18,
+				"character_class": "warrior",
+				"race": "skeleton",
+			},
+			{
+				"level": 18,
+				"character_class": "rogue",
+				"race": "skeleton",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
+		#TODO, continue work here
+		'description': "",
+	},
 ]
 
 const combat_skills = {
@@ -1512,7 +1624,7 @@ const combat_skills = {
 	},
 	'brilliance': {
 		'stats': {
-			'magic': 10,
+			'magic': 20,
 		},
 		'weight': 10,
 		'effect_target': 'ally',
@@ -1521,6 +1633,18 @@ const combat_skills = {
 		'message': "Magic increased for the enemy party!",
 		'message_player': "Magic increased!",
 		'label': "Brilliance",
+	},
+	'amplify_magic': {
+		'stats': {
+			'magic': 75,
+		},
+		'weight': 10,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'area',
+		'message': "Magic significantly increased for the enemy party!",
+		'message_player': "Magic increased significantly!",
+		'label': "Amplify Magic",
 	},
 	'paintball': {
 		'weight': 10,
@@ -1537,6 +1661,14 @@ const combat_skills = {
 		'effect_range': 'single',
 		'effect_strength': 200,
 		'label': "Fireball"
+	},
+	'lightning_bolt': {
+		'weight': 10,
+		'effect_target': 'enemy',
+		'effect_type': 'magic_attack',
+		'effect_range': 'single',
+		'effect_strength': 350,
+		'label': "Lightning Bolt"
 	},
 	'smite': {
 		'weight': 10,
