@@ -228,12 +228,12 @@ func process_turns(player_action: String):
 						display_toast(message)
 						update_player_hp(-damage)
 				"buff":
-					message = "Enemey used " + action.label + ". " + action.message
+					message = "Enemy used " + action.label + ". " + action.message
 					apply_buffs_enemy(action, node)
 					display_toast(message)
 				"heal":
 					var heal_amount = max(1, ((node.stats.magic * action.effect_strength/100)))
-					message = "Enemy healed " + str(heal_amount) + " hit points."
+					message = "Enemy used " + action.label + " and healed " + str(heal_amount) + " hit points."
 					heal_enemy(action, node, heal_amount)
 					display_toast(message)
 				_:
@@ -370,19 +370,19 @@ func update_player_hp(change: int = 0) -> void:
 func update_enemy_hp(enemy, amount) -> void:
 	enemy.update_hp(amount)
 	if enemy.get_hp() <= 0:
-		await kill_enemy(enemy)
+		await defeat_enemy(enemy)
 	
 func update_target(enemy) -> void:
 	target = enemy.get_parent()
 	target.toggle_target(true)
 	
-func kill_enemy(enemy) -> void:
+func defeat_enemy(enemy) -> void:
 	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 	enemy.gui_input.disconnect(_on_enemy_gui_input.bind(enemy))
 	death_queue.append(enemy.get_node("Enemy"))
 	enemies.erase(enemy.get_node("Enemy"))
 	enemy.hide()
-	var message = "Killed " + enemy.get_node("Enemy").label + "!"
+	var message = "Defeated " + enemy.get_node("Enemy").label + "!"
 	display_toast(message)
 	
 	var enemy_stats = enemy.get_node("Enemy").stats

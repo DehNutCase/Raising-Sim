@@ -1040,6 +1040,34 @@ const character_classes = {
 			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
 		},
 	},
+	'high_priest': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 25,
+			'magic': 50,
+			'defense': 25,
+			'speed': 10,
+			'resistance': 50,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 1,
+		},
+		'level_stats': {
+			'max_hp': 35,
+			'strength': 8,
+			'magic': 12,
+			'defense': 10,
+			'speed': 5,
+			'resistance': 20,
+			'gold': 100,
+			'experience': 50,
+		},
+		'combat_skills': ["light_barrier", "smite"],
+		'label': "High Priest",
+		'portrait': {
+			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png',
+		},
+	},
 	'rice': {
 		'base_stats': {
 			'max_hp': 100,
@@ -1323,7 +1351,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
-		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a lesser phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to make their living in the service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
+		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a lesser phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
 	},
 	{
 		'level': 11,
@@ -1391,6 +1419,28 @@ const tower_levels = [
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
 		'description': "Two Dumpling Knights and a Dumpling Asassin.\n\nDumpling Knights, as you might expect from their appearance, have a bitter, chocolatey taste. Although wild varieties are unpalatably bitter, domesticated Dumpling Knights are considered a prime tea time snack, pairing well with the sweetness of Dumpling Assassins. Assuming, of course, that you could afford the expense.",
 	},
+	{
+		'level': 14,
+		'enemies': [
+			{
+				"level": 15,
+				"character_class": "knight",
+				"race": "dumpling",
+			},
+			{
+				"level": 15,
+				"character_class": "high_priest",
+				"race": "dumpling",
+			},
+			{
+				"level": 15,
+				"character_class": "high_priest",
+				"race": "dumpling",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png',
+		'description': "A Dumpling Knight and two Dumpling High Priests. If left alone, the Knight will continually buff the team's defenses, so it's best to defeat it quickly.\n\nDespite appearances, Dumpling High Priests are not vegetables. Although they're nutritious, even domesticated varieties are exceptionally bitter. Some are quite sensitive about their appearance, so it's best not to mistake them for broccoli.",
+	},
 ]
 
 const combat_skills = {
@@ -1449,13 +1499,13 @@ const combat_skills = {
 		'label': "Heal"
 	},
 	'light_barrier': {
-		'weight': 10,
+		'weight': 20,
 		'effect_target': 'ally',
 		'effect_type': 'heal',
 		'effect_range': 'single',
 		'effect_strength': 250,
 		'label': "Light Barrier",
-		#'animation': "res://Characters/Rice/Videos/mtn_03.ogv", #TODO, replace with enemy animation
+		#'animation': "", #TODO, replace with enemy animation
 		'animation_player': "res://Characters/Mao/Videos/special_01.ogv",
 		'animation_length_player': 3.8,
 		'animation_size_player': Vector2(600, 750),
@@ -1486,6 +1536,14 @@ const combat_skills = {
 		'effect_type': 'magic_attack',
 		'effect_range': 'single',
 		'effect_strength': 200,
+		'label': "Fireball"
+	},
+	'smite': {
+		'weight': 10,
+		'effect_target': 'enemy',
+		'effect_type': 'magic_attack',
+		'effect_range': 'single',
+		'effect_strength': 100,
 		'label': "Fireball"
 	},
 	'meteor': {
