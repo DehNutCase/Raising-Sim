@@ -1381,7 +1381,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
-		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a lesser phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
+		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a Lesser Phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
 	},
 	{
 		'level': 11,
@@ -1550,8 +1550,51 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
-		#TODO, continue work here
-		'description': "",
+		'description': "A squad of Skeletons on a training trip. Although basic Skeletons are quite weak, it's still dangerous to leave them alone too long.",
+	},
+	{
+		'level': 18,
+		'enemies': [
+			{
+				"level": 19,
+				"character_class": "wizard",
+				"race": "teru",
+			},
+			{
+				"level": 19,
+				"character_class": "wizard",
+				"race": "teru",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
+		'description': "A pair of Teru Wizards. Dangerous yet fragile, it's difficult to survive even a single round against Wizards without class changing, so it's recommended to hit fast and hard.\n\nIt's unkown where Teru carry their umbrellas, but even in the rare case that they lose one they take another one out from somewhere.",
+	},
+	{
+		'level': 19,
+		'enemies': [
+			{
+				"level": 20,
+				"character_class": "knight",
+				"race": "dumpling",
+			},
+			{
+				"level": 20,
+				"character_class": "assassin",
+				"race": "dumpling",
+			},
+			{
+				"level": 20,
+				"character_class": "wizard",
+				"race": "dumpling",
+			},
+			{
+				"level": 20,
+				"character_class": "high_priest",
+				"race": "dumpling",
+			},
+		],
+		'image': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
+		'description': "A Dumpling adventuring party! Although they trained hard and even class changed, the weakness of Dumplings is starting to show. It should be an easy fight as long as the Wizard is brought down quickly.\n\nAs you might expect, Dumplings are quite fond of flour, so gifting them a bag of flour is an easy way to get close. Since they're fundamentally slimes, Dumplings can eat just about everything, although they have a harder time digesting minerals. Thanks to that, it's quite common to see domesticated Dumplings acting as vacuum cleaners.",
 	},
 ]
 
@@ -1676,7 +1719,7 @@ const combat_skills = {
 		'effect_type': 'magic_attack',
 		'effect_range': 'single',
 		'effect_strength': 100,
-		'label': "Fireball"
+		'label': "Smite"
 	},
 	'meteor': {
 		'weight': 10,

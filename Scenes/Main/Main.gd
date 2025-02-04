@@ -294,7 +294,7 @@ func _on_action(button):
 			if(Player.tower_level < len(Constants.tower_levels)):
 				if "image" in Constants.tower_levels[Player.tower_level]:
 					var image = load(Constants.tower_levels[Player.tower_level].image)
-					tower.get_node("Description").add_image(image, 150)
+					tower.get_node("Description").add_image(image, 0, 150)
 					tower.get_node("Description").add_text("\n")
 				tower.get_node("Description").add_text(Constants.tower_levels[Player.tower_level].description)
 			else:
