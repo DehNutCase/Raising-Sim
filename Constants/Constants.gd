@@ -1124,6 +1124,7 @@ const character_classes = {
 		'label': "Rice",
 		'portrait': {
 			'lesser_phantom': 'res://Characters/Rice/Images/Portrait/idle_000.png',
+			'greater_phantom_magic_officer': 'res://Characters/Rice/Images/Portrait/idle_000.png',
 		},
 	},
 }
@@ -1207,6 +1208,30 @@ const races = {
 			'resistance': -10,
 		},
 		'label': 'Lesser Phantom:',
+	},
+	'greater_phantom_magic_officer': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 15,
+			'magic': 75,
+			'defense': 10,
+			'speed': 25,
+			'resistance': 35,
+			'gold': 500,
+			'experience': 250,
+		},
+		'level_stats': {
+			'max_hp': 15,
+			'strength': -5,
+			'magic': 10,
+			'defense': -5,
+			'speed': 5,
+			'resistance': 0,
+			'gold': 100,
+			'experience': 50,
+		},
+		'combat_skills': ["lightning_bolt", "amplify_magic", "light_barrier"],
+		'label': 'Greater Phantom: Magic Officer ',
 	},
 }
 
@@ -1596,6 +1621,18 @@ const tower_levels = [
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
 		'description': "A Dumpling adventuring party! Although they trained hard and even class changed, the weakness of Dumplings is starting to show. It should be an easy fight as long as the Wizard is brought down quickly.\n\nAs you might expect, Dumplings are quite fond of flour, so gifting them a bag of flour is an easy way to get close. Since they're fundamentally slimes, Dumplings can eat just about everything, although they have a harder time digesting minerals. Thanks to that, it's quite common to see domesticated Dumplings acting as vacuum cleaners.",
 	},
+	{
+		'level': 20,
+		'enemies': [
+			{
+				"level": 21,
+				"character_class": "rice",
+				"race": "greater_phantom_magic_officer",
+			},
+		],
+		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
+		'description': "Greater Phantoms can mimic the target's class, making them extremely versatile and significantly stronger compared to Lesser Phantoms. Like all Phantoms, their stats are reduced compared to the original, but the primarily limitation of a Greater Phantom is the inability to mimic stats from training and the fact their stats are capped at their own level. This one is mimicking the Magic Officer class, a strong and versatile class which is nonetheless the weakest of Rice Glassfield's subclasses.\n\nUnfortunately, even a heavily develeled and restricted Rice is still extremely dangerous. Unlike the original, a Phantom rarely has the time to understand the proper usage of their skills and abilities, so it's not necessarily a guaranteed loss to let them have a single turn. Merely very, very, likely.\n\nIt's strongly recommended to class change before proceeding further up the tower.",
+	},
 ]
 
 const combat_skills = {
@@ -1741,7 +1778,7 @@ const combat_skills = {
 		'label': "Finishing Blow"
 	},
 	'judgement': {
-		'weight': 100,
+		'weight': 25,
 		'effect_target': 'enemy',
 		'effect_type': 'special_fixed',
 		'effect_range': 'single',
