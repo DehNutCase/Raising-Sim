@@ -38,7 +38,7 @@ json_data = "[
         \"daily_stats\": \"{}\",
         \"description\": \"Well crafted robes suitable for an apprentice.\",
         \"id\": \"apprentice_robes\",
-        \"image\": \"res://Characters/Cats/Images/grey-kitten3.png\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Chest/Resized/clothes08_03.png\",
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
         \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\",

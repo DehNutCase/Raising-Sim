@@ -9,7 +9,7 @@ json_data = "[
         \"daily_stats\": \"{}\",
         \"description\": \"An employee of the royal family. Unconditional access to part time jobs and academy classes. Monthly salary of 1000g.\",
         \"id\": \"royal_backing\",
-        \"image\": \"uid://doycqxwp1io2v\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Head/Resized/crown01_01.png\",
         \"monthly_stats\": \"{\\n\\\"gold\\\": 1000\\n}\",
         \"name\": \"Roya Backing\",
         \"stats\": \"{}\",

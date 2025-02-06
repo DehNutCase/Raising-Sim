@@ -1,0 +1,1 @@
+magick mogrify -resize 150x150 -quality 100 *.png
