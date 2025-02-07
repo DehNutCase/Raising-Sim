@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=44 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_rlk5e"]
 [ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
+[ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="11_rjsjm"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
@@ -190,6 +191,7 @@ offset_left = 310.0
 offset_top = -350.0
 offset_right = 660.0
 grow_vertical = 0
+theme = ExtResource("11_rjsjm")
 script = ExtResource("6_cueot")
 
 [node name="BackgroundInventory" type="Control" parent="Ui/PlayerControl/Player"]
@@ -205,6 +207,7 @@ offset_top = -350.0
 offset_right = -310.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("11_rjsjm")
 script = ExtResource("12_thnkb")
 
 [node name="SkillInventory" type="Control" parent="Ui/PlayerControl/Player"]
@@ -217,6 +220,7 @@ offset_left = -660.0
 offset_top = -350.0
 offset_right = -310.0
 grow_vertical = 0
+theme = ExtResource("11_rjsjm")
 script = ExtResource("13_tkqcx")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]

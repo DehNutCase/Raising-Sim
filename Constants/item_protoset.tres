@@ -36,7 +36,7 @@ json_data = "[
     },
     {
         \"daily_stats\": \"{}\",
-        \"description\": \"Well crafted robes suitable for an apprentice.\",
+        \"description\": \"Well crafted robes suitable for an apprentice. Strictly speaking, it's a dress.\",
         \"id\": \"apprentice_robes\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Chest/Resized/clothes08_03.png\",
         \"name\": \"Apprentice Robes\",
