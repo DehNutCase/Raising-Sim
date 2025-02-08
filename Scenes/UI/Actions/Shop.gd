@@ -24,7 +24,7 @@ func update_buttons():
 				continue
 		var button = load("res://Scenes/UI/Actions/shop_button.tscn").instantiate()
 		add_child(button)
-		self.get_child(i).position = Vector2( i%5 * 200, 150 * (i/5) )
+		self.get_child(i).position = Vector2( i%4 * 200 + 80, 220 * (i/4) )
 		self.get_child(i).item.prototype_id = key
 		self.get_child(i).update_labels()
 		i += 1
