@@ -63,7 +63,7 @@ json_data = "[
         \"name\": \"Health Potion\",
         \"price\": 1000,
         \"stats\": \"{}\",
-        \"combat_skill\" : \"health_potion\",
+        \"combat_item\" : \"health_potion\",
         \"limit\": 1
     },
     {
@@ -74,7 +74,7 @@ json_data = "[
         \"name\": \"Mana Potion\",
         \"price\": 1000,
         \"stats\": \"{}\",
-        \"combat_skill\" : \"mana_potion\",
+        \"combat_item\" : \"mana_potion\",
         \"limit\": 1
     },    {
         \"daily_stats\": \"{}\",
@@ -84,7 +84,7 @@ json_data = "[
         \"name\": \"Overload Potion\",
         \"price\": 5000,
         \"stats\": \"{}\",
-        \"combat_skill\" : \"overload_potion\",
+        \"combat_item\" : \"overload_potion\",
         \"limit\": 1
     },
 ]"

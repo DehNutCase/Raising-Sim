@@ -26,6 +26,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var player_class:String = "ink_mage"
 @export var label = "Mao"
 @export var combat_skills = ['paintball',]
+@export var combat_items = []
 
 @export var live2d_active = true
 var dialogic_temporary_flags = {}

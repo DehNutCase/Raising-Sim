@@ -1811,6 +1811,53 @@ const combat_skills = {
 	},
 }
 
+const combat_items = {
+	'health_potion': {
+		'stats': {
+			'max_hp': 100,
+		},
+		'weight': 5,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'single',
+		'message': "Health restored!",
+		'message_player': "HP increased!",
+		'label': "Health Potion",
+		'id': "health_potion",
+	},
+	'mana_potion': {
+		'stats': {
+			'magic': 100,
+		},
+		'weight': 5,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'single',
+		'message': "Magic increased!",
+		'message_player': "Magic increased!",
+		'label': "Mana Potion",
+		'id': "mana_potion",
+	},
+	'overload_potion': {
+		'stats': {
+			'magic': 100,
+			'strength': 100,
+			'defense': 100,
+			'resistance': 100,
+			'speed': 100,
+			'skill': 100,
+		},
+		'weight': 5,
+		'effect_target': 'ally',
+		'effect_type': 'buff',
+		'effect_range': 'single',
+		'message': "All stats increased!",
+		'message_player': "All stats increased!",
+		'label': "Overload Potion",
+		'id': "overload_potion",
+	},
+}
+
 const player_classes = {
 	"ink_mage": {
 		"description": "A magician with an affinity for ink. A rare non-combat variant of the magician class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",

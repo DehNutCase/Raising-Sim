@@ -14,6 +14,7 @@ extends VBoxContainer
 @onready var target = pos1
 
 @onready var skill_menu = $MarginContainer3/MenuPanel/HBoxContainer/Skill.get_popup()
+@onready var item_menu = $MarginContainer3/MenuPanel/HBoxContainer/Item.get_popup()
 @onready var player_stats_display = $MarginContainer3/MenuPanel/HBoxContainer/PlayerStats
 
 #Copy player to prevent combat stat changes from affecting Player permanently
@@ -68,7 +69,15 @@ func _ready():
 		skill_menu.add_item(Constants.combat_skills[skill].label)
 		skill_menu.set_item_metadata(index, {"name": skill})
 		index += 1
-	skill_menu.id_pressed.connect(_on_skill_press)
+	skill_menu.index_pressed.connect(_on_skill_press)
+	
+	index = 0
+	for item in player_combat_copy.combat_items:
+		item_menu.add_item(Constants.combat_items[item].label)
+		item_menu.set_item_metadata(index, {"name": item})
+		index += 1
+	item_menu.index_pressed.connect(_on_item_press)
+	
 	update_target(pos1.get_node("Enemy"))
 	
 func process_turns(player_action: String):
@@ -324,14 +333,45 @@ func _on_action(button):
 			printerr("Button text match issue: " + button.text)
 	state = states.READY
 	
-func _on_skill_press(id: int):
+func _on_skill_press(index: int):
 	if state != states.READY:
 		return
 	if fight_won:
 		display_toast("Mao is currently doing a victory dance and can't act!", "top")
 		return
 	state = states.PROCESSING
-	await process_turns(skill_menu.get_item_metadata(id).name.to_lower())
+	await process_turns(skill_menu.get_item_metadata(index).name.to_lower())
+	state = states.READY
+	
+func _on_item_press(index: int):
+	if state != states.READY:
+		return
+	if fight_won:
+		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		return
+	if player_combat_copy.stats.current_hp <= 0:
+		display_toast("Mao is unconsious and can't act!", "top")
+		return
+		
+	state = states.PROCESSING
+	var name = item_menu.get_item_metadata(index).name.to_lower()
+	var action = Constants.combat_items[name]
+	for stat in action.stats:
+		if stat == "max_hp":
+			update_player_hp( action.stats[stat])
+			continue
+		player_combat_copy.stats[stat] += action.stats[stat]
+		
+	var item = Player.inventory.get_item_by_id(name)
+	Player.inventory.remove_item(item)
+	#Remove item from list of items if we don't have it anymore
+	if !Player.inventory.get_item_by_id(name):
+		Player.combat_items.erase(name)
+		item_menu.remove_item(index)
+		
+	var message = action.message_player
+	display_toast(message)
+	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 	state = states.READY
 	
 func _on_enemy_gui_input(event, clicked):
