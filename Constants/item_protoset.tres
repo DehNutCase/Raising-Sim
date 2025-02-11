@@ -6,85 +6,97 @@
 script = ExtResource("1_y24pw")
 json_data = "[
     {
-        \"daily_stats\": \"{}\",
-        \"description\": \"A piece of furniture to sleep on.\",
-        \"id\": \"bed\",
-        \"image\": \"res://Characters/Cats/Images/grey-kitten1.png\",
-        \"name\": \"Bed\",
-        \"price\": 500,
-        \"stats\": \"{\\n\\\"strength\\\": 10\\n}\",
-        \"limit\": 1
+        \"daily_stats\": \"{\\n\\\"max_hp\\\": 1,\\n\\\"strength\\\": 1\\n}\",
+        \"description\": \"A carton of milk every day helps you grow taller.\\nExpires monthly, so it's best to buy this at the start of the month.\",
+        \"id\": \"milk\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Food/Resized/milk01_01.png\",
+        \"limit\": 1,
+        \"name\": \"Milk Subscription (Monthly)\",
+        \"price\": 1000,
+        \"expiration\": \"monthly\",
     },
     {
         \"daily_stats\": \"{\\n\\\"strength\\\": 10\\n}\",
         \"description\": \"A tutorial helper.\",
         \"id\": \"tutori\",
         \"image\": \"res://Characters/Cats/Images/grey-kitten2.png\",
+        \"limit\": 10,
         \"name\": \"Tutori\",
         \"price\": -1000,
-        \"stats\": \"{}\",
-        \"limit\": 10
-    },
-    {
-        \"daily_stats\": \"{}\",
-        \"description\": \"A rich, lazy cat.\",
-        \"id\": \"goldie\",
-        \"image\": \"res://Characters/Cats/Images/grey-kitten3.png\",
-        \"name\": \"Goldie\",
-        \"price\": 5000,
         \"stats\": \"{}\"
     },
     {
+        \"daily_stats\": \"{\\n\\\"art\\\": 1\\n}\",
+        \"description\": \"A replacement set of brush and palette just in case you misplace your original set.\",
+        \"id\": \"backup_palette\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/palette01_01.png\",
+        \"limit\": 1,
+        \"name\": \"Backup Palette\",
+        \"price\": 5000,
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\"
+    },
+    {
         \"daily_stats\": \"{}\",
-        \"description\": \"Well crafted robes suitable for an apprentice. Strictly speaking, it's a dress.\",
+        \"description\": \"Well crafted robes suitable for an apprentice. Seems to carry a hint of her majesty's personal taste.\",
         \"id\": \"apprentice_robes\",
-        \"image\": \"res://Art/Mori no oku no kakurezato/Chest/Resized/clothes08_03.png\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Chest/Resized/uniform06_05.png\",
+        \"limit\": 1,
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\",
-        \"limit\": 1
-
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
     },
     {
-        \"daily_stats\": \"{\\n\\\"experience\\\": 10\\n}\",
-        \"description\": \"A simple brush for painting..\",
-        \"id\": \"brush\",
-        \"image\": \"res://Characters/Cats/Images/grey-kitten3.png\",
-        \"name\": \"Brush\",
-        \"price\": 5000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\",
-        \"limit\": 1
+        \"daily_stats\": \"{}\",
+        \"description\": \"A four leaf clover. It's hard to tell if it does anything.\\n\\nRice's Appraisal: 'It seems to increase the chances of running into someone when going on walks'.\",
+        \"id\": \"lucky_clover\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/plant01_01.png\",
+        \"limit\": 1,
+        \"name\": \"Lucky Clover\",
+        \"price\": 10000,
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\"
     },
     {
+        \"daily_stats\": \"{\\n\\\"speed\\\": 5\\n}\",
+        \"description\": \"Comfortable shoes for walking, let's you take an extra walk every day.\",
+        \"id\": \"walking_shoes\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Feet/Resized/foot01_03.png\",
+        \"limit\": 1,
+        \"name\": \"Walking Shoes\",
+        \"price\": 25000,
+        \"stats\": \"{}\",
+        \"walks\": 1
+    },
+    {
+        \"combat_item\": \"health_potion\",
         \"daily_stats\": \"{}\",
         \"description\": \"A red potion for restoring health.\\n\\nCombat item.\",
         \"id\": \"health_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_05.png\",
+        \"limit\": 1,
         \"name\": \"Health Potion\",
         \"price\": 1000,
-        \"stats\": \"{}\",
-        \"combat_item\" : \"health_potion\",
-        \"limit\": 1
+        \"stats\": \"{}\"
     },
     {
+        \"combat_item\": \"mana_potion\",
         \"daily_stats\": \"{}\",
         \"description\": \"A blue potion for enhancing magic.\\n\\nCombat item.\",
         \"id\": \"mana_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png\",
+        \"limit\": 1,
         \"name\": \"Mana Potion\",
         \"price\": 1000,
-        \"stats\": \"{}\",
-        \"combat_item\" : \"mana_potion\",
-        \"limit\": 1
-    },    {
+        \"stats\": \"{}\"
+    },
+    {
+        \"combat_item\": \"overload_potion\",
         \"daily_stats\": \"{}\",
         \"description\": \"An indigo potion increases all stats when drunk.\\n\\nCombat item.\",
         \"id\": \"overload_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png\",
+        \"limit\": 1,
         \"name\": \"Overload Potion\",
         \"price\": 5000,
-        \"stats\": \"{}\",
-        \"combat_item\" : \"overload_potion\",
-        \"limit\": 1
-    },
+        \"stats\": \"{}\"
+    }
 ]"

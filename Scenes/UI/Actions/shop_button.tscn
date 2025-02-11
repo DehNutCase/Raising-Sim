@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://brfrkkss3t44b"]
+[gd_scene load_steps=6 format=3 uid="uid://brfrkkss3t44b"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Actions/shop_button.gd" id="1_8cxwa"]
 [ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="2_avlto"]
 [ext_resource type="Resource" uid="uid://byhy2caoyo5q6" path="res://Constants/item_protoset.tres" id="3_1u74v"]
 [ext_resource type="Texture2D" uid="uid://m77qcs0rlxo4" path="res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png" id="4_orxau"]
+[ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="4_ut51h"]
 
 [node name="Shop" type="Node2D"]
 texture_filter = 6
@@ -23,7 +24,7 @@ text = "Buy"
 [node name="InventoryItem" type="Node" parent="."]
 script = ExtResource("2_avlto")
 protoset = ExtResource("3_1u74v")
-prototype_id = "bed"
+prototype_id = "milk"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 5
@@ -33,6 +34,7 @@ offset_left = -75.0
 offset_right = 75.0
 offset_bottom = 150.0
 grow_horizontal = 2
+theme = ExtResource("4_ut51h")
 texture = ExtResource("4_orxau")
 stretch_mode = 3
 

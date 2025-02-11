@@ -105,7 +105,24 @@ func process_day():
 	for item in items:
 		for stat in item.get_property("daily_stats", {}):
 			Player.stats[stat] += item.get_property("daily_stats")[stat]
+
+		
+	items = inventory.inventory.get_items().duplicate()
+	var item_deletion_queue = []
 	
+	for item in items:
+		if item.get_property("expiration", ""):
+			var expiration = item.get_property("expiration", "")
+			match expiration:
+				"monthly":
+					if day % Constants.constants.days_in_month == 0:
+						item_deletion_queue.append(item)
+				_:
+					printerr("expiration process_day failed to match")
+	
+	for item in item_deletion_queue:
+		inventory.inventory.remove_item(item)
+		
 	for stat in Player.stats:
 		if !stat in Constants.stats:
 			printerr(stat + " isn't in Constants.stats")
@@ -298,7 +315,7 @@ func _on_action(button):
 					tower.get_node("Description").add_text("\n")
 				tower.get_node("Description").add_text(Constants.tower_levels[Player.tower_level].description)
 			else:
-				tower.get_node("Description").text = "The tower is cleared."
+				tower.get_node("Description").text = "A mysterious force (Rice grabbing you by the scruff of your neck) prevents you from climbing any higher."
 		"Class Change":
 			#TODO, add class change code here
 			load_class_change_text("ink_mage_journeyman")
@@ -445,6 +462,9 @@ func _on_inventory_item_added(item):
 	if item.get_property("combat_item", {}):
 		Player.combat_items.append(item.get_property("combat_item", {}))
 		
+	if item.get_property("walks", 0):
+		Player.max_walks += int(item.get_property("walks", 0))
+		
 	get_tree().call_group("ButtonMenu", "update_buttons")
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
@@ -476,7 +496,7 @@ func _on_enter_tower_button_pressed() -> void:
 		Player.in_tower = true
 		SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 	else:
-		display_toast("The tower is cleared", "top", "center")
+		display_toast("Rice shakes her head. You can't climb any higher for now.", "top", "center")
 
 func check_and_play_daily_events() -> void:
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
