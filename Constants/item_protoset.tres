@@ -47,7 +47,7 @@ json_data = "[
     },
     {
         \"daily_stats\": \"{}\",
-        \"description\": \"A four leaf clover. It's hard to tell if it does anything.\\n\\nRice's Appraisal: 'It seems to increase the chances of running into someone when going on walks'.\",
+        \"description\": \"A four leaf clover. It's hard to tell if it does anything.\\nRice's Appraisal: 'It seems to increase the chances of running into someone when going on walks'.\",
         \"id\": \"lucky_clover\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/plant01_01.png\",
         \"limit\": 1,

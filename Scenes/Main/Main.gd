@@ -216,7 +216,10 @@ func do_walk(walk_name: String) -> void:
 		var outcomes = Constants.locations[walk_name].outcomes
 		for outcome in outcomes:
 			if ('weight' in outcome):
-				weights.append(outcome.weight)
+				var weight = outcome.weight
+				if Player.inventory.get_item_by_id("lucky_clover") and 'timeline' in outcome:
+					weight *= 5
+				weights.append(weight)
 			else:
 				weights.append(1)
 		var outcome = outcomes[rand_weighted(weights)]
