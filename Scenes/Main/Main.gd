@@ -506,11 +506,26 @@ func check_and_play_daily_events() -> void:
 		Dialogic.start("Day1Event")
 		Player.event_flags['Day1Event'] = true
 	
-	#TODO, add day 5 event
 	if Player.day == 5 and !('Day5Event' in Player.event_flags):
 		Dialogic.start("Day5Event")
 		Player.event_flags['Day5Event'] = true
+	
+	#Note, this triggers at the last day of the month
+	if Player.day == Constants.constants.days_in_month:
+		Dialogic.start("Day30Event")
+	
+	if Player.day == Constants.constants.days_in_month * 2:
+		Dialogic.start("Day60Event")
 		
+	if Player.day == Constants.constants.days_in_month * 3:
+		Dialogic.start("Day90Event")
+	
+	#Give the player a few days before the end of the year for this.
+	if Player.day == Constants.constants.days_in_month * 4 - 5:
+		Dialogic.start("Day120Event")
+	
+	#TODO, add end of year event
+	
 #Tooltip replacement for mobile which doesn't have hover tooltips
 func _on_player_inventory_item_activated(tooltip):
 	#Check if mobile and replace tooltips with toast
