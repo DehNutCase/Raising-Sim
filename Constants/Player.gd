@@ -132,7 +132,7 @@ func calculate_ending():
 	for stat in stats:
 		if "value" in Constants.stats[stat]:
 			score += Constants.stats[stat].value * stats[stat]
-	return [score, "Ending Name"]
+	return [int(score), "Ending Name"]
 
 #Helper function to set dialogic flags
 func set_dialogic_temporary_flag(flag:String) -> void:

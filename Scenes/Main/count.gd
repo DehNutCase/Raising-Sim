@@ -16,7 +16,10 @@ func display_stats():
 		#TODO, adjust emoji based on mood
 		label.text = "Mood"
 		value.text = str(100 - Player.stats["stress"])
-		emoji.text = '🫠'
+		if Player.stats["stress"] < 50:
+			emoji.text = '🫠'
+		else:
+			emoji.text = '😣'
 	elif stat == "walks":
 		label.text = "Walks"
 		value.text = str(Player.remaining_walks)

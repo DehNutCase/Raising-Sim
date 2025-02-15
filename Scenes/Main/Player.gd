@@ -13,16 +13,23 @@ var success_motion_video = load("res://Characters/Mao/Videos/special_01.ogv")
 var failure_motion_video = load("res://Characters/Mao/Videos/special_02.ogv")
 var heal_motion_video = load("res://Characters/Mao/Videos/special_03.ogv")
 
-var content_motion = { "group": "Idle", "no": 0, "video": content_motion_video }
-var idle_motion = { "group": "Idle", "no": 0, "video": idle_motion_video }
-var bounce_motion = { "group": "", "no": 0, "video": bounce_motion_video }
-var cheerful_motion = { "group": "", "no": 1, "video": cheerful_motion_video }
-var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video }
-var success_motion = { "group": "", "no": 3, "video": success_motion_video }
-var failure_motion = { "group": "", "no": 4, "video": failure_motion_video }
-var heal_motion = { "group": "", "no": 5, "video": heal_motion_video }
 
-var last_motion = bounce_motion
+var content_motion = { "group": "Idle", "no": 0, "video": content_motion_video, "weight": 6, }
+var idle_motion = { "group": "Idle", "no": 0, "video": idle_motion_video, "weight": 6, }
+var bounce_motion = { "group": "", "no": 0, "video": bounce_motion_video, "weight": 2, }
+var cheerful_motion = { "group": "", "no": 1, "video": cheerful_motion_video, "weight": 3, }
+var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video, "weight": 2, }
+var success_motion = { "group": "", "no": 3, "video": success_motion_video, "weight": 1, }
+var failure_motion = { "group": "", "no": 4, "video": failure_motion_video, "weight": 2, }
+var heal_motion = { "group": "", "no": 5, "video": heal_motion_video, "weight": 2, }
+
+var job_success_motions = [success_motion, heal_motion, hat_tip_motion]
+var job_failure_motions = [failure_motion,]
+var happy_motions = [content_motion, bounce_motion, cheerful_motion, heal_motion,]
+var neutral_motions = [idle_motion,] #also mad
+var fast_end_motions = [success_motion, heal_motion, hat_tip_motion, bounce_motion]
+
+var last_motion = hat_tip_motion
 var next_motion = content_motion
 
 var normal_expression = "exp_01"
@@ -74,21 +81,19 @@ func _process(delta):
 			motion_video_queue.pop_back()
 	
 func _on_motion_finished():
-	#TODO, use video when in video mode
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		if (!effect_breath.get_parent()):
 			cubism_model.add_child(effect_breath)
-		
-		if (last_motion != content_motion):
+			
+		if (last_motion in fast_end_motions):
 			await get_tree().create_timer(RandomNumberGenerator.new().randi_range(1,2)).timeout
-			start_motion(next_motion)
 		else:
 			await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5, 15)).timeout
-			start_motion(next_motion)
 			
-		#TODO, change motion based on mood
+		start_motion(next_motion)
 		last_motion = next_motion
-		next_motion = content_motion
+		random_motion("happy_motions")
+
 	else:
 		if len(motion_video_queue):
 			live2d_video_player.stream = motion_video_queue.pop_front()
@@ -102,6 +107,7 @@ func _update_live2d_display(live2d_mode) -> void:
 	match live2d_mode:
 		Player.live2d_modes.LIVE2D:
 			live2d_video_player.hide()
+			live2d_video_player.stop()
 			$PlayerSprite.show()
 		Player.live2d_modes.VIDEO:
 			live2d_video_player.show()
@@ -113,7 +119,7 @@ func start_motion(motion) -> void:
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		if (effect_breath.get_parent()):
 			cubism_model.remove_child(effect_breath)
-		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_NORMAL)
+		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		motion_video_queue.append(motion.video)
 	
@@ -123,22 +129,50 @@ func start_expression(expression) -> void:
 	cubism_model.start_expression(expression)
 
 func job_motion(motion) -> void:
+	var weights = []
+	var motions = job_success_motions
+	if !motion: motions = job_failure_motions
+	for choice in motions:
+		if ('weight' in choice):
+			var weight = choice.weight
+			weights.append(weight)
+		else:
+			weights.append(1)
+	motion = motions[rand_weighted(weights)]
+	
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
-		if (effect_breath.get_parent()):
-			cubism_model.remove_child(effect_breath)
-		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+		start_motion(motion)
+		last_motion = motion
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		motion_video_queue.push_front(motion.video)
 		_on_motion_finished()
 		
+func random_motion(type:String) -> void:
+	var motions = self[type]
+	var weights = []
+	var motion = idle_motion
+	for choice in motions:
+		if ('weight' in choice):
+			var weight = choice.weight
+			weights.append(weight)
+		else:
+			weights.append(1)
+	motion = motions[rand_weighted(weights)]
+	
+	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
+		queue_motion(motion)
+	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
+		motion_video_queue.append(motion.video)
 
-#TODO, make motion queue for live2d animations
+func play_idle_motion():
+	if (Player.stats["stress"] < 70):
+		random_motion("happy_motions")
+	else:
+		random_motion("neutral_motions")
+	
 func queue_motion(motion) -> void:
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
-		if (cubism_model.get_cubism_motion_queue_entries()):
-			next_motion = motion
-		else:
-			cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+		next_motion = motion
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		motion_video_queue.append(motion.video)
 
@@ -147,3 +181,16 @@ func pause_live2d() -> void:
 
 func resume_live2d() -> void:
 	Player.live2d_active = true
+
+#helper function due to 4.2 lacking 4.3's weighted random chocie
+func rand_weighted(weights) -> int:
+	var weight_sum = 0
+	for weight in weights:
+		weight_sum += weight
+	var rng = RandomNumberGenerator.new()
+	var choice = rng.randf_range(0, weight_sum)
+	for i in range(len(weights)):
+		if(choice <= weights[i]):
+			return i
+		choice -= weights[i]
+	return 0

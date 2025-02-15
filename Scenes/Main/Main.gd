@@ -79,7 +79,11 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("ButtonMenu", "update_buttons")
 	
-	
+	if (Player.stats["stress"] < 50):
+		get_tree().call_group("Live2DPlayer", "start_motion", player_model.bounce_motion)
+	else:
+		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
+		
 	#TODO, delete below, dev use only
 	#Player.background_inventory.create_and_add_item("gray")
 	#Dialogic.start("Day120Event")
@@ -147,7 +151,7 @@ func do_job(job_name: String) :
 	var rng = RandomNumberGenerator.new()
 	animation.stat_bars.load_stat_bars(job_name)
 	if (JobButton.get_success_chance(job_name) > rng.randf() * 100):
-		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(job_stats)
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain
 		if ('skill' in Constants.jobs[job_name]):
@@ -157,7 +161,7 @@ func do_job(job_name: String) :
 		animation.animation.show()
 		animation.animation.play("Run")
 	else:
-		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
+		get_tree().call_group("Live2DPlayer", "job_motion", false)
 		if "stress" in job_stats:
 			process_stats({"stress": job_stats["stress"]})
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
@@ -176,7 +180,7 @@ func do_lesson(lesson_name: String) :
 		return
 	var rng = RandomNumberGenerator.new()
 	if (LessonButton.get_success_chance(lesson_name) > rng.randf() * 100):
-		get_tree().call_group("Live2DPlayer", "job_motion", player_model.success_motion)
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(lesson_stats)
 		if 'proficiency' in Constants.lessons[lesson_name]:
 			Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain
@@ -187,7 +191,7 @@ func do_lesson(lesson_name: String) :
 		animation.animation.show()
 		animation.animation.play("Run")
 	else:
-		get_tree().call_group("Live2DPlayer", "job_motion", player_model.failure_motion)
+		get_tree().call_group("Live2DPlayer", "job_motion", false)
 		if "stress" in lesson_stats:
 			process_stats({"stress": lesson_stats["stress"], "gold": lesson_stats["gold"]})
 		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain/2
@@ -483,14 +487,15 @@ func rand_weighted(weights) -> int:
 	return 0
 
 func update_expressions() -> void:
+	#TODO, add more expressions/motions
 	if (Player.stats["stress"] < 20):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.smile_expression)
-	if (Player.stats["stress"] < 10):
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.heal_motion)
-	else:
-		get_tree().call_group("Live2DPlayer", "queue_motion", player_model.content_motion)
-	if (Player.stats["stress"] > 80):
+	elif (Player.stats["stress"] > 75):
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.angry_expression)
+	else:
+		get_tree().call_group("Live2DPlayer", "start_expression", player_model.normal_expression)
+
+	get_tree().call_group("Live2DPlayer", "play_idle_motion")
 
 
 func _on_enter_tower_button_pressed() -> void:
