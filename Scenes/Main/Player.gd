@@ -45,6 +45,8 @@ var frame = 0
 var delta_sum = 0
 var frames_to_skip = 5
 
+var timestamp = Time.get_unix_time_from_system()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Use OS.has_feature to detect current deployment
@@ -81,6 +83,8 @@ func _process(delta):
 			motion_video_queue.pop_back()
 	
 func _on_motion_finished():
+	timestamp = Time.get_unix_time_from_system()
+	var previous_stamp = timestamp
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		if (!effect_breath.get_parent()):
 			cubism_model.add_child(effect_breath)
@@ -89,10 +93,11 @@ func _on_motion_finished():
 			await get_tree().create_timer(RandomNumberGenerator.new().randi_range(1,2)).timeout
 		else:
 			await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5, 15)).timeout
-			
-		start_motion(next_motion)
-		last_motion = next_motion
-		random_motion("happy_motions")
+		
+		if timestamp == previous_stamp:
+			start_motion(next_motion)
+			last_motion = next_motion
+			play_idle_motion()
 
 	else:
 		if len(motion_video_queue):
@@ -116,6 +121,7 @@ func _update_live2d_display(live2d_mode) -> void:
 			printerr("_update_live2d_display match error")
 			
 func start_motion(motion) -> void:
+	timestamp = Time.get_unix_time_from_system()
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		if (effect_breath.get_parent()):
 			cubism_model.remove_child(effect_breath)
