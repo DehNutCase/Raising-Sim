@@ -80,7 +80,7 @@ func _ready():
 	get_tree().call_group("ButtonMenu", "update_buttons")
 	
 	if (Player.stats["stress"] < 50):
-		get_tree().call_group("Live2DPlayer", "start_motion", player_model.bounce_motion)
+		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 		
@@ -407,8 +407,13 @@ func display_stats() -> void:
 	gold_label.display_gold()
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
-	get_tree().call_group("Job_Button", "update_difficulty_color")	
-	get_tree().call_group("Lesson_Button", "update_difficulty_color")	
+	get_tree().call_group("Job_Button", "update_difficulty_color")
+	get_tree().call_group("Lesson_Button", "update_difficulty_color")
+	#Class Change button
+	if Player.event_flags.get("class_change_information_event"):
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
+	else:
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
 
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)
@@ -529,7 +534,8 @@ func check_and_play_daily_events() -> void:
 	if Player.day == Constants.constants.days_in_month * 4 - 5:
 		Dialogic.start("Day120Event")
 	
-	#TODO, add end of year event
+	if Player.day == Constants.constants.days_in_month * 4:
+		Dialogic.start("EndOfYearEvent")
 	
 #Tooltip replacement for mobile which doesn't have hover tooltips
 func _on_player_inventory_item_activated(tooltip):

@@ -54,6 +54,7 @@ directories/dtl_directory={
 "Day5Event": "res://Timelines/DayEvents/Day5Event.dtl",
 "Day60Event": "res://Timelines/DayEvents/Day60Event.dtl",
 "Day90Event": "res://Timelines/DayEvents/Day90Event.dtl",
+"EndOfYearEvent": "res://Timelines/DayEvents/EndOfYearEvent.dtl",
 "HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
 "HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",

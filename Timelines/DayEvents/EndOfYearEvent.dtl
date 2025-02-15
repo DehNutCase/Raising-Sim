@@ -1,0 +1,15 @@
+# Only play this if class change is enabled at the end of the year
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Morgan (Grin) 3
+[history action="clear"]
+Morgan_Portrait (Grin): Happy Birthday, Mao.
+update Mao (Blush)
+Mao_Portrait (Blush): Thanks.
+update Mao (Normal)
+Morgan_Portrait (Grin): I'll see you at the party later, but I wanted to let you know that today's the last day to get your class change card printed.
+update Morgan (Laugh)
+Morgan_Portrait (Laugh): There's no reason to force yourself if you don't want to, so no pressure.
+update Morgan (Grin)
+update Mao (Normal)
+Mao_Portrait (Normal): Got it!
