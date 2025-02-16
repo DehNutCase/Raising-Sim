@@ -22,4 +22,4 @@ text = "Witch Maker
 "
 
 [node name="SubTitle" parent="MenuContainer/VBoxContainer/TitlesMargin/TitlesContainer" index="1"]
-text = "Raising Sim"
+text = "Demo Version"

@@ -64,7 +64,3 @@ TabContainer/styles/panel = ExtResource("5_4bo2n")
 TabContainer/styles/tab_hovered = ExtResource("2_5oo27")
 TabContainer/styles/tab_selected = ExtResource("2_5oo27")
 TabContainer/styles/tab_unselected = ExtResource("3_ynwyf")
-TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
-TooltipLabel/font_sizes/font_size = 20
-TooltipLabel/fonts/font = ExtResource("1_wg31n")
-TooltipPanel/styles/panel = ExtResource("5_4bo2n")

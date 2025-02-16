@@ -14,8 +14,8 @@ var failure_motion_video = load("res://Characters/Mao/Videos/special_02.ogv")
 var heal_motion_video = load("res://Characters/Mao/Videos/special_03.ogv")
 
 
-var content_motion = { "group": "Idle", "no": 0, "video": content_motion_video, "weight": 6, }
-var idle_motion = { "group": "Idle", "no": 0, "video": idle_motion_video, "weight": 6, }
+var content_motion = { "group": "Idle", "no": 0, "video": content_motion_video, "weight": 10, }
+var idle_motion = { "group": "Idle", "no": 0, "video": idle_motion_video, "weight": 10, }
 var bounce_motion = { "group": "", "no": 0, "video": bounce_motion_video, "weight": 2, }
 var cheerful_motion = { "group": "", "no": 1, "video": cheerful_motion_video, "weight": 3, }
 var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video, "weight": 2, }
