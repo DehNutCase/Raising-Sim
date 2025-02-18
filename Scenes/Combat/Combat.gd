@@ -257,7 +257,7 @@ func process_turns(player_action: String):
 	#Process victory if player is still alive when no enemies remain
 	if !enemies:
 		if player_combat_copy.stats.current_hp > 0:
-			display_toast("Victory!")
+			display_toast("Victory!", "top")
 			Player.victory_stat_gain = victory_stat_gain
 			flee_button.text = "Leave"
 			fight_won = true
@@ -389,7 +389,7 @@ func exit_combat() -> void:
 	Player.in_tower = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
 	
-func display_toast(message, gravity = "top", direction = "center"):
+func display_toast(message, gravity = "bottom", direction = "center"):
 	ToastParty.show({
 		"text": message,           # Text (emojis can be used)
 		"gravity": gravity,                   # top or bottom

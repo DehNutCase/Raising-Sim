@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 @onready var player_model = $Ui/PlayerControl/Player
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
@@ -45,6 +45,7 @@ var current_state = states.READY
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Game needs to be loaded here
+	self.hide()
 	if !Player.save_loaded:
 		Player.load_game()
 	Player.save_loaded = true
@@ -63,21 +64,21 @@ func _ready():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	for inventory_name in Player.inventories:
 		Player[inventory_name].item_added.connect(_on_inventory_item_added)
-		
-	if (day == 0):
-		for inventory_name in Player.inventories:
-			for starting_item in Player.starting_items[inventory_name]:
-				Player[inventory_name].create_and_add_item(starting_item)
-		process_day()
-	else:
-		display_stats()
-		day_label.display_day(day)
-		
 	for button in buttons.get_children():
 		button.pressed.connect(_on_action.bind(button))
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("ButtonMenu", "update_buttons")
+	display_stats()
+	day_label.display_day(day)
+	self.show()
+	
+	if (day == 0):
+		for inventory_name in Player.inventories:
+			for starting_item in Player.starting_items[inventory_name]:
+				Player[inventory_name].create_and_add_item(starting_item)
+		process_day()
+		
 	
 	if (Player.stats["stress"] < 50):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)

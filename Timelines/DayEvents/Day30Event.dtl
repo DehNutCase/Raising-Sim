@@ -54,6 +54,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 	Mao_Portrait (Surprised): Shouldn't you at least tell me what your plans are?
 	update Morgan (Laugh)
 	Morgan_Portrait (Laugh): Maybe later.
+	jump Choice
 - What's my score about? [if !Player.dialogic_temporary_flags.get("Choice_Score"))][else="hide"]
 	do Player.set_dialogic_temporary_flag("Choice_Score")
 	Morgan_Portrait (Grin): Ah, yes, 'you' still need an explanation.
