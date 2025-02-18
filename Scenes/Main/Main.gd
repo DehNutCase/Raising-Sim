@@ -173,11 +173,11 @@ func do_job(job_name: String) :
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
 	var cost = 0
-	animation.stat_bars.load_stat_bars(lesson_name, "lessons")
 	if "gold" in lesson_stats: cost = -lesson_stats.gold
 	if (cost > Player.stats["gold"]):
 		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 		return
+	animation.stat_bars.load_stat_bars(lesson_name, "lessons")
 	var rng = RandomNumberGenerator.new()
 	if (LessonButton.get_success_chance(lesson_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
