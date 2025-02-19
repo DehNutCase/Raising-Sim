@@ -119,6 +119,8 @@ func process_day():
 		if item.get_property("expiration", ""):
 			var expiration = item.get_property("expiration", "")
 			match expiration:
+				"daily":
+					item_deletion_queue.append(item)
 				"monthly":
 					if day % Constants.constants.days_in_month == 0:
 						item_deletion_queue.append(item)

@@ -6,7 +6,17 @@
 script = ExtResource("1_y24pw")
 json_data = "[
     {
-        \"daily_stats\": \"{\\n\\\"max_hp\\\": 1,\\n\\\"strength\\\": 1\\n}\",
+        \"daily_stats\": \"{\\n\\\"max_hp\\\": 5,\\n\\\"strength\\\": 3\\n,\\n\\\"speed\\\": 3\\n,\\n\\\"stress\\\": -50\\n}\",
+        \"description\": \"A custom made lunch box packed with plenty of care.\\nUntil a spell is developed to both eat this and still have it, it'll be gone after you eat it for lunch.\",
+        \"id\": \"lunch_box\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Food/Resized/lunch01_01.png\",
+        \"limit\": 1,
+        \"name\": \"Deluxe Lunch Box\",
+        \"price\": 500,
+        \"expiration\": \"daily\",
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"max_hp\\\": 1,\\n\\\"strength\\\": 1\\n,\\n\\\"stress\\\": -3\\n}\",
         \"description\": \"A carton of milk every day helps you grow taller.\\nExpires monthly, so it's best to buy this at the start of the month.\",
         \"id\": \"milk\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Food/Resized/milk01_01.png\",
@@ -16,7 +26,7 @@ json_data = "[
         \"expiration\": \"monthly\",
     },
     {
-        \"daily_stats\": \"{\\n\\\"scholarship\\\": 10,\\n\\\"magic\\\": 1\\n}\",
+        \"daily_stats\": \"{\\n\\\"scholarship\\\": 20,\\n\\\"magic\\\": 2\\n,\\n\\\"stress\\\": 2\\n}\",
         \"description\": \"A set of problems delivered to your door every single day. Why are you paying money for this?\\nExpires monthly, so it's best to buy this at the start of the month.\",
         \"id\": \"problem_set\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/book02_01.png\",
@@ -26,14 +36,14 @@ json_data = "[
         \"expiration\": \"monthly\",
     },
     {
-        \"daily_stats\": \"{\\n\\\"art\\\": 10\\n}\",
-        \"description\": \"A replacement set of brush and palette just in case you misplace your original set.\",
-        \"id\": \"backup_palette\",
-        \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/palette01_01.png\",
+        \"daily_stats\": \"{\\n\\\"max_mp\\\": 5,\\n\\\"magic\\\": 5,\\n\\\"resistance\\\": 5,\\n\\\"stress\\\":3\\n}\",
+        \"description\": \"Volume 2 of the 'Practice Problems' monthly subscription. Now with even more stress!\\nExpires monthly, so it's best to buy this at the start of the month.\",
+        \"id\": \"problem_set_2\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/book02_02.png\",
         \"limit\": 1,
-        \"name\": \"Backup Palette\",
+        \"name\": \"Practice Problems Vol. 2 Subscription (Monthly)\",
         \"price\": 5000,
-        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\"
+        \"expiration\": \"monthly\",
     },
     {
         \"daily_stats\": \"{}\",
@@ -44,6 +54,16 @@ json_data = "[
         \"name\": \"Apprentice Robes\",
         \"price\": 25000,
         \"stats\": \"{\\n\\\"bonus_exp\\\": 20\\n}\"
+    },
+    {
+        \"daily_stats\": \"{\\n\\\"art\\\": 10\\n}\",
+        \"description\": \"A replacement set of brush and palette just in case you misplace your original set.\",
+        \"id\": \"backup_palette\",
+        \"image\": \"res://Art/Mori no oku no kakurezato/Items/Resized/palette01_01.png\",
+        \"limit\": 1,
+        \"name\": \"Backup Palette\",
+        \"price\": 5000,
+        \"stats\": \"{\\n\\\"bonus_exp\\\": 10\\n}\"
     },
     {
         \"daily_stats\": \"{}\",
@@ -62,14 +82,14 @@ json_data = "[
         \"image\": \"res://Art/Mori no oku no kakurezato/Feet/Resized/foot01_03.png\",
         \"limit\": 1,
         \"name\": \"Walking Shoes\",
-        \"price\": 25000,
+        \"price\": 15000,
         \"stats\": \"{}\",
         \"walks\": 1
     },
     {
         \"combat_item\": \"health_potion\",
         \"daily_stats\": \"{}\",
-        \"description\": \"A red potion for restoring health.\\n\\nCombat item.\",
+        \"description\": \"A red potion for restoring health.\\n\\nCombat item.  Consumable.\",
         \"id\": \"health_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_05.png\",
         \"limit\": 1,
@@ -80,7 +100,7 @@ json_data = "[
     {
         \"combat_item\": \"mana_potion\",
         \"daily_stats\": \"{}\",
-        \"description\": \"A blue potion for enhancing magic.\\n\\nCombat item.\",
+        \"description\": \"A blue potion for enhancing magic.\\n\\nCombat item. Consumable.\",
         \"id\": \"mana_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png\",
         \"limit\": 1,
@@ -91,7 +111,7 @@ json_data = "[
     {
         \"combat_item\": \"overload_potion\",
         \"daily_stats\": \"{}\",
-        \"description\": \"An indigo potion increases all stats when drunk.\\n\\nCombat item.\",
+        \"description\": \"An indigo potion increases all stats when drunk.\\n\\nCombat item. Consumable.\",
         \"id\": \"overload_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png\",
         \"limit\": 1,
