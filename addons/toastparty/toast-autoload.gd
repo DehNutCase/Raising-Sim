@@ -1,6 +1,7 @@
 extends Node
 
 const label_resource = preload("toast_label/toast_label.tscn")
+const mobile_tooltip_label_resource = preload("res://addons/toastparty/toast_label/mobile_tooltip_label.tscn")
 
 var label_top_left = []
 var label_top_right = []
@@ -27,6 +28,34 @@ func _ready():
 func _add_new_label(config):
 	# Create a new label
 	var label = label_resource.instantiate()
+	canvas_layer.add_child(label)
+	label.connect("remove_label", remove_label_from_array)
+	
+	if config.direction == "left":
+		if config.gravity == "top":
+			label_top_left.insert(0, label)
+		else:
+			label_bottom_left.insert(0, label)
+	elif config.direction == "center":
+		if config.gravity == "top":
+			label_top_center.insert(0, label)
+		else:
+			label_bottom_center.insert(0, label)
+	else:
+		if config.gravity == "top":
+			label_top_right.insert(0, label)
+		else:
+			label_bottom_right.insert(0, label)
+
+	# Configuration of the label
+	label.init(config)
+	
+	# Move all labels to new positions when a new label is added
+	move_positions(config.direction, config.gravity)
+	
+func _add_new_mobile_tooltip(config):
+	# Create a new label
+	var label = mobile_tooltip_label_resource.instantiate()
 	canvas_layer.add_child(label)
 	label.connect("remove_label", remove_label_from_array)
 	
@@ -129,3 +158,6 @@ func show(config = {}):
 	var _config_cleaned = clean_config(config)
 	_add_new_label(_config_cleaned)
 
+func show_mobile_tooltip(config = {}):
+	var _config_cleaned = clean_config(config)
+	_add_new_mobile_tooltip(_config_cleaned)

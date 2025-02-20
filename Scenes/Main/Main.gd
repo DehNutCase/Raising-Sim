@@ -544,7 +544,11 @@ func check_and_play_daily_events() -> void:
 func _on_player_inventory_item_activated(tooltip):
 	#Check if mobile and replace tooltips with toast
 	if OS.has_feature("mobile"):
-		display_toast(tooltip, "bottom", "center")
+		ToastParty.show_mobile_tooltip({
+				"text": tooltip,
+				"gravity": "bottom",
+				"direction": "center",
+			})
 
 func load_class_change_text(player_class: String):
 	var font = load("res://Art/Fonts/emoji_font_variation.tres")
