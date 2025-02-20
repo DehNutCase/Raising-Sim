@@ -11,7 +11,7 @@ var songs = {
 	"autumn": autumn_song,
 	"winter": winter_song,
 	"battle": battle_song,
-	"no_exit": no_exit_song,
+	"no_exit": no_exit_song, #Currently not used
 }
 
 func _ready():
