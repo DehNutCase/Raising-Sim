@@ -27,7 +27,7 @@ var job_success_motions = [success_motion, heal_motion, hat_tip_motion]
 var job_failure_motions = [failure_motion,]
 var happy_motions = [content_motion, bounce_motion, cheerful_motion, heal_motion, success_motion]
 var neutral_motions = [idle_motion,] #also mad
-var fast_end_motions = [success_motion, heal_motion, hat_tip_motion, bounce_motion, success_motion]
+var fast_end_motions = [success_motion, heal_motion, hat_tip_motion, bounce_motion, success_motion, failure_motion,]
 
 var last_motion = hat_tip_motion
 var next_motion = content_motion

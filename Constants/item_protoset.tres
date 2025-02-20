@@ -111,7 +111,7 @@ json_data = "[
     {
         \"combat_item\": \"overload_potion\",
         \"daily_stats\": \"{}\",
-        \"description\": \"An indigo potion increases all stats when drunk.\\n\\nCombat item. Consumable.\",
+        \"description\": \"An indigo potion which increases all stats when drunk.\\n\\nCombat item. Consumable.\",
         \"id\": \"overload_potion\",
         \"image\": \"res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png\",
         \"limit\": 1,

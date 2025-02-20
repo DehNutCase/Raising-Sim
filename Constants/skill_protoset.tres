@@ -61,7 +61,7 @@ json_data = "[
     },
     {
         \"daily_stats\": \"{\\n\\\"max_hp\\\": 1,\\n\\\"max_mp\\\": 1\\n}\",
-        \"description\": \"Unlocked basic follow up attacks. (Excess action points are used to perform basic attacks.).\",
+        \"description\": \"Unlocks basic follow up attacks. (Excess action points are used to perform basic attacks.).\",
         \"flags\": \"{\\n\\\"followup_attacks\\\": 1\\n}\",
         \"id\": \"basic_combat_training\",
         \"image\": \"\",
@@ -120,7 +120,7 @@ json_data = "[
         \"image\": \"\",
         \"monthly_stats\": \"{\\n\\\"gold\\\": 500\\n}\",
         \"name\": \"Budding Chef\",
-        \"stats\": \"{\\n\\\"action_points\\\": 1\\n}\"
+        \"stats\": \"{}\"
     },
     {
         \"daily_stats\": \"{\\n\\\"experience\\\": 1\\n}\",
@@ -144,12 +144,12 @@ json_data = "[
     },
     {
         \"daily_stats\": \"{\\n\\\"strength\\\": 1,\\n\\\"max_hp\\\": 1\\n}\",
-        \"description\": \"Unlocked advanced follow up attacks. (Switches targets and continues attacking if target dies.)\",
+        \"description\": \"Unlocks advanced follow up attacks. (Switches targets and continues attacking if target dies.)\",
         \"flags\": \"{\\n\\\"followup_attacks\\\": 2\\n}\",
         \"id\": \"intermediate_combat_training\",
         \"image\": \"\",
         \"name\": \"Intermediate Combat Training\",
-        \"stats\": \"{}\"
+        \"stats\": \"{\\n\\\"action_points\\\": 1\\n}\"
     },
     {
         \"daily_stats\": \"{\\n\\\"max_mp\\\": 5\\n}\",
