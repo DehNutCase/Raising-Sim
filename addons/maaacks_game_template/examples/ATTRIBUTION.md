@@ -38,6 +38,11 @@ Source: [Dlsite : RG25185](https://www.dlsite.com/home/circle/profile/=/maker_id
 Author: [Mori no oku no kakurezato](https://www.dlsite.com/home/circle/profile/=/maker_id/RG29726.html/?locale=en_US)  
 Source: [Dlsite : RG29726](https://www.dlsite.com/home/circle/profile/=/maker_id/RG29726.html/?locale=en_US)  
 
+### Images
+#### Backgrounds
+Author: [Noraneko Games](https://noranekogames.itch.io/)  
+Source: [itch.io : Yume Background](https://noranekogames.itch.io/yumebackground)  
+
 ### Music
 #### BGM
 Author: [Meraj Melody](https://meraj-melody.itch.io/)  
