@@ -35,15 +35,26 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Alice": "res://Characters/Alice/Alice.dch",
+"Alice/Alice": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Alice/Alice.dch",
+"Alice/Alice_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Alice/Alice_Portrait.dch",
 "Alice_Portrait": "res://Characters/Alice/Alice_Portrait.dch",
+"Cats/Gray": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Cats/Gray.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
 "Hiyori": "res://Characters/Hiyori/Hiyori.dch",
+"Hiyori/Hiyori": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori.dch",
+"Hiyori/Hiyori_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori_Portrait.dch",
 "Hiyori_Portrait": "res://Characters/Hiyori/Hiyori_Portrait.dch",
 "Mao": "res://Characters/Mao/Mao.dch",
+"Mao/Mao": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Mao/Mao.dch",
+"Mao/Mao_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Mao/Mao_Portrait.dch",
 "Mao_Portrait": "res://Characters/Mao/Mao_Portrait.dch",
 "Morgan": "res://Characters/Morgan/Morgan.dch",
+"Morgan/Morgan": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Morgan/Morgan.dch",
+"Morgan/Morgan_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Morgan/Morgan_Portrait.dch",
 "Morgan_Portrait": "res://Characters/Morgan/Morgan_Portrait.dch",
 "Rice": "res://Characters/Rice/Rice.dch",
+"Rice/Rice": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Rice/Rice.dch",
+"Rice/Rice_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Rice/Rice_Portrait.dch",
 "Rice_Portrait": "res://Characters/Rice/Rice_Portrait.dch"
 }
 directories/dtl_directory={
@@ -54,18 +65,37 @@ directories/dtl_directory={
 "Day5Event": "res://Timelines/DayEvents/Day5Event.dtl",
 "Day60Event": "res://Timelines/DayEvents/Day60Event.dtl",
 "Day90Event": "res://Timelines/DayEvents/Day90Event.dtl",
+"DayEvents/Day120Event": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/Day120Event.dtl",
+"DayEvents/Day1Event": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/Day1Event.dtl",
+"DayEvents/Day30Event": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/Day30Event.dtl",
+"DayEvents/Day5Event": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/Day5Event.dtl",
+"DayEvents/Day60Event": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/Day60Event.dtl",
+"DayEvents/Day90Event": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/Day90Event.dtl",
+"DayEvents/EndOfYearEvent": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/DayEvents/EndOfYearEvent.dtl",
 "EndOfYearEvent": "res://Timelines/DayEvents/EndOfYearEvent.dtl",
 "HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
 "HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
+"Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
 "RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",
 "RiceHouseFirst": "res://Timelines/WalkEvents/RiceHouseFirst.dtl",
 "StorageRoom": "res://Timelines/WalkEvents/StorageRoom.dtl",
-"StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl"
+"StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl",
+"WalkEvents/HiyoriAtelier": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriAtelier.dtl",
+"WalkEvents/HiyoriAtelierFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
+"WalkEvents/HiyoriAtelierSecond": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
+"WalkEvents/HiyoriCorner": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriCorner.dtl",
+"WalkEvents/HiyoriCornerFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriCornerFirst.dtl",
+"WalkEvents/ReceptionHall": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/ReceptionHall.dtl",
+"WalkEvents/ReceptionHallFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/ReceptionHallFirst.dtl",
+"WalkEvents/RiceHouse": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/RiceHouse.dtl",
+"WalkEvents/RiceHouseFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/RiceHouseFirst.dtl",
+"WalkEvents/StorageRoom": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/StorageRoom.dtl",
+"WalkEvents/StorageRoomFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/StorageRoomFirst.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres"]
@@ -135,10 +165,10 @@ wav={
 
 dialogic_default_action={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":4194309,"key_label":4194309,"unicode":0,"echo":false,"script":null)
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":120,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
