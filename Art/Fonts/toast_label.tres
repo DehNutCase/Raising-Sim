@@ -1,10 +1,10 @@
 [gd_resource type="LabelSettings" load_steps=4 format=3 uid="uid://nm60nscvsk1o"]
 
 [ext_resource type="FontFile" uid="uid://bxsnwelrbpiwj" path="res://addons/toastparty/fonts/Light.ttf" id="1_mwxrm"]
-[ext_resource type="FontFile" uid="uid://865wdbswk5y5" path="res://Art/Fonts/seguiemj.ttf" id="2_mdikr"]
+[ext_resource type="FontFile" uid="uid://865wdbswk5y5" path="res://Art/Fonts/seguiemj.ttf" id="2_w60bj"]
 
 [sub_resource type="FontVariation" id="FontVariation_i1l8u"]
-fallbacks = Array[Font]([ExtResource("2_mdikr")])
+fallbacks = Array[Font]([ExtResource("2_w60bj")])
 base_font = ExtResource("1_mwxrm")
 
 [resource]
