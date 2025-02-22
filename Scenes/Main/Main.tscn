@@ -181,7 +181,7 @@ position = Vector2(-376, -235)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("27_wb2qf")
 
-[node name="PlayerInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
+[node name="PlayerInventory" type="ItemList" parent="Ui/PlayerControl/Player"]
 visible = false
 anchors_preset = 2
 anchor_top = 1.0
@@ -192,9 +192,8 @@ offset_right = 660.0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("6_cueot")
-inventory = NodePath("")
 
-[node name="BackgroundInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
+[node name="BackgroundInventory" type="ItemList" parent="Ui/PlayerControl/Player"]
 visible = false
 anchors_preset = 3
 anchor_left = 1.0
@@ -208,9 +207,8 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("12_thnkb")
-inventory = NodePath("")
 
-[node name="SkillInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
+[node name="SkillInventory" type="ItemList" parent="Ui/PlayerControl/Player"]
 visible = false
 anchors_preset = 2
 anchor_top = 1.0
@@ -221,7 +219,6 @@ offset_right = -310.0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("13_tkqcx")
-inventory = NodePath("")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 material = SubResource("CanvasItemMaterial_snc6d")
