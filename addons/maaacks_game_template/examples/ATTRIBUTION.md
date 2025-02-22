@@ -86,6 +86,16 @@ Author: [Peter Kish](https://github.com/peter-kish)
 Source: [github: GLoot](https://github.com/peter-kish/gloot)  
 License: [MIT License](https://github.com/peter-kish/gloot/blob/master/LICENSE)  
 
+#### Dialogic
+Author: [Jowan-Spooner, Emilio Coppola, and contributors](https://github.com/dialogic-godot/dialogic?tab=readme-ov-file#credits)  
+Source: [github: Dialogic](https://github.com/dialogic-godot/dialogic)  
+License: [MIT License](https://github.com/dialogic-godot/dialogic/blob/main/LICENSE)  
+
+#### ToastParty
+Author: [Francisco Pereira Alvarado](https://github.com/godot-journey-adventures)  
+Source: [github: ToastParty](https://github.com/godot-journey-adventures/toastparty/tree/main)  
+License: [MIT License](https://github.com/godot-journey-adventures/toastparty/blob/main/LICENSE)  
+
 #### Live2D Cubism (CubismNativeFramework)
 Author: [Live2D Inc.](https://www.live2d.com/en/)  
 Source: [github: CubismNativeFramework](https://github.com/Live2D/CubismNativeFramework)  
