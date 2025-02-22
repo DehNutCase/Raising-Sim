@@ -159,7 +159,7 @@ func do_job(job_name: String) :
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain
 		if ('skill' in Constants.jobs[job_name]):
 			if (Player.proficiencies[job_name] >= Constants.jobs[job_name].skill.proficiency_required):
-				if (!Player.skill_inventory.get_item_by_id(Constants.jobs[job_name].skill.id)):
+				if (!Player.skill_inventory.get_item_with_prototype_id(Constants.jobs[job_name].skill.id)):
 					Player.skill_inventory.create_and_add_item(Constants.jobs[job_name].skill.id)
 		animation.animation.show()
 		animation.animation.play("Run")
@@ -189,7 +189,7 @@ func do_lesson(lesson_name: String) :
 			Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain
 		if ('skill' in Constants.lessons[lesson_name]):
 			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
-				if (!Player.skill_inventory.get_item_by_id(Constants.lessons[lesson_name].skill.id)):
+				if (!Player.skill_inventory.get_item_with_prototype_id(Constants.lessons[lesson_name].skill.id)):
 					Player.skill_inventory.create_and_add_item(Constants.lessons[lesson_name].skill.id)
 		animation.animation.show()
 		animation.animation.play("Run")
@@ -224,7 +224,7 @@ func do_walk(walk_name: String) -> void:
 		for outcome in outcomes:
 			if ('weight' in outcome):
 				var weight = outcome.weight
-				if Player.inventory.get_item_by_id("lucky_clover") and 'timeline' in outcome:
+				if Player.inventory.get_item_with_prototype_id("lucky_clover") and 'timeline' in outcome:
 					weight *= 5
 				weights.append(weight)
 			else:
@@ -428,10 +428,10 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 		for flag in dialogic_signal.location_flags:
 			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
 	if "background" in dialogic_signal:
-		if (!Player.background_inventory.get_item_by_id(dialogic_signal.background)):
+		if (!Player.background_inventory.get_item_with_prototype_id(dialogic_signal.background)):
 			Player.background_inventory.create_and_add_item(dialogic_signal.background)
 	if "skill" in dialogic_signal:
-		if (!Player.skill_inventory.get_item_by_id(dialogic_signal.skill)):
+		if (!Player.skill_inventory.get_item_with_prototype_id(dialogic_signal.skill)):
 			Player.skill_inventory.create_and_add_item(dialogic_signal.skill)
 	if "music" in dialogic_signal:
 		get_tree().call_group("BackgroundMusicPlayer", "play_song", dialogic_signal.music)

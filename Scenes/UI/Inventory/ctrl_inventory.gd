@@ -80,7 +80,47 @@ func _on_list_item_activated(index: int) -> void:
 
 
 func _on_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	inventory_item_clicked.emit(_get_inventory_item(index), at_position, mouse_button_index)
+	#inventory_item_clicked.emit(_get_inventory_item(index), at_position, mouse_button_index)
+	#Emitting tooltips on click currently
+	var item = _get_inventory_item(index)
+	var tooltip = item.get_property("description", "Tooltip Error")
+	var daily_stats:Dictionary = item.get_property("daily_stats", {})
+	if (!daily_stats.keys().is_empty()):
+		tooltip += "\nDaily Stats:"
+		for stat in daily_stats.keys():
+			tooltip += " "
+			if (daily_stats[stat] > 0):
+				tooltip += "+"
+			tooltip += str(daily_stats[stat]) + " " + Constants.stats[stat].label
+	
+	var stats:Dictionary = item.get_property("stats", {})
+	if (!stats.keys().is_empty()):
+		tooltip += "\nStats:"
+		for stat in stats.keys():
+			tooltip += " "
+			if (stats[stat] > 0):
+				tooltip += "+"
+			tooltip += str(stats[stat]) + " " + Constants.stats[stat].label
+			
+	var monthly_stats:Dictionary = item.get_property("monthly_stats", {})
+	if (!monthly_stats.keys().is_empty()):
+		tooltip += "\nMonthly Stats:"
+		for stat in monthly_stats.keys():
+			tooltip += " "
+			if (monthly_stats[stat] > 0):
+				tooltip += "+"
+			tooltip += str(monthly_stats[stat]) + " " + Constants.stats[stat].label
+
+	var level_up_stats:Dictionary = item.get_property("level_up_stats", {})
+	if (!level_up_stats.keys().is_empty()):
+		tooltip += "\nLevel Up Stats:"
+		for stat in level_up_stats.keys():
+			tooltip += " "
+			if (level_up_stats[stat] > 0):
+				tooltip += "+"
+			tooltip += str(level_up_stats[stat]) + " " + Constants.stats[stat].label
+	
+	inventory_item_clicked.emit(tooltip)
 
 
 func _on_list_item_selected(index: int) -> void:
