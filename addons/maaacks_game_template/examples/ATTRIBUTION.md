@@ -79,8 +79,12 @@ License: [GNU General Public License version 2](https://opensource.org/licenses/
 #### Godot Game Template
 Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Game-Template/graphs/contributors)  
 Source: [github: Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template)  
-License: [MIT License](LICENSE.txt)  
+License: [MIT License](https://github.com/Maaack/Godot-Game-Template/blob/main/LICENSE.txt)  
 
+#### GLoot
+Author: [Peter Kish](https://github.com/peter-kish)  
+Source: [github: GLoot](https://github.com/peter-kish/gloot)  
+License: [MIT License](https://github.com/peter-kish/gloot/blob/master/LICENSE)  
 
 #### Live2D Cubism (CubismNativeFramework)
 Author: [Live2D Inc.](https://www.live2d.com/en/)  
