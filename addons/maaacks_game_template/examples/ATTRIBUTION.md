@@ -54,6 +54,17 @@ Author: [Tim Beek](http://timbeek.com/)
 Source: [itch.io : Royalty Free Music Pack](https://timbeek.itch.io/royalty-free-music-pack)  
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
+### Image
+#### Character Sprite (Morgan)
+Author: [POMPACK](https://pompack-en.stores.jp/about)  
+Source: [pompack-en.stores.jp](https://pompack-en.stores.jp/)  
+
+### Live2D Model
+#### Hiyori Momose
+Author: [Kani Biimu and Live2D Inc.](https://x.com/kani_biimu)  
+Source: [Live2D Sample Data](https://www.live2d.com/en/learn/sample/)  
+License: [Free Material License Agreement](https://www.live2d.jp/en/terms/free-material-license-agreement/)
+
 ### Asset Type
 #### Use Case
 Author: [Name]()  
@@ -95,6 +106,12 @@ License: [MIT License](https://github.com/dialogic-godot/dialogic/blob/main/LICE
 Author: [Francisco Pereira Alvarado](https://github.com/godot-journey-adventures)  
 Source: [github: ToastParty](https://github.com/godot-journey-adventures/toastparty/tree/main)  
 License: [MIT License](https://github.com/godot-journey-adventures/toastparty/blob/main/LICENSE)  
+
+#### GodotSteam
+Author: [Gramps](https://github.com/Gramps)  
+Contributors: [Contributors](https://godotsteam.com/contribute/contributors/)  
+Source: [github: GodotSteam](https://github.com/GodotSteam/GodotSteam)  
+License: [MIT License](https://github.com/GodotSteam/GodotSteam/blob/godot4/license.txt)  
 
 #### Live2D Cubism (CubismNativeFramework)
 Author: [Live2D Inc.](https://www.live2d.com/en/)  
