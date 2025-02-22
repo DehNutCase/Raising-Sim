@@ -1,225 +1,267 @@
 @tool
 @icon("res://addons/gloot/images/icon_item.svg")
-extends Node
+extends RefCounted
 class_name InventoryItem
+## Stack-based inventory item class.
+##
+## It is based on an item prototype from an prototree. Can hold additional properties. The default stack size and 
+## maximum stack size is 1, which can be changed by setting the `stack_size` and `maximum_stack_size` properties inside
+## the prototype or directly inside the item.
 
-signal protoset_changed
-signal prototype_id_changed
-signal properties_changed
-signal added_to_inventory(inventory)
-signal removed_from_inventory(inventory)
-signal equipped_in_slot(item_slot)
-signal removed_from_slot(item_slot)
+const _StackManager = preload("res://addons/gloot/core/stack_manager.gd")
+const _Verify = preload("res://addons/gloot/core/verify.gd")
+const _Utils = preload("res://addons/gloot/core/utils.gd")
+const _ItemCount = preload("res://addons/gloot/core/item_count.gd")
+const _ProtoTreeCache = preload("res://addons/gloot/core/prototree/proto_tree_cache.gd")
 
-@export var protoset: ItemProtoset :
+signal property_changed(property_name: String) ## Emitted when an item property has changed.
+
+## A JSON resource containing prototype information.
+var protoset: JSON:
 	set(new_protoset):
 		if new_protoset == protoset:
 			return
 
-		if (_inventory != null) && (new_protoset != _inventory.item_protoset):
+		if (_inventory != null) && (new_protoset != _inventory.protoset):
 			return
 
 		_disconnect_protoset_signals()
 		protoset = new_protoset
+		_prototree = _ProtoTreeCache.get_cached(protoset)
+		_on_prototree_changed()
 		_connect_protoset_signals()
+		
+var _prototree: ProtoTree = _ProtoTreeCache.get_empty()
+var _prototype: Prototype = null
+var _properties: Dictionary
 
-		# Reset the prototype ID (pick the first prototype from the protoset)
-		if protoset && protoset._prototypes && protoset._prototypes.keys().size() > 0:
-			prototype_id = protoset._prototypes.keys()[0]
-		else:
-			prototype_id = ""
-
-		protoset_changed.emit()
-		update_configuration_warnings()
-
-@export var prototype_id: String :
-	set(new_prototype_id):
-		if new_prototype_id == prototype_id:
-			return
-		if protoset == null && !new_prototype_id.is_empty():
-			return
-		if (protoset != null) && (!protoset.has_prototype(new_prototype_id)):
-			return
-		prototype_id = new_prototype_id
-		_reset_properties()
-		update_configuration_warnings()
-		prototype_id_changed.emit()
-
-@export var properties: Dictionary :
-	set(new_properties):
-		properties = new_properties
-		properties_changed.emit()
-		update_configuration_warnings()
-
-var _inventory: Inventory :
+var _inventory: Inventory:
 	set(new_inventory):
 		if new_inventory == _inventory:
 			return
 		_inventory = new_inventory
 		if _inventory:
-			protoset = _inventory.item_protoset
-var _item_slot: ItemSlot
+			protoset = _inventory.protoset
 
-const KEY_PROTOSET: String = "protoset"
-const KEY_PROTOTYE_ID: String = "prototype_id"
-const KEY_PROPERTIES: String = "properties"
-const KEY_NODE_NAME: String = "node_name"
-const KEY_TYPE: String = "type"
-const KEY_VALUE: String = "value"
+const _KEY_PROTOSET: String = "protoset"
+const _KEY_PROTOTYPE_ID: String = "prototype_id"
+const _KEY_PROPERTIES: String = "properties"
+const _KEY_TYPE: String = "type"
+const _KEY_VALUE: String = "value"
 
-const KEY_IMAGE: String = "image"
-const KEY_NAME: String = "name"
+const _KEY_IMAGE: String = "image"
+const _KEY_NAME: String = "name"
 
-const Verify = preload("res://addons/gloot/core/verify.gd")
 
 func _connect_protoset_signals() -> void:
-	if protoset == null:
+	if !is_instance_valid(protoset):
 		return
+
 	protoset.changed.connect(_on_protoset_changed)
 
 
 func _disconnect_protoset_signals() -> void:
-	if protoset == null:
+	if !is_instance_valid(protoset):
 		return
+
 	protoset.changed.disconnect(_on_protoset_changed)
 
 
+func _init(protoset_: JSON = null, prototype_id: String = "") -> void:
+	protoset = protoset_
+	if _prototree.has_prototype(prototype_id):
+		_prototype = _prototree.get_prototype(prototype_id)
+
+
 func _on_protoset_changed() -> void:
-	update_configuration_warnings()
+	_prototree.deserialize(protoset)
+	_on_prototree_changed()
 
 
-func _get_configuration_warnings() -> PackedStringArray:
-	if !protoset:
-		return PackedStringArray()
-
-	if !protoset.has_prototype(prototype_id):
-		return PackedStringArray(["Undefined prototype '%s'. Check the item protoset!" % prototype_id])
-
-	return PackedStringArray()
-
-
-func _reset_properties() -> void:
-	if !protoset || prototype_id.is_empty():
-		properties = {}
+func _on_prototree_changed() -> void:
+	if protoset == null:
+		_prototype = null
 		return
 
-	# Reset (erase) all properties from the current prototype but preserve the rest
-	var prototype: Dictionary = protoset.get_prototype(prototype_id)
-	var keys: Array = properties.keys().duplicate()
-	for property in keys:
-		if prototype.has(property):
-			properties.erase(property)
-
-
-func _notification(what):
-	if what == NOTIFICATION_PARENTED:
-		_on_parented(get_parent())
-	elif what == NOTIFICATION_UNPARENTED:
-		_on_unparented()
-
-
-func _on_parented(parent: Node) -> void:
-	if parent is Inventory:
-		_on_added_to_inventory(parent as Inventory)
-	else:
-		_inventory = null
-
-	if parent is ItemSlot:
-		_link_to_slot(parent as ItemSlot)
-	else:
-		_unlink_from_slot()
-
-
-func _on_added_to_inventory(inventory: Inventory) -> void:
-	assert(inventory != null)
-	_inventory = inventory
-	
-	added_to_inventory.emit(_inventory)
-	_inventory._on_item_added(self)
-
-
-func _on_unparented() -> void:
-	if _inventory:
-		_on_removed_from_inventory(_inventory)
-	_inventory = null
-
-	_unlink_from_slot()
-
-
-func _on_removed_from_inventory(inventory: Inventory) -> void:
-	if inventory:
-		removed_from_inventory.emit(inventory)
-		inventory._on_item_removed(self)
-
-
-func _link_to_slot(item_slot: ItemSlot) -> void:
-	_item_slot = item_slot
-	_item_slot._on_item_added(self)
-	equipped_in_slot.emit(item_slot)
-
-
-func _unlink_from_slot() -> void:
-	if _item_slot == null:
+	if _prototype == null:
+		# Pick the first one from the prototree
+		var prototypes := _prototree.get_prototypes()
+		if prototypes.size() > 0:
+			_prototype = prototypes[0]
+		else:
+			_prototype = null
 		return
-	var temp_slot := _item_slot
-	_item_slot = null
-	temp_slot._on_item_removed()
-	removed_from_slot.emit(temp_slot)
+
+	_prototype = _prototree.get_prototype(_prototype.get_prototype_id())
 
 
+## Returns the inventory prototree parsed from the protoset JSON resource.
+func get_prototree() -> ProtoTree:
+	return _prototree
+
+
+## Returns the item prototype.
+func get_prototype() -> Prototype:
+	return _prototype
+
+
+## Returns a duplicate of the item.
+func duplicate() -> InventoryItem:
+	var result := InventoryItem.new(protoset, _prototype.get_prototype_id())
+	result._properties = _properties.duplicate()
+	return result
+
+
+## Returns the `Inventory` this item belongs to, or `null` if it is not inside an inventory.
 func get_inventory() -> Inventory:
 	return _inventory
 
 
+## Swaps the two given items. Returns `false` if the items cannot be swapped.
+static func swap(item1: InventoryItem, item2: InventoryItem) -> bool:
+	if item1 == null || item2 == null || item1 == item2:
+		return false
+
+	var inv1 = item1.get_inventory()
+	var inv2 = item2.get_inventory()
+	if inv1 == null || inv2 == null:
+		return false
+
+	if !inv1._constraint_manager._on_pre_item_swap(item1, item2):
+		return false
+	if inv1 != inv2:
+		if !inv2._constraint_manager._on_pre_item_swap(item1, item2):
+			return false
+
+	var idx1 = inv1.get_item_index(item1)
+	var idx2 = inv2.get_item_index(item2)
+	inv1.remove_item(item1)
+	inv2.remove_item(item2)
+
+	if !inv2.add_item(item1):
+		inv1.add_item(item1)
+		inv1.move_item(inv1.get_item_index(item1), idx1)
+		inv2.add_item(item2)
+		inv2.move_item(inv2.get_item_index(item2), idx2)
+		return false
+	if !inv1.add_item(item2):
+		inv1.add_item(item1)
+		inv1.move_item(inv1.get_item_index(item1), idx1)
+		inv2.add_item(item2)
+		inv2.move_item(inv2.get_item_index(item2), idx2)
+		return false
+	inv2.move_item(inv2.get_item_index(item1), idx2)
+	inv1.move_item(inv1.get_item_index(item2), idx1)
+
+	if inv1 is Inventory:
+		inv1._constraint_manager._on_post_item_swap(item1, item2)
+	if inv2 is Inventory && inv1 != inv2:
+		inv2._constraint_manager._on_post_item_swap(item1, item2)
+
+	return true;
+
+
+static func _add_item_to_inventory(item: InventoryItem, inventory: Inventory, index: int) -> bool:
+	if inventory.add_item(item):
+		inventory.move_item(inventory.get_item_index(item), index)
+		return true
+	return false
+
+
+## Checks if the item has the given property.
+func has_property(property_name: String) -> bool:
+	if _properties.has(property_name):
+		return true
+	if _prototype != null && _prototype.has_property(property_name):
+		return true
+	return false
+
+
+## Returns the given item property. If the item does not define the item property, `default_value` is returned.
 func get_property(property_name: String, default_value = null) -> Variant:
-	# Note: The protoset editor still doesn't support arrays and dictionaries,
-	# but those can still be added via JSON definitions or via code.
-	if properties.has(property_name):
-		var value = properties[property_name]
+	if _properties.has(property_name):
+		var value = _properties[property_name]
 		if typeof(value) == TYPE_DICTIONARY || typeof(value) == TYPE_ARRAY:
 			return value.duplicate()
 		return value
 
-	if protoset && protoset.prototype_has_property(prototype_id, property_name):
-		var value = protoset.get_prototype_property(prototype_id, property_name, default_value)
+	if _prototype != null && _prototype.has_property(property_name):
+		var value = _prototype.get_property(property_name, default_value)
 		if typeof(value) == TYPE_DICTIONARY || typeof(value) == TYPE_ARRAY:
 			return value.duplicate()
 		return value
-
+		
+	if _properties.has(property_name):
+		return _properties[property_name]
+	if _prototype != null && _prototree.get_prototypes().is_empty():
+		return _prototype.get_property(property_name, default_value)
 	return default_value
 
 
+## Sets the given item property to the given value.
 func set_property(property_name: String, value) -> void:
-	var old_property = null
-	if properties.has(property_name):
-		old_property = properties[property_name]
-	properties[property_name] = value
-	if old_property != properties[property_name]:
-		properties_changed.emit()
+	if get_property(property_name) == value:
+		return
+
+	if _prototype != null && _prototype.has_property(property_name):
+		if _prototype.get_property(property_name) == value && _properties.has(property_name):
+			_properties.erase(property_name)
+			property_changed.emit(property_name)
+			return
+
+	if value == null:
+		if _properties.has(property_name):
+			_properties.erase(property_name)
+			property_changed.emit(property_name)
+	else:
+		_properties[property_name] = value
+		property_changed.emit(property_name)
 
 
+## Clears (un-defines) the given item property.
 func clear_property(property_name: String) -> void:
-	if properties.has(property_name):
-		properties.erase(property_name)
-		properties_changed.emit()
+	if _properties.has(property_name):
+		_properties.erase(property_name)
+		property_changed.emit(property_name)
 
 
+## Returns an array of properties that the item overrides.
+func get_overridden_properties() -> Array:
+	return _properties.keys().duplicate()
+
+
+## Returns an array of item properties (includes prototype properties).
+func get_properties() -> Array:
+	if _prototype != null:
+		return _Utils.array_union(_properties.keys(), _prototype.get_properties().keys())
+	else:
+		return _properties.keys()
+
+
+## Checks if the item overrides the given property.
+func is_property_overridden(property_name) -> bool:
+	return _properties.has(property_name)
+
+
+## Resets item data. Clears its properties and sets its protoset to `null`.
 func reset() -> void:
 	protoset = null
-	prototype_id = ""
-	properties = {}
+	_properties = {}
 
 
+## Serializes the item into a `Dictionary`.
 func serialize() -> Dictionary:
 	var result: Dictionary = {}
 
-	result[KEY_NODE_NAME] = name as String
-	result[KEY_PROTOSET] = protoset.resource_path
-	result[KEY_PROTOTYE_ID] = prototype_id
-	if !properties.is_empty():
-		result[KEY_PROPERTIES] = {}
-		for property_name in properties.keys():
-			result[KEY_PROPERTIES][property_name] = _serialize_property(property_name)
+	result[_KEY_PROTOSET] = Inventory._serialize_protoset(protoset)
+	if _prototype != null:
+		result[_KEY_PROTOTYPE_ID] = str(_prototype.get_prototype_id())
+	else:
+		result[_KEY_PROTOTYPE_ID] = ""
+	if !_properties.is_empty():
+		result[_KEY_PROPERTIES] = {}
+		for property_name in _properties.keys():
+			result[_KEY_PROPERTIES][property_name] = _serialize_property(property_name)
 
 	return result
 
@@ -227,33 +269,33 @@ func serialize() -> Dictionary:
 func _serialize_property(property_name: String) -> Dictionary:
 	# Store all properties as strings for JSON support.
 	var result: Dictionary = {}
-	var property_value = properties[property_name]
+	var property_value = _properties[property_name]
 	var property_type = typeof(property_value)
 	result = {
-		KEY_TYPE: property_type,
-		KEY_VALUE: var_to_str(property_value)
+		_KEY_TYPE: property_type,
+		_KEY_VALUE: var_to_str(property_value)
 	}
 	return result;
 
 
+## Loads the item data from the given `Dictionary`.
 func deserialize(source: Dictionary) -> bool:
-	if !Verify.dict(source, true, KEY_NODE_NAME, TYPE_STRING) ||\
-		!Verify.dict(source, true, KEY_PROTOSET, TYPE_STRING) ||\
-		!Verify.dict(source, true, KEY_PROTOTYE_ID, TYPE_STRING) ||\
-		!Verify.dict(source, false, KEY_PROPERTIES, TYPE_DICTIONARY):
+	if !_Verify.dict(source, true, _KEY_PROTOSET, TYPE_STRING) || \
+		!_Verify.dict(source, true, _KEY_PROTOTYPE_ID, TYPE_STRING) || \
+		!_Verify.dict(source, false, _KEY_PROPERTIES, TYPE_DICTIONARY):
 		return false
 
 	reset()
 	
-	if !source[KEY_NODE_NAME].is_empty() && source[KEY_NODE_NAME] != name:
-		name = source[KEY_NODE_NAME]
-	protoset = load(source[KEY_PROTOSET])
-	prototype_id = source[KEY_PROTOTYE_ID]
-	if source.has(KEY_PROPERTIES):
-		for key in source[KEY_PROPERTIES].keys():
-			properties[key] = _deserialize_property(source[KEY_PROPERTIES][key])
-			if properties[key] == null:
-				properties = {}
+	# TODO: Check return values
+	protoset = _Utils._deserialize_protoset(source[_KEY_PROTOSET])
+	_prototype = _prototree.get_prototype(source[_KEY_PROTOTYPE_ID])
+	if source.has(_KEY_PROPERTIES):
+		for key in source[_KEY_PROPERTIES].keys():
+			var value = _deserialize_property(source[_KEY_PROPERTIES][key])
+			set_property(key, value)
+			if value == null:
+				_properties = {}
 				return false
 
 	return true
@@ -261,18 +303,20 @@ func deserialize(source: Dictionary) -> bool:
 
 func _deserialize_property(data: Dictionary):
 	# Properties are stored as strings for JSON support.
-	var result = str_to_var(data[KEY_VALUE])
-	var expected_type: int = data[KEY_TYPE]
+	var result = _Utils.str_to_var(data[_KEY_VALUE])
+	var expected_type: int = data[_KEY_TYPE]
 	var property_type: int = typeof(result)
 	if property_type != expected_type:
 		print("Property has unexpected type: %s. Expected: %s" %
-					[Verify.type_names[property_type], Verify.type_names[expected_type]])
+					[_Verify.type_names[property_type], _Verify.type_names[expected_type]])
 		return null
 	return result
 
 
+## Helper function for retrieving the item texture. It checks the image item property and loads it as a texture, if
+## available.
 func get_texture() -> Texture2D:
-	var texture_path = get_property(KEY_IMAGE)
+	var texture_path = get_property(_KEY_IMAGE)
 	if texture_path && texture_path != "" && ResourceLoader.exists(texture_path):
 		var texture = load(texture_path)
 		if texture is Texture2D:
@@ -280,9 +324,64 @@ func get_texture() -> Texture2D:
 	return null
 
 
+## Helper function for retrieving the item title. It checks the name item property and uses it as the title, if
+## available. Otherwise, prototype_id is returned as title.
 func get_title() -> String:
-	var title = get_property(KEY_NAME, prototype_id)
-	if !(title is String):
-		title = prototype_id
+	var title = get_property(_KEY_NAME, null)
+	if title is String:
+		return title
+	if is_instance_valid(_prototype):
+		return _prototype.get_prototype_id()
+	return ""
 
-	return title
+
+## Returns the stack size.
+func get_stack_size() -> int:
+	return _StackManager.get_item_stack_size(self).count
+
+
+## Returns the maximum stack size.
+func get_max_stack_size() -> int:
+	return _StackManager.get_item_max_stack_size(self).count
+
+
+## Sets the stack size.
+func set_stack_size(stack_size: int) -> bool:
+	return _StackManager.set_item_stack_size(self, _ItemCount.new(stack_size))
+
+
+## Sets the maximum stack size.
+func set_max_stack_size(max_stack_size: int) -> void:
+	_StackManager.set_item_max_stack_size(self, _ItemCount.new(max_stack_size))
+
+
+## Merges the item stack into the `item_dst` stack. If `item_dst` doesn't have enough stack space and `split` is set to
+## `true`, the stack will be split and only partially merged. Returns `false` if the merge cannot be performed.
+func merge_into(item_dst: InventoryItem, split: bool = false) -> bool:
+	return _StackManager.merge_stacks(item_dst, self, split)
+
+
+## Checks if the item stack can be merged into `item_dst` with, or without splitting (`split` parameter).
+func can_merge_into(item_dst: InventoryItem, split: bool = false) -> bool:
+	return _StackManager.can_merge_stacks(item_dst, self, split)
+
+
+## Checks if the item stack is compatible for merging with `item_dst`.
+func compatible_with(item_dst: InventoryItem) -> bool:
+	return _StackManager.stacks_compatible(self, item_dst)
+
+
+## Returns the free stack space in the item stack (maximum_stack_size - stack_size).
+func get_free_stack_space() -> int:
+	return _StackManager.get_free_stack_space(self).count
+
+
+## Splits the item stack into two and returns a reference to the new stack. `new_stack_size` defines the size of the new
+## stack. Returns `null` if the split cannot be performed.
+func split(new_stack_size: int) -> InventoryItem:
+	return _StackManager.split_stack(self, _ItemCount.new(new_stack_size))
+
+
+## Checks if the item stack can be split using the given new stack size.
+func can_split(new_stack_size: int) -> bool:
+	return _StackManager.can_split_stack(self, _ItemCount.new(new_stack_size))

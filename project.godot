@@ -138,6 +138,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloot/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
+[gloot]
+
+inspector_control_height=200
+
 [gui]
 
 theme/default_font_generate_mipmaps=true

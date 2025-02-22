@@ -1,13 +1,14 @@
 extends GridContainer
 
-signal value_changed(value_index)
+signal value_changed(value_index: int)
 
+const _Utils = preload("res://addons/gloot/core/utils.gd")
 
-var values: Array = [] :
+var values: Array = []:
     set(new_values):
         assert(!is_inside_tree(), "Can't set values once the node is inside a tree")
         values = new_values
-var titles: Array = [] :
+var titles: Array = []:
     set(new_titles):
         assert(!is_inside_tree(), "Can't set titles once the node is inside a tree")
         titles = new_titles
@@ -44,9 +45,11 @@ func _on_line_edit_value_entered(_text: String, line_edit: LineEdit, idx: int) -
 
 
 func _on_line_edit_focus_exited(line_edit: LineEdit, idx: int) -> void:
-    var value = str_to_var(line_edit.text)
+    var value = _Utils.str_to_var(line_edit.text)
     if typeof(value) != type:
         line_edit.text = var_to_str(values[idx])
+        return
+    if value == values[idx]:
         return
     values[idx] = value
     value_changed.emit(idx)

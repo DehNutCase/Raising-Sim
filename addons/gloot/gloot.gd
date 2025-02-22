@@ -24,11 +24,7 @@ func _exit_tree() -> void:
     remove_inspector_plugin(inspector_plugin)
 
 func _add_settings() -> void:
-    _add_setting("gloot/inspector_control_height", TYPE_INT, 200)
-    _add_setting("gloot/JSON_serialization/indent_using_spaces", TYPE_BOOL, true)
-    _add_setting("gloot/JSON_serialization/indent_size", TYPE_INT, 4)
-    _add_setting("gloot/JSON_serialization/sort_keys", TYPE_BOOL, true)
-    _add_setting("gloot/JSON_serialization/full_precision", TYPE_BOOL, false)
+    _add_setting("gloot/inspector_control_height", TYPE_INT, 300)
 
 
 func _add_setting(name: String, type: int, value) -> void:
