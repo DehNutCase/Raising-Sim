@@ -1,6 +1,8 @@
-extends Node2D
+extends Control
 
-@onready var protoset = preload("res://Constants/item_protoset.tres")
+@onready var protoset:JSON = preload("res://Constants/item_protoset.json")
+
+var SHOP_COLUMN_COUNT = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,21 +13,20 @@ func update_buttons():
 	for node in get_children():
 		remove_child(node)
 		node.queue_free()
-	var items:ItemProtoset = ItemProtoset.new()
-	items.parse(protoset.json_data)
-	for key in items._prototypes.keys():
-		var item_type = items._prototypes[key]
+	var items = protoset.data
+	custom_minimum_size = Vector2(0, (len(items.keys())/SHOP_COLUMN_COUNT + 1) * 220)
+	for id in items.keys():
+		var item_data = items[id]
 		#Don't display items that aren't unlocked yet
-		if "shop_flag" in item_type and !(item_type.shop_flag in Player.shop_flags):
+		if "shop_flag" in item_data and !(item_data.shop_flag in Player.shop_flags):
 			continue
-		if "limit" in item_type:
-			var amount_item = len(Player.inventory.get_items_by_id(item_type.id))
-			if amount_item >= item_type.limit:
+		if "limit" in item_data:
+			var amount_item = len(Player.inventory.get_items_with_prototype_id(id))
+			if amount_item >= item_data.limit:
 				continue
 		var button = load("res://Scenes/UI/Actions/shop_button.tscn").instantiate()
 		add_child(button)
-		var SHOP_COLUMN_COUNT = 5
 		self.get_child(i).position = Vector2( i%SHOP_COLUMN_COUNT * 200 + 80, 220 * (i/SHOP_COLUMN_COUNT) )
-		self.get_child(i).item.prototype_id = key
+		self.get_child(i).item = InventoryItem.new(protoset, id)
 		self.get_child(i).update_labels()
 		i += 1

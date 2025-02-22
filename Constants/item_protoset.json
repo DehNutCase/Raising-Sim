@@ -1,0 +1,105 @@
+{
+	"lunch_box": {
+		"daily_stats": "{\n\"max_hp\": 5,\n\"strength\": 3\n,\n\"speed\": 3\n,\n\"stress\": -50\n}",
+		"description": "A custom made lunch box packed with plenty of care.\nUntil a spell is developed to both eat this and still have it, it'll be gone after you eat it for lunch.",
+		"image": "res://Art/Mori no oku no kakurezato/Food/Resized/lunch01_01.png",
+		"limit": 1,
+		"name": "Deluxe Lunch Box",
+		"price": 500,
+		"expiration": "daily",
+	},
+	"milk": {
+		"daily_stats": "{\n\"max_hp\": 1,\n\"strength\": 1\n,\n\"stress\": -3\n}",
+		"description": "A carton of milk every day helps you grow taller.\nExpires monthly, so it's best to buy this at the start of the month.",
+		"image": "res://Art/Mori no oku no kakurezato/Food/Resized/milk01_01.png",
+		"limit": 1,
+		"name": "Milk Subscription (Monthly)",
+		"price": 1000,
+		"expiration": "monthly",
+	},
+	"problem_set": {
+		"daily_stats": "{\n\"scholarship\": 20,\n\"magic\": 2\n,\n\"stress\": 2\n}",
+		"description": "A set of problems delivered to your door every single day. Why are you paying money for this?\nExpires monthly, so it's best to buy this at the start of the month.",
+		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/book02_01.png",
+		"limit": 1,
+		"name": "Practice Problems Subscription (Monthly)",
+		"price": 2000,
+		"expiration": "monthly",
+	},
+	"problem_set_2": {
+		"daily_stats": "{\n\"max_mp\": 5,\n\"magic\": 5,\n\"resistance\": 5,\n\"stress\":3\n}",
+		"description": "Volume 2 of the 'Practice Problems' monthly subscription. Now with even more stress!\nExpires monthly, so it's best to buy this at the start of the month.",
+		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/book02_02.png",
+		"limit": 1,
+		"name": "Practice Problems Vol. 2 Subscription (Monthly)",
+		"price": 5000,
+		"expiration": "monthly",
+	},
+	"apprentice_robes": {
+		"daily_stats": "{}",
+		"description": "Well crafted robes suitable for an apprentice. Seems to carry a hint of her majesty's personal taste.",
+		"image": "res://Art/Mori no oku no kakurezato/Chest/Resized/uniform06_05.png",
+		"limit": 1,
+		"name": "Apprentice Robes",
+		"price": 25000,
+		"stats": "{\n\"bonus_exp\": 20\n}"
+	},
+	"backup_palette": {
+		"daily_stats": "{\n\"art\": 10\n}",
+		"description": "A replacement set of brush and palette just in case you misplace your original set.",
+		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/palette01_01.png",
+		"limit": 1,
+		"name": "Backup Palette",
+		"price": 5000,
+		"stats": "{\n\"bonus_exp\": 10\n}"
+	},
+	"lucky_clover": {
+		"daily_stats": "{}",
+		"description": "A four leaf clover. It's hard to tell if it does anything.\nRice's Appraisal: 'It seems to increase the chances of running into someone when going on walks'.",
+		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/plant01_01.png",
+		"limit": 1,
+		"name": "Lucky Clover",
+		"price": 10000,
+		"stats": "{\n\"bonus_exp\": 10\n}"
+	},
+	"walking_shoes": {
+		"daily_stats": "{\n\"speed\": 5\n}",
+		"description": "Comfortable shoes for walking, let's you take an extra walk every day.",
+		"image": "res://Art/Mori no oku no kakurezato/Feet/Resized/foot01_03.png",
+		"limit": 1,
+		"name": "Walking Shoes",
+		"price": 15000,
+		"stats": "{}",
+		"walks": 1
+	},
+	"health_potion": {
+		"combat_item": "health_potion",
+		"daily_stats": "{}",
+		"description": "A red potion for restoring health.\n\nCombat item.  Consumable.",
+		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_05.png",
+		"limit": 1,
+		"name": "Health Potion",
+		"price": 1000,
+		"stats": "{}"
+	},
+	"mana_potion": {
+		"combat_item": "mana_potion",
+		"daily_stats": "{}",
+		"description": "A blue potion for enhancing magic.\n\nCombat item. Consumable.",
+		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png",
+		"limit": 1,
+		"name": "Mana Potion",
+		"price": 1000,
+		"stats": "{}"
+	},
+	"overload_potion": {
+		"combat_item": "overload_potion",
+		"daily_stats": "{}",
+		"description": "An indigo potion which increases all stats when drunk.\n\nCombat item. Consumable.",
+		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png",
+		"limit": 1,
+		"name": "Overload Potion",
+		"price": 5000,
+		"stats": "{}"
+	}
+}

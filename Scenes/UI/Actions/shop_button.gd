@@ -1,19 +1,20 @@
 extends Node2D
 
 @onready var texture = $TextureRect
-@onready var item = $InventoryItem
 @onready var button = $Button
+@onready var item: InventoryItem = InventoryItem.new()
+
+func _ready():
+	update_labels()
+	
 var tooltip:
 	get: 
 		return texture.tooltip_text
 	set(value):
 		texture.tooltip_text = value
-		
-func _ready():
-	update_labels()
 	
 func _on_button_pressed():
-	get_tree().call_group("Main", "buy_item", item.get_property("id"), item.get_property("price"))
+	get_tree().call_group("Main", "buy_item", item.get_prototype()._id, item.get_property("price"))
 
 func update_labels():
 	texture.texture = item.get_texture();

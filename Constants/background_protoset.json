@@ -1,0 +1,28 @@
+{
+	"royal_backing": {
+		"daily_stats": "{}",
+		"description": "An employee of the royal family. Unconditional access to part time jobs and academy classes. Monthly salary of 1000g.",
+		"image": "res://Art/Mori no oku no kakurezato/Head/Resized/crown01_01.png",
+		"monthly_stats": "{\n\"gold\": 1000\n}",
+		"name": "Roya Backing",
+		"stats": "{}",
+	},
+	"ink_mage": {
+		"daily_stats": "{}",
+		"description": "A magician with an affinity for ink. A rare non-combat variant of the magician class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
+		"image": "res://Art/Portraits/mao_portrait.png",
+		"monthly_stats": "{}",
+		"name": "Ink Mage",
+		"stats": "{}",
+		"level_up_stats": "{\n\"magic\": 5\n,\n\"max_hp\": 3\n,\n\"max_mp\": 3\n,\n\"speed\": 2\n,\n\"resistance\": 2\n}",
+	},
+	"gray": {
+		"daily_stats": "{\n\"stress\": -5\n, \n\"max_mp\": -1\n}",
+		"description": "An autonomous combat golem created by Hiyori.\nHas a surprisingly high power level, but Mao would never let her fight.\nA small amount of mana is used daily for recharging.",
+		"image": "res://Characters/Cats/Images/grey-kitten1.png",
+		"monthly_stats": "{}",
+		"name": "Gray",
+		"stats": "{}",
+		"flags": "{\n\"gray\": true\n}",
+	},
+}

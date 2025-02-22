@@ -2,31 +2,13 @@
 @icon("res://addons/gloot/images/icon_ctrl_inventory.svg")
 extends CtrlInventory
 
-func _ready():
-	if Engine.is_editor_hint():
-		# Clean up, in case it is duplicated in the editor
-		if is_instance_valid(_vbox_container):
-			_vbox_container.queue_free()
+func _ready() -> void:
+	item_activated.connect(_on_list_item_activated)
+	item_clicked.connect(_on_list_item_clicked)
+	item_selected.connect(_on_list_item_selected)
+	_refresh()
 
-	_vbox_container = VBoxContainer.new()
-	_vbox_container.size_flags_horizontal = SIZE_EXPAND_FILL
-	_vbox_container.size_flags_vertical = SIZE_EXPAND_FILL
-	_vbox_container.anchor_right = 1.0
-	_vbox_container.anchor_bottom = 1.0
-	add_child(_vbox_container)
-
-	_item_list = ItemList.new()
-	_item_list.size_flags_horizontal = SIZE_EXPAND_FILL
-	_item_list.size_flags_vertical = SIZE_EXPAND_FILL
-	_item_list.item_activated.connect(_on_list_item_activated)
-	_item_list.item_clicked.connect(_on_list_item_clicked)
-	_vbox_container.add_child(_item_list)
-
-	if has_node(inventory_path):
-		inventory = get_node(inventory_path)
-	_queue_refresh()
-	
 	if (!Player.inventory):
 		Player.inventory = Inventory.new()
-		Player.inventory.item_protoset = load("res://Constants/item_protoset.tres")
+		Player.inventory.protoset = load("res://Constants/item_protoset.json")
 	inventory = Player.inventory

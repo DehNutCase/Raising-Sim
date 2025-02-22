@@ -181,9 +181,8 @@ position = Vector2(-376, -235)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("27_wb2qf")
 
-[node name="PlayerInventory" type="Control" parent="Ui/PlayerControl/Player"]
+[node name="PlayerInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
 visible = false
-layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -193,10 +192,10 @@ offset_right = 660.0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("6_cueot")
+inventory = NodePath("")
 
-[node name="BackgroundInventory" type="Control" parent="Ui/PlayerControl/Player"]
+[node name="BackgroundInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
 visible = false
-layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -209,10 +208,10 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("12_thnkb")
+inventory = NodePath("")
 
-[node name="SkillInventory" type="Control" parent="Ui/PlayerControl/Player"]
+[node name="SkillInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
 visible = false
-layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -222,6 +221,7 @@ offset_right = -310.0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("13_tkqcx")
+inventory = NodePath("")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 material = SubResource("CanvasItemMaterial_snc6d")
@@ -454,8 +454,13 @@ script = ExtResource("12_sb63u")
 visible = false
 script = ExtResource("20_derlk")
 
-[node name="Shop" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
+[node name="Shop" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
+layout_mode = 2
+
+[node name="Shop" type="Control" parent="Ui/MenuPanel/MarginContainer/Shop" groups=["ButtonMenu"]]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
 script = ExtResource("22_prvwr")
 
 [node name="Walk" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
@@ -695,9 +700,6 @@ size_flags_vertical = 3
 text = "Class
 Change"
 
-[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
-[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
-[connection signal="inventory_item_context_activated" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 

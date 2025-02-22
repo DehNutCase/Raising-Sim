@@ -55,7 +55,7 @@ func _ready():
 		process_stats(Player.victory_stat_gain)
 		Player.victory_stat_gain = {}
 	
-	if (Player.background_inventory.has_item_by_id("gray")):
+	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 	
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
@@ -146,7 +146,7 @@ func process_day():
 	update_expressions()
 	check_and_play_daily_events()
 	get_tree().call_group("ButtonMenu", "update_buttons")
-	if (Player.background_inventory.has_item_by_id("gray")):
+	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 
 func do_job(job_name: String) :
@@ -458,7 +458,7 @@ func _on_timeline_ended() -> void:
 	
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarhsip bonus to items
-	var toast = "Obtained " + item.get_property("name")
+	var toast = "Obtained " + item.get_property("name", "")
 	display_toast(toast, "bottom", "center")
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
@@ -593,7 +593,7 @@ func load_class_change_text(player_class: String):
 	if "required_skills" in Constants.player_classes[player_class]:
 		var skills = []
 		for skill in Constants.player_classes[player_class].required_skills:
-			var prototype = Player.skill_inventory.item_protoset.get_prototype(skill)
+			var prototype = Player.skill_inventory.protoset.get_prototype(skill)
 			if prototype and prototype.get("name"):
 				skills.append(prototype.get("name"))
 		text = "\n\nRequired Skills: " + ", ".join(skills) + "\n"
