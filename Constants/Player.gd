@@ -162,5 +162,6 @@ func load_game():
 			
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
-	OS.set_restart_on_exit(true)
-	get_tree().quit()
+	#TODO, fix save issue if we return to main menu
+	#OS.set_restart_on_exit(true)
+	#get_tree().quit()
