@@ -1,7 +1,7 @@
 extends Character
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "experience", "experience_total", "experience_required",]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "experience", "experience_total", "experience_required", "class_change_class"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -27,6 +27,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var label = "Mao"
 @export var combat_skills = ['paintball',]
 @export var combat_items = []
+@export var class_change_class = ""
 
 @export var live2d_active = true
 var dialogic_temporary_flags = {}
@@ -159,6 +160,25 @@ func load_game():
 	for inventory in data.inventories:
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
+			
+func make_class_change_card(class_change_name:String):
+	class_change_class = class_change_name
+	var save_data = {}
+	for data in save_list:
+		save_data[data] = self[data]
+
+	#serialize inventories
+	for inventory in inventories:
+		save_data[inventory] = self[inventory].serialize()
+	
+	var save_file
+	DirAccess.make_dir_recursive_absolute("user://Saves")
+	save_file = FileAccess.open("user://Saves/class_change.json", FileAccess.WRITE)
+	if save_file:
+		save_file.store_line(JSON.stringify(save_data))
+		ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
+	else:
+		ToastParty.show({"text": "Failed to create Class Change Card!", "gravity": "top", "direction": "center"})
 			
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")

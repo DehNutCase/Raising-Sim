@@ -42,6 +42,7 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
+#TODO, add timeline for hiyori on why lessons/work is hard (inform about stress)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Game needs to be loaded here
@@ -414,9 +415,9 @@ func display_stats() -> void:
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")
 	#Class Change button
 	if Player.event_flags.get("class_change_information_event"):
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
 	else:
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
 
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)

@@ -5,6 +5,7 @@ const jobs = {
 			'experience': 10,
 			'gold': 50,
 			'max_hp': 1,
+			'defense': 1,
 			'stress': 3,
 		},
 		'required_stats': {
