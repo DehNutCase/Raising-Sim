@@ -421,6 +421,7 @@ func display_stats() -> void:
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)
 	if "item" in dialogic_signal:
+		#TODO, create handler for when dialogic tries to go over item limit
 		Player.inventory.create_and_add_item(dialogic_signal.item)
 	if "stats" in dialogic_signal:
 		process_stats(dialogic_signal.stats)
