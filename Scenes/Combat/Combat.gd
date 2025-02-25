@@ -362,10 +362,10 @@ func _on_item_press(index: int):
 			continue
 		player_combat_copy.stats[stat] += action.stats[stat]
 		
-	var item = Player.inventory.get_item_by_id(name)
+	var item = Player.inventory.get_item_with_prototype_id(name)
 	Player.inventory.remove_item(item)
 	#Remove item from list of items if we don't have it anymore
-	if !Player.inventory.get_item_by_id(name):
+	if !Player.inventory.get_item_with_prototype_id(name):
 		Player.combat_items.erase(name)
 		item_menu.remove_item(index)
 		

@@ -93,11 +93,11 @@ func level_up() -> void:
 	stats["level"] += 1
 	experience_required = get_required_experience(stats["level"] - 1)
 	var stats_list = Constants.stats.base_stats
-	if !player_class or !background_inventory.get_item_by_id(player_class):
+	if !player_class or !background_inventory.get_item_with_prototype_id(player_class):
 		for stat in stats_list:
 			stats[stat] += 1
 	else:
-		stats_list = background_inventory.get_item_by_id(player_class).get_property("level_up_stats")
+		stats_list = background_inventory.get_item_with_prototype_id(player_class).get_property("level_up_stats")
 		for stat in stats_list:
 			stats[stat] += stats_list[stat]
 
