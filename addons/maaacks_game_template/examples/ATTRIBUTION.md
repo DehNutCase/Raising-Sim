@@ -65,6 +65,11 @@ Author: [Kani Biimu and Live2D Inc.](https://x.com/kani_biimu)
 Source: [Live2D Sample Data](https://www.live2d.com/en/learn/sample/)  
 License: [Free Material License Agreement](https://www.live2d.jp/en/terms/free-material-license-agreement/)
 
+### Image
+#### Maid Portrait
+Author: [Jupiter's Daughter](https://www.deviantart.com/jupiterssdaughter)  
+Source: [Deviant Art : Cute Maid Portrait](https://www.deviantart.com/jupiterssdaughter/art/Cute-Maid-Portrait-Free-to-Use-640828463)  
+
 ### Asset Type
 #### Use Case
 Author: [Name]()  
