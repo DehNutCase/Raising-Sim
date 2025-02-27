@@ -64,7 +64,7 @@
 	},
 	"walking_shoes": {
 		"daily_stats": "{\n\"speed\": 5\n}",
-		"description": "Comfortable shoes for walking, let's you take an extra walk every day.",
+		"description": "Comfortable shoes for walking, lets you take an extra walk every day.",
 		"image": "res://Art/Mori no oku no kakurezato/Feet/Resized/foot01_03.png",
 		"limit": 1,
 		"name": "Walking Shoes",
