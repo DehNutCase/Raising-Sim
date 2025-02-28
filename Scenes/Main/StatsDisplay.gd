@@ -8,7 +8,13 @@ var text2: String
 func _ready():
 	pass
 
+#TODO, make the parent not disable tabs until class change card is read
 func display_stats():
+	if Player.background_inventory.get_item_with_prototype_id("class_change_card") or Player.background_inventory.get_item_with_prototype_id("class_change_card_witch"):
+		get_parent().tabs_visible = true
+	else:
+		get_parent().tabs_visible = false
+		
 	text1 = "Stats:\n"
 	text2 = "\n"
 	var counter = 0
