@@ -33,6 +33,8 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 var dialogic_temporary_flags = {}
 enum live2d_modes {LIVE2D, VIDEO}
 
+var class_change_card #variable to hold loaded class change, *do not save*
+
 @export var live2d_mode = live2d_modes.LIVE2D:
 	set(value):
 		live2d_mode = value
@@ -161,27 +163,55 @@ func load_game():
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
 			
-func make_class_change_card(class_change_name:String):
-	class_change_class = class_change_name
-	var save_data = {}
-	for data in save_list:
-		save_data[data] = self[data]
-
-	#serialize inventories
-	for inventory in inventories:
-		save_data[inventory] = self[inventory].serialize()
-	
-	var save_file
-	DirAccess.make_dir_recursive_absolute("user://Saves")
-	save_file = FileAccess.open("user://Saves/class_change.json", FileAccess.WRITE)
-	if save_file:
-		save_file.store_line(JSON.stringify(save_data))
-		ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
-	else:
-		ToastParty.show({"text": "Failed to create Class Change Card!", "gravity": "top", "direction": "center"})
-			
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
 	#TODO, fix save issue if we return to main menu
 	#OS.set_restart_on_exit(true)
 	#get_tree().quit()
+	
+func save_class_change_card(class_change_name:String):
+	class_change_class = class_change_name
+	var save_data = {}
+	for data in save_list:
+		save_data[data] = self[data]
+
+	for inventory in inventories:
+		save_data[inventory] = self[inventory].serialize()
+	
+	var save_file
+	DirAccess.make_dir_recursive_absolute("user://Saves")
+	save_file = FileAccess.open("user://Saves/class_change_card.json", FileAccess.WRITE)
+	if save_file:
+		save_file.store_line(JSON.stringify(save_data))
+		ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
+	else:
+		printerr("class change card save issue")
+		ToastParty.show({"text": "Failed to create Class Change Card!", "gravity": "top", "direction": "center"})
+			
+func load_class_change_card():
+	class_change_card = Player.duplicate()
+	var save_file
+	save_file = FileAccess.open("user://Saves/class_change_card.json", FileAccess.READ)
+	if !save_file:
+		printerr("no class change card loaded")
+		return
+	var json_string = save_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		printerr("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	var data = json.get_data()
+	
+	for variable in data:
+		if variable == "inventories" or variable in data.inventories:
+			continue
+		class_change_card[variable] = data[variable]
+	
+	for inventory in data.inventories:
+		class_change_card[inventory] = Inventory.new()
+		if !class_change_card[inventory].deserialize(data[inventory]):
+			printerr("failed to deserialize inventory during load_class_change_card")
+			
+func delete_class_change_card():
+	DirAccess.remove_absolute("user://Saves/class_change_card.json")

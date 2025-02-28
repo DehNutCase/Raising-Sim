@@ -42,6 +42,8 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
+var selected_class_change_class: String
+
 #TODO, add timeline for hiyori on why lessons/work is hard (inform about stress)
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -407,7 +409,6 @@ func process_stats(stats):
 	display_stats()
 
 func display_stats() -> void:
-	stats.display_stats()
 	gold_label.display_gold()
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
@@ -504,8 +505,9 @@ func update_expressions() -> void:
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.angry_expression)
 	else:
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.normal_expression)
-
-	get_tree().call_group("Live2DPlayer", "play_idle_motion")
+	
+	#Disabled idle motion on expression update for now
+	#get_tree().call_group("Live2DPlayer", "play_idle_motion")
 
 
 func _on_enter_tower_button_pressed() -> void:
@@ -553,14 +555,13 @@ func _on_player_inventory_item_activated(tooltip):
 			})
 
 func load_class_change_text(player_class: String):
+	selected_class_change_class = player_class
 	var font = load("res://Art/Fonts/emoji_font_variation.tres")
 	var desc = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Description"
 	var req = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"
 	var text = Constants.player_classes[player_class].description
 	desc.clear()
 	desc.append_text(text)
-	
-		
 		
 	if "required_stats" in Constants.player_classes[player_class]:
 		var text1 = "Required Stats:\n"
@@ -603,4 +604,7 @@ func load_class_change_text(player_class: String):
 		
 func display_player_class_info(player_class:String) -> void:
 	load_class_change_text(player_class)
+
+func _on_select_class_button_pressed() -> void:
+	Player.save_class_change_card(selected_class_change_class)
 

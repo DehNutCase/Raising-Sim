@@ -140,7 +140,7 @@
 	},
 	"blessing": {
 		"daily_stats": "{\n\"experience\": 10\n,\n\"scholarship\": 1\n}",
-		"description": "An excellent buff spell mostly used by high level priests. \nLearning this proably took a few twists and turns.",
+		"description": "An excellent buff spell mostly used by high level priests. \nLearning this probably took a few twists and turns.",
 		"image": "",
 		"monthly_stats": "{\n\"magic\": 10\n,\n\"max_mp\": 10\n}",
 		"name": "Blessing",
@@ -155,5 +155,14 @@
 		"name": "Light Barrier",
 		"stats": "{}",
 		"combat_skill" : "light_barrier"
+	},
+	"finishing_blow": {
+		"daily_stats": "{\"strength\": 1,\"speed\": 1}",
+		"description": "A single strong, extremely powerful hit executed with speed and precision.\nSuitable for fighting single enemies.",
+		"image": "",
+		"monthly_stats": "{\"speed\": 10,}",
+		"name": "Finishing Blow",
+		"stats": "{\"action_points\": 1}",
+		"combat_skill" : "finishing_blow"
 	},
 }

@@ -314,6 +314,7 @@ func _on_action(button):
 	if fight_won:
 		if button.text == "Leave" or button.text == "Flee":
 			exit_combat()
+			return
 		display_toast("Mao is currently doing a victory dance and can't act!", "top")
 		return
 		

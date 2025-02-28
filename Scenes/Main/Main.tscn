@@ -504,7 +504,7 @@ layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 
-[node name="ClassChangeButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"]
+[node name="SelectClassButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -534,13 +534,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Stats" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+[node name="Stats" type="TabContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
+layout_mode = 2
+
+[node name="Stats" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Stats" groups=["StatBars"]]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("25_7vaom")
 
-[node name="Stats" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats"]
+[node name="Stats" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
 texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
@@ -548,7 +551,7 @@ size_flags_vertical = 0
 text = "StatLabel"
 label_settings = SubResource("LabelSettings_icocv")
 
-[node name="Stats2" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats"]
+[node name="Stats2" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
 texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
@@ -717,6 +720,7 @@ text = "Save"
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
+[connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/mood"]
