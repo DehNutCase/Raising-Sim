@@ -628,7 +628,7 @@ const rests = {
 	'Free Time': {
 	'stats': {
 			'experience': 1,
-			'stress': -10,
+			'stress': -20,
 		}
 	},
 	'Library': {
@@ -637,6 +637,16 @@ const rests = {
 			'gold': -10,
 			'scholarship': 10,
 			'stress': -15,
+		}
+	},
+	'Dessert Buffet': {
+		'stats': {
+			'experience': 5,
+			'gold': -100,
+			'strength': 2,
+			'max_hp': 2,
+			'speed': -2,
+			'stress': -50,
 		}
 	},
 	'Vacation': {
@@ -1654,7 +1664,7 @@ const combat_skills = {
 	},
 	'warcry': {
 		'stats': {
-			'strength': 10,
+			'strength': 20,
 		},
 		'weight': 5,
 		'effect_target': 'ally',
