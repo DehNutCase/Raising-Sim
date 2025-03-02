@@ -137,7 +137,7 @@ func get_selected_inventory_item() -> InventoryItem:
 
 ## Returns an array of selected inventory items.
 func get_selected_inventory_items() -> Array[InventoryItem]:
-	var result: Array[InventoryItem]
+	var result: Array[InventoryItem] = []
 	var indexes = get_selected_items()
 	for i in indexes:
 		result.append(_get_inventory_item(i))

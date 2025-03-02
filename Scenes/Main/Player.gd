@@ -57,6 +57,7 @@ func _ready():
 	live2d_video_player.finished.connect(_on_motion_finished)
 	effect_breath.name = "GDCubismEffectBreath"
 	cubism_model.add_child(effect_breath)
+	add_breath()
 	var node = GDCubismEffectEyeBlink.new()
 	node.name = "GDCubismEffectEyeBlink"
 	cubism_model.add_child(node)
@@ -86,8 +87,7 @@ func _on_motion_finished():
 	timestamp = Time.get_unix_time_from_system()
 	var previous_stamp = timestamp
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
-		if (!effect_breath.get_parent()):
-			cubism_model.add_child(effect_breath)
+		add_breath()
 			
 		if (last_motion in fast_end_motions):
 			await get_tree().create_timer(RandomNumberGenerator.new().randi_range(1,2)).timeout
@@ -122,10 +122,15 @@ func _update_live2d_display(live2d_mode) -> void:
 			
 func start_motion(motion) -> void:
 	timestamp = Time.get_unix_time_from_system()
+	var previous_stamp = timestamp
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
-		if (effect_breath.get_parent()):
-			cubism_model.remove_child(effect_breath)
+		remove_breath()
 		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+		
+		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(0, 10)).timeout
+		if previous_stamp == timestamp:
+			add_breath()
+		
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		motion_video_queue.append(motion.video)
 	
@@ -187,7 +192,19 @@ func pause_live2d() -> void:
 
 func resume_live2d() -> void:
 	Player.live2d_active = true
-
+	
+#TODO, figure out a way to use effect_breath.active without making model look choppy
+#current implementation is repetitive but smooth
+func add_breath() -> void:
+	if (!effect_breath.get_parent()):
+		cubism_model.add_child(effect_breath)
+	#effect_breath.active = true
+	
+func remove_breath() -> void:
+	if (effect_breath.get_parent()):
+		cubism_model.remove_child(effect_breath)
+	#effect_breath.active = false
+	
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0

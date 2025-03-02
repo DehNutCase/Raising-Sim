@@ -556,7 +556,8 @@ func _on_player_inventory_item_activated(tooltip):
 
 func load_class_change_text(player_class: String):
 	selected_class_change_class = player_class
-	var font = load("res://Art/Fonts/emoji_font_variation.tres")
+	#Use below to add correct font that displays emoji if needed
+	#var font = load("res://Art/Fonts/emoji_font_variation.tres")
 	var desc = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Description"
 	var req = $"Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"
 	var text = Constants.player_classes[player_class].description
