@@ -44,7 +44,6 @@ var current_state = states.READY
 
 var selected_class_change_class: String
 
-#TODO, add timeline for hiyori on why lessons/work is hard (inform about stress)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Game needs to be loaded here

@@ -48,5 +48,15 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 	Mao_Portrait (Normal): If you say so. Why is Hiyori's Corner here, then?
 	Hiyori_Portrait (Normal): I asked one of the maids to build a secret hideout for me, and this is how it ended up.
 	Mao_Portrait (EyesClosed): (But why did they make it a classroom?)
+- I can't seem to do anything right.
+	Mao_Portrait (Sad): I keep failing all my classes.
+	Hiyori_Portrait (Normal): Are you managing stress properly? High stress makes it hard to work or learn. Try taking relaxing walks before doing something hard.
+	Mao_Portrait (Blush): Umm...
+	[signal arg="{"stats": {"stress": -5}}"]
+	Hiyori_Portrait (Normal): Leaving that aside for now, having higher stats also helps a lot. You can brute force things by doing the same thing over and over and it'll get easier even if you keep failing, but that's slow and inefficient.
+	Hiyori_Portrait (Surprised): Scholarship📖 helps with taking classes, but the more advanced classes need more than just Scholarhsip📖.
+	Hiyori_Portrait (Normal): For jobs it's a bit harder to tell and there's no hard or fast rule, but you should have a good sense of whether a job is easy or hard from just your intuition.
+	Mao_Portrait (Surprised): Really?
+	Hiyori_Portrait (Normal): I hope so, anyway.
 Hiyori_Portrait (Smile): That's all for this time's consultation, we hope to see you again.
 [signal arg="{"stats": {"scholarship": 10}}"]
