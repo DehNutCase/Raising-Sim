@@ -71,6 +71,7 @@ func _ready():
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("ButtonMenu", "update_buttons")
+	get_tree().call_group("MuteButton", "_update")
 	display_stats()
 	day_label.display_day(day)
 	self.show()
@@ -608,3 +609,10 @@ func display_player_class_info(player_class:String) -> void:
 func _on_select_class_button_pressed() -> void:
 	Player.save_class_change_card(selected_class_change_class)
 
+func _on_pause_menu_button_pressed():
+	var pause_menu_packed = load("res://Scenes/GameTemplate/Menus/PauseMenu.tscn")
+	InGameMenuController.open_menu(pause_menu_packed, get_viewport())
+
+func _on_volume_button_toggled(toggled_on):
+	AppSettings.set_mute(toggled_on)
+	get_tree().call_group("MuteButton", "_update")

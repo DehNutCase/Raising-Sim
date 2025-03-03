@@ -34,3 +34,4 @@ func _ready():
 
 func _on_mute_control_setting_changed(value):
 	AppSettings.set_mute(value)
+	get_tree().call_group("MuteButton", "_update")

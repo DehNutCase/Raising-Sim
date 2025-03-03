@@ -40,6 +40,7 @@ func _ready():
 func _on_mute_control_setting_changed(value):
 	AppSettings.set_mute(value)
 	get_tree().call_group("MuteButton", "_update")
+	print("from mini")
 
 func _on_fullscreen_control_setting_changed(value):
 	AppSettings.set_fullscreen_enabled(value, get_window())
