@@ -8,7 +8,6 @@ extends Control
 @onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
 @onready var dialogic_panel = $Ui/DialogicPanel
 
-@onready var gold_label = $Ui/GoldLabelContainer/GoldLabel
 @onready var day_label = $Ui/DayLabelContainer/DayLabel
 
 @onready var menu_panel = $Ui/MenuPanel
@@ -409,7 +408,6 @@ func process_stats(stats):
 	display_stats()
 
 func display_stats() -> void:
-	gold_label.display_gold()
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")

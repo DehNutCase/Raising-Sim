@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=50 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_rlk5e"]
-[ext_resource type="Script" path="res://Scenes/Main/GoldLabel.gd" id="8_8l10c"]
 [ext_resource type="Texture2D" uid="uid://j8ltyk1w2jib" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g930.png" id="8_g4iyq"]
 [ext_resource type="Texture2D" uid="uid://bcl5c2d53ihf6" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g937.png" id="9_c3tuy"]
 [ext_resource type="Texture2D" uid="uid://cgijk4jox1odn" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g958.png" id="10_q0jxe"]
@@ -40,12 +39,6 @@ font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_icocv"]
-font = ExtResource("7_rlk5e")
-font_size = 28
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_k8ogb"]
 font_size = 22
 outline_size = 2
@@ -57,6 +50,12 @@ light_mode = 1
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
+
+[sub_resource type="LabelSettings" id="LabelSettings_icocv"]
+font = ExtResource("7_rlk5e")
+font_size = 28
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwgbm"]
 
@@ -89,23 +88,27 @@ script = ExtResource("1_bqq6y")
 [node name="FPS" type="Label" parent="."]
 texture_filter = 4
 layout_mode = 0
-offset_left = 10.0
-offset_top = 63.0
-offset_right = 144.0
-offset_bottom = 113.0
+offset_left = 1450.0
+offset_top = 100.0
+offset_right = 1497.0
+offset_bottom = 139.0
 text = "FPS"
 label_settings = SubResource("LabelSettings_qc06n")
 script = ExtResource("2_h7wcs")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 180.0
-offset_right = 1420.0
+offset_left = 160.0
+offset_right = 1460.0
 offset_bottom = 160.0
 mouse_filter = 2
 
 [node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
+
+[node name="gold" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="mood" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
@@ -132,22 +135,6 @@ layer = -1
 texture = ExtResource("5_iokpw")
 centered = false
 offset = Vector2(-160, -90)
-
-[node name="GoldLabelContainer" type="MarginContainer" parent="Ui"]
-offset_right = 145.0
-offset_bottom = 59.0
-mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="GoldLabel" type="Label" parent="Ui/GoldLabelContainer"]
-texture_filter = 4
-layout_mode = 2
-text = "GoldLabel"
-label_settings = SubResource("LabelSettings_icocv")
-script = ExtResource("8_8l10c")
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
 anchors_preset = 1
@@ -187,13 +174,8 @@ stretch_mode = 5
 script = ExtResource("12_n64mh")
 
 [node name="DayLabelContainer" type="MarginContainer" parent="Ui"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -119.0
-offset_top = 70.0
-offset_bottom = 134.0
-grow_horizontal = 0
+offset_right = 119.0
+offset_bottom = 64.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -774,6 +756,7 @@ pause_menu_packed = ExtResource("29_h0pyo")
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
+[editable path="GUI (Mouse Ignore)/Counters/gold"]
 [editable path="GUI (Mouse Ignore)/Counters/mood"]
 [editable path="GUI (Mouse Ignore)/Counters/scholarship"]
 [editable path="GUI (Mouse Ignore)/Counters/walks"]
