@@ -184,6 +184,21 @@ func save_class_change_card(class_change_name:String):
 	if save_file:
 		save_file.store_line(JSON.stringify(save_data))
 		ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
+		
+		if class_change_name == "Witch":
+			var old_cards = []
+			old_cards.append_array(Player.background_inventory.get_items_with_prototype_id("class_change_card"))
+			old_cards.append_array(Player.background_inventory.get_items_with_prototype_id("class_change_card_witch"))
+			for card in old_cards:
+				Player.background_inventory.remove_item(card)
+			Player.background_inventory.create_and_add_item("class_change_card_witch")
+		else:
+			var old_cards = []
+			old_cards.append_array(Player.background_inventory.get_items_with_prototype_id("class_change_card"))
+			old_cards.append_array(Player.background_inventory.get_items_with_prototype_id("class_change_card_witch"))
+			for card in old_cards:
+				Player.background_inventory.remove_item(card)
+			Player.background_inventory.create_and_add_item("class_change_card")
 	else:
 		printerr("class change card save issue")
 		ToastParty.show({"text": "Failed to create Class Change Card!", "gravity": "top", "direction": "center"})

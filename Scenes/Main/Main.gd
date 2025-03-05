@@ -42,9 +42,11 @@ enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
 
 var selected_class_change_class: String
+var class_change_requirements_fufilled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#TODO, sycnhronize background size of dialogic & main scene (move chars downward)
 	#Game needs to be loaded here
 	self.hide()
 	if !Player.save_loaded:
@@ -562,7 +564,8 @@ func load_class_change_text(player_class: String):
 	var text = Constants.player_classes[player_class].description
 	desc.clear()
 	desc.append_text(text)
-		
+	
+	class_change_requirements_fufilled = true
 	if "required_stats" in Constants.player_classes[player_class]:
 		var text1 = "Required Stats:\n"
 		var text2 = "\n"
@@ -573,12 +576,16 @@ func load_class_change_text(player_class: String):
 				label = Constants.stats[stat]["label"]
 			if ("emoji" in Constants.stats[stat]):
 				label += " (" + Constants.stats[stat].emoji + ")"
+			var check_mark = "✅"
+			if Constants.player_classes[player_class].required_stats[stat] > Player.stats[stat]:
+				check_mark = "❌"
+				class_change_requirements_fufilled = false
 			if counter > 0:
 				counter = 0
-				text2 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + "\n"
+				text2 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + " " + check_mark + " " + "\n"
 			else:
 				counter += 1
-				text1 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + "\t\n"
+				text1 += label + ": " + str(Constants.player_classes[player_class].required_stats[stat]) + " " + check_mark + " " + "\t\n"
 		text = ""
 		#Using p tab_stops and \t for dividing columns currently, see if there's better method
 		text += "[table=2][cell][p tab_stops=525.0]"
@@ -596,9 +603,14 @@ func load_class_change_text(player_class: String):
 	if "required_skills" in Constants.player_classes[player_class]:
 		var skills = []
 		for skill in Constants.player_classes[player_class].required_skills:
-			var prototype = Player.skill_inventory.protoset.get_prototype(skill)
-			if prototype and prototype.get("name"):
-				skills.append(prototype.get("name"))
+			var prototype = Player.skill_inventory.get_prototree().get_prototype(skill)
+			var check_mark = "✅"
+			if not Player.skill_inventory.get_item_with_prototype_id(skill):
+				check_mark = "❌"
+				class_change_requirements_fufilled = false
+			if prototype and prototype.get_property("name"):
+				skills.append(prototype.get_property("name") + " " + check_mark + " ")
+				
 		text = "\n\nRequired Skills: " + ", ".join(skills) + "\n"
 		req.append_text(text)
 		
@@ -606,7 +618,10 @@ func display_player_class_info(player_class:String) -> void:
 	load_class_change_text(player_class)
 
 func _on_select_class_button_pressed() -> void:
-	Player.save_class_change_card(selected_class_change_class)
+	if class_change_requirements_fufilled:
+		Player.save_class_change_card(selected_class_change_class)
+	else:
+		display_toast("Class change requirements not fufilled!", "top")
 
 func _on_pause_menu_button_pressed():
 	var pause_menu_packed = load("res://Scenes/GameTemplate/Menus/PauseMenu.tscn")
