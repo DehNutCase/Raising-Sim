@@ -185,7 +185,7 @@ func save_class_change_card(class_change_name:String):
 		save_file.store_line(JSON.stringify(save_data))
 		ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
 		
-		if class_change_name == "Witch":
+		if class_change_name == "witch":
 			var old_cards = []
 			old_cards.append_array(Player.background_inventory.get_items_with_prototype_id("class_change_card"))
 			old_cards.append_array(Player.background_inventory.get_items_with_prototype_id("class_change_card_witch"))
