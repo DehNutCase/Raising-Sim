@@ -88,10 +88,11 @@ func _ready():
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 		
 	#TODO, delete below, dev use only
-	#Player.background_inventory.create_and_add_item("gray")
-	#Dialogic.start("Day120Event")
+	#Player.background_inventory.create_and_add_item("class_change_card_witch")
+	#Dialogic.start("HiyoriAtelier")
 	#Player.max_walks = 100
 	#Player.tower_level = 9
+	#Player.load_class_change_card()
 	#TODO, end dev use section
 
 func process_day():
