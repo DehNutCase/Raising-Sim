@@ -840,7 +840,7 @@ const locations = {
 				'stats': {
 				},
 				'weight': 1,
-				'toasts': ["Hiyori's here, let's go say hi."],
+				'toasts': ["Let's go look around the storage room."],
 				'timeline': 'res://Timelines/WalkEvents/StorageRoom.dtl',
 				'first_toasts': ["Found Gray in the storage room."],
 				'first_timeline': 'res://Timelines/WalkEvents/StorageRoomFirst.dtl',
