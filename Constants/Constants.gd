@@ -695,7 +695,7 @@ const stats = {
 	},
 	'skill' = {
 		'label': 'Skill',
-		'emoji': '🎯',
+		'emoji': '🎲',
 		'min': 0,
 		'max': 1000,
 		'value': 1,
@@ -764,7 +764,7 @@ const stats = {
 		'min': 0,
 	},
 	'action_points' = {
-		'label': 'Action Points',
+		'label': 'Action Point',
 		'emoji': '',
 		'min': 1,
 	}
@@ -841,7 +841,7 @@ const locations = {
 				},
 				'weight': 1,
 				'toasts': ["Hiyori's here, let's go say hi."],
-				'timeline': 'res://Timelines/WalkEvents/HiyoriAtelier.dtl',
+				'timeline': 'res://Timelines/WalkEvents/StorageRoom.dtl',
 				'first_toasts': ["Found Gray in the storage room."],
 				'first_timeline': 'res://Timelines/WalkEvents/StorageRoomFirst.dtl',
 				'flag': "storage_room"
