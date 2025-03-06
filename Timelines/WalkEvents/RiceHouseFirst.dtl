@@ -23,7 +23,7 @@ Rice_Portrait (Normal): You might as well come in, then.
 join Rice (Normal) 4 [animation="Instant In Or Out" length="0"]
 update Rice (Normal) 2 [ move_time="1"]
 update Mao (Normal) 1 [ move_time="1"]
-[background arg="res://Art/Background/NoranekoGames/Livingroom_Day.png" fade="1.0" transition="Swipe Right To Left"]
+[background arg="res://Art/Background/NoranekoGames/Edited/Livingroom_Day.png" fade="1.0" transition="Swipe Right To Left"]
 update Mao (Excited)
 Mao_Portrait (Excited): Yay!
 update Mao (Normal)
