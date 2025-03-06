@@ -1,0 +1,26 @@
+[background arg="res://Art/Background/Background material shop/Edited/BlessedPlains.png" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Smile)
+Mao_Portrait (Smile): Wow, Dumplings are everywhere. Heehee.
+Rice_Portrait (Normal): Don't eat them.
+update Mao (Sad)
+Mao_Portrait (Sad): Aww...
+update Mao (Normal)
+Mao_Portrait (Normal): So why is this place 'Blessed' anyway? I don't feel anything special.
+Mao_Portrait (Normal): The air smells great, though.
+Rice_Portrait (Normal): The fact we aren't being swarmed by undead right now is proof. You must have taken history classes, a great of demons died here during the civil war.
+Rice_Portrait (Normal): Her majesty makes it a point to, ahem, 'bless' the area around the capital every year or so.
+update Mao (Excited)
+Mao_Portrait (Excited): Oh wow, does she pray with special effects? Like she kneels down and a beam of light shoots down sky and and a bunch of angels appear and there's some kind of hymn going on in the background.
+Rice_Portrait (Normal): She forces the undead up with necromancy then blasts them out of existence with holy magic.
+update Mao (Surprised)
+Rice_Portrait (Normal): At this point things have quieted down enough that she doesn't need to handle it personally anymore, but as far as I know her schedule hasn't changed.
+Mao_Portrait (Surprised): Why does she know necromancy?
+Rice_Portrait (Normal): Dealing with undead has traditionally been the domain of clerics, it shouldn't be surprising that her majesty knows necromancy.
+update Mao (Normal)
+Mao_Portrait (Normal): I... see?
+Rice_Portrait (Normal): You should pay more attention in class.
+update Mao (Blush)
+Mao_Portrait (Blush): Teehee.
+[signal arg="{"stats": {"stress": -20, "scholarship": 10, "magic": 10,}}"]
