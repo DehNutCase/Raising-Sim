@@ -13,7 +13,7 @@
 "display_name": "Alice",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(0, 20),
 "portraits": {
 "Angry": {
 "export_overrides": {

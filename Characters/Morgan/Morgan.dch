@@ -13,7 +13,7 @@
 "display_name": "Morgan",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, -15),
+"offset": Vector2(0, 5),
 "portraits": {
 "Angry": {
 "export_overrides": {

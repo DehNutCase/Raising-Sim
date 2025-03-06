@@ -13,7 +13,7 @@
 "display_name": "Mao",
 "mirror": false,
 "nicknames": ["Niziiro Mao"],
-"offset": Vector2(0, 40),
+"offset": Vector2(0, 60),
 "portraits": {
 "Angry": {
 "export_overrides": {
