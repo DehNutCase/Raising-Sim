@@ -893,6 +893,78 @@ const locations = {
 				'flag': "rice_house"
 			},],
 	},
+	#TODO, continue from here
+	#Use https://atelier.fandom.com/wiki/Category:Atelier_Sophie_Locations as inspiration?
+	'city_gates': {
+		"label": "City Gates",
+		'location_flag': "city_gates",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -10,
+					'speed': 1,
+				},
+				'toasts': ["Took a walk around the gates."],
+				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Let's take a short break at the gates."],
+				'timeline': 'res://Timelines/WalkEvents/CityGates.dtl',
+				'first_toasts': ["Reached the gates, let's check in."],
+				'first_timeline': 'res://Timelines/WalkEvents/CityGatesFirst.dtl',
+				'flag': "city_gates"
+			},],
+	},
+	#Blessed due to her majesty repeating prayers (lots of demons died here)
+	#Dumplings tend to spawn here due to blessing
+	'blessed_plains': {
+		"label": "Blessed Plains",
+		'location_flag': "blessed_plains",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -20,
+				},
+				'toasts': ["The air here feels really refreshing."],
+				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Let's play with the Dumplings."],
+				'timeline': 'res://Timelines/WalkEvents/BlessedPlains.dtl',
+				'first_toasts': ["There seems to be a lot of Dumplings rolling around."],
+				'first_timeline': 'res://Timelines/WalkEvents/BlessedPlainsFirst.dtl',
+				'flag': "blessed_plains"
+			},],
+	},
+	#TODO, 
+	'sacred_woods': {
+		"label": "Sacred Woods",
+		'location_flag': "sacred_woods",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -20,
+				},
+				'toasts': ["The air here feels really refreshing."],
+				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Let's play with the Dumplings."],
+				'timeline': 'res://Timelines/WalkEvents/SacredWoods.dtl',
+				'first_toasts': ["There seems to be a lot of Dumplings rolling around."],
+				'first_timeline': 'res://Timelines/WalkEvents/SacredWoodsFirst.dtl',
+				'flag': "sacred_woods"
+			},],
+	},
 }
 
 const character_classes = {

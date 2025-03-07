@@ -47,16 +47,12 @@ var class_change_requirements_fufilled = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#TODO, sycnhronize background size of dialogic & main scene (move chars downward)
+	#TODO, display class change card data in stats
 	#Game needs to be loaded here
 	self.hide()
 	if !Player.save_loaded:
 		Player.load_game()
 	Player.save_loaded = true
-	if Player.victory_stat_gain:
-		display_toast("Gained stats from combat!", "top")
-		await(get_tree().create_timer(.5).timeout)
-		process_stats(Player.victory_stat_gain)
-		Player.victory_stat_gain = {}
 	
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
@@ -88,10 +84,19 @@ func _ready():
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
-		
+	
+	if Player.victory_stat_gain:
+		display_toast("Gained stats from combat!", "top")
+		await(get_tree().create_timer(.5).timeout)
+		process_stats(Player.victory_stat_gain)
+		Player.victory_stat_gain = {}
+		if Player.tower_level == 21 and !('ExitPass' in Player.event_flags):
+			Player.event_flags['ExitPass'] = true
+			Dialogic.start("ExitPass")
+		display_stats()
 	#TODO, delete below, dev use only
 	#Player.background_inventory.create_and_add_item("class_change_card_witch")
-	#Dialogic.start("HiyoriAtelier")
+	#Dialogic.start("StorageRoomFirst")
 	#Player.max_walks = 100
 	#Player.tower_level = 9
 	#Player.load_class_change_card()
@@ -330,7 +335,7 @@ func _on_action(button):
 					tower.get_node("Description").add_text("\n")
 				tower.get_node("Description").add_text(Constants.tower_levels[Player.tower_level].description)
 			else:
-				tower.get_node("Description").text = "A mysterious force (Rice grabbing you by the scruff of your neck) prevents you from climbing any higher."
+				tower.get_node("Description").add_text("A mysterious force (Rice grabbing you by the scruff of your neck) prevents you from climbing any higher.")
 		"Class Change":
 			#TODO, add class change code here
 			load_class_change_text("ink_mage_journeyman")
@@ -424,7 +429,7 @@ func display_stats() -> void:
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)
 	if "item" in dialogic_signal:
-		#TODO, create handler for when dialogic tries to go over item limit
+		#TODO Make sure not to let dialogic create too many items (perhaps add dialogic_limit setting and handler?)
 		Player.inventory.create_and_add_item(dialogic_signal.item)
 	if "stats" in dialogic_signal:
 		process_stats(dialogic_signal.stats)

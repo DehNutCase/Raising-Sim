@@ -1,0 +1,17 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
+[history action="clear"]
+Rice_Portrait (Normal): Here.
+[signal arg="{"item": "exit_pass"}"]
+update Mao (Surprised)
+Mao_Portrait (Surprised): What's this for?
+Rice_Portrait (Normal): Exit pass, it lets you out of the city and back in.
+update Mao (Normal)
+Mao_Portrait (Normal): Aren't we in the middle of an apocalypse or something?
+Rice_Portrait (Normal): No. No we aren't. Although this does explain why you've never tried getting an exit pass before.
+Rice_Portrait (Normal): For the record, the vast majority of people get this by filling out forms rather than clearing level 20 of the Royal Tower.
+update Mao (Smile)
+Mao_Portrait (Smile): I did a great job, didn't I?
+Rice_Portrait (Normal): ...Sure.
+[signal arg="{"location_flags": {"city_gates": true}}"]

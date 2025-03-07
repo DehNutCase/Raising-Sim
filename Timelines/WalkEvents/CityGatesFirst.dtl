@@ -1,0 +1,18 @@
+[background arg="res://Art/Background/Background material shop/bg003a.jpg" fade="0.0"]
+join Mao (Normal) 1
+[history action="clear"]
+Rice_Portrait (Normal): The automatic gates are faster, by the way.
+update Mao (Smile) 2 [animation="Tada" length="4" move_time="4"]
+Mao_Portrait (Smile): Standing in line is fun.
+Rice_Portrait (Normal): If you say so.
+update Mao (Normal) 3 [animation="Tada" length="4" move_time="4"]
+Mao_Portrait (Normal): Don't you like looking at people?
+Rice_Portrait (Normal): Not particularly.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Oh yeah, aren't you supposed to be ignoring me?
+Rice_Portrait (Normal): I don't always respond, but that doesn't mean I'm ignoring you.
+update Mao (Normal) 4 [animation="Tada" length="4" move_time="4"]
+Rice_Portrait (Normal): Since we'll be heading outside the city, I decided it would be better if I guided you somewhat than have you wandering around randomly.
+Mao_Portrait (Normal): Heehee. Thanks.
+[signal arg="{"location_flags": {"blessed_plains": true}}"]
+[signal arg="{"stats": {"stress": -5,"max_hp":5,"strength":5,"speed":5,}}"]

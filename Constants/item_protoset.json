@@ -101,5 +101,14 @@
 		"name": "Overload Potion",
 		"price": 5000,
 		"stats": "{}"
-	}
+	},
+	"exit_pass": {
+		"daily_stats": "{}",
+		"description": "A pass for entering and exiting the city.\nMost people get this by filling out a few forms.",
+		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/ticket01_01.png",
+		"limit": 0,
+		"name": "Exit Pass",
+		"price": 1000,
+		"stats": "{}",
+	},
 }
