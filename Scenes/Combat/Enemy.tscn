@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://nxlludp50pcy" path="res://Art/Themes/DefaultFontTheme.tres" id="1_fpc2t"]
 [ext_resource type="Script" path="res://Scenes/Combat/Enemy.gd" id="1_gf4qc"]
 [ext_resource type="Texture2D" uid="uid://bwhrcqexejtjj" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-2-5-5-2-8-0.png" id="2_ovfc1"]
-[ext_resource type="Texture2D" uid="uid://c3cnll5gacj8l" path="res://Art/It Came From The Swamp/Enemies/f_candle.png" id="3_8kpk4"]
+[ext_resource type="Texture2D" uid="uid://bjiqmrnesye78" path="res://Art/It Came From The Swamp/Enemies/f_Teruko.png" id="3_iuwxw"]
 
 [node name="Enemy" type="Control"]
 layout_mode = 3
@@ -49,8 +49,8 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_8kpk4")
-expand_mode = 4
+texture = ExtResource("3_iuwxw")
+expand_mode = 3
 stretch_mode = 5
 
 [node name="Hp" type="Label" parent="VBoxContainer"]

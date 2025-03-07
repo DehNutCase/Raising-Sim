@@ -46,7 +46,7 @@ var class_change_card #variable to hold loaded class change, *do not save*
 @export var enemies = [
 	{
 		"level": 1,
-		"character_class": "mage",
+		"character_class": "wizard",
 		"race": "dumpling",
 	},
 	{
@@ -57,7 +57,7 @@ var class_change_card #variable to hold loaded class change, *do not save*
 	{
 		"level": 1,
 		"character_class": "priest",
-		"race": "dumpling",
+		"race": "teru",
 	},
 	{
 		"level": 1,
