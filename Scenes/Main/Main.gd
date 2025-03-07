@@ -478,9 +478,6 @@ func _on_inventory_item_added(item):
 	if item.get_property("combat_skill", {}):
 		Player.combat_skills.append(item.get_property("combat_skill", {}))
 		
-	if item.get_property("combat_item", {}):
-		Player.combat_items.append(item.get_property("combat_item", {}))
-		
 	if item.get_property("walks", 0):
 		Player.max_walks += int(item.get_property("walks", 0))
 		

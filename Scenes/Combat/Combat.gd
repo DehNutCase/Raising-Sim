@@ -71,6 +71,10 @@ func _ready():
 		index += 1
 	skill_menu.index_pressed.connect(_on_skill_press)
 	
+	#Add combat items
+	for item in Player.inventory._items:
+		if item.get_property("combat_item", {}):
+			player_combat_copy.combat_items.append(item.get_property("combat_item", {}))
 	index = 0
 	for item in player_combat_copy.combat_items:
 		item_menu.add_item(Constants.combat_items[item].label)
@@ -390,7 +394,7 @@ func exit_combat() -> void:
 	Player.in_tower = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
 	
-func display_toast(message, gravity = "bottom", direction = "center"):
+func display_toast(message, gravity = "top", direction = "center"):
 	ToastParty.show({
 		"text": message,           # Text (emojis can be used)
 		"gravity": gravity,                   # top or bottom
