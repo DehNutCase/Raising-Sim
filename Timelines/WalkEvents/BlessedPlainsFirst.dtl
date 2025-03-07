@@ -13,9 +13,9 @@ Rice_Portrait (Normal): The fact we aren't being swarmed by undead right now is 
 Rice_Portrait (Normal): Her majesty makes it a point to, ahem, 'bless' the area around the capital every year or so.
 update Mao (Excited)
 Mao_Portrait (Excited): Oh wow, does she pray with special effects? Like she kneels down and a beam of light shoots down sky and and a bunch of angels appear and there's some kind of hymn going on in the background.
-Rice_Portrait (Normal): She forces the undead up with necromancy then blasts them out of existence with holy magic.
+Rice_Portrait (Normal): She forces the undead out of the ground with necromancy then blasts them out of existence with holy magic.
 update Mao (Surprised)
-Rice_Portrait (Normal): At this point things have quieted down enough that she doesn't need to handle it personally anymore, but as far as I know her schedule hasn't changed.
+Rice_Portrait (Normal): At this point things have quieted down enough that her majesty doesn't need to handle it personally anymore, but as far as I know her schedule hasn't changed.
 Mao_Portrait (Surprised): Why does she know necromancy?
 Rice_Portrait (Normal): Dealing with undead has traditionally been the domain of clerics, it shouldn't be surprising that her majesty knows necromancy.
 update Mao (Normal)
