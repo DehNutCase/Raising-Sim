@@ -13,7 +13,7 @@
 "display_name": "Gray",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, -330),
+"offset": Vector2(0, -305),
 "portraits": {
 "Back": {
 "export_overrides": {

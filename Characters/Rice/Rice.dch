@@ -13,7 +13,7 @@
 "display_name": "Rice",
 "mirror": false,
 "nicknames": ["Rice Glassfield"],
-"offset": Vector2(0, 30),
+"offset": Vector2(0, 55),
 "portraits": {
 "Normal": {
 "export_overrides": {
