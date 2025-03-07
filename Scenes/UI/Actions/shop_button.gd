@@ -19,7 +19,9 @@ func _on_button_pressed():
 func update_labels():
 	texture.texture = item.get_texture();
 	button.text = "Buy: " + str(item.get_property("price", 0))
-	tooltip = item.get_property("description", "tooltip error")
+	tooltip = item.get_property("name", "")
+	if tooltip: tooltip += "\n"
+	tooltip += item.get_property("description", "tooltip error")
 
 	var daily_stats:Dictionary = item.get_property("daily_stats", {})
 	if (!daily_stats.keys().is_empty()):

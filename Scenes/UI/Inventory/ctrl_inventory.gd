@@ -83,7 +83,9 @@ func _on_list_item_clicked(index: int, at_position: Vector2, mouse_button_index:
 	#inventory_item_clicked.emit(_get_inventory_item(index), at_position, mouse_button_index)
 	#Emitting tooltips on click currently
 	var item = _get_inventory_item(index)
-	var tooltip = item.get_property("description", "Tooltip Error")
+	var tooltip = item.get_property("name", "")
+	if tooltip: tooltip += "\n"
+	tooltip += item.get_property("description", "Tooltip Error")
 	var daily_stats:Dictionary = item.get_property("daily_stats", {})
 	if (!daily_stats.keys().is_empty()):
 		tooltip += "\nDaily Stats:"
@@ -167,7 +169,9 @@ func _populate() -> void:
 		var texture := item.get_texture()
 		add_item(_get_item_title(item), texture)
 		set_item_metadata(get_item_count() - 1, item)
-		var tooltip = item.get_property("description", "Tooltip Error")
+		var tooltip = item.get_property("name", "")
+		if tooltip: tooltip += "\n"
+		tooltip += item.get_property("description", "Tooltip Error")
 		var daily_stats:Dictionary = item.get_property("daily_stats", {})
 		if (!daily_stats.keys().is_empty()):
 			tooltip += "\nDaily Stats:"
