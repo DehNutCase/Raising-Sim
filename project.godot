@@ -25,11 +25,11 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -90,6 +90,11 @@ directories/dtl_directory={
 "RiceHouseFirst": "res://Timelines/WalkEvents/RiceHouseFirst.dtl",
 "StorageRoom": "res://Timelines/WalkEvents/StorageRoom.dtl",
 "StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl",
+"TriggeredEvents/ExitPass": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/TriggeredEvents/ExitPass.dtl",
+"WalkEvents/BlessedPlains": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/BlessedPlains.dtl",
+"WalkEvents/BlessedPlainsFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/BlessedPlainsFirst.dtl",
+"WalkEvents/CityGates": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/CityGates.dtl",
+"WalkEvents/CityGatesFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/CityGatesFirst.dtl",
 "WalkEvents/HiyoriAtelier": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriAtelier.dtl",
 "WalkEvents/HiyoriAtelierFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "WalkEvents/HiyoriAtelierSecond": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/HiyoriAtelierSecond.dtl",

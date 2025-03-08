@@ -1,7 +1,7 @@
 [background arg="res://Art/Background/Background material shop/bg003a.jpg" fade="0.0"]
 join Mao (Normal) 1
 [history action="clear"]
-Rice_Portrait (Normal): The automatic gates are faster, by the way.
+Rice_Portrait (Normal): The automated gates are faster, by the way.
 update Mao (Smile) 2 [animation="Tada" length="4" move_time="4"]
 Mao_Portrait (Smile): Standing in line is fun.
 Rice_Portrait (Normal): If you say so.

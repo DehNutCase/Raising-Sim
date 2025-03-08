@@ -57,7 +57,7 @@ Rice_Portrait (Normal): Playing with Dumplings is also an option.
 	update Mao (Normal)
 	Mao_Portrait (Normal): Okie dokie.
 - Playing with Dumplings sounds fun
-	update Mao (Smile) [animation="Shake X" length="4"]
+	update Mao (Smile)
 	update Mao [animation="Shake X" length="4" repeat="0"]
 	update Mao [animation="Tada" length="4" repeat="2"]
 	Mao_Portrait (Smile): Heehee.
