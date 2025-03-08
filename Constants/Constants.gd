@@ -916,7 +916,6 @@ const locations = {
 				'flag': "city_gates"
 			},],
 	},
-	#Dumplings tend to spawn here due to blessing
 	'blessed_plains': {
 		"label": "Blessed Plains",
 		'location_flag': "blessed_plains",
@@ -956,9 +955,9 @@ const locations = {
 				'stats': {
 				},
 				'weight': 1,
-				'toasts': ["Let's play with the Dumplings."],
+				'toasts': ["Time to toast some Dumplings at the campfire."],
 				'timeline': 'res://Timelines/WalkEvents/SacredWoods.dtl',
-				'first_toasts': ["There seems to be a lot of Dumplings rolling around."],
+				'first_toasts': ["Found a nice clearing to rest at."],
 				'first_timeline': 'res://Timelines/WalkEvents/SacredWoodsFirst.dtl',
 				'flag': "sacred_woods"
 			},],

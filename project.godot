@@ -88,6 +88,8 @@ directories/dtl_directory={
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
 "RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",
 "RiceHouseFirst": "res://Timelines/WalkEvents/RiceHouseFirst.dtl",
+"SacredWoods": "res://Timelines/WalkEvents/SacredWoods.dtl",
+"SacredWoodsFirst": "res://Timelines/WalkEvents/SacredWoodsFirst.dtl",
 "StorageRoom": "res://Timelines/WalkEvents/StorageRoom.dtl",
 "StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl",
 "TriggeredEvents/ExitPass": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/TriggeredEvents/ExitPass.dtl",

@@ -73,4 +73,10 @@ Rice_Portrait (Normal): Playing with Dumplings is also an option.
 	update Mao (Sad)
 	Mao_Portrait (Sad): Aww...
 	update Mao (Normal)
+- So why are there so many Dumplings here anyway?
+	Rice_Portrait (Normal): They're attracted to the residual holy mana in the air.
+	Rice_Portrait (Normal): Her majesty's mana has a very high level of purity, so Dumplings, which are almost elemental creatures, are naturally attracted.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Does that mean I can summon Dumplings if I keep learning holy magic?
+	Rice_Portrait (Normal): Enchantment or Conjuration spells would be better if you're looking for a pet, and you'll  have problems with mana purity as you are now.
 [signal arg="{"stats": {"stress": -10, "magic": 5,}}"]
