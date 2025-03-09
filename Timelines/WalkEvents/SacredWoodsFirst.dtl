@@ -21,9 +21,10 @@ Rice_Portrait (Normal): Whoever prepared this should know to leave and find some
 update Mao (Surprised)
 Rice_Portrait (Normal): If you don't have anything else to do here, I'll lead you to one of the shrines. It should be more interesting than staying here.
 Mao_Portrait (Surprised): Wait, why are you chasing them away?
-Rice_Portrait (Normal): Officially, I should be hunting them down right now. Assuming whoever prepared this is who I think they are. Unofficially, we don't want to kill them, they don't want to die, so it's better to look the other way.
-update Mao (Sad)
-Mao_Portrait (Sad): Is this one of those adult things?
-Rice_Portrait (Normal): Sure.
+Rice_Portrait (Normal): Officially, I should be hunting them down right now. Assuming whoever prepared this is who I think they are.
+Rice_Portrait (Normal): Unofficially, we don't want to catch them, they don't want to be caught, so it's better to look the other way.
+update Mao (Normal)
+Mao_Portrait (Normal): Wouldn't it be fine to just officially not catch them, then?
+Rice_Portrait (Normal): That's a question you should ask her majesty.
 [signal arg="{"location_flags": {"hidden_shrine": true}}"]
 [signal arg="{"stats": {"stress": -20, "magic": 5}}"]
