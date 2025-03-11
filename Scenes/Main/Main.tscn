@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=51 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b1napua58pspf" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten2.png" id="27_wb2qf"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/PauseMenuController.gd" id="28_3ijv8"]
 [ext_resource type="PackedScene" uid="uid://kl6xb7t6fq50" path="res://Scenes/GameTemplate/Menus/PauseMenu.tscn" id="29_h0pyo"]
+[ext_resource type="Script" path="res://Scenes/Main/MissionsContainer.gd" id="30_uj6nt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -551,11 +552,11 @@ layout_mode = 2
 clip_tabs = false
 script = ExtResource("22_gnm4m")
 
-[node name="Non-combat" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ClassChangeClassesContainer"]
+[node name="Non-combat" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ClassChangeClassesContainer"]
 clip_contents = true
 layout_mode = 2
 
-[node name="Hybrid" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ClassChangeClassesContainer"]
+[node name="Hybrid" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ClassChangeClassesContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -585,6 +586,46 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "StatLabel"
 label_settings = SubResource("LabelSettings_icocv")
+
+[node name="Mission" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="DescriptionContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Mission"]
+custom_minimum_size = Vector2(1100, 600)
+layout_mode = 2
+clip_tabs = false
+
+[node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("22_1jgxs")
+bbcode_enabled = true
+
+[node name="SelectMissionButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+text = "Start Mission"
+
+[node name="MissionsContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Mission" groups=["ButtonMenu"]]
+custom_minimum_size = Vector2(1100, 200)
+layout_mode = 2
+clip_tabs = false
+script = ExtResource("30_uj6nt")
+
+[node name="Main Story" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Mission/MissionsContainer"]
+clip_contents = true
+layout_mode = 2
 
 [node name="CloseButton" type="Button" parent="Ui/MenuPanel"]
 custom_minimum_size = Vector2(25, 25)
@@ -690,6 +731,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Class
 Change"
+
+[node name="Mission" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Mission"
 
 [node name="RightMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 0

@@ -19,6 +19,7 @@ extends Control
 @onready var walk = $Ui/MenuPanel/MarginContainer/Walk
 @onready var tower = $Ui/MenuPanel/MarginContainer/Tower
 @onready var class_change = $"Ui/MenuPanel/MarginContainer/Class Change"
+@onready var mission = $"Ui/MenuPanel/MarginContainer/Mission"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
@@ -27,7 +28,7 @@ extends Control
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
-@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change]
+@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change, mission]
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -43,6 +44,8 @@ var current_state = states.READY
 
 var selected_class_change_class: String
 var class_change_requirements_fufilled = false
+
+var selected_mission:String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -337,9 +340,16 @@ func _on_action(button):
 			else:
 				tower.get_node("Description").add_text("A mysterious force (Rice grabbing you by the scruff of your neck) prevents you from climbing any higher.")
 		"Class Change":
-			#TODO, add class change code here
 			load_class_change_text("ink_mage_journeyman")
 			class_change.show()
+		"Mission":
+			#TODO, automatically continue mission timeline if a mission is already active
+			if Player.active_mission:
+				pass
+				#TODO, start mission timeline
+			else:
+				load_mission_text("black_forest_orcs")
+				mission.show()
 		"Save":
 			Player.save_game()
 			background.visible = false
@@ -420,12 +430,17 @@ func display_stats() -> void:
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("Job_Button", "update_difficulty_color")
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")
-	#Class Change button
+	#Update Menu Button displays
 	if Player.event_flags.get("class_change_information_event"):
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
 	else:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
 
+	if Player.event_flags.get("mission_information_event"):
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".show()
+	else:
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".hide()
+	
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)
 	if "item" in dialogic_signal:
@@ -620,6 +635,24 @@ func display_player_class_info(player_class:String) -> void:
 	load_class_change_text(player_class)
 
 func _on_select_class_button_pressed() -> void:
+	if class_change_requirements_fufilled:
+		Player.save_class_change_card(selected_class_change_class)
+	else:
+		display_toast("Class change requirements not fufilled!", "top")
+
+func load_mission_text(mission: String):
+	selected_mission = mission
+	#Use below to add correct font that displays emoji if needed
+	#var font = load("res://Art/Fonts/emoji_font_variation.tres")
+	var desc = $"Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description"
+	var text = Constants.missions[mission].description
+	desc.clear()
+	desc.append_text(text)
+		
+func display_mission_info(mission:String) -> void:
+	load_mission_text(mission)
+
+func _on_select_mission_pressed() -> void:
 	if class_change_requirements_fufilled:
 		Player.save_class_change_card(selected_class_change_class)
 	else:

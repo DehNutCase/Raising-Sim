@@ -18,7 +18,6 @@ func update_buttons():
 				continue
 			var button = load("res://Scenes/UI/Actions/player_class_button.tscn").instantiate()
 			tab.add_child(button)
-			tab.get_child(i).position = Vector2( i%5 * 200, 100 * (i/5) )
 			tab.get_child(i).player_class_name = player_class
 			if "label" in player_classes[player_class]:
 				tab.get_child(i).update_label(player_classes[player_class].label)

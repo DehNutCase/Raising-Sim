@@ -1993,3 +1993,13 @@ const player_classes = {
 		"required_skills": ["honorary_officer"],
 	},
 }
+
+const missions = {
+	"black_forest_orcs": {
+		"description": "There's a small tribe of orcs living in the Black Forest. Her majesty ordered you to either incorporate them into the kingdom or drive them out.\n\nAlthough the use of force is authorized, going in spells blazing would be the opposite of her majesty's intent. The orcs are valuable human resources.",
+		"id": "black_forest_orcs",
+		"label": "Black Forest Orcs",
+		"type": "Main Story",
+		"encounter_difficulty": 10,
+	},
+}
