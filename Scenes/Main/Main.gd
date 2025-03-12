@@ -93,7 +93,7 @@ func _ready():
 		await(get_tree().create_timer(.5).timeout)
 		process_stats(Player.victory_stat_gain)
 		Player.victory_stat_gain = {}
-		if Player.tower_level == 21 and !('ExitPass' in Player.event_flags):
+		if Player.tower_level == 21 and !Player.event_flags.get('ExitPass'):
 			Player.event_flags['ExitPass'] = true
 			Dialogic.start("ExitPass")
 		display_stats()
@@ -435,7 +435,6 @@ func display_stats() -> void:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
 	else:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
-
 	if Player.event_flags.get("mission_information_event"):
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".show()
 	else:
@@ -561,6 +560,11 @@ func check_and_play_daily_events() -> void:
 	
 	if Player.day == Constants.constants.days_in_month * 4 and Player.event_flags.get("class_change_information_event"):
 		Dialogic.start("EndOfYearEvent")
+	
+	#TODO, add check for if class changed (either have exitpass *or* is class changed)
+	if !Player.event_flags.get('mission_information_event') and Player.event_flags.get('ExitPass'):
+			Player.event_flags['mission_information_event'] = true
+			Dialogic.start("MissionRoom")
 	
 #Tooltip replacement for mobile which doesn't have hover tooltips
 func _on_player_inventory_item_activated(tooltip):

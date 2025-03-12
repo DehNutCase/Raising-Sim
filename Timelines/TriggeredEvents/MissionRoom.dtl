@@ -1,0 +1,23 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+Rice_Portrait (Normal): If you're free, her majesty wants to see you.
+update Mao (Surprised)
+Mao_Portrait (Surprised): What for?
+Rice_Portrait (Normal): It would be better if she explained herself.
+update Mao (Normal)
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="2.0" transition="Push Left"]
+Mao_Portrait (Normal): Hey, isn't this Hiyori's storage room?
+join Morgan (Silhouette) 1 [animation="Slide In Left" length="2"]
+update Mao (Normal) 3 [ move_time="2"]
+Morgan_Portrait (Silhouette): It was originally mine, but you can say that of everything.
+Morgan_Portrait (Silhouette): Good morning, Mao.
+update Mao (Smile)
+Mao_Portrait (Smile): Good morning!
+update Mao (Normal)
+Morgan_Portrait (Silhouette): I called you to let you know that you're ready to start taking missions from me. But only if you want to.
+Morgan_Portrait (Silhouette): My kingdom isn't so fragile that it can't handle children playing around rather than working.
+Mao_Portrait (Normal): I'm already working though?
+Morgan_Portrait (Silhouette): Fufufu. Sure. And very hard too.
+Morgan_Portrait (Silhouette): Here's some pocket money, go take the day off and have fun.
+[signal arg="{"stats": {"stress": -20, "gold": 1000,}}"]

@@ -84,6 +84,7 @@ directories/dtl_directory={
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
+"MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
 "RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",
