@@ -64,5 +64,5 @@ Mao_Portrait (Surprised): Why didn't she just say so then?
 Rice_Portrait (Normal): And if her orders had been something you truly couldn't abide no matter what?
 update Mao (Sad)
 Mao_Portrait (Sad): Huh?
-Rice_Portrait (Normal): You don't have to answer now, and maybe not ever. But her intent was to let you know that a question like that could exist at all.
+Rice_Portrait (Normal): You don't have to answer now, perhaps not ever. But her intent was to let you know that a question like that could exist at all.
 [signal arg="{"stats": {"stress": 10,}}"]
