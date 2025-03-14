@@ -418,7 +418,9 @@ func process_stats(stats):
 			Player.stats[stat] += stats[stat]
 			toast += "[" + plus + str(stats[stat]) + " " + label + "] "
 		else:
-			var stat_gain:int = stats[stat] * (1 + Player.stats.scholarship/Constants.stats.scholarship.bonus_ratio)
+			var stat_gain:int = stats[stat]
+			#Apply scholarship only to stat increases
+			if stat_gain > 0: stat_gain *= (1 + Player.stats.scholarship/Constants.stats.scholarship.bonus_ratio)
 			Player.stats[stat] += stat_gain
 			toast += "[" + plus + str(stat_gain) + " " + label + "] "
 			

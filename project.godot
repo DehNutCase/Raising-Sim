@@ -60,6 +60,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
 "BlackForestOrcs0": "res://Timelines/BlackForestOrcs/BlackForestOrcs0.dtl",
+"BlackForestOrcs1": "res://Timelines/BlackForestOrcs/BlackForestOrcs1.dtl",
 "BlessedPlains": "res://Timelines/WalkEvents/BlessedPlains.dtl",
 "BlessedPlainsFirst": "res://Timelines/WalkEvents/BlessedPlainsFirst.dtl",
 "CityGates": "res://Timelines/WalkEvents/CityGates.dtl",

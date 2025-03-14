@@ -1,0 +1,77 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Normal) [animation="Shake X" length="4"]
+update Mao (Normal) [animation="Tada" length="4" repeat="0"]
+Mao_Portrait (Normal): Hey Rice, can you pass me my bath towels?
+Rice_Portrait (Normal): (It looks like she's... packing?)
+update Mao (Surprised)
+Mao_Portrait (Surprised): Woah, how did you do that?
+Rice_Portrait (Normal): Just a small magic trick. It's one of the collection of spells listed under 'Prestidigitation' in your textbook if you want to learn.
+update Mao (Normal)
+Rice_Portrait (Normal): Why are you packing?
+Mao_Portrait (Normal): Aren't we going on a field trip? I'm getting everything ready. Oh, do you know where I put my laundry? I remember having more changes of clothes.
+Rice_Portrait (Normal): I see.
+Rice_Portrait (Normal): You do know we're coming back here to sleep, right?
+update Mao (Surprised)
+Mao_Portrait (Surprised): But isn't the Black Forest really far away?
+Rice_Portrait (Normal): We have the teleport coordinates.
+update Mao (Sad)
+Mao_Portrait (Sad): Oh.
+Rice_Portrait (Normal): We can still camp out if you wanted to, although in my experience it's not particularly enjoyable.
+update Mao (Excited)
+Mao_Portrait (Excited): Yay!
+update Mao (Smile)
+Mao_Portrait (Smile): Okay, I'm ready!
+update Mao (Normal)
+Mao_Portrait (Normal): So, um, where do I go?
+Rice_Portrait (Normal): The storage room will do. The official mission room also has scrying panels, but we don't need to go there.
+[background arg="res://Art/Background/Background material shop/bg008a.jpg" fade="2.0" transition="Push Left"]
+[wait_input hide_text="false"]
+update Mao (Excited)
+Mao_Portrait (Excited): Mission room?
+Rice_Portrait (Normal): Her majesty doesn't usually give briefings in a closet.
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="2.0" transition="Push Right"]
+[wait_input hide_text="false"]
+update Mao (Normal)
+Mao_Portrait (Normal): This is a really big closet.
+Rice_Portrait (Normal): It's a metaphor.
+Rice_Portrait (Normal): Aisle D has the scrying panels, so if you'll scoot over and look you can watch what I'm doing.
+update Mao (Normal) 4 [animation="Tada" move_time="2"]
+Mao_Portrait (Normal): How are you controlling the panels?
+Rice_Portrait (Normal): Prestidigitation.
+Rice_Portrait (Normal): But please pay a bit more attention to what the panel is showing. It won't be a hot landing, so we just need to check for obstructions.
+Rice_Portrait (Normal): Most of this would be handled by the teleportation spell itself, so focus on the exact coordinates you'll be teleporting to when doing this yourself.
+Rice_Portrait (Normal): With the amount of mana we have, the results would be catastrophic for everyone around us if something happens.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Why would we be fine?
+Rice_Portrait (Normal): It's a military grade spell for a reason. Now brace yourself.
+[background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="1.0"]
+[signal arg="{"stats": {"max_mp": -10,}}"]
+[wait_input hide_text="false"]
+update Mao (Normal)
+Mao_Portrait (Normal): Wow, that was really smooth.
+Mao_Portrait (Normal): I wanted to ask earlier, but why did we teleport into the middle of the forest?
+Rice_Portrait (Normal): It would be faster to run to the fort from here than going through all the paperwork for a direct teleport.
+Rice_Portrait (Normal): If you're asking why we didn't teleport directly to the orcs, that's because nobody wants to turn their village into a smoking crater.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Teleporting can do that?
+Rice_Portrait (Normal): Not usually. The more likely cause is that they'll understandably attack us. And then we fight back.
+update Mao (Normal)
+Mao_Portrait (Normal): What if I just stood there and didn't fight?
+Rice_Portrait (Normal): That only works if someone is around to fight for you. Regardless, if you don't want a fight, don't do things to start one.
+Mao_Portrait (Normal): Yes ma'am.
+Mao_Portrait (Normal): ...So what do we do now?
+Rice_Portrait (Normal): That's for you to decide. If you're asking for advice, then heading to the fort first would be a good idea.
+Rice_Portrait (Normal): Of course, you could also bumble around and hope to bump into one of the orcs. We are quite close to their village.
+Mao_Portrait (Normal): Why don't we just go to the village then?
+Rice_Portrait (Normal): ...I'm going to ask a question because I'm quite curious.
+Rice_Portrait (Normal): Let's pretend for the moment you got chosen by the god of something or another to become a hero. You're on a quest to save the world.
+update Mao (Excited)
+Rice_Portrait (Normal): In front of you is a house, the owner is inside, it looks like he's making tea, and you can see variety of jars, chests, and drawers. What do you do?
+Mao_Portrait (Excited): I go in to say hi and dig through everything!
+Rice_Portrait (Normal): I'm going to ask her majesty to make you attend remedial ethics classes.
+update Mao (Angry)
+Mao_Portrait (Angry): I was joking, jeez!
+update Mao (Normal)
+Mao_Portrait (Normal): Let's just go to the fort.
