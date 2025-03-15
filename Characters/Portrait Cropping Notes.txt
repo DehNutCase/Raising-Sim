@@ -1,0 +1,3 @@
+For Pompack:
+410x44 position (varies, 410x44 for Morgan), 288x288 size
+magick mogrify -crop 288x288+410+44 *.png
