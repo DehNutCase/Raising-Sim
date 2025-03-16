@@ -1,0 +1,21 @@
+Angry = C
+Blush = J
+Frown = A
+Grin = B
+Happy = E
+Laugh = I
+Shocked = G
+Sigh = H
+Surprise = D
+Sweatdrop = F
+
+Frown = A
+Grin = B
+Angry = C
+Surprise = D
+Happy = E
+Sweatdrop = F
+Shocked = G
+Sigh = H
+Laugh = I
+Blush = J

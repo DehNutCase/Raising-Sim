@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpfohm2h2qcu1"
-path="res://.godot/imported/002tf_adventurer_blue_male_K.png-1e323562fefc661fa03ba182924a3793.ctex"
+uid="uid://cxpgmlwwq5vhy"
+path="res://.godot/imported/002tf_adventurer_blue_male_J.png-755b9d1cc7b7145523a263c3a495175e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Drake/Images/002tf_adventurer_blue_male_K.png"
-dest_files=["res://.godot/imported/002tf_adventurer_blue_male_K.png-1e323562fefc661fa03ba182924a3793.ctex"]
+source_file="res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_J.png"
+dest_files=["res://.godot/imported/002tf_adventurer_blue_male_J.png-755b9d1cc7b7145523a263c3a495175e.ctex"]
 
 [params]
 

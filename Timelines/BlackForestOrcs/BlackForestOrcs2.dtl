@@ -1,0 +1,61 @@
+[background arg="res://Art/Background/Background material shop/bg001a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wow! Is that really a fort?
+Rice_Portrait (Normal): It was originally city of the old empire, if you're wondering why it looks like that.
+update Mao (Normal)
+Mao_Portrait (Normal): Were they so rich that even cities in the middle of nowhere got this huge?
+Rice_Portrait (Normal): Not exactly. The empire was certainly rich, but this was one of its central provinces until just before the end.
+join Drake 4 [animation="Slide In Right" length="2"]
+Drake_Portrait (Frown): Unidentified persons, halt!
+Rice_Portrait (Normal): It would be better if I handled this.
+Mao_Portrait (Normal): Sure! (He said unidentified 'persons,' does that mean he can see Rice when she's like this?)
+Drake_Portrait (Frown): Your papers.
+Rice_Portrait (Normal): This is mine, and here's her's.
+Drake_Portrait (Frown): Niziiro Mao and... Rice Glassfield.
+update Drake (Surprise)
+Drake_Portrait (Surprise): Her majesty's... I see.
+update Drake (Sigh)
+Drake_Portrait (Sigh): Don't take this personally, but I can feel my life expectancy decreasing by the second just being around you.
+update Drake (Frown)
+Drake_Portrait (Frown): Just to confirm, were the two of you responsible for the teleport signature earlier?
+Rice_Portrait (Normal): If you mean the one at 08\:56, coordinates (-52.88446, 171.65423). Yes, that was us.
+update Drake (Frown)
+Drake_Portrait (Frown): That will do, have your documents back. Entry permissions granted. You have free reign of the fort, but let us know before you enter any sensitive areas.
+Drake_Portrait (Frown): We'll reserve teleport slot number 16 for you from 00 to 05 every hour.
+Drake_Portrait (Frown): If you need anything, please find my adjunct and not me. I still plan to live a few more years.
+update Mao (Excited)
+Mao_Portrait (Excited): Adjunct? Does that mean you're someone important? Should I be sucking up to you?
+update Drake (Sigh)
+Drake_Portrait (Sigh): That would be a good way for me to end on a chopping block somehow, so don't.
+update Mao (Normal)
+update Drake (Frown)
+Drake_Portrait (Frown): If you'll excuse me, I need to return to the control room.
+leave Drake [animation="Slide Out Right" length="2"]
+update Mao (Surprised)
+Mao_Portrait (Surprised): Huh. He just left. Wasn't he on patrol or something?
+Rice_Portrait (Normal): That would be why he's going back to the control room. The only reason he came out here was because our teleport showed up on the scanners.
+update Mao (Normal)
+Mao_Portrait (Normal): Anyway, he's really high up, right? Isn't he a bit young?
+Rice_Portrait (Normal): It's almost like there was a series of natural and artificial disasters around a decade ago.
+Mao_Portrait (Normal): What does that have to do with anything?
+Rice_Portrait (Normal): It's easier to get promotions when your superior is a corpse.
+update Mao (Surprised)
+Mao_Portrait (Surprised): That's kind of morbid.
+update Mao (Excited)
+Mao_Portrait (Excited): So how do the teleport slots work? Are they like super elevators or something?
+Rice_Portrait (Normal): Parking lot.
+update Mao (Surprised)
+Mao_Portrait (Surprised): What?
+Rice_Portrait (Normal): All teleport slots do is make sure you have a clear space to teleport to, so there's no reason to do more than mark down some space and use proper scheduling.
+update Mao (Angry)
+Mao_Portrait (Angry): That's not awesome at all!
+Rice_Portrait (Normal): It's functional.
+Rice_Portrait (Normal): The spells, spell jammers, and teleport traffic controllers do most of the complicated work involved, but they're almost fully automatic at this point.
+Rice_Portrait (Normal): The only thing keeping teleport spells from widespread civilian use is the mana cost at this point.
+update Mao (Normal)
+Mao_Portrait (Normal): Mana cost?
+Rice_Portrait (Normal): You must have noticed you lost some mana after the teleport, yes?
+Mao_Portrait (Normal): Not really.
+Rice_Portrait (Normal): ...Regardless, it's a lot harder for someone low leveled to recover from the mana cost.

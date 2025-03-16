@@ -1,0 +1,110 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Frown",
+"description": "",
+"display_name": "Drake",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_C.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Blush": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_J.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Frown": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_A.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Grin": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_B.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_E.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Laugh": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_I.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Shocked": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_G.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sigh": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_H.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surprise": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_D.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sweatdrop": {
+"export_overrides": {
+"image": "\"res://Characters/Drake/Images/Portraits/002tf_adventurer_blue_male_F.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}
