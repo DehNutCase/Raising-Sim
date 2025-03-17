@@ -48,14 +48,14 @@ Mao_Portrait (Excited): So how do the teleport slots work? Are they like super e
 Rice_Portrait (Normal): Parking lot.
 update Mao (Surprised)
 Mao_Portrait (Surprised): What?
-Rice_Portrait (Normal): All teleport slots do is make sure you have a clear space to teleport to, so there's no reason to do more than mark down some space and use proper scheduling.
+Rice_Portrait (Normal): All teleport slots do is make sure you have a clear space to teleport to, so there's no reason to do more than sectioning and scheduling.
 update Mao (Angry)
 Mao_Portrait (Angry): That's not awesome at all!
 Rice_Portrait (Normal): It's functional.
-Rice_Portrait (Normal): The spells, spell jammers, and teleport traffic controllers do most of the complicated work involved, but they're almost fully automatic at this point.
+Rice_Portrait (Normal): The spells, spell jammers, and teleport traffic controllers do most of the complicated work involved, but they're almost fully automatic now.
 Rice_Portrait (Normal): The only thing keeping teleport spells from widespread civilian use is the mana cost at this point.
 update Mao (Normal)
 Mao_Portrait (Normal): Mana cost?
 Rice_Portrait (Normal): You must have noticed you lost some mana after the teleport, yes?
 Mao_Portrait (Normal): Not really.
-Rice_Portrait (Normal): ...Regardless, it's a lot harder for someone low leveled to recover from the mana cost.
+Rice_Portrait (Normal): ...Regardless, it's a lot harder for someone low leveled to recover from that loss.

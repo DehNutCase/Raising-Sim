@@ -1,0 +1,44 @@
+[background arg="res://Art/Background/Background material shop/bg003a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Surprised)
+Mao_Portrait (Surprised): Hey, this looks just like the capital!
+Rice_Portrait (Normal): I'm not sure why you found that surprising.
+update Mao (Normal)
+Mao_Portrait (Normal): I thought there'd be more spikes, and lava, and a moat.
+update Mao (Excited)
+Mao_Portrait (Excited): Oooh, maybe even a lava moat!
+update Mao (Normal)
+Mao_Portrait (Normal): So... how do we find the adjunct? I hope they have candy.
+Rice_Portrait (Normal): Given our privileged access, we can go to the control room or send her a message over the intranet.
+Mao_Portrait (Normal): Her?
+Rice_Portrait (Normal): Elizabeth Lancaster. You should get into the habit of checking the local intranet for information.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Isn't military stuff supposed to be classified?
+Rice_Portrait (Normal): First of all, you do have a security clearance. Second, this kind of basic information needs to be publicly available so people don't pretend to be officers.
+Mao_Portrait (Surprised): Why? The first thing, I mean.
+Rice_Portrait (Normal): Did you really think her majesty would send you in blind?
+update Mao (Angry)
+Mao_Portrait (Angry): Hmph. I still haven't forgiven you two for being bad guys.
+Rice_Portrait (Normal): I see.
+Rice_Portrait (Normal): You'll make her majesty sad if you call her a bad guy, so please don't say that in front of her.
+update Mao (Normal)
+Mao_Portrait (Normal): But you're fine with it?
+Rice_Portrait (Normal): Until you start acting on the premise that I'm a bad guy, I won't take action either.
+update Mao (Sad)
+Mao_Portrait (Sad): Why did that sound like threat?
+Rice_Portrait (Normal): More like a promise. It would look like two kids play fighting from the outside, so it should be quite heartwarming.
+update Mao (Angry)
+Mao_Portrait (Angry): But I'd be the only one getting beaten up!
+Rice_Portrait (Normal): Obviously.
+Rice_Portrait (Normal): Oh, that's interesting, Elizabeth is off-duty but her location information is still active. Most people turn that off for privacy.
+Mao_Portrait (Angry): Hmph.
+Rice_Portrait (Normal): We can also call it a day if you'd like.
+Mao_Portrait (Angry): Uguu. Ugh.
+Mao_Portrait (Angry): Fine.
+update Mao (Normal)
+Mao_Portrait (Normal): Let's go meet her.
+# #Plot Outline: Goblin in fort. Orc chief selection tournament.
+Rice_Portrait (Normal): <Empty Text Event>
+[background fade="0.0"]
+Mao_Portrait (Normal): <Empty Text Event>
