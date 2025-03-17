@@ -21,3 +21,14 @@ Shocked = G
 Sigh = H
 Laugh = I
 Blush = J
+
+It Came From the Swamp
+(Sometimes it starts counting from 1 rather than 0)
+0 = Normal/Cheerful
+1 = Angry
+2 = Sad
+3 = Smile
+4 = Cry
+5 = Surprised
+6 = Drool
+7 = Happy

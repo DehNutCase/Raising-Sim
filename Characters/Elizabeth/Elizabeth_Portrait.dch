@@ -10,7 +10,7 @@
 },
 "default_portrait": "Frown",
 "description": "",
-"display_name": "Elizabeth_Portrait",
+"display_name": "Elizabeth",
 "mirror": false,
 "nicknames": ["Elizabeth Lancaster"],
 "offset": Vector2(0, 0),

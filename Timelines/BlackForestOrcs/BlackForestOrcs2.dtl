@@ -32,7 +32,7 @@ Drake_Portrait (Sigh): That would be a good way for me to end on a chopping bloc
 update Mao (Normal)
 update Drake (Frown)
 Drake_Portrait (Frown): If you'll excuse me, I need to return to the control room.
-leave Drake [animation="Slide Out Right" length="2"]
+leave Drake [animation="Slide Out Right" length="1"]
 update Mao (Surprised)
 Mao_Portrait (Surprised): Huh. He just left. Wasn't he on patrol or something?
 Rice_Portrait (Normal): That would be why he's going back to the control room. The only reason he came out here was because our teleport showed up on the scanners.
