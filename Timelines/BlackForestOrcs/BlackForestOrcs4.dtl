@@ -1,0 +1,61 @@
+[background arg="res://Art/Background/Background material shop/Edited/bg015a_edited.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Elizabeth (Frown) 3 [ mirrored="true"]
+[history action="clear"]
+Elizabeth_Portrait (Frown): I'm not good with kids either, but it's still better than the train wreck that would happen if the commander handled it.
+Elizabeth_Portrait (Frown): Anyway, we're here. I can introduce you if you'd like. Not sure how helpful that'll be, seeing how I just finished making their kid cry.
+update Mao (Angry)
+Mao_Portrait (Angry): Hey, Rice! I thought you said goblins don't evolve into orcs!
+update Elizabeth (Sweatdrop)
+Elizabeth_Portrait (Sweatdrop): They don't.
+update Mao (Normal)
+Elizabeth_Portrait (Sweatdrop): (What the hell are they teaching people at the capital?)
+Rice_Portrait (Normal): (I believe her majesty had been a little too laissez faire about Mao's education, specifically the part where she picked her own classes to attend.)
+update Elizabeth (Sigh)
+Elizabeth_Portrait (Sigh): Anyway, you should decide quickly, they'll probably see me---Ah, never mind.
+join Oliver (Normal) 4 [animation="Slide In Right" length="1" mirrored="true"]
+Oliver_Portrait (Normal): Well, well, well. Look who came crawling back after losing.
+update Elizabeth 2 [ mirrored="false" move_time="1"]
+update Elizabeth (Frown)
+Elizabeth_Portrait (Frown): Yes. Yes.
+Elizabeth_Portrait (Frown): I don't get paid enough to deal with this. And I'm off-duty anyway.
+update Elizabeth [ mirrored="true"]
+Elizabeth_Portrait (Frown): Kid, meet dumber kid. Dumber kid, meet kid. You'll want to talk to his parents if you want to go to the village.
+leave Elizabeth [animation="Slide Out Left" length="1"]
+Elizabeth_Portrait (Frown): I need to find the jackass who fed the kid tall tales about Albion and put them on latrine duty.
+update Oliver 3 [ move_time="1"]
+update Oliver (Happy)
+Oliver_Portrait (Happy): Bwahaha. Weak human runs from mighty Oliver, everything is as it should be.
+update Mao (Smile)
+Mao_Portrait (Smile): Hi! I'm Mao! Are you a baby orc? How come you're so scawney? Oh, and aren't orcs supposed to talk like cavemen? Me Mao, why you so weak? Me speak caveman correct?
+update Oliver (Angry)
+Rice_Portrait (Normal): (Then again, I should also consider the possibility that she learned everything properly and simply chooses to act like this.)
+Oliver_Portrait (Angry): Mighty Oliver not amused, will now deliver punishment.
+update Mao (EyesClosed)
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 2 [ move_time="0.5"]
+[wait time="1.0" hide_text="false"]
+update Oliver (Cry) [animation="Bounce"]
+update Oliver (Cry) 3 [ move_time="0.5"]
+Rice_Portrait (Normal): (Shouldn't you guys be stopping this?)
+Orc_Portrait (Normal): (Shouldn't you?)
+Rice_Portrait (Normal): (Kids become friends by fighting.)
+update Mao (EyesClosed) [animation="Tada" length="1"]
+update Mao (EyesClosed) 2 [ move_time="0.5"]
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 2 [ move_time="0.5"]
+[wait time="1.0" hide_text="false"]
+update Oliver (Cry) [animation="Bounce"]
+update Oliver (Cry) 4 [ move_time="0.5"]
+Orc_Portrait (Normal): (Of course. Want to bet on who wins?)
+update Mao (Excited)
+Rice_Portrait (Normal): (We're from the capital.)
+Orc_Portrait (Frown): (Ah. No bet then. Do you know any healing spells?)
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 3 [ move_time="0.5"]
+[wait time="1.0" hide_text="false"]
+update Oliver (Cry) [animation="Bounce"]
+update Oliver (Cry) 4 [ move_time="0.5"]
+Rice_Portrait (Normal): (As a tertiary, but I'm quite high leveled. I'll heal him for free afterwards.)
+update Mao (Normal)
+Orc_Portrait (Smile): (Thank you.)

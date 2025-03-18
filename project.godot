@@ -25,11 +25,11 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -58,6 +58,8 @@ directories/dch_directory={
 "Morgan_Portrait": "res://Characters/Morgan/Morgan_Portrait.dch",
 "Oliver": "res://Characters/Oliver/Oliver.dch",
 "Oliver_Portrait": "res://Characters/Oliver/Oliver_Portrait.dch",
+"Orc": "res://Characters/Orc/Orc.dch",
+"Orc_Portrait": "res://Characters/Orc/Orc_Portrait.dch",
 "Rice": "res://Characters/Rice/Rice.dch",
 "Rice/Rice": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Rice/Rice.dch",
 "Rice/Rice_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Rice/Rice_Portrait.dch",
@@ -70,6 +72,7 @@ directories/dtl_directory={
 "BlackForestOrcs2": "res://Timelines/BlackForestOrcs/BlackForestOrcs2.dtl",
 "BlackForestOrcs3": "res://Timelines/BlackForestOrcs/BlackForestOrcs3.dtl",
 "BlackForestOrcs4": "res://Timelines/BlackForestOrcs/BlackForestOrcs4.dtl",
+"BlackForestOrcs5": "res://Timelines/BlackForestOrcs/BlackForestOrcs5.dtl",
 "BlackForestTesting": "res://Timelines/Testing/BlackForestTesting.dtl",
 "BlessedPlains": "res://Timelines/WalkEvents/BlessedPlains.dtl",
 "BlessedPlainsFirst": "res://Timelines/WalkEvents/BlessedPlainsFirst.dtl",

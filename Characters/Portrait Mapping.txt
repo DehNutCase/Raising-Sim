@@ -24,6 +24,7 @@ Blush = J
 
 It Came From the Swamp
 (Sometimes it starts counting from 1 rather than 0)
+Not the same for all
 0 = Normal/Cheerful
 1 = Angry
 2 = Sad

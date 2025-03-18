@@ -102,8 +102,8 @@ update Mao (Normal)
 Mao_Portrait (Normal): Hello!
 Elizabeth_Portrait (Frown): Yes. I believe the two of you were looking for me?
 Elizabeth_Portrait (Frown): I'd like to say nice to meet you, but that has never been the case. Isn't that right, 'Justice'?
-Rice_Portrait (Normal): Rice Glassfield.
 update Mao (Excited)
+Rice_Portrait (Normal): Rice Glassfield.
 update Elizabeth (Sigh)
 Elizabeth_Portrait (Sigh): Sure.
 update Elizabeth (Frown)
@@ -120,4 +120,4 @@ update Elizabeth (Sigh)
 Elizabeth_Portrait (Sigh): Please accept my apologies.
 update Mao (Normal)
 update Elizabeth (Frown)
-Elizabeth_Portrait (Frown): It should be easy enough as long as you get permission. I'll lead you to the trading post.
+Elizabeth_Portrait (Frown): You should try asking the orcs for permission. I'll lead you to the trading post.

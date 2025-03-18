@@ -10,14 +10,14 @@
 },
 "default_portrait": "Normal",
 "description": "",
-"display_name": "Oliver",
+"display_name": "Orc",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 40),
+"offset": Vector2(0, 0),
 "portraits": {
 "Angry": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_02.png\""
+"image": "\"res://Characters/Orc/Images/Orc_06.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,25 +26,16 @@
 },
 "Cry": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_05.png\""
+"image": "\"res://Characters/Orc/Images/Orc_05.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Drool": {
+"Frown": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_07.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Happy": {
-"export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_08.png\""
+"image": "\"res://Characters/Orc/Images/Orc_02.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -53,7 +44,7 @@
 },
 "Normal": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_01.png\""
+"image": "\"res://Characters/Orc/Images/Orc_01.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -62,7 +53,16 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_03.png\""
+"image": "\"res://Characters/Orc/Images/Orc_03.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Shocked": {
+"export_overrides": {
+"image": "\"res://Characters/Orc/Images/Orc_08.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -71,16 +71,16 @@
 },
 "Smile": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_04.png\""
+"image": "\"res://Characters/Orc/Images/Orc_04.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Surprised": {
+"Yelling": {
 "export_overrides": {
-"image": "\"res://Characters/Oliver/Images/Goblin_06.png\""
+"image": "\"res://Characters/Orc/Images/Orc_07.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -88,5 +88,5 @@
 "scene": ""
 }
 },
-"scale": 0.6
+"scale": 1.0
 }
