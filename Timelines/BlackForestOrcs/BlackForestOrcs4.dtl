@@ -22,7 +22,7 @@ Elizabeth_Portrait (Frown): I don't get paid enough to deal with this. And I'm o
 update Elizabeth [ mirrored="true"]
 Elizabeth_Portrait (Frown): Kid, meet dumber kid. Dumber kid, meet kid. You'll want to talk to his parents if you want to go to the village.
 leave Elizabeth [animation="Slide Out Left" length="1"]
-Elizabeth_Portrait (Frown): I need to find the jackass who fed the kid tall tales about Albion and put them on latrine duty.
+Elizabeth_Portrait (Frown): I need to find the jackass who fed him tall tales about Albion and put them on latrine duty.
 update Oliver 3 [ move_time="1"]
 update Oliver (Happy)
 Oliver_Portrait (Happy): Bwahaha. Weak human runs from mighty Oliver, everything is as it should be.
