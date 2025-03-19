@@ -1,0 +1,31 @@
+[background arg="res://Art/Background/Background material shop/Edited/bg015a_edited.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Oliver (Sad) 3 [ mirrored="true"]
+[history action="clear"]
+update Mao (Sad)
+Mao_Portrait (Sad): Wait, did I just beat a kid up for his lunch money? Am I a bad guy now?
+update Oliver (Angry)
+Rice_Portrait (Normal): It's better not to think too hard about where the money comes from.
+update Mao (Normal)
+Oliver_Portrait (Angry): Hmph. Mighty Oliver isn't a kid.
+Rice_Portrait (Normal): (He seems to be level 5 or 6, which is quite an accomplishment for his age. The type to be suprisingly popular, I believe.)
+Rice_Portrait (Normal): Hold still and I'll patch both of you up.
+update Oliver (Angry)
+Oliver_Portrait (Angry): This isn't over... But Mighty Oliver will call it a draw.
+update Mao (Normal)
+Mao_Portrait (Normal): Sure! Want a Dumpling?
+update Oliver (Drool)
+Rice_Portrait (Normal): For future reference, it's best not to bring creatures from the capital to other places.
+Rice_Portrait (Normal): Dumplings are an exception due to their peaceful nature and the fact they'll naturally migrate back, but just about anything from the capital could cause ecological problems elsewhere due to the level difference.
+Rice_Portrait (Normal): (The teleport spell should have taken care of this to begin with. I need to check Mao's teleport permissions later.)
+update Oliver (Normal)
+Oliver_Portrait (Normal): Oliver will accept tribute from weak human girl.
+update Mao (Smile)
+Mao_Portrait (Smile): Just tell me if you want more, I have lots.
+update Oliver (Happy)
+Mao_Portrait (Smile): So can I visit your village? I'm on a super secret mission to conquer the world, or something like that.
+Oliver_Portrait (Happy): Bro?
+Orc_Portrait (Normal): It's fine. But introduce her to pops when we get back.
+Orc_Portrait (Normal): We'll be here for another day, so let's meet up here tomorrow morning.
+update Mao (Normal)
+Mao_Portrait (Normal): Okie dokie.
