@@ -99,7 +99,7 @@ func _ready():
 		display_stats()
 	#TODO, delete below, dev use only
 	#Player.background_inventory.create_and_add_item("class_change_card_witch")
-	#Dialogic.start("StorageRoomFirst")
+	#Dialogic.start("BlackForestTesting")
 	#Player.max_walks = 100
 	#Player.tower_level = 9
 	#Player.load_class_change_card()
@@ -345,7 +345,15 @@ func _on_action(button):
 		"Mission":
 			#TODO, automatically continue mission timeline if a mission is already active
 			if Player.active_mission:
-				pass
+				#Start next timeline if no combat
+				if !Player.active_mission.get('combat'):
+					Dialogic.start(Player.active_mission.get('next'))
+				else:
+					#'combat' entry should be list of enemies for the fight
+					Player.enemies = Player.active_mission.combat.enemies
+					Player.in_tower = false
+					Player.in_mission = true
+					SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 				#TODO, start mission timeline
 			else:
 				load_mission_text("black_forest_orcs")
@@ -460,7 +468,13 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 			Player.skill_inventory.create_and_add_item(dialogic_signal.skill)
 	if "music" in dialogic_signal:
 		get_tree().call_group("BackgroundMusicPlayer", "play_song", dialogic_signal.music)
-	
+	if "mission" in dialogic_signal:
+		Player.active_mission = dialogic_signal.mission
+		if Player.active_mission.get('combat'):
+			var mission = Player.active_mission.combat.split(',')[0]
+			var combat_number = int(Player.active_mission.combat.split(',')[1])
+			Player.active_mission.combat = Constants.missions[mission].combats[combat_number]
+		
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()
@@ -532,39 +546,50 @@ func update_expressions() -> void:
 func _on_enter_tower_button_pressed() -> void:
 	if Player.tower_level < len(Constants.tower_levels):
 		Player.enemies = Constants.tower_levels[Player.tower_level].enemies
+		#TODO, remove all the double checking for whether player is in a mission or tower combat
+		#centralize checks
 		Player.in_tower = true
+		Player.in_mission = false
 		SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 	else:
 		display_toast("Rice shakes her head. You can't climb any higher for now.", "top", "center")
 
 func check_and_play_daily_events() -> void:
+	var played = false
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
 		Dialogic.start("Day1Event")
 		Player.event_flags['Day1Event'] = true
+		played = true
 	
 	if Player.day == 5 and !('Day5Event' in Player.event_flags):
 		Dialogic.start("Day5Event")
 		Player.event_flags['Day5Event'] = true
+		played = true
 	
 	#Note, this triggers at the last day of the month
 	if Player.day == Constants.constants.days_in_month:
 		Dialogic.start("Day30Event")
+		played = true
 	
 	if Player.day == Constants.constants.days_in_month * 2:
 		Dialogic.start("Day60Event")
+		played = true
 		
 	if Player.day == Constants.constants.days_in_month * 3:
 		Dialogic.start("Day90Event")
+		played = true
 	
 	#Give the player a few days before the end of the year for this.
 	if Player.day == Constants.constants.days_in_month * 4 - 5:
 		Dialogic.start("Day120Event")
+		played = true
 	
 	if Player.day == Constants.constants.days_in_month * 4 and Player.event_flags.get("class_change_information_event"):
 		Dialogic.start("EndOfYearEvent")
+		played = true
 	
 	#TODO, add check for if class changed (either have exitpass *or* is class changed)
-	if !Player.event_flags.get('mission_information_event') and Player.event_flags.get('ExitPass'):
+	if !Player.event_flags.get('mission_information_event') and Player.event_flags.get('ExitPass') and !played:
 			Player.event_flags['mission_information_event'] = true
 			Dialogic.start("MissionRoom")
 	

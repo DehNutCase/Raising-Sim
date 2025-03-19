@@ -66,3 +66,4 @@ update Mao (Sad)
 Mao_Portrait (Sad): Huh?
 Rice_Portrait (Normal): You don't have to answer now, perhaps not ever. But her intent was to let you know that a question like that could exist at all.
 [signal arg="{"stats": {"stress": 10,}}"]
+[signal arg="{"mission": {"next": "BlackForestOrcs1"}}"]

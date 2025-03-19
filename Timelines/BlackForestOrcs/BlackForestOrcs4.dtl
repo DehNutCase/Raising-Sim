@@ -22,10 +22,10 @@ Elizabeth_Portrait (Frown): I don't get paid enough to deal with this. And I'm o
 update Elizabeth [ mirrored="true"]
 Elizabeth_Portrait (Frown): Kid, meet dumber kid. Dumber kid, meet kid. You'll want to talk to his parents if you want to go to the village.
 leave Elizabeth [animation="Slide Out Left" length="1"]
-Elizabeth_Portrait (Frown): I need to find the jackass who fed him tall tales about Albion and put them on latrine duty.
+Elizabeth_Portrait (Frown): I need to find the jackasses who fed him tall tales about Albion and put them on latrine duty.
 update Oliver 3 [ move_time="1"]
 update Oliver (Happy)
-Oliver_Portrait (Happy): Bwahaha. Weak human runs from mighty Oliver, everything is as it should be.
+Oliver_Portrait (Happy): Bwahaha. Weak human runs from Mighty Oliver, everything is as it should be.
 update Mao (Smile)
 Mao_Portrait (Smile): Hi! I'm Mao! Are you a baby orc? How come you're so scawney? Oh, and aren't orcs supposed to talk like cavemen? Me Mao, why you so weak? Me speak caveman correct?
 update Oliver (Angry)
@@ -47,10 +47,10 @@ update Oliver (Angry) 2 [ move_time="0.5"]
 [wait time="1.0" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
-Orc_Portrait (Normal): (Of course. Want to bet on who wins?)
+Orc_Portrait (Smile): (Bwahaha. Want to bet on who wins?)
 update Mao (Excited)
 Rice_Portrait (Normal): (We're from the capital.)
-Orc_Portrait (Frown): (Ah. No bet then. Do you know any healing spells?)
+Orc_Portrait (Frown): (Ah. No bet. Do you know any healing spells?)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
 [wait time="1.0" hide_text="false"]
@@ -58,4 +58,5 @@ update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
 Rice_Portrait (Normal): (As a tertiary, but I'm quite high leveled. I'll heal him for free afterwards.)
 update Mao (Normal)
-Orc_Portrait (Smile): (Thank you.)
+Orc_Portrait (Normal): (Thank you.)
+[signal arg="{"mission": {"next": "BlackForestOrcs5", "combat": "black_forest_orcs,0"}}"]

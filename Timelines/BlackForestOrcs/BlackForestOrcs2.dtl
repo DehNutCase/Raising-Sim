@@ -59,3 +59,4 @@ Mao_Portrait (Normal): Mana cost?
 Rice_Portrait (Normal): You must have noticed you lost some mana after the teleport, yes?
 Mao_Portrait (Normal): Not really.
 Rice_Portrait (Normal): ...Regardless, it's a lot harder for someone low leveled to recover from that loss.
+[signal arg="{"mission": {"next": "BlackForestOrcs3"}}"]

@@ -59,7 +59,7 @@ update Oliver (Angry) 2 [ move_time="0.5"]
 [wait time="1.0" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
-Rice_Portrait (Normal): That's because it's a goblin.
+Rice_Portrait (Normal): That's because he's a goblin.
 update Mao (Normal)
 Mao_Portrait (Normal): Oh.
 update Mao (Excited)
@@ -78,7 +78,7 @@ update Mao (Sad)
 Mao_Portrait (Sad): Aww.
 Elizabeth_Portrait (Frown): Are you quite finished? Your family must be looking for you.
 update Oliver (Angry)
-Oliver_Portrait (Angry): I'll never surrender to a weak human!
+Oliver_Portrait (Angry): Mighty Oliver will never surrender to a weak human!
 update Elizabeth (Sigh)
 Elizabeth_Portrait (Sigh): Then you should give up already, seeing how I'm neither.
 update Mao (Surprised)
@@ -121,3 +121,4 @@ Elizabeth_Portrait (Sigh): Please accept my apologies.
 update Mao (Normal)
 update Elizabeth (Frown)
 Elizabeth_Portrait (Frown): You should try asking the orcs for permission. I'll lead you to the trading post.
+[signal arg="{"mission": {"next": "BlackForestOrcs4"}}"]

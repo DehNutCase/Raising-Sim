@@ -73,6 +73,7 @@ var class_change_card #variable to hold loaded class change, *do not save*
 ]
 @export var tower_level = 0
 var in_tower = false
+var in_mission = false
 var victory_stat_gain = {}
 
 var save_loaded = false

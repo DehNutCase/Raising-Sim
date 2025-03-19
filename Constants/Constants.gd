@@ -1214,6 +1214,25 @@ const character_classes = {
 			'greater_phantom_magic_officer': 'res://Characters/Rice/Images/Portrait/idle_000.png',
 		},
 	},
+	'oliver': {
+		'base_stats': {
+		},
+		'level_stats': {
+			'experience': 10,
+			'gold': 3,
+			'max_hp': 5,
+			'strength': 5,
+			'defense': 5,
+			'speed': 3,
+			'magic': 1,
+			'resistance': 1,
+		},
+		'combat_skills': [],
+		'label': "Oliver",
+		'portrait': {
+			'blank': 'res://Characters/Oliver/Images/Portrait/Goblin_1.png',
+		},
+	},
 }
 
 const races = {
@@ -1320,6 +1339,22 @@ const races = {
 		'combat_skills': ["lightning_bolt", "amplify_magic", "light_barrier"],
 		'label': 'Greater Phantom: Magic Officer ',
 	},
+	'blank': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 10,
+			'defense': 10,
+			'speed': 10,
+			'resistance': 10,
+			'gold': 100,
+			'experience': 10,
+			'action_points': 1,
+		},
+		'level_stats': {
+		},
+		'label': '',
+		'portrait': 'res://icon.svg',
+	},
 }
 
 const tower_levels = [
@@ -1345,7 +1380,7 @@ const tower_levels = [
 			},
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_MinionsB.png",
-		'description': "A Skeleton Rogue. Gets faster and faster as the fight goes on.\n\nAnimated Skeletons are a common sight anywhere animals have died. Regardless of where the bones came from, all Skeletons share the same basic shape. Surprisingly fond of alcohol, so remember to bring a mop if you invite one to a party. Not a good source of calcium.",
+		'description': "A Skeleton Rogue. Gets faster and faster as the fight goes on.\n\nAnimated Skeletons are a common sight anywhere creatures have died. Regardless of where the bones came from, all Skeletons share the same basic shape. Surprisingly fond of alcohol, so remember to bring a mop if you invite one to a party. Not a good source of calcium.",
 	},
 	{
 		'level': 2,
@@ -1493,7 +1528,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
-		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a Lesser Phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
+		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a Lesser Phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter the service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
 	},
 	{
 		'level': 11,
@@ -1718,7 +1753,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
-		'description': "Greater Phantoms can mimic the target's class, making them extremely versatile and significantly stronger compared to Lesser Phantoms. Like all Phantoms, their stats are reduced compared to the original, but the primarily limitation of a Greater Phantom is the inability to mimic stats from training and the fact their stats are capped at their own level. This one is mimicking the Magic Officer class, a strong and versatile class which is nonetheless the weakest of Rice Glassfield's subclasses.\n\nUnfortunately, even a heavily develeled and restricted Rice is still extremely dangerous. Unlike the original, a Phantom rarely has the time to understand the proper usage of their skills and abilities, so it's not necessarily a guaranteed loss to let them have a single turn. Merely very, very, likely.\n\nIt's strongly recommended to class change before proceeding further up the tower.",
+		'description': "Greater Phantoms can mimic the target's class, making them extremely versatile and significantly stronger compared to Lesser Phantoms. Like all Phantoms, their stats are reduced compared to the original. They're unable to mimic stats from training and their level is capped at lesser of their own level and their target's level. This one is mimicking the Magic Officer class, a strong and versatile class which is nonetheless the weakest of Rice Glassfield's subclasses.\n\nUnfortunately, even a heavily develeled and restricted Rice is still extremely dangerous. Unlike the original, a Phantom rarely has the time to understand the proper usage of their skills and abilities, so it's not necessarily a guaranteed loss to let them have a single turn. Merely very, very, likely.\n\nIt's strongly recommended to class change before proceeding further up the tower.",
 	},
 ]
 
@@ -2001,5 +2036,16 @@ const missions = {
 		"label": "Black Forest Orcs",
 		"type": "Main Story",
 		"encounter_difficulty": 10,
+		"combats": [
+			{ 'enemies': 
+				[
+					{
+						"level": 5,
+						"character_class": "oliver",
+						"race": "blank",
+					},
+				]
+			}
+		]
 	},
 }

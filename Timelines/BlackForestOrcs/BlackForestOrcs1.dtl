@@ -75,3 +75,4 @@ update Mao (Angry)
 Mao_Portrait (Angry): I was joking, jeez!
 update Mao (Normal)
 Mao_Portrait (Normal): Let's just go to the fort.
+[signal arg="{"mission": {"next": "BlackForestOrcs2"}}"]

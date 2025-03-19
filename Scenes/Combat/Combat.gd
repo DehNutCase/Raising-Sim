@@ -391,7 +391,10 @@ func _on_enemy_gui_input(event, clicked):
 func exit_combat() -> void:
 	if Player.in_tower and fight_won:
 		Player.tower_level += 1
+	if Player.in_mission and fight_won:
+		Player.active_mission.combat = false
 	Player.in_tower = false
+	Player.in_mission = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
 	
 func display_toast(message, gravity = "top", direction = "center"):
