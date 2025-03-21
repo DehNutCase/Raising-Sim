@@ -71,7 +71,11 @@ func _ready():
 		index += 1
 	skill_menu.index_pressed.connect(_on_skill_press)
 	
-	#Add combat items
+	update_target(pos1.get_node("Enemy"))
+
+	#Dev use section, to allow loading combat scene by itself
+	if !Player.inventory: return
+	#End dev use section
 	for item in Player.inventory._items:
 		if item.get_property("combat_item", {}):
 			player_combat_copy.combat_items.append(item.get_property("combat_item", {}))
@@ -81,8 +85,6 @@ func _ready():
 		item_menu.set_item_metadata(index, {"name": item})
 		index += 1
 	item_menu.index_pressed.connect(_on_item_press)
-	
-	update_target(pos1.get_node("Enemy"))
 	
 func process_turns(player_action: String):
 	if player_combat_copy.stats.current_hp <= 0:

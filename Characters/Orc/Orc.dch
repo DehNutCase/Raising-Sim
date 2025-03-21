@@ -13,7 +13,7 @@
 "display_name": "Orc",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, 0),
+"offset": Vector2(0, 30),
 "portraits": {
 "Angry": {
 "export_overrides": {
