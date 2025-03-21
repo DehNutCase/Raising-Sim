@@ -982,7 +982,7 @@ const character_classes = {
 			'defense': 6,
 			'speed': 4,
 			'resistance': 2,
-			'gold': 20,
+			'gold': 10,
 			'experience': 25,
 		},
 		'combat_skills': ["warcry"],
@@ -1005,7 +1005,7 @@ const character_classes = {
 			'defense': 4,
 			'speed': 10,
 			'resistance': 8,
-			'gold': 50,
+			'gold': 25,
 			'experience': 25,
 		},
 		'combat_skills': ["preparation"],
@@ -1013,6 +1013,7 @@ const character_classes = {
 		'portrait': {
 			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
 			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_MinionsB.png',
+			'human': 'res://Art/It Came From The Swamp/Enemies/f_thief1A.png',
 		},
 	},
 	'priest': {
@@ -1034,7 +1035,7 @@ const character_classes = {
 			'defense': 6,
 			'speed': 4,
 			'resistance': 10,
-			'gold': 25,
+			'gold': 15,
 			'experience': 25,
 		},
 		'combat_skills': ["heal"],
@@ -1042,6 +1043,7 @@ const character_classes = {
 		'portrait': {
 			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_LunaChime.png',
 			'teru': 'res://Art/It Came From The Swamp/Enemies/f_Teruko.png',
+			'human': 'res://Art/It Came From The Swamp/Enemies/f_ClericC.png',
 		},
 	},
 	'mage': {
@@ -1063,7 +1065,7 @@ const character_classes = {
 			'defense': 2,
 			'speed': 6,
 			'resistance': 6,
-			'gold': 50,
+			'gold': 25,
 			'experience': 25,
 		},
 		'combat_skills': ["fireball", "brilliance"],
@@ -1071,6 +1073,35 @@ const character_classes = {
 		'portrait': {
 			'dumpling': 'res://Art/It Came From The Swamp/Enemies/f_candle.png',
 			'teru': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
+			'human': 'res://Art/It Came From The Swamp/Enemies/f_witchA.png',
+		},
+	},
+	'hero': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 25,
+			'magic': 15,
+			'speed': 10,
+			'defense': 10,
+			'resistance': 10,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 1,
+		},
+		'level_stats': {
+			'max_hp': 50,
+			'strength': 10,
+			'magic': 5,
+			'speed': 10,
+			'defense': 5,
+			'resistance': 5,
+			'gold': 250,
+			'experience': 100,
+		},
+		'combat_skills': ["rally", "heal"],
+		'label': "Hero",
+		'portrait': {
+			'human': 'res://Art/It Came From The Swamp/Enemies/f_brave2B.png',
 		},
 	},
 	'assassin': {
@@ -1090,7 +1121,7 @@ const character_classes = {
 			'defense': 5,
 			'speed': 15,
 			'resistance': 12,
-			'gold': 100,
+			'gold': 50,
 			'experience': 50,
 		},
 		'combat_skills': ["preparation", "finishing_blow"],
@@ -1117,7 +1148,7 @@ const character_classes = {
 			'defense': 10,
 			'speed': 10,
 			'resistance': 10,
-			'gold': 100,
+			'gold': 50,
 			'experience': 50,
 		},
 		'combat_skills': ["rally", "finishing_blow"],
@@ -1146,7 +1177,7 @@ const character_classes = {
 			'defense': 10,
 			'speed': 5,
 			'resistance': 20,
-			'gold': 100,
+			'gold': 50,
 			'experience': 50,
 		},
 		'combat_skills': ["light_barrier", "smite"],
@@ -1175,7 +1206,7 @@ const character_classes = {
 			'defense': 5,
 			'speed': 15,
 			'resistance': 10,
-			'gold': 100,
+			'gold': 50,
 			'experience': 50,
 		},
 		'combat_skills': ["fireball", "lightning_bolt", "amplify_magic"],
@@ -1199,7 +1230,7 @@ const character_classes = {
 		},
 		'level_stats': {
 			'experience': 100,
-			'gold': 100,
+			'gold': 50,
 			'max_hp': 50,
 			'strength': 25,
 			'defense': 25,
@@ -1286,10 +1317,31 @@ const races = {
 			'max_hp': 2,
 			'strength': 1,
 			'experience': 10,
-			'gold': 10,
+			'gold': 5,
 		},
 		'label': 'Teru',
 		'portrait': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
+	},
+	'human': {
+		'base_stats': {
+			'max_hp': 50,
+			'strength': 10,
+			'defense': 10,
+			'speed': 10,
+			'resistance': 10,
+			'gold': 500,
+			'experience': 100,
+			'action_points': 1,
+		},
+		'level_stats': {
+			'max_hp': 5,
+			'strength': 1,
+			'magic': 1,
+			'experience': 25,
+			'gold': 15,
+		},
+		'label': 'Human',
+		'portrait': 'res://Art/It Came From The Swamp/Enemies/f_SoldierB.png',
 	},
 	'lesser_phantom': {
 		'base_stats': {
@@ -1304,7 +1356,7 @@ const races = {
 			'action_points': -3,
 		},
 		'level_stats': {
-			'gold': 50,
+			'gold': 25,
 			'experience': 25,
 			'max_hp': -20,
 			'strength': -10,
@@ -1333,7 +1385,7 @@ const races = {
 			'defense': -5,
 			'speed': 5,
 			'resistance': 0,
-			'gold': 100,
+			'gold': 50,
 			'experience': 50,
 		},
 		'combat_skills': ["lightning_bolt", "amplify_magic", "light_barrier"],
@@ -2034,6 +2086,7 @@ const missions = {
 		"description": "There's a small tribe of orcs living in the Black Forest. Her majesty ordered you to either incorporate them into the kingdom or drive them out.\n\nAlthough the use of force is authorized, going in spells blazing would be the opposite of her majesty's intent. The orcs are valuable human resources.",
 		"id": "black_forest_orcs",
 		"label": "Black Forest Orcs",
+		"first_timeline": "BlackForestOrcs0",
 		"type": "Main Story",
 		"encounter_difficulty": 10,
 		"combats": [
@@ -2045,7 +2098,31 @@ const missions = {
 						"race": "blank",
 					},
 				]
-			}
+			},
+			{ 'enemies': 
+				[
+					{
+						"level": 15,
+						"character_class": "hero",
+						"race": "human",
+					},
+					{
+						"level": 10,
+						"character_class": "rogue",
+						"race": "human",
+					},
+					{
+						"level": 10,
+						"character_class": "priest",
+						"race": "human",
+					},
+					{
+						"level": 10,
+						"character_class": "mage",
+						"race": "human",
+					},
+				]
+			},
 		]
 	},
 }

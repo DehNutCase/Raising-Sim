@@ -439,7 +439,7 @@ func defeat_enemy(enemy) -> void:
 	for stat in enemy_stats:
 		if stat == "gold" or stat == "experience":
 			if stat in victory_stat_gain:
-				victory_stat_gain[stat] =+ enemy_stats[stat]
+				victory_stat_gain[stat] += enemy_stats[stat]
 			else:
 				victory_stat_gain[stat] = enemy_stats[stat]
 			continue
