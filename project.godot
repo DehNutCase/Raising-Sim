@@ -14,6 +14,7 @@ config/name="WitchMaker"
 config/version="0.1.0"
 run/main_scene="res://Scenes/GameTemplate/Opening/Opening.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=60
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://Art/Live2DLogo/Live2D logo rectangle.png"
 boot_splash/fullsize=false
@@ -44,6 +45,9 @@ directories/dch_directory={
 "Elizabeth": "res://Characters/Elizabeth/Elizabeth.dch",
 "Elizabeth_Portrait": "res://Characters/Elizabeth/Elizabeth_Portrait.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
+"Hero_m": "res://Characters/Hero_M/Hero_m.dch",
+"Hero_m_portrait": "res://Characters/Hero_M/Hero_m_portrait.dch",
+"Hero_m_tiny": "res://Characters/Hero_M/Hero_m_tiny.dch",
 "Hiyori": "res://Characters/Hiyori/Hiyori.dch",
 "Hiyori/Hiyori": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori.dch",
 "Hiyori/Hiyori_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori_Portrait.dch",
@@ -63,7 +67,9 @@ directories/dch_directory={
 "Rice": "res://Characters/Rice/Rice.dch",
 "Rice/Rice": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Rice/Rice.dch",
 "Rice/Rice_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Rice/Rice_Portrait.dch",
-"Rice_Portrait": "res://Characters/Rice/Rice_Portrait.dch"
+"Rice_Portrait": "res://Characters/Rice/Rice_Portrait.dch",
+"Thief_f": "res://Characters/Thief_F/Thief_f.dch",
+"Thief_f_portrait": "res://Characters/Thief_F/Thief_f_portrait.dch"
 }
 directories/dtl_directory={
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
@@ -73,6 +79,8 @@ directories/dtl_directory={
 "BlackForestOrcs3": "res://Timelines/BlackForestOrcs/BlackForestOrcs3.dtl",
 "BlackForestOrcs4": "res://Timelines/BlackForestOrcs/BlackForestOrcs4.dtl",
 "BlackForestOrcs5": "res://Timelines/BlackForestOrcs/BlackForestOrcs5.dtl",
+"BlackForestOrcs6": "res://Timelines/BlackForestOrcs/BlackForestOrcs6.dtl",
+"BlackForestOrcs7": "res://Timelines/BlackForestOrcs/BlackForestOrcs7.dtl",
 "BlackForestTesting": "res://Timelines/Testing/BlackForestTesting.dtl",
 "BlessedPlains": "res://Timelines/WalkEvents/BlessedPlains.dtl",
 "BlessedPlainsFirst": "res://Timelines/WalkEvents/BlessedPlainsFirst.dtl",

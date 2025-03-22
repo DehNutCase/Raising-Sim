@@ -803,6 +803,7 @@ pause_menu_packed = ExtResource("29_h0pyo")
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
+[connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description/SelectMissionButton" to="." method="_on_select_mission_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/gold"]

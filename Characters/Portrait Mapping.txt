@@ -28,7 +28,7 @@ Not the same for all
 0 = Normal/Cheerful
 1 = Angry
 2 = Sad
-3 = Smile
+3 = Laugh
 4 = Cry
 5 = Surprised
 6 = Drool

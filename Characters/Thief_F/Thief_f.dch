@@ -1,0 +1,92 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "Normal",
+"description": "",
+"display_name": "Thief",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_02.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Annoyed": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_08.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Laugh": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_04.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Normal": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_01.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Sad": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_03.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Surprised": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_05.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Wink": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_07.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Worried": {
+"export_overrides": {
+"image": "\"res://Characters/Thief_F/Images/F_Thief_06.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

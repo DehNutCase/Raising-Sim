@@ -29,3 +29,4 @@ Orc_Portrait (Normal): It's fine. But introduce her to pops when we get back.
 Orc_Portrait (Normal): We'll be here for another day, so let's meet up here tomorrow morning.
 update Mao (Normal)
 Mao_Portrait (Normal): Okie dokie.
+[signal arg="{"mission": {"next": "BlackForestOrcs6"}}"]

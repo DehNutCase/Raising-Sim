@@ -1,0 +1,95 @@
+[background arg="res://Art/Background/Background material shop/Edited/bg015a_edited.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
+join Orc (Normal) 4 [ mirrored="true"]
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): Good morning!
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wait, I thought orcs were supposed to be muscular hunks? Aren't you guys supposed to look like you belong in a boy band, except with six-packs?
+Rice_Portrait (Normal): I really don't know where you get all these ideas from. But two things. One, it's solid muscle underneath. Two, fat is very useful in a fight.
+Rice_Portrait (Normal): (There are orc tribes with the more traditional heavily muscled builds, but I'm not aware of any with a skinny pretty-boy look.)
+update Mao (Sad)
+Mao_Portrait (Sad): Am I going to have to get fat to get strong?
+Rice_Portrait (Normal): We use mana as a replacement, and you don't have to become strong in any case. But I assure you we look just as surprising as he does to any creature with mana-vision.
+update Mao (Surprised)
+Rice_Portrait (Normal): Please excuse us.
+update Orc (Normal)
+Orc_Portrait (Normal): Bwahaha. That's quite alright.
+update Mao (Normal)
+update Orc (Smile)
+Orc_Portrait (Smile): Did you know? You aren't the first person who expected a muscule hunk.
+update Oliver (Happy)
+Oliver_Portrait (Happy): Yeah, yeah, everyone already knows bro's awesome. Oliver will accept tribute now.
+update Orc (Normal)
+update Mao (Smile)
+Mao_Portrait (Smile): You want a Dumpling, right? Here you go!
+update Oliver (Drool)
+update Mao (Normal)
+Mao_Portrait (Normal): When are we leaving?
+update Oliver (Happy)
+update Orc (Normal)
+Orc_Portrait (Normal): It should take another hour or so to finish packing everything into the wagon.
+update Orc [ mirrored="false"]
+leave Orc [animation="Slide Out Right" length="1"]
+Orc_Portrait (Normal): I should go help with that. Bwahaha.
+update Mao (Normal)
+Mao_Portrait (Normal): Want to play paintball?
+[history]
+[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+leave --All-- [animation="Instant In Or Out"]
+[wait time="1.0" hide_text="false"]
+[background arg="res://Art/Background/Background material shop/bg026a.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
+[history action="resume"]
+update Mao (Normal)
+Mao_Portrait (Normal): So how come you keep going weak human this and weak human that anyway?
+update Oliver (Normal)
+Oliver_Portrait (Normal): Oliver only speaks the truth.
+Rice_Portrait (Normal): I should mention that we enforce level limits quite harshly. This is a level 1 to 20 zone, anyone already living here would be asked to naturalize or leave, and intruders would be, ahem, dealt with.
+update Mao (Sad)
+Mao_Portrait (Sad): So we just deport people? But we don't even own this place.
+Rice_Portrait (Normal): You are drastically underestimating how hard it is to raise your level. Understandable, considering your position, but know that in the decade or so since the orcs moved here, none of them managed to reach level 17.
+update Mao (Surprised)
+Rice_Portrait (Normal): Of course, it's also possible that they're blocking our scanners somehow. Possible, but very unlikely.
+Rice_Portrait (Normal): The level limits are more like environmental protection laws. Five levels is a different world, twenty levels is a calamity. My best friend from Tara, for example, is level 80 or so. We keep her out for a reason.
+Oliver_Portrait (Normal): Oliver thinks weak human girl is making too big a deal of things.
+update Mao (Normal)
+update Oliver (Smile)
+Oliver_Portrait (Smile): Weak humans are weak because they lose, Mighty Oliver and big bro are strong because we win.
+update Oliver (Normal)
+Oliver_Portrait (Normal): Weak humans always coming to block road to village, we drive them off every time.
+Oliver_Portrait (Normal): Like now.
+update Mao (Surprised)
+Mao_Portrait (Surprised): What?
+[update_position position="2" vector="Vector2(-70, -350)" time="0.0"]
+join Hero_m_tiny (Frown) 2 [animation="Slide In Down" length="1"]
+Hero_m_portrait (Frown): Halt, evildoers!
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Hi!
+update Hero_m_tiny (Shocked)
+Hero_m_portrait (Shocked): A girl?
+update Hero_m_tiny (Angry)
+Hero_m_portrait (Angry): So you monsters are doing human trafficking now.
+update Mao (Excited)
+Mao_Portrait (Excited): Wait, is this guy a Hero? Is this a hero party?
+Mao_Portrait (Excited): Fighter! Thief! White Mage! Black Mage!
+update Hero_m_tiny (Angry)
+update Hero_m_tiny [animation="Shake X" length="1"]
+Hero_m_portrait (Angry): She seems to be under some kind of mental magic. Guys, change of plans! Charge!
+Orc_Portrait (Frown): (Want us to handle this?)
+Rice_Portrait (Normal): (We're fine. If you need the experience, go ahead.)
+Orc_Portrait (Normal): (Just checking. Let us know if you need help.)
+Rice_Portrait (Normal): (Thank you.)
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Oh? You're approaching me?
+Mao_Portrait (EyesClosed): (Psst, you're supposed to say "I can't kick your ass unless I get closer.")
+Thief_f_portrait (Worried): What's the plan, boss?
+Hero_m_portrait (Angry): Just grab her and get out of here!
+Thief_f_portrait (Wink): Gotcha.
+update Mao (Excited)
+Mao_Portrait (Excited): Oh, ho! Then come as close as you like.
+Rice_Portrait (Normal): (I might need to request her majesty to increase the budget for translation spell research. I know the literal meaning of Mao's words, but that's all.)
+[signal arg="{"mission": {"next": "BlackForestOrcs7", "combat": "black_forest_orcs,1"}}"]

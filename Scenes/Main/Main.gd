@@ -684,10 +684,8 @@ func display_mission_info(mission:String) -> void:
 	load_mission_text(mission)
 
 func _on_select_mission_pressed() -> void:
-	if class_change_requirements_fufilled:
-		Player.save_class_change_card(selected_class_change_class)
-	else:
-		display_toast("Class change requirements not fufilled!", "top")
+	var mission_timeline_name = Constants.missions[selected_mission].first_timeline
+	Dialogic.start(mission_timeline_name)
 
 func _on_pause_menu_button_pressed():
 	var pause_menu_packed = load("res://Scenes/GameTemplate/Menus/PauseMenu.tscn")

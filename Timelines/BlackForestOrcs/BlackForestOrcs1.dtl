@@ -27,12 +27,12 @@ update Mao (Normal)
 Mao_Portrait (Normal): So, um, where do I go?
 Rice_Portrait (Normal): The storage room will do. The official mission room also has scrying panels, but we don't need to go there.
 [background arg="res://Art/Background/Background material shop/bg008a.jpg" fade="2.0" transition="Push Left"]
-[wait_input hide_text="false"]
+[wait time="1.5" hide_text="false"]
 update Mao (Excited)
 Mao_Portrait (Excited): Mission room?
 Rice_Portrait (Normal): Her majesty doesn't usually give briefings in a closet.
 [background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="2.0" transition="Push Right"]
-[wait_input hide_text="false"]
+[wait time="1.5" hide_text="false"]
 update Mao (Normal)
 Mao_Portrait (Normal): This is a really big closet.
 Rice_Portrait (Normal): It's a metaphor.
@@ -48,7 +48,7 @@ Mao_Portrait (Surprised): Why would we be fine?
 Rice_Portrait (Normal): It's a military grade spell for a reason. Now brace yourself.
 [background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="1.0"]
 [signal arg="{"stats": {"max_mp": -10,}}"]
-[wait_input hide_text="false"]
+[wait time="1.5" hide_text="false"]
 update Mao (Normal)
 Mao_Portrait (Normal): Wow, that was really smooth.
 Mao_Portrait (Normal): I wanted to ask earlier, but why did we teleport into the middle of the forest?

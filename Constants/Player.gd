@@ -53,7 +53,7 @@ var class_change_card #variable to hold loaded class change, *do not save*
 	{
 		"level": 1,
 		"character_class": "warrior",
-		"race": "skeleton",
+		"race": "human",
 	},
 	{
 		"level": 1,
