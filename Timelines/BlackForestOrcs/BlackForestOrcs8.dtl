@@ -1,0 +1,110 @@
+[background arg="res://Art/Background/Background material shop/bg006a.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
+[history action="clear"]
+update Mao (Excited)
+Mao_Portrait (Excited): Wow, everything's made of stone! It's like you all live in little castles!
+Rice_Portrait (Normal): (There doesn't seem to be as many children as you would expect from a pre-magical society. According to my cursory examination, the demographics are roughly similar to Albion's.)
+Rice_Portrait (Normal): (Assuming they aren't hiding the children from us, which is unlikely, this implies their society is heavily magicalized.)
+Rice_Portrait (Normal): (I wonder if it's because they never lost the knowledge of old empire, or if trade with Albion meant they had constant access to magical technology. If we checked the wagon, there might be a surprising amount of spellbooks and magical reagents.)
+Rice_Portrait (Normal): (Well, deductions like this don't really matter. A simple scanning spell would provide more accurate information, even if it's something of a faux pas to do so.)
+Oliver_Portrait (Happy): Oliver is pleased by your awe. Now that you know your place, Dignified Oliver will lead you to pops.
+update Mao (Normal)
+[background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="2.0" transition="Push Left"]
+join Chief (Normal) 4 [animation="Slide In Right" length="2"]
+[wait time="1.5" hide_text="false"]
+update Oliver (Normal)
+Oliver_Portrait (Normal): Pops, pops! Weak human girls are here to pay tribute!
+Chief_portrait (Normal): This place looks good for this year's Vote, so let's host it here.
+update Chief [ mirrored="true"]
+Chief_portrait (Normal): Ah. What did you need, Oliver?
+update Mao (Excited)
+Mao_Portrait (Excited): Wow! Your hat is even bigger than her majesty's! That must mean you're an emperor!
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Niziiro Mao greets the Orc Emperor, your August Majesty! I have Dumplings! Please have some.
+Rice_Portrait (Normal): I apologize for this, sir.
+update Chief (Smile)
+Chief_portrait (Smile): Bwahaha. Thank you for the Dumpling, little lady. But I'm just the chief of this little village, and only for a few more days at that.
+update Chief (Normal)
+Chief_portrait (Normal): It's quite dangerous to be the Orc King, much less an emperor.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Huh? Why?
+Rice_Portrait (Normal): Because her majesty would either hunt them down personally or send someone to do so.
+Rice_Portrait (Normal): The reason is complicated. Just know that part of the reasons for the civil war were all the kings tearing Albion apart.
+update Mao (Sad)
+Mao_Portrait (Sad): Oh. Um, sorry. Did I get you in trouble?
+update Chief (Smile)
+Chief_portrait (Smile): Bwahaha.
+update Chief (Normal)
+Chief_portrait (Normal): No harm done. And your Dumpling was more than delicious enough to make up for it in any case.
+update Mao (Normal)
+update Oliver (Happy)
+Oliver_Portrait (Happy): Dignified Oliver thinks other weak human girl should also pay her respects.
+Rice_Portrait (Normal): Magic Officer Rice Glassfield, sir.
+update Chief (Surprised)
+Chief_portrait (Surprised): Glassfield. Oh my.
+update Oliver (Normal)
+Rice_Portrait (Normal): I'm here as Mao's escort, so please don't mind.
+update Chief (Thinking)
+Chief_portrait (Thinking): Are you related, by any chance? You seem too young to be the person I'm thinking of.
+Rice_Portrait (Normal): I don't read minds without a very good reason, so I'm not sure. That said, I'm a bit older than I look.
+update Mao (Surprised)
+update Chief (Thinking)
+Chief_portrait (Thinking): Hmm...
+update Mao (Normal)
+update Chief (Normal)
+Chief_portrait (Normal): Bwahaha! I can't think of anything.
+Chief_portrait (Normal): I'll let whoever wins the Vote deal with this. I'm no good with this kind of thing.
+update Oliver (Normal)
+Oliver_Portrait (Normal): Satisfied Oliver thinks pops is thinking too hard about things. Weak human girls understand their place quite well. Oliver will show them around.
+Chief_portrait (Normal): Ah, wait a minute, Oliver.
+update Chief (Smile)
+Chief_portrait (Smile): Do you want to participate in the Vote this year? I believe you're ready. Don't worry about winning or losing, everyone has a hard time in their first Vote.
+update Oliver (Surprised) [ mirrored="false"]
+update Mao (Normal)
+Mao_Portrait (Normal): (Psst, Rice, what's the Vote supposed to be?)
+Rice_Portrait (Normal): (If I'm not wrong, it should be how they select their Chief for the year. Given the orcs' straightforward and logical nature, it's most likely a fighting tournament. Either the winner becomes Chief or the votes are weighted by performance.)
+update Oliver (Happy)
+update Chief (Normal)
+Rice_Portrait (Normal): (That said, rather than taking my word for it, you should simply ask the people in question instead.)
+Mao_Portrait (Normal): (Logical?)
+Rice_Portrait (Normal): (It's one of the reasons her majesty respects the orcs a great deal. You can deduce their situation from their actions and vice versa.)
+Rice_Portrait (Normal): (This tribe escaped here to avoid the chaos of the civil war, understanding that it's a low value area with a high cost to invade for the surrounding kingdoms.)
+Rice_Portrait (Normal): (Orcs were one of the few species whose numbers held steady or even increased during the turmoil a decade ago, and it's not an accident.)
+Rice_Portrait (Normal): (And now our presence should be a major part of their Vote this year, because it indicates Albion has the resources to spare to pay attention to them.)
+update Oliver (Normal)
+Oliver_Portrait (Normal): Are you sure, pops?
+update Chief (Normal)
+Chief_portrait (Normal): Everyone saw how hard you were working, so be more confident.
+update Oliver (Happy)
+Oliver_Portrait (Happy): Mighty Oliver will make you proud, pops!
+update Chief (Normal)
+Chief_portrait (Normal): Bwahaha!
+update Oliver (Normal)
+Rice_Portrait (Normal): (You might not like this bit of advice, but you can try asking to particiate.)
+Mao_Portrait (Normal): (Why wouldn't I like that?)
+Rice_Portrait (Normal): (Because it would be, ahem, "beating the crap out of them and forcing them to accept all of our demands.")
+Mao_Portrait (Normal): (I can just tell them to do what they want, right?)
+Rice_Portrait (Normal): (They would just hold another Vote in that case, with you excluded.)
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): (Hmm...)
+update Mao (Normal)
+Mao_Portrait (Normal): Okay.
+update Mao (Excited)
+Mao_Portrait (Excited): Can I vote? I fought Oliver to a draw!
+update Oliver [ mirrored="true"]
+update Chief (Normal)
+Chief_portrait (Normal): Bwahaha! Are you sure, young lady? We don't vote with ballot boxes here.
+Mao_Portrait (Excited): It's a super big fighting tournament, right? I fought slimes before, and paper dolls! I'm a super fighting expert.
+update Oliver (Normal)
+Oliver_Portrait (Normal): Serious Oliver agrees. But Serious Oliver promises that things won't be the same next time Serious Oliver and weak human girl fight.
+update Mao (Normal)
+update Chief (Normal)
+Chief_portrait (Normal): Well, an entry like this is hardly unprecedented, but I would need to let everyone know and see if they have objections. I'll let you know in a day or two if you can participate.
+Mao_Portrait (Normal): Yay!
+Oliver_Portrait (Normal): Bro saw how weak human girl fought, you should ask bro about her, pops.
+Oliver_Portrait (Normal): Serious Oliver will go train now. Regretful Oliver apologizes for not showing weak human girl around more, but Serious Oliver takes the Vote seriously.
+update Mao (Excited)
+Mao_Portrait (Excited): Ooh, ooh! Can I come with?
+# Plot Outline: Oliver was given a rare chance to enter the chief selection tournament.
+[signal arg="{"mission": {"next": "BlackForestOrcs9"}}"]

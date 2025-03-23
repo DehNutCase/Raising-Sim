@@ -11,7 +11,7 @@ Morgan_Portrait (Silhouette): Moving on.
 Morgan_Portrait (Silhouette): Your first mission is relatively easy. The location is the Black Forest, the targets are the orcs living there, and your objective is to either integrate them into my kingdom or drive them out.
 Morgan_Portrait (Silhouette): A mutually beneficial agreement should be simple enough, but I would accept an outcome that's beneficial to Albion alone.
 update Mao (Surprised)
-Morgan_Portrait (Silhouette): To be clear, that's an euphemism for beating the crap out of them forcing them to accept all of our demands.
+Morgan_Portrait (Silhouette): To be clear, that's an euphemism for beating the crap out of them and forcing them to accept all of our demands.
 Mao_Portrait (Surprised): Umm...
 Morgan_Portrait (Silhouette): No questions for now, please.
 update Mao (Sad)
@@ -22,7 +22,7 @@ update Mao (Surprised)
 Morgan_Portrait (Silhouette): Those too. Let's just say there's a reason the fort's stockpile has more aid kits than weapons.
 Morgan_Portrait (Silhouette): The orcs there moved in around a decade ago as part of the general upheaval around the civil war. I'm not sure if the reason was drought, famine, or just general misgovernment, and it doesn't matter in any case.
 update Mao (Normal)
-Morgan_Portrait (Silhouette): Scans have confirmed that their numbers have held steady. There's a small amount of trade between them and the fort, but they largely keep to themselves.
+Morgan_Portrait (Silhouette): Scans have confirmed that their numbers have held steady with a slight uptrend. There's a small amount of trade between them and the fort, but they largely keep to themselves.
 Morgan_Portrait (Silhouette): You won't get a friendly reception, but they shouldn't be hostile either. Unless you shoot first.
 Morgan_Portrait (Silhouette): I'll take questions now.
 update Mao (Normal)
@@ -31,7 +31,7 @@ Morgan_Portrait (Silhouette): Because I can.
 Morgan_Portrait (Silhouette): To be more precise, Albion had the capability for years now, and, as of just now, I decided to use it.
 update Mao (Surprised)
 Mao_Portrait (Surprised): No, I mean, don't you have a reason? Like does the Black Forest have a bunch of minerals or maybe the trees are really valuable?
-Morgan_Portrait (Silhouette): The orcs would know better than we do in that respect. And any extraction would be hampered by the previously mentioned mosquitoes and other issues.
+Morgan_Portrait (Silhouette): The orcs would know better than we do in that respect. And any extraction would be hampered by the previously mentioned issues.
 Morgan_Portrait (Silhouette): You can consider that a reason to try to obtain the orcs as well, if you'd like.
 update Mao (Sad)
 Mao_Portrait (Sad): What if they don't want to join us and don't want to leave?
@@ -56,9 +56,9 @@ Rice_Portrait (Normal): To paraphrase the first and most important promise her m
 update Mao (Sad)
 Mao_Portrait (Sad): So we *are* the bad guys.
 Rice_Portrait (Normal): Is that what you got from that?
-update Mao (Surprised)
 Rice_Portrait (Normal): I'm not saying you're wrong. Your judgement has to be yours. But part of the reason for this mission is to give you a different pespective on things.
 Rice_Portrait (Normal): To be clear, what her majesty meant by considering this 'settled' was that she would accept it if you decided to simply do nothing.
+update Mao (Surprised)
 Rice_Portrait (Normal): You can consider this something close to a field trip, if you'd like.
 Mao_Portrait (Surprised): Why didn't she just say so then?
 Rice_Portrait (Normal): And if her orders had been something you truly couldn't abide no matter what?
