@@ -7,21 +7,45 @@ Rice_Portrait (Normal): Someone needed to stay around regardless, so it's only e
 update Mao (Normal)
 Mao_Portrait (Normal): Why?
 Rice_Portrait (Normal): The adventuring party you fought off earlier was led by a proper Hero. They're not going to leave a kidnapped girl alone.
-Rice_Portrait (Normal): If they try to come back without teleporting it'll take a few more days, assuming I read their destination correctly, but there's always the chance that they teleport somehow.
+Rice_Portrait (Normal): It'll take a few more days for them to come back without teleporting, assuming I read their destination correctly, but there's always the chance that they use another teleport item.
 Rice_Portrait (Normal): (Unlikely, since an unrestricted teleport item is even more expensive than a Contingency Teleport, but it was odd that they had Contingency Teleports to begin with.)
 update Mao (Angry)
 Mao_Portrait (Angry): Hmph. I don't care about those jerks.
 Mao_Portrait (Angry): Can't we send them a message to bugger off or something?
-Rice_Portrait (Normal): They already think you're under some kind of mental spell. A message from me would work, but there're a few suspicious things about them that I'd like to investigate before tipping them off.
-Rice_Portrait (Normal): I'll still send the message if you want me to, it'll save you some bother.
+Rice_Portrait (Normal): They already think you're under some kind of mental spell. A message from me would work, but there are a few suspicious things about them that I'd like to investigate before tipping them off.
+Rice_Portrait (Normal): I'll still send the message if you want me to, it'd save you some bother.
 update Mao (Normal)
 Mao_Portrait (Normal): Hmm. I guess it's fine not to? I don't mind being bothered if it helps you.
-# Plot Outline: Rice training. "More efficient to do the vote tournament *then* receive training, but Oliver insisted."
+Mao_Portrait (Normal): Oh yeah, about Oliver. Can't you like, train him up to be super strong or something?
 Rice_Portrait (Normal): I can. I won't.
-Rice_Portrait (Normal): Of course, I won't stop you from training him youself, and I don't mind giving advice on how to do so.
+Rice_Portrait (Normal): Of course, I won't stop you from training him youself, and I don't mind giving advice.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wait, you can?
+Rice_Portrait (Normal): Part of the army's job is training troops up to a uniform standard in a reasonable timeframe. In fact, a lot of what you've been through were adapted from how we educate Magic Officers.
+Rice_Portrait (Normal): (And I imagine her majesty will be testing new methods based on your results.)
+Rice_Portrait (Normal): So, yes, we do have methods for accelerated education. Two days is more than enough to train him up to be the biggest fish in this tiny pond.
+update Mao (Excited)
+Mao_Portrait (Excited): I was part of the army? But I was just doing whatever I wanted.
+Rice_Portrait (Normal): No. At least, Albion considers you a civilian.
+update Mao (Normal)
+Rice_Portrait (Normal): That said, it's not an accident that you can fight an entire adventuring party by yourself and win. In terms of potential, that Hero wasn't necessarily any worse than you.
+Rice_Portrait (Normal): (Well, that's only if we consider things holistically. The Hero class is far superior to Ink Mage, so there's no competition if we're only talking about personal talent.)
+Mao_Portrait (Normal): I don't get it.
+Mao_Portrait (Normal): Anyway, why not just train Oliver, then?
 Rice_Portrait (Normal): Do you know the one thing her majesty can't stand more than anything else?
 Rice_Portrait (Normal): It's people not being rewarded for their efforts. To her, if you give up something, it's only right to receive something else in exchange.
-Rice_Portrait (Normal): I don't know if something like that could be called justice, but it certainly seems fair, doesn't it?
-Rice_Portrait (Normal): But, putting it another way, why should you receive anything if you don't give anything?
+Rice_Portrait (Normal): I don't know if a world like that should be called just, but it certainly seems fair, doesn't it?
+Rice_Portrait (Normal): Yet, putting it another way, there's no reason to receive something if you don't give up anything.
 Rice_Portrait (Normal): Oliver isn't part of Albion, Mao.
+update Mao (Sad)
+Rice_Portrait (Normal): The second half was my personal interpretation. I believe her majesty would have no qualms teaching Oliver, citizen of Albion or not.
+Rice_Portrait (Normal): You can call me small-minded if you'd like.
+Mao_Portrait (Sad): I'm not going to do that. It's just. Uguu.
+update Mao (Angry)
+Mao_Portrait (Angry): Why is everything so complicated!
+update Mao (Normal)
+Mao_Portrait (Normal): I feel better now.
+update Mao (Excited)
+Mao_Portrait (Excited): Oh! Actually, I have an idea!
+Mao_Portrait (Excited): I'm going to bed! Please wake me up early!
 [signal arg="{"mission": {"next": "BlackForestOrcs11"}}"]
