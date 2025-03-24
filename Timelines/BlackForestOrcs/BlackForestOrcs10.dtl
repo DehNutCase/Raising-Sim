@@ -1,0 +1,27 @@
+[background arg="res://Art/Background/Background material shop/bg019f.jpg" fade="0.0"]
+join Mao (Normal) 1
+[history action="clear"]
+update Mao (Smile)
+Mao_Portrait (Smile): Thanks for calling her majesty so we can camp out.
+Rice_Portrait (Normal): Someone needed to stay around regardless, so it's only efficient.
+update Mao (Normal)
+Mao_Portrait (Normal): Why?
+Rice_Portrait (Normal): The adventuring party you fought off earlier was led by a proper Hero. They're not going to leave a kidnapped girl alone.
+Rice_Portrait (Normal): If they try to come back without teleporting it'll take a few more days, assuming I read their destination correctly, but there's always the chance that they teleport somehow.
+Rice_Portrait (Normal): (Unlikely, since an unrestricted teleport item is even more expensive than a Contingency Teleport, but it was odd that they had Contingency Teleports to begin with.)
+update Mao (Angry)
+Mao_Portrait (Angry): Hmph. I don't care about those jerks.
+Mao_Portrait (Angry): Can't we send them a message to bugger off or something?
+Rice_Portrait (Normal): They already think you're under some kind of mental spell. A message from me would work, but there're a few suspicious things about them that I'd like to investigate before tipping them off.
+Rice_Portrait (Normal): I'll still send the message if you want me to, it'll save you some bother.
+update Mao (Normal)
+Mao_Portrait (Normal): Hmm. I guess it's fine not to? I don't mind being bothered if it helps you.
+# Plot Outline: Rice training. "More efficient to do the vote tournament *then* receive training, but Oliver insisted."
+Rice_Portrait (Normal): I can. I won't.
+Rice_Portrait (Normal): Of course, I won't stop you from training him youself, and I don't mind giving advice on how to do so.
+Rice_Portrait (Normal): Do you know the one thing her majesty can't stand more than anything else?
+Rice_Portrait (Normal): It's people not being rewarded for their efforts. To her, if you give up something, it's only right to receive something else in exchange.
+Rice_Portrait (Normal): I don't know if something like that could be called justice, but it certainly seems fair, doesn't it?
+Rice_Portrait (Normal): But, putting it another way, why should you receive anything if you don't give anything?
+Rice_Portrait (Normal): Oliver isn't part of Albion, Mao.
+[signal arg="{"mission": {"next": "BlackForestOrcs11"}}"]

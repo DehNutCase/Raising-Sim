@@ -106,5 +106,4 @@ Oliver_Portrait (Normal): Bro saw how weak human girl fought, you should ask bro
 Oliver_Portrait (Normal): Serious Oliver will go train now. Regretful Oliver apologizes for not showing weak human girl around more, but Serious Oliver takes the Vote seriously.
 update Mao (Excited)
 Mao_Portrait (Excited): Ooh, ooh! Can I come with?
-# Plot Outline: Oliver was given a rare chance to enter the chief selection tournament.
 [signal arg="{"mission": {"next": "BlackForestOrcs9"}}"]

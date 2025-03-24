@@ -1,0 +1,139 @@
+[background arg="res://Art/Background/Background material shop/bg021a.jpg" fade="0.0"]
+join Mao (Normal) 2
+join Oliver (Normal) 4 [ z_index="1" mirrored="true"]
+[history action="clear"]
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Teehee.
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 3 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Oliver (Cry) [animation="Bounce"]
+update Oliver (Cry) 4 [ move_time="0.5"]
+update Mao (Excited)
+Mao_Portrait (Excited): You're already dead!
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 3 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Oliver (Cry) [animation="Bounce"]
+update Oliver (Cry) 4 [ move_time="0.5"]
+update Mao [animation="Tada" length="1" repeat="2"]
+update Mao (Normal)
+Mao_Portrait (Normal): Paintball attack! Paintball attack!
+update Oliver (Angry)
+Oliver_Portrait (Angry): Suspicious Oliver is thinking weak human girl is cheating somehow, but not sure how.
+update Mao (Sad)
+Mao_Portrait (Sad): Um. Hmm.
+update Mao (Normal)
+Mao_Portrait (Normal): Do you want to fight a Dumpling instead?
+Oliver_Portrait (Angry): Furious Oliver doesn't play with food!
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 3 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Oliver (Cry) [animation="Bounce"]
+update Oliver (Cry) 4 [ move_time="0.5"]
+Mao_Portrait (Normal): I lost to Dumplings a lot, you know?
+Mao_Portrait (Normal): The Teru all fight for fun, so they don't take it that seriously, but the Dumplings are always trying hard.
+Oliver_Portrait (Angry): Impatient Oliver has no time to waste on small fry! Mighty Oliver will be voting in three days!
+update Mao (Surprised)
+Mao_Portrait (Surprised): Didn't your dad tell you to take it easy? Hurrying like this won't help, you know?
+update Mao (Normal)
+Mao_Portrait (Normal): Basics first.
+update Mao (Excited)
+Mao_Portrait (Excited): Then meteors!
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 3 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Oliver (Angry) [animation="Bounce"]
+update Oliver (Angry) 4 [ move_time="0.5"]
+update Mao (Normal)
+Mao_Portrait (Normal): Can you help me convince him, Rice?
+update Oliver (Angry)
+Oliver_Portrait (Angry): Mighty Oliver doesn't need help from weak human girls!
+update Mao (Sad)
+update Oliver (Angry) [animation="Shake X" length="1"]
+update Oliver (Angry) 3 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Oliver (Angry) [animation="Bounce"]
+update Oliver (Angry) 4 [ move_time="0.5"]
+update Oliver (Cry)
+Mao_Portrait (Sad): Oliver?
+Oliver_Portrait (Cry): Oliver isn't running! You're running!
+leave Oliver [animation="Slide Out Right" length="1"]
+Mao_Portrait (Sad): I think we should leave him alone for a bit. But isn't the Black Forest kind of dangerous?
+Rice_Portrait (Normal): Ordinarily speaking, not for him. Oliver lives here, after all, he would know better than we would even when he's like this.
+Rice_Portrait (Normal): Ordinarily speaking.
+update Mao (Angry)
+Mao_Portrait (Angry): Rice!
+Rice_Portrait (Normal): Why would the Black Forest not be ordinary right now?
+Rice_Portrait (Normal): Well, you can sleep on that question for now. I do think you should follow him to be safe.
+update Mao (Sad)
+Mao_Portrait (Sad): Oliver!
+[background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="2.0" transition="Push Left"]
+Mao_Portrait (Sad): How is he so fast? I'm way faster but I still can't catch up.
+Rice_Portrait (Normal): You are indeed faster. In a straight line.
+Rice_Portrait (Normal): That wasn't a suggestion to run through trees, by the way. There's no rush to catch up.
+update Mao (Excited)
+Mao_Portrait (Excited): Teehee. Can you film me doing that sometime?
+Rice_Portrait (Normal): Treasure the environment, Mao.
+[background arg="res://Art/Background/Background material shop/bg017a.jpg" fade="2.0" transition="Push Left"]
+join Oliver (Sad) 4 [animation="Slide In Right" length="2"]
+update Mao (Normal)
+Mao_Portrait (Normal): Whee!
+update Mao (Excited)
+Mao_Portrait (Excited): Roads! I can catch up!
+update Mao 4 [ move_time="1"]
+update Mao [animation="Shake Y" length="1"]
+[wait time="1.1" hide_text="false"]
+update Mao 2 [ move_time="1"]
+Mao_Portrait (Excited): Tag, you're it!
+update Mao 1 [ move_time="1"]
+Mao_Portrait (Excited): Teehee.
+update Oliver [ mirrored="true"]
+update Oliver (Angry)
+[background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="2.0" transition="Push Right"]
+Rice_Portrait (Normal): (I'm surprised that worked.)
+update Mao (Sad)
+Mao_Portrait (Sad): Oh, right. I'm bad with trees.
+update Oliver 3 [ move_time="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Oh well.
+update Oliver 2 [ move_time="1"]
+Mao_Portrait (Normal): Teehee.
+update Oliver 1 [ move_time="1"]
+update Oliver [animation="Shake Y" length="1"]
+[wait time="1.1" hide_text="false"]
+update Oliver 3 [ move_time="1"]
+Mao_Portrait (Normal): Guess I should've kept running on the road.
+update Oliver (Sad)
+Oliver_Portrait (Sad): Oliver knows.
+update Mao (Normal)
+Mao_Portrait (Normal): Huh?
+Oliver_Portrait (Sad): Oliver knows Oliver is just a weak little goblin.
+update Mao (Sad)
+Oliver_Portrait (Sad): Everyone tries to keep Oliver safe. Everyone says nice things to Oliver and plays along with Oliver's whims.
+Oliver_Portrait (Sad): Oliver is just a weakling who can't even run away if a Hero comes for Oliver. Big bro, pops, and even Albion girl can fight them off, but not weak little Oliver.
+Mao_Portrait (Sad): But you're really strong! The you right now would've kicked my ass a year ago.
+Oliver_Portrait (Sad): Albion girl doesn't need to lie to make Oliver feel better. Oliver already calmed down.
+Oliver_Portrait (Sad): Oliver will go home now. Albion girl doesn't need to worry about Oliver, Oliver will stay home where it's safe.
+update Oliver [ mirrored="false"]
+leave Oliver [animation="Slide Out Right" length="4"]
+Mao_Portrait (Sad): I... didn't mean to.
+Mao_Portrait (Sad): I don't get it. Oliver really is strong, so why's he acting like this?
+Rice_Portrait (Normal): Do you think Oliver had been looking forward to joining the Vote?
+update Mao (Surprised)
+Mao_Portrait (Surprised): I guess so? Maybe?
+Rice_Portrait (Normal): You can think of an orc's first Vote as their coming-of-age ceremony, at least for this tribe. In other words, it's something he had been looking forward to for as long as he's been living with the orcs here.
+Rice_Portrait (Normal): In fact, it's quite possible that he wasn't sure if he'd be allowed to ever participate. Of course, he definitely would have been allowed, but he didn't know that.
+Mao_Portrait (Surprised): What does that have to do with anything?
+Rice_Portrait (Normal): Do you really think the chief is going to go around asking the orcs if you're allowed to join the Vote, and then say no?
+Rice_Portrait (Normal): Say no to an emissary from the strongest nation on their borders?
+update Mao (Sad)
+Mao_Portrait (Sad): But I'm just Mao!
+Rice_Portrait (Normal): And behind you is one of the two superpowers of the planet.
+Mao_Portrait (Sad): But still, why would that make Oliver sad?
+Rice_Portrait (Normal): I've seen you losing fights to Dumplings, but all he has is your word.
+Rice_Portrait (Normal): Think about it, how would you feel if someone got everything you wanted without even trying?
+Mao_Portrait (Sad): So I just have to fight a Dumpling and lose in front of him?
+Rice_Portrait (Normal): Mao.
+Mao_Portrait (Sad): I know... I need to think.
+[signal arg="{"mission": {"next": "BlackForestOrcs10"}}"]
