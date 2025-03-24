@@ -93,7 +93,7 @@ update Mao (Normal)
 [wait time="1.0" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
-Oliver_Portrait (Cry): I'm not running! You're running!
+Oliver_Portrait (Cry): Oliver isn't running! You're running!
 leave Oliver [animation="Slide Out Left" length="1"]
 update Elizabeth (Frown)
 Elizabeth_Portrait (Frown): I hope he stays out of trouble.
