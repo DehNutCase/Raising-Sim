@@ -28,7 +28,7 @@ Mao_Portrait (Normal): Rice?
 Rice_Portrait (Normal): You never told me what you were planning.
 Mao_Portrait (Normal): Oh. Um, fighting still works for him right?
 Rice_Portrait (Normal): There's heavy diminishing returns from non-lethal combat with the same person. But, generally speaking, Oliver would get stronger faster than you would from fighting. He's in a combat class.
-Rice_Portrait (Normal): (The diminishing returns should be part of why the Vote is held every year, it's long enough that everyone would get close to the maximum amount of experience per fight, yet short enough that the experience over time is still decent.)
+Rice_Portrait (Normal): (The diminishing returns should be part of why the Vote is held every year. It's long enough that everyone would get close to the maximum amount of experience per fight, yet short enough that the experience over time is still decent.)
 update Mao (Excited)
 Mao_Portrait (Excited): That's great! You heard that, right? Rice is super strong so you can trust her.
 update Mao (Normal)
@@ -64,7 +64,7 @@ Mao_Portrait (Normal): Um, actually, I think this is the Dumpling party's younge
 Mao_Portrait (Normal): But that was still cool, right?
 Rice_Portrait (Normal): (Despite how it looked, the Dumpling didn't actually split. The other three were hiding behind the first one.)
 Rice_Portrait (Normal): (It's a trick that takes advantage of the fact that, unlike regular slimes, Dumplings are highly compressible, so they can expand and contract easily.)
-Rice_Portrait (Normal): (I don't really see a point. Dumplings already have the ability to combine and split to begin with.)
+Rice_Portrait (Normal): (That said, I don't really see a point. Dumplings already have the ability to combine and split to begin with.)
 Mao_Portrait (Normal): Anyway, I asked everyone yesterday if they wanted to help out, and they said they'd be happy to.
 Oliver_Portrait (Sad): Oliver is about to have a serious fight with food. Oliver is sinking to depths Oliver never thought possible.
 Oliver_Portrait (Sad): No, Oliver takes that back. Oliver isn't sinking, Oliver was never higher than this to begin with.
