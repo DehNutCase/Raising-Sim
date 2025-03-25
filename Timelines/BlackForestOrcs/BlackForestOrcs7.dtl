@@ -56,7 +56,7 @@ Rice_Portrait (Normal): So yes, you could've won by tossing the Dumplings you ke
 update Mao (Angry)
 Mao_Portrait (Angry): They keep sounding more and more like a party of gigantic losers.
 update Oliver (Happy)
-Oliver_Portrait (Happy): Genius Oliver would like to remind you that Oliver thought weak humans were weak the whole time.
+Oliver_Portrait (Happy): Genius Oliver would like to remind weak human girl that Oliver thought weak humans were weak the whole time.
 update Mao (Smile)
 Mao_Portrait (Smile): Teehee. Sorry I ever doubted you.
 [signal arg="{"mission": {"next": "BlackForestOrcs8"}}"]

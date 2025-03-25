@@ -1,0 +1,110 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "f_BroccoliA",
+"description": "",
+"display_name": "Dumpling",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"f_BroccoliA": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_BroccoliA.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_IcedCoffee": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_IcedCoffee.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_LunaChime": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_LunaChime.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_Yakimarsh": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_Yakimarsh.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_candle": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_candle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_curry": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_curry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_dangobrother's": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_dangobrother's.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_dangobrother'sB": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_dangobrother'sB.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_jerara": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_jerara.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"f_manju": {
+"export_overrides": {
+"image": "\"res://Characters/Dumpling/Images/Portraits/f_manju.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

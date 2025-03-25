@@ -44,6 +44,7 @@ directories/dch_directory={
 "Chief_portrait": "res://Characters/Orc King/Chief_portrait.dch",
 "Drake": "res://Characters/Drake/Drake.dch",
 "Drake_Portrait": "res://Characters/Drake/Drake_Portrait.dch",
+"Dumpling_portrait": "res://Characters/Dumpling/Dumpling_portrait.dch",
 "Elizabeth": "res://Characters/Elizabeth/Elizabeth.dch",
 "Elizabeth_Portrait": "res://Characters/Elizabeth/Elizabeth_Portrait.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
@@ -78,6 +79,8 @@ directories/dtl_directory={
 "BlackForestOrcs0": "res://Timelines/BlackForestOrcs/BlackForestOrcs0.dtl",
 "BlackForestOrcs1": "res://Timelines/BlackForestOrcs/BlackForestOrcs1.dtl",
 "BlackForestOrcs10": "res://Timelines/BlackForestOrcs/BlackForestOrcs10.dtl",
+"BlackForestOrcs11": "res://Timelines/BlackForestOrcs/BlackForestOrcs11.dtl",
+"BlackForestOrcs12": "res://Timelines/BlackForestOrcs/BlackForestOrcs12.dtl",
 "BlackForestOrcs2": "res://Timelines/BlackForestOrcs/BlackForestOrcs2.dtl",
 "BlackForestOrcs3": "res://Timelines/BlackForestOrcs/BlackForestOrcs3.dtl",
 "BlackForestOrcs4": "res://Timelines/BlackForestOrcs/BlackForestOrcs4.dtl",
@@ -167,6 +170,7 @@ animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimatio
 animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_or_out.gd"
 layout/end_behaviour=1
 choices/hotkey_behaviour=1
+text/autoskip_time_per_event=0.05
 
 [display]
 
