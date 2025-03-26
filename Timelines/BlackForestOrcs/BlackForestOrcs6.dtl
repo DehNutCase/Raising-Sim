@@ -74,7 +74,7 @@ Hero_m_portrait (Shocked): A girl?
 update Hero_m_tiny (Angry)
 Hero_m_portrait (Angry): So you monsters are doing human trafficking now.
 update Mao (Excited)
-Mao_Portrait (Excited): Wait, is this guy a Hero? Is this a hero party?
+Mao_Portrait (Excited): Wait, is this guy a Hero? Is this a Hero party?
 Mao_Portrait (Excited): Fighter! Thief! White Mage! Black Mage!
 update Hero_m_tiny (Angry)
 update Hero_m_tiny [animation="Shake X" length="1"]
