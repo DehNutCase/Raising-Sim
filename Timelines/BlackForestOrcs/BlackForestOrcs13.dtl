@@ -186,9 +186,11 @@ leave --All-- [animation="Instant In Or Out"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017b.jpg" fade="0.0"]
 join Mao (Normal) 2
-join Oliver (Drool) 1 [ z_index="1" mirrored="true"]
+join Oliver (Drool) 1 [ z_index="1"]
 [history action="resume"]
+[signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "strength": 10, "speed": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
 Rice_Portrait (Normal): Another break. Ten minutes this time, go use the restroom if you need to.
+update Oliver [ mirrored="true"]
 leave Oliver [animation="Slide Out Left" length="4"]
 update Mao [animation="Tada" length="1"]
 update Mao (Angry)
@@ -197,5 +199,5 @@ Mao_Portrait (Angry): The level 21 phantom in the tower was slower than that!
 Rice_Portrait (Normal): If simple mimicry were enough to be an equal match, dopplegangers would rule the world right now.
 update Mao (Normal)
 Rice_Portrait (Normal): A phantom wouldn't know how to move my body properly in the first place, much less how to use my skills to full effect.
-Rice_Portrait (Normal): (If this were the army, I'd have Oliver cut down on sleep to get more training in. Since that's not the case, I should make sure he has at least ten hours of rest before the Vote. Hmm.)
+Rice_Portrait (Normal): (Maximum efficiency would have Oliver cutting down on sleep to get more training in, but this isn't the army. I should make sure he has at least ten hours of rest before the Vote. Hmm.)
 [signal arg="{"mission": {"next": "BlackForestOrcs14"}}"]

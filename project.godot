@@ -83,6 +83,7 @@ directories/dtl_directory={
 "BlackForestOrcs12": "res://Timelines/BlackForestOrcs/BlackForestOrcs12.dtl",
 "BlackForestOrcs13": "res://Timelines/BlackForestOrcs/BlackForestOrcs13.dtl",
 "BlackForestOrcs14": "res://Timelines/BlackForestOrcs/BlackForestOrcs14.dtl",
+"BlackForestOrcs15": "res://Timelines/BlackForestOrcs/BlackForestOrcs15.dtl",
 "BlackForestOrcs2": "res://Timelines/BlackForestOrcs/BlackForestOrcs2.dtl",
 "BlackForestOrcs3": "res://Timelines/BlackForestOrcs/BlackForestOrcs3.dtl",
 "BlackForestOrcs4": "res://Timelines/BlackForestOrcs/BlackForestOrcs4.dtl",
