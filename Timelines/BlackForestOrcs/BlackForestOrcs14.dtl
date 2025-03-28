@@ -64,12 +64,12 @@ Rice_Portrait (Normal): I'll tell Alice you said so.
 update Mao (Normal)
 Mao_Portrait (Normal): So what we doing after dinner?
 update Oliver (Sad)
-Rice_Portrait (Normal): You'll be doing nothing in particular, aside from following along. Everything in the Black Forest is too low leveled to matter for you. So just sit back and watch Oliver doing his best not to get eaten.
+Rice_Portrait (Normal): You'll be doing nothing in particular, aside from following along. Everything in the Black Forest is too low leveled to matter for you. So just sit back and watch Oliver doing his best to avoid getting eaten.
 update Oliver (Surprised)
-Oliver_Portrait (Surprised): Oliver would like to voice his objections to that plan.
+Oliver_Portrait (Surprised): Oliver would like to voice Oliver's objections to that plan.
 Rice_Portrait (Normal): Are you saying you want to stop? I don't particularly mind either way.
 update Oliver (Sad)
-Oliver_Portrait (Sad): Oliver withdraws his objection.
+Oliver_Portrait (Sad): Oliver withdraws Oliver's objection.
 # Mao comments next day about jungle cats
 # For the tournament, Mao seeded due to level difference. Skip most of tournament to deal with Hero party?
 [signal arg="{"mission": {"next": "BlackForestOrcs15"}}"]

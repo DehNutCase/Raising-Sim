@@ -1,0 +1,228 @@
+[background arg="res://Art/Background/Background material shop/bg006a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao [animation="Tada" length="2" repeat="2"]
+update Mao (Excited)
+Mao_Portrait (Excited): Rice look! Rice look! I'm seeded! I only have one fight before I win the Vote!
+Rice_Portrait (Normal): (Two, counting the chief who won last year. Perhaps she doesn't realize?)
+Rice_Portrait (Normal): Not exactly. You would have gotten a similar bracket at level 1 as well.
+update Mao (Sad)
+Mao_Portrait (Sad): Oh. Are they just going easy on me then? That's not fair.
+Rice_Portrait (Normal): I apologize for being unclear, that's not what I meant.
+update Mao (Normal)
+Rice_Portrait (Normal): The tournament is structured so that everyone fights people close to them in levels as many times as possible. This way the wasted experience from level difference is minimized.
+Rice_Portrait (Normal): That said, I'm not entirely sure why a single-elimination format is used. Round-robin seems superior in most respects.
+Rice_Portrait (Normal): A shortage of healers, perhaps.
+update Mao (Angry)
+Mao_Portrait (Angry): ...Isn't that just the exact same thing as being seeded?
+Rice_Portrait (Normal): If it makes you happy, sure.
+update Mao (Normal)
+Mao_Portrait (Normal): Looks like Oliver has a tough bracket, he's tied for having the most fights.
+Rice_Portrait (Normal): That's a good thing.
+join Oliver (Drool) 4 [animation="Slide In Right" length="4" mirrored="true"]
+update Mao [animation="Tada" length="2"]
+Mao_Portrait (Normal): Oh, Oliver woke up. Good morning!
+Oliver_Portrait (Drool): Oliver greets Albion girls.
+Rice_Portrait (Normal): (It's a shame we didn't have enough time yesterday. As it currently stands, the Hero from before is still a match for Oliver.)
+Rice_Portrait (Normal): (If Mao decides to stay a bit longer after everything's finished, I should train him up to level 15 or so.)
+update Oliver (Surprised)
+Oliver_Portrait (Surprised): Oliver is getting goosebumps again.
+update Oliver (Drool)
+update Mao (Smile)
+Mao_Portrait (Smile): Oh yeah, Rice, were the cats from last night the man eating panthers you were talking about before? They were so cute.
+update Oliver (Sad)
+Oliver_Portrait (Sad): Oliver would like Albion girl to know that Oliver did not think they were cute at all. Oliver was terrified.
+update Mao (Normal)
+Mao_Portrait (Normal): But everything worked out, right? So it's fine.
+update Oliver (Drool)
+Rice_Portrait (Normal): To answer your question, they were. It's not particularly needed in this case, but consider having a sense of caution towards creatures who treat you as food.
+Mao_Portrait (Normal): If you say so.
+Oliver_Portrait (Drool): If Albion girls will excuse Oliver, Oliver needs to prepare for the Vote. Oliver's first match is early in the schedule.
+update Oliver [ mirrored="false"]
+leave Oliver [animation="Slide Out Right" length="2"]
+update Mao (Smile)
+Mao_Portrait (Smile): Good luck!
+update Mao (Normal)
+Mao_Portrait (Normal): How far do you think he'll get?
+Rice_Portrait (Normal): Quite far. Considering the brackets, he has a good chance of making it to the semi-finals.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wow, really? Aren't orcs supposed to be super strong?
+Rice_Portrait (Normal): The stat differences at level 1 between demonkind species are within two standard deviations of each other. And the difference only decreases as level increases, ceteris paribus.
+update Mao (Normal)
+Mao_Portrait (Normal): Can I get that in English?
+Rice_Portrait (Normal): Oliver is basically an orc.
+update Mao (Angry)
+Mao_Portrait (Angry): Why do I get the feeling you're making fun of me?
+Rice_Portrait (Normal): I'm being quite serious. Most of the perceived disparity between species come from culture and national power than actual statistical differences.
+update Mao (Normal)
+Rice_Portrait (Normal): His older brother would have greater reach and a literal massive advantage, certainly, but the more important differences between his older brother and a 'normal' goblin would be levels, training, and equipment.
+Rice_Portrait (Normal): We did our best to patch up the level difference yesterday, and, as far as I can tell, Oliver had kept up with the orcs' training regimen.
+Rice_Portrait (Normal): As a simple and obvious example, you're human, would you say you're weaker than the orcs here?
+update Mao (Surprised)
+Mao_Portrait (Surprised): I'm human?
+Rice_Portrait (Normal): ...Why was that a surprise?
+update Mao (Normal)
+Mao_Portrait (Normal): No it's just, Elizabeth wasn't human, right? So I thought maybe I was like her.
+Rice_Portrait (Normal): I see.
+Rice_Portrait (Normal): I know you've been getting regular health checkups. Have you been ignoring every single report?
+update Mao (Blush)
+Mao_Portrait (Blush): Teehee.
+update Mao (Normal)
+Mao_Portrait (Normal): Let's go cheer him on.
+[history]
+[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+leave --All-- [animation="Instant In Or Out"]
+[wait time="1.0" hide_text="false"]
+[background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
+join Orc (Normal) 3 [ mirrored="true"]
+join Oliver (Normal) 1 [ z_index="2"]
+[history action="resume"]
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Normal) 1 [ move_time="0.5"]
+Chief_portrait (Normal): Bwahaha!
+update Mao (Surprised)
+Mao_Portrait (Surprised): Wow, there are way more orcs here than I thought. How did they all fit into the village?
+Orc_Portrait (Smile): Good luck, Oliver!
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Normal) 1 [ move_time="0.5"]
+Mao_Portrait (Surprised): Wait, did you duplicate yourself? How are you cheering here and fighting Oliver at the same time?
+Rice_Portrait (Normal): This is Oliver's big brother, don't you remember him? The one fighting is someone else.
+update Mao (Blush)
+Mao_Portrait (Blush): Oh. Sorry!
+Mao_Portrait (Blush): (They look exactly the same to me.)
+Orc_Portrait (Normal): Bwahaha! No harm done. Just between you and me, I can't tell you two apart either.
+update Mao (Normal)
+Mao_Portrait (Normal): I have the bigger hat!
+Orc_Portrait (Normal): Bwahaha!
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Normal) 1 [ move_time="0.5"]
+Rice_Portrait (Normal): (The fight is unexpectedly close. They must have made the brackets just before the Vote began, otherwise Oliver would have had a significantly easier matchup.)
+Rice_Portrait (Normal): (Ah, that'll be the Hero party. With one extra. They're still a ways away, but I should let Mao know.)
+Rice_Portrait (Normal): Mao, do you remember the Hero party? They're approaching.
+update Mao (Angry)
+Mao_Portrait (Angry): Those jerks? Oh, you said they're coming back, right?
+Mao_Portrait (Angry): Hmph. I'm not going to let them ruin Oliver's big day. Let's go beat them up!
+Rice_Portrait (Normal): (I suppose it's not the worst plan, especially considering Mao's their target to begin with.)
+Orc_Portrait (Smile): Want help?
+update Mao (Normal)
+Mao_Portrait (Normal): Thanks, but we'll be fine. And it's kind of my fault they're coming back anyway.
+update Mao (Blush)
+Mao_Portrait (Blush): Sorry!
+Orc_Portrait (Normal): Bwahaha! Don't worry, young lady. Just let us know if you run into any trouble.
+update Mao (Normal)
+Mao_Portrait (Normal): Okie dokie.
+[history]
+[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+leave --All-- [animation="Instant In Or Out"]
+[wait time="1.0" hide_text="false"]
+[background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="0.0"]
+join Hero_f (Annoyed) 3 [ mirrored="true"]
+join Hero_m (Frown) 1 [ z_index="2"]
+[history action="resume"]
+update Hero_f (Annoyed)
+Hero_f_portrait (Annoyed): So, tell me again why you didn't just ask the local law enforcement for a wellness check? Even if you're right about the orcs suddenly turning into kidnappers, Albion's first responders would be better equipped to deal it.
+update Hero_m_portrait (Angry)
+Hero_m_portrait (Angry): Not if they're also in on it!
+Hero_f_portrait (Annoyed): (This is why newbies are...)
+Hero_f_portrait (Annoyed): (Good thing I called ahead and asked for an temporary level limit exemption. Not to mention actually informing them about a possible kidnapped girl. The kind of thing you should do. As. Soon. As. Possible. Argh!)
+update Hero_f (Frown)
+Hero_f_portrait (Frown): (Well, I'll admit they were being surprisingly cagey about the girl when I asked. All they said was that she's definitely fine.)
+update Hero_f (Annoyed)
+Hero_f_portrait (Annoyed): And what's a pipsqueak like you supposed to do if they were, exactly? Give them some extra people to ransom?
+update Hero_m (Angry)
+Hero_m_portrait (Angry): I'd fight! And win!
+Rice_Portrait (Normal): (Oh, that's interesting. They somehow managed to bring 'Wisdom.' She'll be hard for Mao to deal with at her current level.)
+Mao_Portrait (Angry): (Psst. So what do you think we should do, Rice? You said you wanted to investigate something, right? I want to beat him up.)
+update Hero_f [animation="Tada" length="1"]
+Rice_Portrait (Normal): (I've seen enough at this point. 'Wisdom' isn't the kind of card a small backwater kingdom can play.)
+Rice_Portrait (Normal): (Tara's still very unlikely, and I doubt her majesty would bother setting things up to this extent, so that leaves the Blue Dragon Association or the Mages' Tower.)
+update Hero_m [animation="Tada" length="1"]
+Rice_Portrait (Normal): (If I had to guess, the entire Hero party is one of the Blue Dragon Association's cells. Although I'm not sure if any of them actually knows that.)
+Mao_Portrait (Surprised): (Blue Dragon Association?)
+update Hero_f [animation="Tada" length="1"]
+Rice_Portrait (Normal): (Just a decently big international criminal organization based in the human kingdoms. The only reason they still exist is because they kept out of Tara and Albion so far.)
+update Hero_m (Shocked)
+update Hero_f (Surprised)
+Mao_Portrait (Surprised): Wait, that guy's a terrorist!?
+update Hero_f (Normal)
+Hero_f_portrait (Normal): Good morning, young lady. The Black Forest can be quite dangerous, would you like me to walk you home?
+Hero_m_portrait (Shocked): That's her! Watch out, she's under some kind of mental spell!
+update Hero_f (Annoyed)
+Hero_f_portrait (Annoyed): No. No she's not.
+Hero_f_portrait (Annoyed): (My professor would pay a king's ransom to find someone who could cast a mental spell that leaves the target's mana flow so clear and smooth. As in, he'd kidnap a king and ransom him if he needed more money to pay.)
+Hero_f_portrait (Annoyed): (Why am I surrounded by jackasses?)
+join Mao 4 [animation="Slide In Right" length="1"]
+update Hero_f 2 [ mirrored="false" move_time="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Hi, I'm Mao.
+update Hero_f (Normal)
+Mao_Portrait (Normal): Apparently you're here to rescue me to something?
+update Mao (Angry)
+Mao_Portrait (Angry): But you're bothering my friends.
+Mao_Portrait (Angry): I have a big stick and I'm not afraid to use it.
+update Hero_f (Annoyed)
+Hero_f_portrait (Annoyed): (This was such a god damned farce.)
+update Hero_f (Normal)
+Hero_f_portrait (Normal): I'm very sorry, young lady. Hey, you apologize too, 'Lance.'
+update Hero_m (Angry)
+Hero_m_portrait (Angry): Maybe you're also in on it!
+update Hero_f (Annoyed)
+Hero_f_portrait (Annoyed): At least don't drag the rest of your party down with you when you do something stupid, man. Just apologize, she looks like a nice girl.
+update Mao (Normal)
+Thief_f_portrait (Worried): We're used to it at this point.
+update Hero_m (Shocked)
+Hero_m_portrait (Shocked): Not you guys too!?
+Thief_f_portrait (Worried): Just apologize, boss. It's obvious Mao's doing fine.
+update Hero_m (Sad)
+Hero_m_portrait (Sad): But she was with orcs! By herself! There's no way that's normal!
+Rice_Portrait (Normal): Hello. I'm her guardian.
+update Hero_f (Surprised)
+update Hero_m (Shocked)
+Hero_m_portrait (Shocked): Gah!
+update Mao (Smile)
+Mao_Portrait (Smile): (Teehee. It's great seeing Rice do that to someone else for once.)
+Hero_f_portrait (Surprised): 'Justice!'
+update Mao (Excited)
+Hero_f_portrait (Surprised): (I don't have enough lives for this kind of bullshit!)
+Rice_Portrait (Normal): Rice Glassfield.
+update Hero_f (Angry)
+Hero_f_portrait (Angry): Yes, Miss Glassfield, Ma'am! 'Lance!' Apologize! Now!
+update Mao (Normal)
+update Hero_f [animation="Shake X" length="1"]
+update Hero_m (Frown)
+Hero_m_portrait (Frown): No, just wait a minute. How is two little girls with a bunch of orcs any better than before?
+update Hero_f [animation="Shake X" length="1"]
+Hero_f_portrait (Angry): (Aaaaaaaaaaaaaaaaah! Going to get fucking killed because of this idiot! Aaaaaaaaaaah!)
+update Hero_f [animation="Shake X" length="1"]
+update Hero_m (Frown)
+Hero_f_portrait (Angry): Apologize! Now!
+Thief_f_portrait (Worried): Boss. Like, I think you might want to apologize before 'Wisdom' pounds your face in.
+update Hero_m (Doubtful)
+Hero_m_portrait (Doubtful): Hmph. Fine. I'm sorry, Mao.
+Hero_m_portrait (Doubtful): But I'll be keeping an eye on you two.
+Hero_f_portrait (Angry): (Aaaaaaaaaaaaaaaaah!)
+Mao_Portrait (Normal): I don't really get what just happened, but I guess everything's settled? Can we go back to the Vote now, Rice?
+Rice_Portrait (Normal): Sure.
+Rice_Portrait (Normal): (I wouldn't say everything's settled, exactly, but I get the feeling I should leave before 'Wisdom' gets a panic attack.)
+[signal arg="{"mission": {"next": "BlackForestOrcs16"}}"]
