@@ -1,0 +1,96 @@
+[background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
+join Orc (Normal) 3 [ mirrored="true"]
+join Oliver (Normal) 1 [ z_index="2"]
+[history action="clear"]
+update Mao (Excited)
+Mao_Portrait (Excited): Oh wow! We made it back before Oliver's first fight finished!
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Normal) 1 [ move_time="0.5"]
+Rice_Portrait (Normal): No. This is the semi-finals.
+update Mao (Normal)
+Rice_Portrait (Normal): You'll be fighting the winner.
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): So after the fight they'll face the champion, me! Teehee.
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Normal) 1 [ move_time="0.5"]
+update Mao (Normal)
+Mao_Portrait (Normal): Oh, I hear a lot of cheers for Oliver, is he's that popular?
+update Mao (Excited)
+Mao_Portrait (Excited): Oliver! Go! You can do it!
+update Mao (Normal)
+Mao_Portrait (Normal): (Psst. This time it's actually Oliver's big brother, right?)
+Rice_Portrait (Normal): That is indeed his older brother.
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Normal) 1 [ move_time="0.5"]
+Rice_Portrait (Normal): (It would be a hard fight even for Mao if Orc took things seriously, but it looks like he's holding back.)
+Rice_Portrait (Normal): (Or, perhaps, it's against the rules of the Vote to use more than one life bar?)
+Rice_Portrait (Normal): (No, we would have been informed if that were the case. It should be personal discretion.)
+update Orc (Normal) [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver (Normal) [animation="Shake X" length="1"]
+update Oliver (Normal) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc (Normal) [animation="Bounce"]
+update Orc (Normal) 3 [ move_time="0.5"]
+update Oliver (Normal) [animation="Bounce"]
+update Oliver (Sad) 1 [ move_time="0.5"]
+update Mao (Sad)
+Mao_Portrait (Sad): Oh no. It looks like Oliver is getting tired.
+update Mao (Normal)
+Mao_Portrait (Normal): Go Oliver, Go!
+Rice_Portrait (Normal): In a serious fight, he should be able to keep fighting for quite a bit longer. Especially after yesterday.
+Mao_Portrait (Normal): I don't think he'll be very happy to hear you say that. Teehee.
+Rice_Portrait (Normal): Anyway, they should call it soon. It's a friendly competition.
+update Orc [animation="Shake X" length="1"]
+update Orc (Normal) 2 [ move_time="0.5"]
+update Oliver [animation="Shake X" length="1"]
+update Oliver (Sad) 2 [ move_time="0.5"]
+[wait time="1.1" hide_text="false"]
+update Orc [animation="Bounce"]
+update Orc (Frown) 3 [ move_time="0.5"]
+update Oliver [animation="Bounce"]
+update Oliver (Cry) 1 [ move_time="0.5"]
+update Mao (Sad)
+Mao_Portrait (Sad): Oliver...
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): I mean. Oliver, good job!
+Chief_portrait (Normal): Bwahaha! That's quite enough.
+Chief_portrait (Normal): This winner of this match is Orc Orcsson!
+update Oliver (Normal)
+update Orc (Normal)
+Mao_Portrait (Normal): (Wait, his actual name is 'Orc'?)
+Rice_Portrait (Normal): You shouldn't make fun of other people's names.
+update Mao (Sad)
+Mao_Portrait (Sad): I didn't mean to!
+Rice_Portrait (Normal): I know. Just keep in mind you have a habit of thinking out loud.
+update Mao (Normal)
+Mao_Portrait (Normal): Oh.
+Chief_portrait (Smile): But also give it up for Oliver! Who managed to make it all the way here on his very first Vote!
+Chief_portrait (Normal): I remember my first Vote. I lost in the very first round. Bwahaha!
+update Mao (Excited)
+Mao_Portrait (Excited): Yay! You were awesome out there, Oliver!
+update Mao (Normal)
+Chief_portrait (Normal): Now we'll have a ten minute break before the next match. Don't forget to have the shaman heal you, both of you.
+[signal arg="{"mission": {"next": "BlackForestOrcs17", "combat": "black_forest_orcs,2"}}"]

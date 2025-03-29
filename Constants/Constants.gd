@@ -1343,6 +1343,26 @@ const races = {
 		'label': 'Human',
 		'portrait': 'res://Art/It Came From The Swamp/Enemies/f_SoldierB.png',
 	},
+	'orc': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 25,
+			'defense': 25,
+			'speed': 25,
+			'resistance': 10,
+			'gold': 250,
+			'experience': 50,
+			'action_points': 2,
+		},
+		'level_stats': {
+			'max_hp': 10,
+			'strength': 5,
+			'experience': 50,
+			'gold': 50,
+		},
+		'label': 'Orc',
+		'portrait': 'res://Characters/Orc/Images/Portrait/Orc_0.png',
+	},
 	'lesser_phantom': {
 		'base_stats': {
 			'max_hp': 50,
@@ -2120,6 +2140,15 @@ const missions = {
 						"level": 10,
 						"character_class": "mage",
 						"race": "human",
+					},
+				]
+			},
+			{ 'enemies': 
+				[
+					{
+						"level": 16,
+						"character_class": "knight",
+						"race": "orc",
 					},
 				]
 			},
