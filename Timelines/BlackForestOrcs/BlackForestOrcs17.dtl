@@ -21,6 +21,7 @@ update Mao (Normal)
 update Mao [animation="Bounce" length="2"]
 Orc_Portrait (Normal): (Neither did the young lady.)
 Rice_Portrait (Normal): (That's a bit different. You earned yours, hers comes from being a citizen of Albion.)
+update Mao [animation="Shake X" length="2"]
 Orc_Portrait (Normal): (So?)
 Rice_Portrait (Normal): (So she ends up unconsious before it activates. But I see your point.)
 join Chief (Normal) 3 [animation="Slide In Right" length="2" mirrored="true"]

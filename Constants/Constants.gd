@@ -1158,6 +1158,32 @@ const character_classes = {
 			'skeleton': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
 		},
 	},
+	'chieftain': {
+		'base_stats': {
+			'max_hp': 100,
+			'strength': 75,
+			'defense': 50,
+			'speed': 25,
+			'resistance': 25,
+			'gold': 500,
+			'experience': 250,
+			'action_points': 2,
+		},
+		'level_stats': {
+			'max_hp': 125,
+			'strength': 15,
+			'defense': 10,
+			'speed': 10,
+			'resistance': 10,
+			'gold': 50,
+			'experience': 50,
+		},
+		'combat_skills': ["rally"],
+		'label': "Chieftain",
+		'portrait': {
+			'orc': 'res://Characters/Orc King/Images/Portrait/OrcKing_0.png',
+		},
+	},
 	'high_priest': {
 		'base_stats': {
 			'max_hp': 50,
@@ -2103,12 +2129,13 @@ const player_classes = {
 
 const missions = {
 	"black_forest_orcs": {
-		"description": "There's a small tribe of orcs living in the Black Forest. Her majesty ordered you to either incorporate them into the kingdom or drive them out.\n\nAlthough the use of force is authorized, going in spells blazing would be the opposite of her majesty's intent. The orcs are valuable human resources.",
+		"description": "There's a small tribe of orcs living in the Black Forest. Her majesty ordered you to either incorporate them into the kingdom or drive them out.\n\nAlthough the use of force is authorized, going in spells blazing would be the opposite of her majesty's intent. The orcs are valuable human resources.\n\nEncounter Level: 10\nThe wild Dumplings hanging out in the Blessed Plains are a bigger threat. Speaking of Dumplings, the head maid would like you to stop nibbling on the cleaning Dumplings.",
 		"id": "black_forest_orcs",
 		"label": "Black Forest Orcs",
 		"first_timeline": "BlackForestOrcs0",
 		"type": "Main Story",
 		"encounter_difficulty": 10,
+		"mission_complete_image": "res://Timelines/BlackForestOrcs/TheLittleGoblinWhoCould.png",
 		"combats": [
 			{ 'enemies': 
 				[
@@ -2147,6 +2174,25 @@ const missions = {
 				[
 					{
 						"level": 16,
+						"character_class": "knight",
+						"race": "orc",
+					},
+				]
+			},
+			{ 'enemies': 
+				[
+					{
+						"level": 10,
+						"character_class": "knight",
+						"race": "orc",
+					},
+					{
+						"level": 16,
+						"character_class": "chieftain",
+						"race": "orc",
+					},
+					{
+						"level": 10,
 						"character_class": "knight",
 						"race": "orc",
 					},

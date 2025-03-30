@@ -90,6 +90,9 @@ func _ready():
 	_setup_options()
 	_setup_credits()
 	_setup_play()
+	#Steam initiated here
+	if OS.has_feature("steam"):
+		Steam.steamInitEx()
 
 func _on_play_button_pressed():
 	play_game()

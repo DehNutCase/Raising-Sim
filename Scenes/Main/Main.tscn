@@ -792,6 +792,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Save"
 
+[node name="Wishlist" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Wishlist"
+
 [node name="PauseMenuController" type="Node" parent="."]
 script = ExtResource("28_3ijv8")
 pause_menu_packed = ExtResource("29_h0pyo")

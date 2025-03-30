@@ -9,4 +9,4 @@ High Quality Mao:
 magick mogrify -crop 1000x1000+2400+1800 *.png
 
 Resize:
-magick mogrify -resize 600x600 *.png
+magick mogrify -resize 288x288 *.png

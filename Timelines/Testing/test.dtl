@@ -1,0 +1,9 @@
+[background arg="res://Art/Background/Background material shop/bg006b.jpg" fade="0.0"]
+join Chief (Smile) 0
+join Orc (Smile) 1
+join Oliver (Smile) 2
+join Mao (Smile) 3
+update Oliver [ z_index="1"]
+[style name="test_style"]
+[wait_input]
+Alice: test

@@ -47,7 +47,7 @@ var class_change_requirements_fufilled = false
 
 var selected_mission:String
 
-# Called when the node enters the scene tree for the first time.
+#TODO, margin container 3 stretch ratio to .5, update images to use height of 200 or 300? for combat scene
 func _ready():
 	#TODO, sycnhronize background size of dialogic & main scene (move chars downward)
 	#TODO, display class change card data in stats
@@ -343,7 +343,6 @@ func _on_action(button):
 			load_class_change_text("ink_mage_journeyman")
 			class_change.show()
 		"Mission":
-			#TODO, automatically continue mission timeline if a mission is already active
 			if Player.active_mission:
 				#Start next timeline if no combat
 				if !Player.active_mission.get('combat'):
@@ -354,13 +353,18 @@ func _on_action(button):
 					Player.in_tower = false
 					Player.in_mission = true
 					SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
-				#TODO, start mission timeline
 			else:
 				load_mission_text("black_forest_orcs")
 				mission.show()
 		"Save":
 			Player.save_game()
-			background.visible = false
+			menu_panel.visible = true
+		"Wishlist":
+			if Steam.isSteamRunning():
+				Steam.activateGameOverlayToStore(3552520)
+				#url: https://store.steampowered.com/app/3552520/Raising_Niziiro_Albions_Witch
+			else:
+				display_toast("Steam isn't running! Please wishlist 'Raising Niziiro: Albion's Witch' manually.","top")
 			menu_panel.visible = true
 		_:
 			printerr("_on_action failed to match")
@@ -449,6 +453,10 @@ func display_stats() -> void:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".show()
 	else:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".hide()
+	if OS.has_feature("playtest") or OS.has_feature("demo"):
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
+	else:
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
 	
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)
@@ -460,6 +468,9 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 	if "location_flags" in dialogic_signal:
 		for flag in dialogic_signal.location_flags:
 			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
+	if "event_flags" in dialogic_signal:
+		for flag in dialogic_signal.event_flags:
+			Player.event_flags[flag] = dialogic_signal.event_flags[flag]
 	if "background" in dialogic_signal:
 		if (!Player.background_inventory.get_item_with_prototype_id(dialogic_signal.background)):
 			Player.background_inventory.create_and_add_item(dialogic_signal.background)
@@ -474,6 +485,8 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 			var mission = Player.active_mission.combat.split(',')[0]
 			var combat_number = int(Player.active_mission.combat.split(',')[1])
 			Player.active_mission.combat = Constants.missions[mission].combats[combat_number]
+		#recognize mission is finished when there's no timeline next
+		if !Player.active_mission.get('next'): Player.active_mission = false
 		
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
@@ -676,17 +689,28 @@ func load_mission_text(mission: String):
 	#Use below to add correct font that displays emoji if needed
 	#var font = load("res://Art/Fonts/emoji_font_variation.tres")
 	var desc = $"Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description"
-	var text = Constants.missions[mission].description
-	desc.clear()
-	desc.append_text(text)
+	#Displays mission info if not completed, else displays completion image.
+	if !(selected_mission in Player.event_flags):
+		var text = Constants.missions[mission].description
+		desc.clear()
+		desc.append_text(text)
+	else:
+		var image = load(Constants.missions[mission].mission_complete_image)
+		desc.clear()
+		desc.add_image(image)
+	
 		
 func display_mission_info(mission:String) -> void:
 	load_mission_text(mission)
 
 func _on_select_mission_pressed() -> void:
 	var mission_timeline_name = Constants.missions[selected_mission].first_timeline
-	Dialogic.start(mission_timeline_name)
-
+	#Checks if mission is completed, otherwise only plays after end of year (day 121 or later)
+	if !(selected_mission in Player.event_flags) or Player.day > Constants.constants.days_in_month * 4:
+		Dialogic.start(mission_timeline_name)
+	else:
+		display_toast("Mission replay only available after the end of the year.", "top")
+		
 func _on_pause_menu_button_pressed():
 	var pause_menu_packed = load("res://Scenes/GameTemplate/Menus/PauseMenu.tscn")
 	InGameMenuController.open_menu(pause_menu_packed, get_viewport())

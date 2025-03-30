@@ -185,7 +185,8 @@ func save_class_change_card(class_change_name:String):
 	save_file = FileAccess.open("user://Saves/class_change_card.json", FileAccess.WRITE)
 	if save_file:
 		save_file.store_line(JSON.stringify(save_data))
-		ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
+		#Below is currently unnecessary because item creation message is displayed when creating card
+		#ToastParty.show({"text": "Class Change Card Created!", "gravity": "top", "direction": "center"})
 		
 		if class_change_name == "witch":
 			var old_cards = []

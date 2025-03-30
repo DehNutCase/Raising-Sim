@@ -1,0 +1,73 @@
+# TODO, replace bg014a with opened curtains. Use findstr?
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3
+join Morgan (Silhouette) 1
+[history action="clear"]
+update Mao [animation="Tada"]
+update Mao (Excited)
+Mao_Portrait (Excited): I'm back! Niziiro Mao reporting! I brought souvenirs!
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Everything went okie dokie, Ma'am!
+Morgan_Portrait (Silhouette): Fufufu. Yes, good job. Why don't you go share the souvenirs with Hiyori?
+leave Mao [animation="Slide Out Right" length="1"]
+Mao_Portrait (Normal): Yes, Ma'am!
+Rice_Portrait (Normal): About the Lance Hero.
+Morgan_Portrait (Silhouette): They're part of the Blue Dragon Association, yes. I've been monitoring the situation.
+Rice_Portrait (Normal): Is that your excuse for scanning us every fiften minutes?
+Morgan_Portrait (Silhouette): Not at all. That was simply because I was worried.
+Rice_Portrait (Normal): (Come to think of it, Mao probably got her shamelessness from her majesty.)
+Morgan_Portrait (Silhouette): If you check the adventurers' registy, his party is named Autumn. This makes his cell reasonably high ranked.
+Morgan_Portrait (Silhouette): Years. Seasons. Months. Days. It's a rather simple naming scheme.
+Morgan_Portrait (Silhouette): Even now, I'm not entirely sure if the Association thinks everyone else is stupid, or if everyone in the human kingdoms is actually that stupid.
+Morgan_Portrait (Silhouette): It could be both.
+Rice_Portrait (Normal): Should I deal with them?
+Morgan_Portrait (Silhouette): It's fine. The Association isn't a problem. I might use their extermination to train Mao once she's older.
+Morgan_Portrait (Silhouette): If you really can't stand them, you may take care of them on your vacation. I'll compensate you with some extra vacation days.
+Rice_Portrait (Normal): I'll think about it.
+Morgan_Portrait (Silhouette): Any other questions?
+Rice_Portrait (Normal): The timing of everything felt a bit suspicious.
+Morgan_Portrait (Silhouette): That wasn't me. At least, the only control I had over the timing was when I assigned the mission.
+Rice_Portrait (Normal): (That just makes it even more suspicious.)
+Morgan_Portrait (Silhouette): You know I'm hardly a mastermind. I'll give you my guess, if you'd like.
+Rice_Portrait (Normal): Please.
+Morgan_Portrait (Silhouette): The Association was most likely trying to make a Hero out of Oliver. Tragic backstory, a reason for vengeance, huge hidden potential, the works.
+Morgan_Portrait (Silhouette): It's quite possible the entire village was supposed to be wiped out. But, honestly, killing his entire family twice seems a little overboard.
+Rice_Portrait (Normal): This 'isn't a problem'?
+Morgan_Portrait (Silhouette): Not for us. And, now that the orcs joined us, not for them either.
+Morgan_Portrait (Silhouette): In the first place, the Association made a fundamental misunderstanding about the dichotomy of quality and quantity.
+Morgan_Portrait (Silhouette): Even if they managed to pile up 'coincidence' after 'coincidence' to make an invincible hero, Oliver would still get manhandled by one of our Magic Officer trainees.
+Morgan_Portrait (Silhouette): It's a little similar to the olden days of magical research. Reclusive wizards everywhere thinking that somehow, someway, their individual investigations could outcompete the systematic efforts of a nation-state.
+Rice_Portrait (Normal): I believe there are quite a few of those hermits left even now.
+Morgan_Portrait (Silhouette): Sure. And if they ever stepped out of their little hideaways they might even wonder why they're so much worse at magecraft than a first year Albion Academy student.
+[history]
+[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+leave --All-- [animation="Instant In Or Out"]
+[wait time="1.0" hide_text="false"]
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="resume"]
+update Mao (Normal)
+Mao_Portrait (Normal): Come to think of it. 'Lance' and 'Wisdom' meant they were the Hero of the Lance and the Hero of Wisdom, right?
+Rice_Portrait (Normal): Correct. Although 'Lance' would usually be called the Lance Hero instead.
+update Mao (Excited)
+Mao_Portrait (Excited): Doesn't that mean you're the Hero of Justice?
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Kyaa! Can I get an autograph?
+Rice_Portrait (Normal): I'm not.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Huh?
+Rice_Portrait (Normal): Being the Hero of Wisdom means that she has Hero (Wisdom) as one of her classes. And Hero (Lance) for 'Lance.'
+update Mao (Normal)
+Rice_Portrait (Normal): Hero (Justice) isn't one of my classes.
+Rice_Portrait (Normal): In my case it's a simple nickname, the kind you'd give a soldier during a war.
+update Mao (Excited)
+Mao_Portrait (Excited): But the fact you're called 'Justice' meant you acted like a hero, right?
+Rice_Portrait (Normal): That would depend on your point of view. Personally, I don't think so.
+update Mao (Normal)
+Mao_Portrait (Normal): I think you're great!
+Rice_Portrait (Normal): I don't believe you have enough information to make a meaningful judgement.
+update Mao (Angry)
+Mao_Portrait (Angry): Jeez. There you go again with the fake 'I'm totally a bad guy' vibes again.
+# TODO, logic for finishing mission
+[signal arg="{"mission": {"next": ""}, "event_flags":{"black_forest_orcs": true}}"]
