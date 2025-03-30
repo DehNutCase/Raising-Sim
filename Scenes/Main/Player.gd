@@ -63,19 +63,20 @@ func _ready():
 	cubism_model.add_child(node)
 
 func _process(delta):
-	#TODO, enable live2d for PHONE mode under certain circumstances
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D and Player.live2d_active:
 		frame += 1
 		delta_sum += delta
 		if frame >= frames_to_skip:
 			cubism_model.advance(delta_sum)
-			if Engine.get_frames_per_second() > 50:
-				frames_to_skip = max(1, frames_to_skip - 1)
+			if Engine.get_frames_per_second() > 30:
+				frames_to_skip = max(0, frames_to_skip - 1)
 			elif Engine.get_frames_per_second() < 10:
 				frames_to_skip = min(20, frames_to_skip + 1)
-			if frames_to_skip > 19:
-				#Swap to video when framerate is low
-				Player.live2d_mode = Player.live2d_modes.VIDEO
+			##TODO, swap to video mode when live2d takes too much to run
+			#if frames_to_skip > 19:
+				##Swap to video when framerate is low
+				#Player.live2d_mode = Player.live2d_modes.VIDEO
+			#End swap to video mode
 			delta_sum = 0
 			frame = 0
 	else:
