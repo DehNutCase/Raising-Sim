@@ -10,9 +10,12 @@ config_version=5
 
 [application]
 
-config/name="WitchMaker"
-config/version="0.1.0"
+config/name="RaisingNiziiro"
+config/version="0.2.0"
 run/main_scene="res://Scenes/GameTemplate/Opening/Opening.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="SleepyCatSoftware/RaisingNiziiro"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(1, 1, 1, 1)

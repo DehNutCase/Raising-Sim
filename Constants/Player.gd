@@ -167,6 +167,8 @@ func load_game():
 			
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
+	#Remove old class change card as well when deleting.
+	DirAccess.remove_absolute("user://Saves/class_change_card.json")
 	#TODO, fix save issue if we return to main menu
 	#OS.set_restart_on_exit(true)
 	#get_tree().quit()
@@ -233,3 +235,25 @@ func load_class_change_card():
 			
 func delete_class_change_card():
 	DirAccess.remove_absolute("user://Saves/class_change_card.json")
+
+func load_demo():
+	var save_file
+	save_file = FileAccess.open("res://Constants/demo_save.json", FileAccess.READ)
+	if !save_file:
+		return
+	var json_string = save_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		printerr("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	var data = json.get_data()
+	
+	for variable in data:
+		if variable == "inventories" or variable in data.inventories:
+			continue
+		Player[variable] = data[variable]
+	
+	for inventory in data.inventories:
+		if !self[inventory].deserialize(data[inventory]):
+			printerr("failed to deserialize inventory during load_game")

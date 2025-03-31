@@ -54,7 +54,10 @@ func _ready():
 	#Game needs to be loaded here
 	self.hide()
 	if !Player.save_loaded:
-		Player.load_game()
+		if OS.has_feature("demo"):
+			Player.load_demo()
+		else:
+			Player.load_game()
 	Player.save_loaded = true
 	
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
