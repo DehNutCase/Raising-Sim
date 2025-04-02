@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=50 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://sjmioxscvkib" path="res://Art/Background/Background material shop/bg007a.bmp" id="5_iokpw"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="7_rlk5e"]
 [ext_resource type="Texture2D" uid="uid://j8ltyk1w2jib" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g930.png" id="8_g4iyq"]
 [ext_resource type="Texture2D" uid="uid://bcl5c2d53ihf6" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g937.png" id="9_c3tuy"]
 [ext_resource type="Texture2D" uid="uid://cgijk4jox1odn" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g958.png" id="10_q0jxe"]
@@ -30,6 +29,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="25_dofej"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
+[ext_resource type="Theme" uid="uid://cdv1vf76wghc8" path="res://Art/Themes/StatDisplayTheme.tres" id="27_j6jf7"]
 [ext_resource type="Texture2D" uid="uid://b1napua58pspf" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten2.png" id="27_wb2qf"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/PauseMenuController.gd" id="28_3ijv8"]
 [ext_resource type="PackedScene" uid="uid://kl6xb7t6fq50" path="res://Scenes/GameTemplate/Menus/PauseMenu.tscn" id="29_h0pyo"]
@@ -51,12 +51,6 @@ light_mode = 1
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
-
-[sub_resource type="LabelSettings" id="LabelSettings_icocv"]
-font = ExtResource("7_rlk5e")
-font_size = 28
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwgbm"]
 
@@ -87,6 +81,7 @@ theme = ExtResource("1_tshxl")
 script = ExtResource("1_bqq6y")
 
 [node name="FPS" type="Label" parent="."]
+visible = false
 texture_filter = 4
 layout_mode = 0
 offset_left = 1450.0
@@ -530,6 +525,7 @@ visible = false
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("27_j6jf7")
 bbcode_enabled = true
 
 [node name="SelectClassButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"]
@@ -553,7 +549,6 @@ clip_tabs = false
 script = ExtResource("22_gnm4m")
 
 [node name="Non-combat" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ClassChangeClassesContainer"]
-clip_contents = true
 layout_mode = 2
 
 [node name="Hybrid" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Class Change/ClassChangeClassesContainer"]
@@ -576,16 +571,16 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme = ExtResource("27_j6jf7")
 text = "StatLabel"
-label_settings = SubResource("LabelSettings_icocv")
 
 [node name="Stats2" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
 texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme = ExtResource("27_j6jf7")
 text = "StatLabel"
-label_settings = SubResource("LabelSettings_icocv")
 
 [node name="Mission" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
@@ -798,6 +793,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Wishlist"
+
+[node name="Demo" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Thanks for 
+playing"
 
 [node name="PauseMenuController" type="Node" parent="."]
 script = ExtResource("28_3ijv8")

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Main/count.gd" id="1_wv4gm"]
 [ext_resource type="Texture2D" uid="uid://bwhrcqexejtjj" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-2-5-5-2-8-0.png" id="2_4r2hb"]
 [ext_resource type="LabelSettings" uid="uid://ch6je8m00hvq8" path="res://Art/Fonts/StatLabelSettings.tres" id="2_syv24"]
-[ext_resource type="LabelSettings" uid="uid://do4j8mhc6qeqr" path="res://Art/Fonts/LabelSettings.tres" id="3_6mbsd"]
 [ext_resource type="LabelSettings" uid="uid://d23tjhw6qu4in" path="res://Art/Fonts/EmojiLabelSettings.tres" id="3_e43f5"]
+[ext_resource type="LabelSettings" uid="uid://c7g7wlpd08her" path="res://Art/Fonts/MainSceneStatRibbionLabels.tres" id="5_0os4f"]
 
 [node name="Count" type="MarginContainer" groups=["StatBars"]]
 custom_minimum_size = Vector2(200, 120)
@@ -64,6 +64,6 @@ offset_right = 100.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Str"
-label_settings = ExtResource("3_6mbsd")
+label_settings = ExtResource("5_0os4f")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -369,6 +369,9 @@ func _on_action(button):
 			else:
 				display_toast("Steam isn't running! Please wishlist 'Raising Niziiro: Albion's Witch' manually.","top")
 			menu_panel.visible = true
+		"Demo":
+			display_toast("Please check out the mission if you haven't already. The Demo is over.")
+			menu_panel.visible = true
 		_:
 			printerr("_on_action failed to match")
 			
@@ -460,6 +463,16 @@ func display_stats() -> void:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
 	else:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
+	if OS.has_feature("demo"):
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".hide()
+		#Hide ways to advance day after demo ends
+		if day > 2 * Constants.constants.days_in_month:
+			$"RightMenuContainer/MenuPanel/VBoxContainer/Work".hide()
+			$"RightMenuContainer/MenuPanel/VBoxContainer/Lessons".hide()
+			$"RightMenuContainer/MenuPanel/VBoxContainer/Rest".hide()
+			$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
+	else:
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".show()
 	
 func _on_dialogic_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)

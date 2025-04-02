@@ -196,7 +196,7 @@ directories/dtl_directory={
 "test": "res://Timelines/Testing/test.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres", "res://Timelines/Testing/test_style.tres"]
+layout/style_list=["res://Art/Dialogic/VisualNovelStyle.tres"]
 layout/default_style="res://Art/Dialogic/VisualNovelStyle.tres"
 variables={
 "StorageRoomWheelbarrel": false
@@ -243,6 +243,7 @@ inspector_control_height=200
 
 [gui]
 
+theme/custom_font="res://Art/Fonts/PenLicence-Regular.ttf"
 theme/default_font_generate_mipmaps=true
 timers/tooltip_delay_sec=0.2
 
