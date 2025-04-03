@@ -465,6 +465,8 @@ func display_stats() -> void:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
 	if OS.has_feature("demo"):
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".hide()
+		#TODO, unhide this for later demo
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Tower".hide()
 		#Hide ways to advance day after demo ends
 		if day > 2 * Constants.constants.days_in_month:
 			$"RightMenuContainer/MenuPanel/VBoxContainer/Work".hide()

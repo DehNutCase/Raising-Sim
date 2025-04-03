@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://edacdrgb5qkd"]
+
+[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_88jr6"]
+
+[resource]
+font = ExtResource("1_88jr6")
+font_size = 40
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
