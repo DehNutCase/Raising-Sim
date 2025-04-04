@@ -34,7 +34,7 @@ Oliver_Portrait (Angry): Mighty Oliver not amused, will now deliver punishment.
 update Mao (EyesClosed)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 3 [ move_time="0.5"]
 Rice_Portrait (Normal): (Shouldn't you guys be stopping this?)
@@ -44,7 +44,7 @@ update Mao (EyesClosed) [animation="Tada" length="1"]
 update Mao (EyesClosed) 2 [ move_time="0.5"]
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
 Orc_Portrait (Normal): (Bwahaha. Want to bet on who wins?)
@@ -53,7 +53,7 @@ Rice_Portrait (Normal): (We're from the capital.)
 Orc_Portrait (Frown): (Ah. No bet. Do you know any healing spells?)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
 Rice_Portrait (Normal): (As a tertiary, but I'm quite high leveled. I'll heal him for free afterwards.)

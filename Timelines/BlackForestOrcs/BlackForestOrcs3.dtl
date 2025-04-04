@@ -49,14 +49,14 @@ Mao_Portrait (Normal): A fight?
 update Elizabeth (Frown)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Mao_Portrait (Normal): Hey, isn't that orc a little small? I thought orcs were supposed to big and green and super muscular.
 update Elizabeth (Sigh)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Rice_Portrait (Normal): That's because he's a goblin.
@@ -70,7 +70,7 @@ Mao_Portrait (Normal): Like how a rice ball Dumpling evolves into a curry Dumpli
 update Elizabeth (Frown)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Rice_Portrait (Normal): That's not how any of that works.
@@ -90,7 +90,7 @@ update Elizabeth (Sigh)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
 update Mao (Normal)
-[wait time="1.0" hide_text="false"]
+[wait time="1.1" hide_text="false"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Oliver_Portrait (Cry): Oliver isn't running! You're running!

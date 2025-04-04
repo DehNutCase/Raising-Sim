@@ -41,6 +41,7 @@ update Mao (Sad)
 Rice_Portrait (Normal): The second half was my personal interpretation. I believe her majesty would have no qualms teaching Oliver, citizen of Albion or not.
 Rice_Portrait (Normal): You can call me small-minded if you'd like.
 Mao_Portrait (Sad): I'm not going to do that. It's just. Uguu.
+update Mao [animation="Tada" length="1"]
 update Mao (Angry)
 Mao_Portrait (Angry): Why is everything so complicated!
 update Mao (Normal)
