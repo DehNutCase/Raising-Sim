@@ -624,6 +624,95 @@ const lessons = {
 	},
 }
 
+const courses = {
+	"Core": {
+		#TODO, required every semester
+		#TODO, redo this section so that required stats is cumulative rather than chance
+		'General Education': {
+			'stats': {
+				'experience': 100,
+				'scholarship': 50,
+				'stress': 10,
+			},
+			#Scale so that it takes 10 days at 0 scholarship
+			'required_stats': {
+				'scholarship': 1000,
+			},
+			'difficulty': -50,
+			'proficiency': 100,
+			'proficiency_gain': 25,
+			#TODO, rework diligent student (and other studying skills) to increase max scholarship
+			'skill':{
+				'proficiency_required': 100,
+				'id': 'diligent_student',
+			},
+		},
+		'Basics of Magecraft': {
+			'stats': {
+				'experience': 50,
+				'magic': 2,
+				'max_mp': 2,
+				'scholarship': 2,
+				'resistance': 1,
+				'stress': 5,
+			},
+			'required_stats': {
+				'scholarship': 1000,
+			},
+			'difficulty': 0,
+			'proficiency': 100,
+			'proficiency_gain': 25,
+			'skill':{
+				'proficiency_required': 100,
+				'id': 'basic_magic_training',
+			},
+		},
+		'Physical Education': {
+			'stats': {
+				'experience': 50,
+				'strength': 2,
+				'max_hp': 2,
+				'scholarship': 2,
+				'defense': 1,
+				'stress': 5,
+			},
+			'required_stats': {
+				'scholarship': 1000,
+			},
+			'difficulty': 0,
+			'proficiency': 100,
+			'proficiency_gain': 25,
+			#TODO, implement new skill for PE
+			'skill':{
+			},
+		},
+	},
+	"Ink Mage": {
+		
+	},
+	"Magic Officer": {
+		
+	},
+	"Diplomat": {
+		
+	},
+	"Maid": {
+		
+	},
+	"Chef": {
+		
+	},
+	"Acolyte": {
+		
+	},
+	"Extra": {
+		#TODO, make sure always available, maybe bonus point to course
+	},
+	"Witch": {
+		#TODO, only display this course if flag is set
+	},
+}
+
 const rests = {
 	'Free Time': {
 	'stats': {

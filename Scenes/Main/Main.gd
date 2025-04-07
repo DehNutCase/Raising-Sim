@@ -138,7 +138,8 @@ func process_day():
 				"daily":
 					item_deletion_queue.append(item)
 				"monthly":
-					if day % Constants.constants.days_in_month == 0:
+					#Off by one error if equal to 0
+					if day % Constants.constants.days_in_month == 1:
 						item_deletion_queue.append(item)
 				_:
 					printerr("expiration process_day failed to match")
