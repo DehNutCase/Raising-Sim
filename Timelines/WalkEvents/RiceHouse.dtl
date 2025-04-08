@@ -70,7 +70,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	update Mao (Excited)
 	Mao_Portrait (Excited): Wow! Does that mean you're someone amazing?
 	Rice_Portrait (Normal): For entirely unrelated reasons.
-	[signal arg="{"stats": {"scholarship": 10}}"]
+	[signal arg="{"stats": {"scholarship": 2}}"]
 - I'm trying to climb the tower.
 	if Player.tower_level == 10:
 		# TODO, add check for defeat at stage 14
@@ -107,7 +107,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Mao_Portrait (Angry): I remember the equations being stupid hard.
 		Rice_Portrait (Normal): The standard units for stats other than Hit Points and Mana aren't linear, so it can't be helped.
 		update Mao (Normal)
-		[signal arg="{"stats": {"scholarship": 20}}"]
+		[signal arg="{"stats": {"scholarship": 4}}"]
 	elif Player.tower_level  >  7:
 		Rice_Portrait (Normal): Do you really need help? You seem to be doing well so far.
 		update Mao (Normal)
@@ -124,7 +124,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): (I'll ask her majesty later.)
 		Rice_Portrait (Normal): If you haven't already, taking some Artillerist classes will teach you Meteor, which is quite useful for wiping out a large group at once.
 		update Mao (Normal)
-		[signal arg="{"stats": {"scholarship": 15}}"]
+		[signal arg="{"stats": {"scholarship": 3}}"]
 	else:
 		Rice_Portrait (Normal): Don't.
 		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out of it.
@@ -136,7 +136,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): I see...
 		update Mao (Normal)
 		Rice_Portrait (Normal): Well, I won't stop you, but I don't have any advice for now.
-		[signal arg="{"stats": {"scholarship": 10}}"]
+		[signal arg="{"stats": {"scholarship": 2}}"]
 update Mao (Normal)
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="1.0" transition="Swipe Left To Right"]
 Rice_Portrait (Normal): I still think it's a waste of time to come here.

@@ -63,7 +63,7 @@ const jobs = {
 			'experience': 25,
 			'gold': 100,
 			'max_mp': 1,
-			'scholarship': 5,
+			'scholarship': 1,
 			'stress': 6,
 		},
 		'required_stats': {
@@ -234,7 +234,7 @@ const jobs = {
 			'gold': 150,
 			'magic': 1,
 			'max_mp': 1,
-			'scholarship': 10,
+			'scholarship': 2,
 			'stress': 15,
 		},
 		'required_stats': {
@@ -252,7 +252,7 @@ const jobs = {
 			'gold': 250,
 			'magic': 1,
 			'max_mp': 1,
-			'scholarship': 5,
+			'scholarship': 3,
 			'art': 1,
 			'stress': 20,
 		},
@@ -271,7 +271,7 @@ const jobs = {
 			'experience': 50,
 			'gold': 250,
 			'art': 10,
-			'scholarship': 10,
+			'scholarship': 2,
 			'magic': 1,
 			'max_mp': 1,
 			'stress': 15,
@@ -631,7 +631,7 @@ const courses = {
 		'General Education': {
 			'stats': {
 				'experience': 100,
-				'scholarship': 50,
+				'scholarship': 10,
 				'stress': 10,
 			},
 			#Scale so that it takes 10 days at 0 scholarship
@@ -662,9 +662,8 @@ const courses = {
 			'difficulty': 0,
 			'proficiency': 100,
 			'proficiency_gain': 25,
+			#TODO,  implement skill for magic training
 			'skill':{
-				'proficiency_required': 100,
-				'id': 'basic_magic_training',
 			},
 		},
 		'Physical Education': {
@@ -672,7 +671,7 @@ const courses = {
 				'experience': 50,
 				'strength': 2,
 				'max_hp': 2,
-				'scholarship': 2,
+				'scholarship': 1,
 				'defense': 1,
 				'stress': 5,
 			},

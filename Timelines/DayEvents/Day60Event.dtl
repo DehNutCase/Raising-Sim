@@ -14,7 +14,7 @@ if Player.calculate_ending()[0] < 500:
 	Morgan_Portrait (Laugh): Fufufu.
 	update Morgan (Grin)
 	Morgan_Portrait (Grin): In its own way, this is quite the accomplishment. A reward is in order.
-	[signal arg="{"stats": {"stress": -20, "scholarship": 100, "gold": 25000,}}"]
+	[signal arg="{"stats": {"stress": -20, "scholarship": 10, "gold": 25000,}}"]
 	jump Choice
 elif Player.calculate_ending()[0] < 1000:
 	update Morgan (Grin)

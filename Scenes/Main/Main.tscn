@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=52 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
+[ext_resource type="Theme" uid="uid://uh5vgu7oy4un" path="res://Art/Themes/MenuPanelTheme.tres" id="1_ymn02"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Texture2D" uid="uid://sjmioxscvkib" path="res://Art/Background/Background material shop/bg007a.bmp" id="5_iokpw"]
@@ -26,6 +27,7 @@
 [ext_resource type="Theme" uid="uid://ba5dcdbdgkdgu" path="res://Art/Themes/BorderlessTextTheme.tres" id="22_1jgxs"]
 [ext_resource type="Script" path="res://Scenes/Main/ClassChangeClassesContainer.gd" id="22_gnm4m"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
+[ext_resource type="Script" path="res://Scenes/Main/Courses.gd" id="23_kxw1b"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="25_dofej"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
@@ -456,7 +458,7 @@ offset_right = 550.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_tshxl")
+theme = ExtResource("1_ymn02")
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel"]
 layout_mode = 2
@@ -472,6 +474,19 @@ script = ExtResource("12_ktm7g")
 [node name="Lessons" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("12_sb63u")
+
+[node name="LessonsRework" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Courses" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/LessonsRework"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+script = ExtResource("23_kxw1b")
+
+[node name="CourseSchedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/LessonsRework"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Work" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false

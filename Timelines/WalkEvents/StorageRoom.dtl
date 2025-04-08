@@ -31,7 +31,7 @@ label Choice
 	Mao_Portrait (Normal): (I wonder if any of these move.)
 	update Mao (Surprised)
 	Mao_Portrait (Surprised): (Ah, I should probably ask a maid before trying to make these move. I'll do that later.)
-	[signal arg="{"stats": {"scholarship": 10, "art": 5,}}"]
+	[signal arg="{"stats": {"scholarship": 2, "art": 5,}}"]
 - Check out the music sheets
 	update Mao (Sad)
 	Mao_Portrait (Sad): (Why am I looking at these? I don't know how to read sheet music.)

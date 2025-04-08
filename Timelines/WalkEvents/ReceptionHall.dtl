@@ -35,7 +35,7 @@ Mao_Portrait (Blush): Haha, sorry.
 	update Mao (Angry)
 	Mao_Portrait (Angry): Aren't you just too lazy to bother?
 	Morgan_Portrait (Silhouette): Fufufu.
-	[signal arg="{"stats": {"scholarship": 10}}"]
+	[signal arg="{"stats": {"scholarship": 2}}"]
 - How have you been?
 	update Mao (Normal)
 	Morgan_Portrait (Silhouette): Oh, are you trying to kiss up to me?

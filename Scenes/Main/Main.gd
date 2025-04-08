@@ -528,7 +528,7 @@ func _on_timeline_ended() -> void:
 	_on_close_button_pressed()
 	
 func _on_inventory_item_added(item):
-	#Note: Do not apply scholarhsip bonus to items
+	#Note: Do not apply scholarship bonus to items
 	var toast = "Obtained " + item.get_property("name", "")
 	display_toast(toast, "bottom", "center")
 	for stat in item.get_property("stats", {}):

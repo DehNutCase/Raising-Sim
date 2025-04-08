@@ -68,7 +68,7 @@ Morgan_Portrait (Grin): Do you have any other questions?
 		Mao_Portrait (Blush): Sorry.
 		update Morgan (Laugh)
 		Morgan_Portrait (Laugh): Part of freedom is discovering the so called wrong choices. By all means, do as you please.
-		[signal arg="{"stats": {"stress": -20, "scholarship": 100,}}"]
+		[signal arg="{"stats": {"stress": -20, "scholarship": 10,}}"]
 		jump Choice
 		# Nested ifs cause issues down the line without using jumps
 	elif Player.calculate_ending()[0] < 1000:

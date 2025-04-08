@@ -8,4 +8,4 @@ Mao_Portrait (Normal): Then do you have any tips for me?
 Hiyori_Portrait (Normal): Of course! Since this is your first visit here, I'll start with something basic. Did you know Scholarship📖 increases how fast your stats go up?
 Hiyori_Portrait (Normal): The fastest way to increase Scholarship is the General Education class, but you can also try working as a tutor.
 Hiyori_Portrait (Smile): That's all for this time's consultation, we hope to see you again.
-[signal arg="{"stats": {"scholarship": 10}}"]
+[signal arg="{"stats": {"scholarship": 5}}"]
