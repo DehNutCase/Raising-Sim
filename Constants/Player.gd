@@ -1,7 +1,7 @@
 extends Character
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "course_list", "course_progress"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "course_list", "course_progress"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -29,6 +29,8 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var combat_items = []
 @export var class_change_class:String = ""
 @export var active_mission = {}
+@export var max_stats = {}
+@export var min_stats = {}
 
 @export var course_list = []
 @export var course_progress = {}
@@ -261,3 +263,26 @@ func load_demo():
 	for inventory in data.inventories:
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
+
+##Return max stat which is int
+func calculate_max_stat(stat_name:String):
+	if "max" in Constants.stats[stat_name]:
+		var max = Constants.stats[stat_name].max
+		if stat_name in Player.max_stats:
+			max += Player.max_stats[stat_name]
+		else:
+			Player.max_stats[stat_name] = 0
+		return max
+	else:
+		printerr("tried to find max_stat of a stat without max")
+		
+func calculate_min_stat(stat_name:String):
+	if "min" in Constants.stats[stat_name]:
+		var min = Constants.stats[stat_name].min
+		if stat_name in Player.min_stats:
+			min += Player.min_stats[stat_name]
+		else:
+			Player.min_stats[stat_name] = 0
+		return min
+	else:
+		printerr("tried to find min_stat of a stat without min")

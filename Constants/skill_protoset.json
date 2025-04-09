@@ -32,12 +32,13 @@
 		"stats": "{}"
 	},
 	"diligent_student":{
-		"daily_stats": "{\n\"experience\": 1,\n\"scholarship\": 5\n}",
+		"daily_stats": "{\n\"experience\": 1,\n\"scholarship\": 1\n}",
 		"description": "A diligent student who studies every day.",
 		"image": "",
 		"monthly_stats": "{\n\"experience\": 100\n}",
 		"name": "Diligent Student",
-		"stats": "{}"
+		"stats": "{}",
+		"max_stats": "{\"scholarship\": 100,}",
 	},
 	"apprentice_mason":{
 		"daily_stats": "{\n\"experience\": 2\n}",

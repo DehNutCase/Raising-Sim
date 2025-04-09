@@ -74,6 +74,7 @@ const jobs = {
 		'difficulty': 0,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		#Note, skill is shared with general education
 		'skill':{
 			'proficiency_required': 100,
 			'id': 'diligent_student',
@@ -635,12 +636,7 @@ const courses = {
 				'stress': 10,
 			},
 			#Scale so that it takes 10 days at 0 scholarship
-			'required_stats': {
-				'scholarship': 1000,
-			},
-			'difficulty': -50,
-			'proficiency': 100,
-			'proficiency_gain': 25,
+			'required_progress': 10000,
 			#TODO, rework diligent student (and other studying skills) to increase max scholarship
 			'skill':{
 				'proficiency_required': 100,
@@ -656,12 +652,7 @@ const courses = {
 				'resistance': 1,
 				'stress': 5,
 			},
-			'required_stats': {
-				'scholarship': 1000,
-			},
-			'difficulty': 0,
-			'proficiency': 100,
-			'proficiency_gain': 25,
+			'required_progress': 10000,
 			#TODO,  implement skill for magic training
 			'skill':{
 			},
@@ -675,12 +666,7 @@ const courses = {
 				'defense': 1,
 				'stress': 5,
 			},
-			'required_stats': {
-				'scholarship': 1000,
-			},
-			'difficulty': 0,
-			'proficiency': 100,
-			'proficiency_gain': 25,
+			'required_progress': 10000,
 			#TODO, implement new skill for PE
 			'skill':{
 			},

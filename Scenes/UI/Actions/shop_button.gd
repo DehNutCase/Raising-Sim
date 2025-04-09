@@ -32,6 +32,24 @@ func update_labels():
 				tooltip += "+"
 			tooltip += str(daily_stats[stat]) + " " + Constants.stats[stat].label
 	
+	var max_stats:Dictionary = item.get_property("max_stats", {})
+	if (!max_stats.keys().is_empty()):
+		tooltip += "\nMax Stats:"
+		for stat in max_stats.keys():
+			tooltip += " "
+			if (max_stats[stat] > 0):
+				tooltip += "+"
+			tooltip += str(max_stats[stat]) + " " + Constants.stats[stat].label
+	
+	var min_stats:Dictionary = item.get_property("min_stats", {})
+	if (!min_stats.keys().is_empty()):
+		tooltip += "\nMin Stats:"
+		for stat in min_stats.keys():
+			tooltip += " "
+			if (min_stats[stat] > 0):
+				tooltip += "+"
+			tooltip += str(min_stats[stat]) + " " + Constants.stats[stat].label
+	
 	var stats:Dictionary = item.get_property("stats", {})
 	if (!stats.keys().is_empty()):
 		tooltip += "\nStats:"

@@ -480,7 +480,7 @@ script = ExtResource("12_sb63u")
 
 [node name="Lessons" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
-custom_minimum_size = Vector2(1400, 700)
+custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Lessons"]
@@ -503,6 +503,21 @@ size_flags_horizontal = 3
 theme = ExtResource("25_ntj3d")
 script = ExtResource("25_ge7ht")
 
+[node name="CramSchoolButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -39.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Attend Cram School"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Lessons"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -520,12 +535,6 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme = ExtResource("27_j6jf7")
 script = ExtResource("27_u6iqd")
-
-[node name="CramSchoolButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "Attend Cram School"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2"]
 layout_mode = 2

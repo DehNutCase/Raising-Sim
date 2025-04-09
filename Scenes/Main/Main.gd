@@ -159,10 +159,10 @@ func process_day():
 		if !stat in Constants.stats:
 			printerr(stat + " isn't in Constants.stats")
 			continue
-		if "min" in Constants.stats[stat] && Player.stats[stat] < Constants.stats[stat]["min"]:
-			Player.stats[stat] = Constants.stats[stat]["min"]
-		if "max" in Constants.stats[stat] && Player.stats[stat] > Constants.stats[stat]["max"]:
-			Player.stats[stat] = Constants.stats[stat]["max"]
+		if "min" in Constants.stats[stat] && Player.stats[stat] < Player.calculate_min_stat(stat):
+			Player.stats[stat] = Player.calculate_min_stat(stat)
+		if "max" in Constants.stats[stat] && Player.stats[stat] > Player.calculate_max_stat(stat):
+			Player.stats[stat] = Player.calculate_max_stat(stat)
 	
 	display_stats()
 	day_label.display_day(day)
@@ -544,6 +544,18 @@ func _on_inventory_item_added(item):
 	display_toast(toast, "bottom", "center")
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
+		
+	for stat in item.get_property("max_stats", {}):
+		if Player.max_stats.get(stat):
+			Player.max_stats[stat] += item.get_property("max_stats")[stat]
+		else:
+			Player.max_stats[stat] = item.get_property("max_stats")[stat]
+	
+	for stat in item.get_property("min_stats", {}):
+		if Player.min_stats.get(stat):
+			Player.min_stats[stat] += item.get_property("min_stats")[stat]
+		else:
+			Player.min_stats[stat] = item.get_property("min_stats")[stat]
 	
 	for flag in item.get_property("flags", {}):
 		var value = item.get_property("flags")[flag]
