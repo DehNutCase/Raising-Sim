@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://0yntxwkhwndv"]
+
+[resource]
+ItemList/constants/h_separation = 10
+ItemList/font_sizes/font_size = 32

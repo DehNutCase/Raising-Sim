@@ -22,6 +22,9 @@ extends Control
 @onready var mission = $"Ui/MenuPanel/MarginContainer/Mission"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 
+#TODO, implement course scheduling
+@onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
+
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
 @onready var buttons2 = $RightMenuContainer/MenuPanel/VBoxContainer
 @onready var skip_checkbox = $Ui/MenuPanel/Skip
@@ -83,6 +86,11 @@ func _ready():
 		for inventory_name in Player.inventories:
 			for starting_item in Player.starting_items[inventory_name]:
 				Player[inventory_name].create_and_add_item(starting_item)
+				
+		var course_list = []
+		for course in Constants.courses.Core:
+			course_list.append({"course_name": "Core", "lesson_name": course})
+		Player.course_list = course_list
 		process_day()
 		
 	
@@ -219,6 +227,9 @@ func do_lesson(lesson_name: String) :
 		animation.animation.play("Sleep")
 	lessons.hide()
 	process_day()
+
+func course_button_click(course_name:String, lesson_name:String):
+	course_schedule.add_course(course_name, lesson_name)
 
 func do_rest(rest_name: String) -> void:
 	var rest_stats = Constants.rests[rest_name]["stats"]

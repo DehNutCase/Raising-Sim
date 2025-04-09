@@ -19,6 +19,7 @@ func update_buttons():
 		var button = load("res://Scenes/UI/Actions/course_button.tscn").instantiate()
 		add_child(button)
 		self.get_child(i).lesson_name = key
+		self.get_child(i).course_name = course
 		if "label" in courses[key]:
 			self.get_child(i).update_label(courses[key].label)
 		else:

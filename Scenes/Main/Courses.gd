@@ -5,7 +5,7 @@ func _ready():
 		#TODO, only add courses if flagged
 		if !Constants.courses.get(course):
 			return
-		var scene = load("res://Scenes/UI/Lessons/lessons_container.tscn").instantiate()
+		var scene = load("res://Scenes/UI/Lessons/course_container.tscn").instantiate()
 		scene.get_child(0).course = course
 		scene.name = course
 		add_child(scene)

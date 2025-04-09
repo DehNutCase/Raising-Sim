@@ -3,6 +3,7 @@ extends MarginContainer
 
 @onready var button_label = $Button/Label
 var lesson_name = ""
+var course_name = ""
 
 signal pressed
 
@@ -14,4 +15,4 @@ func update_label(text: String = button_label.text):
 	button_label.text = text
 	
 func _on_job_button_pressed():
-	get_tree().call_group("Main", "course_button_click", lesson_name)
+	get_tree().call_group("Main", "course_button_click", course_name, lesson_name)

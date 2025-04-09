@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=55 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -30,8 +30,11 @@
 [ext_resource type="Script" path="res://Scenes/Main/Courses.gd" id="23_kxw1b"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="25_dofej"]
+[ext_resource type="Script" path="res://Scenes/Main/CourseSchedule.gd" id="25_ge7ht"]
+[ext_resource type="Theme" uid="uid://0yntxwkhwndv" path="res://Art/Themes/CourseScheduleTheme.tres" id="25_ntj3d"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
 [ext_resource type="Theme" uid="uid://cdv1vf76wghc8" path="res://Art/Themes/StatDisplayTheme.tres" id="27_j6jf7"]
+[ext_resource type="Script" path="res://Scenes/Main/CourseDailyEffect.gd" id="27_u6iqd"]
 [ext_resource type="Texture2D" uid="uid://b1napua58pspf" path="res://Art/Kittens/Sleeping-Kittens-grey/grey-kitten2.png" id="27_wb2qf"]
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/PauseMenuController.gd" id="28_3ijv8"]
 [ext_resource type="PackedScene" uid="uid://kl6xb7t6fq50" path="res://Scenes/GameTemplate/Menus/PauseMenu.tscn" id="29_h0pyo"]
@@ -471,22 +474,69 @@ theme_override_constants/margin_right = 10
 visible = false
 script = ExtResource("12_ktm7g")
 
-[node name="Lessons" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
+[node name="LessonsOld" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
 script = ExtResource("12_sb63u")
 
-[node name="LessonsRework" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+[node name="Lessons" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(1400, 700)
 layout_mode = 2
 
-[node name="Courses" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/LessonsRework"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Lessons"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Courses" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("23_kxw1b")
+
+[node name="TabContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Course Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer" groups=["ButtonMenu"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("25_ntj3d")
+script = ExtResource("25_ge7ht")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Lessons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-script = ExtResource("23_kxw1b")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="CourseSchedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/LessonsRework"]
+[node name="CourseDailyEffect" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer" groups=["CourseDetails"]]
+layout_mode = 2
+theme = ExtResource("27_j6jf7")
+script = ExtResource("27_u6iqd")
+
+[node name="CramSchoolButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Attend Cram School"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CourseProgress" type="Label" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer2" groups=["CourseDetails"]]
+layout_mode = 2
 
 [node name="Work" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
@@ -513,6 +563,7 @@ theme = ExtResource("22_1jgxs")
 [node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Tower"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("27_j6jf7")
 
 [node name="EnterTowerButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Tower"]
 layout_mode = 2
@@ -532,7 +583,7 @@ clip_tabs = false
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("22_1jgxs")
+theme = ExtResource("27_j6jf7")
 bbcode_enabled = true
 
 [node name="Requirements" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer"]
@@ -766,17 +817,17 @@ layout_mode = 2
 offset_right = 140.0
 offset_bottom = 700.0
 
-[node name="Work" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Work"
-
 [node name="Lessons" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Lessons"
+
+[node name="Work" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Work"
 
 [node name="Rest" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
