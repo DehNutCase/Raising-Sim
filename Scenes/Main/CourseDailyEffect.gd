@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-func update_text(metadata: Variant):
+func display_stats(metadata: Variant):
 	#format metadata {"course_name": course_name, "lesson_name": lesson_name}
 	var course_name = metadata.course_name
 	var lesson_name = metadata.lesson_name

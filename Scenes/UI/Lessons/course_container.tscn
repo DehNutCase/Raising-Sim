@@ -5,7 +5,7 @@
 [node name="ScrollContainer" type="ScrollContainer"]
 horizontal_scroll_mode = 0
 
-[node name="CourseContainer" type="GridContainer" parent="."]
+[node name="CourseContainer" type="GridContainer" parent="." groups=["ButtonMenu"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

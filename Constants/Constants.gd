@@ -626,6 +626,7 @@ const lessons = {
 }
 
 const courses = {
+	#TODO, every class outside core should have gold cost
 	"Core": {
 		#TODO, required every semester
 		#TODO, redo this section so that required stats is cumulative rather than chance
@@ -639,7 +640,6 @@ const courses = {
 			'required_progress': 10000,
 			#TODO, rework diligent student (and other studying skills) to increase max scholarship
 			'skill':{
-				'proficiency_required': 100,
 				'id': 'diligent_student',
 			},
 		},
@@ -673,18 +673,118 @@ const courses = {
 		},
 	},
 	"Ink Mage": {
-		
+		'Color Theory (Magic)': {
+			'stats': {
+				'experience': 200,
+				'gold': -250,
+				'magic': 2,
+				'max_mp': 2,
+				'scholarship': 2,
+				'art': 10,
+				'stress': 5,
+			},
+			'required_progress': 20000,
+			'skill':{
+			},
+		},
+		'Line, Color, and Composition': {
+			'stats': {
+				'experience': 200,
+				'gold': -250,
+				'scholarship': 1,
+				'art': 25,
+				'stress': -5,
+			},
+			'required_progress': 20000,
+			'skill':{
+			},
+		},
+		'Imaging and Illustration': {
+			'stats': {
+				'experience': 200,
+				'gold': -250,
+				'scholarship': 1,
+				'art': 25,
+				'stress': -5,
+			},
+			'required_progress': 20000,
+			'skill':{
+			},
+		},
+		'Introduction to Illusion Magecraft': {
+			'stats': {
+				'experience': 200,
+				'magic': 5,
+				'max_mp': 2,
+				'scholarship': 2,
+				'resistance': 2,
+				'stress': 5,
+			},
+			'required_progress': 20000,
+			#TODO,  implement skill for magic training
+			'skill':{
+			},
+		},
 	},
-	"Magic Officer": {
-		
+	"Magic Officer (Trainee)": {
+		'Ley Line Logistics': {
+			'stats': {
+				'experience': 500,
+				'gold': -500,
+				'magic': 2,
+				'max_mp': 1,
+				'scholarship': 5,
+				'stress': 15,
+			},
+			'required_progress': 30000,
+			'skill':{
+			},
+		},
+		'Fundamentals of Small Unit Operations': {
+			'stats': {
+				'experience': 500,
+				'gold': -500,
+				'scholarship': 10,
+				'speed': 5,
+				'stress': 15,
+			},
+			'required_progress': 30000,
+			'skill':{
+			},
+		},
+		'Military Movement': {
+			'stats': {
+				'experience': 500,
+				'gold': -500,
+				'max_hp': 5,
+				'max_mp': 2,
+				'strength': 5,
+				'speed': 5,
+				'defense': 2,
+				'stress': 15,
+			},
+			'required_progress': 30000,
+			'skill':{
+			},
+		},
+		'Fundamentals of Fitness (Magic)': {
+			'stats': {
+				'experience': 500,
+				'gold': -500,
+				'max_hp': 2,
+				'max_mp': 5,
+				'strength': 2,
+				'speed': 5,
+				'defense': 2,
+				'resistance': 3,
+				'stress': 15,
+			},
+			'required_progress': 30000,
+			'skill':{
+			},
+		},
 	},
 	"Diplomat": {
-		
-	},
-	"Maid": {
-		
-	},
-	"Chef": {
 		
 	},
 	"Acolyte": {
@@ -692,6 +792,19 @@ const courses = {
 	},
 	"Extra": {
 		#TODO, make sure always available, maybe bonus point to course
+		'Artillerist Training (Magical)': {
+			'stats': {
+					'experience': 200,
+					'gold': -500,
+					'magic': 20,
+					'max_mp': 5,
+					'stress': 25,
+			},
+			'required_progress': 30000,
+			'skill':{
+				'id': 'meteor'
+			},
+		},
 	},
 	"Witch": {
 		#TODO, only display this course if flag is set
@@ -848,6 +961,7 @@ const constants = {
 	'days_in_month' = 30,
 	'months_in_year' = 4,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
+	'BASE_COURSE_PROGRESS' = 1000,
 }
 
 const locations = {

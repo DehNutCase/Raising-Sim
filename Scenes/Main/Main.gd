@@ -76,7 +76,6 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))
 	for button in buttons2.get_children():
 		button.pressed.connect(_on_action.bind(button))
-	get_tree().call_group("ButtonMenu", "update_buttons")
 	get_tree().call_group("MuteButton", "_update")
 	display_stats()
 	day_label.display_day(day)
@@ -154,7 +153,10 @@ func process_day():
 	
 	for item in item_deletion_queue:
 		inventory.inventory.remove_item(item)
-		
+	
+	#TODO, flesh out daily coursework a bit more
+	daily_course()
+	
 	for stat in Player.stats:
 		if !stat in Constants.stats:
 			printerr(stat + " isn't in Constants.stats")
@@ -170,7 +172,6 @@ func process_day():
 		_on_close_button_pressed()
 	update_expressions()
 	check_and_play_daily_events()
-	get_tree().call_group("ButtonMenu", "update_buttons")
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 
@@ -228,6 +229,59 @@ func do_lesson(lesson_name: String) :
 	lessons.hide()
 	process_day()
 
+func daily_course():
+	await(get_tree().create_timer(.5).timeout)
+	display_toast("Mao went to class!", "top")
+	await(get_tree().create_timer(.5).timeout)
+	if Player.course_list:
+		var course_name = Player.course_list[0].course_name
+		var lesson_name = Player.course_list[0].lesson_name
+		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
+		process_course_progress()
+		process_stats(course_daily_stats) 
+	else:
+		display_toast("But she doesn't have any classes to take.", "top")
+		await(get_tree().create_timer(.5).timeout)
+		process_stats({"stress": -10})
+		
+func do_cram_school():
+	#TODO, close menu like other do functions
+	#TODO, process course progress should disable completed course buttons
+	if Player.course_list:
+		var course_name = Player.course_list[0].course_name
+		var lesson_name = Player.course_list[0].lesson_name
+		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
+		
+		var cost = 0
+		if "gold" in course_daily_stats: cost = -course_daily_stats.gold
+		if (cost > Player.stats["gold"]):
+			display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
+			return
+		
+		display_toast("Mao went to cram school.", "top")
+		await(get_tree().create_timer(.5).timeout)
+		process_course_progress()
+		process_stats(course_daily_stats)
+		process_day()
+	else:
+		display_toast("Mao doesn't have any classes scheduled.", "top")
+
+func process_course_progress():
+	var lesson_name = Player.course_list[0].lesson_name
+	var course_name = Player.course_list[0].course_name
+	
+	if lesson_name in Player.course_progress:
+		Player.course_progress[lesson_name] += Constants.constants.BASE_COURSE_PROGRESS + Player.stats.scholarship
+	else:
+		Player.course_progress[lesson_name] = Constants.constants.BASE_COURSE_PROGRESS + Player.stats.scholarship
+	if Player.course_progress[lesson_name] >= Constants.courses[course_name][lesson_name].required_progress:
+		Player.courses_completed[lesson_name] = true
+		Player.course_list.pop_front()
+		if Constants.courses[course_name][lesson_name].get("skill"):
+			var skill = Constants.courses[course_name][lesson_name].skill.id
+			if (!Player.skill_inventory.get_item_with_prototype_id(skill)):
+				Player.skill_inventory.create_and_add_item(skill)
+			
 func course_button_click(course_name:String, lesson_name:String):
 	course_schedule.add_course(course_name, lesson_name)
 
@@ -460,6 +514,7 @@ func process_stats(stats):
 func display_stats() -> void:
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
+	get_tree().call_group("ButtonMenu", "update_buttons")
 	get_tree().call_group("Job_Button", "update_difficulty_color")
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")
 	#Update Menu Button displays

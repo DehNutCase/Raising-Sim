@@ -9,8 +9,13 @@ func add_course(course_name:String, lesson_name:String):
 	#Moves course to front if already in list
 	for i in range(item_count):
 		if lesson_name == get_item_text(i):
-			move_item(i, 0)
-			get_tree().call_group("CourseDetails", "update_text", get_item_metadata(0))
+			#remove course if it's already in the front
+			if i == 0:
+				remove_item(0)
+			else:
+				move_item(i, 0)
+			if item_count:
+				get_tree().call_group("CourseDetails", "display_stats", get_item_metadata(0))
 			var list = []
 			for j in range(item_count):
 				list.append(get_item_metadata(j))
@@ -20,7 +25,7 @@ func add_course(course_name:String, lesson_name:String):
 	add_item(lesson_name)
 	set_item_metadata(item_count-1, {"course_name": course_name, "lesson_name": lesson_name})
 	move_item(item_count-1, 0)
-	get_tree().call_group("CourseDetails", "update_text", get_item_metadata(0))
+	get_tree().call_group("CourseDetails", "display_stats", get_item_metadata(0))
 	var list = []
 	for j in range(item_count):
 		list.append(get_item_metadata(j))
@@ -33,7 +38,10 @@ func display_courses():
 		add_item(course.lesson_name)
 		set_item_metadata(item_count-1, course)
 	if item_count:
-		get_tree().call_group("CourseDetails", "update_text", get_item_metadata(0))
+		get_tree().call_group("CourseDetails", "display_stats", get_item_metadata(0))
 
 func update_buttons():
+	display_courses()
+
+func display_stats():
 	display_courses()
