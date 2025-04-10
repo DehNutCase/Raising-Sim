@@ -4,18 +4,18 @@
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="2_q0tes"]
 
 [node name="Margin" type="MarginContainer" groups=["Job_Button"]]
-offset_right = 423.0
-offset_bottom = 226.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+custom_minimum_size = Vector2(211, 113)
+offset_right = 44.0
+offset_bottom = 44.0
+theme = ExtResource("2_q0tes")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 script = ExtResource("1_1e4lv")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
-theme = ExtResource("2_q0tes")
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1

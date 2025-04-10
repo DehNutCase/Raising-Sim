@@ -792,15 +792,32 @@ const courses = {
 	},
 	"Extra": {
 		#TODO, make sure always available, maybe bonus point to course
-		'Artillerist Training (Magical)': {
+		'Basic Combat Magic (Fireball)': {
+			'stats': {
+				'experience': 100,
+				'gold': -250,
+				'magic': 5,
+				'max_mp': 5,
+				'scholarship': 2,
+				'speed': 2,
+				'resistance': 2,
+				'stress': 15,
+			},
+			'required_progress': 30000,
+			'skill':{
+				'id': 'fireball',
+			},
+		},
+		'Artillerist Training (Meteor)': {
 			'stats': {
 					'experience': 200,
 					'gold': -500,
 					'magic': 20,
 					'max_mp': 5,
+					'scholarship': 2,
 					'stress': 25,
 			},
-			'required_progress': 30000,
+			'required_progress': 50000,
 			'skill':{
 				'id': 'meteor'
 			},
