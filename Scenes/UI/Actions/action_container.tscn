@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmy0lpywq1djb"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Actions/ActionContainer.gd" id="1_t32le"]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+horizontal_scroll_mode = 0
+
+[node name="ActionContainer" type="GridContainer" parent="." groups=["ButtonMenu"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+script = ExtResource("1_t32le")

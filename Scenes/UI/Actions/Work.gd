@@ -12,9 +12,6 @@ func update_buttons():
 		remove_child(node)
 		node.queue_free()
 	for key in jobs.keys():
-		#Don't display jobs that aren't unlocked yet
-		if "job_flag" in jobs[key] and !(jobs[key].job_flag in Player.job_flags):
-			continue
 		var button = load("res://Scenes/UI/Actions/job_button.tscn").instantiate()
 		add_child(button)
 		self.get_child(i).position = Vector2( i%5 * 200, 100 * (i/5) )

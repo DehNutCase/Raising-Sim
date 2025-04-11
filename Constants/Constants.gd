@@ -979,6 +979,24 @@ const constants = {
 	'months_in_year' = 4,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
 	'BASE_COURSE_PROGRESS' = 1000,
+	'ACTION_TYPES' = {
+		'jobs': {
+			'label': 'Work',
+			'id': 'jobs',
+			'button': 'res://Scenes/UI/Actions/job_button.tscn',
+		},
+		'rests': {
+			'label': 'Rest',
+			'id': 'rests',
+			'button': 'res://Scenes/UI/Actions/rest_button.tscn',
+		},
+		'other': {
+			'label': 'Other',
+			'id': 'other',
+			#TODO, integrate other actions here (enter tower, cram school, etc.)
+			'actions': {},
+		}
+	}
 }
 
 const locations = {
