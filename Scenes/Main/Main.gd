@@ -174,7 +174,35 @@ func process_day():
 	check_and_play_daily_events()
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
-
+		
+func do_action(action_type:String, action_name: String, button: ActionButton):
+	var action_stats = Constants[action_type][action_name].stats
+	var rng = RandomNumberGenerator.new()
+	
+	animation.stat_bars.load_stat_bars(action_name, action_type)
+	if (button.get_success_chance(action_name) > rng.randf() * 100):
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
+		process_stats(action_stats)
+		if Constants[action_type][action_name].get("proficiency"):
+			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain
+			if ('skill' in Constants[action_type][action_name]):
+				if (Player.proficiencies[action_name] >= Constants[action_type][action_name].skill.proficiency_required):
+					if (!Player.skill_inventory.get_item_with_prototype_id(Constants[action_type][action_name].skill.id)):
+						Player.skill_inventory.create_and_add_item(Constants[action_type][action_name].skill.id)
+		animation.animation.show()
+		animation.animation.play("Run")
+	else:
+		get_tree().call_group("Live2DPlayer", "job_motion", false)
+		if "stress" in action_stats:
+			process_stats({"stress": action_stats["stress"]})
+		if Constants[action_type][action_name].get("proficiency"):
+			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain/2
+		animation.animation.show()
+		animation.animation.play("Sleep")
+	#TODO, hide planning
+	work.hide()
+	process_day()
+	
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
@@ -515,6 +543,7 @@ func display_stats() -> void:
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("ButtonMenu", "update_buttons")
+	get_tree().call_group("ActionButton", "update_difficulty_color")
 	get_tree().call_group("Job_Button", "update_difficulty_color")
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")
 	#Update Menu Button displays

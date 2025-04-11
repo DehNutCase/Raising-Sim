@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=57 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -39,6 +39,7 @@
 [ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/PauseMenuController.gd" id="28_3ijv8"]
 [ext_resource type="Script" path="res://Scenes/Main/CourseProgress.gd" id="29_7hj8f"]
 [ext_resource type="PackedScene" uid="uid://kl6xb7t6fq50" path="res://Scenes/GameTemplate/Menus/PauseMenu.tscn" id="29_h0pyo"]
+[ext_resource type="Script" path="res://Scenes/Main/Actions.gd" id="30_2wdei"]
 [ext_resource type="Script" path="res://Scenes/Main/MissionsContainer.gd" id="30_uj6nt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
@@ -449,7 +450,6 @@ autoplay = true
 expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
-visible = false
 custom_minimum_size = Vector2(1100, 600)
 anchors_preset = 8
 anchor_left = 0.5
@@ -548,6 +548,46 @@ theme_override_constants/margin_bottom = 16
 [node name="CourseProgress" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer2" groups=["CourseDetails"]]
 layout_mode = 2
 script = ExtResource("29_7hj8f")
+
+[node name="ScheduleRework" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Actions" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("30_2wdei")
+
+[node name="TabContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Today\'s Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("25_ntj3d")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CourseDailyEffect" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("27_j6jf7")
 
 [node name="Work" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
