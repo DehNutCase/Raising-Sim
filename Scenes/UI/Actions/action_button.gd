@@ -16,13 +16,14 @@ func update_label(text: String = button_label.text):
 	update_difficulty_color()
 	
 func update_difficulty_color():
-	var success = min(1, (max(0, get_success_chance(action_name)/100.0)))
+	var success = min(1, (max(0, get_success_chance(action_type, action_name)/100.0)))
 	modulate = Color(1,success,success)
 
-func get_success_chance(action_name):
+static func get_success_chance(action_type, action_name):
 	#TODO, return 100 chance if action can't fail
+	#TODO, check for actions with success chances, not just jobs (lessons)
 	if action_type != "jobs":
-		return 100
+		return 101
 	var task = Constants[action_type][action_name]
 	var task_total_stats = 1
 	var adjusted_stats = 1
@@ -41,4 +42,4 @@ func get_success_chance(action_name):
 	return 100.0 * adjusted_stats / task_total_stats - task["difficulty"] - Player.stats["stress"]
 	
 func _on_action_button_pressed():
-	get_tree().call_group("Main", "do_action", action_type, action_name, self)
+	get_tree().call_group("DailySchedule", "add_action", action_type, action_name)

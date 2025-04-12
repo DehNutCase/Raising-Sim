@@ -19,6 +19,7 @@ const jobs = {
 			'proficiency_required': 50,
 			'id': 'apprentice_farmer',
 		},
+		"description": "Modern farming is heavily magicalized, so this 'job' is closer to a hobby.",
 	},
 	'Housework': {
 		'stats': {
@@ -864,6 +865,12 @@ const rests = {
 	},
 }
 
+const school = {
+	'School': {
+		'description': "It's a student's job to go to class."
+	}
+}
+
 const stats = {
 	'base_stats' = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance", "art",],
@@ -978,6 +985,7 @@ const constants = {
 	'days_in_month' = 30,
 	'months_in_year' = 4,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
+	'DAILY_ACTION_LIMIT' = 3,
 	'BASE_COURSE_PROGRESS' = 1000,
 	'ACTION_TYPES' = {
 		'jobs': {
@@ -995,7 +1003,10 @@ const constants = {
 			'id': 'other',
 			#TODO, integrate other actions here (enter tower, cram school, etc.)
 			'actions': {},
-		}
+		},
+	},
+	'ACTION_LABELS' = {
+		'school': 'School',
 	}
 }
 

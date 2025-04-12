@@ -175,12 +175,12 @@ func process_day():
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 		
-func do_action(action_type:String, action_name: String, button: ActionButton):
+func do_action(action_type:String, action_name: String):
 	var action_stats = Constants[action_type][action_name].stats
 	var rng = RandomNumberGenerator.new()
 	
 	animation.stat_bars.load_stat_bars(action_name, action_type)
-	if (button.get_success_chance(action_name) > rng.randf() * 100):
+	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(action_stats)
 		if Constants[action_type][action_name].get("proficiency"):

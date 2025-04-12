@@ -7,7 +7,6 @@ func display_stats(metadata: Variant):
 	clear()
 	if Constants.courses.get(course_name):
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
-		var rng = RandomNumberGenerator.new()
 		var tooltip = ""
 		if (!course_daily_stats.keys().is_empty()):
 			tooltip += "Daily Stats:"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=59 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://kl6xb7t6fq50" path="res://Scenes/GameTemplate/Menus/PauseMenu.tscn" id="29_h0pyo"]
 [ext_resource type="Script" path="res://Scenes/Main/Actions.gd" id="30_2wdei"]
 [ext_resource type="Script" path="res://Scenes/Main/MissionsContainer.gd" id="30_uj6nt"]
+[ext_resource type="Script" path="res://Scenes/Main/Daily Schedule.gd" id="31_1x7np"]
+[ext_resource type="Script" path="res://Scenes/Main/ActionDescription.gd" id="32_lakgr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -567,10 +569,11 @@ script = ExtResource("30_2wdei")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Today\'s Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer/TabContainer"]
+[node name="Daily Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer/TabContainer" groups=["DailySchedule"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("25_ntj3d")
+script = ExtResource("31_1x7np")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework"]
 layout_mode = 2
@@ -585,9 +588,10 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="CourseDailyEffect" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer2/MarginContainer"]
+[node name="ActionDescription" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer2/MarginContainer" groups=["ActionDetails"]]
 layout_mode = 2
 theme = ExtResource("27_j6jf7")
+script = ExtResource("32_lakgr")
 
 [node name="Work" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
