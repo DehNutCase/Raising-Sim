@@ -985,6 +985,7 @@ const constants = {
 	'days_in_month' = 30,
 	'months_in_year' = 4,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
+	'TIMES_OF_DAY' = ['morning', 'afternoon', 'night', 'bedtime'],
 	'DAILY_ACTION_LIMIT' = 3,
 	'BASE_COURSE_PROGRESS' = 1000,
 	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},

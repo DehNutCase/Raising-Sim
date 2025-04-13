@@ -3,4 +3,5 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao (Excited)
 Mao_Portrait (Excited): Oh boy, the first day of class!
+[background arg="res://Art/Background/Background material shop/bg007b.bmp" fade="5.0"]
 Rice_Portrait (Normal): (It's strange she's excited, but whatever makes her happy.)

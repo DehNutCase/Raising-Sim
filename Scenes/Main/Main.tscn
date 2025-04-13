@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=63 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -7,8 +7,11 @@
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Texture2D" uid="uid://sjmioxscvkib" path="res://Art/Background/Background material shop/bg007a.bmp" id="5_iokpw"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
+[ext_resource type="Shader" path="res://Art/Shaders/fade_shader.gdshader" id="6_y87ud"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
+[ext_resource type="Texture2D" uid="uid://dhmldhigqbyaj" path="res://Art/Background/Background material shop/bg007b.bmp" id="7_n8nyx"]
 [ext_resource type="Texture2D" uid="uid://j8ltyk1w2jib" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g930.png" id="8_g4iyq"]
+[ext_resource type="Texture2D" uid="uid://qak7mr560k0i" path="res://Art/Shaders/simple_fade.tres" id="8_waya3"]
 [ext_resource type="Texture2D" uid="uid://bcl5c2d53ihf6" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g937.png" id="9_c3tuy"]
 [ext_resource type="Texture2D" uid="uid://cgijk4jox1odn" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g958.png" id="10_q0jxe"]
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="11_rjsjm"]
@@ -48,6 +51,15 @@
 font_size = 28
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxnwf"]
+shader = ExtResource("6_y87ud")
+shader_parameter/progress = 0.0
+shader_parameter/feather = 1.0
+shader_parameter/keep_aspect_ratio = false
+shader_parameter/previous_background = ExtResource("5_iokpw")
+shader_parameter/next_background = ExtResource("7_n8nyx")
+shader_parameter/wipe_texture = ExtResource("8_waya3")
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8ogb"]
 font_size = 22
@@ -137,9 +149,19 @@ size_flags_horizontal = 3
 layer = -1
 
 [node name="Background" type="Sprite2D" parent="Ui/BackgroundLayer"]
+visible = false
 texture = ExtResource("5_iokpw")
 centered = false
 offset = Vector2(-160, -90)
+
+[node name="BackgroundHolder" type="TextureRect" parent="Ui/BackgroundLayer"]
+material = SubResource("ShaderMaterial_yxnwf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_iokpw")
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
 anchors_preset = 1

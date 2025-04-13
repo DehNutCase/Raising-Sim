@@ -45,6 +45,7 @@ var day: int:
 
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
+var day_state = states.READY
 
 var selected_class_change_class: String
 var class_change_requirements_fufilled = false
@@ -120,6 +121,8 @@ func _ready():
 #(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
 #text like walk where you didn't meet someone)
 func process_day():
+	day_state = states.BUSY
+	
 	var action_list = []
 	action_list.append_array(Player.mandatory_daily_schedule_list)
 	action_list.append_array(Player.daily_schedule_list)
@@ -129,10 +132,16 @@ func process_day():
 	if day == 0:
 		#don't do actions day 1
 		action_list = []
+	var i = 0
+	#TODO, add messages as mao does her daily tasks
+	#TODO, set state to not ready
 	for action in action_list:
 		#TODO, await actions---set time for scene to change etc.
-		await(get_tree().create_timer(.5).timeout)
+		background_transition(Constants.constants.TIMES_OF_DAY[i])
+		await (get_tree().create_timer(.5).timeout)
 		await do_action(action.action_type, action.action_name)
+		await (get_tree().create_timer(5).timeout)
+		i+=1
 	
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()
@@ -181,6 +190,9 @@ func process_day():
 		if "max" in Constants.stats[stat] && Player.stats[stat] > Player.calculate_max_stat(stat):
 			Player.stats[stat] = Player.calculate_max_stat(stat)
 	
+	#always return to morning before next day
+	background_transition()
+	
 	display_stats()
 	day_label.display_day(day)
 	if(skip_checkbox.button_pressed):
@@ -189,6 +201,9 @@ func process_day():
 	check_and_play_daily_events()
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
+		
+	day_state = states.READY
+
 		
 func do_action(action_type:String, action_name: String):
 	if action_type == 'school':
@@ -222,6 +237,27 @@ func do_action(action_type:String, action_name: String):
 		if Constants[action_type][action_name].get("proficiency"):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain/2
 	
+func background_transition(time:String = "morning"):
+	var bg_holder:TextureRect= $Ui/BackgroundLayer/BackgroundHolder
+	var next_background = load("res://Art/Background/Background material shop/bg007a.bmp")
+	match time:
+		"morning":
+			next_background = load("res://Art/Background/Background material shop/bg007a.bmp")
+		"noon":
+			next_background = load("res://Art/Background/Background material shop/bg007b.bmp")
+		"afternoon":
+			next_background = load("res://Art/Background/Background material shop/bg007b.bmp")
+		"night":
+			next_background = load("res://Art/Background/Background material shop/bg007c.bmp")
+		"bedtime":
+			next_background = load("res://Art/Background/Background material shop/bg007d.bmp")
+	bg_holder.material.set_shader_parameter("next_background", next_background)
+	var tween := create_tween()
+	var tweener := tween.tween_property(bg_holder, "material:shader_parameter/progress", 1.0, 5.0).from(0.0)
+	await tweener.finished
+	bg_holder.material.set_shader_parameter("previous_background", next_background)
+	
+
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
@@ -408,7 +444,7 @@ func buy_item(item: String, price: int):
 
 
 func _on_action(button):
-	if current_state != states.READY:
+	if current_state != states.READY or day_state != states.READY:
 		printerr("_on_action state not READY")
 		return
 	var open_menu: String
