@@ -14,6 +14,7 @@ extends Control
 @onready var animation = $Ui/MenuPanel/MarginContainer/Animation
 @onready var rest = $Ui/MenuPanel/MarginContainer/Rest
 @onready var lessons = $Ui/MenuPanel/MarginContainer/Lessons
+@onready var schedule = $Ui/MenuPanel/MarginContainer/Schedule
 @onready var work = $Ui/MenuPanel/MarginContainer/Work
 @onready var shop = $Ui/MenuPanel/MarginContainer/Shop
 @onready var walk = $Ui/MenuPanel/MarginContainer/Walk
@@ -31,7 +32,7 @@ extends Control
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
-@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change, mission]
+@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change, mission, schedule]
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -115,7 +116,24 @@ func _ready():
 	#Player.load_class_change_card()
 	#TODO, end dev use section
 
+#TODO, process day should now call the schedule and then play the end of day scene
+#(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
+#text like walk where you didn't meet someone)
 func process_day():
+	var action_list = []
+	action_list.append_array(Player.mandatory_daily_schedule_list)
+	action_list.append_array(Player.daily_schedule_list)
+	
+	#TODO, handle main scene background changes here?
+	#TODO, hide all open menus
+	if day == 0:
+		#don't do actions day 1
+		action_list = []
+	for action in action_list:
+		#TODO, await actions---set time for scene to change etc.
+		await(get_tree().create_timer(.5).timeout)
+		await do_action(action.action_type, action.action_name)
+	
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()
 		monthly_items.append_array(background.inventory.get_items())
@@ -154,9 +172,6 @@ func process_day():
 	for item in item_deletion_queue:
 		inventory.inventory.remove_item(item)
 	
-	#TODO, flesh out daily coursework a bit more
-	daily_course()
-	
 	for stat in Player.stats:
 		if !stat in Constants.stats:
 			printerr(stat + " isn't in Constants.stats")
@@ -176,10 +191,21 @@ func process_day():
 		gray_portrait.show()
 		
 func do_action(action_type:String, action_name: String):
+	if action_type == 'school':
+		await daily_course()
+		#NOTES, this works as you'd expect, timeline starts and execution continues
+		#Once signal is sent
+		#TODO, add check for flags of timelines (only play ink mage school once etc.)
+		#Dialogic.start("InkMageSchoolFirst")
+		#await Dialogic.timeline_ended
+		return
+	
+	if action_name == 'cram_school':
+		await do_cram_school()
+		return
+
 	var action_stats = Constants[action_type][action_name].stats
 	var rng = RandomNumberGenerator.new()
-	
-	animation.stat_bars.load_stat_bars(action_name, action_type)
 	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(action_stats)
@@ -189,19 +215,12 @@ func do_action(action_type:String, action_name: String):
 				if (Player.proficiencies[action_name] >= Constants[action_type][action_name].skill.proficiency_required):
 					if (!Player.skill_inventory.get_item_with_prototype_id(Constants[action_type][action_name].skill.id)):
 						Player.skill_inventory.create_and_add_item(Constants[action_type][action_name].skill.id)
-		animation.animation.show()
-		animation.animation.play("Run")
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", false)
 		if "stress" in action_stats:
 			process_stats({"stress": action_stats["stress"]})
 		if Constants[action_type][action_name].get("proficiency"):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain/2
-		animation.animation.show()
-		animation.animation.play("Sleep")
-	#TODO, hide planning
-	work.hide()
-	process_day()
 	
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
@@ -258,7 +277,6 @@ func do_lesson(lesson_name: String) :
 	process_day()
 
 func daily_course():
-	await(get_tree().create_timer(.5).timeout)
 	display_toast("Mao went to class!", "top")
 	await(get_tree().create_timer(.5).timeout)
 	if Player.course_list:
@@ -400,6 +418,8 @@ func _on_action(button):
 	_on_close_button_pressed()
 	
 	match button.name:
+		"Schedule":
+			schedule.show()
 		"Work":
 			work.show()
 		"Lessons":
@@ -844,3 +864,12 @@ func _on_pause_menu_button_pressed():
 func _on_volume_button_toggled(toggled_on):
 	AppSettings.set_mute(toggled_on)
 	get_tree().call_group("MuteButton", "_update")
+
+
+func _on_start_day_button_pressed():
+	var action_amount = len(Player.mandatory_daily_schedule_list) + len(Player.daily_schedule_list)
+	if action_amount >= Constants.constants.DAILY_ACTION_LIMIT:
+		_on_close_button_pressed()
+		process_day()
+	else:
+		display_toast("There are still empty slots in today's schedule.", "top")

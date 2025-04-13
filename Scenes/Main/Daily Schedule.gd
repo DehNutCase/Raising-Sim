@@ -8,6 +8,19 @@ func _ready():
 func add_action(action_type:String, action_name:String):
 	#Moves course to front if already in list
 	var current_action_amount = len(Player.mandatory_daily_schedule_list) + len(Player.daily_schedule_list)
+
+	var action = Constants[action_type][action_name]
+	var cost = -action.stats.get("gold")
+	#Don't queue actions if you don't have the gold to pay
+	if cost and cost > 0:
+		if Player.stats.gold - cost < 0:
+			ToastParty.show({
+				"text": "Mao doesn't have the gold to pay for this. " + "(" + str(cost) + ")",
+				"gravity": "top",
+				"direction": "center",
+			})
+			return
+			
 	
 	if current_action_amount >= Constants.constants.DAILY_ACTION_LIMIT:
 		if Player.daily_schedule_list:

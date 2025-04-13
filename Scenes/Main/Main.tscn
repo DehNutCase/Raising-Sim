@@ -452,6 +452,7 @@ autoplay = true
 expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
+visible = false
 custom_minimum_size = Vector2(1100, 600)
 anchors_preset = 8
 anchor_left = 0.5
@@ -506,21 +507,6 @@ size_flags_horizontal = 3
 theme = ExtResource("25_ntj3d")
 script = ExtResource("25_ge7ht")
 
-[node name="CramSchoolButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -216.0
-offset_top = -39.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "Attend Cram School"
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Lessons"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -536,7 +522,7 @@ theme_override_constants/margin_bottom = 16
 
 [node name="CourseDailyEffect" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer" groups=["CourseDetails"]]
 layout_mode = 2
-theme = ExtResource("27_j6jf7")
+theme = ExtResource("22_1jgxs")
 script = ExtResource("27_u6iqd")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2"]
@@ -549,37 +535,39 @@ theme_override_constants/margin_bottom = 16
 
 [node name="CourseProgress" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer2" groups=["CourseDetails"]]
 layout_mode = 2
+theme = ExtResource("22_1jgxs")
 script = ExtResource("29_7hj8f")
 
-[node name="ScheduleRework" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+[node name="Schedule" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Schedule"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="Actions" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer"]
+[node name="Actions" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("30_2wdei")
 
-[node name="TabContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Daily Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer/TabContainer" groups=["DailySchedule"]]
+[node name="Daily Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer/TabContainer" groups=["DailySchedule"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("25_ntj3d")
 script = ExtResource("31_1x7np")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Schedule"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -588,10 +576,16 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="ActionDescription" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/ScheduleRework/HBoxContainer2/MarginContainer" groups=["ActionDetails"]]
+[node name="ActionDescription" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer" groups=["ActionDetails"]]
 layout_mode = 2
-theme = ExtResource("27_j6jf7")
+theme = ExtResource("22_1jgxs")
 script = ExtResource("32_lakgr")
+
+[node name="StartDay" type="Button" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Start Day"
 
 [node name="Work" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
@@ -618,7 +612,7 @@ theme = ExtResource("22_1jgxs")
 [node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Tower"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("27_j6jf7")
+theme = ExtResource("22_1jgxs")
 
 [node name="EnterTowerButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Tower"]
 layout_mode = 2
@@ -638,7 +632,7 @@ clip_tabs = false
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("27_j6jf7")
+theme = ExtResource("22_1jgxs")
 bbcode_enabled = true
 
 [node name="Requirements" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer"]
@@ -872,6 +866,12 @@ layout_mode = 2
 offset_right = 140.0
 offset_bottom = 700.0
 
+[node name="Schedule" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Schedule"
+
 [node name="Lessons" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -879,12 +879,14 @@ size_flags_vertical = 3
 text = "Lessons"
 
 [node name="Work" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Work"
 
 [node name="Rest" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -932,7 +934,7 @@ pause_menu_packed = ExtResource("29_h0pyo")
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
-[connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule/CramSchoolButton" to="." method="do_cram_school"]
+[connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer/StartDay" to="." method="_on_start_day_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description/SelectMissionButton" to="." method="_on_select_mission_pressed"]

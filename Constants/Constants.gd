@@ -727,7 +727,7 @@ const courses = {
 			},
 		},
 	},
-	"Magic Officer (Trainee)": {
+	"Magic Officer": {
 		'Ley Line Logistics': {
 			'stats': {
 				'experience': 500,
@@ -987,6 +987,7 @@ const constants = {
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
 	'DAILY_ACTION_LIMIT' = 3,
 	'BASE_COURSE_PROGRESS' = 1000,
+	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},
 	'ACTION_TYPES' = {
 		'jobs': {
 			'label': 'Work',
