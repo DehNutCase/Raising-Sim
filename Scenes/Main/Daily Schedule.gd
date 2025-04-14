@@ -10,9 +10,15 @@ func add_action(action_type:String, action_name:String):
 	var current_action_amount = len(Player.mandatory_daily_schedule_list) + len(Player.daily_schedule_list)
 
 	var action = Constants[action_type][action_name]
-	var cost = -action.stats.get("gold")
+	var cost = 0
+	if action_name == "Cram School":
+		#Lets Mao go to cram school even if it would put her below 0, just not too far below
+		cost = 100
+	else:
+		if action.stats.get("gold"):
+			cost = -action.stats.get("gold")
 	#Don't queue actions if you don't have the gold to pay
-	if cost and cost > 0:
+	if cost > 0:
 		if Player.stats.gold - cost < 0:
 			ToastParty.show({
 				"text": "Mao doesn't have the gold to pay for this. " + "(" + str(cost) + ")",

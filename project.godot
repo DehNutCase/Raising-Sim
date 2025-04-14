@@ -99,6 +99,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
+"BedtimeFirst": "res://Timelines/Bedtime/BedtimeFirst.dtl",
 "BlackForestOrcs/BlackForestOrcs0": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/BlackForestOrcs/BlackForestOrcs0.dtl",
 "BlackForestOrcs/BlackForestOrcs1": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/BlackForestOrcs/BlackForestOrcs1.dtl",
 "BlackForestOrcs/BlackForestOrcs10": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/BlackForestOrcs/BlackForestOrcs10.dtl",

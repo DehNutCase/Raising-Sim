@@ -1,0 +1,30 @@
+[background arg="res://Art/Background/Background material shop/bg007d.bmp" fade="0.0"]
+join Mao (Normal) 1
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee.
+Mao_Portrait (Normal): Hey, Rice, are you still ignoring me?
+Rice_Portrait (Normal): Technically, I'm off-duty now.
+- Can you tell me a bedtime story?
+	Rice_Portrait (Normal): Hmm.
+	update Mao (Sad)
+	Mao_Portrait (Sad): Is that not okay?
+	Rice_Portrait (Normal): It's a perfectly reasonable request. Simply unexpected.
+	update Mao (Excited)
+	Mao_Portrait (Excited): Yay!
+	update Mao (Normal)
+	Rice_Portrait (Normal): (I'll check for childrens' books in the intranet library.)
+	Rice_Portrait (Normal): "The Littlest Goddess" seems appropriate, so I'll read this one.
+	Mao_Portrait (Normal): Aww. No personal stories?
+	Rice_Portrait (Normal): In my opinion, my personal experiences aren't appropriate for bedtime stories. Nor are they particularly interesting.
+	Mao_Portrait (Normal): If you say so.
+	Rice_Portrait (Normal): I'll go ahead and get started. "Long ago and far away, in a kingdom by the sea, there lived an old fisherman..."
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): (I wonder how I got roped into being a babysitter. Then again, the fact we have the leeway to have me babysit can be considered a very good thing.)
+	Rice_Portrait (Normal): (I'll keep reading for a while longer. I'll need to check how much she remembers tomorrow in case she asks me for another bedtime story.)
+	[signal arg="{"stats": {"stress": -5,}}"]
+- 
+- 
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Zzz...
+Rice_Portrait (Normal): (Good night.)

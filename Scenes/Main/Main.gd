@@ -133,15 +133,20 @@ func process_day():
 		#don't do actions day 1
 		action_list = []
 	var i = 0
-	#TODO, add messages as mao does her daily tasks
+	#TODO, add messages as mao does her daily tasks <- important!
 	#TODO, set state to not ready
 	for action in action_list:
 		#TODO, await actions---set time for scene to change etc.
 		background_transition(Constants.constants.TIMES_OF_DAY[i])
 		await (get_tree().create_timer(.5).timeout)
 		await do_action(action.action_type, action.action_name)
-		await (get_tree().create_timer(5).timeout)
+		await (get_tree().create_timer(4).timeout)
 		i+=1
+	#TODO, at the end of day play bedtime event
+	background_transition(Constants.constants.TIMES_OF_DAY[i])
+	await (get_tree().create_timer(1).timeout)
+	Dialogic.start("BedtimeFirst")
+	await Dialogic.timeline_ended
 	
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()
@@ -208,14 +213,14 @@ func process_day():
 func do_action(action_type:String, action_name: String):
 	if action_type == 'school':
 		await daily_course()
-		#NOTES, this works as you'd expect, timeline starts and execution continues
+		#NOTES, the below works as you'd expect, timeline starts and execution continues
 		#Once signal is sent
 		#TODO, add check for flags of timelines (only play ink mage school once etc.)
 		#Dialogic.start("InkMageSchoolFirst")
 		#await Dialogic.timeline_ended
 		return
 	
-	if action_name == 'cram_school':
+	if action_name == 'Cram School':
 		await do_cram_school()
 		return
 
@@ -253,7 +258,7 @@ func background_transition(time:String = "morning"):
 			next_background = load("res://Art/Background/Background material shop/bg007d.bmp")
 	bg_holder.material.set_shader_parameter("next_background", next_background)
 	var tween := create_tween()
-	var tweener := tween.tween_property(bg_holder, "material:shader_parameter/progress", 1.0, 5.0).from(0.0)
+	var tweener := tween.tween_property(bg_holder, "material:shader_parameter/progress", 1.0, 4.0).from(0.0)
 	await tweener.finished
 	bg_holder.material.set_shader_parameter("previous_background", next_background)
 	
@@ -280,7 +285,7 @@ func do_job(job_name: String) :
 		animation.animation.show()
 		animation.animation.play("Sleep")
 	work.hide()
-	process_day()
+	#process_day()
 	
 func do_lesson(lesson_name: String) :
 	var lesson_stats = Constants.lessons[lesson_name]["stats"]
@@ -310,16 +315,20 @@ func do_lesson(lesson_name: String) :
 		animation.animation.show()
 		animation.animation.play("Sleep")
 	lessons.hide()
-	process_day()
+	#process_day()
 
 func daily_course():
 	display_toast("Mao went to class!", "top")
+	get_tree().call_group("Live2DPlayer", "job_motion", true)
 	await(get_tree().create_timer(.5).timeout)
 	if Player.course_list:
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
-		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
+		#Can only modify a duplicate if changing the stat array is needed
+		var course_daily_stats = Constants.courses[course_name][lesson_name].stats.duplicate()
 		process_course_progress()
+		#School is free so remove gold cost
+		course_daily_stats.erase("gold")
 		process_stats(course_daily_stats) 
 	else:
 		display_toast("But she doesn't have any classes to take.", "top")
@@ -327,26 +336,27 @@ func daily_course():
 		process_stats({"stress": -10})
 		
 func do_cram_school():
-	#TODO, close menu like other do functions
-	#TODO, process course progress should disable completed course buttons
 	if Player.course_list:
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
 		
-		var cost = 0
-		if "gold" in course_daily_stats: cost = -course_daily_stats.gold
-		if (cost > Player.stats["gold"]):
-			display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
-			return
+		#For now disabled cost check, allowing Mao to go into debt for cram school
+		#var cost = 0
+		#if "gold" in course_daily_stats: cost = -course_daily_stats.gold
+		#if (cost > Player.stats["gold"]):
+			#display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
+			#return
 		
 		display_toast("Mao went to cram school.", "top")
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		await(get_tree().create_timer(.5).timeout)
 		process_course_progress()
 		process_stats(course_daily_stats)
-		process_day()
 	else:
 		display_toast("Mao doesn't have any classes scheduled.", "top")
+		await(get_tree().create_timer(.5).timeout)
+		process_stats({"stress": -10})
 
 func process_course_progress():
 	var lesson_name = Player.course_list[0].lesson_name
@@ -379,7 +389,7 @@ func do_rest(rest_name: String) -> void:
 	rest.visible = false
 	animation.animation.visible = true
 	animation.animation.play("Sleep")
-	process_day()
+	#process_day()
 	
 func do_walk(walk_name: String) -> void:
 	if Player.remaining_walks > 0:

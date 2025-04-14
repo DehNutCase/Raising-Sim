@@ -634,6 +634,7 @@ const courses = {
 		'General Education': {
 			'stats': {
 				'experience': 100,
+				'gold': -100,
 				'scholarship': 10,
 				'stress': 10,
 			},
@@ -647,6 +648,7 @@ const courses = {
 		'Basics of Magecraft': {
 			'stats': {
 				'experience': 50,
+				'gold': -100,
 				'magic': 2,
 				'max_mp': 2,
 				'scholarship': 2,
@@ -661,6 +663,7 @@ const courses = {
 		'Physical Education': {
 			'stats': {
 				'experience': 50,
+				'gold': -100,
 				'strength': 2,
 				'max_hp': 2,
 				'scholarship': 1,
@@ -715,6 +718,7 @@ const courses = {
 		'Introduction to Illusion Magecraft': {
 			'stats': {
 				'experience': 200,
+				'gold': -250,
 				'magic': 5,
 				'max_mp': 2,
 				'scholarship': 2,
@@ -868,6 +872,12 @@ const rests = {
 const school = {
 	'School': {
 		'description': "It's a student's job to go to class."
+	}
+}
+
+const other = {
+	'Cram School': {
+		'description': "Why would anyone do this to themselves?"
 	}
 }
 
