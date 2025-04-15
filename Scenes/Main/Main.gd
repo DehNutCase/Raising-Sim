@@ -142,11 +142,14 @@ func process_day():
 		await do_action(action.action_type, action.action_name)
 		await (get_tree().create_timer(4).timeout)
 		i+=1
-	#TODO, at the end of day play bedtime event
+	
 	background_transition(Constants.constants.TIMES_OF_DAY[i])
-	await (get_tree().create_timer(1).timeout)
-	Dialogic.start("BedtimeFirst")
-	await Dialogic.timeline_ended
+	
+	#TODO, at the end of day play specific bedtime event
+	if day == 1:
+		await (get_tree().create_timer(1).timeout)
+		Dialogic.start("BedtimeFirst")
+		await Dialogic.timeline_ended
 	
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()

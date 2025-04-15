@@ -2,9 +2,9 @@
 join Mao (Normal) 1
 [history action="clear"]
 update Mao (Normal)
-Mao_Portrait (Normal): Teehee.
+Mao_Portrait (Normal): Yay, bedtime!
 Mao_Portrait (Normal): Hey, Rice, are you still ignoring me?
-Rice_Portrait (Normal): Technically, I'm off-duty now.
+Rice_Portrait (Normal): I never was.
 - Can you tell me a bedtime story?
 	Rice_Portrait (Normal): Hmm.
 	update Mao (Sad)
@@ -18,13 +18,39 @@ Rice_Portrait (Normal): Technically, I'm off-duty now.
 	Mao_Portrait (Normal): Aww. No personal stories?
 	Rice_Portrait (Normal): In my opinion, my personal experiences aren't appropriate for bedtime stories. Nor are they particularly interesting.
 	Mao_Portrait (Normal): If you say so.
-	Rice_Portrait (Normal): I'll go ahead and get started. "Long ago and far away, in a kingdom by the sea, there lived an old fisherman..."
+	Rice_Portrait (Normal): I'll go ahead and get started. "Long ago and far away, in a kingdom by the sea, there was a small wooden shrine..."
 	update Mao (EyesClosed)
-	Rice_Portrait (Normal): (I wonder how I got roped into being a babysitter. Then again, the fact we have the leeway to have me babysit can be considered a very good thing.)
+	Rice_Portrait (Normal): (I wonder how I got roped into being a babysitter. Then again, the fact we have the leeway to have me babysit should be considered a very good thing.)
 	Rice_Portrait (Normal): (I'll keep reading for a while longer. I'll need to check how much she remembers tomorrow in case she asks me for another bedtime story.)
 	[signal arg="{"stats": {"stress": -5,}}"]
-- 
-- 
+- How come I have to go to school?
+	Rice_Portrait (Normal): You don't have to.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Should you really be saying that?
+	Rice_Portrait (Normal): You'll have to take remedial classes over the summer if you don't finish at least your Core courses, but you're free to drop all your classes and skive.
+	update Mao (Normal)
+	Mao_Portrait (Normal): I guess I should work hard for my summer vacation.
+	Rice_Portrait (Normal): There's nothing stopping you from ditching the remedial classes as well.
+	Mao_Portrait (Normal): Should I tell her majesty you're a bad influence?
+	Rice_Portrait (Normal): The worst grade I've ever gotten in school is second.
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): Must've, *yawn*, must've been a small school.
+	Mao_Portrait (EyesClosed): So do you have any advice for me?
+	Rice_Portrait (Normal): Learn how to learn first. General Education is a good place to start.
+	Mao_Portrait (EyesClosed): *yawn*
+	[signal arg="{"stats": {"scholarship": 5,}}"]
+- So when do you sleep, anyway?
+	Rice_Portrait (Normal): I'm technically off-duty right now.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Am I keeping you from sleeping? I'll fall asleep as fast as I can.
+	Rice_Portrait (Normal): Sure.
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): Can you sing me a lullaby? Teehee.
+	Rice_Portrait (Normal): I'll refuse. But I can play some music if you'd like.
+	Mao_Portrait (EyesClosed): You know how to play an instrument?
+	Rice_Portrait (Normal): To clarify, I was talking about a spell.
+	Mao_Portrait (EyesClosed): Oh. *Yawn* Teach me later?
+	[signal arg="{"stats": {"stress": -5,}}"]
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Zzz...
 Rice_Portrait (Normal): (Good night.)

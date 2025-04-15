@@ -18,10 +18,10 @@ var content_motion = { "group": "Idle", "no": 0, "video": content_motion_video, 
 var idle_motion = { "group": "Idle", "no": 0, "video": idle_motion_video, "weight": 10, }
 var bounce_motion = { "group": "", "no": 0, "video": bounce_motion_video, "weight": 2, }
 var cheerful_motion = { "group": "", "no": 1, "video": cheerful_motion_video, "weight": 4, }
-var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video, "weight": 2, }
-var success_motion = { "group": "", "no": 3, "video": success_motion_video, "weight": 1, }
-var failure_motion = { "group": "", "no": 4, "video": failure_motion_video, "weight": 2, }
-var heal_motion = { "group": "", "no": 5, "video": heal_motion_video, "weight": 2, }
+var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video, "weight": 2, "toasts": ["Everything went okie dokie.", "Meteor! Just kidding!", "Umu!"]}
+var success_motion = { "group": "", "no": 3, "video": success_motion_video, "weight": 1, "toasts": ["I have a good feeling about this. ...Whoa!", "Lalala~ ...Oooh!",  "Easy does it. Looks like it's going well."]}
+var failure_motion = { "group": "", "no": 4, "video": failure_motion_video, "weight": 2, "toasts": ["I have a good feeling about this. ...Oooh. Oh no! Hmph.", "Lalala~ ...Oooh!", "Easy does it. Looks like it's going well. ...Oops."],}
+var heal_motion = { "group": "", "no": 5, "video": heal_motion_video, "weight": 2, "toasts": ["Behold! ...Why are you not beholding?", "I wonder if I can eat this.", "The light of justice! The form of courage! Transform! Teehee."]}
 
 var job_success_motions = [success_motion, heal_motion, hat_tip_motion]
 var job_failure_motions = [failure_motion,]
@@ -153,6 +153,14 @@ func job_motion(motion) -> void:
 	motion = motions[rand_weighted(weights)]
 	
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
+		if "toasts" in motion:
+			var text = motion.toasts.pick_random()
+			await(get_tree().create_timer(.5).timeout)
+			ToastParty.show({
+				"text": text,
+				"gravity": "bottom",
+				"direction": "center",
+			})
 		start_motion(motion)
 		last_motion = motion
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
