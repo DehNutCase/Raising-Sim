@@ -145,11 +145,7 @@ func process_day():
 	
 	background_transition(Constants.constants.TIMES_OF_DAY[i])
 	
-	#TODO, at the end of day play specific bedtime event
-	if day == 1:
-		await (get_tree().create_timer(1).timeout)
-		Dialogic.start("BedtimeFirst")
-		await Dialogic.timeline_ended
+	await play_bedtime_event()
 	
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()
@@ -922,3 +918,10 @@ func _on_start_day_button_pressed():
 		process_day()
 	else:
 		display_toast("There are still empty slots in today's schedule.", "top")
+
+func play_bedtime_event():
+#TODO, at the end of day play specific bedtime event
+	if day == 1:
+		await (get_tree().create_timer(1).timeout)
+		Dialogic.start("BedtimeFirst")
+		await Dialogic.timeline_ended

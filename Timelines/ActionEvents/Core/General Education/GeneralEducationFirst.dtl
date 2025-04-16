@@ -1,0 +1,13 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Oh boy, the first day of class!
+update Mao (Normal)
+Mao_Portrait (Normal): You said Ink Mages are rare, right? So who are my classmates?
+Rice_Portrait (Normal): Artists and Illusionists. We don't know what exactly your promotion requirements are for Ink Mage, but general magecraft and art education seemed like a good bet.
+Rice_Portrait (Normal): You might run into Hiyori if she stops being grounded.
+Mao_Portrait (Normal): Teehee. Is she falling behind on her classes?
+Rice_Portrait (Normal): The opposite. She's burnt out from rushing a little too much. One of the unexpected downsides of having access to excellent personal tutors.
+Mao_Portrait (Normal): I hope she feels better soon.
