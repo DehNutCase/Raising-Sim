@@ -317,9 +317,14 @@ func do_lesson(lesson_name: String) :
 	#process_day()
 
 func daily_course():
+	if day == 1:
+		#TODO, get different timeline depending on which elective Mao has
+		Dialogic.start("InkMageSchoolFirst")
+		await Dialogic.timeline_ended
+	
 	display_toast("Mao went to class!", "top")
-	get_tree().call_group("Live2DPlayer", "job_motion", true)
 	await(get_tree().create_timer(.5).timeout)
+	
 	if Player.course_list:
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
@@ -333,6 +338,8 @@ func daily_course():
 		display_toast("But she doesn't have any classes to take.", "top")
 		await(get_tree().create_timer(.5).timeout)
 		process_stats({"stress": -10})
+	
+	get_tree().call_group("Live2DPlayer", "job_motion", true)
 		
 func do_cram_school():
 	if Player.course_list:
@@ -356,23 +363,43 @@ func do_cram_school():
 		display_toast("Mao doesn't have any classes scheduled.", "top")
 		await(get_tree().create_timer(.5).timeout)
 		process_stats({"stress": -10})
-
+	
 func process_course_progress():
 	var lesson_name = Player.course_list[0].lesson_name
 	var course_name = Player.course_list[0].course_name
 	
 	if lesson_name in Player.course_progress:
 		Player.course_progress[lesson_name] += Constants.constants.BASE_COURSE_PROGRESS + Player.stats.scholarship
+		if Player.course_progress[lesson_name] >= Constants.courses[course_name][lesson_name].required_progress * .5:
+			#If we're more than 50% done and we have 3 timelines and haven't played the timeline before, play the middle one
+			var timelines = Constants.courses[course_name][lesson_name].get("timelines")
+			if timelines and len(timelines) == 3 and !Player.event_flags.get(timelines[1]):
+				Player.event_flags[timelines[1]] = true
+				await play_course_progress_timeline(course_name, lesson_name, 1)
+		
 	else:
+		#Play first course timeline if it's the first time
+		await play_course_progress_timeline(course_name, lesson_name, 0)
 		Player.course_progress[lesson_name] = Constants.constants.BASE_COURSE_PROGRESS + Player.stats.scholarship
+		
 	if Player.course_progress[lesson_name] >= Constants.courses[course_name][lesson_name].required_progress:
+		#Play last timeline before finishing course
+		await play_course_progress_timeline(course_name, lesson_name, -1)
 		Player.courses_completed[lesson_name] = true
 		Player.course_list.pop_front()
 		if Constants.courses[course_name][lesson_name].get("skill"):
 			var skill = Constants.courses[course_name][lesson_name].skill.id
 			if (!Player.skill_inventory.get_item_with_prototype_id(skill)):
 				Player.skill_inventory.create_and_add_item(skill)
-			
+	
+func play_course_progress_timeline(course_name:String, lesson_name:String, index=0):
+	var timelines = Constants.courses[course_name][lesson_name].get("timelines")
+	if !timelines:
+		return
+	else:
+		Dialogic.start(timelines[index])
+		await Dialogic.timeline_ended
+	
 func course_button_click(course_name:String, lesson_name:String):
 	course_schedule.add_course(course_name, lesson_name)
 

@@ -11,3 +11,50 @@ Rice_Portrait (Normal): You might run into Hiyori if she stops being grounded.
 Mao_Portrait (Normal): Teehee. Is she falling behind on her classes?
 Rice_Portrait (Normal): The opposite. She's burnt out from rushing a little too much. One of the unexpected downsides of having access to excellent personal tutors.
 Mao_Portrait (Normal): I hope she feels better soon.
+[background arg="res://Art/Background/UncleMugen/uncle mugen school corridor morning.webp" fade="2.0" transition="Push Left"]
+join Victoria (Frown) 4 [animation="Slide In Right" length="2" mirrored="true"]
+update Mao 1 [ move_time="1"]
+Mao_Portrait (Normal): Walking to class~. Walking to class~.
+update Victoria (Frown)
+Victoria_Portrait (Frown): There's no need to be so formal with me at this point. We lost, and we should accept that. But thank you for following me.
+Victoria_Portrait (Frown): Ah. Please leave me alone for a while, I'll see you in class.
+update Victoria 3 [ mirrored="false" move_time="2"]
+Victoria_Portrait (Frown): Miss Mao, I believe? May I have a moment?
+update Mao (Excited)
+Mao_Portrait (Excited): Wow! You know my name!? Does my reputation precede me? Am I famous now?
+update Mao (Normal)
+Victoria_Portrait (Frown): I'll take that as a yes. But a word of advice, you really should be more respectful. And I say that knowing your relationship with her majesty.
+update Mao (Normal)
+Mao_Portrait (Normal): Okie dokie.
+update Mao (Excited)
+update Victoria (Sweatdrop)
+Mao_Portrait (Excited): Wait, hang on. Is this bullying? Or maybe peer pressure? Am I being abused by authority?
+update Victoria (Frown)
+Victoria_Portrait (Frown): That was not my intention.
+Victoria_Portrait (Frown): We're getting off-track. First of all, I'm Victoria Lancaster, it's... an experience... meeting you.
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): I know! You're Hiyori's friend, right? She talks about you a lot. I'm Mao!
+Victoria_Portrait (Frown): No. Never.
+update Mao (Surprised)
+Victoria_Portrait (Frown): I'm her subordinate, currently. Furthermore, even if things proceed towards the most unlikely outcome, I'll be her superior at most. Hiyori and I will never be friends.
+update Mao (Normal)
+Mao_Portrait (Normal): Well she likes you a lot!
+Victoria_Portrait (Frown): (This girl is surprisingly difficult to talk to. I should leave before I get a headache.)
+Victoria_Portrait (Frown): I'll just say my piece and we can both be on our way. Things are quite peaceful right now, and I believe it's everyone's opinion that it should stay that way.
+Victoria_Portrait (Frown): Don't rock the boat just because you could.
+update Victoria 4 [ mirrored="true" move_time="2"]
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Wait! Can I be your minion?
+update Victoria [ mirrored="false"]
+Victoria_Portrait (Frown): My... minion?
+Mao_Portrait (Normal): Like those girls you were talking to earlier. Aren't they part of your gang? Um, clique? I can stand behind you and be totally menacing and stuff.
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): *Super fierce*
+Victoria_Portrait (Frown): (It's better not to match her pace, I think.)
+Victoria_Portrait (Frown): I'll assume for your sake that it wasn't your intention to insult me or my retainers. I'll think about it, but you shouldn't get your hopes up.
+update Victoria [ mirrored="true"]
+leave Victoria [animation="Slide Out Right" length="2"]
+update Mao (Normal)
+Mao_Portrait (Normal): Aww...

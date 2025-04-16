@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq4ytgm77qssi"
-path="res://.godot/imported/070_Devil_Princess_F.png-505b2ed6521446cb32b81f1d179984ae.ctex"
+uid="uid://cc8544rqg6c8u"
+path="res://.godot/imported/this_is_da_school_track_en_field_and_in_it_is_the_skool_jim.webp-b1f513e7e9d2717fd482fc628da30d81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Olivia/Images/070_Devil_Princess_F.png"
-dest_files=["res://.godot/imported/070_Devil_Princess_F.png-505b2ed6521446cb32b81f1d179984ae.ctex"]
+source_file="res://Art/Background/UncleMugen/this_is_da_school_track_en_field_and_in_it_is_the_skool_jim.webp"
+dest_files=["res://.godot/imported/this_is_da_school_track_en_field_and_in_it_is_the_skool_jim.webp-b1f513e7e9d2717fd482fc628da30d81.ctex"]
 
 [params]
 

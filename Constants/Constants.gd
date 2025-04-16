@@ -674,6 +674,7 @@ const courses = {
 			#TODO, implement new skill for PE
 			'skill':{
 			},
+			'timelines': ["PhysicalEducationFirst"],
 		},
 	},
 	"Ink Mage": {

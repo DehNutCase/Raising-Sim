@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfehg6dlrbtqg"
-path="res://.godot/imported/070_Devil_Princess_C.png-53b6cca56bbeae3f26513846311f426e.ctex"
+uid="uid://bxhayshm4ku5"
+path="res://.godot/imported/070_Devil_Princess_B.png-3919fa86700b6df45f2744575115a8f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Olivia/Images/Portraits/070_Devil_Princess_C.png"
-dest_files=["res://.godot/imported/070_Devil_Princess_C.png-53b6cca56bbeae3f26513846311f426e.ctex"]
+source_file="res://Characters/Victoria/Images/Portraits/070_Devil_Princess_B.png"
+dest_files=["res://.godot/imported/070_Devil_Princess_B.png-3919fa86700b6df45f2744575115a8f8.ctex"]
 
 [params]
 

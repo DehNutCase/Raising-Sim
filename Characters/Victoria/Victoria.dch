@@ -10,14 +10,14 @@
 },
 "default_portrait": "Frown",
 "description": "",
-"display_name": "Olivia",
+"display_name": "Victoria",
 "mirror": false,
-"nicknames": ["Olivia Lancaster"],
-"offset": Vector2(0, 0),
+"nicknames": ["Victoria Lancaster"],
+"offset": Vector2(0, 30),
 "portraits": {
 "Angry": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_C.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_C.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,7 +26,7 @@
 },
 "Blush": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_J.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_J.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +35,7 @@
 },
 "Frown": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_A.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_A.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -44,7 +44,7 @@
 },
 "Grin": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_B.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_B.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -53,7 +53,7 @@
 },
 "Happy": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_E.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_E.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -62,7 +62,7 @@
 },
 "Laugh": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_I.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_I.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -71,7 +71,7 @@
 },
 "Shocked": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_G.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_G.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -80,7 +80,7 @@
 },
 "Sigh": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_H.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_H.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -89,7 +89,7 @@
 },
 "Surprise": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_D.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_D.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -98,7 +98,7 @@
 },
 "Sweatdrop": {
 "export_overrides": {
-"image": "\"res://Characters/Olivia/Images/Portraits/070_Devil_Princess_F.png\""
+"image": "\"res://Characters/Victoria/Images/070_Devil_Princess_F.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -106,5 +106,5 @@
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.8
 }

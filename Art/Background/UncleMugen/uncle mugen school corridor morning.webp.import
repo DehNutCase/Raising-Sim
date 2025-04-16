@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bprm62xsywqws"
-path="res://.godot/imported/070_Devil_Princess_B.png-8809f65db4df2614e39dae29b5d78cbc.ctex"
+uid="uid://dop8c5u5xq4rd"
+path="res://.godot/imported/uncle mugen school corridor morning.webp-c954a4d3d243aefd12e00bfaa11dab7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Olivia/Images/070_Devil_Princess_B.png"
-dest_files=["res://.godot/imported/070_Devil_Princess_B.png-8809f65db4df2614e39dae29b5d78cbc.ctex"]
+source_file="res://Art/Background/UncleMugen/uncle mugen school corridor morning.webp"
+dest_files=["res://.godot/imported/uncle mugen school corridor morning.webp-c954a4d3d243aefd12e00bfaa11dab7f.ctex"]
 
 [params]
 

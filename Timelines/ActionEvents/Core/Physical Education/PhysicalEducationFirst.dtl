@@ -1,0 +1,6 @@
+[background arg="res://Art/Background/UncleMugen/this_is_da_school_track_en_field_and_in_it_is_the_skool_jim.webp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): How come I'm the only one in PE?
+Rice_Portrait (Normal): <Empty Text Event>

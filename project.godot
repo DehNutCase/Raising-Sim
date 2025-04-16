@@ -29,11 +29,11 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -82,8 +82,6 @@ directories/dch_directory={
 "Oliver/Oliver": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Oliver/Oliver.dch",
 "Oliver/Oliver_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Oliver/Oliver_Portrait.dch",
 "Oliver_Portrait": "res://Characters/Oliver/Oliver_Portrait.dch",
-"Olivia": "res://Characters/Olivia/Olivia.dch",
-"Olivia_Portrait": "res://Characters/Olivia/Olivia_Portrait.dch",
 "Orc": "res://Characters/Orc/Orc.dch",
 "Orc King/Chief": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Orc King/Chief.dch",
 "Orc King/Chief_portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Orc King/Chief_portrait.dch",
@@ -97,7 +95,9 @@ directories/dch_directory={
 "Thief_F/Thief_f": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Thief_F/Thief_f.dch",
 "Thief_F/Thief_f_portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Thief_F/Thief_f_portrait.dch",
 "Thief_f": "res://Characters/Thief_F/Thief_f.dch",
-"Thief_f_portrait": "res://Characters/Thief_F/Thief_f_portrait.dch"
+"Thief_f_portrait": "res://Characters/Thief_F/Thief_f_portrait.dch",
+"Victoria": "res://Characters/Victoria/Victoria.dch",
+"Victoria_Portrait": "res://Characters/Victoria/Victoria_Portrait.dch"
 }
 directories/dtl_directory={
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
@@ -170,6 +170,7 @@ directories/dtl_directory={
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "InkMageSchoolFirst": "res://Timelines/ActionEvents/InkMageSchool/InkMageSchoolFirst.dtl",
 "MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
+"PhysicalEducationFirst": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationFirst.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
 "RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",
