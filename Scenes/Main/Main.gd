@@ -376,7 +376,6 @@ func process_course_progress():
 			if timelines and len(timelines) == 3 and !Player.event_flags.get(timelines[1]):
 				Player.event_flags[timelines[1]] = true
 				await play_course_progress_timeline(course_name, lesson_name, 1)
-		
 	else:
 		#Play first course timeline if it's the first time
 		await play_course_progress_timeline(course_name, lesson_name, 0)
