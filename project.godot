@@ -172,6 +172,7 @@ directories/dtl_directory={
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "InkMageSchoolFirst": "res://Timelines/ActionEvents/InkMageSchool/InkMageSchoolFirst.dtl",
 "MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
+"PhysicalEducationEnd": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationEnd.dtl",
 "PhysicalEducationFirst": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationFirst.dtl",
 "PhysicalEducationMiddle": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationMiddle.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",

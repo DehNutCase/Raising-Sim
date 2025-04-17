@@ -323,23 +323,30 @@ func daily_course():
 		await Dialogic.timeline_ended
 	
 	display_toast("Mao went to class!", "top")
-	await(get_tree().create_timer(.5).timeout)
+	
 	
 	if Player.course_list:
+		await process_course_progress()
+		await(get_tree().create_timer(.5).timeout)
+		
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
 		#Can only modify a duplicate if changing the stat array is needed
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats.duplicate()
-		process_course_progress()
 		#School is free so remove gold cost
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		course_daily_stats.erase("gold")
 		process_stats(course_daily_stats) 
+		
+
 	else:
+		await(get_tree().create_timer(.5).timeout)
 		display_toast("But she doesn't have any classes to take.", "top")
 		await(get_tree().create_timer(.5).timeout)
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats({"stress": -10})
 	
-	get_tree().call_group("Live2DPlayer", "job_motion", true)
+	
 		
 func do_cram_school():
 	if Player.course_list:
@@ -355,13 +362,15 @@ func do_cram_school():
 			#return
 		
 		display_toast("Mao went to cram school.", "top")
-		get_tree().call_group("Live2DPlayer", "job_motion", true)
+		await process_course_progress()
+		
 		await(get_tree().create_timer(.5).timeout)
-		process_course_progress()
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(course_daily_stats)
 	else:
 		display_toast("Mao doesn't have any classes scheduled.", "top")
 		await(get_tree().create_timer(.5).timeout)
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats({"stress": -10})
 	
 func process_course_progress():
