@@ -1,13 +1,36 @@
-[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
-join Mao (Normal) 2
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+join Mao (Normal) 1
+join Victoria (Frown) 2
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
-Mao_Portrait (Excited): Oh boy, the first day of class!
+Mao_Portrait (Excited): Yay! I got a seat at the back of the class, now I can slack off without the teacher catching me.
 update Mao (Normal)
-Mao_Portrait (Normal): You said Ink Mages are rare, right? So who are my classmates?
-Rice_Portrait (Normal): Artists and Illusionists. We don't know what exactly your promotion requirements are for Ink Mage, but general magecraft and art education seemed like a good bet.
-Rice_Portrait (Normal): You might run into Hiyori if she stops being grounded.
-Mao_Portrait (Normal): Teehee. Is she falling behind on her classes?
-Rice_Portrait (Normal): The opposite. She's burnt out from rushing a little too much. One of the unexpected downsides of having access to excellent personal tutors.
-Mao_Portrait (Normal): I hope she feels better soon.
+Mao_Portrait (Normal): Teehee.
+update Victoria (Frown)
+Victoria_Portrait (Frown): If you don't mind me asking, why are you in this class?
+Mao_Portrait (Normal): I don't know! Rice led me here.
+Rice_Portrait (Normal): Since her majesty wants to give Mao the freedom to choose her own courses, she's been given permission to attend any class that still has seats available.
+Rice_Portrait (Normal): If you don't want to see her, I can avoid having her attend your classes.
+Victoria_Portrait (Frown): I don't believe you need to take my opinion into consideration. That said, I don't particularly mind.
+Victoria_Portrait (Frown): Welcome.
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Thanks! Have a Dumpling!
+update Victoria (Sweatdrop)
+Victoria_Portrait (Sweatdrop): Thank you, I suppose.
+update Victoria (Frown)
+Victoria_Portrait (Frown): (I'll ask Lilian to take care of it later. Isn't it a bit strange to give a pet as a greeting gift?)
+Victoria_Portrait (Frown): Since it sounds like your attendence will be irregular, I can have Bridget give you a copy of her notes. Here's her contact.
+Mao_Portrait (Normal): Yay! But why not your own notes? Not that there's anything wrong with that.
+Victoria_Portrait (Frown): I don't take notes. At least, not for my own use. And Bridget never had less than perfect attendence, so I never needed to take notes for someone else.
+update Mao (Excited)
+Mao_Portrait (Excited): Wow! So do you have a perfect memory?
+Victoria_Portrait (Frown): No. I simply believe jobs should be done by the appropriate people.
+update Mao (Normal)
+Mao_Portrait (Normal): Huh?
+Victoria_Portrait (Frown): Compared to ten people writing one book each, a single person writing ten books would produce higher quality work. At least, that's my opinion.
+Mao_Portrait (Normal): I... see?
+update Victoria [ mirrored="true"]
+Victoria_Portrait (Frown): It's simply a small and meaningless opinion. Class will start soon.
+Mao_Portrait (Normal): (Victoria seems really nice, I wonder why she frowns all the time?)

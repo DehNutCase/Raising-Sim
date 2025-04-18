@@ -29,11 +29,11 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -42,6 +42,7 @@ directories/dch_directory={
 "Alice/Alice": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Alice/Alice.dch",
 "Alice/Alice_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Alice/Alice_Portrait.dch",
 "Alice_Portrait": "res://Characters/Alice/Alice_Portrait.dch",
+"Bridget": "res://Characters/Bridget/Bridget.dch",
 "Cats/Gray": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Cats/Gray.dch",
 "Chief": "res://Characters/Orc King/Chief.dch",
 "Chief_portrait": "res://Characters/Orc King/Chief_portrait.dch",
@@ -164,6 +165,7 @@ directories/dtl_directory={
 "EndOfYearEvent": "res://Timelines/DayEvents/EndOfYearEvent.dtl",
 "ExitPass": "res://Timelines/TriggeredEvents/ExitPass.dtl",
 "GeneralEducationFirst": "res://Timelines/ActionEvents/Core/General Education/GeneralEducationFirst.dtl",
+"GeneralEducationMiddle": "res://Timelines/ActionEvents/Core/General Education/GeneralEducationMiddle.dtl",
 "HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
 "HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
