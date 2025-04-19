@@ -1,0 +1,27 @@
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): Is Victoria not here today? She usually comes to class early.
+Rice_Portrait (Normal): She requested a leave of absence today.
+Mao_Portrait (Normal): Aww, I wanted to bother her.
+Mao_Portrait (Normal): Wait, why do you know that anyway?
+Rice_Portrait (Normal): In order to guide you to the classes with seats available, I have access to the academy's attendance information.
+Rice_Portrait (Normal): (Strictly speaking, I have the access clearance regardless. But that's neither here nor there.)
+update Mao (Excited)
+Mao_Portrait (Excited): Oh wow! Is this the power of royal authority?
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Can I be [i]your[/i] minion?
+Rice_Portrait (Normal): No.
+update Mao (Normal)
+Mao_Portrait (Normal): Aww.
+Mao_Portrait (Normal): So do you have any tips for me? I don't feel like I'm getting smarter at all.
+Rice_Portrait (Normal): In the first place, becoming educated isn't the same as becoming smarter.
+Rice_Portrait (Normal): That said, slow and steady efforts apply to everything. From what I see, you're doing fine.
+Mao_Portrait (Normal): Teehee.
+Rice_Portrait (Normal): As for advice, hmm...
+Rice_Portrait (Normal): Personally, I don't think it's good to overwork yourself, but you can consider attending cram school if you want to speed through your courses. You'll have to pay for the classes there, however.
+Mao_Portrait (Normal): Why do you call it cram school when it's just school? And why do I have to pay, anyway?
+Rice_Portrait (Normal): You should ask her majesty about that. But it's better not to overthink it.
+Mao_Portrait (Normal): Okie dokie.
+[signal arg="{"stats": {"scholarship": 5}}"]

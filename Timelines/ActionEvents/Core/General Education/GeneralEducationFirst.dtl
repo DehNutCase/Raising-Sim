@@ -10,8 +10,8 @@ Mao_Portrait (Normal): Teehee.
 update Victoria (Frown)
 Victoria_Portrait (Frown): If you don't mind me asking, why are you in this class?
 Mao_Portrait (Normal): I don't know! Rice led me here.
-Rice_Portrait (Normal): Since her majesty wants to give Mao the freedom to choose her own courses, she's been given permission to attend any class that still has seats available.
-Rice_Portrait (Normal): If you don't want to see her, I can avoid having her attend your classes.
+Rice_Portrait (Normal): Since her majesty wanted to give Mao the freedom to choose her own courses, she'd been given permission to attend any class that still has seats available.
+Rice_Portrait (Normal): If you don't want to see her, I can avoid your classes in the future.
 Victoria_Portrait (Frown): I don't believe you need to take my opinion into consideration. That said, I don't particularly mind.
 Victoria_Portrait (Frown): Welcome.
 update Mao [animation="Tada" length="1"]
@@ -21,9 +21,9 @@ update Victoria (Sweatdrop)
 Victoria_Portrait (Sweatdrop): Thank you, I suppose.
 update Victoria (Frown)
 Victoria_Portrait (Frown): (I'll ask Lilian to take care of it later. Isn't it a bit strange to give a pet as a greeting gift?)
-Victoria_Portrait (Frown): Since it sounds like your attendence will be irregular, I can have Bridget give you a copy of her notes. Here's her contact.
+Victoria_Portrait (Frown): Since it sounds like your attendence will be irregular, I can have Stella give you a copy of her notes. Here's her contact.
 Mao_Portrait (Normal): Yay! But why not your own notes? Not that there's anything wrong with that.
-Victoria_Portrait (Frown): I don't take notes. At least, not for my own use. And Bridget never had less than perfect attendence, so I never needed to take notes for someone else.
+Victoria_Portrait (Frown): I don't take notes. At least, not for my own use. And Stella never had less than perfect attendence, so I never needed to take notes for someone else.
 update Mao (Excited)
 Mao_Portrait (Excited): Wow! So do you have a perfect memory?
 Victoria_Portrait (Frown): No. I simply believe jobs should be done by the appropriate people.
@@ -34,3 +34,4 @@ Mao_Portrait (Normal): I... see?
 update Victoria [ mirrored="true"]
 Victoria_Portrait (Frown): It's simply a small and meaningless opinion. Class will start soon.
 Mao_Portrait (Normal): (Victoria seems really nice, I wonder why she frowns all the time?)
+[signal arg="{"stats": {"stress": -5}}"]
