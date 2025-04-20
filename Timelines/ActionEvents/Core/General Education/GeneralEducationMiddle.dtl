@@ -16,7 +16,7 @@ Rice_Portrait (Normal): No.
 update Mao (Normal)
 Mao_Portrait (Normal): Aww.
 Mao_Portrait (Normal): So do you have any tips for me? I don't feel like I'm getting smarter at all.
-Rice_Portrait (Normal): In the first place, becoming educated isn't the same as becoming smarter.
+Rice_Portrait (Normal): In the first place, getting educated isn't the same as becoming smarter.
 Rice_Portrait (Normal): That said, slow and steady efforts apply to everything. From what I see, you're doing fine.
 Mao_Portrait (Normal): Teehee.
 Rice_Portrait (Normal): As for advice, hmm...
@@ -24,4 +24,10 @@ Rice_Portrait (Normal): Personally, I don't think it's good to overwork yourself
 Mao_Portrait (Normal): Why do you call it cram school when it's just school? And why do I have to pay, anyway?
 Rice_Portrait (Normal): You should ask her majesty about that. But it's better not to overthink it.
 Mao_Portrait (Normal): Okie dokie.
-[signal arg="{"stats": {"scholarship": 5}}"]
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Oh, right! I should text Stella and ask if I should take notes for them.
+Mao_Portrait (Normal): [Should 🖌️ take 📖 for you guys? 🫠]
+Stella_Portrait (Frown): Why are you texting me when we're in the same classroom? Thanks for the thought, but I'll be taking notes as usual today.
+Mao_Portrait (Normal): [Okie dokie! 🫠🙃🫠]
+Mao_Portrait (Normal): Teehee.
+[signal arg="{"stats": {"scholarship": 5, "stress": -5}}"]

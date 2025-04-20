@@ -1,0 +1,37 @@
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+join Mao (Normal) 1
+join Victoria (Frown) 2
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Yay! Welcome back, Victoria!
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee.
+update Victoria (Frown)
+Victoria_Portrait (Frown): Thank you.
+Mao_Portrait (Normal): How come you were gone for so long?
+Victoria_Portrait (Frown): Regrettably, my situation is such that I can't fully focus on my studies.
+Victoria_Portrait (Frown): If you're asking about the particulars, hmm... Your escort might well have more detailed information than I do.
+Rice_Portrait (Normal): Her majesty's official policy is to act as if we don't know anything. This includes when we don't actually know anything.
+Rice_Portrait (Normal): Unless that was meant to be a request for help?
+Victoria_Portrait (Frown): Things aren't that bad yet.
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): [🤔Is Victoria in trouble?🤕Can 🖌️ help?🫠🙃🫠]
+Lilian_Portrait (Laugh): [How did you get in this chat? Welcome. 🤗🤗🤗 Hah.]
+Stella_Portrait (Frown): [I gave her access. Since Her Highness gave her my contact, I assumed that was meant to include this chat group as well.]
+Lilian_Portrait (Grin): [Oh, are we stealing her? Let's have a welcome party later. 🎉🥳🎉]
+update Victoria [ mirrored="true"]
+Victoria_Portrait (Frown): (I should turn off notifications.)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): [🥳I know a good 🫠Dumpling🫠 buffet!🥳]
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): [But seriously, can I help? 🥊Super Fierce🥊]
+Lilian_Portrait (Grin): [Hmm. If you're talking about why Vicky was absent, I'm actually taking care of the issue right now. 🤕🤕🤕🚑]
+Lilian_Portrait (Laugh): [The ambulance isn't for me, by the way. 😉 Hah.]
+Mao_Portrait (Normal): [🤔Wait!🤔 How would the welcome party work then? 😖😖😖 Don't tell me I'm going to the party by myself!? 🎉😭🎉]
+Lilian_Portrait (Laugh): [I have an onyx teleport card. 😉 If you don't know what that means, it means I get to teleport back to the capital even if it makes everyone else wait in line.💷🧐💷]
+Rice_Portrait (Normal): Class is starting soon, so I would suggest leaving texting for later.
+update Mao [animation="Tada" length="2"]
+Mao_Portrait (Normal): [Class is starting! Let's meet up later!]
+Lilian_Portrait (Grin): [👍]
+[signal arg="{"stats": {"stress": -5}}"]

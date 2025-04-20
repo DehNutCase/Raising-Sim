@@ -644,6 +644,7 @@ const courses = {
 			'skill':{
 				'id': 'diligent_student',
 			},
+			'timelines': ["GeneralEducationFirst", "GeneralEducationMiddle", "GeneralEducationEnd"],
 		},
 		'Basics of Magecraft': {
 			'stats': {
