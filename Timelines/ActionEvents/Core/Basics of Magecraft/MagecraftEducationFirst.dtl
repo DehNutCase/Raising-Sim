@@ -1,0 +1,26 @@
+[background arg="res://Art/Background/UncleMugen/library.webp" fade="0.0"]
+join Mao (Normal) 2
+join Stella (Grin) 4
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): (Psst. Hey, Rice, why are we in the library?)
+Rice_Portrait (Normal): (Since the Basics of Magecraft is a foundational course, some of the students might not know any spells. So everyone is given some time to find a simple spell they might like before the practical portion starts.)
+Rice_Portrait (Normal): (You already know Paintball, so you may do whatever you wish for the time being.)
+update Stella [animation="Tada" length="1"]
+update Stella (Frown)
+update Mao (Excited)
+Mao_Portrait (Excited): (Wait, does that mean I can pick up a super awesome spell to learn?)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): (Kyaa! Teach me something awesome, Rice-mon!)
+Rice_Portrait (Normal): (We don't have the time for you to learn something complicated. But if you want to learn something new, the spells in the Prestidigitation series tend to be simple and practical. )
+update Mao (Normal)
+Mao_Portrait (Normal): (But those are boring.)
+Rice_Portrait (Normal): (I prefer those kinds of simple and practical spells, personally. If you want something big and flashy it should be better to ask her majesty.)
+Rice_Portrait (Normal): (Or you can take a course specifically to learn those spells.)
+Mao_Portrait (Normal): (Maybe later.)
+Mao_Portrait (Normal): (Psst. Is it just me, or is the girl over there staring at me?)
+Rice_Portrait (Normal): (In your general direction, yes. You specifically, no.)
+Mao_Portrait (Normal): (Oh. That's good, I thought I was doing something wrong.)
+Mao_Portrait (Normal): (Hmm...)
+Mao_Portrait (Normal): (I guess I'll ask her why she's staring later, I should be quiet in the library.)
+[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]

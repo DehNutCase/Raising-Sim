@@ -13,7 +13,7 @@
 "display_name": "Stella",
 "mirror": false,
 "nicknames": ["Stella Neville"],
-"offset": Vector2(0, 0),
+"offset": Vector2(0, 70),
 "portraits": {
 "Angry": {
 "export_overrides": {
@@ -106,5 +106,5 @@
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.9
 }
