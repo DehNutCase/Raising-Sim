@@ -1,0 +1,52 @@
+[background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
+join Mao (Normal) 2
+join Stella (Frown) 4
+[history action="clear"]
+update Mao (Excited)
+Mao_Portrait (Excited): Wow! A real life dungeon!
+update Mao [animation="Tada" length="1" repeat="2"]
+Mao_Portrait (Excited): Will we be fighting infinitely spawning skeletons? *Shadow Boxing*
+Rice_Portrait (Normal): The dungeons built for that kind of thing stop functioning surprisingly quickly.
+Rice_Portrait (Normal): This is simply a reasonably safe and sturdy place for basic spell practice. Despite its looks, it's quite well ventilated, so fire spells are much safer here than an open plain or the like.
+Rice_Portrait (Normal): (There are other safeguards for all sorts of spells, but fire tends to be the most dangerous out of all the popular elements. Lightning comes close, but the harm is usually limited to either the user alone or one other person.)
+update Mao (Normal)
+Mao_Portrait (Normal): Wouldn't they be safer here anyway? There's nothing to burn.
+Rice_Portrait (Normal): ...Don't start fires in an enclosed space, Mao.
+Rice_Portrait (Normal): (Perhaps they should give out pamphlets on basic spell safety as part of this course, hmm...)
+Mao_Portrait (Normal): (Psst. Is it just me, or is that girl staring at me again?)
+Rice_Portrait (Normal): In your general direction, yes.
+update Mao 3 [animation="Tada" length="1" move_time="1"]
+update Stella (Surprise)
+update Stella [animation="Tada" length="1"]
+Mao_Portrait (Normal): Hello! Did you need me for something?
+Stella_Portrait (Surprise): Ah. Um, I apologize for bothering you.
+update Stella (Frown)
+Stella_Portrait (Frown): (I should just go for it.)
+Stella_Portrait (Frown): May I get your autograph, Miss Glassfield?
+Rice_Portrait (Normal): I don't mind. Here.
+update Stella [animation="Tada" length="1"]
+update Stella (Grin)
+Stella_Portrait (Grin): Thank you!
+update Stella (Blush)
+Stella_Portrait (Blush): Ahem, sorry about that.
+Mao_Portrait (Normal): You're welcome! Teehee.
+update Stella (Frown)
+Stella_Portrait (Frown): Please let me know if you want the notes for this class. I took this class before, so I have a full set of lecture notes and test tips. They're a bit outdated, though.
+Mao_Portrait (Normal): How come you're in this class again, then?
+Stella_Portrait (Frown): The academy curriculum gets overhauled every once in a while, and I'm in charge of checking the changed courses when that happens.
+Stella_Portrait (Frown): Not in an official capacity, mind. It's part of my duties as part of Her Highness' affinity.
+Mao_Portrait (Normal): Doesn't that make it official, then?
+Rice_Portrait (Normal): She's talking about Victoria.
+update Mao [animation="Tada" length="1"]
+update Mao (Surprised)
+Mao_Portrait (Surprised): Victoria is a princess!?
+Stella_Portrait (Frown): I was under the impression you knew that already?
+update Mao (Normal)
+Mao_Portrait (Normal): Maybe? I don't think so?
+Rice_Portrait (Normal): It's better not to think too hard about what Mao may or may not know.
+Mao_Portrait (Normal): How come Victoria doesn't live in the palace?
+Rice_Portrait (Normal): She does, in fact, have her own room there. But there are personal reasons.
+Rice_Portrait (Normal): I recommend waiting until she tells you what they are herself.
+Stella_Portrait (Frown): The situation is a bit delicate, but please let me know if you need my help for anything.
+Mao_Portrait (Normal): Okie dokie.
+[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]

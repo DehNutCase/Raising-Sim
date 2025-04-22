@@ -1,0 +1,11 @@
+[background arg="res://Art/Background/UncleMugen/library.webp" fade="0.0"]
+join Mao (Normal) 1
+join Stella (Grin) 3
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): (Huh. We're in the library again.)
+Mao_Portrait (Normal): (How come I don't feel like I learned anything in this class?)
+Rice_Portrait (Normal): (In theory, this class was supposed to give you the foundation needed for further studies in magecraft.)
+Rice_Portrait (Normal): (That would be your personal issue, I believe.)
+Stella_Portrait (Grin): Thank you!
+[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]

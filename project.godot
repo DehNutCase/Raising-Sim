@@ -29,11 +29,11 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -175,7 +175,9 @@ directories/dtl_directory={
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "InkMageSchoolFirst": "res://Timelines/ActionEvents/InkMageSchool/InkMageSchoolFirst.dtl",
+"MagecraftEducationEnd": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationEnd.dtl",
 "MagecraftEducationFirst": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationFirst.dtl",
+"MagecraftEducationMiddle": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationMiddle.dtl",
 "MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
 "PhysicalEducationEnd": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationEnd.dtl",
 "PhysicalEducationFirst": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationFirst.dtl",

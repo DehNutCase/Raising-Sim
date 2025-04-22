@@ -12,7 +12,7 @@ update Mao (Excited)
 Mao_Portrait (Excited): (Wait, does that mean I can pick up a super awesome spell to learn?)
 update Mao [animation="Tada" length="1"]
 Mao_Portrait (Excited): (Kyaa! Teach me something awesome, Rice-mon!)
-Rice_Portrait (Normal): (We don't have the time for you to learn something complicated. But if you want to learn something new, the spells in the Prestidigitation series tend to be simple and practical. )
+Rice_Portrait (Normal): (We don't have the time for you to learn something complicated. But if you want to learn something new, the spells in the Prestidigitation series tend to be simple and practical.)
 update Mao (Normal)
 Mao_Portrait (Normal): (But those are boring.)
 Rice_Portrait (Normal): (I prefer those kinds of simple and practical spells, personally. If you want something big and flashy it should be better to ask her majesty.)
