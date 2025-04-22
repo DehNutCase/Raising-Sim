@@ -660,6 +660,7 @@ const courses = {
 			#TODO,  implement skill for magic training
 			'skill':{
 			},
+			'timelines': ["MagecraftEducationFirst", "MagecraftEducationMiddle", "MagecraftEducationEnd"],
 		},
 		'Physical Education': {
 			'stats': {

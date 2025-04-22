@@ -1,11 +1,51 @@
 [background arg="res://Art/Background/UncleMugen/library.webp" fade="0.0"]
 join Mao (Normal) 1
-join Stella (Grin) 3
+join Stella (Frown) 3
 [history action="clear"]
 update Mao (Normal)
 Mao_Portrait (Normal): (Huh. We're in the library again.)
 Mao_Portrait (Normal): (How come I don't feel like I learned anything in this class?)
 Rice_Portrait (Normal): (In theory, this class was supposed to give you the foundation needed for further studies in magecraft.)
-Rice_Portrait (Normal): (That would be your personal issue, I believe.)
-Stella_Portrait (Grin): Thank you!
-[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]
+Rice_Portrait (Normal): (Your foundation wasn't bad to begin with, so perhaps you learned less than others. That said, the course content felt quite concise and informative.)
+update Stella (Frown)
+Stella_Portrait (Frown): (Perhaps it's because the class feels rather 'industrialized?')
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): (Yeah, exactly! The class somehow made magic boring!)
+Mao_Portrait (Normal): (How does that even happen?)
+Rice_Portrait (Normal): (I see. Well, it's my personal opinion that magic is supposed to be boring.)
+Rice_Portrait (Normal): (The idea that magical knowledge was supposed to be secret and mysterious can be considered one of the greatest stumbling blocks towards magecraft development.)
+Mao_Portrait (Normal): (Booooring.)
+Rice_Portrait (Normal): (Boring is productive.)
+Stella_Portrait (Frown): (By the way, are you done with your coursework? We're supposed to be preparing for the finals right now.)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): (Umu! Prepare to behold! I'll use a ball of water to demonstrate.)
+update Mao [animation="Tada" length="2" repeat="3"]
+Mao_Portrait (Normal): (Are you beholding? Conjure, freeze, split, spin, melt, and erase.)
+Stella_Portrait (Frown): (That was excellent. You won't even need to do the theoretical portion if you can do this well on the practicals.)
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): (More praise, please.)
+Stella_Portrait (Frown): (Did you get lessons on magecraft before? It's hard to believe this is your first class on the subject.)
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): (It's because of my wand! Her majesty gave it to me for my birthday a few years ago, and it's awesome!)
+update Mao (Normal)
+Mao_Portrait (Normal): (I can barely cast spells without it.)
+Rice_Portrait (Normal): (It's quite normal to need a magical focus for spells. If anything, the fact that you can cast at all without one means you have a certain degree of attainment.)
+Rice_Portrait (Normal): (To answer your original question, Stella, we haven't taught her anything other than minor cantrips. Mao's current proficiency is simply a result of constant practice in everyday life.)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): (Drawing is fun!)
+Stella_Portrait (Frown): (Hmm...)
+Mao_Portrait (Normal): (Oh yeah. Hey, Rice, can we have a party if I end up acing the finals?)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): (Stella should come too!)
+Stella_Portrait (Frown): (That's a bit...)
+update Mao (Sad)
+Mao_Portrait (Sad): (Please?)
+Stella_Portrait (Frown): (It's not that I have a problem with it, but it's better if you didn't mingle too much with us, I think.)
+update Mao (Normal)
+Rice_Portrait (Normal): (I believe it's a little too late for that concern.)
+Mao_Portrait (Normal): (Oh, oh! We can invite Victoria and everyone else too!)
+Stella_Portrait (Frown): (I'll ask them, but you should double check that there's no problems on your side.)
+update Mao (Excited)
+Mao_Portrait (Excited): (Yay!)
+[signal arg="{"stats": {"stress": -10, "scholarship": 10,}}"]
