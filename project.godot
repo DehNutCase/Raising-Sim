@@ -29,11 +29,11 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -55,6 +55,8 @@ directories/dch_directory={
 "Elizabeth/Elizabeth": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Elizabeth/Elizabeth.dch",
 "Elizabeth/Elizabeth_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Elizabeth/Elizabeth_Portrait.dch",
 "Elizabeth_Portrait": "res://Characters/Elizabeth/Elizabeth_Portrait.dch",
+"Fiona": "res://Characters/Fiona/Fiona.dch",
+"Fiona_Portrait": "res://Characters/Fiona/Fiona_Portrait.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
 "Hero_F/Hero_f": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hero_F/Hero_f.dch",
 "Hero_F/Hero_f_portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hero_F/Hero_f_portrait.dch",
@@ -150,6 +152,7 @@ directories/dtl_directory={
 "BlessedPlainsFirst": "res://Timelines/WalkEvents/BlessedPlainsFirst.dtl",
 "CityGates": "res://Timelines/WalkEvents/CityGates.dtl",
 "CityGatesFirst": "res://Timelines/WalkEvents/CityGatesFirst.dtl",
+"ColorTheoryEducationFirst": "res://Timelines/ActionEvents/InkMageSchool/ColorTheory/ColorTheoryEducationFirst.dtl",
 "Day120Event": "res://Timelines/DayEvents/Day120Event.dtl",
 "Day1Event": "res://Timelines/DayEvents/Day1Event.dtl",
 "Day30Event": "res://Timelines/DayEvents/Day30Event.dtl",

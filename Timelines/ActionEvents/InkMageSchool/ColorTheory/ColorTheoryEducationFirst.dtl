@@ -1,0 +1,28 @@
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+join Mao (Normal) 1
+join Fiona (Frown) 2
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): So what makes color theory magical, anyway?
+Rice_Portrait (Normal): Hmm. I'll apologize if the name of the course gave the wrong impression, but the color theory of magic has nothing to do with the visual arts.
+Rice_Portrait (Normal): It's a system of classifying spells under five different colors rather than the eight traditional schools of magic.
+Rice_Portrait (Normal): Black for curses, white for healing, red for blasting, green for strengthening, and blue for everything every other color does except better.
+Mao_Portrait (Normal): That last one doesn't sound quite right.
+Rice_Portrait (Normal): It's an abridged summary. Strictly speaking, blue was meant for information and mental spells like divination or telekinesis, but there's a certain tendency to consider every kind of spell as 'blue.'
+Rice_Portrait (Normal): To be perfectly honest, you're only taking this class because we're not quite sure what's needed to unlock the more advanced classes in the Ink Mage series. Feel free to give me your feedback later and I'll relay it to her majesty.
+Mao_Portrait (Normal): Okie dokie.
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Oh yeah. You said her majesty met a World Painter before, right? What was she like? Was she awesome?
+Rice_Portrait (Normal): According to her majesty, the two of them met before she was born.
+update Mao (Normal)
+Mao_Portrait (Normal): Huh?
+Rice_Portrait (Normal): I don't entirely understand it myself. I believe she called it 'character creation?' And, somehow during that process, she was able to meet other people and remember those meetings.
+Rice_Portrait (Normal): It sounded rather metaphysical to me, the idea that the soul for the person who would grow up to be her majesty was created before the body of that person.
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Oh wow! Does that mean they're soulmates? Kyaa!
+Rice_Portrait (Normal): That's one way to look at it, I suppose.
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee.
+[signal arg="{"stats": {"stress": -5}}"]
