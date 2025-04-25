@@ -1,28 +1,27 @@
 [background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
-join Mao (Normal) 1
-join Fiona (Frown) 2
+join Mao (Normal) 2
 [history action="clear"]
 update Mao (Normal)
 Mao_Portrait (Normal): So what makes color theory magical, anyway?
-Rice_Portrait (Normal): Hmm. I'll apologize if the name of the course gave the wrong impression, but the color theory of magic has nothing to do with the visual arts.
-Rice_Portrait (Normal): It's a system of classifying spells under five different colors rather than the eight traditional schools of magic.
-Rice_Portrait (Normal): Black for curses, white for healing, red for blasting, green for strengthening, and blue for everything every other color does except better.
-Mao_Portrait (Normal): That last one doesn't sound quite right.
-Rice_Portrait (Normal): It's an abridged summary. Strictly speaking, blue was meant for information and mental spells like divination or telekinesis, but there's a certain tendency to consider every kind of spell as 'blue.'
-Rice_Portrait (Normal): To be perfectly honest, you're only taking this class because we're not quite sure what's needed to unlock the more advanced classes in the Ink Mage series. Feel free to give me your feedback later and I'll relay it to her majesty.
+Rice_Portrait (Normal): Hmm. It's possible the name of the course gave the wrong impression, but the color theory of magic has nothing to do with the visual arts.
+Rice_Portrait (Normal): It's a system of classifying spells under five colors rather than the eight traditional schools of magic.
+Rice_Portrait (Normal): Black for cursing, white for healing, red for blasting, green for strengthening, and blue for everything.
+Mao_Portrait (Normal): That last one doesn't sound right.
+Rice_Portrait (Normal): It's an abridged summary. Strictly speaking, blue should be information and mental spells like divination or telekinesis, but there's a certain tendency to label every kind of spell as 'blue.'
+Rice_Portrait (Normal): I can only assume it's due to the stereotype of blue being the color of magic.
+Mao_Portrait (Normal): Isn't that octarine?
+Rice_Portrait (Normal): I'm afraid I don't know what that is.
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Teehee. *Smug*
+Rice_Portrait (Normal): One more thing. As I mentioned before, we're not entirely certain about the promotion requirements for the more advanced classes in the Ink Mage series, so a lot of your courses will be our best guess about what's necessary.
+update Mao (Normal)
+Rice_Portrait (Normal): Since the Ink Mage series is your 'natural' class path, the requirements should be quite lenient for you, but please let us know if you have any feedback.
 Mao_Portrait (Normal): Okie dokie.
-update Mao [animation="Tada" length="1"]
-update Mao (Excited)
-Mao_Portrait (Excited): Oh yeah. You said her majesty met a World Painter before, right? What was she like? Was she awesome?
-Rice_Portrait (Normal): According to her majesty, the two of them met before she was born.
-update Mao (Normal)
-Mao_Portrait (Normal): Huh?
-Rice_Portrait (Normal): I don't entirely understand it myself. I believe she called it 'character creation?' And, somehow during that process, she was able to meet other people and remember those meetings.
-Rice_Portrait (Normal): It sounded rather metaphysical to me, the idea that the soul for the person who would grow up to be her majesty was created before the body of that person.
-update Mao [animation="Tada" length="1"]
-update Mao (Excited)
-Mao_Portrait (Excited): Oh wow! Does that mean they're soulmates? Kyaa!
-Rice_Portrait (Normal): That's one way to look at it, I suppose.
-update Mao (Normal)
-Mao_Portrait (Normal): Teehee.
-[signal arg="{"stats": {"stress": -5}}"]
+Rice_Portrait (Normal): We don't anticipate training up another Ink Mage in the future, but what we learn from training you will be helpful if you ever wanted to retrain back into Ink Mage for whatever reason.
+Mao_Portrait (Normal): What do you mean by retrain?
+Rice_Portrait (Normal): Ah. Come to think of it, it's most likely not relevant for you.
+Rice_Portrait (Normal): Since it's difficult for combat classes to level up, sometimes it's optimal to abandon some levels in one class so you can gain levels by fighting easier enemies again.
+Rice_Portrait (Normal): The idea is that you'll gain levels in a better class afterwards, so you end up with a more optimized build.
+Rice_Portrait (Normal): As a non-combat class, you probably won't need to do this.
+Mao_Portrait (Normal): (Why do I get the feeling both her majesty and Rice are massive muscleheads? It's weird since Rice is basically a giant know it all.)
+[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]

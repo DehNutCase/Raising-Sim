@@ -693,6 +693,7 @@ const courses = {
 			'required_progress': 20000,
 			'skill':{
 			},
+			'timelines': ["ColorTheoryEducationFirst", "ColorTheoryEducationMiddle", "ColorTheoryEducationEnd"],
 		},
 		'Line, Color, and Composition': {
 			'stats': {

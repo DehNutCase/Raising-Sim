@@ -1,0 +1,38 @@
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+join Mao (Normal) 1
+join Fiona (Grin) 2
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Excuse me! You dropped this.
+update Fiona (Surprise)
+Fiona_Portrait (Surprise): Oh my. Thank you.
+update Fiona (Grin)
+Mao_Portrait (Normal): You're welcome!
+Fiona_Portrait (Grin): Let me buy you something next time we're in the cafeteria.
+Mao_Portrait (Normal): I'll have a cupcake!
+update Fiona (Laugh)
+Fiona_Portrait (Laugh): Sure.
+update Fiona (Grin)
+Fiona_Portrait (Grin): But please excuse me for now, I need to make sure everything's ready before class starts.
+leave Fiona [animation="Slide Out Right" length="4"]
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): See you!
+Mao_Portrait (Normal): (Psst, Rice. I feel like that girl is in all my classes, is she my stalker or something?)
+Rice_Portrait (Normal): She does attend most of your classes, yes. That said, you're the latecomer. If anyone's the stalker, it's you.
+Mao_Portrait (Normal): (Oh. Well, is there a place I need to go to report myself? I'm not sure I want to attend the same class as a stalker.)
+Rice_Portrait (Normal): Hmm. If you're asking if you can have private tutors instead of attending the academy, I believe her majesty is willing to arrange that for you.
+Mao_Portrait (Normal): (I was joking.)
+Rice_Portrait (Normal): Moving on. Now that you've attended the class for a bit, do you feel like you learned anything?
+Mao_Portrait (Normal): I guess I don't need to whisper any more. Did I learn anything? Hmm.
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): I don't know!
+Rice_Portrait (Normal): I see.
+Mao_Portrait (Normal): Aren't you going to scold me?
+Rice_Portrait (Normal): Nothing about your studies is particularly urgent. And it's uncertain if scolding you would help you learn in any case.
+update Mao (Excited)
+Mao_Portrait (Excited): So I can be lazy all I want and you won't scold me?
+Rice_Portrait (Normal): I believe I have already said that was the case.
+update Mao (Normal)
+Mao_Portrait (Normal): You should play along with me some times, you know?
+[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]
