@@ -1,0 +1,59 @@
+[background arg="res://Art/Background/Background material shop/bg007d.bmp" fade="0.0"]
+join Mao (Normal) 1
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee. Bedtime!
+Rice_Portrait (Normal): I take it you want a bedtime story again?
+Mao_Portrait (Normal): (Let's see, this time I want...)
+- Littlest Goddess
+	Rice_Portrait (Normal): On the fisherman's return, the sky was dark and thunderous, the freezing rain drowning out the world. But, just as he wished, he was emperor.
+	Rice_Portrait (Normal): Awaiting him was an army of gallant knights and disciplined soldiers, not a single one shaking or stirring despite the downpour.
+	Rice_Portrait (Normal): The stood proud and eager, ready to storm forth and conquer the moment he gave the order.
+	Rice_Portrait (Normal): But still, he wasn't satisfied.
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): (I wonder if there's going to a moral to this particular set of wishes. The earlier ones seemed quite lighthearted, but this fisherman seems like he's going to end badly.)
+	Rice_Portrait (Normal): (Ending up in his old shack is probably the best he could wish for.)
+	Rice_Portrait (Normal): (I'll keep reading for a while longer.)
+	[signal arg="{"stats": {"stress": -10, "magic": 5,}}"]
+- Tower Climbing
+	Rice_Portrait (Normal): Personally, I thought the two of us were more than enough for an Ascension Party, but she wanted to make a 'proper' one, whatever that meant.
+	Rice_Portrait (Normal): So we posted a few recruitment requests while doing some basic commissions in the Tower's lower levels.
+	Rice_Portrait (Normal): The commissions paid surprisingly well, considering how easy they were. But then again, most academy graduates have better things to do than muck around the tower, and everyone else would be risking their lives even in the lowest levels.
+	Rice_Portrait (Normal): Basically hazard pay.
+	Rice_Portrait (Normal): Lucca realized this might end up something of a problem right away. If our new party members were the typical weak and desperate tower climber, then any encounter that could remotely threaten the two of us wouldn't even leave any stains of our party members behind.
+	Rice_Portrait (Normal): In other words, we needed to either recruit some top level combat power, which definitely wasn't happening, or we needed to train up the riff raff we did recruit.
+	Rice_Portrait (Normal): So I ended up the luggage carrier, and she ended up being the 'black' mage. Supportive spells would zero out experience gains, but you can apply curses without being considered a party member for experience purposes.
+	Mao_Portrait (Normal): She made you carry luggage!?
+	Rice_Portrait (Normal): You should be trying to sleep, Mao. But yes. That said, I didn't particularly mind the job.
+	Rice_Portrait (Normal): Her logic was quite interesting as well, according to her, the porter should be either the strongest or second strongest person in the party, since they needed to be able to keep the luggage and themselves safe.
+	Rice_Portrait (Normal): It's entirely contrary to the common sense that the porter should be the most disposable member of the party, but it made a certain amount of sense.
+	Rice_Portrait (Normal): (Well, going against common sense is part of what led to the party kill later, but that's neither here nor there.)
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): Anyway, the plan was that the two of us would take on supporting roles while carefully raising up any party members we managed to recruit.
+	Rice_Portrait (Normal): Neither of us were any good at supporting, Lucca even had to do last minute cramming just to learn some basic curses, but she was quite insistent on having a 'proper' party rather than just the two of us.
+	Rice_Portrait (Normal): It ended up working well enough, we recruited a swordsman, an archer, and even a priest. The swordsman got a lot of jealous looks whenever we were in town, since everyone but him were girls.
+	Rice_Portrait (Normal): With the two of us around to handle any contigencies, the other three leveled up quite quickly and safely. In retrospect, such an easy start probably gave them an overinflated sense of self worth, something like "so these fancy pants academy graduates aren't much after all."
+	Rice_Portrait (Normal): (I do understand why that happened, since the two of us were massively overleveled, it meant that we couldn't act as 'proper' party members without zeroing out any possible experience gains.)
+	Rice_Portrait (Normal): (Since we didn't do anything big or flashy, they probably thought we didn't do anything period.)
+	Rice_Portrait (Normal): (I'm surprised Mao hasn't gotten tired of this yet.)
+	[signal arg="{"stats": {"stress": -10,}}"]
+- Hero of Light
+	Rice_Portrait (Normal): And so, the dragon was defeated. But with its dying breath, it promised that it would return. Just as the light shines on all things, it said, so too would darkness ever appear.
+	Rice_Portrait (Normal): The hero, having given his all just to land the final blow, no longer had the strength to respond.
+	Rice_Portrait (Normal): All he could do was pin his hopes on next wielder of the holy sword.
+	Rice_Portrait (Normal): Time passed. Spring. Summer. Autumn. Winter. Years passed.
+	Rice_Portrait (Normal): The scars of the battle gradually faded from the mountain, and in their place, a city grew.
+	Rice_Portrait (Normal): Remembering the hero's life and deeds, the inhabitants of the city built a Tower around the holy sword he left behind.
+	Rice_Portrait (Normal): (Considering the city's location, is this meant to be a reference to Tara's Tower of Light?)
+	Rice_Portrait (Normal): So that the dragon's threat doesn't come to fruition, the city looked far and wide for someone to carry on the hero's will.
+	Rice_Portrait (Normal): And, just in case they couldn't find anyone, they founded a school of magical swordsmanship, to train up the next hero.
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): (Well, it's definitely Tara.)
+	Rice_Portrait (Normal): (Why is this book in the intranet library? It doesn't seem like it caters to Albion sensibilities at all.)
+	Rice_Portrait (Normal): (Mao seems to like it, at least. I'll keep reading.)
+	[signal arg="{"stats": {"stress": -5, "resistance": 5, "defense": 5,}}"]
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Zzz...
+Rice_Portrait (Normal): (Good night.)
+Rice_Portrait (Normal): (Mao falls asleep surprisingly quickly, considering how excitable she is.)
