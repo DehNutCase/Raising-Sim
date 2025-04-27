@@ -1,0 +1,55 @@
+[background arg="res://Art/Background/Background material shop/bg007d.bmp" fade="0.0"]
+join Mao (Normal) 1
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Yay, story time!
+Rice_Portrait (Normal): Try not to get too excited. It'll be a problem if you couldn't sleep later.
+Mao_Portrait (Normal): I'll just take the day off!
+Rice_Portrait (Normal): I see.
+Rice_Portrait (Normal): Do you have a specific story you want to hear?
+- The one about the little goddess, please
+	Rice_Portrait (Normal): Do you remember where we left off?
+	Mao_Portrait (Normal): It was just after she granted the fisherman's wish a second time!
+	Rice_Portrait (Normal): Very well. Ahem.
+	Rice_Portrait (Normal): On his return, the fisherman found his home replaced with a castle of stone and iron. It was vast and imposing, standing proudly against the now stormy sky.
+	Rice_Portrait (Normal): But still, he wasn't satisfied.
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): (I suppose when they called her the 'Littlest' Goddess, they weren't referring to her rank as a divinity.)
+	Rice_Portrait (Normal): (Given the amount and scale of her wishes, she's at least middle, possibly upper-middle. Well, I probably shouldn't be taking this story seriously.)
+	Rice_Portrait (Normal): (I'll keep reading for a while longer, since it seems like Mao can remember quite a bit.)
+	[signal arg="{"stats": {"stress": -10, "magic": 5,}}"]
+- Do you have any personal stories?
+	Rice_Portrait (Normal): Like I said before, I don't believe my experiences are particularly interesting. But what did you want to hear about?
+	Mao_Portrait (Normal): Haven't you gone on a lot of adventures before?
+	Rice_Portrait (Normal): Adventures? I suppose I did wander around Albion for a few years, but the parts of that I found enjoyable would be quite boring to you.
+	Rice_Portrait (Normal): I would be talking about things like a new bookstore that opened in an out of the way city, an interesting lecture I happened to attend, and so on.
+	Rice_Portrait (Normal): Why did you think I went on adventures?
+	Mao_Portrait (Normal): You just seemed like that kind of person!
+	Rice_Portrait (Normal): I see.
+	Rice_Portrait (Normal): I still think you should ask for something else next time. But I'll talk about the time I climbed Tara's Tower of Light with my best friend.
+	Rice_Portrait (Normal): This was back when I lived in Tara, so it wasn't an adventure in the sense of a journey, but dungeon delving and tower climbing can be considered archetypal adventures, I think.
+	update Mao [animation="Tada" length="1"]
+	Mao_Portrait (Normal): Yay!
+	Rice_Portrait (Normal): It was just after we graduated. Lucca, being the way she is, didn't want to settle down at all, so she came to me with an offer...
+	Rice_Portrait (Normal): (I should probably leave out the part where we almost got total party killed. Or perhaps I should emphasize it? So Mao doesn't go around thinking dungeons and towers are fun places to play. Hmm.)
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): (I'll think about it later. The start and middle are quite lighthearted.)
+	Rice_Portrait (Normal): (Mao would probably get bored of this before we reach the end.)
+	[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]
+- Surprise me!
+	Rice_Portrait (Normal): I'll see if there's anything that looks interesting in the intranet library.
+	Rice_Portrait (Normal): How about 'The Dark Dragon and the Hero of Light'? It seems to be a series of children's books.
+	Rice_Portrait (Normal): (I suppose it's reflective of the differences between Albion and Tara that the main character is the 'Dark Dragon.' I suppose this is Albion's version of Hero versus Demon King stories?)
+	Rice_Portrait (Normal): (Wait, that's wrong. The titular character is the 'Hero of Light.' Strange. Shouldn't it have been 'The Hero of Light and the Dark Dragon' then?)
+	Rice_Portrait (Normal): (I wonder if this series is even popular.)
+	Mao_Portrait (Normal): That sounds cool!
+	Rice_Portrait (Normal): I'll begin, then.
+	Rice_Portrait (Normal): A long time ago, there lived an immortal dragon with very many heads. The dragon was proud and vicious, and none could stand in his path and survive.
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): (Isn't this just a typical hero story?)
+	Rice_Portrait (Normal): (Well, looks like Mao likes it, at least. I'll keep reading.)
+	[signal arg="{"stats": {"stress": -5, "speed": 5, "defense": 5,}}"]
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Zzz...
+Rice_Portrait (Normal): (Good night.)
