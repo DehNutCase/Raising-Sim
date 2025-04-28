@@ -15,7 +15,7 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	Rice_Portrait (Normal): On his return, the fisherman found his home replaced with a castle of stone and iron. It was vast and imposing, standing proudly against the now stormy sky.
 	Rice_Portrait (Normal): But still, he wasn't satisfied.
 	update Mao (EyesClosed)
-	Rice_Portrait (Normal): (I suppose when they called her the 'Littlest' Goddess, they weren't referring to her rank as a divinity.)
+	Rice_Portrait (Normal): (I suppose when they called her the 'Littlest' Goddess, they weren't referring to her rank as a diety.)
 	Rice_Portrait (Normal): (Given the amount and scale of her wishes, she's at least middle, possibly upper-middle. Well, I probably shouldn't be taking this story seriously.)
 	Rice_Portrait (Normal): (I'll keep reading for a while longer, since it seems like Mao can remember quite a bit.)
 	[signal arg="{"stats": {"stress": -10, "magic": 5,}}"]

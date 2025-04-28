@@ -15,28 +15,28 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): (I wonder if there's going to a moral to this particular set of wishes. The earlier ones seemed quite lighthearted, but this fisherman seems like he's going to end badly.)
 	Rice_Portrait (Normal): (Ending up in his old shack is probably the best he could wish for.)
 	Rice_Portrait (Normal): (I'll keep reading for a while longer.)
-	[signal arg="{"stats": {"stress": -10, "magic": 5,}}"]
+	[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]
 - Tower Climbing
 	Rice_Portrait (Normal): Personally, I thought the two of us were more than enough for an Ascension Party, but she wanted to make a 'proper' one, whatever that meant.
 	Rice_Portrait (Normal): So we posted a few recruitment requests while doing some basic commissions in the Tower's lower levels.
 	Rice_Portrait (Normal): The commissions paid surprisingly well, considering how easy they were. But then again, most academy graduates have better things to do than muck around the tower, and everyone else would be risking their lives even in the lowest levels.
-	Rice_Portrait (Normal): Basically hazard pay.
+	Rice_Portrait (Normal): Something like hazard pay.
 	Rice_Portrait (Normal): Lucca realized this might end up something of a problem right away. If our new party members were the typical weak and desperate tower climber, then any encounter that could remotely threaten the two of us wouldn't even leave any stains of our party members behind.
 	Rice_Portrait (Normal): In other words, we needed to either recruit some top level combat power, which definitely wasn't happening, or we needed to train up the riff raff we did recruit.
 	Rice_Portrait (Normal): So I ended up the luggage carrier, and she ended up being the 'black' mage. Supportive spells would zero out experience gains, but you can apply curses without being considered a party member for experience purposes.
 	Mao_Portrait (Normal): She made you carry luggage!?
-	Rice_Portrait (Normal): You should be trying to sleep, Mao. But yes. That said, I didn't particularly mind the job.
+	Rice_Portrait (Normal): You should be trying to sleep, Mao. But yes, I was the porter. I didn't particularly mind the job.
 	Rice_Portrait (Normal): Her logic was quite interesting as well, according to her, the porter should be either the strongest or second strongest person in the party, since they needed to be able to keep the luggage and themselves safe.
-	Rice_Portrait (Normal): It's entirely contrary to the common sense that the porter should be the most disposable member of the party, but it made a certain amount of sense.
+	Rice_Portrait (Normal): It's entirely contrary to the common sense that the porter should be the most disposable member of the party, but there was a certain logic to it.
 	Rice_Portrait (Normal): (Well, going against common sense is part of what led to the party kill later, but that's neither here nor there.)
 	update Mao (EyesClosed)
 	Rice_Portrait (Normal): Anyway, the plan was that the two of us would take on supporting roles while carefully raising up any party members we managed to recruit.
 	Rice_Portrait (Normal): Neither of us were any good at supporting, Lucca even had to do last minute cramming just to learn some basic curses, but she was quite insistent on having a 'proper' party rather than just the two of us.
 	Rice_Portrait (Normal): It ended up working well enough, we recruited a swordsman, an archer, and even a priest. The swordsman got a lot of jealous looks whenever we were in town, since everyone but him were girls.
-	Rice_Portrait (Normal): With the two of us around to handle any contigencies, the other three leveled up quite quickly and safely. In retrospect, such an easy start probably gave them an overinflated sense of self worth, something like "so these fancy pants academy graduates aren't much after all."
-	Rice_Portrait (Normal): (I do understand why that happened, since the two of us were massively overleveled, it meant that we couldn't act as 'proper' party members without zeroing out any possible experience gains.)
-	Rice_Portrait (Normal): (Since we didn't do anything big or flashy, they probably thought we didn't do anything period.)
-	Rice_Portrait (Normal): (I'm surprised Mao hasn't gotten tired of this yet.)
+	Rice_Portrait (Normal): With the two of us around to handle any contigencies, the other three leveled up quickly and safely. In retrospect, such an easy start probably gave them an overinflated sense of self worth, something like "so these fancy pants academy graduates aren't much after all."
+	Rice_Portrait (Normal): (I do understand why that happened. The two of us were massively overleveled, so we couldn't act as 'proper' party members without zeroing out any possible experience gains.)
+	Rice_Portrait (Normal): (Since we didn't do anything big or flashy, they probably thought we didn't do anything.)
+	Rice_Portrait (Normal): (I'm surprised Mao hasn't gotten tired of this yet. Well, as long as she's happy. I'll continue.)
 	[signal arg="{"stats": {"stress": -10,}}"]
 - Hero of Light
 	Rice_Portrait (Normal): And so, the dragon was defeated. But with its dying breath, it promised that it would return. Just as the light shines on all things, it said, so too would darkness ever appear.
@@ -47,7 +47,7 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): Remembering the hero's life and deeds, the inhabitants of the city built a Tower around the holy sword he left behind.
 	Rice_Portrait (Normal): (Considering the city's location, is this meant to be a reference to Tara's Tower of Light?)
 	Rice_Portrait (Normal): So that the dragon's threat doesn't come to fruition, the city looked far and wide for someone to carry on the hero's will.
-	Rice_Portrait (Normal): And, just in case they couldn't find anyone, they founded a school of magical swordsmanship, to train up the next hero.
+	Rice_Portrait (Normal): And, just in case they couldn't find anyone, they founded a school of magical swordsmanship. If they couldn't find a hero, they thought, they'd train one from scratch.
 	update Mao (EyesClosed)
 	Rice_Portrait (Normal): (Well, it's definitely Tara.)
 	Rice_Portrait (Normal): (Why is this book in the intranet library? It doesn't seem like it caters to Albion sensibilities at all.)
