@@ -155,6 +155,21 @@ func calculate_ending():
 			score += Constants.stats[stat].value * stats[stat]
 	return [int(score), "Ending Name"]
 
+#TODO, put descriptions for each job in the constants file and return it
+#Helper function to calculate ending type and score
+func find_most_proficient_job() -> String :
+	#need to return a number score and a string for ending name
+	#give every stat a score value which is multiplied to get added to score in constants
+	#TODO, add ending requirements to constants
+	var most_proficient = "nothing. Did you completely avoid work this year? Fufufu"
+	var proficiency = 0
+	for key in proficiencies:
+		if proficiencies[key] > proficiency:
+			proficiency = proficiencies[key]
+			most_proficient = key
+			
+	return most_proficient
+
 #Helper function to set dialogic flags
 func set_dialogic_temporary_flag(flag:String) -> void:
 	dialogic_temporary_flags[flag] = true

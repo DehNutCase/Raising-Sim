@@ -1,0 +1,55 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Morgan (Grin) 3
+[history action="clear"]
+Morgan_Portrait (Grin): Good morning, Mao. Would you like me to read your fortune?
+update Mao [animation="Tada"]
+update Mao (Excited)
+Mao_Portrait (Excited): You're a fortune teller, your majesty?
+Morgan_Portrait (Grin): I wouldn't say so.
+update Morgan (Laugh)
+Morgan_Portrait (Laugh): I'm not particularly practiced with the spell I'll be using, but I thought you might be interested in what your future might be like.
+update Morgan (Grin)
+update Mao [animation="Tada"]
+update Mao (Normal)
+Mao_Portrait (Normal): Oh. Well, I still think you're cool! Please tell me my fortune!
+Morgan_Portrait (Grin): Fufufu, thank you. Let's see, it looks like your most proficient job is {Player.find_most_proficient_job()}.
+Morgan_Portrait (Grin): Personally, I don't mind whatever you want to do in the future, so I hope you're happy with the path you've chosen.
+Mao_Portrait (Normal): Shouldn't you be pressuring me to make the most out of my life?
+Morgan_Portrait (Grin): Did you want me to do that?
+Mao_Portrait (Normal): Um, not really. But isn't that what a mom is supposed to do?
+Morgan_Portrait (Grin): A mom? Hmm...
+update Morgan (Laugh)
+Morgan_Portrait (Laugh): Even if we had that kind of relationship, don't you think I'm more like the kind of parent who would spoil her kids rotten? Fufufu.
+update Morgan (Grin)
+update Mao (Sad)
+Mao_Portrait (Sad): But I don't want to be useless.
+Morgan_Portrait (Grin): Then I hope you'll keep doing your best. The spell is still working, so let me read more of your fortune.
+update Mao (Normal)
+do Player.set_event_flag("black_forest_orcs")
+if {Player.event_flags.get("black_forest_orcs") != null}:
+	Morgan_Portrait (Grin): Oh, this bit is about Oliver. Looks like he'll fast track through his Magic Officer studies. Not quite valedictorian, but with honors nonetheless.
+	Morgan_Portrait (Grin): If you ever want to make your own faction, you should consider adding him to your retinue.
+	update Mao [animation="Tada"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): My faction? Are we going to go all sengoku jidai all over Albion?
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): Mao.
+	update Mao (Normal)
+	Mao_Portrait (Normal): You know I'm just joking, teehee.
+	update Morgan (Grin)
+	Morgan_Portrait (Grin): For your sake, I would hope so. Let's do our best to keep Albion peaceful, shall we?
+	update Morgan (Grin)
+else:
+	Morgan_Portrait (Grin): Oh? That's strange. According to the spell, there's a certain human hating hero who's supposed to popping out of the Black Forest any day now.
+	Morgan_Portrait (Grin): Ah, I see. It's someone you 'would have' met. I would have sent you to the Black Forest if you had climbed the tower earlier in the year. Seems like you would have met them then.
+	Mao_Portrait (Normal): Is this really [i]my[/i] fortune?
+	Morgan_Portrait (Grin): It does seem a little odd. The spell seems to be reading the future of your past year, rather than your future from now on.
+	Morgan_Portrait (Grin): But this is interesting in its own way, I think. Would you like me to keep going?
+	update Mao [animation="Tada"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Please!
+update Mao (Normal)
+# Section for victoria
+if {Player.event_flags.get("black_forest_orcs") != null}:
+else:
