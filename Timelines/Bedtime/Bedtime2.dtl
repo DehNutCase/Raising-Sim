@@ -64,31 +64,28 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): (I'll continue for a while longer.)
 	[signal arg="{"stats": {"stress": -10, "defense": 5,}}"]
 - Hero of Light
-	Rice_Portrait (Normal): The city grew and prospered. Every year, more and more magic knights graduated from the academy, every one of them peerless in bravery and honor..
-	Rice_Portrait (Normal): (Interesting that they're 'peerless,' seeing how they're mass produced.)
-	Rice_Portrait (Normal): Yet still, the holy sword stood silent and immobile, unresponsive to all who tried to lift it from its pedestal.
+	Rice_Portrait (Normal): The city grew and prospered. Every year, more and more magic knights graduated from the academy, every one of them brave and honorable.
+	Rice_Portrait (Normal): Yet still, the holy sword stood silent and immobile, unresponsive to all who sought to claim it.
 	Rice_Portrait (Normal): Everyone thought a bit differently about this.
 	Rice_Portrait (Normal): Some said the holy sword's silence meant the dragon was still far away from its revival.
 	Rice_Portrait (Normal): Some said the lack of response meant nobody was yet capable of carrying on the hero's will.
 	Rice_Portrait (Normal): Still others said that the holy sword was nothing but a fake prop, and we really should stop paying so much attention to it.
-	Rice_Portrait (Normal): This last one was a rather unpopular opinion, since the holy sword was clearly one of the great artifacts of the world.
+	Rice_Portrait (Normal): This last one was a rather unpopular opinion, since it was obvious the holy sword was one of the great artifacts of the world.
 	Rice_Portrait (Normal): Time passed. Seasons faded into years, and year into decades.
 	Rice_Portrait (Normal): The city grew to rule the entire mountain, and its knights wandered far and wide across the globe.
-	Rice_Portrait (Normal): Still, the holy sword remained silent.
-	Rice_Portrait (Normal): A demon lord rose, a king of elves returned, and a human sat on Albion's throne.
 	Rice_Portrait (Normal): Still, the holy sword remained silent.
 	update Mao (EyesClosed)
 	Rice_Portrait (Normal): And, almost unnoticed, the tower that housed it grew taller and taller.
 	Rice_Portrait (Normal): The holy sword, which once sat at the tower's ground floor, was now on the topmost floor of the tower.
 	Rice_Portrait (Normal): Yet nobody knew why the holy sword moved, nor why the tower grew.
-	Rice_Portrait (Normal): As far as anyone now knew, the sword had always been at the top of the tower.
+	Rice_Portrait (Normal): As far as anyone now knows, the sword had always been at the top of the tower.
 	Rice_Portrait (Normal): Around this time, a series of prophecies began to appear.
 	Rice_Portrait (Normal): The light shall fade, they said, and the dark dragon will swallow the world's hope.
 	Rice_Portrait (Normal): The tower shall close, they said, the sword of light shall be buried in the sky.
 	Rice_Portrait (Normal): And monsters started gushing out of the tower.
-	Rice_Portrait (Normal): (A dungeon break? As far as I know, the Tower of Light never had any dungeon breaks, so it's either referencing something else or just something the author made up.)
-	Rice_Portrait (Normal): (The dragon sounded a little like Demon King Hydra, but the holy sword could be any random holy sword. Really, there's way too many holy swords lying around.)
-	Rice_Portrait (Normal): (This bit felt rather boring, but I suppose that's not necessarily a bad thing for a bedtime story. I'll keep reading.)
+	Rice_Portrait (Normal): (A dungeon break? As far as I know, the Tower of Light never had any dungeon breaks. Maybe the author was referencing something else.)
+	Rice_Portrait (Normal): (The dragon sounded a little like Demon King Hydra, but the holy sword could be any random holy sword. Really, there're way too many holy swords lying around.)
+	Rice_Portrait (Normal): (I'll keep reading.)
 	[signal arg="{"stats": {"stress": -5, "resistance": 5, "defense": 5,}}"]
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Zzz...

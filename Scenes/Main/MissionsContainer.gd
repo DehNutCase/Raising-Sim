@@ -15,7 +15,8 @@ func update_buttons():
 			button.queue_free()
 			
 		for mission in missions.keys():
-			if missions[mission].get("type") != tab.name:
+			#don't add mission if it's not unlocked or not the type's type
+			if missions[mission].get("type") != tab.name or !Player.unlocked_missions.get(mission):
 				continue
 			var button = load("res://Scenes/UI/Actions/mission_button.tscn").instantiate()
 			tab.add_child(button)

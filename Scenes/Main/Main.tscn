@@ -719,23 +719,23 @@ size_flags_vertical = 0
 theme = ExtResource("27_j6jf7")
 text = "StatLabel"
 
-[node name="Mission" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
+[node name="Story" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 layout_mode = 2
 
-[node name="DescriptionContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Mission"]
+[node name="DescriptionContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Story"]
 custom_minimum_size = Vector2(1100, 600)
 layout_mode = 2
 clip_tabs = false
 
-[node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer"]
+[node name="Description" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Story/DescriptionContainer"]
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("22_1jgxs")
 bbcode_enabled = true
 
-[node name="SelectMissionButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description"]
+[node name="SelectMissionButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Story/DescriptionContainer/Description"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -749,13 +749,13 @@ grow_vertical = 0
 size_flags_horizontal = 0
 text = "Start Mission"
 
-[node name="MissionsContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Mission" groups=["ButtonMenu"]]
+[node name="MissionsContainer" type="TabContainer" parent="Ui/MenuPanel/MarginContainer/Story" groups=["ButtonMenu"]]
 custom_minimum_size = Vector2(1100, 200)
 layout_mode = 2
 clip_tabs = false
 script = ExtResource("30_uj6nt")
 
-[node name="Main Story" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Mission/MissionsContainer"]
+[node name="Main Story" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Story/MissionsContainer"]
 clip_contents = true
 layout_mode = 2
 
@@ -864,7 +864,7 @@ size_flags_vertical = 3
 text = "Class
 Change"
 
-[node name="Mission" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Story" type="Button" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -959,7 +959,7 @@ pause_menu_packed = ExtResource("29_h0pyo")
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer/StartDay" to="." method="_on_start_day_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
-[connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description/SelectMissionButton" to="." method="_on_select_mission_pressed"]
+[connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Story/DescriptionContainer/Description/SelectMissionButton" to="." method="_on_select_mission_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/gold"]

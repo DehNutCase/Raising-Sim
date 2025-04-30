@@ -1,0 +1,77 @@
+[background arg="res://Art/Background/Background material shop/bg005a.bmp" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 0
+join Lilian (Grin) 1
+join Stella (Frown) 2 [ mirrored="true"]
+join Victoria (Frown) 3
+join Fiona (Grin) 4 [ mirrored="true"]
+[update_position vector="Vector2(0, 150)" time="0.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Teehee. Thanks for coming, everyone! 🎉
+Victoria_Portrait (Frown): I'm not sure why you said that, seeing how I'm the host. Then again, I'm still not entirely sure why we're holding a welcome party for you.
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee. You should sit down with us too, Rice!
+Rice_Portrait (Normal): I'll pass.
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): Welcome to the club! Just remember, you'll get your head chopped off if you ever say its name. Hah.
+update Lilian (Grin)
+Mao_Portrait (Normal): Thanks?
+Rice_Portrait (Normal): To be clear, she being slightly serious. It's better not to joke around about being part of Imperial Albion.
+Mao_Portrait (Normal): Isn't Albion a kingdom? (Actually, why are we a kingdom? Her majesty is a girl.)
+Rice_Portrait (Normal): That's why you'd get executed. Official policy is that there are no kings in Albion.
+Mao_Portrait (Normal): Oh. Are you about to arrest us? I plead the first!
+Rice_Portrait (Normal): "We have granted to God, and by this our present Charter have confirmed, for Us and our Heirs for ever, that the Church of Albion shall be free, and shall have all her whole Rights and Liberties inviolable?"
+Mao_Portrait (Normal): Why do you have that memorized?
+Rice_Portrait (Normal): Were you pleading the first without knowing what it was? But no, I'm not going to arrest anyone here.
+Rice_Portrait (Normal): It's everyone's freedom to talk about whatever they wish behind closed doors.
+Rice_Portrait (Normal): Just don't talk about the revival of the empire or the restoration of the crowns of demonkind in public.
+Mao_Portrait (Normal): I have no idea what you're talking about!
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): Hah. Is she usually like this?
+update Lilian (Grin)
+Rice_Portrait (Normal): Always.
+Lilian_Portrait (Grin): Hmm. Hmm.... Can I get your contact later?
+Rice_Portrait (Normal): No.
+Stella_Portrait (Frown): Please stop trying to hit on everyone you meet, Lilian.
+Lilian_Portrait (Grin): What? No, this isn't for that. I'll at least wait until Victoria's out of the room before hitting on someone, you know?
+Victoria_Portrait (Frown): I'll thank you to leave me out of this.
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): That's why I'd wait until you're out of the room.
+update Lilian (Grin)
+Mao_Portrait (Normal): Teehee.
+Lilian_Portrait (Grin): You're still too young to drink, right? I'll pour apple juice in that case.
+Lilian_Portrait (Grin): Cheers!
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): 🎉
+Lilian_Portrait (Grin): What spell is that, by the way? All the ones I know leave a mess of confetti that I need to clean up afterwards.
+Mao_Portrait (Normal): Rice taught it to me!
+Rice_Portrait (Normal): It's two separate spells. The first half is just a typical confetti popper, the second half is one of the Prestidigitation series.
+Rice_Portrait (Normal): I simply stitched them together. It's technically its own spell, but the only advantage over casting one after the other is that Mao doesn't forget to clean up after herself.
+Victoria_Portrait (Frown): (...I can already tell that Lilian is going to be blasting confetti everywhere starting tomorrow.)
+Fiona_Portrait (Grin): It sure is peaceful.
+Stella_Portrait (Frown): This, is peaceful?
+Fiona_Portrait (Grin): (Sure. Victoria's trying to hide it, but she's quite enjoying this, you know? It's been awhile since we've all been together.)
+Victoria_Portrait (Frown): I can hear you.
+Fiona_Portrait (Grin): It's the thought that matters, is it not? This way, you know I'm respecting you.
+update Victoria (Sigh)
+Victoria_Portrait (Sigh): (Looking back on it, it might've been better to be more aloof. Without distance, respect decays.)
+update Victoria (Frown)
+Lilian_Portrait (Grin): Oh dear, looks like our great leader is thinking about leader things again. Have some juice and relax, Vicky.
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): There was no way we were ever going to be a completely serious faction with me around. Hah.
+update Lilian (Grin)
+Lilian_Portrait (Grin): Oh that reminds me. Is her majesty actually, like, okay with all of this?
+Lilian_Portrait (Grin): (Like Mao is actually kind of super duper important, right? Seeing how you're always guarding her.)
+Rice_Portrait (Normal): (Her majesty would consider anything that doesn't involve wiping Albion off the map a victory, at least when it comes to Mao.)
+Rice_Portrait (Normal): She's fine with this, yes.
+Victoria_Portrait (Frown): (You really shouldn't be telling me this, I think.)
+Rice_Portrait (Normal): (It's her majesty's opinion that you are the least likely person to put Albion in danger. Frankly, the only reason you aren't part of the line of succession is because it would give everyone the wrong idea.)
+Victoria_Portrait (Frown): (...She does know who I am, yes?)
+Rice_Portrait (Normal): (How could she not, Princess?)
+[signal arg="{"stats": {"stress": -10,}}"]
+[signal arg="{"mission": {"next": "PrincessAlbion1"}}"]

@@ -20,7 +20,7 @@ extends Control
 @onready var walk = $Ui/MenuPanel/MarginContainer/Walk
 @onready var tower = $Ui/MenuPanel/MarginContainer/Tower
 @onready var class_change = $"Ui/MenuPanel/MarginContainer/Class Change"
-@onready var mission = $"Ui/MenuPanel/MarginContainer/Mission"
+@onready var story = $"Ui/MenuPanel/MarginContainer/Story"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 
 #TODO, implement course scheduling
@@ -32,7 +32,7 @@ extends Control
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
-@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change, mission, schedule]
+@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change, story, schedule]
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -539,7 +539,7 @@ func _on_action(button):
 		"Class Change":
 			load_class_change_text("ink_mage_journeyman")
 			class_change.show()
-		"Mission":
+		"Story":
 			if Player.active_mission:
 				#Start next timeline if no combat
 				if !Player.active_mission.get('combat'):
@@ -551,8 +551,11 @@ func _on_action(button):
 					Player.in_mission = true
 					SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 			else:
-				load_mission_text("black_forest_orcs")
-				mission.show()
+				if Player.unlocked_missions:
+					load_mission_text(Player.unlocked_missions.keys()[0])
+				else:
+					printerr("No missions are unlocked yet, story button shouldn't be displayed")
+				story.show()
 		"Save":
 			Player.save_game()
 			menu_panel.visible = true
@@ -564,7 +567,7 @@ func _on_action(button):
 				display_toast("Steam isn't running! Please wishlist 'Raising Niziiro: Albion's Witch' manually.","top")
 			menu_panel.visible = true
 		"Demo":
-			display_toast("Please check out the mission if you haven't already. The Demo is over.")
+			display_toast("Please check out the story if you haven't already. The Demo is over.")
 			menu_panel.visible = true
 		_:
 			printerr("_on_action failed to match")
@@ -652,9 +655,9 @@ func display_stats() -> void:
 	else:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
 	if Player.event_flags.get("mission_information_event"):
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".show()
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Story".show()
 	else:
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Mission".hide()
+		$"LeftMenuContainer/MenuPanel/VBoxContainer/Story".hide()
 	if OS.has_feature("playtest") or OS.has_feature("demo"):
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
 	else:
@@ -701,6 +704,9 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 			Player.active_mission.combat = Constants.missions[mission].combats[combat_number]
 		#recognize mission is finished when there's no timeline next
 		if !Player.active_mission.get('next'): Player.active_mission = false
+	if "unlocked_missions" in dialogic_signal:
+		for mission in dialogic_signal.unlocked_missions:
+			Player.unlocked_missions[mission] = dialogic_signal.unlocked_missions[mission]
 		
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
@@ -914,7 +920,7 @@ func load_mission_text(mission: String):
 	selected_mission = mission
 	#Use below to add correct font that displays emoji if needed
 	#var font = load("res://Art/Fonts/emoji_font_variation.tres")
-	var desc = $"Ui/MenuPanel/MarginContainer/Mission/DescriptionContainer/Description"
+	var desc = $"Ui/MenuPanel/MarginContainer/Story/DescriptionContainer/Description"
 	#Displays mission info if not completed, else displays completion image.
 	if !(selected_mission in Player.event_flags):
 		var text = Constants.missions[mission].description

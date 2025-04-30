@@ -1,0 +1,86 @@
+[background arg="res://Art/Background/Background material shop/bg007d.bmp" fade="0.0"]
+join Mao (Normal) 1
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Thanks for telling me bedtime stories.
+Rice_Portrait (Normal): You're welcome.
+Mao_Portrait (Normal): (Let's see, this time I want...)
+- Littlest Goddess
+	Rice_Portrait (Normal): The small elf thought and thought, but even after a long time, she didn't know what to wish for. So she asked if the goddess wanted anything.
+	Rice_Portrait (Normal): If I had any wishes, said the Littlest Goddess, I would have made them come true already.
+	Rice_Portrait (Normal): The elf tilted her head, a little confused. Then why do you grant wishes, she asked, if you don't want anything yourself.
+	Rice_Portrait (Normal): I don't have a reason not to, said the Littlest Goddess.
+	Rice_Portrait (Normal): The small elf thought that answer sounded a little dangerous, although she wasn't sure why. So she asked if the Littlest Goddess wanted to come home with her to meet her mother.
+	Rice_Portrait (Normal): Her mother, the elf thought, would know what to do.
+	Rice_Portrait (Normal): If that's your wish, I don't mind, said the Littlest Goddess.
+	Rice_Portrait (Normal): So the small elf took the goddess's statue out of the shrine, and started walking back home while holding it tight.
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): Not long after, they ran into a swordsman driving a cart. The swordsman was a beautiful woman with flame red hair, who laughed cheerfully and waved.
+	Rice_Portrait (Normal): If they didn't mind sharing the space with a dragon's corpse, the swordsman said, they could ride in the back of the cart.
+	Rice_Portrait (Normal): And indeed, inside the cart was the corpse of what looked like the world's smallest dragon, only a little bigger than the small elf.
+	Rice_Portrait (Normal): It's bigger than it looks, thought the Littlest Goddess. If the tracks on the ground are anything to go by, the dragon was very heavy indeed.
+	Rice_Portrait (Normal): What should we do, asked the small elf, the swordsman seemed friendly enough.
+	Rice_Portrait (Normal): It would be safer to go with her, said the Littlest Goddess. So the small elf nodded her tiny head, carefully climbing into the back of the cart.
+	Rice_Portrait (Normal): (This story seems a lot better than the last one. Hopefully her majesty doesn't pop out of nowhere again.)
+	Rice_Portrait (Normal): (Perhaps I should do some curating.)
+	Rice_Portrait (Normal): (Well, Mao seems to like the Littlest Goddess well enough, so let's think about it later. I'll keep reading.)
+	[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]
+- Tower Climbing
+	Rice_Portrait (Normal): I suppose the next bit could be considered our glory days. I didn't think much of it, personally, but our rapid ascent to the upper levels made us somewhat famous.
+	Rice_Portrait (Normal): (There's a certain irony in the fact that we could've cleared to the top floor on the very first day if it had been just Lucca and myself, but that's neither here nor there.)
+	Rice_Portrait (Normal): Sponsorships, named commissions, and even fangirls became rather common sights.
+	Rice_Portrait (Normal): But not for the two of us, of course. There's no way anyone was going to pay attention to the porter, and the image Lucca had at that point was 'that curse mage who never does anything.'
+	Rice_Portrait (Normal): Not that either of us had money problems, so the lack of sponsorship was hardly an issue. Lucca was what you would call old money, and an academy graduate had a myraid ways to make money if they wanted to.
+	update Mao [animation="Tada" length="1"]
+	Rice_Portrait (Normal): We didn't have much expenses, either. The academy's standard issue equipment were one or two tiers above the best that money could buy, so an adventurer's biggest expense simply didn't apply to us.
+	Rice_Portrait (Normal): We also started running into our old classmates at this point, our party was getting famous enough to enter social circles of the truly strong, albeit barely.
+	Rice_Portrait (Normal): They looked at me like I was insane for being a porter, and the party like they were insane for making me one. Lucca had laughs about it whenever that happened.
+	Rice_Portrait (Normal): Our old classmates didn't recognize her at all, since she went all-in on the whole gloomy 'curse mage' look.
+	Rice_Portrait (Normal): I doubt anyone could have recognized her as the number one graduate of a magic swordsman academy.
+	Rice_Portrait (Normal): (I'm still not sure why she bothered buying a whole set of black wizard robe, hat, and cloak. Some kind of roleplay?)
+	Rice_Portrait (Normal): I did get some private messages to the tune of 'what the hell are you doing as a porter,' but most of them accepted 'Lucca' as a response.
+	Rice_Portrait (Normal): She had something of a reputation.
+	Rice_Portrait (Normal): It still seemed like smooth sailing at this point, at least on the surface. If anything, we leveled even faster than before, and Lucca was starting to get excited about finally being able to show off what we could do.
+	Rice_Portrait (Normal): So it was something of a complete surprise when the other three voted me out of the party. In the middle of a tower climb, no less.
+	Rice_Portrait (Normal): (Hmm. Looks like Mao is asleep already. I'll stop here.)
+	[signal arg="{"stats": {"stress": -10, "defense": 5,}}"]
+- Hero of Light
+	# TODO
+	Rice_Portrait (Normal): All of a sudden, day turned into night, and the gate to the Tower closed with a loud clang.
+	Rice_Portrait (Normal): Nobody outside could enter, and nobody inside could leave.
+	Rice_Portrait (Normal): A dark shadow emerged from the top floor of the tower, staring intently at the holy sword, now glowing with a golden light.
+	Rice_Portrait (Normal): After staring intently for a long time, the shadow turned away. Not yet, it said, fading into the darkness.
+	Rice_Portrait (Normal): Inside the tower, there were screams of fear and rage. The monsters were even wilder and fiercer than usual, with even the smallest skeleton and weakest slime becoming red eyed and threatening.
+	Rice_Portrait (Normal): Caught by surprise, the
+	Rice_Portrait (Normal): (Hmm. Rather than a dungeon break, this sounds more like what Lucca and I went through back then. A tower mutation incident.)
+	Rice_Portrait (Normal): (Well, our case was more localized. It only affected the top few floors, as far as I know.)
+	# here
+	Rice_Portrait (Normal): (Interesting that they're 'peerless,' seeing how they're mass produced.)
+	Rice_Portrait (Normal): Yet still, the holy sword stood silent and immobile, unresponsive to all who tried to lift it from its pedestal.
+	Rice_Portrait (Normal): Everyone thought a bit differently about this.
+	Rice_Portrait (Normal): Some said the holy sword's silence meant the dragon was still far away from its revival.
+	Rice_Portrait (Normal): Some said the lack of response meant nobody was yet capable of carrying on the hero's will.
+	Rice_Portrait (Normal): Still others said that the holy sword was nothing but a fake prop, and we really should stop paying so much attention to it.
+	Rice_Portrait (Normal): This last one was a rather unpopular opinion, since the holy sword was clearly one of the great artifacts of the world.
+	Rice_Portrait (Normal): Time passed. Seasons faded into years, and year into decades.
+	Rice_Portrait (Normal): The city grew to rule the entire mountain, and its knights wandered far and wide across the globe.
+	Rice_Portrait (Normal): Still, the holy sword remained silent.
+	Rice_Portrait (Normal): A demon lord rose, a king of elves returned, and a human sat on Albion's throne.
+	Rice_Portrait (Normal): Still, the holy sword remained silent.
+	update Mao (EyesClosed)
+	Rice_Portrait (Normal): And, almost unnoticed, the tower that housed it grew taller and taller.
+	Rice_Portrait (Normal): The holy sword, which once sat at the tower's ground floor, was now on the topmost floor of the tower.
+	Rice_Portrait (Normal): Yet nobody knew why the holy sword moved, nor why the tower grew.
+	Rice_Portrait (Normal): As far as anyone now knew, the sword had always been at the top of the tower.
+	Rice_Portrait (Normal): Around this time, a series of prophecies began to appear.
+	Rice_Portrait (Normal): The light shall fade, they said, and the dark dragon will swallow the world's hope.
+	Rice_Portrait (Normal): The tower shall close, they said, the sword of light shall be buried in the sky.
+	Rice_Portrait (Normal): And monsters started gushing out of the tower.
+	Rice_Portrait (Normal): (A dungeon break? As far as I know, the Tower of Light never had any dungeon breaks, so it's either referencing something else or just something the author made up.)
+	Rice_Portrait (Normal): (The dragon sounded a little like Demon King Hydra, but the holy sword could be any random holy sword. Really, there's way too many holy swords lying around.)
+	Rice_Portrait (Normal): (This bit felt rather boring, but I suppose that's not necessarily a bad thing for a bedtime story. I'll keep reading.)
+	[signal arg="{"stats": {"stress": -5, "resistance": 5, "defense": 5,}}"]
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Zzz...
+Rice_Portrait (Normal): (Good night.)

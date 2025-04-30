@@ -20,4 +20,4 @@ Morgan_Portrait (Silhouette): My kingdom isn't so fragile that it can't handle c
 Mao_Portrait (Normal): I'm already working though?
 Morgan_Portrait (Silhouette): Fufufu. Sure. And very hard too.
 Morgan_Portrait (Silhouette): Here's some pocket money, go take the day off and have fun.
-[signal arg="{"stats": {"stress": -20, "gold": 1000,}, "event_flags":{"mission_information_event": true}}"]
+[signal arg="{"stats": {"stress": -20, "gold": 1000,}, "event_flags":{"mission_information_event": true}, "unlocked_missions": {"black_forest_orcs": true},}"]
