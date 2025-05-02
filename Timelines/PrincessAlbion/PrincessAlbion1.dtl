@@ -1,0 +1,20 @@
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Lilian (Grin) 2
+join Victoria (Frown) 3
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): This doesn't look like a factory?
+update Lilian (Grin)
+Lilian_Portrait (Grin): Hmm? This is a typical magical workshop, you know?
+Lilian_Portrait (Grin): Ah, were you thinking something else because we called it a factory?
+Mao_Portrait (Normal): I guess I don't know what a factory is supposed to look like anyway. By the way, aren't you supposed to have employees?
+Victoria_Portrait (Frown): They have the day off, which was why I scheduled this for today. Rather than artisans, it might be better to call them researchers, since we're still investigating how to properly produce magic cards.
+Victoria_Portrait (Frown): Despite how Lilian usually acts, she's quite accomplished at this kind of thing. So I thought I would have her take a look at how it's going.
+Lilian_Portrait (Grin): You really think too much of me, you know?
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): There was no way we were ever going to be a completely serious faction with me around. Hah.
+update Lilian (Grin)
+Rice_Portrait (Normal): <Empty Text Event>
+[signal arg="{"stats": {"stress": -10,}}"]
+[signal arg="{"mission": {"next": "PrincessAlbion2"}}"]

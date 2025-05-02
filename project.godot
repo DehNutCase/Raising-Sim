@@ -193,6 +193,7 @@ directories/dtl_directory={
 "PhysicalEducationFirst": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationFirst.dtl",
 "PhysicalEducationMiddle": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationMiddle.dtl",
 "PrincessAlbion0": "res://Timelines/PrincessAlbion/PrincessAlbion0.dtl",
+"PrincessAlbion1": "res://Timelines/PrincessAlbion/PrincessAlbion1.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
 "RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",

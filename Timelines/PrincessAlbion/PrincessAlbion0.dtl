@@ -21,13 +21,13 @@ update Lilian (Laugh)
 Lilian_Portrait (Laugh): Welcome to the club! Just remember, you'll get your head chopped off if you ever say its name. Hah.
 update Lilian (Grin)
 Mao_Portrait (Normal): Thanks?
-Rice_Portrait (Normal): To be clear, she being slightly serious. It's better not to joke around about being part of Imperial Albion.
+Rice_Portrait (Normal): To be clear, she's not entirely joking. It's better not to joke around about being part of Imperial Albion.
 Mao_Portrait (Normal): Isn't Albion a kingdom? (Actually, why are we a kingdom? Her majesty is a girl.)
 Rice_Portrait (Normal): That's why you'd get executed. Official policy is that there are no kings in Albion.
-Mao_Portrait (Normal): Oh. Are you about to arrest us? I plead the first!
+Mao_Portrait (Normal): Oh. Are you going to arrest us? I plead the first!
 Rice_Portrait (Normal): "We have granted to God, and by this our present Charter have confirmed, for Us and our Heirs for ever, that the Church of Albion shall be free, and shall have all her whole Rights and Liberties inviolable?"
 Mao_Portrait (Normal): Why do you have that memorized?
-Rice_Portrait (Normal): Were you pleading the first without knowing what it was? But no, I'm not going to arrest anyone here.
+Rice_Portrait (Normal): Were you pleading the first without knowing what it was? But no, I'm not going to arrest anyone.
 Rice_Portrait (Normal): It's everyone's freedom to talk about whatever they wish behind closed doors.
 Rice_Portrait (Normal): Just don't talk about the revival of the empire or the restoration of the crowns of demonkind in public.
 Mao_Portrait (Normal): I have no idea what you're talking about!
@@ -38,7 +38,7 @@ Rice_Portrait (Normal): Always.
 Lilian_Portrait (Grin): Hmm. Hmm.... Can I get your contact later?
 Rice_Portrait (Normal): No.
 Stella_Portrait (Frown): Please stop trying to hit on everyone you meet, Lilian.
-Lilian_Portrait (Grin): What? No, this isn't for that. I'll at least wait until Victoria's out of the room before hitting on someone, you know?
+Lilian_Portrait (Grin): What? No, this isn't for that. I'll at least wait until Victoria's out of the room before trying to get a date, you know?
 Victoria_Portrait (Frown): I'll thank you to leave me out of this.
 update Lilian (Laugh)
 Lilian_Portrait (Laugh): That's why I'd wait until you're out of the room.
@@ -67,11 +67,58 @@ Lilian_Portrait (Laugh): There was no way we were ever going to be a completely 
 update Lilian (Grin)
 Lilian_Portrait (Grin): Oh that reminds me. Is her majesty actually, like, okay with all of this?
 Lilian_Portrait (Grin): (Like Mao is actually kind of super duper important, right? Seeing how you're always guarding her.)
-Rice_Portrait (Normal): (Her majesty would consider anything that doesn't involve wiping Albion off the map a victory, at least when it comes to Mao.)
+Rice_Portrait (Normal): (Her majesty does have great expectations of her, but let's keep that a secret. And I don't believe her majesty would mind Mao choosing whatever makes her happy instead.)
 Rice_Portrait (Normal): She's fine with this, yes.
-Victoria_Portrait (Frown): (You really shouldn't be telling me this, I think.)
-Rice_Portrait (Normal): (It's her majesty's opinion that you are the least likely person to put Albion in danger. Frankly, the only reason you aren't part of the line of succession is because it would give everyone the wrong idea.)
-Victoria_Portrait (Frown): (...She does know who I am, yes?)
-Rice_Portrait (Normal): (How could she not, Princess?)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): 🎉Less talking, more drinking! Teehee.🎉
+Mao_Portrait (Normal): Oh yeah, shouldn't I get some kind of initiation. Or hazing or whatever?
+Victoria_Portrait (Frown): We don't do that kind of thing. And it's not as if you're actually joining my faction in any case.
+update Mao (Sad)
+Mao_Portrait (Sad): But I want to be your minion.
+Victoria_Portrait (Frown): Surely her majesty is the better choice for that.
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): I'll also be her majesty's minion! Double minion!
+Lilian_Portrait (Grin): I think you should just roll with it.
+Victoria_Portrait (Frown): I refuse.
+Victoria_Portrait (Frown): Hmm. While you're back in the capital, do you want to take a look at the magic card factory?
+update Mao (Excited)
+Lilian_Portrait (Grin): Oh, were you waiting for me?
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): Sure.
+update Lilian (Grin)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Ooh! Ooh! Pick me! I want to come too!
+Victoria_Portrait (Frown): If you have nothing better to do, I suppose I don't mind.
+Mao_Portrait (Excited): Yay!
+update Mao (Normal)
+Mao_Portrait (Normal): So what's a magic card?
+Lilian_Portrait (Grin): You can think of them as the modern version of magic scrolls. Anyone can use it, not just people who learned magecraft.
+Lilian_Portrait (Grin): Since nobody figured out how to mass produce them yet, it's a giant business opportunity. Or so Victoria says.
+Victoria_Portrait (Frown): If you'll remember, what I said was that magic cards are a business that should exist. It's not necessarily an opportunity. At least, not the lucrative kind.
+Victoria_Portrait (Frown): If her majesty wants to spread the benefits of magic by giving everyone the opportunity to study magecraft, then I would do so by making the study unnecessary, at least for the general public.
+Lilian_Portrait (Grin): (She gets preachy like this every once in a while, by the way. Personally, I think it's adorable.)
+Victoria_Portrait (Frown): Lilian.
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): Hah.
+update Lilian (Grin)
+Fiona_Portrait (Grin): We should get together like this more often.
+Stella_Portrait (Frown): It'll be a little difficult, I think. Right now is more or less a slow period, and we're still swamped with work.
+Lilian_Portrait (Grin): We could always get a teleport permit for this place. I'm sure her majesty will allow it if our newest member here asked her.
+Rice_Portrait (Normal): I wouldn't be so sure. I hesitate to suggest this, but if you wanted a personal teleport beacon, you could always move into the palace.
+Victoria_Portrait (Frown): That will never happen. But I appreciate the thought.
+Mao_Portrait (Normal): Do you not get along with her majesty?
+Victoria_Portrait (Frown): It's the opposite that's the problem. The fact that I can get along with her at all is rather distressing. Considering who we are.
+Lilian_Portrait (Grin): Really, if you like her then you like her. Why worry about that kind of thing.
+Victoria_Portrait (Frown): I can't be you, Lilian.
+Mao_Portrait (Normal): 🎉
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): I'd love it if you moved in. Rice could read us bedtime stories!
+update Victoria (Sweatdrop)
+Victoria_Portrait (Sweatdrop): I appreciate the thought, I suppose.
+update Victoria (Frown)
+Victoria_Portrait (Frown): Moving on, would tomorrow work for the factory inspection?
+Lilian_Portrait (Grin): Sounds good.
+Mao_Portrait (Normal): It's a date!
 [signal arg="{"stats": {"stress": -10,}}"]
 [signal arg="{"mission": {"next": "PrincessAlbion1"}}"]
