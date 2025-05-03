@@ -62,7 +62,7 @@ Source: [itch.io : Royalty Free Music Pack](https://timbeek.itch.io/royalty-free
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ### Image
-#### Character Sprite (Morgan)
+#### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  
 Source: [pompack-en.stores.jp](https://pompack-en.stores.jp/)  
 
@@ -81,6 +81,11 @@ Source: [Deviant Art : Cute Maid Portrait](https://www.deviantart.com/jupiterssd
 #### Backgrounds
 Author: [Uncle Mugen]()  
 Source: [LemmaSoft :  UNCLE MUGEN'S FREE VN (OELVN) RESOURCES](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=17302#p226871) 
+
+### Images and Icons
+#### UI
+Author: [mandinhart](https://itch.io/profile/mandinhart)  
+Source: [Itch.io : Garden cozy icons pack UI](https://mandinhart.itch.io/complete-garden-kit-gui-mandinhar)
 
 ## Tools
 #### Cubism for GDScript

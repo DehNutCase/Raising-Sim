@@ -655,9 +655,9 @@ func display_stats() -> void:
 	else:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
 	if Player.event_flags.get("mission_information_event"):
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Story".show()
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Story".show()
 	else:
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Story".hide()
+		$"RightMenuContainer/MenuPanel/VBoxContainer/Story".hide()
 	if OS.has_feature("playtest") or OS.has_feature("demo"):
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
 	else:

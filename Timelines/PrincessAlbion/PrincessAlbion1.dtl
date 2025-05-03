@@ -8,13 +8,39 @@ Mao_Portrait (Normal): This doesn't look like a factory?
 update Lilian (Grin)
 Lilian_Portrait (Grin): Hmm? This is a typical magical workshop, you know?
 Lilian_Portrait (Grin): Ah, were you thinking something else because we called it a factory?
-Mao_Portrait (Normal): I guess I don't know what a factory is supposed to look like anyway. By the way, aren't you supposed to have employees?
+Mao_Portrait (Normal): I guess I don't really know what a factory is supposed to look like. By the way, aren't you supposed to have employees?
 Victoria_Portrait (Frown): They have the day off, which was why I scheduled this for today. Rather than artisans, it might be better to call them researchers, since we're still investigating how to properly produce magic cards.
 Victoria_Portrait (Frown): Despite how Lilian usually acts, she's quite accomplished at this kind of thing. So I thought I would have her take a look at how it's going.
 Lilian_Portrait (Grin): You really think too much of me, you know?
 update Lilian (Laugh)
-Lilian_Portrait (Laugh): There was no way we were ever going to be a completely serious faction with me around. Hah.
+Lilian_Portrait (Laugh): I don't think there's any way except throwing a bunch of things at the wall and seeing what sticks. If we knew what would work we would be doing it already.
 update Lilian (Grin)
-Rice_Portrait (Normal): <Empty Text Event>
-[signal arg="{"stats": {"stress": -10,}}"]
+Lilian_Portrait (Grin): I mean, I'll take a look anyway. Looks like whoever worked here kept detailed notes, and those look like some finished samples over there. Hmm.
+update Lilian [animation="Tada" length="4" repeat="2"]
+update Lilian (Frown)
+Mao_Portrait (Normal): (You know, I haven't noticed before, but isn't Lilian, like, really handsome when she's serious?)
+Victoria_Portrait (Frown): (I'm not entirely sure that was a compliment. That said, Lilian is quite popular indeed. She gets a surprising amount of love letters from her female admirers, and I believe some of them are quite serious.)
+Mao_Portrait (Normal): (Teehee. Does she ever say yes?)
+Victoria_Portrait (Frown): (Not that I know of.)
+update Lilian (Frown)
+Lilian_Portrait (Grin): Okay. Whoever made these was really good at their job. It shouldn't be a problem to just hand their notes to whoever we end up hiring to mass produce cards. Anyone who learned the basics of magic item production can handle it, I think.
+Lilian_Portrait (Grin): We might even be able to fully automate it with golems or the like.
+Lilian_Portrait (Grin): The only problem is that it looks like every single magic card has a different production method, and we'll need specialists to develop those.
+Lilian_Portrait (Grin): From what I see, development is straightforward enough, but it needs a certain amount of time, effort, and expertise. We'll need to pay them a lot.
+Victoria_Portrait (Frown): As we only need to develop the production method once for a certain type of magic card, we should be able to make up for it in volume.
+Victoria_Portrait (Frown): We should start with general spells for everyday use, I think.
+Lilian_Portrait (Grin): Wouldn't military stuff sell better?
+Victoria_Portrait (Frown): Only if we're planning to export the cards outside of Albion. Since Albion's officer corps is entirely magicalized, there's no real advantage for cards over scrolls.
+Victoria_Portrait (Frown): I'm doubtful her majesty would allow us to export military grade spell cards in any case.
+Rice_Portrait (Normal): For what it's worth, I believe her majesty would welcome such a thing. Assuming, that is, you're selling the cards themselves and not the production method. 
+Victoria_Portrait (Frown): Since cards are consumables... I see.
+Mao_Portrait (Normal): What does she see?
+Rice_Portrait (Normal): Since magic cards are one time use, just like scrolls, a hypothetical enemy nation would only be able to use as much as they stockpiled before the war.
+Rice_Portrait (Normal): As long as we have more bodies than they have cards, they're fundamentally a non-issue. At least for a serious war, the kind where we fight until one side runs out of resources, human and otherwise, to keep fighting.
+Rice_Portrait (Normal): Demonkind includes some rather fecund species, so Albion has a certain advantage over most nations when it comes to attrition warfare.
+Mao_Portrait (Normal): I see? *Doesn't get it at all*
+Victoria_Portrait (Frown): Either way, I believe I'll hold off on developing magic cards for military use.
+Mao_Portrait (Normal): Oh yeah! Hey Rice, why do we call it 'human resources' when we're talking about demons?
+Rice_Portrait (Normal): Humans are part of demonkind. The concept of 'human resources' came about during the time when the Demon King was human, hence the phrase.
+Victoria_Portrait (Frown): <Empty Text Event>
 [signal arg="{"mission": {"next": "PrincessAlbion2"}}"]
