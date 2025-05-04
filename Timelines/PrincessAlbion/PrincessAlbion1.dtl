@@ -32,7 +32,7 @@ Victoria_Portrait (Frown): We should start with general spells for everyday use,
 Lilian_Portrait (Grin): Wouldn't military stuff sell better?
 Victoria_Portrait (Frown): Only if we're planning to export the cards outside of Albion. Since Albion's officer corps is entirely magicalized, there's no real advantage for cards over scrolls.
 Victoria_Portrait (Frown): I'm doubtful her majesty would allow us to export military grade spell cards in any case.
-Rice_Portrait (Normal): For what it's worth, I believe her majesty would welcome such a thing. Assuming, that is, you're selling the cards themselves and not the production method. 
+Rice_Portrait (Normal): For what it's worth, I believe her majesty would welcome such a thing. Assuming, that is, you're selling the cards themselves and not the production method.
 Victoria_Portrait (Frown): Since cards are consumables... I see.
 Mao_Portrait (Normal): What does she see?
 Rice_Portrait (Normal): Since magic cards are one time use, just like scrolls, a hypothetical enemy nation would only be able to use as much as they stockpiled before the war.
@@ -40,7 +40,11 @@ Rice_Portrait (Normal): As long as we have more bodies than they have cards, the
 Rice_Portrait (Normal): Demonkind includes some rather fecund species, so Albion has a certain advantage over most nations when it comes to attrition warfare.
 Mao_Portrait (Normal): I see? *Doesn't get it at all*
 Victoria_Portrait (Frown): Either way, I believe I'll hold off on developing magic cards for military use.
-Mao_Portrait (Normal): Oh yeah! Hey Rice, why do we call it 'human resources' when we're talking about demons?
+Mao_Portrait (Normal): By the way, why do we call it 'human resources' when we're talking about demons?
 Rice_Portrait (Normal): Humans are part of demonkind. The concept of 'human resources' came about during the time when the Demon King was human, hence the phrase.
-Victoria_Portrait (Frown): <Empty Text Event>
+Victoria_Portrait (Frown): Anyway, I believe we're finished here, so let's tidy up and leave.
+Lilian_Portrait (Grin): Ah, can you leave me here for a while? I want to try making the confetti spell into a card.
+Mao_Portrait (Normal): Teehee.
+Victoria_Portrait (Frown): It would be better to leave this workshop alone, I think, since someone else is using it. My personal workshop is similarly equipped. 
+Lilian_Portrait (Grin): That works.
 [signal arg="{"mission": {"next": "PrincessAlbion2"}}"]

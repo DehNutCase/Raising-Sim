@@ -10,6 +10,7 @@ func _ready():
 
 #TODO, make the parent not disable tabs until class change card is read
 func display_stats():
+	#TODO, rework class change card
 	if Player.background_inventory.get_item_with_prototype_id("class_change_card") or Player.background_inventory.get_item_with_prototype_id("class_change_card_witch"):
 		get_parent().tabs_visible = true
 	else:

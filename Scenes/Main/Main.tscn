@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=87 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -50,22 +50,24 @@
 [ext_resource type="Texture2D" uid="uid://dkqjjjb8c2ysi" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Book.png" id="45_34myw"]
 [ext_resource type="Texture2D" uid="uid://dd2eidg8uwsw2" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Book.png" id="46_oupw1"]
 [ext_resource type="Texture2D" uid="uid://bopfr4sya7gqa" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_ShoppingCart.png" id="46_xbpvj"]
-[ext_resource type="Texture2D" uid="uid://cb37t1hp3fto3" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Crown2.png" id="47_2ylhl"]
-[ext_resource type="Texture2D" uid="uid://bsu3o2e6f78fw" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Crown2.png" id="48_sepjk"]
-[ext_resource type="Texture2D" uid="uid://dj6iwwkk88xxb" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Trophy1.png" id="49_31rv6"]
-[ext_resource type="Texture2D" uid="uid://bkxlrbqo0his7" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Trophy1.png" id="50_v4wu2"]
+[ext_resource type="Texture2D" uid="uid://df7ev6wndct4y" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Ray.png" id="49_3mfmt"]
+[ext_resource type="Texture2D" uid="uid://cnhmc2xefjs4w" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Ray.png" id="50_0lhdw"]
 [ext_resource type="Texture2D" uid="uid://br4cvklfovjdo" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Map.png" id="51_bx1kg"]
 [ext_resource type="Texture2D" uid="uid://cg78i5in4vfph" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Map.png" id="52_pgejv"]
 [ext_resource type="Texture2D" uid="uid://1mfbbjgbxcrj" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Sword.png" id="53_u0am2"]
 [ext_resource type="Texture2D" uid="uid://dyy8e80kjheom" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Sword.png" id="54_d2kqu"]
 [ext_resource type="Texture2D" uid="uid://nmxkvhcx1h75" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_!.png" id="55_36a5c"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="55_ibpv5"]
+[ext_resource type="Texture2D" uid="uid://culaeiormlg1q" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Return1.png" id="55_ylipg"]
+[ext_resource type="Texture2D" uid="uid://bnn64h7si3og2" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Return1.png" id="56_7gqg0"]
 [ext_resource type="Texture2D" uid="uid://bl2icsbl8w5m0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Caracter.png" id="56_dpatn"]
 [ext_resource type="Texture2D" uid="uid://dk0qq0hktgf0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_!.png" id="56_n3yma"]
 [ext_resource type="Texture2D" uid="uid://bsq8bpm0l38w4" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Clock.png" id="57_bks8t"]
 [ext_resource type="Texture2D" uid="uid://cbrn5vl87lv1t" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Clock.png" id="58_6xyyi"]
+[ext_resource type="Texture2D" uid="uid://rvktd8wnbbbq" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_HamburgerMenu.png" id="59_8jab2"]
 [ext_resource type="Texture2D" uid="uid://8phy4gy1nlas" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Note2.png" id="59_chmyp"]
 [ext_resource type="Texture2D" uid="uid://3eakswiet1l3" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Note2.png" id="60_l7j0c"]
+[ext_resource type="Texture2D" uid="uid://vdfclm4jhwe7" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_HamburgerMenu.png" id="60_qmxeb"]
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="61_0yijj"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="62_7ii8w"]
 
@@ -854,20 +856,23 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("45_34myw")
 texture_pressed = ExtResource("46_oupw1")
+stretch_mode = 3
 
 [node name="Background" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("47_2ylhl")
-texture_pressed = ExtResource("48_sepjk")
+texture_normal = ExtResource("55_ibpv5")
+texture_pressed = ExtResource("56_dpatn")
+stretch_mode = 3
 
 [node name="Skills" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("49_31rv6")
-texture_pressed = ExtResource("50_v4wu2")
+texture_normal = ExtResource("49_3mfmt")
+texture_pressed = ExtResource("50_0lhdw")
+stretch_mode = 3
 
 [node name="Walk" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
@@ -875,6 +880,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("51_bx1kg")
 texture_pressed = ExtResource("52_pgejv")
+stretch_mode = 3
 
 [node name="Tower" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
@@ -882,12 +888,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("53_u0am2")
 texture_pressed = ExtResource("54_d2kqu")
+stretch_mode = 3
 
 [node name="Class Change" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
 visible = false
 layout_mode = 2
-texture_normal = ExtResource("55_ibpv5")
-texture_pressed = ExtResource("56_dpatn")
+texture_normal = ExtResource("55_ylipg")
+texture_pressed = ExtResource("56_7gqg0")
+stretch_mode = 3
 
 [node name="RightMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -912,13 +920,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("57_bks8t")
 texture_pressed = ExtResource("58_6xyyi")
+stretch_mode = 3
 
 [node name="Lessons" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("59_chmyp")
-texture_pressed = ExtResource("60_l7j0c")
+texture_normal = ExtResource("59_8jab2")
+texture_pressed = ExtResource("60_qmxeb")
+stretch_mode = 3
 
 [node name="Story" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 visible = false
@@ -927,6 +937,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("55_36a5c")
 texture_pressed = ExtResource("56_n3yma")
+stretch_mode = 3
 
 [node name="Work" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 visible = false
@@ -948,6 +959,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("61_0yijj")
 texture_pressed = ExtResource("62_7ii8w")
+stretch_mode = 3
 
 [node name="Shop" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
@@ -955,12 +967,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("45_03wx0")
 texture_pressed = ExtResource("46_xbpvj")
+stretch_mode = 3
 
-[node name="Save" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Save" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Save"
+texture_normal = ExtResource("59_chmyp")
+texture_pressed = ExtResource("60_l7j0c")
+stretch_mode = 3
 
 [node name="Wishlist" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 visible = false

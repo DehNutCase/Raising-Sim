@@ -2377,6 +2377,13 @@ const player_classes = {
 	},
 }
 
+const ending_cards = {
+	#stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed", "defense", "resistance", "art", "scholarship"],
+	"basic_dumpling": {
+		
+	}
+}
+
 const missions = {
 	"black_forest_orcs": {
 		"description": "There's a small tribe of orcs living in the Black Forest. Her majesty ordered you to either incorporate them into the kingdom or drive them out.\n\nAlthough the use of force is authorized, going in spells blazing would be the opposite of her majesty's intent. The orcs are valuable human resources.\n\nEncounter Level: 10\nThe wild Dumplings hanging out in the Blessed Plains are a bigger threat. Speaking of Dumplings, the head maid would like you to stop nibbling on the cleaning Dumplings.",
