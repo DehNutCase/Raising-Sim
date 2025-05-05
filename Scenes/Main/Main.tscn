@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=81 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -106,18 +106,6 @@ viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_en1ia"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apv3e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nc7hd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w8ax"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h24mw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46vva"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7l7x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r8es6"]
 
 [node name="Main" type="Control" groups=["Main"]]
 layout_mode = 3
@@ -498,7 +486,6 @@ autoplay = true
 expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
-visible = false
 custom_minimum_size = Vector2(1100, 600)
 anchors_preset = 8
 anchor_left = 0.5
@@ -797,18 +784,6 @@ icon = ExtResource("25_dofej")
 icon_alignment = 2
 vertical_icon_alignment = 0
 expand_icon = true
-
-[node name="Skip" type="CheckBox" parent="Ui/MenuPanel"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nc7hd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_2w8ax")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_h24mw")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_46vva")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_x7l7x")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_r8es6")
-text = "Skip"
 
 [node name="DialogicPanel" type="PanelContainer" parent="Ui"]
 visible = false

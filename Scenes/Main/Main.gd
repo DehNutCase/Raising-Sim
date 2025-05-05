@@ -28,7 +28,6 @@ extends Control
 
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
 @onready var buttons2 = $RightMenuContainer/MenuPanel/VBoxContainer
-@onready var skip_checkbox = $Ui/MenuPanel/Skip
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
@@ -80,7 +79,6 @@ func _ready():
 		button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("MuteButton", "_update")
 	display_stats()
-	day_label.display_day(day)
 	self.show()
 	
 	if (day == 0):
@@ -198,9 +196,7 @@ func process_day():
 	background_transition()
 	
 	display_stats()
-	day_label.display_day(day)
-	if(skip_checkbox.button_pressed):
-		_on_close_button_pressed()
+	_on_close_button_pressed()
 	update_expressions()
 	check_and_play_daily_events()
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
@@ -443,8 +439,8 @@ func do_walk(walk_name: String) -> void:
 		animation.animation.visible = true
 		animation.animation.play("Run")
 		Player.remaining_walks -= 1
-		if(skip_checkbox.button_pressed):
-			_on_close_button_pressed()
+		#TODO, double check if we shoudl always close after walks
+		_on_close_button_pressed()
 		if 'toasts' in outcome:
 			if 'first_toasts' in outcome and !(outcome.flag in Player.event_flags):
 				for toast in outcome.first_toasts:
@@ -475,8 +471,7 @@ func do_walk(walk_name: String) -> void:
 		process_stats(walk_stats)
 	else:
 		display_toast("No walks left!", "top")
-		if(skip_checkbox.button_pressed):
-			_on_close_button_pressed()
+		_on_close_button_pressed()
 
 func buy_item(item: String, price: int):
 	if Player.stats["gold"] >= price:
@@ -643,6 +638,7 @@ func process_stats(stats):
 	display_stats()
 
 func display_stats() -> void:
+	#TODO, change day label to call group instead
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
 	get_tree().call_group("ButtonMenu", "update_buttons")
