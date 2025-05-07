@@ -15,6 +15,7 @@ theme_override_constants/margin_bottom = 32
 script = ExtResource("1_wv4gm")
 
 [node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.666667)
 layout_mode = 2
 texture = ExtResource("2_4r2hb")
 region_rect = Rect2(0, 0, 169, 164)

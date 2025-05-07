@@ -127,8 +127,8 @@ script = ExtResource("2_h7wcs")
 
 [node name="GUI (Mouse Ignore)" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 160.0
-offset_right = 1460.0
+offset_left = 250.0
+offset_right = 1350.0
 offset_bottom = 160.0
 mouse_filter = 2
 
@@ -148,10 +148,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="walks" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="level" parent="GUI (Mouse Ignore)/Counters" instance=ExtResource("17_im62w")]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -486,6 +482,7 @@ autoplay = true
 expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
+visible = false
 custom_minimum_size = Vector2(1100, 600)
 anchors_preset = 8
 anchor_left = 0.5
@@ -986,4 +983,3 @@ pause_menu_packed = ExtResource("29_h0pyo")
 [editable path="GUI (Mouse Ignore)/Counters/mood"]
 [editable path="GUI (Mouse Ignore)/Counters/scholarship"]
 [editable path="GUI (Mouse Ignore)/Counters/walks"]
-[editable path="GUI (Mouse Ignore)/Counters/level"]

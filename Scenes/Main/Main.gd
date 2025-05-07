@@ -439,7 +439,7 @@ func do_walk(walk_name: String) -> void:
 		animation.animation.visible = true
 		animation.animation.play("Run")
 		Player.remaining_walks -= 1
-		#TODO, double check if we shoudl always close after walks
+		#TODO, double check if we should always close after walks
 		_on_close_button_pressed()
 		if 'toasts' in outcome:
 			if 'first_toasts' in outcome and !(outcome.flag in Player.event_flags):
@@ -786,12 +786,17 @@ func update_expressions() -> void:
 
 func _on_enter_tower_button_pressed() -> void:
 	if Player.tower_level < len(Constants.tower_levels):
-		Player.enemies = Constants.tower_levels[Player.tower_level].enemies
-		#TODO, remove all the double checking for whether player is in a mission or tower combat
-		#centralize checks
-		Player.in_tower = true
-		Player.in_mission = false
-		SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+		if Player.remaining_walks > 0:
+			Player.remaining_walks -= 1
+			_on_close_button_pressed()
+			Player.enemies = Constants.tower_levels[Player.tower_level].enemies
+			#TODO, remove all the double checking for whether player is in a mission or tower combat
+			#centralize checks
+			Player.in_tower = true
+			Player.in_mission = false
+			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+		else:
+			display_toast("No walks left!", "top")
 	else:
 		display_toast("Rice shakes her head. You can't climb any higher for now.", "top", "center")
 
