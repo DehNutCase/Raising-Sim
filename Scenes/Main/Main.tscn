@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=82 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
 [ext_resource type="Script" path="res://Scenes/Main/SkillInventory.gd" id="13_tkqcx"]
+[ext_resource type="PackedScene" uid="uid://cw5i62jdfvmqq" path="res://Scenes/UI/Calendar/Calendar.tscn" id="15_pdmo5"]
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="16_3c6c7"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Scenes/UI/Actions/Animation.tscn" id="17_5xmvy"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
@@ -153,6 +154,9 @@ size_flags_horizontal = 3
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
+[node name="Calendar" parent="Ui" instance=ExtResource("15_pdmo5")]
+offset_bottom = 150.0
+
 [node name="BackgroundLayer" type="CanvasLayer" parent="Ui"]
 layer = -1
 
@@ -209,6 +213,7 @@ stretch_mode = 5
 script = ExtResource("12_n64mh")
 
 [node name="DayLabelContainer" type="MarginContainer" parent="Ui"]
+visible = false
 offset_right = 119.0
 offset_bottom = 64.0
 theme_override_constants/margin_left = 10

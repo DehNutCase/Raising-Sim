@@ -1,0 +1,140 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw5i62jdfvmqq"]
+
+[ext_resource type="Theme" uid="uid://eu2gao4x36bl" path="res://Art/Themes/CalendarTheme.tres" id="1_encq0"]
+[ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="1_m8sb8"]
+[ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="2_74h1o"]
+[ext_resource type="Texture2D" uid="uid://c0nwp6f2oh43b" path="res://Art/UI/Mori no oku no kakurezato/item_frame02.png" id="3_ewks8"]
+[ext_resource type="Texture2D" uid="uid://da4l84wjmrq30" path="res://Characters/Mao/Images/Portrait/exp_01_000.png" id="4_efmkc"]
+[ext_resource type="Texture2D" uid="uid://bs26kndl8cg6l" path="res://Art/UI/Mori no oku no kakurezato/item_frame03.png" id="5_iotkt"]
+[ext_resource type="Texture2D" uid="uid://biygvkaq06q0c" path="res://Art/UI/Mori no oku no kakurezato/item_frame04.png" id="6_28u1u"]
+
+[node name="Calendar" type="MarginContainer"]
+offset_right = 272.0
+offset_bottom = 112.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_encq0")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_m8sb8")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="DayLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = " DayLabel"
+script = ExtResource("2_74h1o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+text = " Yesterday's Recap:"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconBackground" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("3_ewks8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/IconBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/IconBackground/MarginContainer"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("4_efmkc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconBackground" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("5_iotkt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2/IconBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer2/IconBackground/MarginContainer"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("4_efmkc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="IconBackground" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("6_28u1u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer3/IconBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer3/IconBackground/MarginContainer"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("4_efmkc")
+expand_mode = 1
+stretch_mode = 5

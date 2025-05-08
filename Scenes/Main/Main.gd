@@ -8,7 +8,7 @@ extends Control
 @onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
 @onready var dialogic_panel = $Ui/DialogicPanel
 
-@onready var day_label = $Ui/DayLabelContainer/DayLabel
+@onready var day_label = $Ui/Calendar/VBoxContainer/DayLabel
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var animation = $Ui/MenuPanel/MarginContainer/Animation
@@ -108,11 +108,19 @@ func _ready():
 			Dialogic.start("ExitPass")
 		display_stats()
 	#TODO, delete below, dev use only
-	#Player.background_inventory.create_and_add_item("class_change_card_witch")
-	#Dialogic.start("BlackForestTesting")
+	#Player.active_mission = ""
 	#Player.max_walks = 100
-	#Player.tower_level = 9
+	#Player.tower_level = 0
+	#Player.skill_inventory.create_and_add_item("meteor")
+	#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
+	#Player.inventory.remove_item(item)
+	#Player.stats.gold = 0
+	#Player.stats.art = 500
+	#Player.stats.skill = 0
+	#Dialogic.start("MissionRoom")
+	#Player.event_flags['mission_information_event'] = true
 	#Player.load_class_change_card()
+	#day = 1
 	#TODO, end dev use section
 
 #TODO, process day should now call the schedule and then play the end of day scene
@@ -703,7 +711,8 @@ func _on_dialogic_signal(dialogic_signal) -> void:
 	if "unlocked_missions" in dialogic_signal:
 		for mission in dialogic_signal.unlocked_missions:
 			Player.unlocked_missions[mission] = dialogic_signal.unlocked_missions[mission]
-		
+	display_stats()
+	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()

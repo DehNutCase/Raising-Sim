@@ -12,5 +12,7 @@ func display_day(day: int):
 	var seasons = Constants.constants.seasons
 	var season: int = (day / days_in_month) % 4
 	var date: int = day % days_in_month + 1
-	text = " Year: %s \n Season: %s \n Day: %s" % [year, seasons[season], date]
+	#Don't display year for now
+	#text = " Year: %s \n Season: %s \n Day: %s" % [year, seasons[season], date]
+	text = " Season: %s \n Day: %s" % [seasons[season], date]
 	get_tree().call_group("BackgroundMusicPlayer", "play_song", seasons[season])
