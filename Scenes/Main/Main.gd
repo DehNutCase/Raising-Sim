@@ -658,7 +658,7 @@ func display_stats() -> void:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
 	else:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
-	if Player.event_flags.get("mission_information_event"):
+	if Player.unlocked_missions:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Story".show()
 	else:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Story".hide()

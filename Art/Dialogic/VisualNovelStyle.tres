@@ -25,7 +25,7 @@ overrides = {}
 script = ExtResource("2_b33rw")
 scene = ExtResource("11_mn3sp")
 overrides = {
-"box_modulate_custom_color": "Color(0.392157, 0.588235, 0.745098, 0.666667)",
+"box_modulate_custom_color": "Color(0.0745098, 0.219608, 0.266667, 0.784314)",
 "box_modulate_global_color": "false",
 "box_size": "Vector2(1000, 230)",
 "custom_bold_font": "\"res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf\"",
@@ -76,4 +76,4 @@ base_overrides = {
 "global_font_size": "22.0"
 }
 layers = Array[ExtResource("2_b33rw")]([SubResource("Resource_78cla"), SubResource("Resource_2cwwo"), SubResource("Resource_iw20j"), SubResource("Resource_m0bqw"), SubResource("Resource_donri"), SubResource("Resource_ax5gr"), SubResource("Resource_54hti"), SubResource("Resource_fapyf")])
-metadata/_latest_layer = 1
+metadata/_latest_layer = 2

@@ -488,6 +488,7 @@ expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
+clip_contents = true
 custom_minimum_size = Vector2(1100, 600)
 anchors_preset = 8
 anchor_left = 0.5

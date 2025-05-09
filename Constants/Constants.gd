@@ -5,6 +5,7 @@ const jobs = {
 			'experience': 10,
 			'gold': 50,
 			'max_hp': 1,
+			'strength': 1,
 			'defense': 1,
 			'stress': 3,
 		},
@@ -19,14 +20,16 @@ const jobs = {
 			'proficiency_required': 50,
 			'id': 'apprentice_farmer',
 		},
-		"description": "Modern farming is heavily magicalized, so this 'job' is closer to a hobby.",
+		"description": "Helping out at a traditional potato farm.\nSince modern agriculture is heavily magicalized, this is more of a hobby than a real job.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
 	},
 	'Housework': {
 		'stats': {
 			'experience': 10,
 			'max_hp': 1,
 			'max_mp': 1,
-			'stress': 3,
+			'speed': 1,
+			'stress': 2,
 		},
 		'required_stats': {
 			'max_hp': 10,
@@ -39,12 +42,16 @@ const jobs = {
 			'proficiency_required': 50,
 			'id': 'maid_training',
 		},
+		"description": "Technically, this is your job.\nYou don't get paid extra just for doing your job, unfortunately.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes05_01.png",
 	},
 	'Masonry': {
 		'stats': {
 			'experience': 20,
 			'gold': 75,
-			'strength': 1,
+			'max_hp': 1,
+			'strength': 3,
+			'defense': 1,
 			'stress': 6,
 		},
 		'required_stats': {
@@ -58,12 +65,15 @@ const jobs = {
 			'proficiency_required': 140,
 			'id': 'apprentice_mason',
 		},
+		"description": "It might be better to call this 'hauler' than 'masonry.'\nMostly just carrying bricks.\nThis kind of menial work is probably better left to golems, but it's good exercise.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/glove01_02.png",
 	},
 	'Tutoring': {
 		'stats': {
 			'experience': 25,
 			'gold': 100,
 			'max_mp': 1,
+			'magic': 1,
 			'scholarship': 1,
 			'stress': 6,
 		},
@@ -80,13 +90,16 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'diligent_student',
 		},
+		"description": "A good way to be paid while doing classwork.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/note01_04.png",
 	},
 	"Wizard's Apprentice": {
 		'stats': {
 			'experience': 40,
 			'gold': 100,
+			'magic': 4,
+			'speed': 1,
 			'resistance': 1,
-			'magic': 1,
 			'stress': 12,
 		},
 		'required_stats': {
@@ -101,13 +114,18 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'wizarding_license_apprentice',
 		},
+		"description": "Helping out at a certain alchemist's workshop.\nSurprisingly, not as smelly as one might expect, but a busy and stressful job nontheless.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/alchemy01_01.png",
 	},
 	'Acolyte': {
 		'stats': {
 			'experience': 10,
-			'gold': 25,
+			'gold': 10,
 			'max_hp': 1,
+			'magic': 1,
 			'max_mp': 1,
+			'defense': 1,
+			'resistance': 1,
 			'stress': 1,
 		},
 		'required_stats': {
@@ -121,24 +139,30 @@ const jobs = {
 			'proficiency_required': 150,
 			'id': 'church_helper',
 		},
+		"description": "General cleaning around the local church.\nOccasionally the head priest lets you help with making holy water.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes06_02.png",
 	},
 	'Hunting': {
 		'stats': {
 			'experience': 50,
 			'gold': 150,
-			'max_hp': 5,
+			'max_hp': 1,
 			'strength': 3,
 			'speed': 5,
-			'stress': 10,
+			'skill': 5,
+			'stress': 15,
 		},
 		'required_stats': {
 			'speed': 200,
 			'strength': 100,
+			'skill': 0,
 			'max_hp': 100,
 		},
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		"description": "Not as bloody as one might expect, since it's Dumpling hunting.\nTranquilizer bolts are provided, but they don't really make a difference against Dumplings.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/weapon02_01.png",
 	},
 	'Cook': {
 		'stats': {
@@ -148,7 +172,7 @@ const jobs = {
 			'max_mp': 2,
 			'magic': 1,
 			'speed': 2,
-			'stress': 15,
+			'stress': 10,
 		},
 		'required_stats': {
 			'speed': 100,
@@ -163,11 +187,13 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'budding_chef',
 		},
+		"description": "Helping out at the palace kitchen.\nTechnically can be considered part of your actual job, but you do get paid for it.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/book03_01.png",
 	},
 	'Doodle': {
 		'stats': {
 			'experience': 25,
-			'gold': 10,
+			'gold': 50,
 			'art': 10,
 			'stress': 5,
 		},
@@ -177,20 +203,25 @@ const jobs = {
 		'difficulty': -50,
 		'proficiency': 100,
 		'proficiency_gain': 25,
+		"description": "Her majesty is willing to pay for your doodles.\nThat said, it might be a good idea to reconsider.\nDo you really want her to have a collection of your earliest, ugliest works?\nShe'll happily put them on display, you know?",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_04.png",
 	},
 	'Painting': {
 		'stats': {
 			'experience': 100,
-			'gold': 100,
+			'gold': 150,
 			'art': 25,
 			'stress': 10,
 		},
 		'required_stats': {
 			'art': 250,
+			'skill': 0,
 		},
 		'difficulty': 0,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		"description": "Officially, your paintings are being sold on the open market.\nUnofficially, her majesty is collecting most of them.\nHopefully she won't use them to make fun of you later.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_01.png",
 	},
 	'Court Painter': {
 		'stats': {
@@ -202,11 +233,12 @@ const jobs = {
 		'required_stats': {
 			'art': 500,
 			'skill': 0,
-			'scholarship': 0,
 		},
-		'difficulty': 50,
+		'difficulty': 25,
 		'proficiency': 200,
 		'proficiency_gain': 25,
+		"description": "Unsurprisingly, her majesty pays quite well for commissioned works.\nHopefully the request to paint the ceilings isn't just another ploy.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/paint01_08.png",
 	},
 	'Preach': {
 		'stats': {
@@ -314,6 +346,7 @@ const lessons = {
 			'proficiency_required': 100,
 			'id': 'basic_magic_training',
 		},
+		'description': "An introductory class to magecraft. Mao doesn't really need to take this, but it's part of the standard curriculum.",
 	},
 	'Basic Melee Training': {
 		'stats': {
@@ -875,13 +908,15 @@ const rests = {
 
 const school = {
 	'School': {
-		'description': "It's a student's job to go to class."
+		'description': "It's a student's job to go to class.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/bag04_01.png",
 	}
 }
 
 const other = {
 	'Cram School': {
-		'description': "Why would anyone do this to themselves?"
+		'description': "Technically, this is just taking extra classes at the academy.\nHer majesty insists you pay for said extra classes, though.\n(Why would anyone do this to themselves?)",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/bag04_03.png",
 	}
 }
 

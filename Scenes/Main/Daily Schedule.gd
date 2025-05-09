@@ -50,10 +50,13 @@ func display_actions():
 	clear()
 	#format metadata {"action_type": action_type, "action_name": action_name}
 	for mandatory_action in Player.mandatory_daily_schedule_list:
+		var icon = null
+		if Constants[mandatory_action.action_type][mandatory_action.action_name].get("icon"):
+			icon = load(Constants[mandatory_action.action_type][mandatory_action.action_name].get("icon"))
 		if Constants.constants.ACTION_LABELS.get(mandatory_action.action_type):
-			add_item(Constants.constants.ACTION_LABELS.get(mandatory_action.action_type))
+			add_item(Constants.constants.ACTION_LABELS.get(mandatory_action.action_type), icon)
 		else:
-			add_item(mandatory_action.action_name)
+			add_item(mandatory_action.action_name, icon)
 		set_item_metadata(item_count-1, mandatory_action)
 		
 		
@@ -64,10 +67,13 @@ func display_actions():
 			set_item_tooltip(item_count-1, "")
 		
 	for action in Player.daily_schedule_list:
+		var icon = null
+		if Constants[action.action_type][action.action_name].get("icon"):
+			icon = load(Constants[action.action_type][action.action_name].get("icon"))
 		if Constants.constants.ACTION_LABELS.get(action.action_type):
-			add_item(Constants.constants.ACTION_LABELS.get(action.action_type))
+			add_item(Constants.constants.ACTION_LABELS.get(action.action_type), icon)
 		else:
-			add_item(action.action_name)
+			add_item(action.action_name, icon)
 		set_item_metadata(item_count-1, action)
 		var desc = Constants[action.action_type][action.action_name].get("description")
 		if desc:
