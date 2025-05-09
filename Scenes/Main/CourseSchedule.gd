@@ -30,13 +30,25 @@ func add_course(course_name:String, lesson_name:String):
 	for j in range(item_count):
 		list.append(get_item_metadata(j))
 	Player.course_list = list
+	display_courses()
 
 func display_courses():
 	clear()
 	#format metadata {"course_name": course_name, "lesson_name": lesson_name}
 	for course in Player.course_list:
-		add_item(course.lesson_name)
+		var icon = null
+		var course_name = course.course_name
+		var lesson_name = course.lesson_name
+		if Constants.courses[course_name][lesson_name].get("icon"):
+			icon = load(Constants.courses[course_name][lesson_name].get("icon"))
+		add_item(course.lesson_name, icon)
 		set_item_metadata(item_count-1, course)
+		
+		var desc = Constants.courses[course_name][lesson_name].get("description")
+		var tooltip = lesson_name
+		if desc:
+			tooltip += "\n" + desc
+		set_item_tooltip(item_count-1, tooltip)
 	if item_count:
 		get_tree().call_group("CourseDetails", "display_stats", get_item_metadata(0))
 

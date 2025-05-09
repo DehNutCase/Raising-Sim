@@ -2,15 +2,15 @@
 	"quick_learner": {
 		"daily_stats": "{}",
 		"description": "Learns things quicker than most.",
-		"image": "res://icon.svg",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/data01_01.png",
 		"monthly_stats": "{}",
 		"name": "Quick Learner",
 		"stats": "{\n\"bonus_exp\": 10,\n\"magic\": 5\n}"
 	},
 	"apprentice_farmer": {
 		"daily_stats": "{\n\"experience\": 1\n}",
-		"description": "A novice in the field of farming",
-		"image": "",
+		"description": "A novice potato farmer.",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
 		"monthly_stats": "{\n\"strength\": 5\n}",
 		"name": "Apprentice Farmer",
 		"stats": "{}"
@@ -18,7 +18,7 @@
 	"church_helper": {
 		"daily_stats": "{\n\"experience\": 5\n}",
 		"description": "Someone who often helps out at the local church.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes06_02.png",
 		"monthly_stats": "{\n\"resistance\": 5\n}",
 		"name": "Church Helper",
 		"stats": "{}"
@@ -26,7 +26,7 @@
 	"wizarding_license_apprentice": {
 		"daily_stats": "{\n\"experience\": 5,\n\"magic\": 1\n}",
 		"description": "A license to practice wizardy. Since it's an Apprentice's license, there's no need to take an exam.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/card03_01.png",
 		"monthly_stats": "{\n\"resistance\": 5\n}",
 		"name": "Wizarding License (Apprentice)",
 		"stats": "{}"
@@ -34,7 +34,7 @@
 	"diligent_student":{
 		"daily_stats": "{\n\"experience\": 1,\n\"scholarship\": 1\n}",
 		"description": "A diligent student who studies every day.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/note01_04.png",
 		"monthly_stats": "{\n\"experience\": 100\n}",
 		"name": "Diligent Student",
 		"stats": "{}",
@@ -43,7 +43,7 @@
 	"apprentice_mason":{
 		"daily_stats": "{\n\"experience\": 2\n}",
 		"description": "A novice in the field of masonry.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/glove01_02.png",
 		"monthly_stats": "{\n\"max_hp\": 10\n}",
 		"name": "Apprentice Mason",
 		"stats": "{}"
@@ -83,7 +83,7 @@
 	"local_preacher": {
 		"daily_stats": "{\n\"experience\": 10\n,\n\"max_hp\": 1\n,\n\"max_mp\": 1\n}",
 		"description": "A familiar sight behind the pulpit.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/rosary_02.png",
 		"monthly_stats": "{\n\"resistance\": 10\n}",
 		"name": "Local Preacher",
 		"stats": "{}"
@@ -99,7 +99,7 @@
 	"budding_chef":{
 		"daily_stats": "{\n\"experience\": 1\n}",
 		"description": "Ink magic was surprisingly useful in adding a bit of flair to cooking. \nAn apprentice chef recognized by the head maid.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/book03_01.png",
 		"monthly_stats": "{\n\"gold\": 500\n}",
 		"name": "Budding Chef",
 		"stats": "{}"
@@ -107,7 +107,7 @@
 	"fireball": {
 		"daily_stats": "{\n\"experience\": 1\n}",
 		"description": "Learned how to cast fireballs in combat.",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element03_01.png",
 		"monthly_stats": "{\n\"magic\": 1\n}",
 		"name": "Fireball",
 		"stats": "{}",
@@ -116,7 +116,7 @@
 	"meteor": {
 		"daily_stats": "{\n\"magic\": 1\n}",
 		"description": "Learned how to cast meteor in combat. \nShould they really be teaching something like this in school?",
-		"image": "",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/meteor.png",
 		"monthly_stats": "{}",
 		"name": "Meteor",
 		"stats": "{}",

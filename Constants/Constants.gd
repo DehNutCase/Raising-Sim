@@ -237,18 +237,19 @@ const jobs = {
 		'difficulty': 25,
 		'proficiency': 200,
 		'proficiency_gain': 25,
-		"description": "Unsurprisingly, her majesty pays quite well for commissioned works.\nHopefully the request to paint the ceilings isn't just another ploy.",
+		"description": "Unsurprisingly, her majesty pays quite well for commissioned works.\nHopefully the request to paint the ceilings isn't just another prank.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/paint01_08.png",
 	},
 	'Preach': {
 		'stats': {
 			'experience': 10,
 			'gold': 50,
-			'max_hp': 1,
-			'max_mp': 1,
-			'magic': 1,
-			'resistance': 1,
-			'stress': 5,
+			'max_hp': 2,
+			'magic': 2,
+			'max_mp': 2,
+			'defense': 2,
+			'resistance': 2,
+			'stress': 10,
 		},
 		'required_stats': {
 			'max_hp': 200,
@@ -261,6 +262,8 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'local_preacher',
 		},
+		"description": "The job is more like handing out fliers than actual missionary work.\nTry not to bother anyone.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/rosary_02.png",
 	},
 	'Teaching Assistant': {
 		'stats': {
@@ -279,6 +282,8 @@ const jobs = {
 		'difficulty': 0,
 		'proficiency': 200,
 		'proficiency_gain': 20,
+		"description": "Helping out at the academy.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/eraser01_02.png",
 	},
 	'Lecture': {
 		'stats': {
@@ -299,6 +304,8 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 20,
+		"description": "The fact that you could get a classroom to teach can only be attributed to nepotism.\nThat said, you still need to lecture properly to get paid.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/file01_04.png",
 	},
 	'Architect': {
 		'stats': {
@@ -319,6 +326,8 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 20,
+		"description": "The hardhat isn't really necessary, but it makes you feel smarter.",
+		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/helmet.png",
 	},
 }
 
@@ -678,6 +687,8 @@ const courses = {
 				'id': 'diligent_student',
 			},
 			'timelines': ["GeneralEducationFirst", "GeneralEducationMiddle", "GeneralEducationEnd"],
+			"description": "The main thing you learn in this class is how to learn.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_02.png",
 		},
 		'Basics of Magecraft': {
 			'stats': {
@@ -694,6 +705,8 @@ const courses = {
 			'skill':{
 			},
 			'timelines': ["MagecraftEducationFirst", "MagecraftEducationMiddle", "MagecraftEducationEnd"],
+			"description": "Since you already know how to cast spells, this class is a freebie.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_01.png",
 		},
 		'Physical Education': {
 			'stats': {
@@ -710,6 +723,8 @@ const courses = {
 			'skill':{
 			},
 			'timelines': ["PhysicalEducationFirst", "PhysicalEducationMiddle", "PhysicalEducationEnd"],
+			"description": "Mostly physical exercise, but there are some lectures about how to train properly.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_05.png",
 		},
 	},
 	"Ink Mage": {
@@ -727,6 +742,8 @@ const courses = {
 			'skill':{
 			},
 			'timelines': ["ColorTheoryEducationFirst", "ColorTheoryEducationMiddle", "ColorTheoryEducationEnd"],
+			"description": "You'll get ninety percent of the questions right if you just answer 'blue.'",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element02_01.png",
 		},
 		'Line, Color, and Composition': {
 			'stats': {
@@ -739,6 +756,8 @@ const courses = {
 			'required_progress': 20000,
 			'skill':{
 			},
+			"description": "Just a regular art class.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/book04_01.png",
 		},
 		'Imaging and Illustration': {
 			'stats': {
@@ -751,6 +770,8 @@ const courses = {
 			'required_progress': 20000,
 			'skill':{
 			},
+			"description": "Another relaxing art class.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/book04_03.png",
 		},
 		'Introduction to Illusion Magecraft': {
 			'stats': {
@@ -766,6 +787,8 @@ const courses = {
 			#TODO,  implement skill for magic training
 			'skill':{
 			},
+			"description": "Conceptually speaking, ink magic and illusion magic should be very similar.\nHence why you're taking this class.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element02_03.png",
 		},
 	},
 	"Magic Officer": {
@@ -849,6 +872,8 @@ const courses = {
 			'skill':{
 				'id': 'fireball',
 			},
+			"description": "A simple and effective offensive spell.\nCan cause suffocation if used in enclosed spaces.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element03_01.png",
 		},
 		'Artillerist Training (Meteor)': {
 			'stats': {
@@ -863,6 +888,8 @@ const courses = {
 			'skill':{
 				'id': 'meteor'
 			},
+			"description": "Fortunately, the output of this spell is limited by your personal magic power.\n...Even so, they really shouldn't be teaching this in school.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/meteor.png",
 		},
 	},
 	"Witch": {
@@ -870,30 +897,36 @@ const courses = {
 	},
 }
 
+#TODO add icon and desc to rests
 const rests = {
-	'Free Time': {
-	'stats': {
-			'experience': 1,
+	'Nap': {
+		'stats': {
 			'stress': -20,
-		}
+		},
+		"description": "There's nothing like a quick nap when you're feeling tired.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/sleep.png",
 	},
 	'Library': {
 		'stats': {
 			'experience': 2,
 			'gold': -10,
-			'scholarship': 10,
+			'scholarship': 3,
 			'stress': -15,
-		}
+		},
+		"description": "There's a nominal fee to enter, but the local library has quite a collection of books.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element45_01.png",
 	},
 	'Dessert Buffet': {
 		'stats': {
 			'experience': 5,
 			'gold': -100,
-			'strength': 2,
 			'max_hp': 2,
+			'strength': 2,
 			'speed': -2,
 			'stress': -50,
-		}
+		},
+		"description": "Surprisingly cheap, considering how much they let you eat.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/cake01_01.png",
 	},
 	'Vacation': {
 		'stats': {
@@ -902,7 +935,9 @@ const rests = {
 			'magic': 1,
 			'max_mp': 1,
 			'stress': -50,
-		}
+		},
+		"description": "It sure is convenient when a beach resort is only a teleport hop away.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/weather01_02.png",
 	},
 }
 
