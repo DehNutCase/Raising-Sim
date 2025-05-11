@@ -2,7 +2,7 @@ extends Control
 
 @onready var protoset:JSON = preload("res://Constants/item_protoset.json")
 
-var SHOP_COLUMN_COUNT = 5
+var SHOP_COLUMN_COUNT = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

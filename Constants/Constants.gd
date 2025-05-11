@@ -943,7 +943,7 @@ const rests = {
 
 const school = {
 	'School': {
-		'description': "It's a student's job to go to class.",
+		'description': "It's a student's job to go to class.\nTuition is waived since it's compulsory education.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/bag04_01.png",
 	}
 }

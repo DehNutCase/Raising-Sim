@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw5i62jdfvmqq"]
+[gd_scene load_steps=9 format=3 uid="uid://cw5i62jdfvmqq"]
 
 [ext_resource type="Theme" uid="uid://eu2gao4x36bl" path="res://Art/Themes/CalendarTheme.tres" id="1_encq0"]
 [ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="1_m8sb8"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="2_74h1o"]
+[ext_resource type="Script" path="res://Scenes/UI/Calendar/Calendar.gd" id="2_essif"]
 [ext_resource type="Texture2D" uid="uid://c0nwp6f2oh43b" path="res://Art/UI/Mori no oku no kakurezato/item_frame02.png" id="3_ewks8"]
 [ext_resource type="Texture2D" uid="uid://da4l84wjmrq30" path="res://Characters/Mao/Images/Portrait/exp_01_000.png" id="4_efmkc"]
 [ext_resource type="Texture2D" uid="uid://bs26kndl8cg6l" path="res://Art/UI/Mori no oku no kakurezato/item_frame03.png" id="5_iotkt"]
@@ -14,6 +15,7 @@ offset_bottom = 112.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_encq0")
+script = ExtResource("2_essif")
 
 [node name="Background" type="TextureRect" parent="."]
 visible = false
@@ -30,12 +32,14 @@ text = " DayLabel"
 script = ExtResource("2_74h1o")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+visible = false
 clip_contents = false
 layout_mode = 2
-text = " Yesterday's Recap:"
+text = " Recap:"
 fit_content = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

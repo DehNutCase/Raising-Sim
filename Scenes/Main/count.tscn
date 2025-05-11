@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://do8baktjfoyyj"]
+[gd_scene load_steps=7 format=3 uid="uid://do8baktjfoyyj"]
 
 [ext_resource type="Script" path="res://Scenes/Main/count.gd" id="1_wv4gm"]
 [ext_resource type="LabelSettings" uid="uid://ch6je8m00hvq8" path="res://Art/Fonts/StatLabelSettings.tres" id="2_syv24"]
 [ext_resource type="LabelSettings" uid="uid://d23tjhw6qu4in" path="res://Art/Fonts/EmojiLabelSettings.tres" id="3_e43f5"]
+[ext_resource type="Texture2D" uid="uid://c0fx41vb5sy3c" path="res://Art/UI/mandinhart/More Icons/Icons/Map.png" id="4_s62hk"]
 [ext_resource type="LabelSettings" uid="uid://c7g7wlpd08her" path="res://Art/Fonts/MainSceneStatRibbionLabels.tres" id="5_0os4f"]
 [ext_resource type="Texture2D" uid="uid://bmkpey1a0pafa" path="res://Art/UI/Mori no oku no kakurezato/status03.png" id="6_ac74i"]
 
@@ -45,6 +46,17 @@ text = "📖"
 label_settings = ExtResource("3_e43f5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="Background/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_s62hk")
+expand_mode = 3
+stretch_mode = 3
 
 [node name="Label" type="Label" parent="Background"]
 z_index = 1

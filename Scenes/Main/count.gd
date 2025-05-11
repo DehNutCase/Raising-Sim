@@ -5,6 +5,8 @@ extends MarginContainer
 @onready var label = $Background/Label
 @onready var value = $Background/HBoxContainer/Value
 @onready var emoji = $Background/HBoxContainer/Emoji
+@onready var texture = $Background/HBoxContainer/MarginContainer/TextureRect
+@onready var texture_margin = $Background/HBoxContainer/MarginContainer/TextureRect
 @onready var progress_bar = $Background/TextureProgressBar
 # Called when the node enters the scene tree for the first time.
 
@@ -13,6 +15,8 @@ func _ready():
 	pass # Replace with function body.
 
 func display_stats():
+	texture_margin.hide()
+	emoji.show()
 	if stat == "mood":
 		label.text = "Mood"
 		value.text = str(100 - Player.stats["stress"])
@@ -26,7 +30,10 @@ func display_stats():
 	elif stat == "walks":
 		label.text = "Walks"
 		value.text = str(Player.remaining_walks)
-		emoji.text = '👟'
+		emoji.text = ""#'👟'
+		texture.texture = load("res://Art/UI/mandinhart/More Icons/Icons/Map.png")
+		texture_margin.show()
+		emoji.hide()
 		progress_bar.hide()
 	else:
 		label.text = str(Constants.stats[stat]["label"])

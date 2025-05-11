@@ -61,10 +61,10 @@ func display_actions():
 		
 		
 		var desc = Constants[mandatory_action.action_type][mandatory_action.action_name].get("description")
-		if desc:
-			set_item_tooltip(item_count-1, desc)
-		else: 
-			set_item_tooltip(item_count-1, "")
+		var tooltip = mandatory_action.action_name
+		if desc:\
+			tooltip += "\n" + desc
+		set_item_tooltip(item_count-1, tooltip)
 		
 	for action in Player.daily_schedule_list:
 		var icon = null
@@ -76,10 +76,10 @@ func display_actions():
 			add_item(action.action_name, icon)
 		set_item_metadata(item_count-1, action)
 		var desc = Constants[action.action_type][action.action_name].get("description")
-		if desc:
-			set_item_tooltip(item_count-1, desc)
-		else: 
-			set_item_tooltip(item_count-1, "")
+		var tooltip = action.action_name
+		if desc:\
+			tooltip += "\n" + desc
+		set_item_tooltip(item_count-1, tooltip)
 	
 
 func update_buttons():

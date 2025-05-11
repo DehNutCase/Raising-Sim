@@ -1,11 +1,10 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bw5wkkn3tvigq"]
 
-[ext_resource type="Texture2D" uid="uid://cyfs2o5pbfd46" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g966.png" id="1_ew4v0"]
+[ext_resource type="Texture2D" uid="uid://k1e67ot3b8w0" path="res://Art/UI/UI_Mobile_By_VerzatileDev/UI_MobileIndivudals_g966_grass.png" id="1_y748w"]
 
 [resource]
 content_margin_left = 6.0
 content_margin_top = 6.0
 content_margin_right = 6.0
 content_margin_bottom = 6.0
-texture = ExtResource("1_ew4v0")
-region_rect = Rect2(0, 0, 470, 213)
+texture = ExtResource("1_y748w")

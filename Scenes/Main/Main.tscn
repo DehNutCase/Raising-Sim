@@ -10,17 +10,17 @@
 [ext_resource type="Shader" path="res://Art/Shaders/fade_shader.gdshader" id="6_y87ud"]
 [ext_resource type="Script" path="res://Scenes/Main/Player.gd" id="7_cp3kk"]
 [ext_resource type="Texture2D" uid="uid://dhmldhigqbyaj" path="res://Art/Background/Background material shop/bg007b.bmp" id="7_n8nyx"]
-[ext_resource type="Texture2D" uid="uid://j8ltyk1w2jib" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g930.png" id="8_g4iyq"]
 [ext_resource type="Texture2D" uid="uid://qak7mr560k0i" path="res://Art/Shaders/simple_fade.tres" id="8_waya3"]
-[ext_resource type="Texture2D" uid="uid://bcl5c2d53ihf6" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g937.png" id="9_c3tuy"]
-[ext_resource type="Texture2D" uid="uid://cgijk4jox1odn" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g958.png" id="10_q0jxe"]
+[ext_resource type="Texture2D" uid="uid://bf4sprgco750e" path="res://Art/UI/mandinhart/Menu Buttons/Grass Menu Buttons/Grass-Buttons-setting.png" id="10_4klca"]
+[ext_resource type="Texture2D" uid="uid://bmp14gxl6mhhd" path="res://Art/UI/mandinhart/Menu Buttons/Grass Menu Buttons/Pressed/Grass-Buttons-pressed-setting.png" id="11_8ubdb"]
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="11_rjsjm"]
-[ext_resource type="Texture2D" uid="uid://lt3bofvpk5w" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g959.png" id="11_sl3k3"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
+[ext_resource type="Texture2D" uid="uid://cygfv68ocq4in" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Sound.png" id="12_mc7v1"]
 [ext_resource type="Script" path="res://Scenes/Main/VolumeButton.gd" id="12_n64mh"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
 [ext_resource type="Script" path="res://Scenes/Main/SkillInventory.gd" id="13_tkqcx"]
+[ext_resource type="Texture2D" uid="uid://wvv47jduk4cj" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_SoundOff.png" id="13_u4gi8"]
 [ext_resource type="PackedScene" uid="uid://cw5i62jdfvmqq" path="res://Scenes/UI/Calendar/Calendar.tscn" id="15_pdmo5"]
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="16_3c6c7"]
 [ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Scenes/UI/Actions/Animation.tscn" id="17_5xmvy"]
@@ -179,8 +179,8 @@ texture = ExtResource("5_iokpw")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -25.0
-offset_bottom = 25.0
+offset_left = -140.0
+offset_bottom = 80.0
 grow_horizontal = 0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -188,7 +188,7 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Ui/MarginContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
 
@@ -196,8 +196,8 @@ size_flags_vertical = 4
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("8_g4iyq")
-texture_pressed = ExtResource("9_c3tuy")
+texture_normal = ExtResource("10_4klca")
+texture_pressed = ExtResource("11_8ubdb")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -206,8 +206,8 @@ custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
-texture_normal = ExtResource("10_q0jxe")
-texture_pressed = ExtResource("11_sl3k3")
+texture_normal = ExtResource("12_mc7v1")
+texture_pressed = ExtResource("13_u4gi8")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("12_n64mh")
@@ -489,7 +489,7 @@ expand = true
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
 clip_contents = true
-custom_minimum_size = Vector2(1100, 600)
+custom_minimum_size = Vector2(1300, 600)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

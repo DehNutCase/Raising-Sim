@@ -1,9 +1,9 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ch6je8m00hvq8"]
 
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_xhb0b"]
+[ext_resource type="FontFile" uid="uid://t0t585f5ivb3" path="res://Art/Fonts/PenLicence-Regular.ttf" id="1_kkknj"]
 
 [resource]
-font = ExtResource("1_xhb0b")
+font = ExtResource("1_kkknj")
 font_size = 32
 outline_size = 4
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(0.109804, 0.345098, 0.470588, 1)

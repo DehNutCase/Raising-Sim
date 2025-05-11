@@ -1,6 +1,7 @@
 extends Node2D
 
 var locations = Constants.locations
+var WALK_COLUMN_COUNT = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +18,7 @@ func update_buttons():
 			continue
 		var button = load("res://Scenes/UI/Actions/walk_button.tscn").instantiate()
 		add_child(button)
-		self.get_child(i).position = Vector2( i%5 * 200, 100 * (i/5) )
+		self.get_child(i).position = Vector2( i%WALK_COLUMN_COUNT * 200, 100 * (i/WALK_COLUMN_COUNT) )
 		self.get_child(i).walk_name = key
 		if "label" in locations[key]:
 			self.get_child(i).update_label(locations[key].label)
