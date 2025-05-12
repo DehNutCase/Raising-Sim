@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://ca6asxvhlbu51"]
 
-[ext_resource type="StyleBox" uid="uid://cftn0vvm1j57q" path="res://Art/Themes/ThemeComponents/Button_Disabled.tres" id="1_vpvdr"]
+[ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_wg31n"]
-[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/Themes/ThemeComponents/Button_Normal.tres" id="2_5oo27"]
+[ext_resource type="StyleBox" uid="uid://cx3l1vv7823x4" path="res://Art/Themes/ThemeComponents/MainMenuButton_Normal.tres" id="2_o15uc"]
+[ext_resource type="StyleBox" uid="uid://bvokgy3my8xrs" path="res://Art/Themes/ThemeComponents/MainMenuButton_Job_Pressed.tres" id="3_vgx6v"]
 [ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/Themes/ThemeComponents/Button_Pressed.tres" id="3_ynwyf"]
 [ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="5_4bo2n"]
 [ext_resource type="StyleBox" uid="uid://c7vgqg4bs5tes" path="res://Art/Themes/ThemeComponents/Progress_Bar_Background.tres" id="6_8q4b0"]
@@ -21,14 +22,15 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cha08"]
 
 [resource]
+default_font_size = 32
 Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_outline_color = Color(0.0745098, 0.333333, 0.227451, 0.784314)
+Button/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 0.784314)
 Button/constants/outline_size = 3
 Button/font_sizes/font_size = 22
-Button/styles/disabled = ExtResource("1_vpvdr")
-Button/styles/hover = ExtResource("2_5oo27")
-Button/styles/normal = ExtResource("2_5oo27")
-Button/styles/pressed = ExtResource("3_ynwyf")
+Button/styles/disabled = ExtResource("1_ggqsi")
+Button/styles/hover = ExtResource("2_o15uc")
+Button/styles/normal = ExtResource("2_o15uc")
+Button/styles/pressed = ExtResource("3_vgx6v")
 CheckBox/styles/hover_pressed = ExtResource("3_ynwyf")
 CheckButton/styles/disabled = SubResource("StyleBoxEmpty_ya021")
 CheckButton/styles/focus = SubResource("StyleBoxEmpty_ixcyc")
@@ -39,7 +41,6 @@ CheckButton/styles/pressed = SubResource("StyleBoxEmpty_cha08")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 1)
 Label/constants/outline_size = 4
-Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_wg31n")
 Panel/styles/panel = ExtResource("5_4bo2n")
 PanelContainer/styles/panel = ExtResource("5_4bo2n")
@@ -50,18 +51,14 @@ ProgressBar/styles/background = ExtResource("6_8q4b0")
 ProgressBar/styles/fill = ExtResource("7_t7wje")
 RichTextLabel/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 1)
 RichTextLabel/constants/outline_size = 2
-RichTextLabel/font_sizes/bold_font_size = 32
-RichTextLabel/font_sizes/bold_italics_font_size = 32
-RichTextLabel/font_sizes/italics_font_size = 32
-RichTextLabel/font_sizes/mono_font_size = 32
-RichTextLabel/font_sizes/normal_font_size = 32
 RichTextLabel/fonts/normal_font = ExtResource("1_wg31n")
-TabContainer/colors/font_outline_color = Color(0.0745098, 0.333333, 0.227451, 0.784314)
+TabContainer/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 0.784314)
 TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
 TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)
 TabContainer/constants/outline_size = 4
+TabContainer/font_sizes/font_size = 18
 TabContainer/styles/panel = ExtResource("5_4bo2n")
-TabContainer/styles/tab_disabled = ExtResource("1_vpvdr")
-TabContainer/styles/tab_hovered = ExtResource("2_5oo27")
-TabContainer/styles/tab_selected = ExtResource("2_5oo27")
-TabContainer/styles/tab_unselected = ExtResource("3_ynwyf")
+TabContainer/styles/tab_disabled = ExtResource("1_ggqsi")
+TabContainer/styles/tab_hovered = ExtResource("2_o15uc")
+TabContainer/styles/tab_selected = ExtResource("2_o15uc")
+TabContainer/styles/tab_unselected = ExtResource("3_vgx6v")

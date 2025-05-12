@@ -65,6 +65,14 @@ func init(config: Dictionary) -> void:
 
 	_set_margins()
 	_set_shadow_direction()
+	
+	#Display icon if icon part of config
+	if config.get("icon"):
+		var icon = load(config.get("icon"))
+		$IconTexture.texture = icon
+		$IconTexture.show()
+	else:
+		$IconTexture.hide()
 
 
 func update_text(_text: String) -> void:

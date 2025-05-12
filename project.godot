@@ -273,6 +273,7 @@ inspector_control_height=200
 
 [gui]
 
+theme/custom="res://Art/Themes/MainMenuTheme.tres"
 theme/custom_font="res://Art/Fonts/PenLicence-Regular.ttf"
 theme/default_font_generate_mipmaps=true
 timers/tooltip_delay_sec=0.2

@@ -43,3 +43,8 @@ func _on_mute_control_setting_changed(value):
 
 func _on_fullscreen_control_setting_changed(value):
 	AppSettings.set_fullscreen_enabled(value, get_window())
+
+
+func _on_font_size_setting_changed(value):
+	var theme = load("res://Art/Themes/MainMenuTheme.tres")
+	theme.default_font_size = int(value)

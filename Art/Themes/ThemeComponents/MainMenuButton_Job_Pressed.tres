@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bvokgy3my8xrs"]
+
+[ext_resource type="Texture2D" uid="uid://dd6w8tuiaxk2c" path="res://Art/UI/UI_Mobile_By_VerzatileDev/UI_MobileIndivudals_g966.png" id="1_4wfvm"]
+
+[resource]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("1_4wfvm")
+modulate_color = Color(0.843184, 0.843184, 0.843184, 1)

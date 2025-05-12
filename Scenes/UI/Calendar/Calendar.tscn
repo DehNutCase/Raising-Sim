@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw5i62jdfvmqq"]
+[gd_scene load_steps=10 format=3 uid="uid://cw5i62jdfvmqq"]
 
 [ext_resource type="Theme" uid="uid://eu2gao4x36bl" path="res://Art/Themes/CalendarTheme.tres" id="1_encq0"]
 [ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="1_m8sb8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Calendar/Calendar.gd" id="2_essif"]
 [ext_resource type="Texture2D" uid="uid://c0nwp6f2oh43b" path="res://Art/UI/Mori no oku no kakurezato/item_frame02.png" id="3_ewks8"]
 [ext_resource type="Texture2D" uid="uid://da4l84wjmrq30" path="res://Characters/Mao/Images/Portrait/exp_01_000.png" id="4_efmkc"]
+[ext_resource type="FontFile" uid="uid://t0t585f5ivb3" path="res://Art/Fonts/PenLicence-Regular.ttf" id="4_rhsny"]
 [ext_resource type="Texture2D" uid="uid://bs26kndl8cg6l" path="res://Art/UI/Mori no oku no kakurezato/item_frame03.png" id="5_iotkt"]
 [ext_resource type="Texture2D" uid="uid://biygvkaq06q0c" path="res://Art/UI/Mori no oku no kakurezato/item_frame04.png" id="6_28u1u"]
 
@@ -28,6 +29,7 @@ layout_mode = 2
 
 [node name="DayLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rhsny")
 text = " DayLabel"
 script = ExtResource("2_74h1o")
 

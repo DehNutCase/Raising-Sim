@@ -64,6 +64,10 @@ func _ready():
 			Player.load_game()
 	Player.save_loaded = true
 	
+	#Load font size from settings
+	var theme = load("res://Art/Themes/MainMenuTheme.tres")
+	theme.default_font_size = Config.get_config("CustomSettings", "FontSize")
+	
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 	
@@ -228,10 +232,11 @@ func do_action(action_type:String, action_name: String):
 		return
 
 	var action_stats = Constants[action_type][action_name].stats
+	var icon = Constants[action_type][action_name].get("icon")
 	var rng = RandomNumberGenerator.new()
 	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
-		process_stats(action_stats)
+		process_stats(action_stats, icon)
 		if Constants[action_type][action_name].get("proficiency"):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain
 			if ('skill' in Constants[action_type][action_name]):
@@ -241,7 +246,7 @@ func do_action(action_type:String, action_name: String):
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", false)
 		if "stress" in action_stats:
-			process_stats({"stress": action_stats["stress"]})
+			process_stats({"stress": action_stats["stress"]}, icon)
 		if Constants[action_type][action_name].get("proficiency"):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain/2
 	
@@ -335,12 +340,13 @@ func daily_course():
 		
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
+		var icon = Constants.courses[course_name][lesson_name].get("icon")
 		#Can only modify a duplicate if changing the stat array is needed
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats.duplicate()
 		#School is free so remove gold cost
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		course_daily_stats.erase("gold")
-		process_stats(course_daily_stats) 
+		process_stats(course_daily_stats, icon) 
 		
 
 	else:
@@ -357,6 +363,7 @@ func do_cram_school():
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
+		var icon = Constants.courses[course_name][lesson_name].get("icon")
 		
 		#For now disabled cost check, allowing Mao to go into debt for cram school
 		#var cost = 0
@@ -370,7 +377,7 @@ func do_cram_school():
 		
 		await(get_tree().create_timer(.5).timeout)
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
-		process_stats(course_daily_stats)
+		process_stats(course_daily_stats, icon)
 	else:
 		display_toast("Mao doesn't have any classes scheduled.", "top")
 		await(get_tree().create_timer(.5).timeout)
@@ -589,11 +596,12 @@ func _on_close_button_pressed():
 	animation.animation.visible = false
 	
 
-func display_toast(message, gravity = "bottom", direction = "center"):
+func display_toast(message, gravity = "bottom", direction = "center", icon = null):
 	ToastParty.show({
 		"text": message,           # Text (emojis can be used)
 		"gravity": gravity,                   # top or bottom
 		"direction": direction,               # left or center or right
+		"icon": icon,
 	})
 	
 	"""
@@ -608,7 +616,7 @@ func display_toast(message, gravity = "bottom", direction = "center"):
 	})
 	"""
 
-func process_stats(stats):
+func process_stats(stats, icon = null):
 	if !stats:
 		return
 	var toast = ""
@@ -642,7 +650,7 @@ func process_stats(stats):
 			Player.stats[stat] += stat_gain
 			toast += "[" + plus + str(stat_gain) + " " + label + "] "
 			
-	display_toast(toast, "top", "center")
+	display_toast(toast, "top", "center", icon)
 	display_stats()
 
 func display_stats() -> void:

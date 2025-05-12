@@ -55,7 +55,7 @@
 	},
 	"lucky_clover": {
 		"daily_stats": "{}",
-		"description": "A four leaf clover. It's hard to tell if it does anything.\nRice's Appraisal: 'It seems to increase the chances of running into someone when going on walks'.",
+		"description": "A four leaf clover. It's hard to tell if it does anything.\nRice's Appraisal: 'It seems to increase the chances of running into someone when going on walks.'",
 		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/plant01_01.png",
 		"limit": 1,
 		"name": "Lucky Clover",

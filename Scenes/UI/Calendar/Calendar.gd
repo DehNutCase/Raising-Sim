@@ -22,7 +22,6 @@ func _ready():
 	update_icon(true, 2)
 
 func update_icon(success = true, i = 0):
-	print(icons)
 	if success:
 		icons[i].texture = success_icons.pick_random()
 	else:
