@@ -593,7 +593,7 @@ script = ExtResource("30_2wdei")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Daily Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer/TabContainer" groups=["DailySchedule"]]
+[node name="Daily Schedule" type="ItemList" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer/TabContainer" groups=["ButtonMenu", "DailySchedule"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("25_ntj3d")

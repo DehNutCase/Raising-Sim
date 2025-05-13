@@ -22,6 +22,8 @@ const jobs = {
 		},
 		"description": "Helping out at a traditional potato farm.\nSince modern agriculture is heavily magicalized, this is more of a hobby than a real job.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
+		#TODO, add more farmwork timelines
+		"timelines": ["Farmwork0",],
 	},
 	'Housework': {
 		'stats': {

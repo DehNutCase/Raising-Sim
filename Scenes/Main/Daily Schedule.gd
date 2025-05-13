@@ -1,6 +1,7 @@
 extends ItemList
 
 func _ready():
+	#Due to loading order, this doesn't work since Player is loaded after this is ready
 	display_actions()
 
 #TODO, add tooltip
@@ -65,7 +66,7 @@ func display_actions():
 		if desc:\
 			tooltip += "\n" + desc
 		set_item_tooltip(item_count-1, tooltip)
-		
+	
 	for action in Player.daily_schedule_list:
 		var icon = null
 		if Constants[action.action_type][action.action_name].get("icon"):

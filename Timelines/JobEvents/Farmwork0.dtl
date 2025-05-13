@@ -1,0 +1,25 @@
+[background arg="res://Art/Background/UncleMugen/glorious_ricefield_day.webp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Wow! What a big potato!
+update Mao (Normal)
+Mao_Portrait (Normal): Hmm. I wonder what I should do with this.
+- Convince the owner to put the potato on display.
+	Mao_Portrait (Normal): Rice! Rice! Can you help me talk the owner into putting this on display?
+	Mao_Portrait (Normal): I bet it'll make the farm famous!
+	Rice_Portrait (Normal): I can. I won't.
+	Rice_Portrait (Normal): That said, it should be easy enough to convince him yourself.
+	Mao_Portrait (Normal): Teehee. I wonder if I'll get a bonus.
+	[signal arg="{"stats": {"gold": 500}}"]
+- Find out if I can take the potato home. [if !Player.background_inventory.has_item_with_prototype_id("big_potato")][else="hide"]
+	Mao_Portrait (Normal): Teehee. Finders keepers!
+	Mao_Portrait (Normal): Rice, do you think the owner will let me keep this if I asked?
+	Rice_Portrait (Normal): It's just a potato, so it would be quite odd if he refused.
+	[signal arg="{"background": "big_potato"}"]
+- I'll take this potato, and eat it!
+	Mao_Portrait (Normal): Rice, can you bake this potato for me while I finish the rest of my work? Teehee, I bet it's super delicious.
+	Mao_Portrait (Normal): Want some?
+	Rice_Portrait (Normal): I don't believe a potato's size has any correlation with its taste. But thank you nonetheless.
+	[signal arg="{"stats": {"stress": -20, "max_hp": 10, "strength": 10, "defense": 10,}}"]

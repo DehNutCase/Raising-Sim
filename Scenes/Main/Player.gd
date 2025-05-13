@@ -98,7 +98,7 @@ func _on_motion_finished():
 		if timestamp == previous_stamp:
 			start_motion(next_motion)
 			last_motion = next_motion
-			play_idle_motion()
+			queue_idle_motion()
 
 	else:
 		if len(motion_video_queue):
@@ -155,12 +155,12 @@ func job_motion(motion) -> void:
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		if "toasts" in motion:
 			var text = motion.toasts.pick_random()
-			await(get_tree().create_timer(.5).timeout)
 			ToastParty.show({
 				"text": text,
 				"gravity": "bottom",
 				"direction": "center",
 			})
+			await(get_tree().create_timer(.5).timeout)
 		start_motion(motion)
 		last_motion = motion
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
@@ -184,7 +184,7 @@ func random_motion(type:String) -> void:
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		motion_video_queue.append(motion.video)
 
-func play_idle_motion():
+func queue_idle_motion():
 	if (Player.stats["stress"] < 70):
 		random_motion("happy_motions")
 	else:

@@ -25,6 +25,14 @@
 		"stats": "{}",
 		"flags": "{\n\"gray\": true\n}",
 	},
+	"big_potato": {
+		"daily_stats": "{}",
+		"description": "A big potato Mao brought home. For some reason.\nEvery once in a while, she brings it out so people could 'behold' it.\nIt's a potato.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potato.png",
+		"monthly_stats": "{}",
+		"name": "Big Potato",
+		"stats": "{}",
+	},
 	"class_change_card": {
 		"daily_stats": "{}",
 		"description": "A blue I.D. card allowing access to the class change hall for tier 1 classes.\nBy design, it doesn't update your information after being printed, so you would need to print a new one to update your information.\nFor various reasons, it's best to class change on your birthday, so have this ready at the end of the year.",

@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://ca6asxvhlbu51"]
 
 [ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
+[ext_resource type="StyleBox" uid="uid://cftn0vvm1j57q" path="res://Art/Themes/ThemeComponents/Button_Disabled.tres" id="1_t67dw"]
 [ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_wg31n"]
+[ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/Themes/ThemeComponents/Button_Normal.tres" id="2_i3r3c"]
 [ext_resource type="StyleBox" uid="uid://cx3l1vv7823x4" path="res://Art/Themes/ThemeComponents/MainMenuButton_Normal.tres" id="2_o15uc"]
 [ext_resource type="StyleBox" uid="uid://bvokgy3my8xrs" path="res://Art/Themes/ThemeComponents/MainMenuButton_Job_Pressed.tres" id="3_vgx6v"]
 [ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/Themes/ThemeComponents/Button_Pressed.tres" id="3_ynwyf"]
@@ -27,10 +29,10 @@ Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 0.784314)
 Button/constants/outline_size = 3
 Button/font_sizes/font_size = 22
-Button/styles/disabled = ExtResource("1_ggqsi")
-Button/styles/hover = ExtResource("2_o15uc")
-Button/styles/normal = ExtResource("2_o15uc")
-Button/styles/pressed = ExtResource("3_vgx6v")
+Button/styles/disabled = ExtResource("1_t67dw")
+Button/styles/hover = ExtResource("2_i3r3c")
+Button/styles/normal = ExtResource("2_i3r3c")
+Button/styles/pressed = ExtResource("3_ynwyf")
 CheckBox/styles/hover_pressed = ExtResource("3_ynwyf")
 CheckButton/styles/disabled = SubResource("StyleBoxEmpty_ya021")
 CheckButton/styles/focus = SubResource("StyleBoxEmpty_ixcyc")
@@ -38,6 +40,9 @@ CheckButton/styles/hover = SubResource("StyleBoxEmpty_75f58")
 CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_fc5tr")
 CheckButton/styles/normal = SubResource("StyleBoxEmpty_27ta3")
 CheckButton/styles/pressed = SubResource("StyleBoxEmpty_cha08")
+DialogicNode_DialogText/base_type = &"RichTextLabel"
+DialogicNode_DialogText/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 1)
+DialogicNode_DialogText/constants/outline_size = 2
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 1)
 Label/constants/outline_size = 4

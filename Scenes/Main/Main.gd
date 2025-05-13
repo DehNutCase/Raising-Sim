@@ -121,7 +121,7 @@ func _ready():
 	#Player.stats.gold = 0
 	#Player.stats.art = 500
 	#Player.stats.skill = 0
-	#Dialogic.start("MissionRoom")
+	#Dialogic.start("Farmwork0")
 	#Player.event_flags['mission_information_event'] = true
 	#Player.load_class_change_card()
 	#day = 1
@@ -235,6 +235,13 @@ func do_action(action_type:String, action_name: String):
 	var icon = Constants[action_type][action_name].get("icon")
 	var rng = RandomNumberGenerator.new()
 	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
+		#Occasionally play a random event
+		if rng.randf() * 100 > 0:
+			if Constants[action_type][action_name].get("timelines"):
+				var timeline = Constants[action_type][action_name].get("timelines").pick_random()
+				Dialogic.start(timeline)
+				await Dialogic.timeline_ended
+				
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(action_stats, icon)
 		if Constants[action_type][action_name].get("proficiency"):
@@ -798,7 +805,7 @@ func update_expressions() -> void:
 		get_tree().call_group("Live2DPlayer", "start_expression", player_model.normal_expression)
 	
 	#Disabled idle motion on expression update for now
-	#get_tree().call_group("Live2DPlayer", "play_idle_motion")
+	#get_tree().call_group("Live2DPlayer", "queue_idle_motion")
 
 
 func _on_enter_tower_button_pressed() -> void:
