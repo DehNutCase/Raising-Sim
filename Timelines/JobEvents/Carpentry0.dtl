@@ -1,0 +1,45 @@
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Fay (Normal) 3 [ mirrored="true"]
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Good morning, boss!
+update Fay (Normal)
+Fay_Portrait (Normal): Good morning, dear.
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Here're the planks you asked for, ma'am!
+- By the way, why are you a carpenter?
+	Mao_Portrait (Normal): Aren't carpenters supposed to be big and buff?
+	Fay_Portrait (Normal): Oh? Why's that?
+	update Mao [animation="Tada" length="1"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Because you have to be super strong to handle heavy stuff!
+	Fay_Portrait (Normal): Does that mean I should look for someone else to work for me?
+	update Mao (Normal)
+	Mao_Portrait (Normal): Teehee. Rice said I'm magic, so it's fine!
+	update Fay (Smile)
+	Fay_Portrait (Smile): What a concidence, so am I.
+	Mao_Portrait (Normal): Teehee.
+	[signal arg="{"stats": {"max_mp": 5, "magic": 5, "scholarship": 5,}}"]
+- So what do we make here, anyway?
+	update Fay (Smile)
+	Fay_Portrait (Smile): This is a furniture workshop, dear.
+	update Fay (Normal)
+	Fay_Portrait (Normal): Not to brag, but you might be sleeping on a bed I made or eating on one of my tables. Her majesty is a very good customer of mine.
+	update Mao [animation="Tada" length="1"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Wow!
+	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
+- Can you teach me how to make stuff?
+	update Fay (Surprised)
+	Fay_Portrait (Surprised): Isn't that why you're here? To watch and learn?
+	Fay_Portrait (Surprised): I was under the impression this was a mentorship program for servants of the royal palace.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Is it?
+	Rice_Portrait (Normal): I would say that's part of her majesty's intentions, yes.
+	Rice_Portrait (Normal): That said, I imagine the biggest reason she's allowing you to try your hand at everything is so you could find out what you want to do. That is, your own likes and dislikes.
+	update Fay (Normal)
+	update Mao (Normal)
+	Mao_Portrait (Normal): Teehee. I like everything!
+	[signal arg="{"stats": {"scholarship": 10, "art": 10,}}"]

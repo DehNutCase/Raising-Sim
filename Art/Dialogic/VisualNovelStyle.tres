@@ -28,9 +28,6 @@ overrides = {
 "box_modulate_custom_color": "Color(0.0745098, 0.219608, 0.266667, 0.784314)",
 "box_modulate_global_color": "false",
 "box_size": "Vector2(1000, 230)",
-"custom_bold_font": "\"res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf\"",
-"custom_italic_font": "\"res://addons/dialogic/Example Assets/Fonts/Roboto-Italic.ttf\"",
-"custom_normal_font": "\"res://Art/Fonts/emoji_font_variation.tres\"",
 "portrait_bg_modulate": "Color(0, 0, 0, 0)",
 "text_custom_size": "30.0",
 "text_use_global_size": "false"

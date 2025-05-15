@@ -29,10 +29,6 @@ config/windows_native_icon="res://Cat.ico"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
-AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
-SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
-ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
-ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -55,6 +51,8 @@ directories/dch_directory={
 "Elizabeth/Elizabeth": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Elizabeth/Elizabeth.dch",
 "Elizabeth/Elizabeth_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Elizabeth/Elizabeth_Portrait.dch",
 "Elizabeth_Portrait": "res://Characters/Elizabeth/Elizabeth_Portrait.dch",
+"Fay": "res://Characters/Fay/Fay.dch",
+"Fay_Portrait": "res://Characters/Fay/Fay_Portrait.dch",
 "Fiona": "res://Characters/Fiona/Fiona.dch",
 "Fiona_Portrait": "res://Characters/Fiona/Fiona_Portrait.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
@@ -72,6 +70,8 @@ directories/dch_directory={
 "Hiyori/Hiyori": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori.dch",
 "Hiyori/Hiyori_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori_Portrait.dch",
 "Hiyori_Portrait": "res://Characters/Hiyori/Hiyori_Portrait.dch",
+"Keith": "res://Characters/Keith/Keith.dch",
+"Keith_Portrait": "res://Characters/Keith/Keith_Portrait.dch",
 "Lilian": "res://Characters/Lilian/Lilian.dch",
 "Lilian_Portrait": "res://Characters/Lilian/Images/Lilian_Portrait.dch",
 "Mao": "res://Characters/Mao/Mao.dch",
@@ -154,6 +154,8 @@ directories/dtl_directory={
 "BlackForestOrcs9": "res://Timelines/BlackForestOrcs/BlackForestOrcs9.dtl",
 "BlessedPlains": "res://Timelines/WalkEvents/BlessedPlains.dtl",
 "BlessedPlainsFirst": "res://Timelines/WalkEvents/BlessedPlainsFirst.dtl",
+"Carpentry0": "res://Timelines/JobEvents/Carpentry0.dtl",
+"Carpentry1": "res://Timelines/JobEvents/Carpentry1.dtl",
 "CityGates": "res://Timelines/WalkEvents/CityGates.dtl",
 "CityGatesFirst": "res://Timelines/WalkEvents/CityGatesFirst.dtl",
 "ColorTheoryEducationEnd": "res://Timelines/ActionEvents/InkMageSchool/ColorTheory/ColorTheoryEducationEnd.dtl",
@@ -176,6 +178,7 @@ directories/dtl_directory={
 "EndingTimeline": "res://Timelines/Ending/EndingTimeline.dtl",
 "ExitPass": "res://Timelines/TriggeredEvents/ExitPass.dtl",
 "Farmwork0": "res://Timelines/JobEvents/Farmwork0.dtl",
+"Farmwork1": "res://Timelines/JobEvents/Farmwork1.dtl",
 "GeneralEducationEnd": "res://Timelines/ActionEvents/Core/General Education/GeneralEducationEnd.dtl",
 "GeneralEducationFirst": "res://Timelines/ActionEvents/Core/General Education/GeneralEducationFirst.dtl",
 "GeneralEducationMiddle": "res://Timelines/ActionEvents/Core/General Education/GeneralEducationMiddle.dtl",
@@ -184,6 +187,9 @@ directories/dtl_directory={
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
 "HiyoriCorner": "res://Timelines/WalkEvents/HiyoriCorner.dtl",
 "HiyoriCornerFirst": "res://Timelines/WalkEvents/HiyoriCornerFirst.dtl",
+"Housework0": "res://Timelines/JobEvents/Housework0.dtl",
+"Housework1": "res://Timelines/JobEvents/Housework1.dtl",
+"Housework2": "res://Timelines/JobEvents/Housework2.dtl",
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "InkMageSchoolFirst": "res://Timelines/ActionEvents/InkMageSchool/InkMageSchoolFirst.dtl",
 "MagecraftEducationEnd": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationEnd.dtl",
@@ -275,7 +281,6 @@ inspector_control_height=200
 [gui]
 
 theme/custom="res://Art/Themes/MainMenuTheme.tres"
-theme/custom_font="res://Art/Fonts/PenLicence-Regular.ttf"
 theme/default_font_generate_mipmaps=true
 timers/tooltip_delay_sec=0.2
 

@@ -4,6 +4,7 @@ join Lilian (Grin) 1
 join Stella (Frown) 2 [ mirrored="true"]
 join Victoria (Frown) 3
 join Fiona (Grin) 4 [ mirrored="true"]
+# Change stays between timelines, make sure to use reset all
 [update_position vector="Vector2(0, 150)" time="0.0"]
 [update_position position="1" vector="Vector2(0, 150)" time="0.0"]
 [update_position position="2" vector="Vector2(0, 150)" time="0.0"]
@@ -122,3 +123,4 @@ Lilian_Portrait (Grin): Sounds good.
 Mao_Portrait (Normal): It's a date!
 [signal arg="{"stats": {"stress": -10,}}"]
 [signal arg="{"mission": {"next": "PrincessAlbion1"}}"]
+[update_position action="reset_all" time="0.0"]

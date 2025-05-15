@@ -23,7 +23,7 @@ const jobs = {
 		"description": "Helping out at a traditional potato farm.\nSince modern agriculture is heavily magicalized, this is more of a hobby than a real job.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
 		#TODO, add more farmwork timelines
-		"timelines": ["Farmwork0",],
+		"timelines": ["Farmwork0", "Farmwork1"],
 	},
 	'Housework': {
 		'stats': {
@@ -46,8 +46,9 @@ const jobs = {
 		},
 		"description": "Technically, this is your job.\nYou don't get paid extra just for doing your job, unfortunately.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes05_01.png",
+		"timelines": ["Housework0", "Housework1", "Housework2"],
 	},
-	'Masonry': {
+	'Carpentry': {
 		'stats': {
 			'experience': 20,
 			'gold': 75,
@@ -65,10 +66,11 @@ const jobs = {
 		'proficiency_gain': 25,
 		'skill':{
 			'proficiency_required': 140,
-			'id': 'apprentice_mason',
+			'id': 'apprentice_carpenter',
 		},
-		"description": "It might be better to call this 'hauler' than 'masonry.'\nMostly just carrying bricks.\nThis kind of menial work is probably better left to golems, but it's good exercise.",
-		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/glove01_02.png",
+		"description": "It might be better to call this 'hauling' than 'carpentry.'\nIt's mostly just carrying planks around for the actual carpenter.\nThis kind of menial work is better left to golems, but it's good exercise.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/wood.png",
+		"timelines": ["Carpentry0", "Carpentry1"],
 	},
 	'Tutoring': {
 		'stats': {

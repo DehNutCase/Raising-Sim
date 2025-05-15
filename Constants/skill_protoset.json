@@ -40,12 +40,12 @@
 		"stats": "{}",
 		"max_stats": "{\"scholarship\": 100,}",
 	},
-	"apprentice_mason":{
+	"apprentice_carpenter":{
 		"daily_stats": "{\n\"experience\": 2\n}",
-		"description": "A novice in the field of masonry.",
-		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/glove01_02.png",
+		"description": "A novice in the field of carpentry.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/wood.png",
 		"monthly_stats": "{\n\"max_hp\": 10\n}",
-		"name": "Apprentice Mason",
+		"name": "Apprentice Carpenter",
 		"stats": "{}"
 	},
 	"basic_combat_training":{

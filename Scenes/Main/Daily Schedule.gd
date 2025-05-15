@@ -48,6 +48,10 @@ func add_action(action_type:String, action_name:String):
 	display_actions()
 
 func display_actions():
+	#Remove excess actions (mostly a concern if we added a mandatory action)
+	var current_action_amount = len(Player.mandatory_daily_schedule_list) + len(Player.daily_schedule_list)
+	while current_action_amount > Constants.constants.DAILY_ACTION_LIMIT and Player.daily_schedule_list:
+		Player.daily_schedule_list.pop_back()
 	clear()
 	#format metadata {"action_type": action_type, "action_name": action_name}
 	for mandatory_action in Player.mandatory_daily_schedule_list:

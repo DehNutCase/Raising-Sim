@@ -33,6 +33,22 @@
 		"name": "Big Potato",
 		"stats": "{}",
 	},
+	"detergent": {
+		"daily_stats": "{}",
+		"description": "An almost empty bottle of detergent Mao found in a closet.\nAccording to her, it's proof that she's the princess of the Cleaning Kingdom.\nSmells like peppermint.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/detergent01_01.png",
+		"monthly_stats": "{}",
+		"name": "Detergent Bottle",
+		"stats": "{}",
+	},
+	"log": {
+		"daily_stats": "{}",
+		"description": "A log that could have became an angel.\nLooking at it fills you with hope.\n...Or so Mao says.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/log.png",
+		"monthly_stats": "{}",
+		"name": "Angel's Log",
+		"stats": "{}",
+	},
 	"class_change_card": {
 		"daily_stats": "{}",
 		"description": "A blue I.D. card allowing access to the class change hall for tier 1 classes.\nBy design, it doesn't update your information after being printed, so you would need to print a new one to update your information.\nFor various reasons, it's best to class change on your birthday, so have this ready at the end of the year.",

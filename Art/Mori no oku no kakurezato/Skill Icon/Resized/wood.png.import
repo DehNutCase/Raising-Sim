@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0hkj2gxp5agx"
-path="res://.godot/imported/Maid Faceset.png-66b3cda51c7a636db70623ea852e9c8c.ctex"
+uid="uid://d31x7u8hxyfgb"
+path="res://.godot/imported/wood.png-76ee886fe319574a082c845b71ede310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Alice/Images/Portrait/Maid Faceset.png"
-dest_files=["res://.godot/imported/Maid Faceset.png-66b3cda51c7a636db70623ea852e9c8c.ctex"]
+source_file="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/wood.png"
+dest_files=["res://.godot/imported/wood.png-76ee886fe319574a082c845b71ede310.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

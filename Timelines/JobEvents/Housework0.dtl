@@ -1,0 +1,46 @@
+[background arg="res://Art/Background/NoranekoGames/Sitting_Room.png" fade="0.0"]
+join Mao (Normal) 1
+join Alice (Normal) 3
+[update_position vector="Vector2(0, 150)" time="0.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): Yay, tea party!
+update Alice (Normal)
+Alice_Portrait (Normal): It's nice that you're eager, but please pay attention.
+Alice_Portrait (Normal): Knowing how to make proper tea is required knowledge for a maid.
+Mao_Portrait (Normal): I already know how to make tea!
+update Alice (Angry)
+Alice_Portrait (Angry): No, you don't. Dropping a teabag into a mug of water and heating it is not and never will be proper tea making.
+Mao_Portrait (Normal): But Rice always makes it that way!
+Alice_Portrait (Angry): *Sigh*
+Alice_Portrait (Angry): As admirable as Dame Glassfield might be in other respects, she is simply incorrect when it comes to tea.
+Alice_Portrait (Angry): It can't be helped, since she's from Tara, so don't hold it against her.
+Mao_Portrait (Normal): I see?
+update Alice (Normal)
+Alice_Portrait (Normal): Still, as atrocious as your tea habits are, they can still be fixed, so please work hard and learn.
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Yes ma'am!
+- So what's so great about tea, anyway?
+	update Alice (Angry)
+	Alice_Portrait (Angry): Mao. There are questions you can ask, and questions you can't.
+	Alice_Portrait (Angry): Well, it's not like there aren't entire countries that think the same way you do, but they're backwards barbarians. All of them.
+	Mao_Portrait (Normal): I don't get it.
+	Alice_Portrait (Angry): Which is the whole problem.
+	Mao_Portrait (Normal): (I guess I'll ask Rice about this later.)
+	[signal arg="{"stats": {"scholarship": 5}}"]
+- Do I get a bonus if I learn?
+	update Alice (Confused)
+	Alice_Portrait (Confused): Why would you get a bonus for doing your job properly?
+	Alice_Portrait (Confused): You might get a raise, I suppose, but don't quote me on that.
+	update Alice (Normal)
+	Alice_Portrait (Normal): Hmm. Then again, there's nothing wrong with getting an incentive to learn properly.
+	Alice_Portrait (Normal): How about this, if you brew a half decent cup of tea today, I'll get you some biscuits and you can take the rest of the shift off.
+	update Mao [animation="Tada" length="1"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Yay!
+	[signal arg="{"stats": {"stress": -10, "max_mp": 1, "magic": 1,}}"]
+[update_position action="reset_all" position="4" vector="Vector2(0, 150)" time="0.0"]

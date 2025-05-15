@@ -93,3 +93,4 @@ update Mao (Excited)
 Mao_Portrait (Excited): Oh, ho! Then come as close as you like.
 Rice_Portrait (Normal): (I might need to request her majesty to increase the budget for translation spell research. I know the literal meaning of Mao's words, but that's all.)
 [signal arg="{"mission": {"next": "BlackForestOrcs7", "combat": "black_forest_orcs,1"}}"]
+[update_position action="reset_all" position="2" vector="Vector2(-70, -350)" time="0.0"]

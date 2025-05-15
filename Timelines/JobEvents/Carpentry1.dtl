@@ -1,0 +1,44 @@
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Fay (Normal) 3 [ mirrored="true"]
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Boss! Boss! Why am I carrying logs today? I thought we only worked with planks?
+update Fay (Normal)
+Fay_Portrait (Normal): Calm down, dear. We got a special order for sculptures, that's all.
+Mao_Portrait (Normal): Oh.
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): Wait, sculptures? What kind?
+update Fay (Smile)
+Fay_Portrait (Smile): Nothing special, just some angel sculptures. It seems like the local church has been doing well recently.
+update Mao (Normal)
+update Fay (Normal)
+- Can I watch you work?
+	Fay_Portrait (Normal): Sure, dear. Just make sure it doesn't affect your work.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Okie dokie, boss!
+	[signal arg="{"stats": {"scholarship": 5, art": 20,}}"]
+- Can I have one of these logs? [if !Player.background_inventory.has_item_with_prototype_id("log")][else="hide"]
+	update Fay (Surprised)
+	Fay_Portrait (Surprised): Why? They're just regular logs.
+	update Mao [animation="Tada" length="1"]
+	Mao_Portrait (Normal): I have a feeling!
+	update Fay (Normal)
+	Fay_Portrait (Normal): Hmm. Well, I did order some extra logs just in case. If we end up with leftovers after I finish making all the sculptures, you can take them home.
+	update Mao (Smile)
+	Mao_Portrait (Smile): Yay!
+	[signal arg="{"background": "log"}"]
+- Are you a famous sculptor?
+	update Mao (Excited)
+	update Fay (Playful)
+	Fay_Portrait (Playful): The most famous one in this shop.
+	Mao_Portrait (Excited): Wow!
+	update Mao (Angry)
+	Mao_Portrait (Angry): ...Wait a minute.
+	update Fay (Smile)
+	Fay_Portrait (Smile): Heehee.
+	update Fay (Normal)
+	Fay_Portrait (Normal): There's no way the church could afford me if I were famous, you know? It's just a small, local church after all.
+	[signal arg="{"stats": {"stress": -10, "scholarship": 10,}}"]

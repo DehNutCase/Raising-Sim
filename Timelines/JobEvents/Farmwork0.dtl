@@ -21,5 +21,5 @@ Mao_Portrait (Normal): Hmm. I wonder what I should do with this.
 - I'll take this potato, and eat it!
 	Mao_Portrait (Normal): Rice, can you bake this potato for me while I finish the rest of my work? Teehee, I bet it's super delicious.
 	Mao_Portrait (Normal): Want some?
-	Rice_Portrait (Normal): I don't believe a potato's size has any correlation with its taste. But thank you nonetheless.
+	Rice_Portrait (Normal): I don't believe a potato's size has much correlation with its taste. But thank you nonetheless.
 	[signal arg="{"stats": {"stress": -20, "max_hp": 10, "strength": 10, "defense": 10,}}"]

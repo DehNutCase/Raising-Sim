@@ -23,7 +23,6 @@ extends Control
 @onready var story = $"Ui/MenuPanel/MarginContainer/Story"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 
-#TODO, implement course scheduling
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
@@ -121,7 +120,7 @@ func _ready():
 	#Player.stats.gold = 0
 	#Player.stats.art = 500
 	#Player.stats.skill = 0
-	#Dialogic.start("Farmwork0")
+	#Dialogic.start("Housework1")
 	#Player.event_flags['mission_information_event'] = true
 	#Player.load_class_change_card()
 	#day = 1
@@ -236,11 +235,14 @@ func do_action(action_type:String, action_name: String):
 	var rng = RandomNumberGenerator.new()
 	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
 		#Occasionally play a random event
+		#TODO, change 0 to 95 or whatever is appropriate (odds = 100 - x)
 		if rng.randf() * 100 > 0:
+		#if rng.randf() * 100 > 95:
 			if Constants[action_type][action_name].get("timelines"):
 				var timeline = Constants[action_type][action_name].get("timelines").pick_random()
 				Dialogic.start(timeline)
 				await Dialogic.timeline_ended
+				await(get_tree().create_timer(.5).timeout)
 				
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(action_stats, icon)
@@ -337,6 +339,7 @@ func daily_course():
 		#TODO, get different timeline depending on which elective Mao has
 		Dialogic.start("InkMageSchoolFirst")
 		await Dialogic.timeline_ended
+		await(get_tree().create_timer(.5).timeout)
 	
 	display_toast("Mao went to class!", "top")
 	
@@ -425,6 +428,7 @@ func play_course_progress_timeline(course_name:String, lesson_name:String, index
 	else:
 		Dialogic.start(timelines[index])
 		await Dialogic.timeline_ended
+		await(get_tree().create_timer(.5).timeout)
 	
 func course_button_click(course_name:String, lesson_name:String):
 	course_schedule.add_course(course_name, lesson_name)
@@ -991,3 +995,4 @@ func play_bedtime_event():
 		await (get_tree().create_timer(1).timeout)
 		Dialogic.start("BedtimeFirst")
 		await Dialogic.timeline_ended
+		await(get_tree().create_timer(.5).timeout)
