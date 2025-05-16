@@ -236,8 +236,8 @@ func do_action(action_type:String, action_name: String):
 	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
 		#Occasionally play a random event
 		#TODO, change 0 to 95 or whatever is appropriate (odds = 100 - x)
-		if rng.randf() * 100 > 0:
-		#if rng.randf() * 100 > 95:
+		#if rng.randf() * 100 > 0:
+		if rng.randf() * 100 > (100 - Constants.constants.JOB_EVENT_ODDS):
 			if Constants[action_type][action_name].get("timelines"):
 				var timeline = Constants[action_type][action_name].get("timelines").pick_random()
 				Dialogic.start(timeline)

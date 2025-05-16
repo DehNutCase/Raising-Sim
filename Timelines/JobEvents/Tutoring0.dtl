@@ -1,0 +1,37 @@
+[background arg="res://Art/Background/Background material shop/bg019a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Hiyori (Normal) 3 [ mirrored="true"]
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Hi Hiyori! I'm your tutor for today.
+Mao_Portrait (Normal): You can call me sensei! Teehee.
+update Hiyori (Normal)
+Hiyori_Portrait (Surprised): Are you sure this isn't another of mom's pranks?
+Rice_Portrait (Normal): As unbelievable as it may seem, Mao is fully qualified to tutor you, at least for today's lesson.
+Hiyori_Portrait (Smile): I see. I'll be in your care, Mao.
+Mao_Portrait (Normal): Sensei!
+Hiyori_Portrait (Normal): Hmm. If you insist, Mao Sensei.
+Mao_Portrait (Normal): Teehee.
+- By the way, are you going to be attending the academy soon?
+	update Mao (Sad)
+	Mao_Portrait (Sad): I thought we'd be going to school together.
+	Hiyori_Portrait (Normal): It's not like we'll have the same classes even if I went, you know?
+	Hiyori_Portrait (Normal): Well, mom's been getting more annoying about it, so I might start attending soon.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Yay!
+	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
+- Weren't you taking a break from classes?
+	Hiyori_Portrait (Normal): You can blame mom for this. She kept going on and on about at least doing something easy every day.
+	Hiyori_Portrait (Normal): So here we are.
+	Mao_Portrait (Normal): Teehee. I'll teach you well!
+	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
+- Do you have any questions before we start?
+	Hiyori_Portrait (Normal): Not really.
+	Mao_Portrait (Normal): Not even why I'm qualified to tutor you?
+	Hiyori_Portrait (Normal): (Seems like she really wants me to ask, I might as well play along.)
+	Hiyori_Portrait (Normal): So why are you qualified, then?
+	Mao_Portrait (Normal): Teehee! It's a secret! But I'll tell you if you ask nicely.
+	Hiyori_Portrait (Normal): Please?
+	Mao_Portrait (Normal): So it all started last winter, I was working on a painting, but accidentally picked up my wand rather than a brush...
+	[signal arg="{"stats": {"stress": -15,}}"]

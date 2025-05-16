@@ -30,6 +30,10 @@ ToastParty="*res://addons/toastparty/toast-autoload.gd"
 Constants="*res://Constants/Constants.gd"
 Player="*res://Constants/Player.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
+SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
+ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
+ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 
 [dialogic]
 
@@ -212,6 +216,8 @@ directories/dtl_directory={
 "Testing/test": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Testing/test.dtl",
 "TriggeredEvents/ExitPass": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/TriggeredEvents/ExitPass.dtl",
 "TriggeredEvents/MissionRoom": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/TriggeredEvents/MissionRoom.dtl",
+"Tutoring0": "res://Timelines/JobEvents/Tutoring0.dtl",
+"Tutoring1": "res://Timelines/JobEvents/Tutoring1.dtl",
 "WalkEvents/BlessedPlains": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/BlessedPlains.dtl",
 "WalkEvents/BlessedPlainsFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/BlessedPlainsFirst.dtl",
 "WalkEvents/CityGates": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/CityGates.dtl",

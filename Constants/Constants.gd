@@ -872,7 +872,7 @@ const courses = {
 				'resistance': 2,
 				'stress': 15,
 			},
-			'required_progress': 30000,
+			'required_progress': 15000,
 			'skill':{
 				'id': 'fireball',
 			},
@@ -888,7 +888,7 @@ const courses = {
 					'scholarship': 2,
 					'stress': 25,
 			},
-			'required_progress': 50000,
+			'required_progress': 25000,
 			'skill':{
 				'id': 'meteor'
 			},
@@ -1076,6 +1076,7 @@ const constants = {
 	'TIMES_OF_DAY' = ['morning', 'afternoon', 'night', 'bedtime'],
 	'DAILY_ACTION_LIMIT' = 3,
 	'BASE_COURSE_PROGRESS' = 1000,
+	'JOB_EVENT_ODDS' = 20, #The percentage chance of triggering a job event
 	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},
 	'ACTION_TYPES' = {
 		'jobs': {
