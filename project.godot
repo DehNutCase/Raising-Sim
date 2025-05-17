@@ -59,6 +59,8 @@ directories/dch_directory={
 "Fay_Portrait": "res://Characters/Fay/Fay_Portrait.dch",
 "Fiona": "res://Characters/Fiona/Fiona.dch",
 "Fiona_Portrait": "res://Characters/Fiona/Fiona_Portrait.dch",
+"Goo": "res://Characters/Goo/Goo.dch",
+"Goo_Portrait": "res://Characters/Goo/Goo_Portrait.dch",
 "Gray": "res://Characters/Cats/Gray.dch",
 "Hero_F/Hero_f": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hero_F/Hero_f.dch",
 "Hero_F/Hero_f_portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hero_F/Hero_f_portrait.dch",
@@ -235,6 +237,7 @@ directories/dtl_directory={
 "WalkEvents/SacredWoodsFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/SacredWoodsFirst.dtl",
 "WalkEvents/StorageRoom": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/StorageRoom.dtl",
 "WalkEvents/StorageRoomFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/StorageRoomFirst.dtl",
+"WizardsApprentice0": "res://Timelines/JobEvents/WizardsApprentice0.dtl",
 "test": "res://Timelines/Testing/test.dtl"
 }
 glossary/default_case_sensitive=true

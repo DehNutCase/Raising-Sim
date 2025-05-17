@@ -251,6 +251,7 @@ func do_action(action_type:String, action_name: String):
 			if ('skill' in Constants[action_type][action_name]):
 				if (Player.proficiencies[action_name] >= Constants[action_type][action_name].skill.proficiency_required):
 					if (!Player.skill_inventory.get_item_with_prototype_id(Constants[action_type][action_name].skill.id)):
+						await(get_tree().create_timer(.5).timeout)
 						Player.skill_inventory.create_and_add_item(Constants[action_type][action_name].skill.id)
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", false)
@@ -755,7 +756,8 @@ func _on_timeline_ended() -> void:
 func _on_inventory_item_added(item):
 	#Note: Do not apply scholarship bonus to items
 	var toast = "Obtained " + item.get_property("name", "")
-	display_toast(toast, "bottom", "center")
+	var icon = item.get_property("image", null)
+	display_toast(toast, "bottom", "center", icon)
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
 		

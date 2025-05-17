@@ -35,7 +35,7 @@ Mao_Portrait (Normal): (I'll have apple juice!)
 	Fay_Portrait (Normal): (Heehee. Leaving aside how a fairy witch would work, the academy teaches all kinds of spells.)
 	Fay_Portrait (Normal): (I'm trying to learn one of those today.)
 	Mao_Portrait (Normal): (Umu. I'll do my best!)
-	[signal arg="{"stats": {scholarship": 10,}}"]
+	[signal arg="{"stats": {"scholarship": 10,}}"]
 - Do you take classes here?
 	Fay_Portrait (Normal): (I do, but not the way you think.)
 	Fay_Portrait (Normal): (I only do it when the shop isn't busy, so I don't attend classes regularly. When I do attend, it's mostly cramming so I can finish a class before things get busy again.)
@@ -53,4 +53,4 @@ Mao_Portrait (Normal): (I'll have apple juice!)
 	Fay_Portrait (Normal): (That's true, but I'm just learning the theory right now.)
 	Fay_Portrait (Normal): (I can practice on my own time, after all.)
 	Mao_Portrait (Normal): (Umu.)
-	[signal arg="{"stats": {scholarship": 10,}}"]
+	[signal arg="{"stats": {"scholarship": 10,}}"]

@@ -96,6 +96,7 @@ const jobs = {
 		},
 		"description": "A good way to be paid while doing classwork.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/note01_04.png",
+		"timelines": ["Tutoring0", "Tutoring1"],
 	},
 	"Wizard's Apprentice": {
 		'stats': {
@@ -120,6 +121,7 @@ const jobs = {
 		},
 		"description": "Helping out at a certain alchemist's workshop.\nSurprisingly, not as smelly as one might expect, but a busy and stressful job nontheless.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/alchemy01_01.png",
+		"timelines": ["WizardsApprentice0", "WizardsApprentice1"],
 	},
 	'Acolyte': {
 		'stats': {

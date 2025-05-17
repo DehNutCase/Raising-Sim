@@ -132,6 +132,7 @@ offset_left = 250.0
 offset_right = 1350.0
 offset_bottom = 160.0
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Counters" type="HBoxContainer" parent="GUI (Mouse Ignore)"]
 layout_mode = 2
@@ -174,6 +175,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_iokpw")
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui"]
 anchors_preset = 1
@@ -191,6 +193,7 @@ theme_override_constants/margin_bottom = 20
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
+metadata/_edit_lock_ = true
 
 [node name="PauseMenuButton" type="TextureButton" parent="Ui/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -819,6 +822,7 @@ offset_bottom = 900.0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
+metadata/_edit_lock_ = true
 
 [node name="MenuPanel" type="Control" parent="LeftMenuContainer"]
 layout_mode = 2
@@ -883,6 +887,7 @@ offset_right = 1600.0
 offset_bottom = 900.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
+metadata/_edit_lock_ = true
 
 [node name="MenuPanel" type="Control" parent="RightMenuContainer"]
 layout_mode = 2

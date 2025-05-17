@@ -141,6 +141,7 @@ func start_expression(expression) -> void:
 	cubism_model.start_expression(expression)
 
 func job_motion(motion) -> void:
+	timestamp = Time.get_unix_time_from_system()
 	var weights = []
 	var motions = job_success_motions
 	if !motion: motions = job_failure_motions

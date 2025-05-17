@@ -1,0 +1,12 @@
+For Pompack:
+410x44 position (varies, 410x44 for Morgan), 288x288 size
+magick mogrify -crop 288x288+410+44 *.png
+
+For 8 rect crop:
+magick [filename] -crop 4x2@ [filename]%02d.png
+
+High Quality Mao:
+magick mogrify -crop 1000x1000+2400+1800 *.png
+
+Resize:
+magick mogrify -resize 288x288 *.png
