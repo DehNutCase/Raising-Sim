@@ -87,6 +87,12 @@ Source: [LemmaSoft :  UNCLE MUGEN'S FREE VN (OELVN) RESOURCES](https://lemmasoft
 Author: [mandinhart](https://itch.io/profile/mandinhart)  
 Source: [Itch.io : Garden cozy icons pack UI](https://mandinhart.itch.io/complete-garden-kit-gui-mandinhar)
 
+### Images
+#### Backgrounds
+Author: [Adam Gulacsi](https://github.com/guladam)  
+Source: [github: deck_builder_tutorial](https://github.com/guladam/deck_builder_tutorial/tree/season-1-code) 
+License: [MIT License](https://github.com/guladam/deck_builder_tutorial/blob/season-1-code/LICENSE)
+
 ## Tools
 #### Cubism for GDScript
 Author: [MizunagiKB](https://github.com/MizunagiKB)  
