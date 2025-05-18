@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://bdmdjsuftthet"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="1_mi5yn"]
+
+[resource]
+script = ExtResource("1_mi5yn")
+id = "mao_block"
+type = 1
+target = 0

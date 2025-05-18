@@ -6,4 +6,4 @@ func _ready():
 		card.reparent_requested.connect(_on_card_ui_reparent_requested)
 		
 func _on_card_ui_reparent_requested(card):
-	pass # Replace with function body.
+	card.reparent(hand)

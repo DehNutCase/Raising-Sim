@@ -31,7 +31,7 @@ mouse_filter = 2
 color = Color(0.2, 0.482353, 1, 1)
 
 [node name="Area" type="Area2D" parent="."]
-collision_mask = 2
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
 position = Vector2(80, 120)
@@ -52,3 +52,6 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "BASE"
+
+[connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]
+[connection signal="area_exited" from="Area" to="." method="_on_area_area_exited"]

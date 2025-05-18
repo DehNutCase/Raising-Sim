@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=7 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="Texture2D" uid="uid://c7v6do4le80wm" path="res://Art/Background/Background material shop/bg027c.jpg" id="1_33h8h"]
 [ext_resource type="PackedScene" uid="uid://djsxylqnw8otj" path="res://Scenes/CardGame/Card/card_ui.tscn" id="1_ngqou"]
+[ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="4_2dviw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 600)
 
-[node name="CardGame" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j5gk"]
+size = Vector2(180, 180)
+
+[node name="CardGame" type="Node2D" groups=["CardGameMainNode"]]
 script = ExtResource("1_3b07j")
 metadata/_edit_lock_ = true
 
@@ -26,6 +30,9 @@ layout_mode = 2
 [node name="CardUI2" parent="UI/Hand" instance=ExtResource("1_ngqou")]
 layout_mode = 2
 
+[node name="CardUI3" parent="UI/Hand" instance=ExtResource("1_ngqou")]
+layout_mode = 2
+
 [node name="BackgroundCanvas" type="CanvasLayer" parent="."]
 layer = -1
 visible = false
@@ -40,10 +47,24 @@ texture = ExtResource("1_33h8h")
 metadata/_edit_lock_ = true
 
 [node name="TargetArea" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea"]
 position = Vector2(800, 300)
 shape = SubResource("RectangleShape2D_yxqvk")
 debug_color = Color(0.107029, 0.26902, 0.854055, 0.419608)
+metadata/_edit_lock_ = true
 
-[connection signal="reparent_requested" from="UI/Hand/CardUI" to="." method="_on_card_ui_reparent_requested"]
+[node name="Enemy" type="Area2D" parent="."]
+position = Vector2(1320, 204)
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_7j5gk")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("4_2dviw")
+flip_h = true
+metadata/_edit_lock_ = true
