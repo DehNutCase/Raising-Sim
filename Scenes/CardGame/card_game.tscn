@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://l5x5rktt2y2y"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
+[ext_resource type="Texture2D" uid="uid://c7v6do4le80wm" path="res://Art/Background/Background material shop/bg027c.jpg" id="1_33h8h"]
+[ext_resource type="PackedScene" uid="uid://djsxylqnw8otj" path="res://Scenes/CardGame/Card/card_ui.tscn" id="1_ngqou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
+size = Vector2(1600, 600)
+
+[node name="CardGame" type="Node2D"]
+script = ExtResource("1_3b07j")
+metadata/_edit_lock_ = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hand" type="HBoxContainer" parent="UI"]
+custom_minimum_size = Vector2(1600, 300)
+offset_top = 600.0
+offset_right = 1600.0
+offset_bottom = 900.0
+alignment = 1
+
+[node name="CardUI" parent="UI/Hand" instance=ExtResource("1_ngqou")]
+layout_mode = 2
+
+[node name="CardUI2" parent="UI/Hand" instance=ExtResource("1_ngqou")]
+layout_mode = 2
+
+[node name="BackgroundCanvas" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="Background" type="TextureRect" parent="BackgroundCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_33h8h")
+metadata/_edit_lock_ = true
+
+[node name="TargetArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea"]
+position = Vector2(800, 300)
+shape = SubResource("RectangleShape2D_yxqvk")
+debug_color = Color(0.107029, 0.26902, 0.854055, 0.419608)
+
+[connection signal="reparent_requested" from="UI/Hand/CardUI" to="." method="_on_card_ui_reparent_requested"]
