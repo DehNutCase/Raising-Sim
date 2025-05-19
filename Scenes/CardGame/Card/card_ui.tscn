@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://djsxylqnw8otj"]
+[gd_scene load_steps=5 format=3 uid="uid://djsxylqnw8otj"]
 
+[ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="1_bsj2h"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_ui.gd" id="1_uy134"]
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/mao_basic_attack.tres" id="2_sqx86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
 size = Vector2(160, 240)
 
-[node name="CardUI" type="Control"]
+[node name="CardUI" type="Control" groups=["CardGameCardUI"]]
 custom_minimum_size = Vector2(160, 240)
 layout_mode = 3
 anchors_preset = 15
@@ -17,8 +19,17 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_bsj2h")
 script = ExtResource("1_uy134")
+card = ExtResource("2_sqx86")
 metadata/_edit_lock_ = true
+
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+position = Vector2(80, 120)
+shape = SubResource("RectangleShape2D_78q6f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -30,28 +41,44 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.2, 0.482353, 1, 1)
 
-[node name="Area" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
-position = Vector2(80, 120)
-shape = SubResource("RectangleShape2D_78q6f")
-
-[node name="StateLabel" type="Label" parent="."]
-unique_name_in_owner = true
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -15.5
-offset_right = 36.0
-offset_bottom = 15.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "BASE"
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Frame" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="Frame"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CardTextLabel" type="RichTextLabel" parent="Frame"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+bbcode_enabled = true
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+offset_right = 13.0
+offset_bottom = 24.0
+size_flags_vertical = 3
+text = "5"
 
 [connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]
 [connection signal="area_exited" from="Area" to="." method="_on_area_area_exited"]

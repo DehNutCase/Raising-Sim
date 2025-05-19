@@ -1,7 +1,7 @@
 extends Character
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_player_resource"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -91,9 +91,14 @@ var victory_stat_gain = {}
 
 var save_loaded = false
 
+#Easy access to card game player stuff
+@export var card_game_player_resource: CardGameMaoStats
+var card_game_player: CardGamePlayer
+
 func _init():
 	base_stats = {
 		"max_hp": 20,
+		"max_mp": 10,
 		"strength": 10,
 		"magic": 15,
 		"defense": 5,
@@ -105,6 +110,7 @@ func _init():
 		"scholarship": 0,
 		"action_points": 1,
 	}
+	stats = base_stats
 	name = "Player"
 
 func level_up() -> void:
@@ -312,3 +318,10 @@ func calculate_min_stat(stat_name:String):
 		return min
 	else:
 		printerr("tried to find min_stat of a stat without min")
+
+#Helper function for making tooltips, make the relevant control's _make_custom_tooltip(text) function call this
+func make_custom_tooltip(text: String) -> Control:
+	var custom_tooltip:Control = load("res://Scenes/UI/Tooltip/custom_tooltip.tscn").instantiate()
+	var label: RichTextLabel = custom_tooltip.get_child(0)
+	label.parse_bbcode(text)
+	return custom_tooltip

@@ -291,7 +291,7 @@ inspector_control_height=200
 
 theme/custom="res://Art/Themes/MainMenuTheme.tres"
 theme/default_font_generate_mipmaps=true
-timers/tooltip_delay_sec=0.2
+timers/tooltip_delay_sec=0.1
 
 [importer_defaults]
 

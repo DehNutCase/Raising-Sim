@@ -2,14 +2,12 @@
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="Texture2D" uid="uid://c7v6do4le80wm" path="res://Art/Background/Background material shop/bg027c.jpg" id="1_33h8h"]
-[ext_resource type="PackedScene" uid="uid://djsxylqnw8otj" path="res://Scenes/CardGame/Card/card_ui.tscn" id="1_ngqou"]
-[ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="4_2dviw"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="4_y02h7"]
+[ext_resource type="Resource" uid="uid://ksf4v63jppq2" path="res://Scenes/CardGame/Characters/Enemies/Dumpling.tres" id="5_p0388"]
+[ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 600)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j5gk"]
-size = Vector2(180, 180)
 
 [node name="CardGame" type="Node2D" groups=["CardGameMainNode"]]
 script = ExtResource("1_3b07j")
@@ -22,20 +20,12 @@ custom_minimum_size = Vector2(1600, 300)
 offset_top = 600.0
 offset_right = 1600.0
 offset_bottom = 900.0
+theme_override_constants/separation = 10
 alignment = 1
-
-[node name="CardUI" parent="UI/Hand" instance=ExtResource("1_ngqou")]
-layout_mode = 2
-
-[node name="CardUI2" parent="UI/Hand" instance=ExtResource("1_ngqou")]
-layout_mode = 2
-
-[node name="CardUI3" parent="UI/Hand" instance=ExtResource("1_ngqou")]
-layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="BackgroundCanvas" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="Background" type="TextureRect" parent="BackgroundCanvas"]
 anchors_preset = 15
@@ -55,16 +45,23 @@ shape = SubResource("RectangleShape2D_yxqvk")
 debug_color = Color(0.107029, 0.26902, 0.854055, 0.419608)
 metadata/_edit_lock_ = true
 
-[node name="Enemy" type="Area2D" parent="."]
-position = Vector2(1320, 204)
-collision_mask = 2
-monitoring = false
+[node name="CardGameEnemy" parent="." instance=ExtResource("4_y02h7")]
+position = Vector2(1356, 164)
+stats = ExtResource("5_p0388")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource("RectangleShape2D_7j5gk")
-metadata/_edit_lock_ = true
+[node name="CardGameEnemy2" parent="." instance=ExtResource("4_y02h7")]
+position = Vector2(950, 194)
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("4_2dviw")
-flip_h = true
-metadata/_edit_lock_ = true
+[node name="CardGameEnemy3" parent="." instance=ExtResource("4_y02h7")]
+position = Vector2(1186, 448)
+
+[node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
+unique_name_in_owner = true
+position = Vector2(158, 232)
+
+[node name="End Turn Button" type="Button" parent="."]
+offset_right = 12.0
+offset_bottom = 12.0
+text = "END TURN"
+
+[connection signal="pressed" from="End Turn Button" to="." method="end_turn"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbxyyse5qjiur"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Mao/card_game_player.gd" id="1_dlhk5"]
+[ext_resource type="PackedScene" uid="uid://c5htyv0wr2awi" path="res://Scenes/CardGame/card_game_stats_bar.tscn" id="2_a1fbw"]
+[ext_resource type="Texture2D" uid="uid://brmujmc45ux45" path="res://Art/Mori no oku no kakurezato/CardGame/sphere02_03.png" id="3_d6cxx"]
+[ext_resource type="Texture2D" uid="uid://b3scs43x2ky47" path="res://Characters/Mao/Images/Portrait/exp_03_000.png" id="3_oh0gv"]
+
+[node name="CardGamePlayer" type="Node2D" groups=["CardGamePlayer"]]
+script = ExtResource("1_dlhk5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Mana" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="ManaTexture" type="TextureRect" parent="VBoxContainer/Mana"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_d6cxx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ManaLabel" type="Label" parent="VBoxContainer/Mana"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "1/4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterTexture" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(216, 216)
+layout_mode = 2
+texture = ExtResource("3_oh0gv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="StatsBar" parent="VBoxContainer" instance=ExtResource("2_a1fbw")]
+unique_name_in_owner = true
+layout_mode = 2

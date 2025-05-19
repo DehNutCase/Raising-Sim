@@ -1,19 +1,23 @@
 class_name CardUI
 extends Control
 
-#unsure use
 signal reparent_requested(card: CardUI)
 
 @onready var color = $ColorRect
+@onready var panel = $Panel
+@onready var icon = $Frame/Icon
+@onready var cost = $Cost
 
-enum States {BASE, DRAGGING, RELEASED}
+enum States {BASE, DRAGGING, RELEASED, DISCARD}
 @export var current_state:States
 @export var initial_state:States
 
-var targets = []
+var targets: Array[Node] = []
 var played = false
 
-@export var card: CardResource = load("res://Scenes/CardGame/Characters/Mao/Cards/mao_basic_attack.tres")
+@export var card: CardResource : set = _set_card
+
+@onready var card_text_label = %CardTextLabel
 
 func _ready():
 	pass
@@ -22,15 +26,12 @@ func enter_state(state:States) -> void:
 	match state:
 		States.BASE:
 			reparent_requested.emit(self)
-			$StateLabel.text = "BASE"
 			pivot_offset = Vector2.ZERO
 			current_state = States.BASE
 		States.DRAGGING:
 			reparent(get_tree().get_first_node_in_group("CardGameMainNode"))
-			$StateLabel.text = "DRAGGING"
 			current_state = States.DRAGGING
 		States.RELEASED:
-			$StateLabel.text = "RELEASED"
 			current_state = States.RELEASED
 			played = false
 			if targets:
@@ -39,6 +40,8 @@ func enter_state(state:States) -> void:
 						enter_state(States.BASE)
 						return
 				play_card()
+		States.DISCARD:
+			current_state = States.DISCARD
 	
 func exit_state(state:States) -> void:
 	pass
@@ -75,11 +78,70 @@ func change_state(from:States, to:States):
 
 func play_card():
 	played = true
+	if targets and targets[-1] is CardGameEnemy:
+		targets[-1].arrow.hide()
+	if Player.card_game_player.stats.mana >= card.cost:
+		card.play(targets, Player.card_game_player.stats)
+		discard()
+	else:
+		played = false
+		enter_state(States.BASE)
 
 func _on_area_area_entered(area: Area2D) -> void:
 	if !(area in targets):
+		if card.is_single_target() and area is CardGameEnemy:
+			area.arrow.show()
+			if targets and targets[-1] is CardGameEnemy:
+				targets[-1].arrow.hide()
 		targets.append(area)
-
 
 func _on_area_area_exited(area: Area2D) -> void:
 	targets.erase(area)
+	if area is CardGameEnemy:
+		area.arrow.hide()
+	if card.is_single_target() and targets and targets[-1] is CardGameEnemy:
+		targets[-1].arrow.show()
+
+func _set_card(value: CardResource) -> void:
+	if not is_node_ready():
+		await ready
+	card = value
+	cost.text = str(card.cost)
+	icon.texture = card.icon
+	
+	tooltip_text = _create_tooltip()
+	card_text_label.parse_bbcode(_create_tooltip())
+	
+func _create_tooltip() -> String:
+	match card.type:
+		card.Type.ATTACK:
+			match card.target:
+				card.Target.SELF:
+					return "Deal [color=red]%d[/color] damage to yourself." %card.effect_amount
+				card.Target.SINGLE_ENEMY:
+					return "Deal [color=red]%d[/color] damage." %card.effect_amount
+				card.Target.ALL_ENEMIES:
+					return "Deal [color=red]%d[/color] damage to all enemies." %card.effect_amount
+				card.Target.EVERYONE:
+					return "Deal [color=red]%d[/color] damage to everyone." %card.effect_amount
+		card.Type.BLOCK:
+			match card.target:
+				card.Target.SELF:
+					return "Gain [color=blue]%d[/color] block." %card.effect_amount
+				card.Target.SINGLE_ENEMY:
+					return "Target enemy gains [color=blue]%d[/color] block." %card.effect_amount
+				card.Target.ALL_ENEMIES:
+					return "All enemies gain [color=blue]%d[/color] block." %card.effect_amount
+				card.Target.EVERYONE:
+					return "Everyone gains [color=blue]%d[/color] block." %card.effect_amount
+	#TODO, tooltips for special and power
+	printerr("matching error in _create_tooltip()")
+	return ""
+
+func _make_custom_tooltip(for_text):
+	return Player.make_custom_tooltip(for_text)
+
+func discard() -> void:
+	Player.card_game_player_resource.discard.cards.append(card)
+	enter_state(States.DISCARD)
+	queue_free()

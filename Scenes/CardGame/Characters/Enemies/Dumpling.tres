@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardGameCharacterStats" load_steps=3 format=3 uid="uid://ksf4v63jppq2"]
+
+[ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="1_7fg20"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Base/card_game_character_stats.gd" id="1_ie8ds"]
+
+[resource]
+script = ExtResource("1_ie8ds")
+max_health = 25
+art = ExtResource("1_7fg20")

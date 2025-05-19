@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardGameMaoStats" load_steps=4 format=3 uid="uid://d1kajvd22uj6o"]
+
+[ext_resource type="Texture2D" uid="uid://da4l84wjmrq30" path="res://Characters/Mao/Images/Portrait/exp_01_000.png" id="1_6h32q"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Mao/card_game_mao_stats.gd" id="2_63mew"]
+[ext_resource type="Resource" uid="uid://tumvtntfja44" path="res://Scenes/CardGame/Characters/Mao/Decks/basic_deck.tres" id="3_djq50"]
+
+[resource]
+script = ExtResource("2_63mew")
+starting_deck = ExtResource("3_djq50")
+cards_per_turn = 2
+max_mana = 0
+max_health = 1
+art = ExtResource("1_6h32q")

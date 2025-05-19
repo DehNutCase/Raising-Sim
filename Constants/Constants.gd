@@ -962,6 +962,7 @@ const other = {
 }
 
 const stats = {
+	#TODO, make base stats affect card game. Max hand size, draw at start, draw per turn, mana per turn, max mana, starting mana, hp, damage, etc. Mao's favorite deck is the 'Brick Hand Accident' 10 super rare cards (with dupes), apothesis costs 10 mana and makes her immune until her next turn
 	'base_stats' = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
 		"defense", "resistance", "art",],
 	'scholarship_unaffected' = ["gold", "stress",],

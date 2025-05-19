@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://bdmdjsuftthet"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bdmdjsuftthet"]
 
+[ext_resource type="Texture2D" uid="uid://c0bnynewesqv4" path="res://Art/Mori no oku no kakurezato/CardGame/element10_01.png" id="1_5vhh4"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="1_mi5yn"]
 
 [resource]
@@ -7,3 +8,7 @@ script = ExtResource("1_mi5yn")
 id = "mao_block"
 type = 1
 target = 0
+cost = 1
+effect_amount = 4
+icon = ExtResource("1_5vhh4")
+tooltip_text = ""
