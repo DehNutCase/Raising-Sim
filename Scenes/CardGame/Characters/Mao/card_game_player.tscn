@@ -13,13 +13,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Mana" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(45, 45)
+custom_minimum_size = Vector2(38, 38)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="ManaTexture" type="TextureRect" parent="VBoxContainer/Mana"]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_d6cxx")
@@ -30,7 +29,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 8
 text = "1/4"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -45,4 +44,5 @@ stretch_mode = 5
 
 [node name="StatsBar" parent="VBoxContainer" instance=ExtResource("2_a1fbw")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(35, 35)
 layout_mode = 2

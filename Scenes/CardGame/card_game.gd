@@ -6,6 +6,9 @@ var stats: CardGameMaoStats
 
 var DRAW_INTERVAL = 0
 
+enum states {NORMAL, VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
+var state = states.NORMAL
+
 func _ready():
 	for card:CardUI in hand.get_children():
 		card.reparent_requested.connect(_on_card_ui_reparent_requested)
@@ -19,6 +22,12 @@ func _ready():
 		Player.card_game_player = card_game_player
 	
 	start_battle()
+	
+
+func _process(delta):
+	if state != states.VICTORY:
+		check_victory()
+	
 	
 func _on_card_ui_reparent_requested(card):
 	card.reparent(hand)
@@ -36,12 +45,17 @@ func start_turn() -> void:
 
 func end_turn() -> void:
 	get_tree().call_group("CardGameCardUI", "discard")
-	#TODO, do enemy turn then restart
+	for enemy: CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
+		await enemy.do_turn()
 	start_turn()
 	
 func add_card(card: CardResource) -> void:
 	#Quit if there's no card drawn
 	if !card:
+		return
+	#Discard card if too many is drawn
+	if hand.get_child_count() >= stats.max_hand_size:
+		stats.discard.cards.append(card)
 		return
 	var new_card:CardUI = load("res://Scenes/CardGame/Card/card_ui.tscn").instantiate()
 	new_card.card = card
@@ -59,9 +73,14 @@ func draw_card() -> void:
 			add_card(stats.draw_pile.draw_card())
 	
 func draw_cards(amount: int) -> void:
+	hand.add_theme_constant_override("separation", 10 - amount * 2)
 	var tween: Tween = create_tween()
 	for i in range(amount):
 		tween.tween_callback(draw_card)
 		tween.tween_interval(DRAW_INTERVAL)
 	await tween.finished
 	
+func check_victory() -> void:
+	if !get_tree().get_nodes_in_group("CardGameEnemies"):
+		state = states.VICTORY
+		print("you won!")

@@ -31,7 +31,10 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
 	
+	modulate = Color(1,1,1,.5)
+	await Player.shake(self, 50)
+	modulate = Color(1,1,1,1)
 	stats.take_damage(damage)
 	
 	if stats.health <= 0:
-		queue_free()
+		print("you lost!")

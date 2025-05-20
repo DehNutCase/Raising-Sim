@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://t35mloke521s"]
+
+[ext_resource type="Texture2D" uid="uid://c0bnynewesqv4" path="res://Art/Mori no oku no kakurezato/CardGame/element10_01.png" id="1_ohtte"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_y8aur"]
+
+[resource]
+script = ExtResource("2_y8aur")
+id = "dumpling_basic_attack"
+type = 1
+target = 0
+cost = 1
+effect_amount = 2
+icon = ExtResource("1_ohtte")
+tooltip_text = ""

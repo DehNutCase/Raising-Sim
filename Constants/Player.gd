@@ -325,3 +325,25 @@ func make_custom_tooltip(text: String) -> Control:
 	var label: RichTextLabel = custom_tooltip.get_child(0)
 	label.parse_bbcode(text)
 	return custom_tooltip
+
+
+#Helper function for shaking things
+func shake(target: Node, strength: float, duration: float = 0.2) -> void:
+	if not target:
+		return
+	
+	var original_position: Vector2 = target.position
+	var shake_count: int = 10
+	var tween: Tween = create_tween()
+	
+	for i in range(shake_count):
+		var shake_offset: Vector2 = Vector2(randf_range(-1,1), randf_range(-1,1))
+		var new_position: Vector2 = original_position + strength * shake_offset
+		if i % 2 == 0:
+			new_position = original_position
+		tween.tween_property(target, "position", new_position, duration/float(shake_count))
+		strength *= .75
+		
+	tween.finished.connect(func(): target.position = original_position)
+	await tween.finished
+	

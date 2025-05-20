@@ -3,6 +3,7 @@ extends CardGameCharacterStats
 
 @export var starting_deck: Deck
 @export var cards_per_turn: int
+@export var max_hand_size: int
 @export var max_mana: int
 
 var mana: int : set = set_mana
@@ -25,13 +26,14 @@ func start_turn() -> void:
 	block = int(Player.stats.defense/25)
 
 func create_instance() -> CardGameCharacterStats:
-	var instance: CardGameMaoStats = duplicate()
+	var instance: CardGameMaoStats = duplicate() as CardGameMaoStats
 	instance.max_health = int(Player.stats.max_hp/5)
 	instance.health = instance.max_health
 	#Note, give mao block based on defense every turn
 	instance.block = int(Player.stats.defense/25)
 	instance.max_mana = int(Player.stats.max_mp/150 + 2)
-	instance.cards_per_turn = int(Player.stats.scholarship/150 + 20)
+	instance.cards_per_turn = int(Player.stats.scholarship/150 + 2)
+	instance.max_hand_size = int(Player.stats.skill/150 + 2)
 	instance.reset_mana()
 	instance.deck = starting_deck.duplicate()
 	instance.draw_pile = Deck.new()

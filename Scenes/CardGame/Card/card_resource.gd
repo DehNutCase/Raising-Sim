@@ -18,7 +18,7 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 func is_single_target() -> bool:
 	return target == Target.SINGLE_ENEMY
 
-func get_targets(targets: Array[Node]) -> Array[Node]:
+func get_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Array[Node]:
 	if !targets:
 		return []
 	
@@ -26,12 +26,16 @@ func get_targets(targets: Array[Node]) -> Array[Node]:
 	
 	match target:
 		Target.SELF:
+			if enemy:
+				return [enemy]
 			return tree.get_nodes_in_group("CardGamePlayer")
 		Target.ALL_ENEMIES:
 			return tree.get_nodes_in_group("CardGameEnemies")
 		Target.EVERYONE:
 			return tree.get_nodes_in_group("CardGamePlayer") + tree.get_nodes_in_group("CardGameEnemies")
 		Target.SINGLE_ENEMY:
+			if enemy:
+				return tree.get_nodes_in_group("CardGamePlayer")
 			return [targets[-1]]
 		_:
 			printerr("Unmatched target type for get_targets")
@@ -40,6 +44,9 @@ func get_targets(targets: Array[Node]) -> Array[Node]:
 func play(targets: Array[Node], stats: CardGameCharacterStats) -> void:
 	stats.mana -= cost
 	apply_effects(get_targets(targets))
+
+func enemy_play(enemy: CardGameEnemy) -> void:
+	apply_effects(get_targets([enemy], enemy))
 
 func apply_effects(targets: Array[Node]) -> void:
 	match type:

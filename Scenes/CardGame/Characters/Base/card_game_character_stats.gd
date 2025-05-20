@@ -33,3 +33,4 @@ func create_instance() -> CardGameCharacterStats:
 	instance.health = max_health
 	instance.block = 0
 	return instance
+
