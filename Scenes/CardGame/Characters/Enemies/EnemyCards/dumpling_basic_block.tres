@@ -7,8 +7,8 @@
 script = ExtResource("2_y8aur")
 id = "dumpling_basic_attack"
 type = 1
+status_type = 0
 target = 0
 cost = 1
 effect_amount = 2
 icon = ExtResource("1_ohtte")
-tooltip_text = ""

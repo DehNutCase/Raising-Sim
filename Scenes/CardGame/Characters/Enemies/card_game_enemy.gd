@@ -63,11 +63,14 @@ func perform_intent() -> void:
 		tween.tween_interval(.1)
 		tween.tween_property(self, "global_position", start, .4)
 		await get_tree().create_timer(.3).timeout
-	
+	else:
+		await Player.shake(self, 50)
+		
 	intent.enemy_play(self)
 	await get_tree().create_timer(.4).timeout
 
 func do_turn() -> void:
-	stats.block = 0
 	await perform_intent()
-	set_intent()
+
+func reset_block() -> void:
+	stats.block = 0

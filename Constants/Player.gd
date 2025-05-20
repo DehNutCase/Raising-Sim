@@ -1,11 +1,12 @@
 extends Character
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_player_resource"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "shop_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_health", "card_game_deck"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
 @export var inventories: Array[String] = ["inventory", "background_inventory", "skill_inventory",]
+@export var resource_arrays = ["card_game_deck"]
 @export var starting_items = { 
 	"inventory": [], 
 	"background_inventory": ["royal_backing", "ink_mage"],
@@ -92,8 +93,9 @@ var victory_stat_gain = {}
 var save_loaded = false
 
 #Easy access to card game player stuff
-@export var card_game_player_resource: CardGameMaoStats
 var card_game_player: CardGamePlayer
+var card_game_health = 10
+var card_game_deck: Array[CardResource] = []
 
 func _init():
 	base_stats = {
@@ -124,24 +126,6 @@ func level_up() -> void:
 		stats_list = background_inventory.get_item_with_prototype_id(player_class).get_property("level_up_stats")
 		for stat in stats_list:
 			stats[stat] += stats_list[stat]
-
-func save_game():
-	var save_data = {}
-	for data in save_list:
-		save_data[data] = self[data]
-
-	#serialize inventories
-	for inventory in inventories:
-		save_data[inventory] = self[inventory].serialize()
-	
-	var save_file
-	DirAccess.make_dir_recursive_absolute("user://Saves")
-	save_file = FileAccess.open("user://Saves/save.json", FileAccess.WRITE)
-	if save_file:
-		save_file.store_line(JSON.stringify(save_data))
-		ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
-	else:
-		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
 
 #Helper function to allow Dialogic to set flags
 func set_event_flag(flag: String) -> void:
@@ -180,7 +164,31 @@ func find_most_proficient_job() -> String :
 #Helper function to set dialogic flags
 func set_dialogic_temporary_flag(flag:String) -> void:
 	dialogic_temporary_flags[flag] = true
+
+func save_game():
+	var save_data = {}
+	for data in save_list:
+		save_data[data] = self[data]
+
+	#serialize inventories
+	for inventory in inventories:
+		save_data[inventory] = self[inventory].serialize()
 	
+	#serialize resource arrays
+	for resource_array in resource_arrays:
+		save_data[resource_array] = []
+		for resource:Resource in self[resource_array]:
+			save_data[resource_array].append(resource.resource_path)
+		
+	var save_file
+	DirAccess.make_dir_recursive_absolute("user://Saves")
+	save_file = FileAccess.open("user://Saves/save.json", FileAccess.WRITE)
+	if save_file:
+		save_file.store_line(JSON.stringify(save_data))
+		ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
+	else:
+		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
+
 func load_game():
 	var save_file
 	save_file = FileAccess.open("user://Saves/save.json", FileAccess.READ)
@@ -195,14 +203,21 @@ func load_game():
 	var data = json.get_data()
 	
 	for variable in data:
-		if variable == "inventories" or variable in data.inventories:
+		if variable == "inventories" or variable in data.inventories or variable in resource_arrays:
+			continue
+		if not variable in Player:
 			continue
 		Player[variable] = data[variable]
 	
 	for inventory in data.inventories:
 		if !self[inventory].deserialize(data[inventory]):
 			printerr("failed to deserialize inventory during load_game")
-			
+	
+	for resource_array in resource_arrays:
+		Player[resource_array].clear()
+		for path in data[resource_array]:
+			Player[resource_array].append(ResourceLoader.load(path))
+	
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
 	#Remove old class change card as well when deleting.

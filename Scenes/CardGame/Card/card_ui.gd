@@ -6,7 +6,7 @@ signal reparent_requested(card: CardUI)
 @onready var color = $ColorRect
 @onready var panel = $Panel
 @onready var icon = $Frame/Icon
-@onready var cost = $Cost
+@onready var cost_label = $Cost
 
 enum States {BASE, DRAGGING, RELEASED, DISCARD}
 @export var current_state:States
@@ -80,8 +80,9 @@ func play_card():
 	played = true
 	if targets and targets[-1] is CardGameEnemy:
 		targets[-1].arrow.hide()
-	if Player.card_game_player.stats.mana >= card.cost:
-		card.play(targets, Player.card_game_player.stats)
+	if Player.card_game_player.mana >= card.cost:
+		Player.card_game_player.mana -= card.cost
+		card.play(targets)
 		discard()
 	else:
 		played = false
@@ -106,7 +107,7 @@ func _set_card(value: CardResource) -> void:
 	if not is_node_ready():
 		await ready
 	card = value
-	cost.text = str(card.cost)
+	cost_label.text = str(card.cost)
 	icon.texture = card.icon
 	
 	tooltip_text = _create_tooltip()
@@ -142,6 +143,6 @@ func _make_custom_tooltip(for_text):
 	return Player.make_custom_tooltip(for_text)
 
 func discard() -> void:
-	Player.card_game_player_resource.discard.cards.append(card)
+	Player.card_game_player.discard.cards.append(card)
 	enter_state(States.DISCARD)
 	queue_free()
