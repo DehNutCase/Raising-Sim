@@ -47,7 +47,7 @@ func add_card(card: CardResource) -> void:
 	if hand.get_child_count() >= card_game_player.max_hand_size:
 		card_game_player.discard.cards.append(card)
 		return
-	var new_card:CardUI = load("res://Scenes/CardGame/Card/card_ui.tscn").instantiate()
+	var new_card:CardUI = load("res://Scenes/CardGame/UI/card_ui.tscn").instantiate()
 	new_card.card = card
 	hand.add_child(new_card)
 	new_card.reparent_requested.connect(_on_card_ui_reparent_requested)

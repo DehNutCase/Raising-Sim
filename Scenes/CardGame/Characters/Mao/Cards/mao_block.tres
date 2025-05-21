@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_mi5yn")
-id = "mao_block"
+id = "Block"
 type = 1
 target = 0
 cost = 1
 effect_amount = 4
 icon = ExtResource("1_5vhh4")
-tooltip_text = ""
+status_type = 0

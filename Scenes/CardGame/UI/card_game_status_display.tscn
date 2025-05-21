@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0fqxe5wix80"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/UI/card_game_status_display.gd" id="1_574hh"]
+[ext_resource type="Texture2D" uid="uid://2yxosooo24na" path="res://Art/Mori no oku no kakurezato/CardGame/element20_02.png" id="1_qv2im"]
+
+[node name="Status" type="HBoxContainer"]
+custom_minimum_size = Vector2(38, 38)
+alignment = 1
+script = ExtResource("1_574hh")
+
+[node name="StatusTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_qv2im")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DurationLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,9 +1,8 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://uh5vgu7oy4un"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://uh5vgu7oy4un"]
 
 [ext_resource type="StyleBox" uid="uid://cftn0vvm1j57q" path="res://Art/Themes/ThemeComponents/Button_Disabled.tres" id="1_d17pi"]
 [ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/Themes/ThemeComponents/Button_Normal.tres" id="2_64ksq"]
 [ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/Themes/ThemeComponents/Button_Pressed.tres" id="3_8suqx"]
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="4_7r508"]
 [ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="5_rvpym"]
 [ext_resource type="StyleBox" uid="uid://c7vgqg4bs5tes" path="res://Art/Themes/ThemeComponents/Progress_Bar_Background.tres" id="6_lqx3d"]
 [ext_resource type="StyleBox" uid="uid://c4npmocm3s7p3" path="res://Art/Themes/ThemeComponents/Progress_Bar_Fill.tres" id="7_8ytci"]
@@ -48,7 +47,6 @@ ProgressBar/styles/background = ExtResource("6_lqx3d")
 ProgressBar/styles/fill = ExtResource("7_8ytci")
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 2
-RichTextLabel/fonts/normal_font = ExtResource("4_7r508")
 TabContainer/colors/font_outline_color = Color(0.0745098, 0.333333, 0.227451, 0.784314)
 TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
 TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)

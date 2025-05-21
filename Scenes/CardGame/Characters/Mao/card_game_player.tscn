@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbxyyse5qjiur"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Mao/card_game_player.gd" id="1_dlhk5"]
-[ext_resource type="PackedScene" uid="uid://c5htyv0wr2awi" path="res://Scenes/CardGame/card_game_stats_bar.tscn" id="2_a1fbw"]
 [ext_resource type="Resource" uid="uid://tumvtntfja44" path="res://Scenes/CardGame/Characters/Mao/Decks/basic_deck.tres" id="2_gy6ui"]
 [ext_resource type="Texture2D" uid="uid://brmujmc45ux45" path="res://Art/Mori no oku no kakurezato/CardGame/sphere02_03.png" id="3_d6cxx"]
 [ext_resource type="Texture2D" uid="uid://b3scs43x2ky47" path="res://Characters/Mao/Images/Portrait/exp_03_000.png" id="3_oh0gv"]
+[ext_resource type="PackedScene" uid="uid://c5htyv0wr2awi" path="res://Scenes/CardGame/UI/card_game_stats_bar.tscn" id="5_axqh2"]
 
 [node name="CardGamePlayer" type="Node2D" groups=["CardGamePlayer"]]
 script = ExtResource("1_dlhk5")
@@ -44,7 +44,11 @@ texture = ExtResource("3_oh0gv")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="StatsBar" parent="VBoxContainer" instance=ExtResource("2_a1fbw")]
+[node name="StatsBar" parent="VBoxContainer" instance=ExtResource("5_axqh2")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+
+[node name="StatusBar" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxx2634nypbhf"]
+
+[ext_resource type="PackedScene" uid="uid://b0fqxe5wix80" path="res://Scenes/CardGame/UI/card_game_status_display.tscn" id="1_to41s"]
+
+[node name="StatusBar" type="HBoxContainer"]
+custom_minimum_size = Vector2(38, 38)
+
+[node name="Status" parent="." instance=ExtResource("1_to41s")]
+unique_name_in_owner = true
+layout_mode = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.gd" id="1_rygd8"]
 [ext_resource type="Texture2D" uid="uid://bs821wo2rerxi" path="res://Art/Mori no oku no kakurezato/CardGame/element43_01.png" id="1_xd72p"]
 [ext_resource type="Resource" uid="uid://ksf4v63jppq2" path="res://Scenes/CardGame/Characters/Enemies/Dumpling.tres" id="2_6kbk2"]
-[ext_resource type="PackedScene" uid="uid://c5htyv0wr2awi" path="res://Scenes/CardGame/card_game_stats_bar.tscn" id="2_e7gel"]
+[ext_resource type="PackedScene" uid="uid://c5htyv0wr2awi" path="res://Scenes/CardGame/UI/card_game_stats_bar.tscn" id="2_e7gel"]
 [ext_resource type="Texture2D" uid="uid://b6esoaab8mdug" path="res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png" id="3_56n0o"]
 [ext_resource type="Texture2D" uid="uid://du4ctdexi4h61" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/attack.png" id="3_v1msc"]
 

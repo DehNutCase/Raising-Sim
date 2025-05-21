@@ -17,14 +17,12 @@ var played = false
 
 @export var card: CardResource : set = _set_card
 
-@onready var card_text_label = %CardTextLabel
+@onready var card_text_label: RichTextLabel = %CardTextLabel
 
 func _ready():
 	pass
 	
 func enter_state(state:States) -> void:
-	print(state)
-	print("entering")
 	match state:
 		States.BASE:
 			reparent_requested.emit(self)
@@ -113,8 +111,9 @@ func _set_card(value: CardResource) -> void:
 	cost_label.text = str(card.cost)
 	icon.texture = card.icon
 	
+	%CardNameLabel.parse_bbcode("[center]" + card.id + "[/center]")
 	tooltip_text = _create_tooltip()
-	card_text_label.parse_bbcode(_create_tooltip())
+	card_text_label.parse_bbcode("[center]" + _create_tooltip() + "[/center]")
 	
 func _create_tooltip() -> String:
 	match card.type:

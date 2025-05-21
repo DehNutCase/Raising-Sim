@@ -1,12 +1,12 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://ca6asxvhlbu51"]
 
 [ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
 [ext_resource type="StyleBox" uid="uid://cftn0vvm1j57q" path="res://Art/Themes/ThemeComponents/Button_Disabled.tres" id="1_t67dw"]
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_wg31n"]
 [ext_resource type="StyleBox" uid="uid://bw5wkkn3tvigq" path="res://Art/Themes/ThemeComponents/Button_Normal.tres" id="2_i3r3c"]
 [ext_resource type="StyleBox" uid="uid://cx3l1vv7823x4" path="res://Art/Themes/ThemeComponents/MainMenuButton_Normal.tres" id="2_o15uc"]
 [ext_resource type="StyleBox" uid="uid://bvokgy3my8xrs" path="res://Art/Themes/ThemeComponents/MainMenuButton_Job_Pressed.tres" id="3_vgx6v"]
 [ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/Themes/ThemeComponents/Button_Pressed.tres" id="3_ynwyf"]
+[ext_resource type="FontFile" uid="uid://bqhlf51teusa8" path="res://Art/Fonts/Gluten-Regular.ttf" id="4_fgm3b"]
 [ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="5_4bo2n"]
 [ext_resource type="StyleBox" uid="uid://c7vgqg4bs5tes" path="res://Art/Themes/ThemeComponents/Progress_Bar_Background.tres" id="6_8q4b0"]
 [ext_resource type="StyleBox" uid="uid://c4npmocm3s7p3" path="res://Art/Themes/ThemeComponents/Progress_Bar_Fill.tres" id="7_t7wje"]
@@ -23,7 +23,12 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cha08"]
 
+[sub_resource type="FontVariation" id="FontVariation_u3uuf"]
+fallbacks = Array[Font]([ExtResource("4_fgm3b")])
+base_font = ExtResource("4_fgm3b")
+
 [resource]
+default_font = SubResource("FontVariation_u3uuf")
 default_font_size = 32
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 0.784314)
@@ -44,7 +49,6 @@ Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/line_spacing = 3
 Label/constants/outline_size = 4
-Label/fonts/font = ExtResource("1_wg31n")
 Panel/styles/panel = ExtResource("5_4bo2n")
 PanelContainer/styles/panel = ExtResource("5_4bo2n")
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
@@ -55,7 +59,6 @@ ProgressBar/styles/fill = ExtResource("7_t7wje")
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/line_separation = 3
 RichTextLabel/constants/outline_size = 2
-RichTextLabel/fonts/normal_font = ExtResource("1_wg31n")
 TabContainer/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 0.784314)
 TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
 TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)

@@ -2,19 +2,22 @@ class_name CardResource
 extends Resource
 
 enum Type {ATTACK, BLOCK, POWER, STATUS}
-enum StatusType {IMMUNE}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Card Attributes")
 @export var id: String
 @export var type: Type
-@export var status_type: StatusType
 @export var target: Target
 @export var cost: int
 @export var effect_amount: int
 
 @export_group("Card Visuals")
 @export var icon: Texture
+
+@export_group("Status Attributes")
+enum Status {IMMUNE}
+@export var status_type: Status
+@export var status_icon: Texture
 
 func is_single_target() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -75,6 +78,4 @@ func apply_damage(targets: Array[Node]) -> void:
 func apply_status(targets: Array[Node]) -> void:
 	for target in targets:
 		if target is CardGameEnemy or target is CardGamePlayer:
-			match status_type:
-				StatusType.IMMUNE:
-					target.apply_immune(effect_amount)
+			target.apply_status(self)

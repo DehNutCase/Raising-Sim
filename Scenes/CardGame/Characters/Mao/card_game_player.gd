@@ -14,6 +14,9 @@ var discard: Deck = Deck.new()
 
 var art = load("res://Characters/Mao/Images/Portrait/exp_01_000.png")
 
+#{"type":String, "stacks":int, "icon":texture}
+var active_status = {}
+
 @onready var sprite = %CharacterTexture
 @onready var stats_bar: CardGameStatsBar = %StatsBar
 @onready var mana_label: Label = %ManaLabel
@@ -89,5 +92,14 @@ func start_first_turn() -> void:
 	mana += int(Player.stats.speed/100)
 	
 	
-func apply_immune(duration: int) -> void:
+func apply_status(card: CardResource) -> void:
+	if card.status_type in active_status:
+		active_status[card.status_type].duration += card.effect_amount
+		active_status[card.status_type].status_display.duration_label.text = str(active_status[card.status_type].duration)
+	else:
+		var status_display:CardGameStatusDisplay = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
+		active_status[card.status_type] = {"duration": card.effect_amount, "icon": card.status_icon, "status_display": status_display}
+		%StatusBar.add_child(active_status[card.status_type].status_display)
+		status_display.status_texture.texture = active_status[card.status_type].icon
+		status_display.duration_label.text = str(active_status[card.status_type].duration)
 	pass

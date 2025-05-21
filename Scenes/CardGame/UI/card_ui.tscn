@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://djsxylqnw8otj"]
 
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="1_bsj2h"]
-[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_ui.gd" id="1_uy134"]
+[ext_resource type="Script" path="res://Scenes/CardGame/UI/card_ui.gd" id="1_uy134"]
 [ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/mao_basic_attack.tres" id="2_sqx86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
@@ -65,6 +65,15 @@ layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 3
 stretch_mode = 5
+
+[node name="CardNameLabel" type="RichTextLabel" parent="Frame"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+fit_content = true
+scroll_active = false
 
 [node name="CardTextLabel" type="RichTextLabel" parent="Frame"]
 unique_name_in_owner = true
