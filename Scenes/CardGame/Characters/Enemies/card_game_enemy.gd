@@ -1,52 +1,63 @@
 class_name CardGameEnemy
 extends Area2D
 
-@export var stats: CardGameEnemyStats : set = set_enemy_stats
+@export var enemy_resource: CardGameEnemyStats
 
 @onready var sprite: TextureRect = %Sprite
 @onready var arrow: TextureRect = %Arrow
-@onready var stat_bar: CardGameStatsBar = %StatsBar
+@onready var stats_bar: CardGameStatsBar = %StatsBar
+
+var max_health: int = 10
+var health: int = 10 : set = set_health
+var block: int = 0 : set = set_block
+var actions:Array[CardResource] = []
 
 var intent: CardResource
 
 func _ready():
+	initialize_enemy_stats(enemy_resource)
+
+func initialize_enemy_stats(value: CardGameEnemyStats) -> void:
+	enemy_resource = value
+	max_health = enemy_resource.max_health
+	health = max_health
+	block = 0
+	sprite.texture = enemy_resource.art
+	actions = enemy_resource.actions
+	update_stats()
 	set_intent()
 
-func set_enemy_stats(value: CardGameEnemyStats) -> void:
-	stats = value.create_instance()
-	
-	if !(stats.stats_changed.is_connected(update_stats)):
-		stats.stats_changed.connect(update_stats)
-	update_enemy()
-
 func update_stats() -> void:
-	stat_bar.update_stats(stats)
-
-func update_enemy() -> void:
-	if not stats is CardGameEnemyStats:
-		printerr("is not CardGameEnemyStats")
-		return
-	if not is_inside_tree():
-		await ready
+	var stats = {"health": health, "block": block, "max_health": max_health}
+	stats_bar.update_stats(stats) #only {health, block} matters
 	
-	sprite.texture = stats.art
+func set_health(value: int) -> void:
+	health = clampi(value, 0, max_health)
+	update_stats()
+	
+func set_block(value: int) -> void:
+	block = clampi(value, 0, 999)
 	update_stats()
 
 func take_damage(damage: int) -> void:
-	if stats.health <= 0:
+	if health <= 0:
 		return
 	
-	stats.take_damage(damage)
+	var initial_damage = damage
+	damage = clampi(damage - block, 0, damage)
+	block = clampi(block - initial_damage, 0, block)
+	
+	health -= damage
 	modulate = Color(1,1,1,.5)
 	await Player.shake(self, 50)
 	modulate = Color(1,1,1,1)
-	
-	if stats.health <= 0:
+
+	if health <= 0:
 		queue_free()
 		get_tree().call_group("CardGameMainNode", "check_victory")
-
+	
 func set_intent() -> void:
-	intent = stats.actions.pick_random() as CardResource
+	intent = actions.pick_random() as CardResource
 	%IntentLabel.text = str(intent.effect_amount)
 	%IntentTexture.texture = intent.icon
 	if !intent:
@@ -73,4 +84,4 @@ func do_turn() -> void:
 	await perform_intent()
 
 func reset_block() -> void:
-	stats.block = 0
+	block = 0

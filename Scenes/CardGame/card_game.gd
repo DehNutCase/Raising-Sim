@@ -11,18 +11,10 @@ var state = states.NORMAL
 func _ready():
 	for card:CardUI in hand.get_children():
 		card.reparent_requested.connect(_on_card_ui_reparent_requested)
-	
 	start_battle()
-	
-
-func _process(delta):
-	if state != states.VICTORY:
-		check_victory()
-	
 	
 func _on_card_ui_reparent_requested(card):
 	card.reparent(hand)
-
 
 func start_battle() -> void:
 	card_game_player.draw_pile = card_game_player.deck.duplicate(true)
@@ -33,8 +25,12 @@ func start_battle() -> void:
 func start_turn() -> void:
 	card_game_player.start_turn()
 	draw_cards(card_game_player.cards_per_turn)
+	state = states.PLAYER_TURN
 
 func end_turn() -> void:
+	if state != states.PLAYER_TURN:
+		return
+	state = states.ENEMY_TURN
 	get_tree().call_group("CardGameCardUI", "discard")
 	get_tree().call_group("CardGameEnemies", "reset_block")
 	for enemy: CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
@@ -75,6 +71,14 @@ func draw_cards(amount: int) -> void:
 	await tween.finished
 	
 func check_victory() -> void:
-	if !get_tree().get_nodes_in_group("CardGameEnemies"):
+	var won = true
+	
+	for enemy:CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
+		if enemy.health > 0:
+			won = false
+	
+	if won:
 		state = states.VICTORY
-		print("you won!")
+		#disable cards, refactor later?
+		get_tree().call_group("CardGameCardUI", "enter_state", CardUI.States.VICTORY)
+		print("we won!")

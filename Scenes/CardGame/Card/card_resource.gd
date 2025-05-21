@@ -62,7 +62,7 @@ func apply_effects(targets: Array[Node]) -> void:
 func apply_block(targets: Array[Node]) -> void:
 	for target in targets:
 		if target is CardGameEnemy:
-			target.stats.block += effect_amount
+			target.block += effect_amount
 		if target is CardGamePlayer:
 			target.block += effect_amount
 

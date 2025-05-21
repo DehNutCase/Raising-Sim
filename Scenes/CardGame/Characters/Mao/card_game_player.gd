@@ -49,7 +49,7 @@ func update_player() -> void:
 
 func update_stats() -> void:
 	var stats = {"health": health, "block": block, "max_health": max_health}
-	stats_bar.update_stats(stats) #only {health, block} matters
+	stats_bar.update_stats(stats)
 	mana_label.text = "%s/%s" % [mana, max_mana]
 
 func take_damage(damage: int) -> void:

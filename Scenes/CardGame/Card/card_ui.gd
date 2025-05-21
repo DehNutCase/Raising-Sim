@@ -8,7 +8,7 @@ signal reparent_requested(card: CardUI)
 @onready var icon = $Frame/Icon
 @onready var cost_label = $Cost
 
-enum States {BASE, DRAGGING, RELEASED, DISCARD}
+enum States {BASE, DRAGGING, RELEASED, DISCARD, VICTORY}
 @export var current_state:States
 @export var initial_state:States
 
@@ -23,6 +23,8 @@ func _ready():
 	pass
 	
 func enter_state(state:States) -> void:
+	print(state)
+	print("entering")
 	match state:
 		States.BASE:
 			reparent_requested.emit(self)
@@ -42,6 +44,8 @@ func enter_state(state:States) -> void:
 				play_card()
 		States.DISCARD:
 			current_state = States.DISCARD
+		States.VICTORY:
+			current_state = States.VICTORY
 	
 func exit_state(state:States) -> void:
 	pass
@@ -72,7 +76,6 @@ func _input(event):
 func change_state(from:States, to:States):
 	if from != current_state:
 		return
-	
 	exit_state(from)
 	enter_state(to)
 
