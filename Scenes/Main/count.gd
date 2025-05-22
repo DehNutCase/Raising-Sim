@@ -2,11 +2,11 @@ extends MarginContainer
 
 @onready var stat:String = self.name
 
-@onready var label = $Background/Label
-@onready var value = $Background/HBoxContainer/Value
-@onready var emoji = $Background/HBoxContainer/Emoji
-@onready var texture = $Background/HBoxContainer/MarginContainer/TextureRect
-@onready var texture_margin = $Background/HBoxContainer/MarginContainer/TextureRect
+@onready var label = %Label
+@onready var value = %Value
+@onready var emoji = %Emoji
+@onready var texture = %Icon
+@onready var texture_margin = %IconMargin
 @onready var progress_bar = $Background/TextureProgressBar
 # Called when the node enters the scene tree for the first time.
 

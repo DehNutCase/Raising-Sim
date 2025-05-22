@@ -79,7 +79,7 @@
 		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_05.png",
 		"limit": 1,
 		"name": "Health Potion",
-		"price": 1000,
+		"price": 250,
 		"stats": "{}"
 	},
 	"mana_potion": {
@@ -89,7 +89,7 @@
 		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png",
 		"limit": 1,
 		"name": "Mana Potion",
-		"price": 1000,
+		"price": 500,
 		"stats": "{}"
 	},
 	"overload_potion": {
@@ -99,7 +99,7 @@
 		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png",
 		"limit": 1,
 		"name": "Overload Potion",
-		"price": 5000,
+		"price": 1000,
 		"stats": "{}"
 	},
 	"exit_pass": {

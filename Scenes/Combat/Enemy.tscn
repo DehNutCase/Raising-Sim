@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://yrt34rtqrinn"]
+[gd_scene load_steps=4 format=3 uid="uid://yrt34rtqrinn"]
 
-[ext_resource type="Theme" uid="uid://nxlludp50pcy" path="res://Art/Themes/DefaultFontTheme.tres" id="1_fpc2t"]
 [ext_resource type="Script" path="res://Scenes/Combat/Enemy.gd" id="1_gf4qc"]
 [ext_resource type="Texture2D" uid="uid://bwhrcqexejtjj" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-2-5-5-2-8-0.png" id="2_ovfc1"]
 [ext_resource type="Texture2D" uid="uid://bjiqmrnesye78" path="res://Art/It Came From The Swamp/Enemies/f_Teruko.png" id="3_iuwxw"]
@@ -55,6 +54,5 @@ stretch_mode = 5
 
 [node name="Hp" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_fpc2t")
 text = "Hp:"
 horizontal_alignment = 1

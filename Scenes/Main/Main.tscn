@@ -1,8 +1,7 @@
-[gd_scene load_steps=82 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=81 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
-[ext_resource type="Theme" uid="uid://uh5vgu7oy4un" path="res://Art/Themes/MenuPanelTheme.tres" id="1_ymn02"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
 [ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Texture2D" uid="uid://sjmioxscvkib" path="res://Art/Background/Background material shop/bg007a.bmp" id="5_iokpw"]
@@ -504,7 +503,6 @@ offset_right = 550.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ymn02")
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel"]
 layout_mode = 2
@@ -602,6 +600,15 @@ size_flags_horizontal = 3
 theme = ExtResource("25_ntj3d")
 script = ExtResource("31_1x7np")
 
+[node name="PlanLabel" type="Label" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer/TabContainer/Daily Schedule"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 175.0
+grow_vertical = 0
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Ui/MenuPanel/MarginContainer/Schedule"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -622,7 +629,7 @@ script = ExtResource("32_lakgr")
 
 [node name="StartDay" type="Button" parent="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Start Day"
 
@@ -725,7 +732,6 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("27_j6jf7")
 text = "StatLabel"
 
 [node name="Stats2" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
@@ -733,7 +739,6 @@ texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("27_j6jf7")
 text = "StatLabel"
 
 [node name="Story" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]

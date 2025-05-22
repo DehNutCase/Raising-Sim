@@ -1,5 +1,7 @@
 extends ItemList
 
+@onready var plan_label = $PlanLabel
+
 func _ready():
 	#Due to loading order, this doesn't work since Player is loaded after this is ready
 	display_actions()
@@ -50,6 +52,8 @@ func add_action(action_type:String, action_name:String):
 func display_actions():
 	#Remove excess actions (mostly a concern if we added a mandatory action)
 	var current_action_amount = len(Player.mandatory_daily_schedule_list) + len(Player.daily_schedule_list)
+	
+	plan_label.text = "Daily Schedule %d / %d" %[current_action_amount, Constants.constants.DAILY_ACTION_LIMIT]
 	while current_action_amount > Constants.constants.DAILY_ACTION_LIMIT and Player.daily_schedule_list:
 		Player.daily_schedule_list.pop_back()
 	clear()
