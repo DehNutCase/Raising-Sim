@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_y8aur")
 id = "dumpling_basic_attack"
-type = 1
+type = 2
 target = 0
 cost = 1
 effect_amount = 2

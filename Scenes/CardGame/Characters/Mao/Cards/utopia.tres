@@ -7,10 +7,12 @@
 [resource]
 script = ExtResource("2_6ff4e")
 id = "Utopia"
-type = 3
-second_type = 0
+type = 4
 target = 0
 cost = 0
 effect_amount = 1
+second_target = 0
+second_type = 5
+second_effect_amount = 2
 icon = ExtResource("1_cm265")
 status = ExtResource("3_fp5h2")

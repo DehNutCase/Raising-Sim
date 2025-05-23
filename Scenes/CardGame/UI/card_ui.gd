@@ -141,19 +141,21 @@ func _create_tooltip() -> String:
 		card.Type.STATUS:
 			match card.target:
 				card.Target.SELF:
-					tooltip += "Gain [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "Gain [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
 				card.Target.SINGLE_ENEMY:
-					tooltip += "Target enemy gains [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "Target enemy gains [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
 				card.Target.ALL_ENEMIES:
-					tooltip += "All enemies gain [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "All enemies gain [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
 				card.Target.EVERYONE:
-					tooltip += "Everyone gains [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "Everyone gains [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
+		card.Type.DRAW:
+					tooltip += "Draw [color=green]%d[/color] card(s)." % card.effect_amount
 	
 	#Copy above code for 2nd effect onwards
-	if card.second_type != card.SecondType.NONE:
+	if card.second_type != card.Type.NONE:
 		tooltip += "\n"
 		match card.second_type:
-			card.SecondType.ATTACK:
+			card.Type.ATTACK:
 				match card.second_target:
 					card.Target.SELF:
 						tooltip += "Deal [color=red]%d[/color] damage to yourself." %card.second_effect_amount
@@ -163,7 +165,7 @@ func _create_tooltip() -> String:
 						tooltip += "Deal [color=red]%d[/color] damage to all enemies." %card.second_effect_amount
 					card.Target.EVERYONE:
 						tooltip += "Deal [color=red]%d[/color] damage to everyone." %card.second_effect_amount
-			card.SecondType.BLOCK:
+			card.Type.BLOCK:
 				match card.second_target:
 					card.Target.SELF:
 						tooltip += "Gain [color=blue]%d[/color] block." %card.second_effect_amount
@@ -173,16 +175,18 @@ func _create_tooltip() -> String:
 						tooltip += "All enemies gain [color=blue]%d[/color] block." %card.second_effect_amount
 					card.Target.EVERYONE:
 						tooltip += "Everyone gains [color=blue]%d[/color] block." %card.second_effect_amount
-			card.SecondType.STATUS:
+			card.Type.STATUS:
 				match card.second_target:
 					card.Target.SELF:
-						tooltip += "Gain [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "Gain [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
 					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "Target enemy gains [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
 					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "All enemies gain [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
 					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "Everyone gains [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
+			card.Type.DRAW:
+				tooltip += "Draw [color=green]%d[/color] card(s)." % card.second_effect_amount
 	return tooltip
 
 func _make_custom_tooltip(for_text):

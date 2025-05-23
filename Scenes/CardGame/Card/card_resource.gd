@@ -1,8 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {ATTACK, BLOCK, POWER, STATUS,}
-enum SecondType {NONE, ATTACK, BLOCK, POWER, STATUS,}
+enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Card Attributes")
@@ -14,7 +13,7 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target
-@export var second_type: SecondType
+@export var second_type: Type
 @export var second_effect_amount: int
 
 @export_group("Card Visuals")
@@ -88,18 +87,22 @@ func apply_effects(targets: Array[Node]) -> void:
 			apply_block(targets)
 		Type.STATUS:
 			apply_status(targets)
+		Type.DRAW:
+			apply_draw(targets)
 		_:
 			printerr("Unmatched effect type for apply_effects")
 
 func apply_second_effects(targets: Array[Node]) -> void:
 	match second_type:
-		SecondType.ATTACK:
+		Type.ATTACK:
 			apply_damage(targets, second_effect_amount)
-		SecondType.BLOCK:
+		Type.BLOCK:
 			apply_block(targets, second_effect_amount)
-		SecondType.STATUS:
+		Type.STATUS:
 			apply_status(targets, second_effect_amount)
-		SecondType.NONE:
+		Type.DRAW:
+			apply_draw(targets, second_effect_amount)
+		Type.NONE:
 			pass
 		_:
 			printerr("Unmatched effect second_type for apply_effects")
@@ -116,6 +119,11 @@ func apply_damage(targets: Array[Node], effect_amount = effect_amount) -> void:
 		if target is CardGameEnemy or target is CardGamePlayer:
 			target.take_damage(effect_amount)
 
+func apply_draw(targets: Array[Node], effect_amount = effect_amount) -> void:
+	var tree := targets[0].get_tree()
+	for i in range(effect_amount):
+		tree.call_group("CardGameMainNode", "draw_card")
+		
 #TODO, UNFINISHED
 func apply_status(targets: Array[Node], effect_amount = effect_amount) -> void:
 	for target in targets:

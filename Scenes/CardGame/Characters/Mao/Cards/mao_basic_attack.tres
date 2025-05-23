@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_mrkjn")
 id = "Bonk"
-type = 0
+type = 1
 target = 1
 cost = 1
 effect_amount = 25
