@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bgg4op021ngxi" path="res://Art/Mori no oku no kakurezato/CardGame/element07_01.png" id="1_cm265"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_6ff4e"]
-[ext_resource type="Resource" uid="uid://dwkmsyvr4kwx1" path="res://Scenes/CardGame/Status/immune.tres" id="3_fp5h2"]
+[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/immune.tres" id="3_fp5h2"]
 
 [resource]
 script = ExtResource("2_6ff4e")
@@ -12,7 +12,7 @@ target = 0
 cost = 0
 effect_amount = 1
 second_target = 0
-second_type = 5
-second_effect_amount = 2
+second_type = 0
+second_effect_amount = 0
 icon = ExtResource("1_cm265")
 status = ExtResource("3_fp5h2")

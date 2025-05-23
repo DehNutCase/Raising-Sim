@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://dwkmsyvr4kwx1"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_mptvx"]
+[ext_resource type="Texture2D" uid="uid://2yxosooo24na" path="res://Art/Mori no oku no kakurezato/CardGame/element20_02.png" id="2_4nk5q"]
+
+[resource]
+script = ExtResource("1_mptvx")
+status_icon = ExtResource("2_4nk5q")
+status_name = "Vulnerable"
+status_tooltip = "Vulnerable increases damage taken by 50%."
+status_decay = 0

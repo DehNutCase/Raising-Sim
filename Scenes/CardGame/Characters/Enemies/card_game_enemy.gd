@@ -50,7 +50,11 @@ func take_damage(damage: int) -> void:
 	if active_status.get("Immune"):
 		return
 		
+	if active_status.get("Vulnerable"):
+		damage = int(damage * 3 / 2)
+		
 	var initial_damage = damage
+	
 	damage = clampi(damage - block, 0, damage)
 	block = clampi(block - initial_damage, 0, block)
 	

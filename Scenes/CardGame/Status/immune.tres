@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://dwkmsyvr4kwx1"]
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://bxnta4qv8mqb3"]
 
-[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_mptvx"]
-[ext_resource type="Texture2D" uid="uid://bgg4op021ngxi" path="res://Art/Mori no oku no kakurezato/CardGame/element07_01.png" id="2_e33sp"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_m7ly0"]
+[ext_resource type="Texture2D" uid="uid://bgg4op021ngxi" path="res://Art/Mori no oku no kakurezato/CardGame/element07_01.png" id="2_62sm3"]
 
 [resource]
-script = ExtResource("1_mptvx")
-status_icon = ExtResource("2_e33sp")
+script = ExtResource("1_m7ly0")
+status_icon = ExtResource("2_62sm3")
 status_name = "Immune"
 status_tooltip = "Immune prevents incoming damage."
 status_decay = 0

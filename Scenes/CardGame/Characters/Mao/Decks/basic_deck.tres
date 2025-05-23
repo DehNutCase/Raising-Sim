@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=5 format=3 uid="uid://tumvtntfja44"]
+[gd_resource type="Resource" script_class="Deck" load_steps=6 format=3 uid="uid://tumvtntfja44"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="1_2yy5b"]
 [ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/mao_basic_attack.tres" id="1_xs5vn"]
 [ext_resource type="Resource" uid="uid://bdmdjsuftthet" path="res://Scenes/CardGame/Characters/Mao/Cards/mao_block.tres" id="2_g3oyw"]
 [ext_resource type="Resource" uid="uid://dbwe4auj0drc4" path="res://Scenes/CardGame/Characters/Mao/Cards/utopia.tres" id="3_18at8"]
+[ext_resource type="Resource" uid="uid://x3y5ybd7d4ch" path="res://Scenes/CardGame/Characters/Mao/Cards/finishing_blow.tres" id="4_0bbck"]
 
 [resource]
 script = ExtResource("1_2yy5b")
-cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_xs5vn"), ExtResource("2_g3oyw"), ExtResource("3_18at8")])
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_xs5vn"), ExtResource("2_g3oyw"), ExtResource("3_18at8"), ExtResource("4_0bbck")])

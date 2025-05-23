@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://x3y5ybd7d4ch"]
+
+[ext_resource type="Texture2D" uid="uid://2yxosooo24na" path="res://Art/Mori no oku no kakurezato/CardGame/element20_02.png" id="1_gnjep"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_8cswe"]
+[ext_resource type="Resource" uid="uid://dwkmsyvr4kwx1" path="res://Scenes/CardGame/Status/vulnerable.tres" id="3_sqda8"]
+
+[resource]
+script = ExtResource("2_8cswe")
+id = "Finishing Blow"
+type = 4
+target = 1
+cost = 0
+effect_amount = 1
+second_target = 1
+second_type = 1
+second_effect_amount = 2
+icon = ExtResource("1_gnjep")
+status = ExtResource("3_sqda8")
