@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://dj786we54g0fv"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_spsik"]
+[ext_resource type="Texture2D" uid="uid://ca1ivs1kuhqpr" path="res://Art/Mori no oku no kakurezato/CardGame/data01_04.png" id="2_0mof2"]
+
+[resource]
+script = ExtResource("1_spsik")
+status_icon = ExtResource("2_0mof2")
+status_name = "Agility"
+status_tooltip = "Agility. Draw [color=green]X[/color] extra cards every time cards are drawn. Max hand size increased by [color=green]X[/color]. This effect only lasts one turn."
+status_decay = 3
+NegativeStatus = false

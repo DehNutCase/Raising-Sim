@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://dxbj8fqp7oyrg"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_63ihp"]
+[ext_resource type="Texture2D" uid="uid://jbi8x60risew" path="res://Art/Mori no oku no kakurezato/CardGame/data01_05.png" id="2_x07mb"]
+
+[resource]
+script = ExtResource("1_63ihp")
+status_icon = ExtResource("2_x07mb")
+status_name = "Skill"
+status_tooltip = "Skill. Draw [color=green]X[/color] extra cards every time cards are drawn. (2 cards are drawn at the start of turn.)"
+status_decay = 2
+NegativeStatus = false

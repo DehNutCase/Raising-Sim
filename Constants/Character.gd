@@ -2,7 +2,7 @@ class_name Character extends Node
 
 var base_stats = {
 	'max_hp': 100,
-	'strength': 10,
+	'attack': 10,
 	'defense': 5,
 	'level': 1,
 	'gold': 100,

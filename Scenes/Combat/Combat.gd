@@ -36,7 +36,7 @@ var player_skill_use_flags = {}
 @onready var center_container: CenterContainer = get_parent().get_node("CenterContainer")
 @onready var video_stream_player: VideoStreamPlayer = get_parent().get_node("CenterContainer/VideoPanel/VideoStreamPlayer")
 
-var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "speed",
+var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "agility",
 		"defense", "resistance"]
 	
 func _ready():
@@ -90,7 +90,7 @@ func process_turns(player_action: String):
 	if player_combat_copy.stats.current_hp <= 0:
 		display_toast("Mao is unconsious and can't act!", "top")
 		return
-	order.sort_custom(speed_sort)
+	order.sort_custom(agility_sort)
 	var message = ""
 	
 	for node in order:
@@ -406,8 +406,8 @@ func display_toast(message, gravity = "top", direction = "center"):
 		"direction": direction,               # left or center or right
 	})
 
-func speed_sort(a, b):
-	return a["stats"].speed > b["stats"].speed
+func agility_sort(a, b):
+	return a["stats"].agility > b["stats"].agility
 
 func update_player_hp(change: int = 0) -> void:
 	player_combat_copy.stats.current_hp += change

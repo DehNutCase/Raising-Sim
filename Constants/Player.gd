@@ -101,10 +101,10 @@ func _init():
 	base_stats = {
 		"max_hp": 20,
 		"max_mp": 10,
-		"strength": 10,
+		"attack": 10,
 		"magic": 15,
 		"defense": 5,
-		"speed": 10,
+		"agility": 10,
 		"resistance": 10,
 		"level": 1,
 		"gold": 0,
@@ -338,7 +338,7 @@ func calculate_min_stat(stat_name:String):
 func make_custom_tooltip(text: String) -> Control:
 	var custom_tooltip:Control = load("res://Scenes/UI/Tooltip/custom_tooltip.tscn").instantiate()
 	var label: RichTextLabel = custom_tooltip.get_child(0)
-	label.parse_bbcode(text)
+	label.parse_bbcode("[center]" + text + "[/center]")
 	return custom_tooltip
 
 

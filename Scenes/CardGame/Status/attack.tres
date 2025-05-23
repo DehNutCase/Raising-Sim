@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://drbxwlyogo6g6"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_cahi6"]
+[ext_resource type="Texture2D" uid="uid://bfk484v4am5sl" path="res://Art/Mori no oku no kakurezato/CardGame/data01_02.png" id="2_gjqwp"]
+
+[resource]
+script = ExtResource("1_cahi6")
+status_icon = ExtResource("2_gjqwp")
+status_name = "Attack"
+status_tooltip = "Attack. Deal [color=red]X[/color] extra damage with every attack."
+status_decay = 2
+NegativeStatus = false

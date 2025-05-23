@@ -1,9 +1,9 @@
-extends Node2D
+extends Control
 
 @onready var hand = $UI/Hand
 @onready var card_game_player: CardGamePlayer = %CardGamePlayer
 
-var DRAW_INTERVAL = 0
+var DRAW_INTERVAL = .1
 
 enum states {NORMAL, VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
 var state = states.NORMAL
@@ -20,11 +20,17 @@ func start_battle() -> void:
 	card_game_player.draw_pile = card_game_player.deck.duplicate(true)
 	card_game_player.draw_pile.cards.shuffle()
 	card_game_player.discard = Deck.new()
+	card_game_player.start_first_turn()
 	start_turn()
 
 func start_turn() -> void:
 	card_game_player.start_turn()
-	draw_cards(card_game_player.cards_per_turn)
+	var draw_amount = card_game_player.cards_per_turn
+	if Player.card_game_player.active_status.get("Wisdom"):
+		draw_amount = draw_amount + Player.card_game_player.active_status.get("Wisdom").stacks
+	if Player.card_game_player.active_status.get("Agility"):
+		draw_amount = draw_amount + Player.card_game_player.active_status.get("Agility").stacks
+	draw_cards(draw_amount)
 	state = states.PLAYER_TURN
 
 func end_turn() -> void:
@@ -44,7 +50,13 @@ func add_card(card: CardResource) -> void:
 	if !card:
 		return
 	#Discard card if too many is drawn
-	if hand.get_child_count() >= card_game_player.max_hand_size:
+	var effective_hand_size = card_game_player.max_hand_size
+	if Player.card_game_player.active_status.get("Agility"):
+		effective_hand_size = effective_hand_size + Player.card_game_player.active_status.get("Agility").stacks
+	if Player.card_game_player.active_status.get("Scholarship"):
+		effective_hand_size = effective_hand_size + Player.card_game_player.active_status.get("Scholarship").stacks
+	
+	if hand.get_child_count() >= effective_hand_size:
 		card_game_player.discard.cards.append(card)
 		return
 	var new_card:CardUI = load("res://Scenes/CardGame/UI/card_ui.tscn").instantiate()

@@ -7,5 +7,6 @@
 script = ExtResource("1_mptvx")
 status_icon = ExtResource("2_4nk5q")
 status_name = "Vulnerable"
-status_tooltip = "Vulnerable increases damage taken by 50%."
+status_tooltip = "Vulnerable. Increases damage taken by 50%."
 status_decay = 0
+NegativeStatus = true

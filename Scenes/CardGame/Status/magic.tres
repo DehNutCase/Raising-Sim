@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://dt0jx8gkukrmj"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_qii6w"]
+[ext_resource type="Texture2D" uid="uid://cljkas0fxcjrv" path="res://Art/Mori no oku no kakurezato/CardGame/data01_06.png" id="2_mpmk4"]
+
+[resource]
+script = ExtResource("1_qii6w")
+status_icon = ExtResource("2_mpmk4")
+status_name = "Magic"
+status_tooltip = "Magic. Gain [color=blue]X[/color] extra block every time you gain block."
+status_decay = 2
+NegativeStatus = false
