@@ -46,9 +46,9 @@ stretch_mode = 5
 
 [node name="StatsBar" parent="VBoxContainer" instance=ExtResource("5_axqh2")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 
 [node name="StatusBar" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+alignment = 1

@@ -15,7 +15,6 @@ Label/constants/outline_size = 4
 Label/font_sizes/font_size = 24
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 2
-RichTextLabel/fonts/normal_font = ExtResource("1_vpori")
 TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
 TooltipLabel/font_sizes/font_size = 22
 TooltipLabel/fonts/font = ExtResource("1_vpori")

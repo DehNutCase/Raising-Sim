@@ -81,6 +81,7 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 bbcode_enabled = true
+scroll_active = false
 
 [node name="Cost" type="Label" parent="."]
 layout_mode = 1

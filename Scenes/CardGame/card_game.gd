@@ -32,11 +32,11 @@ func end_turn() -> void:
 		return
 	state = states.ENEMY_TURN
 	get_tree().call_group("CardGameCardUI", "discard")
-	get_tree().call_group("CardGameEnemies", "reset_block")
 	for enemy: CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
 		await enemy.do_turn()
 	
 	get_tree().call_group("CardGameEnemies", "set_intent")
+	card_game_player.end_turn()
 	start_turn()
 	
 func add_card(card: CardResource) -> void:

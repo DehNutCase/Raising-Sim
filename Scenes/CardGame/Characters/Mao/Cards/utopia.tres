@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dbwe4auj0drc4"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://dbwe4auj0drc4"]
 
 [ext_resource type="Texture2D" uid="uid://bgg4op021ngxi" path="res://Art/Mori no oku no kakurezato/CardGame/element07_01.png" id="1_cm265"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_6ff4e"]
+[ext_resource type="Resource" uid="uid://dwkmsyvr4kwx1" path="res://Scenes/CardGame/Status/immune.tres" id="3_fp5h2"]
 
 [resource]
 script = ExtResource("2_6ff4e")
 id = "Utopia"
 type = 3
+second_type = 0
 target = 0
-cost = 2
+cost = 0
 effect_amount = 1
 icon = ExtResource("1_cm265")
-status_type = 0
-status_icon = ExtResource("1_cm265")
+status = ExtResource("3_fp5h2")

@@ -60,6 +60,9 @@ func take_damage(damage: int) -> void:
 	await Player.shake(self, 50)
 	modulate = Color(1,1,1,1)
 	
+	#adjust dmg here
+	if active_status.get("Immune"):
+		return
 	if damage <= 0:
 		return
 	
@@ -86,6 +89,10 @@ func set_mana(value: int) -> void:
 func start_turn() -> void:
 	mana = max_mana
 	block = int(Player.stats.defense/25)
+	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
+
+func end_turn() -> void:
+	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
 
 func start_first_turn() -> void:
 	start_turn()
@@ -93,13 +100,24 @@ func start_first_turn() -> void:
 	
 	
 func apply_status(card: CardResource) -> void:
-	if card.status_type in active_status:
-		active_status[card.status_type].duration += card.effect_amount
-		active_status[card.status_type].status_display.duration_label.text = str(active_status[card.status_type].duration)
+	if card.status.status_name in active_status:
+		active_status[card.status.status_name].stacks += card.effect_amount
+		active_status[card.status.status_name].status_display.stack_label.text = str(active_status[card.status.status_name].stacks)
 	else:
 		var status_display:CardGameStatusDisplay = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status[card.status_type] = {"duration": card.effect_amount, "icon": card.status_icon, "status_display": status_display}
-		%StatusBar.add_child(active_status[card.status_type].status_display)
-		status_display.status_texture.texture = active_status[card.status_type].icon
-		status_display.duration_label.text = str(active_status[card.status_type].duration)
-	pass
+		active_status[card.status.status_name] = {"stacks": card.effect_amount, "status": card.status, "status_display": status_display}
+		
+		var status = active_status[card.status.status_name].status
+		%StatusBar.add_child(active_status[card.status.status_name].status_display)
+		status_display.status_texture.texture = status.status_icon
+		status_display.stack_label.text = str(active_status[card.status.status_name].stacks)
+
+func decay_status(timing: CardGameStatusResource.DecayType) -> void:
+	for status_name in active_status:
+		var status = active_status[status_name]
+		if status.status.status_decay == timing:
+			status.stacks -= 1
+			if status.stacks == 0:
+				status.status_display.queue_free()
+				active_status.erase(status_name)
+			status.status_display.stack_label.text = str(status.stacks)

@@ -116,30 +116,74 @@ func _set_card(value: CardResource) -> void:
 	card_text_label.parse_bbcode("[center]" + _create_tooltip() + "[/center]")
 	
 func _create_tooltip() -> String:
+	var tooltip = ""
 	match card.type:
 		card.Type.ATTACK:
 			match card.target:
 				card.Target.SELF:
-					return "Deal [color=red]%d[/color] damage to yourself." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage to yourself." %card.effect_amount
 				card.Target.SINGLE_ENEMY:
-					return "Deal [color=red]%d[/color] damage." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage." %card.effect_amount
 				card.Target.ALL_ENEMIES:
-					return "Deal [color=red]%d[/color] damage to all enemies." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage to all enemies." %card.effect_amount
 				card.Target.EVERYONE:
-					return "Deal [color=red]%d[/color] damage to everyone." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage to everyone." %card.effect_amount
 		card.Type.BLOCK:
 			match card.target:
 				card.Target.SELF:
-					return "Gain [color=blue]%d[/color] block." %card.effect_amount
+					tooltip += "Gain [color=blue]%d[/color] block." %card.effect_amount
 				card.Target.SINGLE_ENEMY:
-					return "Target enemy gains [color=blue]%d[/color] block." %card.effect_amount
+					tooltip += "Target enemy gains [color=blue]%d[/color] block." %card.effect_amount
 				card.Target.ALL_ENEMIES:
-					return "All enemies gain [color=blue]%d[/color] block." %card.effect_amount
+					tooltip += "All enemies gain [color=blue]%d[/color] block." %card.effect_amount
 				card.Target.EVERYONE:
-					return "Everyone gains [color=blue]%d[/color] block." %card.effect_amount
-	#TODO, tooltips for special and power
-	printerr("matching error in _create_tooltip()")
-	return ""
+					tooltip += "Everyone gains [color=blue]%d[/color] block." %card.effect_amount
+		card.Type.STATUS:
+			match card.target:
+				card.Target.SELF:
+					tooltip += "Gain [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+				card.Target.SINGLE_ENEMY:
+					tooltip += "Target enemy gains [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+				card.Target.ALL_ENEMIES:
+					tooltip += "All enemies gain [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+				card.Target.EVERYONE:
+					tooltip += "Everyone gains [color=green]%d[/color] stack of %s." %[card.effect_amount, card.status.status_name]
+	
+	#Copy above code for 2nd effect onwards
+	if card.second_type != card.SecondType.NONE:
+		tooltip += "\n"
+		match card.second_type:
+			card.SecondType.ATTACK:
+				match card.second_target:
+					card.Target.SELF:
+						tooltip += "Deal [color=red]%d[/color] damage to yourself." %card.second_effect_amount
+					card.Target.SINGLE_ENEMY:
+						tooltip += "Deal [color=red]%d[/color] damage." %card.second_effect_amount
+					card.Target.ALL_ENEMIES:
+						tooltip += "Deal [color=red]%d[/color] damage to all enemies." %card.second_effect_amount
+					card.Target.EVERYONE:
+						tooltip += "Deal [color=red]%d[/color] damage to everyone." %card.second_effect_amount
+			card.SecondType.BLOCK:
+				match card.second_target:
+					card.Target.SELF:
+						tooltip += "Gain [color=blue]%d[/color] block." %card.second_effect_amount
+					card.Target.SINGLE_ENEMY:
+						tooltip += "Target enemy gains [color=blue]%d[/color] block." %card.second_effect_amount
+					card.Target.ALL_ENEMIES:
+						tooltip += "All enemies gain [color=blue]%d[/color] block." %card.second_effect_amount
+					card.Target.EVERYONE:
+						tooltip += "Everyone gains [color=blue]%d[/color] block." %card.second_effect_amount
+			card.SecondType.STATUS:
+				match card.second_target:
+					card.Target.SELF:
+						tooltip += "Gain [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+					card.Target.SINGLE_ENEMY:
+						tooltip += "Target enemy gains [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+					card.Target.ALL_ENEMIES:
+						tooltip += "All enemies gain [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+					card.Target.EVERYONE:
+						tooltip += "Everyone gains [color=green]%d[/color] stack of %s." %[card.second_effect_amount, card.status.status_name]
+	return tooltip
 
 func _make_custom_tooltip(for_text):
 	return Player.make_custom_tooltip(for_text)

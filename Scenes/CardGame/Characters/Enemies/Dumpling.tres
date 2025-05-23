@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://ksf4v63jppq2"]
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://ksf4v63jppq2"]
 
 [ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="1_7fg20"]
 [ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_basic_attack.tres" id="1_22u1m"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="2_1yo0a"]
 [ext_resource type="Resource" uid="uid://t35mloke521s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_basic_block.tres" id="2_faoq3"]
+[ext_resource type="Resource" uid="uid://dbwe4auj0drc4" path="res://Scenes/CardGame/Characters/Mao/Cards/utopia.tres" id="3_44nfv"]
 
 [resource]
 script = ExtResource("2_1yo0a")
-actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_22u1m"), ExtResource("2_faoq3")])
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_22u1m"), ExtResource("2_faoq3"), ExtResource("3_44nfv")])
 max_health = 25
 art = ExtResource("1_7fg20")
