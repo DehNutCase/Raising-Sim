@@ -165,7 +165,7 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Agility"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-func apply_status(status_resource: CardGameStatusResource, effect_amount: int) -> void:
+func apply_status(status_resource: CardGameStatusResource, effect_amount: int, user) -> void:
 	if active_status.get("Resistance") and status_resource.NegativeStatus:
 		active_status["Resistance"].stacks -= 1
 		active_status["Resistance"].status_display.stack_label.text = str(active_status["Resistance"].stacks)

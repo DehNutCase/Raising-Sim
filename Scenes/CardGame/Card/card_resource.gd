@@ -1,7 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW}
+enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Card Attributes")
@@ -121,6 +121,8 @@ func apply_effects(targets: Array[Node], user) -> void:
 			apply_status(targets, effect_amount, user, status)
 		Type.DRAW:
 			apply_draw(targets, effect_amount, user)
+		Type.MANA:
+			apply_mana(targets, effect_amount, user)
 		_:
 			printerr("Unmatched effect type for apply_effects")
 
@@ -134,6 +136,8 @@ func apply_second_effects(targets: Array[Node], user) -> void:
 			apply_status(targets, second_effect_amount, user, second_status)
 		Type.DRAW:
 			apply_draw(targets, second_effect_amount, user)
+		Type.MANA:
+			apply_mana(targets, second_effect_amount, user)
 		Type.NONE:
 			pass
 		_:
@@ -149,6 +153,8 @@ func apply_third_effects(targets: Array[Node], user) -> void:
 			apply_status(targets, third_effect_amount, user, third_status)
 		Type.DRAW:
 			apply_draw(targets, third_effect_amount, user)
+		Type.MANA:
+			apply_mana(targets, third_effect_amount, user)
 		Type.NONE:
 			pass
 		_:
@@ -183,9 +189,10 @@ func apply_draw(targets: Array[Node], effect_amount, user) -> void:
 	for i in range(effect_amount):
 		tree.call_group("CardGameMainNode", "draw_cards", effect_amount)
 		
-#TODO, UNFINISHED
-#TODO, fix for multiple status in one card
 func apply_status(targets: Array[Node], effect_amount, user, status) -> void:
 	for target in targets:
 		if target is CardGameEnemy or target is CardGamePlayer:
-			target.apply_status(status, effect_amount)
+			target.apply_status(status, effect_amount, user)
+
+func apply_mana(targets: Array[Node], effect_amount, user) -> void:
+	Player.card_game_player.mana += effect_amount
