@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://djsxylqnw8otj"]
+[gd_scene load_steps=6 format=3 uid="uid://djsxylqnw8otj"]
 
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="1_bsj2h"]
 [ext_resource type="Script" path="res://Scenes/CardGame/UI/card_ui.gd" id="1_uy134"]
 [ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/mao_basic_attack.tres" id="2_sqx86"]
+[ext_resource type="Theme" uid="uid://c0vtvronru7hd" path="res://Art/Themes/CardTextLabelTheme.tres" id="4_6q1sy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
 size = Vector2(160, 240)
@@ -71,6 +72,7 @@ unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("4_6q1sy")
 theme_override_font_sizes/normal_font_size = 24
 fit_content = true
 scroll_active = false
@@ -80,10 +82,12 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
+theme = ExtResource("4_6q1sy")
 bbcode_enabled = true
 scroll_active = false
 
-[node name="Cost" type="Label" parent="."]
+[node name="CostLabel" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 offset_right = 13.0
 offset_bottom = 24.0

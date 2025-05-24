@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=7 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="Texture2D" uid="uid://c7v6do4le80wm" path="res://Art/Background/Background material shop/bg027c.jpg" id="1_33h8h"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="4_y02h7"]
+[ext_resource type="Resource" uid="uid://ddnv3tn2qbx7q" path="res://Scenes/CardGame/Characters/Mao/Decks/brick_hand_accident.tres" id="5_mm2bu"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
@@ -57,6 +58,7 @@ position = Vector2(1186, 448)
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 230)
+deck = ExtResource("5_mm2bu")
 metadata/_edit_lock_ = true
 
 [node name="End Turn Button" type="Button" parent="."]

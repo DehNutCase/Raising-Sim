@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=6 format=3 uid="uid://ddnv3tn2qbx7q"]
+
+[ext_resource type="Resource" uid="uid://dbwe4auj0drc4" path="res://Scenes/CardGame/Characters/Mao/Cards/utopia.tres" id="1_66dkp"]
+[ext_resource type="Resource" uid="uid://b5pccptmd8sa2" path="res://Scenes/CardGame/Characters/Mao/Cards/ritual.tres" id="2_5wst6"]
+[ext_resource type="Resource" uid="uid://b7u56q8r3yki7" path="res://Scenes/CardGame/Characters/Mao/Cards/explosion.tres" id="2_j35ba"]
+[ext_resource type="Resource" uid="uid://eapobtksge88" path="res://Scenes/CardGame/Characters/Mao/Cards/defensive_casting.tres" id="3_idxev"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="3_j0rxd"]
+
+[resource]
+script = ExtResource("3_j0rxd")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_66dkp"), ExtResource("2_5wst6"), ExtResource("2_5wst6"), ExtResource("2_5wst6"), ExtResource("3_idxev"), ExtResource("3_idxev"), ExtResource("3_idxev"), ExtResource("2_j35ba"), ExtResource("2_j35ba")])

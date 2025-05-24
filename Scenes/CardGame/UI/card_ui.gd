@@ -6,7 +6,7 @@ signal reparent_requested(card: CardUI)
 @onready var color = $ColorRect
 @onready var panel = $Panel
 @onready var icon = $Frame/Icon
-@onready var cost_label = $Cost
+@onready var cost_label = %CostLabel
 
 enum States {BASE, DRAGGING, RELEASED, DISCARD, VICTORY}
 @export var current_state:States
