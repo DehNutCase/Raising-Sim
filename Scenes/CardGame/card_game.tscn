@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=6 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
-[ext_resource type="Texture2D" uid="uid://c7v6do4le80wm" path="res://Art/Background/Background material shop/bg027c.jpg" id="1_33h8h"]
-[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="4_y02h7"]
-[ext_resource type="Resource" uid="uid://ddnv3tn2qbx7q" path="res://Scenes/CardGame/Characters/Mao/Decks/brick_hand_accident.tres" id="5_mm2bu"]
+[ext_resource type="PackedScene" uid="uid://dp0w4xi47ord3" path="res://Scenes/CardGame/EncounterScenes/tower_level_0.tscn" id="2_ewmpq"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
@@ -11,8 +10,13 @@ size = Vector2(1600, 600)
 
 [node name="CardGame" type="Control" groups=["CardGameMainNode"]]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_3b07j")
+card_game_level = ExtResource("2_ewmpq")
 metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -29,12 +33,13 @@ metadata/_edit_lock_ = true
 layer = -1
 
 [node name="Background" type="TextureRect" parent="BackgroundCanvas"]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_33h8h")
+texture = ExtResource("3_uds7l")
 metadata/_edit_lock_ = true
 
 [node name="TargetArea" type="Area2D" parent="."]
@@ -46,19 +51,20 @@ shape = SubResource("RectangleShape2D_yxqvk")
 debug_color = Color(0.107029, 0.26902, 0.854055, 0.419608)
 metadata/_edit_lock_ = true
 
-[node name="CardGameEnemy" parent="." instance=ExtResource("4_y02h7")]
-position = Vector2(1356, 164)
-
-[node name="CardGameEnemy2" parent="." instance=ExtResource("4_y02h7")]
-position = Vector2(950, 194)
-
-[node name="CardGameEnemy3" parent="." instance=ExtResource("4_y02h7")]
-position = Vector2(1186, 448)
+[node name="EnemiesContainer" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1000.0
+offset_bottom = 600.0
+grow_horizontal = 0
 
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 230)
-deck = ExtResource("5_mm2bu")
 metadata/_edit_lock_ = true
 
 [node name="End Turn Button" type="Button" parent="."]

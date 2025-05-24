@@ -2,20 +2,20 @@
 
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="1_bsj2h"]
 [ext_resource type="Script" path="res://Scenes/CardGame/UI/card_ui.gd" id="1_uy134"]
-[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/mao_basic_attack.tres" id="2_sqx86"]
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="2_sqx86"]
 [ext_resource type="Theme" uid="uid://c0vtvronru7hd" path="res://Art/Themes/CardTextLabelTheme.tres" id="4_6q1sy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
-size = Vector2(160, 240)
+size = Vector2(180, 270)
 
 [node name="CardUI" type="Control" groups=["CardGameCardUI"]]
-custom_minimum_size = Vector2(160, 240)
+custom_minimum_size = Vector2(180, 270)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1440.0
-offset_bottom = -660.0
+offset_right = -1420.0
+offset_bottom = -630.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -29,7 +29,7 @@ metadata/_edit_lock_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
-position = Vector2(80, 120)
+position = Vector2(90, 135)
 shape = SubResource("RectangleShape2D_78q6f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -73,7 +73,6 @@ clip_contents = false
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("4_6q1sy")
-theme_override_font_sizes/normal_font_size = 24
 fit_content = true
 scroll_active = false
 
@@ -81,6 +80,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 mouse_filter = 1
 theme = ExtResource("4_6q1sy")
 bbcode_enabled = true

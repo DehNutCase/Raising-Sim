@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://7ncfpp8nwi26"]
+
+[ext_resource type="Texture2D" uid="uid://bbkshoutafvrb" path="res://Art/Mori no oku no kakurezato/CardGame/element02_03.png" id="1_xrprm"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_j1o1b"]
+[ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="3_lmire"]
+[ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="4_vu3yw"]
+[ext_resource type="Resource" uid="uid://dt0jx8gkukrmj" path="res://Scenes/CardGame/Status/magic.tres" id="5_sn682"]
+
+[resource]
+script = ExtResource("2_j1o1b")
+id = "Lesser Wish"
+type = 4
+target = 0
+cost = 2
+effect_amount = 1
+status = ExtResource("4_vu3yw")
+second_target = 0
+second_type = 4
+second_effect_amount = 1
+second_status = ExtResource("3_lmire")
+third_target = 0
+third_type = 4
+third_effect_amount = 1
+third_status = ExtResource("5_sn682")
+icon = ExtResource("1_xrprm")

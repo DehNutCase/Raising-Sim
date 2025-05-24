@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c7rmtmb83u3yg"]
+
+[ext_resource type="Texture2D" uid="uid://6yrm27e2dhmk" path="res://Art/Mori no oku no kakurezato/CardGame/capsule01_01.png" id="1_268hd"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_bi1d2"]
+
+[resource]
+script = ExtResource("2_bi1d2")
+id = "Sleight Of Hand"
+type = 1
+target = 1
+cost = 0
+effect_amount = 5
+second_target = 0
+second_type = 5
+second_effect_amount = 1
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_268hd")

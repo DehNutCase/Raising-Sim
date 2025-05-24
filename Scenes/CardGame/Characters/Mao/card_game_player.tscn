@@ -48,7 +48,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="StatusBar" type="HBoxContainer" parent="VBoxContainer"]
+[node name="StatusBar" type="GridContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-alignment = 1
+columns = 5

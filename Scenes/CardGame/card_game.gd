@@ -8,9 +8,14 @@ var DRAW_INTERVAL = .1
 enum states {NORMAL, VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
 var state = states.NORMAL
 
+@export var card_game_level: PackedScene
+
 func _ready():
-	for card:CardUI in hand.get_children():
-		card.reparent_requested.connect(_on_card_ui_reparent_requested)
+	var enemy_scene:CardGameEncounterScene = card_game_level.instantiate()
+	if enemy_scene:
+		%EnemiesContainer.add_child(card_game_level.instantiate())
+		if enemy_scene.background:
+			%Background.texture = enemy_scene.background
 	start_battle()
 	
 func _on_card_ui_reparent_requested(card):
@@ -36,13 +41,15 @@ func start_turn() -> void:
 func end_turn() -> void:
 	if state != states.PLAYER_TURN:
 		return
+	
+	card_game_player.end_turn()
+	
 	state = states.ENEMY_TURN
 	get_tree().call_group("CardGameCardUI", "discard")
 	for enemy: CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
 		await enemy.do_turn()
-	
 	get_tree().call_group("CardGameEnemies", "set_intent")
-	card_game_player.end_turn()
+
 	start_turn()
 	
 func add_card(card: CardResource) -> void:

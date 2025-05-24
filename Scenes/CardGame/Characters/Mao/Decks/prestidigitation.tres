@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=7 format=3 uid="uid://c2k016pi87p6p"]
+
+[ext_resource type="Resource" uid="uid://c7rmtmb83u3yg" path="res://Scenes/CardGame/Characters/Mao/Cards/sleight_of_hand.tres" id="2_7v4x3"]
+[ext_resource type="Resource" uid="uid://ctxtj8jk4xtnc" path="res://Scenes/CardGame/Characters/Mao/Cards/least_wish.tres" id="2_kvaun"]
+[ext_resource type="Resource" uid="uid://7ncfpp8nwi26" path="res://Scenes/CardGame/Characters/Mao/Cards/lesser_wish.tres" id="2_p3dff"]
+[ext_resource type="Resource" uid="uid://buehpj5ro7ikf" path="res://Scenes/CardGame/Characters/Mao/Cards/prestidigitation.tres" id="3_245rg"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="5_bmi4c"]
+[ext_resource type="Resource" uid="uid://dqpbortarfbwv" path="res://Scenes/CardGame/Characters/Mao/Cards/wish.tres" id="5_mjh8q"]
+
+[resource]
+script = ExtResource("5_bmi4c")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("2_kvaun"), ExtResource("2_kvaun"), ExtResource("2_kvaun"), ExtResource("2_7v4x3"), ExtResource("2_7v4x3"), ExtResource("2_7v4x3"), ExtResource("3_245rg"), ExtResource("2_p3dff"), ExtResource("5_mjh8q")])

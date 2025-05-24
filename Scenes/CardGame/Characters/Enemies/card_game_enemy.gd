@@ -20,7 +20,7 @@ func _ready():
 
 func initialize_enemy_stats(value: CardGameEnemyStats) -> void:
 	enemy_resource = value
-	max_health = enemy_resource.max_health
+	max_health = enemy_resource.max_health + round(randf_range(-.1, .1) * enemy_resource.max_health)
 	health = max_health
 	block = 0
 	sprite.texture = enemy_resource.art

@@ -141,13 +141,13 @@ func _create_tooltip() -> String:
 		card.Type.STATUS:
 			match card.target:
 				card.Target.SELF:
-					tooltip += "Gain [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "Gain [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
 				card.Target.SINGLE_ENEMY:
-					tooltip += "Target enemy gains [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
 				card.Target.ALL_ENEMIES:
-					tooltip += "All enemies gain [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
 				card.Target.EVERYONE:
-					tooltip += "Everyone gains [color=yellow]%d[/color] stack(s) of %s." %[card.effect_amount, card.status.status_name]
+					tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
 		card.Type.DRAW:
 					tooltip += "Draw [color=green]%d[/color] card(s)." % card.effect_amount
 		card.Type.MANA:
@@ -180,13 +180,13 @@ func _create_tooltip() -> String:
 			card.Type.STATUS:
 				match card.second_target:
 					card.Target.SELF:
-						tooltip += "Gain [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "Gain [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
 					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
 					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
 					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=yellow]%d[/color] stack(s) of %s." %[card.second_effect_amount, card.status.status_name]
+						tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
 			card.Type.DRAW:
 				tooltip += "Draw [color=green]%d[/color] card(s)." % card.second_effect_amount
 			card.Type.MANA:
@@ -219,13 +219,13 @@ func _create_tooltip() -> String:
 			card.Type.STATUS:
 				match card.third_target:
 					card.Target.SELF:
-						tooltip += "Gain [color=yellow]%d[/color] stack(s) of %s." %[card.third_effect_amount, card.status.status_name]
+						tooltip += "Gain [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
 					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=yellow]%d[/color] stack(s) of %s." %[card.third_effect_amount, card.status.status_name]
+						tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
 					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=yellow]%d[/color] stack(s) of %s." %[card.third_effect_amount, card.status.status_name]
+						tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
 					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=yellow]%d[/color] stack(s) of %s." %[card.third_effect_amount, card.status.status_name]
+						tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
 			card.Type.DRAW:
 				tooltip += "Draw [color=green]%d[/color] card(s)." % card.third_effect_amount
 			card.Type.MANA:
