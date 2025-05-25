@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c117i1qkv5feb"]
+
+[ext_resource type="Texture2D" uid="uid://bgpxvdatcnhmw" path="res://Art/Mori no oku no kakurezato/CardGame/palette01_04.png" id="1_gg1jq"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_qp5go"]
+
+[resource]
+script = ExtResource("2_qp5go")
+id = "Doodle"
+type = 3
+target = 0
+cost = 2
+effect_amount = 0
+second_target = 0
+second_type = 7
+second_effect_amount = 50
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_gg1jq")

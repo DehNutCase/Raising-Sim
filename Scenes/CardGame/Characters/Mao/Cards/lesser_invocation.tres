@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://ctxtj8jk4xtnc"]
+
+[ext_resource type="Texture2D" uid="uid://dgpeyvjpqs2sf" path="res://Art/Mori no oku no kakurezato/CardGame/element02_06.png" id="1_vrrfa"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_63w3g"]
+
+[resource]
+script = ExtResource("2_63w3g")
+id = "Lesser Invocation"
+type = 1
+target = 1
+cost = 0
+effect_amount = 1
+second_target = 0
+second_type = 5
+second_effect_amount = 1
+third_target = 0
+third_type = 2
+third_effect_amount = 1
+icon = ExtResource("1_vrrfa")

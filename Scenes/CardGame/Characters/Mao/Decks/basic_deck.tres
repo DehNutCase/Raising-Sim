@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Deck" load_steps=5 format=3 uid="uid://tumvtntfja44"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="1_2yy5b"]
-[ext_resource type="Resource" uid="uid://7ncfpp8nwi26" path="res://Scenes/CardGame/Characters/Mao/Cards/lesser_wish.tres" id="1_ocsun"]
-[ext_resource type="Resource" uid="uid://ctxtj8jk4xtnc" path="res://Scenes/CardGame/Characters/Mao/Cards/least_wish.tres" id="2_ejgmy"]
-[ext_resource type="Resource" uid="uid://buehpj5ro7ikf" path="res://Scenes/CardGame/Characters/Mao/Cards/prestidigitation.tres" id="3_e10vb"]
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="1_mr1mc"]
+[ext_resource type="Resource" uid="uid://bdmdjsuftthet" path="res://Scenes/CardGame/Characters/Mao/Cards/shield.tres" id="2_1pahk"]
+[ext_resource type="Resource" uid="uid://c117i1qkv5feb" path="res://Scenes/CardGame/Characters/Mao/Cards/doodle.tres" id="3_nf8tj"]
 
 [resource]
 script = ExtResource("1_2yy5b")
-cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ocsun"), ExtResource("2_ejgmy"), ExtResource("3_e10vb")])
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_mr1mc"), ExtResource("2_1pahk"), ExtResource("3_nf8tj")])

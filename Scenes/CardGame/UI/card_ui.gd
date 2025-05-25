@@ -84,7 +84,11 @@ func play_card():
 	if Player.card_game_player.mana >= card.cost:
 		Player.card_game_player.mana -= card.cost
 		card.play(targets)
-		discard()
+		if card.type != card.Type.POWER:
+			discard()
+		else:
+			enter_state(States.DISCARD)
+			queue_free()
 	else:
 		played = false
 		enter_state(States.BASE)
@@ -152,6 +156,11 @@ func _create_tooltip() -> String:
 					tooltip += "Draw [color=green]%d[/color] card(s)." % card.effect_amount
 		card.Type.MANA:
 					tooltip += "Gain [color=blue]%d[/color] mana." % card.effect_amount
+		#NOTE, power should always be the first effect, doesn't do anything.
+		card.Type.POWER:
+					tooltip += "Once per duel."
+		card.Type.GOLD:
+					tooltip += "Gain [color=yellow]%d[/color] gold." % card.effect_amount
 	
 	#Copy above code for 2nd effect onwards
 	if card.second_type != card.Type.NONE:
@@ -191,6 +200,8 @@ func _create_tooltip() -> String:
 				tooltip += "Draw [color=green]%d[/color] card(s)." % card.second_effect_amount
 			card.Type.MANA:
 						tooltip += "Gain [color=blue]%d[/color] mana." % card.second_effect_amount
+			card.Type.GOLD:
+						tooltip += "Gain [color=yellow]%d[/color] gold." % card.second_effect_amount
 				
 	#Copy above code for 2nd effect onwards
 	if card.third_type != card.Type.NONE:
@@ -230,6 +241,8 @@ func _create_tooltip() -> String:
 				tooltip += "Draw [color=green]%d[/color] card(s)." % card.third_effect_amount
 			card.Type.MANA:
 					tooltip += "Gain [color=blue]%d[/color] mana." % card.third_effect_amount
+			card.Type.GOLD:
+						tooltip += "Gain [color=yellow]%d[/color] gold." % card.third_effect_amount
 				
 	return tooltip
 

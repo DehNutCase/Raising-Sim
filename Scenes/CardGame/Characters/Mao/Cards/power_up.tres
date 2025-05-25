@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://7ncfpp8nwi26"]
+
+[ext_resource type="Texture2D" uid="uid://c33hk6twwxifu" path="res://Art/Mori no oku no kakurezato/CardGame/element26_01.png" id="1_0pkja"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_f7yb3"]
+[ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="3_f26kd"]
+[ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="4_oeq5t"]
+[ext_resource type="Resource" uid="uid://dt0jx8gkukrmj" path="res://Scenes/CardGame/Status/magic.tres" id="5_ibbc3"]
+
+[resource]
+script = ExtResource("2_f7yb3")
+id = "Power Up"
+type = 4
+target = 0
+cost = 2
+effect_amount = 1
+status = ExtResource("4_oeq5t")
+second_target = 0
+second_type = 4
+second_effect_amount = 1
+second_status = ExtResource("3_f26kd")
+third_target = 0
+third_type = 4
+third_effect_amount = 1
+third_status = ExtResource("5_ibbc3")
+icon = ExtResource("1_0pkja")

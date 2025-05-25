@@ -1,7 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA}
+enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 
 @export_group("Card Attributes")
@@ -123,6 +123,10 @@ func apply_effects(targets: Array[Node], user) -> void:
 			apply_draw(targets, effect_amount, user)
 		Type.MANA:
 			apply_mana(targets, effect_amount, user)
+		Type.POWER:
+			pass #POWER is currently only used to make sure a card is one use only
+		Type.GOLD:
+			apply_gold(targets, effect_amount, user)
 		_:
 			printerr("Unmatched effect type for apply_effects")
 
@@ -140,6 +144,8 @@ func apply_second_effects(targets: Array[Node], user) -> void:
 			apply_mana(targets, second_effect_amount, user)
 		Type.NONE:
 			pass
+		Type.GOLD:
+			apply_gold(targets, second_effect_amount, user)
 		_:
 			printerr("Unmatched effect second_type for apply_effects")
 
@@ -157,6 +163,8 @@ func apply_third_effects(targets: Array[Node], user) -> void:
 			apply_mana(targets, third_effect_amount, user)
 		Type.NONE:
 			pass
+		Type.GOLD:
+			apply_gold(targets, third_effect_amount, user)
 		_:
 			printerr("Unmatched effect third_type for apply_effects")
 
@@ -196,3 +204,6 @@ func apply_status(targets: Array[Node], effect_amount, user, status) -> void:
 
 func apply_mana(targets: Array[Node], effect_amount, user) -> void:
 	Player.card_game_player.mana += effect_amount
+
+func apply_gold(targets: Array[Node], effect_amount, user) -> void:
+	Player.stats.gold += effect_amount
