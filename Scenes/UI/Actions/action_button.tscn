@@ -11,7 +11,10 @@ theme = ExtResource("1_rao5j")
 script = ExtResource("2_826vt")
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
+icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1

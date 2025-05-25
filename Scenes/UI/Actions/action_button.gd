@@ -13,6 +13,9 @@ func _ready():
 
 func update_label(text: String = button_label.text):
 	button_label.text = text
+	var task = Constants[action_type][action_name]
+	if task.icon:
+		%Button.icon = load(task.icon)
 	update_difficulty_color()
 	
 func update_difficulty_color():

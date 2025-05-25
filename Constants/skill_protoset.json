@@ -11,7 +11,7 @@
 		"daily_stats": "{\n\"experience\": 1\n}",
 		"description": "A novice potato farmer.",
 		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
-		"monthly_stats": "{\n\"strength\": 5\n}",
+		"monthly_stats": "{\n\"attack\": 5\n}",
 		"name": "Apprentice Farmer",
 		"stats": "{}"
 	},
@@ -68,7 +68,7 @@
 		"daily_stats": "{\n\"defense\": 1,\n\"max_hp\": 1\n}",
 		"description": "Someone who learned the basics of fighting in the front lines.",
 		"image": "",
-		"monthly_stats": "{\n\"strength\": 10\n}",
+		"monthly_stats": "{\n\"attack\": 10\n}",
 		"name": "Vanguard In Training",
 		"stats": "{}"
 	},
@@ -92,7 +92,7 @@
 		"daily_stats": "{\n\"experience\": 1\n}",
 		"description": "Someone who went through basic maid training for working in the palace. \nThe training focused on speed and efficiency, doing more work in less time.",
 		"image": "",
-		"monthly_stats": "{\n\"speed\": 5\n}",
+		"monthly_stats": "{\n\"agility\": 5\n}",
 		"name": "Maid Training",
 		"stats": "{\n\"action_points\": 1\n}"
 	},
@@ -123,7 +123,7 @@
 		"combat_skill" : "meteor"
 	},
 	"intermediate_combat_training": {
-		"daily_stats": "{\n\"strength\": 1,\n\"max_hp\": 1\n}",
+		"daily_stats": "{\n\"attack\": 1,\n\"max_hp\": 1\n}",
 		"description": "Unlocks advanced follow up attacks. (Switches targets and continues attacking if target dies.)",
 		"flags": "{\n\"followup_attacks\": 2\n}",
 		"image": "",
@@ -158,10 +158,10 @@
 		"combat_skill" : "light_barrier"
 	},
 	"finishing_blow": {
-		"daily_stats": "{\"strength\": 1,\"speed\": 1}",
+		"daily_stats": "{\"attack\": 1,\"agility\": 1}",
 		"description": "A single strong, extremely powerful hit executed with speed and precision.\nSuitable for fighting single enemies.",
 		"image": "",
-		"monthly_stats": "{\"speed\": 10,}",
+		"monthly_stats": "{\"agility\": 10,}",
 		"name": "Finishing Blow",
 		"stats": "{\"action_points\": 1}",
 		"combat_skill" : "finishing_blow"
