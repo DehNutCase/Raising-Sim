@@ -649,7 +649,7 @@ script = ExtResource("22_prvwr")
 [node name="Walk" type="GridContainer" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
 layout_mode = 2
-columns = 6
+columns = 4
 script = ExtResource("21_psxgd")
 
 [node name="Tower" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]

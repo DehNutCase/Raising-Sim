@@ -2,7 +2,7 @@
 join Mao (Normal) 3
 join Oliver (Drool) 2
 [history action="clear"]
-[signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "strength": 10, "speed": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
+[signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "attack": 10, "agility": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
 Rice_Portrait (Normal): That's enough for now, take a two hour break.
 update Oliver (Normal)
 Rice_Portrait (Normal): Go run another one hundred kilos.
@@ -23,7 +23,7 @@ leave --All-- [animation="Instant In Or Out"]
 join Mao (Normal) 3
 join Oliver (Drool) 2 [ z_index="1"]
 [history action="resume"]
-[signal arg="{"stats": {"max_hp": 5, "strength": 5, "speed": 10, "stress":  -5,}}"]
+[signal arg="{"stats": {"max_hp": 5, "attack": 5, "agility": 10, "stress":  -5,}}"]
 Rice_Portrait (Normal): I'd say good job finishing faster this time, but that was just you dragging him.
 Rice_Portrait (Normal): If you were going to do that to finish faster, why not just carry him?
 Mao_Portrait (Normal): I thought that wasn't allowed Ma'am!

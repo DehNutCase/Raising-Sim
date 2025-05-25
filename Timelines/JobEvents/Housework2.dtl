@@ -23,7 +23,7 @@ Mao_Portrait (Normal): Huh? There's a bottle of detergent in here.
 	update Mao 2 [ move_time="3"]
 	update Mao [animation="Tada" length="3"]
 	Mao_Portrait (Normal): ~Doot doot. Folding more blankets.~
-	[signal arg="{"stats": {"stress": -10, "speed": 5,}}"]
+	[signal arg="{"stats": {"stress": -10, "agility": 5,}}"]
 - It has a nice smell, I'm getting hungry.
 	Mao_Portrait (Normal): Rice, do you know what we're having for dinner tonight?
 	Rice_Portrait (Normal): It's usually posted on the intranet, but I'll check.

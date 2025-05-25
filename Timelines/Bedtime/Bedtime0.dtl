@@ -49,7 +49,7 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	update Mao (EyesClosed)
 	Rice_Portrait (Normal): (Isn't this just a typical hero story?)
 	Rice_Portrait (Normal): (Well, looks like Mao likes it, at least. I'll keep reading.)
-	[signal arg="{"stats": {"stress": -5, "speed": 5, "defense": 5,}}"]
+	[signal arg="{"stats": {"stress": -5, "agility": 5, "defense": 5,}}"]
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Zzz...
 Rice_Portrait (Normal): (Good night.)

@@ -54,7 +54,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	update Mao (Smile)
 	Mao_Portrait (Smile): Let's have lunch together! There's a great restaurant on the way back.
 	Rice_Portrait (Normal): Fine.
-	[signal arg="{"stats": {"stress": -15, "max_hp": 1, "speed": 1}}"]
+	[signal arg="{"stats": {"stress": -15, "max_hp": 1, "agility": 1}}"]
 	[end_timeline]
 - What's a Ranker?
 	Rice_Portrait (Normal): ...Someone on a ranking board somewhere?
@@ -143,4 +143,4 @@ Rice_Portrait (Normal): I still think it's a waste of time to come here.
 update Mao (Smile)
 Mao_Portrait (Smile): It was fun!
 Rice_Portrait (Normal): If you say so.
-[signal arg="{"stats": {"stress": -5, "max_hp": 1, "speed": 1}}"]
+[signal arg="{"stats": {"stress": -5, "max_hp": 1, "agility": 1}}"]

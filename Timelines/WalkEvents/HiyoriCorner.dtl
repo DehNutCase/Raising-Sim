@@ -1,4 +1,5 @@
 [background arg="res://Characters/Hiyori/Images/Background/background.jpg" fade="0.0"]
+# Need to be redone due to game rework
 join Hiyori (Desk) 2
 Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner, the helpful hideout that provides facts and tips to the lost and confused.
 Mao_Portrait (Normal): Hello Hiyori.

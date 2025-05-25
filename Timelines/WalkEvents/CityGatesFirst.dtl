@@ -15,4 +15,4 @@ update Mao (Normal) 4 [animation="Tada" length="4" move_time="4"]
 Rice_Portrait (Normal): Since we'll be heading outside the city, I decided it would be better if I guided you somewhat than have you wandering around randomly.
 Mao_Portrait (Normal): Heehee. Thanks.
 [signal arg="{"location_flags": {"blessed_plains": true}}"]
-[signal arg="{"stats": {"stress": -5,"max_hp":5,"strength":5,"speed":5,}}"]
+[signal arg="{"stats": {"stress": -5,"max_hp":5,"strength":5,"agility":5,}}"]

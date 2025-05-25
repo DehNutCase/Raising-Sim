@@ -1224,7 +1224,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/RiceHouseFirst.dtl',
 				'flag': "rice_house"
 			},],
-		"icon": "res://Art/Background/NoranekoGames/Bedroom_Day.png"
+		"icon": "res://Art/Background/NoranekoGames/Livingroom_Day.png"
 	},
 	'city_gates': {
 		"label": "City Gates",

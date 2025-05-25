@@ -10,7 +10,7 @@ shader = ExtResource("3_5113b")
 shader_parameter/corner_scale = 1.0
 
 [node name="Margin" type="MarginContainer" groups=["Job_Button"]]
-custom_minimum_size = Vector2(211, 113)
+custom_minimum_size = Vector2(300, 150)
 offset_right = 44.0
 offset_bottom = 44.0
 theme = ExtResource("2_q0tes")

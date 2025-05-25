@@ -4,7 +4,7 @@ join Mao (Normal) 2
 update Mao [animation="Shake Y" length="2" repeat="2"]
 update Mao (Normal)
 Mao_Portrait (Normal): One! Two! One! Two!
-[signal arg="{"stats": {"max_hp": 1, "speed": 1, "stress":  -5,}}"]
+[signal arg="{"stats": {"max_hp": 1, "agility": 1, "stress":  -5,}}"]
 Mao_Portrait (Normal): I don't know why, but I've been feeling a bit rusty lately.
 Rice_Portrait (Normal): Your diet of ninety-percent Dumplings might have something to do with it.
 update Mao (Angry)
@@ -146,7 +146,7 @@ leave --All-- [animation="Instant In Or Out"]
 join Mao (Normal) 3
 join Oliver (Drool) 2 [ z_index="1"]
 [history action="resume"]
-[signal arg="{"stats": {"max_hp": 5, "strength": 5, "speed": 10, "stress":  -5,}}"]
+[signal arg="{"stats": {"max_hp": 5, "attack": 5, "agility": 10, "stress":  -5,}}"]
 update Oliver (Drool)
 Oliver_Portrait (Drool): (Oliver is too tired to die.)
 Rice_Portrait (Normal): That will do, take a five minute break. I suggest warm water and walking.
@@ -188,7 +188,7 @@ leave --All-- [animation="Instant In Or Out"]
 join Mao (Normal) 2
 join Oliver (Drool) 1 [ z_index="1"]
 [history action="resume"]
-[signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "strength": 10, "speed": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
+[signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "attack": 10, "agility": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
 Rice_Portrait (Normal): Another break. Ten minutes this time, go use the restroom if you need to.
 update Oliver [ mirrored="true"]
 leave Oliver [animation="Slide Out Left" length="4"]
