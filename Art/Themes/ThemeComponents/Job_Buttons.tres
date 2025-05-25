@@ -19,7 +19,6 @@ Button/styles/hover = SubResource("StyleBoxEmpty_hxmst")
 Button/styles/normal = SubResource("StyleBoxEmpty_u8bhs")
 Button/styles/pressed = SubResource("StyleBoxEmpty_p2phi")
 Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(0.0803851, 0.341213, 0.312755, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 24
 MarginContainer/constants/margin_bottom = 10

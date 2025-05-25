@@ -24,4 +24,6 @@ func update_buttons():
 			self.get_child(i).update_label(locations[key].label)
 		else:
 			self.get_child(i).update_label(key)
+		if "icon" in locations[key]:
+			self.get_child(i).update_icon(load(locations[key].icon))
 		i += 1

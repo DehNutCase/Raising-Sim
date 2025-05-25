@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba4nxyxfux4mr"]
+[gd_scene load_steps=6 format=3 uid="uid://ba4nxyxfux4mr"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Actions/walk_button.gd" id="1_1e4lv"]
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="2_q0tes"]
+[ext_resource type="Shader" path="res://Art/Shaders/circular_shader.gdshader" id="3_5113b"]
+[ext_resource type="Texture2D" uid="uid://bbjs0o46d2jvy" path="res://Art/Background/Background material shop/bg007c.bmp" id="4_wma4d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wc1ev"]
+shader = ExtResource("3_5113b")
+shader_parameter/corner_scale = 1.0
 
 [node name="Margin" type="MarginContainer" groups=["Job_Button"]]
 custom_minimum_size = Vector2(211, 113)
@@ -15,7 +21,12 @@ theme_override_constants/margin_bottom = 16
 script = ExtResource("1_1e4lv")
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wc1ev")
 layout_mode = 2
+icon = ExtResource("4_wma4d")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 1
@@ -24,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Job"
+text = "Walk"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

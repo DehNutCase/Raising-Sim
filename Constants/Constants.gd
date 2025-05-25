@@ -1126,6 +1126,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/HiyoriCornerFirst.dtl',
 				'flag': "hiyori_corner"
 			},],
+		"icon": "res://Art/Background/Background material shop/bg008a.jpg"
 	},
 	'atelier': {
 		"label": "Atelier",
@@ -1151,6 +1152,7 @@ const locations = {
 				'second_timeline': 'res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl',
 				'flag': "hiyori_atelier"
 			},],
+		"icon": "res://Art/Background/Background material shop/bg019a.bmp"
 	},
 	'storage_room': {
 		"label": "Storage Room",
@@ -1174,6 +1176,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/StorageRoomFirst.dtl',
 				'flag': "storage_room"
 			},],
+		"icon": "res://Art/Background/Background material shop/bg014a.jpg"
 	},
 	'reception_hall': {
 		"label": "Reception Hall",
@@ -1196,6 +1199,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/ReceptionHallFirst.dtl',
 				'flag': "reception_hall"
 			},],
+		"icon": "res://Art/Background/Background material shop/bg007a.jpg"
 	},
 	'rice_house': {
 		"label": "Rice's House",
@@ -1220,6 +1224,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/RiceHouseFirst.dtl',
 				'flag': "rice_house"
 			},],
+		"icon": "res://Art/Background/NoranekoGames/Bedroom_Day.png"
 	},
 	'city_gates': {
 		"label": "City Gates",
@@ -1243,6 +1248,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/CityGatesFirst.dtl',
 				'flag': "city_gates"
 			},],
+		"icon": "res://Art/Background/Background material shop/bg003a.jpg"
 	},
 	'blessed_plains': {
 		"label": "Blessed Plains",
@@ -1265,6 +1271,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/BlessedPlainsFirst.dtl',
 				'flag': "blessed_plains"
 			},],
+		"icon": "res://Art/Background/Background material shop/Edited/BlessedPlains.png"
 	},
 	#TODO Use https://atelier.fandom.com/wiki/Category:Atelier_Sophie_Locations as inspiration?
 	'sacred_woods': {
@@ -1289,6 +1296,7 @@ const locations = {
 				'first_timeline': 'res://Timelines/WalkEvents/SacredWoodsFirst.dtl',
 				'flag': "sacred_woods"
 			},],
+		"icon": "res://Art/Background/Background material shop/bg019a.jpg"
 	},
 }
 
