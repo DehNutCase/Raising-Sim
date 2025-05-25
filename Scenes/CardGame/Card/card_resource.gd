@@ -207,3 +207,11 @@ func apply_mana(targets: Array[Node], effect_amount, user) -> void:
 
 func apply_gold(targets: Array[Node], effect_amount, user) -> void:
 	Player.stats.gold += effect_amount
+	var plus = "+"
+	if (effect_amount < 0):
+		plus = ""
+	ToastParty.show({
+		"text": plus + "%d 🪙" %effect_amount,           # Text (emojis can be used)
+		"gravity": "top",                   # top or bottom
+		"direction": "center",               # left or center or right
+	})
