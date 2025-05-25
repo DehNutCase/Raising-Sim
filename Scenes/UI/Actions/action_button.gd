@@ -20,7 +20,7 @@ func update_label(text: String = button_label.text):
 	
 func update_difficulty_color():
 	var success = min(1, (max(0, get_success_chance(action_type, action_name)/100.0)))
-	modulate = Color(1,success,success)
+	modulate = Color(1 - max(0, (.5 - success)),success,success)
 
 static func get_success_chance(action_type, action_name):
 	#TODO, return 100 chance if action can't fail
