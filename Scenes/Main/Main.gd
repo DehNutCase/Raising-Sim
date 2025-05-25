@@ -122,7 +122,7 @@ func _ready():
 	#Player.stats.skill = 0
 	#Dialogic.start("Housework1")
 	#Player.event_flags['mission_information_event'] = true
-	#Player.load_class_change_card()
+	#Player.card_game_deck = []
 	#day = 1
 	#TODO, end dev use section
 

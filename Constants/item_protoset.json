@@ -1,6 +1,6 @@
 {
 	"lunch_box": {
-		"daily_stats": "{\n\"max_hp\": 5,\n\"strength\": 3\n,\n\"speed\": 3\n,\n\"stress\": -30\n}",
+		"daily_stats": "{\n\"max_hp\": 5,\n\"attack\": 3\n,\n\"agility\": 3\n,\n\"stress\": -30\n}",
 		"description": "A custom made lunch box packed with plenty of care.\nUntil a spell is developed to both eat this and still have it, it'll be gone after you eat it for lunch.",
 		"image": "res://Art/Mori no oku no kakurezato/Food/Resized/lunch01_01.png",
 		"limit": 1,
@@ -9,7 +9,7 @@
 		"expiration": "daily",
 	},
 	"milk": {
-		"daily_stats": "{\n\"max_hp\": 1,\n\"strength\": 1\n,\n\"stress\": -3\n}",
+		"daily_stats": "{\n\"max_hp\": 1,\n\"attack\": 1\n,\n\"stress\": -3\n}",
 		"description": "A carton of milk every day helps you grow taller.\nExpires monthly, so it's best to buy this at the start of the month.",
 		"image": "res://Art/Mori no oku no kakurezato/Food/Resized/milk01_01.png",
 		"limit": 1,
@@ -63,7 +63,7 @@
 		"stats": "{\n\"bonus_exp\": 10\n}"
 	},
 	"walking_shoes": {
-		"daily_stats": "{\n\"speed\": 5\n}",
+		"daily_stats": "{\n\"agility\": 5\n}",
 		"description": "Comfortable shoes for walking, lets you take an extra walk every day.",
 		"image": "res://Art/Mori no oku no kakurezato/Feet/Resized/foot01_03.png",
 		"limit": 1,

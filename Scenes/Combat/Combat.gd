@@ -36,7 +36,7 @@ var player_skill_use_flags = {}
 @onready var center_container: CenterContainer = get_parent().get_node("CenterContainer")
 @onready var video_stream_player: VideoStreamPlayer = get_parent().get_node("CenterContainer/VideoPanel/VideoStreamPlayer")
 
-var base_stats = ["max_hp", "max_mp", "strength", "magic", "skill", "agility",
+var base_stats = ["max_hp", "max_mp", "attack", "magic", "skill", "agility",
 		"defense", "resistance"]
 	
 func _ready():
@@ -107,14 +107,14 @@ func process_turns(player_action: String):
 				"attack":
 					if target.get_node("Enemy") in death_queue:
 						return
-					var damage = max(1, (player_combat_copy.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense)
+					var damage = max(1, (player_combat_copy.stats.attack * action.effect_strength/100) - target.get_node("Enemy").stats.defense)
 					message = "Attacked and dealt " + str(damage) + " damage."
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
 				"physical_attack":
 					if target.get_node("Enemy") in death_queue:
 						return
-					var damage = max(1, ((player_combat_copy.stats.strength * action.effect_strength/100) - target.get_node("Enemy").stats.defense))
+					var damage = max(1, ((player_combat_copy.stats.attack * action.effect_strength/100) - target.get_node("Enemy").stats.defense))
 					message = "Used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					await update_enemy_hp(target, -damage)
@@ -208,12 +208,12 @@ func process_turns(player_action: String):
 			var action = Constants.combat_skills[node.combat_skills[rand_weighted(weights)]]
 			match action.effect_type:
 				"attack":
-					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - player_combat_copy.stats.defense))
+					var damage = max(1, ((node.stats.attack * action.effect_attack/100) - player_combat_copy.stats.defense))
 					message = "Enemy attacked and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
 				"physical_attack":
-					var damage = max(1, ((node.stats.strength * action.effect_strength/100) - player_combat_copy.stats.defense))
+					var damage = max(1, ((node.stats.attack * action.effect_strength/100) - player_combat_copy.stats.defense))
 					message = "Enemy used " + action.label + " and dealt " + str(damage) + " damage."
 					display_toast(message)
 					update_player_hp(-damage)
@@ -273,7 +273,7 @@ func process_turns(player_action: String):
 		flee_button.text = "Leave"
 	
 func player_attack():
-	var damage = max(1, player_combat_copy.stats.strength - target.get_node("Enemy").stats.defense)
+	var damage = max(1, player_combat_copy.stats.attack - target.get_node("Enemy").stats.defense)
 	var message = "Attacked and dealt " + str(damage) + " damage."
 	await get_tree().create_timer(TOAST_TIMEOUT_DURATION).timeout
 	display_toast(message)
