@@ -646,8 +646,10 @@ custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
 script = ExtResource("22_prvwr")
 
-[node name="Walk" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
+[node name="Walk" type="GridContainer" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
 visible = false
+layout_mode = 2
+columns = 6
 script = ExtResource("21_psxgd")
 
 [node name="Tower" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]

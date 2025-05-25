@@ -1,29 +1,26 @@
-extends Node2D
+extends GridContainer
 
 var locations = Constants.locations
-var WALK_COLUMN_COUNT = 6
+var buttons = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_buttons()
-	
+
 func update_buttons():
-	var i = 0
-	for node in get_children():
-		remove_child(node)
-		node.queue_free()
 	for key in locations.keys():
 		#Don't display locations that aren't unlocked yet
 		if "location_flag" in locations[key] and !(locations[key].location_flag in Player.location_flags):
 			continue
+		if key in buttons:
+			continue
+		buttons.append(key)
 		var button = load("res://Scenes/UI/Actions/walk_button.tscn").instantiate()
 		add_child(button)
-		self.get_child(i).position = Vector2( i%WALK_COLUMN_COUNT * 200, 100 * (i/WALK_COLUMN_COUNT) )
-		self.get_child(i).walk_name = key
+		button.walk_name = key
 		if "label" in locations[key]:
-			self.get_child(i).update_label(locations[key].label)
+			button.update_label(locations[key].label)
 		else:
-			self.get_child(i).update_label(key)
+			button.update_label(key)
 		if "icon" in locations[key]:
-			self.get_child(i).update_icon(load(locations[key].icon))
-		i += 1
+			button.update_icon(load(locations[key].icon))
