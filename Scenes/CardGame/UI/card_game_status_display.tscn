@@ -13,6 +13,7 @@ script = ExtResource("1_574hh")
 [node name="StatusTexture" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_qv2im")
 expand_mode = 3
 stretch_mode = 5

@@ -79,7 +79,7 @@ func perform_intent() -> void:
 		var tween := create_tween().set_trans(Tween.TRANS_QUINT)
 		var start := global_position
 		#Hard coded, figure out a way to fetch player position later?
-		var end := Vector2(425, 400)
+		var end := Vector2(425, 350)
 		
 		tween.tween_property(self, "global_position", end, .4)
 		tween.tween_interval(.1)

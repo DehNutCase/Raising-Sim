@@ -64,7 +64,7 @@ grow_horizontal = 0
 
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
-position = Vector2(160, 230)
+position = Vector2(160, 180)
 metadata/_edit_lock_ = true
 
 [node name="End Turn Button" type="Button" parent="."]

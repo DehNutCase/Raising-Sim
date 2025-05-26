@@ -11,7 +11,10 @@ theme = ExtResource("1_2q11i")
 script = ExtResource("2_gsomf")
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
+icon_alignment = 1
+expand_icon = true
 
 [node name="Label" type="Label" parent="Button"]
 texture_filter = 4
