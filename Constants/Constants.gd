@@ -1803,6 +1803,7 @@ const tower_levels = [
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_manju.png",
 		'description': "A Dumpling Warrior. Starts weak, but can buff itself to dangerous levels.\n\nDumplings are a variety of slime. Domesticated Dumplings have a fluffy texture and slightly sweet taste, but wild Dumplings are rubbery and bitter. It's considered extremely rude to nibble on Dumplings without asking permission first.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_0.tscn",
 	},
 	{
 		'level': 1,

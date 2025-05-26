@@ -71,7 +71,7 @@ func _ready():
 		gray_portrait.show()
 	
 	Dialogic.Styles.load_style("VisualNovelStyle", dialogic_viewport)
-	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.signal_event.connect(_on_reward_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	for inventory_name in Player.inventories:
@@ -101,11 +101,11 @@ func _ready():
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 	
-	if Player.victory_stat_gain:
-		display_toast("Gained stats from combat!", "top")
+	if Player.victory_signal:
+		display_toast("Gained rewards from duel!", "top")
 		await(get_tree().create_timer(.5).timeout)
-		process_stats(Player.victory_stat_gain)
-		Player.victory_stat_gain = {}
+		_on_reward_signal(Player.victory_signal)
+		Player.victory_signal = {}
 		if Player.tower_level == 21 and !Player.event_flags.get('ExitPass'):
 			Player.event_flags['ExitPass'] = true
 			Dialogic.start("ExitPass")
@@ -535,8 +535,6 @@ func _on_action(button):
 			shop.show()
 		"Walk":
 			walk.show()
-		"Battle":
-			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
 		"Stats":
 			stats.show()
 		"Background":
@@ -699,7 +697,7 @@ func display_stats() -> void:
 	else:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".show()
 	
-func _on_dialogic_signal(dialogic_signal) -> void:
+func _on_reward_signal(dialogic_signal) -> void:
 	dialogic_signal = JSON.parse_string(dialogic_signal)
 	if "item" in dialogic_signal:
 		#TODO Make sure not to let dialogic create too many items (perhaps add dialogic_limit setting and handler?)
@@ -819,12 +817,12 @@ func _on_enter_tower_button_pressed() -> void:
 		if Player.remaining_walks > 0:
 			Player.remaining_walks -= 1
 			_on_close_button_pressed()
-			Player.enemies = Constants.tower_levels[Player.tower_level].enemies
 			#TODO, remove all the double checking for whether player is in a mission or tower combat
 			#centralize checks
 			Player.in_tower = true
 			Player.in_mission = false
-			SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+			Player.encounter = Constants.tower_levels[Player.tower_level].encounter
+			SceneLoader.load_scene("res://Scenes/CardGame/card_game.tscn")
 		else:
 			display_toast("No walks left!", "top")
 	else:

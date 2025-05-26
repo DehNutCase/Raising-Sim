@@ -98,13 +98,14 @@ func end_turn() -> void:
 		if active_status.get("Magic"):
 			block += active_status.get("Magic").stacks
 	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
+	decay_status(CardGameStatusResource.DecayType.ONE_TURN)
 
 func start_first_turn() -> void:
 	var status_display:CardGameStatusDisplay
 	
 	if Player.stats.scholarship / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Scholarship"] = {"stacks": Player.stats.scholarship / 150, "status": load("res://Scenes/CardGame/Status/scholarship.tres"), "status_display": status_display}
+		active_status["Scholarship"] = {"stacks": int(Player.stats.scholarship / 150), "status": load("res://Scenes/CardGame/Status/scholarship.tres"), "status_display": status_display}
 		var status = active_status["Scholarship"].status
 		%StatusBar.add_child(active_status["Scholarship"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -113,7 +114,7 @@ func start_first_turn() -> void:
 		
 	if Player.stats.skill / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Skill"] = {"stacks": Player.stats.skill / 150, "status": load("res://Scenes/CardGame/Status/skill.tres"), "status_display": status_display}
+		active_status["Skill"] = {"stacks": int(Player.stats.skill / 150), "status": load("res://Scenes/CardGame/Status/skill.tres"), "status_display": status_display}
 		var status = active_status["Skill"].status
 		%StatusBar.add_child(active_status["Skill"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -122,7 +123,7 @@ func start_first_turn() -> void:
 		
 	if Player.stats.attack / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Attack"] = {"stacks": Player.stats.attack / 150, "status": load("res://Scenes/CardGame/Status/attack.tres"), "status_display": status_display}
+		active_status["Attack"] = {"stacks": int(Player.stats.attack / 150), "status": load("res://Scenes/CardGame/Status/attack.tres"), "status_display": status_display}
 		var status = active_status["Attack"].status
 		%StatusBar.add_child(active_status["Attack"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -131,7 +132,7 @@ func start_first_turn() -> void:
 		
 	if Player.stats.magic / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Magic"] = {"stacks": Player.stats.magic / 150, "status": load("res://Scenes/CardGame/Status/magic.tres"), "status_display": status_display}
+		active_status["Magic"] = {"stacks": int(Player.stats.magic / 150), "status": load("res://Scenes/CardGame/Status/magic.tres"), "status_display": status_display}
 		var status = active_status["Magic"].status
 		%StatusBar.add_child(active_status["Magic"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -140,7 +141,7 @@ func start_first_turn() -> void:
 		
 	if Player.stats.defense / 100:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Defense"] = {"stacks": Player.stats.defense / 100, "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
+		active_status["Defense"] = {"stacks": int(Player.stats.defense / 100), "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
 		var status = active_status["Defense"].status
 		%StatusBar.add_child(active_status["Defense"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -149,7 +150,7 @@ func start_first_turn() -> void:
 		
 	if Player.stats.resistance / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Resistance"] = {"stacks": Player.stats.resistance / 150, "status": load("res://Scenes/CardGame/Status/resistance.tres"), "status_display": status_display}
+		active_status["Resistance"] = {"stacks": int(Player.stats.resistance / 150), "status": load("res://Scenes/CardGame/Status/resistance.tres"), "status_display": status_display}
 		var status = active_status["Resistance"].status
 		%StatusBar.add_child(active_status["Resistance"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -158,7 +159,7 @@ func start_first_turn() -> void:
 		
 	if Player.stats.agility / 100:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Agility"] = {"stacks": Player.stats.agility / 150, "status": load("res://Scenes/CardGame/Status/agility.tres"), "status_display": status_display}
+		active_status["Agility"] = {"stacks": int(Player.stats.agility / 150), "status": load("res://Scenes/CardGame/Status/agility.tres"), "status_display": status_display}
 		var status = active_status["Agility"].status
 		%StatusBar.add_child(active_status["Agility"].status_display)
 		status_display.status_texture.texture = status.status_icon

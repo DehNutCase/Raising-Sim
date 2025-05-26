@@ -85,10 +85,13 @@ var class_change_card #variable to hold loaded class change, *do not save*
 		"race": "lesser_phantom",
 	},
 ]
+@export var encounter = ""
 @export var tower_level = 0
 var in_tower = false
 var in_mission = false
 var victory_stat_gain = {}
+#TODO, hook this to dialogic signal
+var victory_signal = {}
 
 var save_loaded = false
 

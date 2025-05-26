@@ -3,7 +3,7 @@ extends Control
 @onready var hand = $UI/Hand
 @onready var card_game_player: CardGamePlayer = %CardGamePlayer
 
-var DRAW_INTERVAL = .1
+var DRAW_INTERVAL = .05
 
 enum states {NORMAL, VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
 var state = states.NORMAL
@@ -11,6 +11,9 @@ var state = states.NORMAL
 @export var card_game_level: PackedScene
 
 func _ready():
+	get_tree().call_group("BackgroundMusicPlayer", "play_song", "battle")
+	if Player.encounter:
+		card_game_level = load(Player.encounter)
 	var enemy_scene:CardGameEncounterScene = card_game_level.instantiate()
 	if enemy_scene:
 		%EnemiesContainer.add_child(card_game_level.instantiate())
@@ -31,8 +34,8 @@ func start_battle() -> void:
 func start_turn() -> void:
 	card_game_player.start_turn()
 	var draw_amount = card_game_player.cards_per_turn
-	if Player.card_game_player.active_status.get("Wisdom"):
-		draw_amount = draw_amount + Player.card_game_player.active_status.get("Wisdom").stacks
+	if Player.card_game_player.active_status.get("Skill"):
+		draw_amount = draw_amount + Player.card_game_player.active_status.get("Skill").stacks
 	if Player.card_game_player.active_status.get("Agility"):
 		draw_amount = draw_amount + Player.card_game_player.active_status.get("Agility").stacks
 	draw_cards(draw_amount)
@@ -74,20 +77,19 @@ func add_card(card: CardResource) -> void:
 func draw_card() -> void:
 	if card_game_player.draw_pile.cards:
 		add_card(card_game_player.draw_pile.draw_card())
+		await get_tree().create_timer(DRAW_INTERVAL).timeout
 	else:
 		if card_game_player.discard.cards:
 			card_game_player.draw_pile.cards = card_game_player.discard.cards
 			card_game_player.draw_pile.cards.shuffle()
 			card_game_player.discard.cards = []
 			add_card(card_game_player.draw_pile.draw_card())
+			await get_tree().create_timer(DRAW_INTERVAL).timeout
 	
 func draw_cards(amount: int) -> void:
-	hand.add_theme_constant_override("separation", 10 - amount * 2)
-	var tween: Tween = create_tween()
 	for i in range(amount):
-		tween.tween_callback(draw_card)
-		tween.tween_interval(DRAW_INTERVAL)
-	await tween.finished
+		await draw_card()
+	hand.add_theme_constant_override("separation", clampi(10 - hand.get_child_count() * 2, -30, 0))
 	
 func check_victory() -> void:
 	var won = true
@@ -97,7 +99,17 @@ func check_victory() -> void:
 			won = false
 	
 	if won:
-		state = states.VICTORY
+		if state != states.DEFEAT:
+			state = states.VICTORY
 		#disable cards, refactor later?
+			print("we won!")
+		#Victory state is used to disable cards, fine to use for defeat as well
 		get_tree().call_group("CardGameCardUI", "enter_state", CardUI.States.VICTORY)
-		print("we won!")
+func exit_combat() -> void:
+	if Player.in_tower and state == states.VICTORY:
+		Player.tower_level += 1
+	if Player.in_mission and state == states.VICTORY:
+		Player.active_mission.combat = false
+	Player.in_tower = false
+	Player.in_mission = false
+	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
