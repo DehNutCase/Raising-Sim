@@ -76,15 +76,27 @@ func set_intent() -> void:
 
 func perform_intent() -> void:
 	if intent.type == intent.Type.ATTACK:
-		var tween := create_tween().set_trans(Tween.TRANS_QUINT)
-		var start := global_position
-		#Hard coded, figure out a way to fetch player position later?
-		var end := Vector2(425, 350)
-		
-		tween.tween_property(self, "global_position", end, .4)
-		tween.tween_interval(.1)
-		tween.tween_property(self, "global_position", start, .4)
-		await get_tree().create_timer(.3).timeout
+		if intent.enemy_attack_type == intent.EnemyAttackType.RANGED:
+			var tween := create_tween().set_trans(Tween.TRANS_QUINT)
+			var start: Vector2 = %AttackSprite.global_position
+			var end := Vector2(250, 300)
+			%AttackSprite.show()
+			%AttackSprite.texture = %IntentTexture.texture
+			tween.tween_property(%AttackSprite, "global_position", end, .4)
+			await get_tree().create_timer(.35).timeout
+			
+			tween.finished.connect(func():%AttackSprite.global_position = start)
+			%AttackSprite.hide()
+		else:
+			var tween := create_tween().set_trans(Tween.TRANS_QUINT)
+			var start := global_position
+			#Hard coded, figure out a way to fetch player position later?
+			var end := Vector2(425, 350)
+			
+			tween.tween_property(self, "global_position", end, .4)
+			tween.tween_interval(.1)
+			tween.tween_property(self, "global_position", start, .4)
+			await get_tree().create_timer(.3).timeout
 	else:
 		await Player.shake(self, 50)
 		

@@ -1829,6 +1829,7 @@ const tower_levels = [
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_candle.png",
 		'description': "A Dumpling Mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick. Don't ask where the stick came from.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_2.tscn",
 	},
 	{
 		'level': 3,

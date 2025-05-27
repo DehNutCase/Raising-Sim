@@ -3,6 +3,7 @@ extends Resource
 
 enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
+enum EnemyAttackType {MELEE, RANGED}
 
 @export_group("Card Attributes")
 @export var id: String
@@ -11,6 +12,7 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 @export var cost: int
 @export var effect_amount: int
 @export var status: CardGameStatusResource
+@export var enemy_attack_type: EnemyAttackType
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target

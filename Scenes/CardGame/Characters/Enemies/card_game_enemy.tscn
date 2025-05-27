@@ -100,3 +100,14 @@ texture = ExtResource("1_xd72p")
 expand_mode = 3
 stretch_mode = 5
 metadata/_edit_lock_ = true
+
+[node name="AttackSprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5

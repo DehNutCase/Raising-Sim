@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlcbyvvqpni13"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_8c3al"]
-[ext_resource type="Texture2D" uid="uid://blwikybiv1vto" path="res://Art/Background/Background material shop/bg016a.jpg" id="2_jx2xo"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_v6iam"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_80qmx"]
-[ext_resource type="Resource" uid="uid://cixo6fm8mkpod" path="res://Scenes/CardGame/Characters/Enemies/Skeleton.tres" id="4_aft2h"]
+[ext_resource type="Resource" uid="uid://cixo6fm8mkpod" path="res://Scenes/CardGame/Characters/Enemies/SkeletonRogue.tres" id="4_aft2h"]
 
 [node name="TowerLevel0" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8c3al")
-background = ExtResource("2_jx2xo")
+background = ExtResource("2_v6iam")
 victory_reward = "{\"stats\": {\"gold\":200, \"experience\": 200}}"
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_80qmx")]
