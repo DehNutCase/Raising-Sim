@@ -51,6 +51,9 @@ func update_stats() -> void:
 	mana_label.text = "%s/%s" % [mana, max_mana]
 
 func take_damage(damage: int) -> void:
+	if active_status.get("Defense"):
+		damage -= active_status.get("Defense").stacks
+		
 	modulate = Color(1,1,1,.5)
 	await Player.shake(self, 50)
 	modulate = Color(1,1,1,1)
@@ -87,14 +90,18 @@ func set_mana(value: int) -> void:
 	
 func start_turn() -> void:
 	mana = max_mana
+	if active_status.get("Burn"):
+		var status = active_status.get("Burn")
+		take_damage(status.stacks)
+		status.stacks = int(status.stacks/2)
+		if status.stacks == 0:
+			status.status_display.queue_free()
+			active_status.erase("Burn")
+		
 	block = 0
 	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
 
 func end_turn() -> void:
-	if active_status.get("Defense"):
-		block += active_status.get("Defense").stacks
-		if active_status.get("Magic"):
-			block += active_status.get("Magic").stacks
 	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
 	decay_status(CardGameStatusResource.DecayType.ONE_TURN)
 
@@ -110,9 +117,9 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Attack"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-	if Player.stats.defense / 100:
+	if Player.stats.defense / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Defense"] = {"stacks": int(Player.stats.defense / 100), "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
+		active_status["Defense"] = {"stacks": int(Player.stats.defense / 150), "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
 		var status = active_status["Defense"].status
 		%StatusBar.add_child(active_status["Defense"].status_display)
 		status_display.status_texture.texture = status.status_icon

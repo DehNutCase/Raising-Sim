@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=7 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://vh1hidhq371j" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_2.tscn" id="2_tabh2"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
+[ext_resource type="Resource" uid="uid://tumvtntfja44" path="res://Scenes/CardGame/Characters/Mao/Decks/basic_deck.tres" id="5_cipqy"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
@@ -54,6 +55,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
+deck = ExtResource("5_cipqy")
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]

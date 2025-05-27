@@ -7,6 +7,6 @@
 script = ExtResource("1_6k4t7")
 status_icon = ExtResource("2_jen5k")
 status_name = "Defense"
-status_tooltip = "Defense. Gain [color=blue]X[/color] block per turn."
+status_tooltip = "Defense. Take [color=red]X[/color] less damage from attacks."
 status_decay = 2
 NegativeStatus = false

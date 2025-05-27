@@ -12,6 +12,7 @@ target = 2
 cost = 1
 effect_amount = 3
 status = ExtResource("3_y5qij")
+enemy_attack_type = 0
 second_target = 0
 second_type = 0
 second_effect_amount = 0

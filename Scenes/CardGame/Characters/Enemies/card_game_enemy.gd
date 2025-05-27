@@ -41,6 +41,9 @@ func set_block(value: int) -> void:
 	update_stats()
 
 func take_damage(damage: int) -> void:
+	if active_status.get("Defense"):
+		damage -= active_status.get("Defense").stacks
+		
 	modulate = Color(1,1,1,.5)
 	await Player.shake(self, 50)
 	modulate = Color(1,1,1,1)
@@ -145,11 +148,17 @@ func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 			status.status_display.stack_label.text = str(status.stacks)
 			
 func do_turn() -> void:
+	if active_status.get("Burn"):
+		var status = active_status.get("Burn")
+		take_damage(status.stacks)
+		status.stacks = int(status.stacks/2)
+		if status.stacks == 0:
+			status.status_display.queue_free()
+			active_status.erase("Burn")
 	block = 0
-	if active_status.get("Defense"):
-		block = active_status.get("Defense").stacks
-		if active_status.get("Magic"):
-			block += active_status.get("Magic").stacks
+	
+	if health <= 0:
+		return
 	
 	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
 	await perform_intent()

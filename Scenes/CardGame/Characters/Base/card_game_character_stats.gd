@@ -1,6 +1,6 @@
 class_name CardGameCharacterStats
 extends Resource
-
+#used by enemies
 signal stats_changed
 
 @export var max_health: int = 1
