@@ -126,15 +126,18 @@ func _create_tooltip() -> String:
 	var tooltip = ""
 	match card.type:
 		card.Type.ATTACK:
+			var multi_text = ""
+			if card.multi_hit_amount:
+				multi_text = " [color=red]%d[/color] times" %card.multi_hit_amount
 			match card.target:
 				card.Target.SELF:
-					tooltip += "Deal [color=red]%d[/color] damage to yourself." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage to yourself%s." %[card.effect_amount, multi_text]
 				card.Target.SINGLE_ENEMY:
-					tooltip += "Deal [color=red]%d[/color] damage." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage%s." %[card.effect_amount, multi_text]
 				card.Target.ALL_ENEMIES:
-					tooltip += "Deal [color=red]%d[/color] damage to all enemies." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage to all enemies%s." %[card.effect_amount, multi_text]
 				card.Target.EVERYONE:
-					tooltip += "Deal [color=red]%d[/color] damage to everyone." %card.effect_amount
+					tooltip += "Deal [color=red]%d[/color] damage to everyone%s." %[card.effect_amount, multi_text]
 		card.Type.BLOCK:
 			match card.target:
 				card.Target.SELF:

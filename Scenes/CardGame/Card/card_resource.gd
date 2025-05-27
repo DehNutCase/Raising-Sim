@@ -13,6 +13,8 @@ enum EnemyAttackType {MELEE, RANGED}
 @export var effect_amount: int
 @export var status: CardGameStatusResource
 @export var enemy_attack_type: EnemyAttackType
+#Multi-hit only for first effect
+@export var multi_hit_amount: int
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target
@@ -116,7 +118,7 @@ func enemy_play(enemy: CardGameEnemy) -> void:
 func apply_effects(targets: Array[Node], user) -> void:
 	match type:
 		Type.ATTACK:
-			apply_damage(targets, effect_amount, user)
+			apply_damage(targets, effect_amount, user, multi_hit_amount)
 		Type.BLOCK:
 			apply_block(targets, effect_amount, user)
 		Type.STATUS:
@@ -180,14 +182,18 @@ func apply_block(targets: Array[Node], effect_amount, user) -> void:
 				effect_amount = int(effect_amount / 2)
 			target.block += effect_amount
 
-func apply_damage(targets: Array[Node], effect_amount, user) -> void:
+func apply_damage(targets: Array[Node], effect_amount, user, multi_hit_amount = 0) -> void:
 	for target in targets:
 		if target is CardGameEnemy or target is CardGamePlayer:
 			if user.active_status.get("Attack"):
 				effect_amount = effect_amount + user.active_status.get("Attack").stacks
 			if user.active_status.get("Weak"):
 				effect_amount = int(effect_amount / 2)
-			target.take_damage(effect_amount)
+			if multi_hit_amount:
+				for i in range(multi_hit_amount):
+					target.take_damage(effect_amount)
+			else:
+				target.take_damage(effect_amount)
 
 func apply_draw(targets: Array[Node], effect_amount, user) -> void:
 	var tree := targets[0].get_tree()

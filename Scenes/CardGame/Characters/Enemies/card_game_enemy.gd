@@ -66,11 +66,14 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		queue_free()
 		get_tree().call_group("CardGameMainNode", "check_victory")
-
+	
 func set_intent() -> void:
 	intent = actions.pick_random() as CardResource
 	if intent.type == CardResource.Type.ATTACK or intent.type == CardResource.Type.BLOCK:
-		%IntentLabel.text = str(intent.effect_amount)
+		var multi_hit_text = ""
+		if intent.multi_hit_amount:
+			multi_hit_text = " x %d" %intent.multi_hit_amount
+		%IntentLabel.text = str(intent.effect_amount) + multi_hit_text
 	else:
 		%IntentLabel.text = ""
 	%IntentTexture.texture = intent.icon

@@ -1840,7 +1840,7 @@ const tower_levels = [
 				"race": "teru",
 			},
 		],
-		'description': "A Teru Warrior. Teru are naturally stronger and faster than Dumplings or Skeletons.\n\nTeru, or 'teru teru bōzu', are a relatively new variety of ghost. Small and friendly, they are commonly thought to be signs of good weather. Likes hanging themselves on string, often surprising people by accident while doing so. Non-edible, so please stop trying.",
+		'description': "A Teru Warrior. Teru are naturally stronger and faster than Dumplings or Skeletons.\n\nTeru, or 'teru teru bōzu', are a relatively new variety of ghost. Small and friendly, they're commonly thought to be signs of good weather. Like hanging themselves on string, often surprising people by accident while doing so. Non-edible, so please stop trying.",
 		'image': "res://Art/It Came From The Swamp/Enemies/f_TeruoB.png",
 	},
 	{

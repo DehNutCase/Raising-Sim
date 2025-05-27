@@ -97,7 +97,6 @@ var save_loaded = false
 
 #Easy access to card game player stuff
 var card_game_player: CardGamePlayer
-var card_game_health = 10
 var card_game_deck: Array[CardResource] = []
 
 func _init():

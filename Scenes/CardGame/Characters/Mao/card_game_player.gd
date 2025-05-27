@@ -33,9 +33,6 @@ func initialize_stats() -> void:
 	draw_pile = Deck.new()
 	discard = Deck.new()
 	
-	#Keep hp between combats
-	if Player.card_game_health:
-		health = Player.card_game_health
 	#if Player.card_game_deck:
 		#deck = Player.card_game_deck #card_game_deck is Array[CardResource]
 	Player.card_game_player = self
