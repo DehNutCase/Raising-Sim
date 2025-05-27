@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://djsxylqnw8otj"]
+[gd_scene load_steps=7 format=3 uid="uid://djsxylqnw8otj"]
 
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="1_bsj2h"]
 [ext_resource type="Script" path="res://Scenes/CardGame/UI/card_ui.gd" id="1_uy134"]
 [ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="2_sqx86"]
 [ext_resource type="Theme" uid="uid://c0vtvronru7hd" path="res://Art/Themes/CardTextLabelTheme.tres" id="4_6q1sy"]
+[ext_resource type="Theme" uid="uid://bnlcgnbtphivy" path="res://Art/Themes/CardNameLabelTheme.tres" id="4_caqnm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
 size = Vector2(180, 270)
@@ -71,7 +72,7 @@ unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 mouse_filter = 2
-theme = ExtResource("4_6q1sy")
+theme = ExtResource("4_caqnm")
 fit_content = true
 scroll_active = false
 
@@ -91,13 +92,16 @@ theme = ExtResource("4_6q1sy")
 bbcode_enabled = true
 scroll_active = false
 
-[node name="CostLabel" type="Label" parent="."]
+[node name="CostLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-offset_right = 13.0
-offset_bottom = 24.0
+offset_right = 25.0
+offset_bottom = 20.0
 size_flags_vertical = 3
-text = "5"
+theme = ExtResource("4_caqnm")
+bbcode_enabled = true
+text = "50"
+scroll_active = false
 
 [connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]
 [connection signal="area_exited" from="Area" to="." method="_on_area_area_exited"]

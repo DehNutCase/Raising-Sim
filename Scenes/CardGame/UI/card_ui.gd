@@ -112,7 +112,10 @@ func _set_card(value: CardResource) -> void:
 	if not is_node_ready():
 		await ready
 	card = value
-	cost_label.text = str(card.cost)
+	if card.cost > Player.card_game_player.mana:
+		cost_label.text = "[color=red]" + str(card.cost) + "[/color]"
+	else:
+		cost_label.text = str(card.cost)
 	icon.texture = card.icon
 	
 	%CardNameLabel.parse_bbcode("[center]" + card.id + "[/center]")

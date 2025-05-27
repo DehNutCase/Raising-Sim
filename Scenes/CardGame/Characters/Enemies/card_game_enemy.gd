@@ -156,7 +156,6 @@ func do_turn() -> void:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
 	block = 0
-	
 	if health <= 0:
 		return
 	

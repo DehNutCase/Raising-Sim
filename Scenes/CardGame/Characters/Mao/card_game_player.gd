@@ -90,6 +90,7 @@ func set_mana(value: int) -> void:
 	
 func start_turn() -> void:
 	mana = max_mana
+	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
 	if active_status.get("Burn"):
 		var status = active_status.get("Burn")
 		take_damage(status.stacks)
@@ -97,16 +98,18 @@ func start_turn() -> void:
 		if status.stacks == 0:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
-		
 	block = 0
-	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
 
 func end_turn() -> void:
 	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
 	decay_status(CardGameStatusResource.DecayType.ONE_TURN)
 
 func start_first_turn() -> void:
+	active_status = {}
 	var status_display:CardGameStatusDisplay
+	var children = %StatusBar.get_children()
+	for child in children:
+		child.queue_free()
 		
 	if Player.stats.attack / 150:
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
