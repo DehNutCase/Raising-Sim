@@ -61,13 +61,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Icon" type="TextureRect" parent="Frame"]
+[node name="MarginContainer" type="MarginContainer" parent="Frame"]
 layout_mode = 2
-size_flags_vertical = 3
-expand_mode = 3
-stretch_mode = 5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
 
-[node name="CardNameLabel" type="RichTextLabel" parent="Frame"]
+[node name="CardNameLabel" type="RichTextLabel" parent="Frame/MarginContainer"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -75,6 +74,12 @@ mouse_filter = 2
 theme = ExtResource("4_6q1sy")
 fit_content = true
 scroll_active = false
+
+[node name="Icon" type="TextureRect" parent="Frame"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 5
 
 [node name="CardTextLabel" type="RichTextLabel" parent="Frame"]
 unique_name_in_owner = true

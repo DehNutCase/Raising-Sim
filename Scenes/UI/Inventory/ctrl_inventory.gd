@@ -217,3 +217,6 @@ func select_inventory_item(item: InventoryItem) -> void:
 			continue
 		select(index)
 		return
+
+func _make_custom_tooltip(for_text):
+	return Player.make_custom_tooltip(for_text)

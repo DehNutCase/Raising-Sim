@@ -94,7 +94,7 @@
 		"image": "",
 		"monthly_stats": "{\n\"agility\": 5\n}",
 		"name": "Maid Training",
-		"stats": "{\n\"action_points\": 1\n}"
+		"stats": "{\"agility\": 10}"
 	},
 	"budding_chef":{
 		"daily_stats": "{\n\"experience\": 1\n}",
@@ -163,7 +163,7 @@
 		"image": "",
 		"monthly_stats": "{\"agility\": 10,}",
 		"name": "Finishing Blow",
-		"stats": "{\"action_points\": 1}",
+		"stats": "{}",
 		"combat_skill" : "finishing_blow"
 	},
 }

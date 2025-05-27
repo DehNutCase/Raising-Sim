@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bg42c3x4ca1wd"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bg42c3x4ca1wd"]
 
 [ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="1_h02ph"]
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_vpori"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7escy"]
 content_margin_left = 15.0
@@ -10,7 +9,5 @@ content_margin_right = 15.0
 [resource]
 ItemList/font_sizes/font_size = 16
 TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
-TooltipLabel/font_sizes/font_size = 22
-TooltipLabel/fonts/font = ExtResource("1_vpori")
 TooltipPanel/styles/panel = ExtResource("1_h02ph")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_7escy")
