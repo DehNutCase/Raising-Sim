@@ -38,8 +38,6 @@ func initialize_stats() -> void:
 		health = Player.card_game_health
 	#if Player.card_game_deck:
 		#deck = Player.card_game_deck #card_game_deck is Array[CardResource]
-	if Player.card_game_player:
-		Player.card_game_player.queue_free()
 	Player.card_game_player = self
 	update_player()
 

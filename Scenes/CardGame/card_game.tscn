@@ -67,10 +67,22 @@ unique_name_in_owner = true
 position = Vector2(160, 180)
 metadata/_edit_lock_ = true
 
-[node name="End Turn Button" type="Button" parent="."]
+[node name="EndTurnButton" type="Button" parent="."]
 layout_mode = 0
 offset_right = 12.0
 offset_bottom = 12.0
 text = "END TURN"
 
-[connection signal="pressed" from="End Turn Button" to="." method="end_turn"]
+[node name="FleeButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -121.0
+offset_bottom = 34.0
+grow_horizontal = 0
+text = "Flee"
+
+[connection signal="pressed" from="EndTurnButton" to="." method="end_turn"]
+[connection signal="pressed" from="FleeButton" to="." method="exit_combat"]

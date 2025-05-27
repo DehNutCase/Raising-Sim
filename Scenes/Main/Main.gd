@@ -101,11 +101,11 @@ func _ready():
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 	
-	if Player.victory_signal:
-		display_toast("Gained rewards from duel!", "top")
+	if Player.reward_signal:
+		display_toast("Gained rewards from the duel!", "top")
 		await(get_tree().create_timer(.5).timeout)
-		_on_reward_signal(Player.victory_signal)
-		Player.victory_signal = {}
+		_on_reward_signal(Player.reward_signal)
+		Player.reward_signal = {}
 		if Player.tower_level == 21 and !Player.event_flags.get('ExitPass'):
 			Player.event_flags['ExitPass'] = true
 			Dialogic.start("ExitPass")

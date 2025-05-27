@@ -1815,7 +1815,8 @@ const tower_levels = [
 			},
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_MinionsB.png",
-		'description': "A Skeleton Rogue. Gets faster and faster as the fight goes on.\n\nAnimated Skeletons are a common sight anywhere creatures have died. Regardless of where the bones came from, all Skeletons share the same basic shape. Surprisingly fond of alcohol, so remember to bring a mop if you invite one to a party. Not a good source of calcium.",
+		'description': "A Skeleton Rogue. Has the ability to slow you down.\n\nAnimated Skeletons are a common sight anywhere creatures have died. Regardless of where the bones came from, all Skeletons share the same basic shape. Surprisingly fond of alcohol, so remember to bring a mop if you invite one to a party. Not a good source of calcium.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_1.tscn",
 	},
 	{
 		'level': 2,

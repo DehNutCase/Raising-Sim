@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://4wq5piixdtsq"]
+
+[ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_ttqmx"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_rge7l"]
+
+[resource]
+script = ExtResource("2_rge7l")
+id = "skeleton_basic_attack"
+type = 1
+target = 1
+cost = 1
+effect_amount = 6
+second_target = 0
+second_type = 0
+second_effect_amount = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_ttqmx")

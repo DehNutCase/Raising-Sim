@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://cgu65h4hm2mta"]
+
+[ext_resource type="Texture2D" uid="uid://jbi8x60risew" path="res://Art/Mori no oku no kakurezato/CardGame/data01_05.png" id="1_hrnbe"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_685w6"]
+[ext_resource type="Resource" uid="uid://dj786we54g0fv" path="res://Scenes/CardGame/Status/agility.tres" id="3_bulkc"]
+
+[resource]
+script = ExtResource("2_685w6")
+id = "skeleton_steal_agility"
+type = 4
+target = 1
+cost = 1
+effect_amount = -2
+status = ExtResource("3_bulkc")
+second_target = 0
+second_type = 0
+second_effect_amount = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_hrnbe")

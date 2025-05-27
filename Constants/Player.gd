@@ -91,7 +91,7 @@ var in_tower = false
 var in_mission = false
 var victory_stat_gain = {}
 #TODO, hook this to dialogic signal
-var victory_signal = {}
+var reward_signal = {}
 
 var save_loaded = false
 

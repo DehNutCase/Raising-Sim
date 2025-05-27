@@ -9,12 +9,13 @@ enum states {NORMAL, VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
 var state = states.NORMAL
 
 @export var card_game_level: PackedScene
+var enemy_scene: CardGameEncounterScene
 
 func _ready():
 	get_tree().call_group("BackgroundMusicPlayer", "play_song", "battle")
 	if Player.encounter:
 		card_game_level = load(Player.encounter)
-	var enemy_scene:CardGameEncounterScene = card_game_level.instantiate()
+	enemy_scene = card_game_level.instantiate()
 	if enemy_scene:
 		%EnemiesContainer.add_child(card_game_level.instantiate())
 		if enemy_scene.background:
@@ -101,15 +102,19 @@ func check_victory() -> void:
 	if won:
 		if state != states.DEFEAT:
 			state = states.VICTORY
+			%FleeButton.text = "Leave"
 		#disable cards, refactor later?
 			print("we won!")
 		#Victory state is used to disable cards, fine to use for defeat as well
 		get_tree().call_group("CardGameCardUI", "enter_state", CardUI.States.VICTORY)
+
 func exit_combat() -> void:
-	if Player.in_tower and state == states.VICTORY:
-		Player.tower_level += 1
-	if Player.in_mission and state == states.VICTORY:
-		Player.active_mission.combat = false
+	if state == states.VICTORY:
+		if Player.in_tower:
+			Player.tower_level += 1
+		if Player.in_mission:
+			Player.active_mission.combat = false
+		Player.reward_signal = enemy_scene.victory_reward
 	Player.in_tower = false
 	Player.in_mission = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
