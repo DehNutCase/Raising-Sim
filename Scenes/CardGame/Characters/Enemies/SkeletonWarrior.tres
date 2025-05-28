@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://dvas2ta2721lt"]
+
+[ext_resource type="Resource" uid="uid://qc63fcbxvdts" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/skeleton_war_cry.tres" id="1_ujnht"]
+[ext_resource type="Resource" uid="uid://4wq5piixdtsq" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/skeleton_basic_attack.tres" id="2_kepif"]
+[ext_resource type="Texture2D" uid="uid://bu1lykc1sqvkd" path="res://Art/It Came From The Swamp/Enemies/f_MinionsA.png" id="3_l43mu"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_6f8ju"]
+
+[resource]
+script = ExtResource("4_6f8ju")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ujnht"), ExtResource("2_kepif")])
+max_health = 35
+art = ExtResource("3_l43mu")

@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("5_lnnd4")
 actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_rcqog"), ExtResource("3_4hri1"), ExtResource("1_o7mhc")])
-max_health = 25
+max_health = 35
 art = ExtResource("1_v4e64")

@@ -1842,6 +1842,7 @@ const tower_levels = [
 		],
 		'description': "A Teru Warrior. Teru are naturally stronger and faster than Dumplings or Skeletons.\n\nTeru, or 'teru teru bōzu', are a relatively new variety of ghost. Small and friendly, they're commonly thought to be signs of good weather. Like hanging themselves on string, often surprising people by accident while doing so. Non-edible, so please stop trying.",
 		'image': "res://Art/It Came From The Swamp/Enemies/f_TeruoB.png",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_3.tscn",
 	},
 	{
 		'level': 4,
@@ -1858,7 +1859,8 @@ const tower_levels = [
 			},
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_LunaChime.png",
-		'description': "A Dumpling Warrior and a Dumpling Priest. Surprisingly, it might be better to take out the Warrior first.\n\nA Dumpling's taste changes depending on its class. Unfortunately, wild varieties get less palatable from changing to a rarer class. Domesticated Dumplings, on the other hand, are too expensive to be affordable outside of the most common classes.",
+		'description': "A Dumpling Warrior and a Dumpling Priest. You should probably deal with the healer as quickly as possible.\n\nA Dumpling's taste changes depending on its class. Unfortunately, wild varieties get less palatable from changing to a rarer class. Domesticated Dumplings, on the other hand, are too expensive to be affordable outside of the most common classes.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_4.tscn",
 	},
 	{
 		'level': 5,
@@ -1875,7 +1877,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_MinionsA.png',
-		'description': "A Skeleton Warrior and a Teru Mage. Although Teru don't have any specific advantages in casting magic, their high agility means they make excellent mages nontheless.",
+		'description': "A Skeleton Warrior and a Teru Mage. Although Teru don't have any special advantages in casting magic, their high agility means they make excellent mages nontheless.\n\nAlthough normal undead tend to be mindlessly hostile, the ones you can find near the capital are easy to get along with. The reason is very simple, the dangerous ones have been dealt with already.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_5.tscn",
 	},
 	{
 		'level': 6,
@@ -1892,7 +1895,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
-		'description': "A Teru Warrior and a Skeleton Rogue. Warriors make excellent party leaders and Rogues become quite dangerous if their attack increases.",
+		'description': "A Teru Warrior and a Skeleton Rogue. Fighting fast enemies can be very hard to deal with. Fortunately, speedy enemies tend to focus more on running circles around people than stacking buffs.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_6.tscn",
 	},
 	{
 		'level': 7,

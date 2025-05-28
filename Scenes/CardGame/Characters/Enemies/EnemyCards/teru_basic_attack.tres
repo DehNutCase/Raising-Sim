@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://dnawtuwd81u82"]
+
+[ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_ili2v"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_lbf67"]
+[ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="3_gldpa"]
+
+[resource]
+script = ExtResource("2_lbf67")
+id = "dumpling_basic_attack"
+type = 1
+target = 1
+cost = 1
+effect_amount = 5
+enemy_attack_type = 0
+multi_hit_amount = 3
+second_target = 0
+second_type = 4
+second_effect_amount = 1
+second_status = ExtResource("3_gldpa")
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_ili2v")

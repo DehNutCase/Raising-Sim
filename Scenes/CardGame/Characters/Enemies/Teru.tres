@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://uy12gm75bku0"]
+
+[ext_resource type="Resource" uid="uid://dnawtuwd81u82" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/teru_basic_attack.tres" id="1_o0bco"]
+[ext_resource type="Texture2D" uid="uid://88ts7ovi6is7" path="res://Art/It Came From The Swamp/Enemies/f_TeruoB.png" id="2_4hv3o"]
+[ext_resource type="Resource" uid="uid://dtbep1q5bsiyo" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/teru_steal_agility.tres" id="2_qwnky"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_545tt"]
+
+[resource]
+script = ExtResource("5_545tt")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_o0bco"), ExtResource("2_qwnky")])
+max_health = 50
+art = ExtResource("2_4hv3o")

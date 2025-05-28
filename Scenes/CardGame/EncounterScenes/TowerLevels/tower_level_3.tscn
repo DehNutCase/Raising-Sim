@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://baoq7ue7bgi2c"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_gqnwo"]
+[ext_resource type="Texture2D" uid="uid://cs2l6dx4rnoyc" path="res://Art/Background/Background material shop/bg016c.jpg" id="2_n8r0q"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_hp74k"]
+[ext_resource type="Resource" uid="uid://uy12gm75bku0" path="res://Scenes/CardGame/Characters/Enemies/Teru.tres" id="4_b05qo"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gqnwo")
+background = ExtResource("2_n8r0q")
+victory_reward = "{\"stats\": {\"gold\":400, \"experience\": 400}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_hp74k")]
+position = Vector2(500, 300)
+enemy_resource = ExtResource("4_b05qo")

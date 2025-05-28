@@ -5,8 +5,8 @@ extends Control
 
 var DRAW_INTERVAL = .05
 
-enum states {NORMAL, VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
-var state = states.NORMAL
+enum states {VICTORY, DEFEAT, PLAYER_TURN, ENEMY_TURN}
+var state = states.PLAYER_TURN
 
 @export var card_game_level: PackedScene
 var enemy_scene: CardGameEncounterScene
@@ -30,6 +30,7 @@ func start_battle() -> void:
 	card_game_player.draw_pile.cards.shuffle()
 	card_game_player.discard = Deck.new()
 	card_game_player.start_first_turn()
+	state = states.PLAYER_TURN
 	start_turn()
 
 func start_turn() -> void:
@@ -40,7 +41,8 @@ func start_turn() -> void:
 	if Player.card_game_player.active_status.get("Agility"):
 		draw_amount = draw_amount + Player.card_game_player.active_status.get("Agility").stacks
 	draw_cards(draw_amount)
-	state = states.PLAYER_TURN
+	if state == states.ENEMY_TURN:
+		state = states.PLAYER_TURN
 
 func end_turn() -> void:
 	if state != states.PLAYER_TURN:
@@ -100,7 +102,7 @@ func check_victory() -> void:
 			won = false
 	
 	if won:
-		if state != states.DEFEAT:
+		if state != states.DEFEAT and Player.card_game_player.health >= 0:
 			state = states.VICTORY
 			%FleeButton.text = "Leave"
 		#disable cards, refactor later?
@@ -108,6 +110,11 @@ func check_victory() -> void:
 		#Victory state is used to disable cards, fine to use for defeat as well
 		get_tree().call_group("CardGameCardUI", "enter_state", CardUI.States.VICTORY)
 
+func check_defeat() -> void:
+	if Player.card_game_player.health <= 0:
+		state = states.DEFEAT
+		hand.hide()
+		
 func exit_combat() -> void:
 	if state == states.VICTORY:
 		if Player.in_tower:

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://qc63fcbxvdts"]
+
+[ext_resource type="Texture2D" uid="uid://bfk484v4am5sl" path="res://Art/Mori no oku no kakurezato/CardGame/data01_02.png" id="1_wjrfj"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_jqudy"]
+[ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="3_a2fl1"]
+[ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="3_hbcnh"]
+
+[resource]
+script = ExtResource("2_jqudy")
+id = "skeleton_war_cry"
+type = 4
+target = 2
+cost = 1
+effect_amount = 2
+status = ExtResource("3_hbcnh")
+enemy_attack_type = 0
+multi_hit_amount = 0
+second_target = 0
+second_type = 4
+second_effect_amount = 1
+second_status = ExtResource("3_a2fl1")
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_wjrfj")

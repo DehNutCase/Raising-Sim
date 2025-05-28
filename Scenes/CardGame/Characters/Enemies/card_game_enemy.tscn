@@ -34,7 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = -20
 metadata/_edit_lock_ = true
 
 [node name="IntentBar" type="HBoxContainer" parent="VBoxContainer"]
@@ -63,7 +62,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 texture = ExtResource("3_56n0o")
-expand_mode = 5
+expand_mode = 3
 stretch_mode = 5
 flip_h = true
 

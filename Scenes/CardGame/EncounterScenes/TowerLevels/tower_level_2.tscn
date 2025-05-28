@@ -19,5 +19,5 @@ background = ExtResource("2_tarou")
 victory_reward = "{\"stats\": {\"gold\":300, \"experience\": 300}}"
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_qxv5j")]
-position = Vector2(494, 290)
+position = Vector2(500, 300)
 enemy_resource = ExtResource("4_t6h2c")

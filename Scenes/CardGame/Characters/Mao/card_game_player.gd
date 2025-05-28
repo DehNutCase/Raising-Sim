@@ -71,7 +71,7 @@ func take_damage(damage: int) -> void:
 	health -= damage
 	
 	if health <= 0:
-		print("you lost!")
+		get_tree().call_group("CardGameMainNode", "check_defeat")
 		
 func set_health(value: int) -> void:
 	health = clampi(value, 0, max_health)
