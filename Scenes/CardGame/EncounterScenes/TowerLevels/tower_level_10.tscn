@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx08w8afv4ias"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_8353g"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_4aj80"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_hegv7"]
+[ext_resource type="Resource" uid="uid://cxuh8ruuoxq48" path="res://Scenes/CardGame/Characters/Enemies/LesserPhantomRice.tres" id="4_urflo"]
+[ext_resource type="Texture2D" uid="uid://bo7hn7qy1awq1" path="res://Characters/Rice/Images/idle_000_cropped.png" id="5_lf8li"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq3b"]
+size = Vector2(400, 400)
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8353g")
+background = ExtResource("2_4aj80")
+victory_reward = "{\"stats\": {\"gold\":1100, \"experience\": 1100}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_hegv7")]
+position = Vector2(500, 400)
+enemy_resource = ExtResource("4_urflo")
+
+[node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
+shape = SubResource("RectangleShape2D_qcq3b")
+
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(400, 400)
+texture = ExtResource("5_lf8li")
+flip_h = false
+
+[editable path="CardGameEnemy"]

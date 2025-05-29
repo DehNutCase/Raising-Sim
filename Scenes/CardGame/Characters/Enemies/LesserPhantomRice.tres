@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://cxuh8ruuoxq48"]
+
+[ext_resource type="Resource" uid="uid://c87hqlwdumwlr" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/rice_special_attack.tres" id="1_mg30j"]
+[ext_resource type="Resource" uid="uid://c4s7ektqhjmc" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/rice_fireball.tres" id="2_36bed"]
+[ext_resource type="Texture2D" uid="uid://bo7hn7qy1awq1" path="res://Characters/Rice/Images/idle_000_cropped.png" id="2_h1avc"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_ycyom"]
+
+[resource]
+script = ExtResource("4_ycyom")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_mg30j"), ExtResource("2_36bed")])
+max_health = 50
+art = ExtResource("2_h1avc")

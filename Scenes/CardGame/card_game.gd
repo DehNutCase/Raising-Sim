@@ -11,6 +11,9 @@ var state = states.PLAYER_TURN
 @export var card_game_level: PackedScene
 var enemy_scene: CardGameEncounterScene
 
+@onready var cubism_model: GDCubismUserModel = %CubismModel
+@onready var cubism_container: PanelContainer = %CubismContainer
+
 func _ready():
 	get_tree().call_group("BackgroundMusicPlayer", "play_song", "battle")
 	if Player.encounter:
@@ -125,3 +128,10 @@ func exit_combat() -> void:
 	Player.in_tower = false
 	Player.in_mission = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
+
+func play_live2d_animation(model: String, motion: String, duration: float) -> void:
+	cubism_model.assets = model
+	cubism_model.anim_motion = motion
+	cubism_container.show()
+	await get_tree().create_timer(duration).timeout
+	cubism_container.hide()

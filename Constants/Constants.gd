@@ -1960,7 +1960,7 @@ const tower_levels = [
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
 		'description': "A Dumpling adventuring party! Even Dumplings get to go on adventures. Although the road ahead is long, they've taken their first steps to becoming Heroes.\n\nAccording to a certain King of Demons, a Dumpling Hero is surprisingly delicious. It seems like the Dumpling Hero regressed back to a Dumpling Swordmaster afterwards, although it's not certain if it's because it lost or because she took a bite.",
-		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_8.tscn",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_9.tscn",
 	},
 	{
 		'level': 10,
@@ -1973,6 +1973,7 @@ const tower_levels = [
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
 		'description': "It's Rice! Not really. Phantoms are monsters that mimic the appearance and ability of others. This one is a Lesser Phantom, so it's significantly weaker and slower than the original.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter the service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_10.tscn",
 	},
 	{
 		'level': 11,

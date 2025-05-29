@@ -93,6 +93,11 @@ func perform_intent() -> void:
 			
 			tween.finished.connect(func():%AttackSprite.global_position = start)
 			%AttackSprite.hide()
+		elif intent.enemy_attack_type == intent.EnemyAttackType.ANIMATION:
+			if intent.animation:
+				var data = JSON.parse_string(intent.animation)
+				var main_node = get_tree().get_first_node_in_group("CardGameMainNode")
+				await main_node.play_live2d_animation(data.model, data.animation, data.duration)
 		else:
 			var tween := create_tween().set_trans(Tween.TRANS_QUINT)
 			var start := global_position

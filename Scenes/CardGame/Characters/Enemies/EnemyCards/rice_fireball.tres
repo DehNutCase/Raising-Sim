@@ -13,6 +13,7 @@ cost = 1
 effect_amount = 50
 enemy_attack_type = 1
 multi_hit_amount = 0
+animation = ""
 second_target = 1
 second_type = 4
 second_effect_amount = 50

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c0ta5vb0hl611"]
+
+[ext_resource type="StyleBox" uid="uid://dgjgitu0vi1jl" path="res://Art/Themes/ThemeComponents/VideoBackgroundPanel.tres" id="1_kx8fl"]
+
+[resource]
+PanelContainer/styles/panel = ExtResource("1_kx8fl")

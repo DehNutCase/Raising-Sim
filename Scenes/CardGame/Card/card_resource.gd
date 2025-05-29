@@ -3,7 +3,7 @@ extends Resource
 
 enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
-enum EnemyAttackType {MELEE, RANGED}
+enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 
 @export_group("Card Attributes")
 @export var id: String
@@ -15,6 +15,7 @@ enum EnemyAttackType {MELEE, RANGED}
 @export var enemy_attack_type: EnemyAttackType
 #Multi-hit only for first effect
 @export var multi_hit_amount: int
+@export_multiline var animation: String
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target
