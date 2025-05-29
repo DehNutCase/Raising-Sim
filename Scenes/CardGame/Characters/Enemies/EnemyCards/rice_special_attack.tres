@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c87hqlwdumwlr"]
 
-[ext_resource type="Texture2D" uid="uid://dyavxhr87k4o4" path="res://Art/Mori no oku no kakurezato/CardGame/element46_01.png" id="1_7h1hc"]
+[ext_resource type="Texture2D" uid="uid://c8mageotyv3bm" path="res://Art/Mori no oku no kakurezato/CardGame/shot.png" id="1_joour"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_yeyma"]
 
 [resource]
@@ -19,4 +19,4 @@ second_effect_amount = 0
 third_target = 0
 third_type = 0
 third_effect_amount = 0
-icon = ExtResource("1_7h1hc")
+icon = ExtResource("1_joour")

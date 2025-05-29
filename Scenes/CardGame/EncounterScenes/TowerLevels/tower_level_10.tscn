@@ -23,7 +23,7 @@ background = ExtResource("2_4aj80")
 victory_reward = "{\"stats\": {\"gold\":1100, \"experience\": 1100}}"
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_hegv7")]
-position = Vector2(500, 400)
+position = Vector2(500, 350)
 enemy_resource = ExtResource("4_urflo")
 
 [node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
@@ -33,5 +33,8 @@ shape = SubResource("RectangleShape2D_qcq3b")
 custom_minimum_size = Vector2(400, 400)
 texture = ExtResource("5_lf8li")
 flip_h = false
+
+[node name="Arrow" parent="CardGameEnemy" index="2"]
+custom_minimum_size = Vector2(500, 500)
 
 [editable path="CardGameEnemy"]

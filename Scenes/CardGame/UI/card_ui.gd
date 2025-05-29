@@ -115,15 +115,13 @@ func _set_card(value: CardResource) -> void:
 	if card.cost > Player.card_game_player.mana:
 		cost_label.text = "[color=red]" + str(card.cost) + "[/color]"
 	else:
-		cost_label.text = str(card.cost)
+		cost_label.text = "[color=white]" + str(card.cost) + "[/color]"
 	icon.texture = card.icon
-	
-	%CardNameLabel.parse_bbcode("[center]" + card.id + "[/center]")
 	tooltip_text = _create_tooltip()
 	card_text_label.parse_bbcode("[center]" + _create_tooltip() + "[/center]")
 	
 func _create_tooltip() -> String:
-	var tooltip = ""
+	var tooltip = "[center][color=Turquoise]%s[/color][/center]\n" %card.id
 	match card.type:
 		card.Type.ATTACK:
 			var multi_text = ""

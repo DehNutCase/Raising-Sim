@@ -95,7 +95,7 @@ func draw_card() -> void:
 func draw_cards(amount: int) -> void:
 	for i in range(amount):
 		await draw_card()
-	hand.add_theme_constant_override("separation", clampi(10 - hand.get_child_count() * 2, -30, 0))
+	hand.add_theme_constant_override("separation", clampi(20 - hand.get_child_count() * 4, -30, 20))
 	
 func check_victory() -> void:
 	var won = true

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://djsxylqnw8otj"]
+[gd_scene load_steps=8 format=3 uid="uid://djsxylqnw8otj"]
 
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="1_bsj2h"]
 [ext_resource type="Script" path="res://Scenes/CardGame/UI/card_ui.gd" id="1_uy134"]
 [ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="2_sqx86"]
 [ext_resource type="Theme" uid="uid://c0vtvronru7hd" path="res://Art/Themes/CardTextLabelTheme.tres" id="4_6q1sy"]
 [ext_resource type="Theme" uid="uid://bnlcgnbtphivy" path="res://Art/Themes/CardNameLabelTheme.tres" id="4_caqnm"]
+[ext_resource type="Texture2D" uid="uid://c8mageotyv3bm" path="res://Art/Mori no oku no kakurezato/CardGame/shot.png" id="5_nomf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
 size = Vector2(180, 270)
@@ -62,23 +63,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="Frame"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="CardNameLabel" type="RichTextLabel" parent="Frame/MarginContainer"]
-unique_name_in_owner = true
-clip_contents = false
-layout_mode = 2
-mouse_filter = 2
-theme = ExtResource("4_caqnm")
-fit_content = true
-scroll_active = false
-
 [node name="Icon" type="TextureRect" parent="Frame"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+texture = ExtResource("5_nomf6")
 expand_mode = 3
 stretch_mode = 5
 
@@ -90,17 +79,19 @@ size_flags_stretch_ratio = 2.0
 mouse_filter = 1
 theme = ExtResource("4_6q1sy")
 bbcode_enabled = true
+text = "CARD TEXT"
 scroll_active = false
 
 [node name="CostLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(60, 1)
 layout_mode = 1
-offset_right = 25.0
-offset_bottom = 20.0
-size_flags_vertical = 3
+offset_right = 60.0
+offset_bottom = 1.0
 theme = ExtResource("4_caqnm")
 bbcode_enabled = true
-text = "50"
+text = "12345"
 scroll_active = false
 
 [connection signal="area_entered" from="Area" to="." method="_on_area_area_entered"]
