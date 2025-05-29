@@ -8,7 +8,7 @@ signal reparent_requested(card: CardUI)
 @onready var icon = $Frame/Icon
 @onready var cost_label = %CostLabel
 
-enum States {BASE, DRAGGING, RELEASED, DISCARD, VICTORY}
+enum States {BASE, DRAGGING, RELEASED, DISCARD}
 @export var current_state:States
 @export var initial_state:States
 
@@ -42,8 +42,6 @@ func enter_state(state:States) -> void:
 				play_card()
 		States.DISCARD:
 			current_state = States.DISCARD
-		States.VICTORY:
-			current_state = States.VICTORY
 	
 func exit_state(state:States) -> void:
 	pass

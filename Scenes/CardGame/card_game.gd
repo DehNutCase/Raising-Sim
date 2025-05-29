@@ -107,11 +107,8 @@ func check_victory() -> void:
 	if won:
 		if state != states.DEFEAT and Player.card_game_player.health >= 0:
 			state = states.VICTORY
+			hand.hide()
 			%FleeButton.text = "Leave"
-		#disable cards, refactor later?
-			print("we won!")
-		#Victory state is used to disable cards, fine to use for defeat as well
-		get_tree().call_group("CardGameCardUI", "enter_state", CardUI.States.VICTORY)
 
 func check_defeat() -> void:
 	if Player.card_game_player.health <= 0:
