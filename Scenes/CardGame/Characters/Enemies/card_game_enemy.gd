@@ -110,7 +110,7 @@ func perform_intent() -> void:
 	await get_tree().create_timer(.4).timeout
 	
 func apply_status(status_resource: CardGameStatusResource, effect_amount: int, user) -> void:
-	if active_status.get("Resistance") and status_resource.NegativeStatus:
+	if active_status.get("Resistance") and ((status_resource.NegativeStatus and effect_amount > 0) or (!status_resource.NegativeStatus and effect_amount < 0)):
 		active_status["Resistance"].stacks -= 1
 		active_status["Resistance"].status_display.stack_label.text = str(active_status["Resistance"].stacks)
 		if active_status["Resistance"].stacks == 0:

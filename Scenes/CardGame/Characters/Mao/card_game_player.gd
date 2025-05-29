@@ -25,7 +25,7 @@ func _ready():
 	initialize_stats()
 	
 func initialize_stats() -> void:
-	max_health = int(Player.stats.max_hp/5)
+	max_health = 5000#int(Player.stats.max_hp/5)
 	health = max_health
 	#Note, give mao block based on defense every turn
 	max_mana = int(Player.stats.max_mp/150 + 2)
@@ -174,7 +174,7 @@ func start_first_turn() -> void:
 		status_display.tooltip_text = status.status_tooltip
 		
 func apply_status(status_resource: CardGameStatusResource, effect_amount: int, user) -> void:
-	if active_status.get("Resistance") and status_resource.NegativeStatus:
+	if active_status.get("Resistance") and (status_resource.NegativeStatus or effect_amount < 0):
 		active_status["Resistance"].stacks -= 1
 		active_status["Resistance"].status_display.stack_label.text = str(active_status["Resistance"].stacks)
 		if active_status["Resistance"].stacks == 0:

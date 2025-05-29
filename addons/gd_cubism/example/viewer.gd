@@ -76,7 +76,7 @@ func _process(delta):
 
 	var vct_viewport_size = Vector2(get_viewport_rect().size)
 	$Sprite2D.position = vct_viewport_size / 2
-	$Sprite2D.scale.x = vct_viewport_size.y / cubism_model.size.y
+	$Sprite2D.scale.x = 1#vct_viewport_size.y / cubism_model.size.y
 	$Sprite2D.scale.y = $Sprite2D.scale.x
 
 

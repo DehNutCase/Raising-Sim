@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://l8p3b3pg4hij"]
+
+[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_basic_attack.tres" id="1_w7kbc"]
+[ext_resource type="Resource" uid="uid://8mqdacj0ocke" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_war_cry.tres" id="3_lm05i"]
+[ext_resource type="Resource" uid="uid://dwg8npvvw3qxc" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_steal_agility.tres" id="3_yu4cc"]
+[ext_resource type="Texture2D" uid="uid://coxvlnpvvibcm" path="res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png" id="4_8vmuh"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_tqk20"]
+
+[resource]
+script = ExtResource("5_tqk20")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("3_lm05i"), ExtResource("1_w7kbc"), ExtResource("3_yu4cc")])
+max_health = 40
+art = ExtResource("4_8vmuh")

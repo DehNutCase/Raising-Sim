@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_olyp1")
 background = ExtResource("2_i5y6u")
-victory_reward = "{\"stats\": {\"gold\":400, \"experience\": 400}}"
+victory_reward = "{\"stats\": {\"gold\": 600, \"experience\": 600}}"
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_2wxpl")]
 position = Vector2(300, 300)

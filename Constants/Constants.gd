@@ -1895,7 +1895,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
-		'description': "A Teru Warrior and a Skeleton Rogue. Fighting fast enemies can be very hard to deal with. Fortunately, speedy enemies tend to focus more on running circles around people than stacking buffs.",
+		'description': "A Teru Warrior and a Skeleton Rogue. Fast enemies can be very hard to deal with, sometimes they can even 'lap' you, forcing you to do nothing for a turn.",
 		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_6.tscn",
 	},
 	{
@@ -1913,7 +1913,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
-		'description': "A Teru Mage and a Teru priest. Combined with a mage, a priest's healing becomes stronger and stronger as time goes on. Watch out for Fireballs.\n\nIt's a common belief that seeing a Teru holding an umbrella is a sign of rain. In fact, however, all Teru have umbrellas, but only Teru Mages carry them even when the sun is shining. Although they'll happily share if asked, it's hard to see how such a tiny umbrella can be helpful when you're being rained on.",
+		'description': "A Teru Mage and a Teru Priest. Both are dangerous in their own way, but the Mage is probably the bigger immediate danger.\n\nIt's a common belief that seeing a Teru holding an umbrella is a sign of rain. In fact, however, all Teru have umbrellas, but only Teru Mages carry them even when the sun is shining. Although they'll happily share if asked, it's hard to see how such a tiny umbrella can be helpful when you're being rained on.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_7.tscn",
 	},
 	{
 		'level': 8,
@@ -1930,7 +1931,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_candle.png',
-		'description': "A Teru Mage and a Dumpling Mage. Fireballs hurt, and buffed Fireballs hurt even more.",
+		'description': "A Teru Mage and a Dumpling Mage. Since Rice will be happy to heal you up after a duel, win or lose, a purely offensive team like this might be surprisingly easy to deal with.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_8.tscn",
 	},
 	{
 		'level': 9,
@@ -1958,6 +1960,7 @@ const tower_levels = [
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png',
 		'description': "A Dumpling adventuring party! Even Dumplings get to go on adventures. Although the road ahead is long, they've taken their first steps to becoming Heroes.\n\nAccording to a certain King of Demons, a Dumpling Hero is surprisingly delicious. It seems like the Dumpling Hero regressed back to a Dumpling Swordmaster afterwards, although it's not certain if it's because it lost or because she took a bite.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_8.tscn",
 	},
 	{
 		'level': 10,
@@ -1969,7 +1972,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
-		'description': "Phantoms are monsters that mimic the appearance and ability of others. This one is a Lesser Phantom, so it's significantly weaker and slower than the original. Unfortunately, it happens to be mimicking Rice.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter the service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
+		'description': "It's Rice! Not really. Phantoms are monsters that mimic the appearance and ability of others. This one is a Lesser Phantom, so it's significantly weaker and slower than the original.\n\nDue to their inherent disadvantages in fighting, Phantoms tend to be cautious and non-aggressive. Once famous for their ability as spies and infiltrators, the advances in disguise and detection magecraft caused most Phantoms to enter the service industry instead. Not to be confused with Doppelgangers, which have been hunted to near extinction for their tendency to aggressively replace their counterparts.",
 	},
 	{
 		'level': 11,

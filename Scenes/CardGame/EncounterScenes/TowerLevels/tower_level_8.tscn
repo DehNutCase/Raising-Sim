@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://llw5cjfc5cb6"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_dltwn"]
+[ext_resource type="Texture2D" uid="uid://blwikybiv1vto" path="res://Art/Background/Background material shop/bg016a.jpg" id="2_07u5p"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_llgdj"]
+[ext_resource type="Resource" uid="uid://c5m0oocomidej" path="res://Scenes/CardGame/Characters/Enemies/TeruMage.tres" id="4_b7b0u"]
+[ext_resource type="Resource" uid="uid://cu6q8by0ixsc2" path="res://Scenes/CardGame/Characters/Enemies/DumplingMage.tres" id="5_4d6p7"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dltwn")
+background = ExtResource("2_07u5p")
+victory_reward = "{\"stats\": {\"gold\": 900, \"experience\": 900}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_llgdj")]
+position = Vector2(300, 300)
+enemy_resource = ExtResource("4_b7b0u")
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_llgdj")]
+position = Vector2(700, 300)
+enemy_resource = ExtResource("5_4d6p7")
