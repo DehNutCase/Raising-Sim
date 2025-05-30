@@ -1,6 +1,5 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://0yntxwkhwndv"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://0yntxwkhwndv"]
 
-[ext_resource type="FontVariation" uid="uid://bampel0ostwmy" path="res://Art/Fonts/emoji_font_variation.tres" id="1_njrmw"]
 [ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="2_gu6ia"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_povnh"]
@@ -8,7 +7,4 @@
 [resource]
 ItemList/font_sizes/font_size = 32
 ItemList/styles/panel = SubResource("StyleBoxEmpty_povnh")
-TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
-TooltipLabel/font_sizes/font_size = 20
-TooltipLabel/fonts/font = ExtResource("1_njrmw")
 TooltipPanel/styles/panel = ExtResource("2_gu6ia")

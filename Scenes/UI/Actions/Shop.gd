@@ -2,14 +2,11 @@ extends Control
 
 @onready var protoset:JSON = preload("res://Constants/item_protoset.json")
 
-var SHOP_COLUMN_COUNT = 6
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_buttons()
 
 func update_buttons():
-	var i = 0
 	for node in get_children():
 		remove_child(node)
 		node.queue_free()
@@ -26,15 +23,5 @@ func update_buttons():
 				continue
 		var button = load("res://Scenes/UI/Actions/shop_button.tscn").instantiate()
 		add_child(button)
-		self.get_child(i).position = Vector2( i%SHOP_COLUMN_COUNT * 200 + 80, 220 * (i/SHOP_COLUMN_COUNT) )
-		self.get_child(i).item = InventoryItem.new(protoset, id)
-		self.get_child(i).update_labels()
-		i += 1
-		
-
-	#Force minimum size to add scrolling for shop when items overflow
-	var row_count = i/SHOP_COLUMN_COUNT
-	if i%SHOP_COLUMN_COUNT:
-		row_count += 1
-	custom_minimum_size = Vector2(0, row_count* 220)
-	
+		button.item = InventoryItem.new(protoset, id)
+		button.update_labels()

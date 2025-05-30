@@ -94,7 +94,8 @@
 		"image": "",
 		"monthly_stats": "{\n\"agility\": 5\n}",
 		"name": "Maid Training",
-		"stats": "{\"agility\": 10}"
+		"stats": "{\"agility\": 10}",
+		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes05_01.png"
 	},
 	"budding_chef":{
 		"daily_stats": "{\n\"experience\": 1\n}",
@@ -146,7 +147,8 @@
 		"monthly_stats": "{\n\"magic\": 10\n,\n\"max_mp\": 10\n}",
 		"name": "Blessing",
 		"stats": "{}",
-		"combat_skill" : "blessing"
+		"combat_skill" : "blessing",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element07_01.png",
 	},
 	"light_barrier": {
 		"daily_stats": "{\n\"magic\": 1\n,\n\"max_mp\": 1\n}",
@@ -155,7 +157,8 @@
 		"monthly_stats": "{\n\"magic\": 10\n,}",
 		"name": "Light Barrier",
 		"stats": "{}",
-		"combat_skill" : "light_barrier"
+		"combat_skill" : "light_barrier",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element10_01.png",
 	},
 	"finishing_blow": {
 		"daily_stats": "{\"attack\": 1,\"agility\": 1}",
@@ -164,6 +167,7 @@
 		"monthly_stats": "{\"agility\": 10,}",
 		"name": "Finishing Blow",
 		"stats": "{}",
-		"combat_skill" : "finishing_blow"
+		"combat_skill" : "finishing_blow",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/shock.png",
 	},
 }

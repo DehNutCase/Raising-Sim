@@ -96,3 +96,6 @@ func update_buttons():
 
 func display_stats():
 	display_actions()
+
+func _make_custom_tooltip(for_text):
+	return Player.make_custom_tooltip(for_text)

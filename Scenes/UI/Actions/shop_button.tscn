@@ -4,11 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://m77qcs0rlxo4" path="res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png" id="4_orxau"]
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="4_ut51h"]
 
-[node name="Shop" type="Node2D"]
+[node name="Shop" type="Control"]
 texture_filter = 6
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_8cxwa")
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -20,6 +24,7 @@ grow_horizontal = 2
 text = "Buy"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

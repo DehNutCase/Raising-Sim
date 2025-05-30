@@ -57,3 +57,6 @@ func update_buttons():
 
 func display_stats():
 	display_courses()
+	
+func _make_custom_tooltip(for_text):
+	return Player.make_custom_tooltip(for_text)

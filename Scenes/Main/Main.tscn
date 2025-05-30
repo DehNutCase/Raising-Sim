@@ -637,10 +637,13 @@ script = ExtResource("20_derlk")
 [node name="Shop" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 layout_mode = 2
+horizontal_scroll_mode = 0
 
-[node name="Shop" type="Control" parent="Ui/MenuPanel/MarginContainer/Shop" groups=["ButtonMenu"]]
-custom_minimum_size = Vector2(0, 600)
+[node name="Shop" type="GridContainer" parent="Ui/MenuPanel/MarginContainer/Shop" groups=["ButtonMenu"]]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 6
 script = ExtResource("22_prvwr")
 
 [node name="Walk" type="GridContainer" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
