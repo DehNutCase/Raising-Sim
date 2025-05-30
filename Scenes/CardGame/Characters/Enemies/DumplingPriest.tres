@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://8mqdacj0ocke" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_war_cry.tres" id="2_8bb87"]
 [ext_resource type="Resource" uid="uid://e87tum06gf4h" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_mass_shield.tres" id="3_e0qpv"]
-[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_basic_attack.tres" id="3_e72v3"]
+[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_tackle.tres" id="3_e72v3"]
 [ext_resource type="Texture2D" uid="uid://by233jvt2t4ro" path="res://Art/It Came From The Swamp/Enemies/f_LunaChime.png" id="4_hjpsu"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_0e1ec"]
 

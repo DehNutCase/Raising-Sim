@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_x2ek6")
-id = "dumpling_basic_attack"
+id = "Dumpling War Cry"
 type = 4
 target = 2
 cost = 1

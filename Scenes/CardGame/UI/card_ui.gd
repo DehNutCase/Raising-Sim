@@ -3,10 +3,8 @@ extends Control
 
 signal reparent_requested(card: CardUI)
 
-@onready var color = $ColorRect
-@onready var panel = $Panel
 @onready var icon = $Frame/Icon
-@onready var cost_label = %CostLabel
+@onready var cost_label: RichTextLabel = %CostLabel
 
 enum States {BASE, DRAGGING, RELEASED, DISCARD}
 @export var current_state:States
@@ -110,10 +108,11 @@ func _set_card(value: CardResource) -> void:
 	if not is_node_ready():
 		await ready
 	card = value
+	cost_label.clear()
 	if card.cost > Player.card_game_player.mana:
-		cost_label.text = "[color=red]" + str(card.cost) + "[/color]"
+		cost_label.append_text("[center][color=red]" + str(card.cost) + "[/color][/center]")
 	else:
-		cost_label.text = "[color=white]" + str(card.cost) + "[/color]"
+		cost_label.append_text("[center][color=white]" + str(card.cost) + "[/color][/center]")
 	icon.texture = card.icon
 	tooltip_text = _create_tooltip()
 	card_text_label.parse_bbcode("[center]" + _create_tooltip() + "[/center]")

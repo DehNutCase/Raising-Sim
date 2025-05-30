@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_4x0dq")
-id = "dumpling_mass_shield"
+id = "Dumpling Mass Shield"
 type = 4
 target = 2
 cost = 1
@@ -14,6 +14,7 @@ effect_amount = 2
 status = ExtResource("3_mlo0x")
 enemy_attack_type = 0
 multi_hit_amount = 0
+animation = ""
 second_target = 2
 second_type = 2
 second_effect_amount = 10

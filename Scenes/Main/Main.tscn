@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Theme" uid="uid://ba5dcdbdgkdgu" path="res://Art/Themes/BorderlessTextTheme.tres" id="22_1jgxs"]
+[ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="22_b128l"]
 [ext_resource type="Script" path="res://Scenes/Main/ClassChangeClassesContainer.gd" id="22_gnm4m"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/Courses.gd" id="23_kxw1b"]
@@ -89,10 +90,6 @@ shader_parameter/wipe_texture = ExtResource("8_waya3")
 font_size = 22
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_snc6d"]
-blend_mode = 4
-light_mode = 1
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
@@ -293,7 +290,7 @@ script = ExtResource("13_tkqcx")
 inventory = NodePath("")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
-material = SubResource("CanvasItemMaterial_snc6d")
+material = ExtResource("22_b128l")
 texture = SubResource("ViewportTexture_ltday")
 centered = false
 offset = Vector2(-350, -700)

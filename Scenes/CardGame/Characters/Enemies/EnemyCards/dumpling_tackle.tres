@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://rx7e3fbshy4s"]
 
-[ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_pwd7t"]
-[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_p17hc"]
+[ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_2rxkf"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_6l6nn"]
 
 [resource]
-script = ExtResource("2_p17hc")
-id = "dumpling_basic_attack"
+script = ExtResource("2_6l6nn")
+id = "Dumpling Tackle"
 type = 1
 target = 1
 cost = 1
@@ -19,4 +19,4 @@ second_effect_amount = 0
 third_target = 0
 third_type = 0
 third_effect_amount = 0
-icon = ExtResource("1_pwd7t")
+icon = ExtResource("1_2rxkf")

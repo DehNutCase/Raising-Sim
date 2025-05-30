@@ -32,6 +32,8 @@ func initialize_stats() -> void:
 	health = max_health
 	#Note, give mao block based on defense every turn
 	max_mana = int(Player.stats.max_mp/150 + 2)
+	if OS.has_feature("debug"):
+		max_mana = 5000
 	mana = max_mana
 	draw_pile = Deck.new()
 	discard = Deck.new()
@@ -95,6 +97,7 @@ func start_turn() -> void:
 		var status = active_status.get("Burn")
 		take_damage(status.stacks)
 		status.stacks = int(status.stacks/2)
+		status.status_display.stack_label.text = str(status.stacks)
 		if status.stacks == 0:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
@@ -103,6 +106,7 @@ func start_turn() -> void:
 func end_turn() -> void:
 	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
 	decay_status(CardGameStatusResource.DecayType.ONE_TURN)
+	update_status_display()
 
 func start_first_turn() -> void:
 	active_status = {}
@@ -216,3 +220,11 @@ func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 				status.status_display.queue_free()
 				active_status.erase(status_name)
 			status.status_display.stack_label.text = str(status.stacks)
+
+func update_status_display() -> void:
+	for status_name in active_status:
+		var status = active_status[status_name]
+		status.status_display.stack_label.text = str(status.stacks)
+		if status.stacks == 0:
+			status.status_display.queue_free()
+			active_status.erase(status)

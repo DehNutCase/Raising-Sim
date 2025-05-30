@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=10 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://dx08w8afv4ias" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_10.tscn" id="2_gnext"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://tumvtntfja44" path="res://Scenes/CardGame/Characters/Mao/Decks/basic_deck.tres" id="5_cipqy"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
+[ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 600)
@@ -108,6 +109,7 @@ grow_vertical = 2
 theme = ExtResource("6_6gfs0")
 
 [node name="CubismTexture" type="TextureRect" parent="CubismContainer"]
+material = ExtResource("7_28t0y")
 layout_mode = 2
 texture = SubResource("ViewportTexture_6gfkx")
 
@@ -117,6 +119,7 @@ disable_3d = true
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(768, 768)
+render_target_update_mode = 4
 
 [connection signal="pressed" from="EndTurnButton" to="." method="end_turn"]
 [connection signal="pressed" from="FleeButton" to="." method="exit_combat"]

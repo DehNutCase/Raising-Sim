@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://ksf4v63jppq2"]
 
 [ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="1_7fg20"]
-[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_basic_attack.tres" id="1_22u1m"]
+[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_tackle.tres" id="1_22u1m"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="2_1yo0a"]
-[ext_resource type="Resource" uid="uid://t35mloke521s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_basic_block.tres" id="2_faoq3"]
+[ext_resource type="Resource" uid="uid://t35mloke521s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_block.tres" id="2_faoq3"]
 [ext_resource type="Resource" uid="uid://8mqdacj0ocke" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_war_cry.tres" id="3_lq14f"]
 
 [resource]

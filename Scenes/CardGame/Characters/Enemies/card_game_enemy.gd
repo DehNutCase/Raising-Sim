@@ -135,6 +135,7 @@ func apply_status(status_resource: CardGameStatusResource, effect_amount: int, u
 		status_display.status_texture.texture = status.status_icon
 		status_display.stack_label.text = str(active_status[status_resource.status_name].stacks)
 		status_display.tooltip_text = status.status_tooltip
+	update_status_display()
 
 func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 	for status_name in active_status:
@@ -154,16 +155,16 @@ func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 				status.status_display.queue_free()
 				active_status.erase(status_name)
 			status.status_display.stack_label.text = str(status.stacks)
+	update_status_display()
 			
 func do_turn() -> void:
 	if active_status.get("Burn"):
 		var status = active_status.get("Burn")
-		take_damage(status.stacks)
+		await take_damage(status.stacks)
 		status.stacks = int(status.stacks/2)
-		if status.stacks == 0:
-			status.status_display.queue_free()
-			active_status.erase("Burn")
+		update_status_display()
 	block = 0
+	
 	if health <= 0:
 		return
 	
@@ -172,3 +173,10 @@ func do_turn() -> void:
 	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
 	decay_status(CardGameStatusResource.DecayType.ONE_TURN)
 	
+func update_status_display() -> void:
+	for status_name in active_status:
+		var status = active_status[status_name]
+		status.status_display.stack_label.text = str(status.stacks)
+		if status.stacks == 0:
+			status.status_display.queue_free()
+			active_status.erase(status)
