@@ -4,6 +4,7 @@ extends Control
 @onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
 @onready var background = $Ui/PlayerControl/Player/BackgroundInventory
 @onready var skills = $Ui/PlayerControl/Player/SkillInventory
+@onready var inventory_lists = [inventory, background, skills]
 @onready var dialogic_viewport = $Ui/DialogicPanel/DialogicViewportContainer/DialogicViewport
 @onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
 @onready var dialogic_panel = $Ui/DialogicPanel
@@ -123,12 +124,18 @@ func _ready():
 		#day = 1
 		pass
 	#TODO, end dev use section
+	#update_buttons is too overload, divide and only run when it matters
+	get_tree().call_group("ButtonMenu", "update_buttons")
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if menu_panel.visible:
 			_on_close_button_pressed()
 			get_viewport().set_input_as_handled()
+		for item_list in inventory_lists:
+			if item_list.visible:
+				item_list.hide()
+				get_viewport().set_input_as_handled()
 
 #TODO, process day should now call the schedule and then play the end of day scene
 #(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
@@ -494,6 +501,7 @@ func buy_item(item: String, price: int):
 	else:
 		display_toast("Not enough gold!", "top", "center")
 	display_stats()
+	%Shop.update_buttons()
 
 
 func _on_action(button):
@@ -650,7 +658,6 @@ func display_stats() -> void:
 	get_tree().call_group("StatBars", "display_stats")
 	#TODO, make sure to only update buttons when something needs to be displayed
 	#Performance issues
-	get_tree().call_group("ButtonMenu", "update_buttons")
 	get_tree().call_group("ActionButton", "update_difficulty_color")
 	get_tree().call_group("Job_Button", "update_difficulty_color")
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")

@@ -3,9 +3,8 @@ extends ItemList
 @onready var plan_label = $PlanLabel
 
 func _ready():
-	#Due to loading order, this doesn't work since Player is loaded after this is ready
-	display_actions()
-
+	visibility_changed.connect(update_buttons)
+	
 #TODO, add tooltip
 #TODO, last clicked description should be displayed, add course with different button
 func add_action(action_type:String, action_name:String):

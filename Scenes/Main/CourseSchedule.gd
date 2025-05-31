@@ -2,6 +2,7 @@ extends ItemList
 
 func _ready():
 	display_courses()
+	visibility_changed.connect(update_buttons)
 
 #Need to use item_count and manually iterate through list to search
 #TODO, add tooltip and current progress

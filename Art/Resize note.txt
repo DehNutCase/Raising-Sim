@@ -1,1 +1,4 @@
 magick mogrify -resize 128x128 -quality 100 *.png
+
+circle crop:
+magick convert *.jpg -gravity center ( -size 1920x1080 xc:black -fill white -draw "roundrectangle 0 0 1920 1080 1920 1080" -alpha copy ) -compose copyopacity -composite output.png

@@ -4,7 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	visibility_changed.connect(update_buttons)
 
 func update_buttons():
 	for node in get_children():
