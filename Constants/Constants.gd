@@ -1996,6 +1996,7 @@ const tower_levels = [
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_MinionsB.png',
 		'description': "Two Teru Warriors and a Skeleton Assassin. Assassin is an advanced class with high agility and damage. Due to being an advanced class, their stats are high across the board. It's not recommended to fight an advanced class as a non-combat class.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_11.tscn",
 	},
 	{
 		'level': 12,
@@ -2581,4 +2582,10 @@ const missions = {
 			},
 		]
 	},
+}
+
+const decks = {
+	"Brick Hand Accident": "res://Scenes/CardGame/Characters/Mao/Decks/brick_hand_accident.tres",
+	"New Beginning": "res://Scenes/CardGame/Characters/Mao/Decks/new_beginning.tres",
+	"Prestidigitation": "res://Scenes/CardGame/Characters/Mao/Decks/prestidigitation.tres",
 }

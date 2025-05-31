@@ -8,9 +8,9 @@ var max_mana: int = 2
 var mana: int : set = set_mana
 var cards_per_turn: int = 2
 var max_hand_size: int = 2
-@export var deck: Deck
-var draw_pile: Deck = Deck.new()
-var discard: Deck = Deck.new()
+@export var deck: Array[CardResource]
+var draw_pile: Array[CardResource] = []
+var discard: Array[CardResource] = []
 
 var art = load("res://Characters/Mao/Images/Portrait/exp_01_000.png")
 
@@ -35,8 +35,8 @@ func initialize_stats() -> void:
 	if OS.has_feature("debug") and false:
 		max_mana = 5000
 	mana = max_mana
-	draw_pile = Deck.new()
-	discard = Deck.new()
+	draw_pile = []
+	discard = []
 	
 	#if Player.card_game_deck:
 		#deck = Player.card_game_deck #card_game_deck is Array[CardResource]

@@ -109,7 +109,7 @@ func _set_card(value: CardResource) -> void:
 		await ready
 	card = value
 	cost_label.clear()
-	if card.cost > Player.card_game_player.mana:
+	if Player.card_game_player and card.cost > Player.card_game_player.mana:
 		cost_label.append_text("[center][color=red]" + str(card.cost) + "[/color][/center]")
 	else:
 		cost_label.append_text("[center][color=white]" + str(card.cost) + "[/color][/center]")
@@ -251,6 +251,6 @@ func _make_custom_tooltip(for_text):
 	return Player.make_custom_tooltip(for_text)
 
 func discard() -> void:
-	Player.card_game_player.discard.cards.append(card)
+	Player.card_game_player.discard.append(card)
 	enter_state(States.DISCARD)
 	queue_free()

@@ -11,11 +11,8 @@ extends Control
 @onready var day_label = $Ui/Calendar/VBoxContainer/DayLabel
 
 @onready var menu_panel = $Ui/MenuPanel
-@onready var animation = $Ui/MenuPanel/MarginContainer/Animation
-@onready var rest = $Ui/MenuPanel/MarginContainer/Rest
 @onready var lessons = $Ui/MenuPanel/MarginContainer/Lessons
 @onready var schedule = $Ui/MenuPanel/MarginContainer/Schedule
-@onready var work = $Ui/MenuPanel/MarginContainer/Work
 @onready var shop = $Ui/MenuPanel/MarginContainer/Shop
 @onready var walk = $Ui/MenuPanel/MarginContainer/Walk
 @onready var tower = $Ui/MenuPanel/MarginContainer/Tower
@@ -30,7 +27,7 @@ extends Control
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
-@onready var menus = [work, lessons, rest, shop, walk, stats, tower, class_change, story, schedule]
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons]
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -111,20 +108,27 @@ func _ready():
 			Dialogic.start("ExitPass")
 		display_stats()
 	#TODO, delete below, dev use only
-	#Player.active_mission = ""
-	#Player.max_walks = 100
-	#Player.tower_level = 0
-	#Player.skill_inventory.create_and_add_item("meteor")
-	#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
-	#Player.inventory.remove_item(item)
-	#Player.stats.gold = 0
-	#Player.stats.art = 500
-	#Player.stats.skill = 0
-	#Dialogic.start("Housework1")
-	#Player.event_flags['mission_information_event'] = true
-	#Player.card_game_deck = []
-	#day = 1
+	if OS.has_feature("debug"):
+		#Player.active_mission = ""
+		#Player.max_walks = 100
+		#Player.tower_level = 0
+		#Player.skill_inventory.create_and_add_item("meteor")
+		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
+		#Player.inventory.remove_item(item)
+		#Player.stats.gold = 0
+		#Player.stats.art = 500
+		#Player.stats.skill = 0
+		#Dialogic.start("Housework1")
+		#Player.event_flags['mission_information_event'] = true
+		#day = 1
+		pass
 	#TODO, end dev use section
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if menu_panel.visible:
+			_on_close_button_pressed()
+			get_viewport().set_input_as_handled()
 
 #TODO, process day should now call the schedule and then play the end of day scene
 #(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
@@ -284,7 +288,6 @@ func background_transition(time:String = "morning"):
 func do_job(job_name: String) :
 	var job_stats = Constants.jobs[job_name]["stats"]
 	var rng = RandomNumberGenerator.new()
-	animation.stat_bars.load_stat_bars(job_name)
 	if (JobButton.get_success_chance(job_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(job_stats)
@@ -293,16 +296,11 @@ func do_job(job_name: String) :
 			if (Player.proficiencies[job_name] >= Constants.jobs[job_name].skill.proficiency_required):
 				if (!Player.skill_inventory.get_item_with_prototype_id(Constants.jobs[job_name].skill.id)):
 					Player.skill_inventory.create_and_add_item(Constants.jobs[job_name].skill.id)
-		animation.animation.show()
-		animation.animation.play("Run")
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", false)
 		if "stress" in job_stats:
 			process_stats({"stress": job_stats["stress"]})
 		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
-		animation.animation.show()
-		animation.animation.play("Sleep")
-	work.hide()
 	#process_day()
 	
 func do_lesson(lesson_name: String) :
@@ -312,7 +310,6 @@ func do_lesson(lesson_name: String) :
 	if (cost > Player.stats["gold"]):
 		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 		return
-	animation.stat_bars.load_stat_bars(lesson_name, "lessons")
 	var rng = RandomNumberGenerator.new()
 	if (LessonButton.get_success_chance(lesson_name) > rng.randf() * 100):
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
@@ -323,15 +320,11 @@ func do_lesson(lesson_name: String) :
 			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
 				if (!Player.skill_inventory.get_item_with_prototype_id(Constants.lessons[lesson_name].skill.id)):
 					Player.skill_inventory.create_and_add_item(Constants.lessons[lesson_name].skill.id)
-		animation.animation.show()
-		animation.animation.play("Run")
 	else:
 		get_tree().call_group("Live2DPlayer", "job_motion", false)
 		if "stress" in lesson_stats:
 			process_stats({"stress": lesson_stats["stress"], "gold": lesson_stats["gold"]})
 		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain/2
-		animation.animation.show()
-		animation.animation.play("Sleep")
 	lessons.hide()
 	#process_day()
 
@@ -437,15 +430,11 @@ func course_button_click(course_name:String, lesson_name:String):
 func do_rest(rest_name: String) -> void:
 	var rest_stats = Constants.rests[rest_name]["stats"]
 	var cost = 0
-	animation.stat_bars.load_stat_bars(rest_name, "rests")
 	if "gold" in rest_stats: cost = -rest_stats.gold
 	if ( cost > Player.stats["gold"]):
 		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 		return
 	process_stats(rest_stats)
-	rest.visible = false
-	animation.animation.visible = true
-	animation.animation.play("Sleep")
 	#process_day()
 	
 func do_walk(walk_name: String) -> void:
@@ -463,8 +452,6 @@ func do_walk(walk_name: String) -> void:
 		var outcome = outcomes[rand_weighted(weights)]
 		var walk_stats = outcome.stats
 		walk.visible = false
-		animation.animation.visible = true
-		animation.animation.play("Run")
 		Player.remaining_walks -= 1
 		#TODO, double check if we should always close after walks
 		_on_close_button_pressed()
@@ -522,12 +509,8 @@ func _on_action(button):
 	match button.name:
 		"Schedule":
 			schedule.show()
-		"Work":
-			work.show()
 		"Lessons":
 			lessons.show()
-		"Rest":
-			rest.show()
 		"Inventory":
 			inventory.visible = !inventory.visible
 			menu_panel.visible = true
@@ -602,8 +585,6 @@ func _on_close_button_pressed():
 	menu_panel.visible = false
 	for menu in menus:
 		menu.visible = false
-	animation.stat_bars.remove_stat_bars()
-	animation.animation.visible = false
 	
 
 func display_toast(message, gravity = "bottom", direction = "center", icon = null):
@@ -667,6 +648,8 @@ func display_stats() -> void:
 	#TODO, change day label to call group instead
 	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
+	#TODO, make sure to only update buttons when something needs to be displayed
+	#Performance issues
 	get_tree().call_group("ButtonMenu", "update_buttons")
 	get_tree().call_group("ActionButton", "update_difficulty_color")
 	get_tree().call_group("Job_Button", "update_difficulty_color")
@@ -690,9 +673,7 @@ func display_stats() -> void:
 		$"LeftMenuContainer/MenuPanel/VBoxContainer/Tower".hide()
 		#Hide ways to advance day after demo ends
 		if day > 2 * Constants.constants.days_in_month:
-			$"RightMenuContainer/MenuPanel/VBoxContainer/Work".hide()
-			$"RightMenuContainer/MenuPanel/VBoxContainer/Lessons".hide()
-			$"RightMenuContainer/MenuPanel/VBoxContainer/Rest".hide()
+			$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()
 			$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
 	else:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".show()
@@ -784,8 +765,7 @@ func _on_inventory_item_added(item):
 		
 	if item.get_property("walks", 0):
 		Player.max_walks += int(item.get_property("walks", 0))
-		
-	get_tree().call_group("ButtonMenu", "update_buttons")
+
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:
 	var weight_sum = 0

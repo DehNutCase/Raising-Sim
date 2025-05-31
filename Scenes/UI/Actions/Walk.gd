@@ -5,7 +5,7 @@ var buttons = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_buttons()
+	pass
 
 func update_buttons():
 	for key in locations.keys():

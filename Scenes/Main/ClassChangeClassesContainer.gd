@@ -4,7 +4,7 @@ var player_classes = Constants.player_classes
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_buttons()
+	pass
 	
 func update_buttons():
 	for tab in get_children():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=78 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -13,19 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://bf4sprgco750e" path="res://Art/UI/mandinhart/Menu Buttons/Grass Menu Buttons/Grass-Buttons-setting.png" id="10_4klca"]
 [ext_resource type="Texture2D" uid="uid://bmp14gxl6mhhd" path="res://Art/UI/mandinhart/Menu Buttons/Grass Menu Buttons/Pressed/Grass-Buttons-pressed-setting.png" id="11_8ubdb"]
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="11_rjsjm"]
-[ext_resource type="Script" path="res://Scenes/UI/Actions/Rest.gd" id="12_ktm7g"]
 [ext_resource type="Texture2D" uid="uid://cygfv68ocq4in" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Sound.png" id="12_mc7v1"]
 [ext_resource type="Script" path="res://Scenes/Main/VolumeButton.gd" id="12_n64mh"]
-[ext_resource type="Script" path="res://Scenes/UI/Actions/Lessons.gd" id="12_sb63u"]
 [ext_resource type="Script" path="res://Scenes/Main/BackgroundInventory.gd" id="12_thnkb"]
 [ext_resource type="Script" path="res://Scenes/Main/SkillInventory.gd" id="13_tkqcx"]
 [ext_resource type="Texture2D" uid="uid://wvv47jduk4cj" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_SoundOff.png" id="13_u4gi8"]
 [ext_resource type="PackedScene" uid="uid://cw5i62jdfvmqq" path="res://Scenes/UI/Calendar/Calendar.tscn" id="15_pdmo5"]
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="16_3c6c7"]
-[ext_resource type="PackedScene" uid="uid://dwiyx4g8dr4ik" path="res://Scenes/UI/Actions/Animation.tscn" id="17_5xmvy"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
 [ext_resource type="VideoStream" path="res://Characters/Mao/Videos/special_01.ogv" id="18_q463u"]
-[ext_resource type="Script" path="res://Scenes/UI/Actions/Work.gd" id="20_derlk"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Theme" uid="uid://ba5dcdbdgkdgu" path="res://Art/Themes/BorderlessTextTheme.tres" id="22_1jgxs"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="22_b128l"]
@@ -47,6 +43,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/MissionsContainer.gd" id="30_uj6nt"]
 [ext_resource type="Script" path="res://Scenes/Main/Daily Schedule.gd" id="31_1x7np"]
 [ext_resource type="Script" path="res://Scenes/Main/ActionDescription.gd" id="32_lakgr"]
+[ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
 [ext_resource type="Texture2D" uid="uid://ftrly7krq5wf" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_ShoppingCart.png" id="45_03wx0"]
 [ext_resource type="Texture2D" uid="uid://dkqjjjb8c2ysi" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Book.png" id="45_34myw"]
 [ext_resource type="Texture2D" uid="uid://dd2eidg8uwsw2" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Book.png" id="46_oupw1"]
@@ -111,7 +108,6 @@ theme = ExtResource("1_tshxl")
 script = ExtResource("1_bqq6y")
 
 [node name="FPS" type="Label" parent="."]
-visible = false
 texture_filter = 4
 layout_mode = 0
 offset_left = 1450.0
@@ -506,16 +502,6 @@ layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="Animation" parent="Ui/MenuPanel/MarginContainer" instance=ExtResource("17_5xmvy")]
-
-[node name="Rest" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
-visible = false
-script = ExtResource("12_ktm7g")
-
-[node name="LessonsOld" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
-visible = false
-script = ExtResource("12_sb63u")
-
 [node name="Lessons" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 700)
@@ -629,10 +615,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Start Day"
-
-[node name="Work" type="Node2D" parent="Ui/MenuPanel/MarginContainer" groups=["ButtonMenu"]]
-visible = false
-script = ExtResource("20_derlk")
 
 [node name="Shop" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
@@ -783,6 +765,19 @@ script = ExtResource("30_uj6nt")
 clip_contents = true
 layout_mode = 2
 
+[node name="DeckContainer" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Deck" type="GridContainer" parent="Ui/MenuPanel/MarginContainer/DeckContainer" groups=["ButtonMenu"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 6
+script = ExtResource("44_3cuex")
+
 [node name="CloseButton" type="Button" parent="Ui/MenuPanel"]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
@@ -928,20 +923,6 @@ size_flags_vertical = 3
 texture_normal = ExtResource("55_36a5c")
 texture_pressed = ExtResource("56_n3yma")
 stretch_mode = 3
-
-[node name="Work" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Work"
-
-[node name="Rest" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Rest"
 
 [node name="Inventory" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2

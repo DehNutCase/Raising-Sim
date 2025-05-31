@@ -4,7 +4,7 @@ var missions = Constants.missions
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_buttons()
+	pass
 	
 #TODO, finish this---copied from class button rn
 func update_buttons():

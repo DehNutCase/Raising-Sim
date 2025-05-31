@@ -30,8 +30,8 @@ func _on_card_ui_reparent_requested(card):
 
 func start_battle() -> void:
 	card_game_player.draw_pile = card_game_player.deck.duplicate(true)
-	card_game_player.draw_pile.cards.shuffle()
-	card_game_player.discard = Deck.new()
+	card_game_player.draw_pile.shuffle()
+	card_game_player.discard = []
 	card_game_player.start_first_turn()
 	state = states.PLAYER_TURN
 	start_turn()
@@ -73,7 +73,7 @@ func add_card(card: CardResource) -> void:
 		effective_hand_size = effective_hand_size + Player.card_game_player.active_status.get("Scholarship").stacks
 	
 	if hand.get_child_count() >= effective_hand_size:
-		card_game_player.discard.cards.append(card)
+		card_game_player.discard.append(card)
 		return
 	var new_card:CardUI = load("res://Scenes/CardGame/UI/card_ui.tscn").instantiate()
 	new_card.card = card
@@ -81,15 +81,15 @@ func add_card(card: CardResource) -> void:
 	new_card.reparent_requested.connect(_on_card_ui_reparent_requested)
 
 func draw_card() -> void:
-	if card_game_player.draw_pile.cards:
-		add_card(card_game_player.draw_pile.draw_card())
+	if card_game_player.draw_pile:
+		add_card(card_game_player.draw_pile.pop_back())
 		await get_tree().create_timer(DRAW_INTERVAL).timeout
 	else:
-		if card_game_player.discard.cards:
-			card_game_player.draw_pile.cards = card_game_player.discard.cards
-			card_game_player.draw_pile.cards.shuffle()
-			card_game_player.discard.cards = []
-			add_card(card_game_player.draw_pile.draw_card())
+		if card_game_player.discard:
+			card_game_player.draw_pile = card_game_player.discard
+			card_game_player.draw_pile.shuffle()
+			card_game_player.discard = []
+			add_card(card_game_player.pop_back())
 			await get_tree().create_timer(DRAW_INTERVAL).timeout
 	
 func draw_cards(amount: int) -> void:

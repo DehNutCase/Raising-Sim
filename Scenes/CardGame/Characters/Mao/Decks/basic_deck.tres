@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=4 format=3 uid="uid://tumvtntfja44"]
-
-[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="1_2yy5b"]
-[ext_resource type="Resource" uid="uid://k2gtw81xb7ta" path="res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres" id="1_na133"]
-[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_tackle.tres" id="2_h2dhl"]
-
-[resource]
-script = ExtResource("1_2yy5b")
-cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_na133"), ExtResource("2_h2dhl")])
