@@ -20,15 +20,20 @@ extends Control
 @onready var class_change = $"Ui/MenuPanel/MarginContainer/Class Change"
 @onready var story = $"Ui/MenuPanel/MarginContainer/Story"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
+@onready var spellbook = $Ui/MenuPanel/MarginContainer/DeckContainer
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
 @onready var buttons = $LeftMenuContainer/MenuPanel/VBoxContainer
 @onready var buttons2 = $RightMenuContainer/MenuPanel/VBoxContainer
+@onready var buttons3 = $BottomMenuContainer/HBoxContainer
+
+@onready var button_containers = [buttons, buttons2, buttons3]
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
-@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons]
+#TODO, add spellbook menu
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook]
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -74,10 +79,10 @@ func _ready():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	for inventory_name in Player.inventories:
 		Player[inventory_name].item_added.connect(_on_inventory_item_added)
-	for button in buttons.get_children():
-		button.pressed.connect(_on_action.bind(button))
-	for button in buttons2.get_children():
-		button.pressed.connect(_on_action.bind(button))
+		
+	for button_container in button_containers:
+		for button in button_container.get_children():
+			button.pressed.connect(_on_action.bind(button))
 	get_tree().call_group("MuteButton", "_update")
 	display_stats()
 	self.show()
@@ -517,6 +522,8 @@ func _on_action(button):
 	match button.name:
 		"Schedule":
 			schedule.show()
+		"Spellbook":
+			spellbook.show()
 		"Lessons":
 			lessons.show()
 		"Inventory":

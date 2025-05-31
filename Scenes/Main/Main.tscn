@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=80 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -68,6 +68,8 @@
 [ext_resource type="Texture2D" uid="uid://vdfclm4jhwe7" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_HamburgerMenu.png" id="60_qmxeb"]
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="61_0yijj"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="62_7ii8w"]
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
+[ext_resource type="Texture2D" uid="uid://c1tox7j3h5uef" path="res://Art/Mori no oku no kakurezato/CardGame/book_01.png" id="68_tte6g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -103,7 +105,11 @@ viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 
 [node name="Main" type="Control" groups=["Main"]]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_tshxl")
 script = ExtResource("1_bqq6y")
 
@@ -464,6 +470,7 @@ size = Vector2i(700, 700)
 render_target_update_mode = 4
 
 [node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
+visible = false
 material = ExtResource("16_3c6c7")
 clip_contents = true
 anchors_preset = 7
@@ -769,6 +776,7 @@ layout_mode = 2
 [node name="DeckContainer" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
 unique_name_in_owner = true
 visible = false
+clip_contents = false
 layout_mode = 2
 horizontal_scroll_mode = 0
 
@@ -819,9 +827,8 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 200.0
+offset_top = -700.0
 offset_right = 140.0
-offset_bottom = 900.0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -883,11 +890,16 @@ texture_pressed = ExtResource("56_7gqg0")
 stretch_mode = 3
 
 [node name="RightMenuContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 1460.0
-offset_top = 200.0
-offset_right = 1600.0
-offset_bottom = 900.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -700.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 metadata/_edit_lock_ = true
@@ -963,6 +975,35 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Thanks for 
 playing"
+
+[node name="BottomMenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -50.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomMenuContainer"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Spellbook" type="Button" parent="BottomMenuContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("67_exeng")
+text = "Spellbook"
+icon = ExtResource("68_tte6g")
+icon_alignment = 1
+expand_icon = true
 
 [node name="PauseMenuController" type="Node" parent="."]
 script = ExtResource("28_3ijv8")
