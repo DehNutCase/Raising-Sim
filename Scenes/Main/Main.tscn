@@ -112,6 +112,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_tshxl")
 script = ExtResource("1_bqq6y")
+metadata/_edit_lock_ = true
 
 [node name="FPS" type="Label" parent="."]
 texture_filter = 4
@@ -296,6 +297,7 @@ material = ExtResource("22_b128l")
 texture = SubResource("ViewportTexture_ltday")
 centered = false
 offset = Vector2(-350, -700)
+metadata/_edit_lock_ = true
 
 [node name="PlayerModel" type="GDCubismUserModel" parent="Ui/PlayerControl/Player/PlayerSprite"]
 assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
@@ -470,7 +472,6 @@ size = Vector2i(700, 700)
 render_target_update_mode = 4
 
 [node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
-visible = false
 material = ExtResource("16_3c6c7")
 clip_contents = true
 anchors_preset = 7
@@ -773,14 +774,13 @@ script = ExtResource("30_uj6nt")
 clip_contents = true
 layout_mode = 2
 
-[node name="DeckContainer" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
-unique_name_in_owner = true
+[node name="Spellbook" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 clip_contents = false
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="Deck" type="GridContainer" parent="Ui/MenuPanel/MarginContainer/DeckContainer" groups=["ButtonMenu"]]
+[node name="Deck" type="GridContainer" parent="Ui/MenuPanel/MarginContainer/Spellbook" groups=["ButtonMenu"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

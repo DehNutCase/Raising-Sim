@@ -119,14 +119,19 @@ text = "Back"
 
 [node name="ConfirmRestart" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
+position = Vector2i(0, 36)
+size = Vector2i(329, 115)
 dialog_text = "Restart the game?"
 
 [node name="ConfirmMainMenu" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
+size = Vector2i(367, 100)
 dialog_text = "Go back to main menu?"
 
 [node name="ConfirmExit" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
+size = Vector2i(350, 125)
+min_size = Vector2i(350, 70)
 dialog_text = "Quit the game?"
 
 [connection signal="pressed" from="MenuContainer/VBoxContainer/MenuButtons/ResumeButton" to="." method="_on_resume_button_pressed"]

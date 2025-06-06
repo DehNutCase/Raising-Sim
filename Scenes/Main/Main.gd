@@ -20,7 +20,7 @@ extends Control
 @onready var class_change = $"Ui/MenuPanel/MarginContainer/Class Change"
 @onready var story = $"Ui/MenuPanel/MarginContainer/Story"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
-@onready var spellbook = $Ui/MenuPanel/MarginContainer/DeckContainer
+@onready var spellbook = $Ui/MenuPanel/MarginContainer/Spellbook
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
@@ -129,7 +129,6 @@ func _ready():
 		#day = 1
 		pass
 	#TODO, end dev use section
-	#update_buttons is too overload, divide and only run when it matters
 	get_tree().call_group("ButtonMenu", "update_buttons")
 
 func _input(event):
@@ -990,3 +989,7 @@ func play_bedtime_event():
 		Dialogic.start("BedtimeFirst")
 		await Dialogic.timeline_ended
 		await(get_tree().create_timer(.5).timeout)
+
+func _on_card_button_pressed(card: CardResource):
+	print(card)
+	print(card.id)

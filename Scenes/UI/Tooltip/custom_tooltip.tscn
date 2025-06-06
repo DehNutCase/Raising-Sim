@@ -3,6 +3,7 @@
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 600.0
 offset_bottom = 3.0
+mouse_filter = 2
 
 [node name="CustomTooltip" type="RichTextLabel" parent="."]
 clip_contents = false

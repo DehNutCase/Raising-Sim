@@ -7,10 +7,22 @@
 [node name="CardButton" type="MarginContainer"]
 offset_right = 12.0
 offset_bottom = 12.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("1_3dok3")
+metadata/_edit_lock_ = true
 
 [node name="CardUI" parent="." instance=ExtResource("1_q0de3")]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 card = ExtResource("2_qbpii")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

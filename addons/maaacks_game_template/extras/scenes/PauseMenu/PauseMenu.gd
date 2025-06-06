@@ -20,7 +20,7 @@ func open_options_menu():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if popup_open != null:
+		if popup_open and popup_open.visible:
 			close_popup()
 		elif %SubMenuContainer.visible:
 			close_options_menu()

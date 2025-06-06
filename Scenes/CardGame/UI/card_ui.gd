@@ -3,7 +3,7 @@ extends Control
 
 signal reparent_requested(card: CardUI)
 
-@onready var icon = $Frame/Icon
+@onready var icon = %CardIcon
 @onready var cost_label: RichTextLabel = %CostLabel
 
 enum States {BASE, DRAGGING, RELEASED, DISCARD}
