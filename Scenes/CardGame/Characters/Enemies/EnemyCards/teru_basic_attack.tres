@@ -14,6 +14,7 @@ effect_amount = 5
 enemy_attack_type = 0
 multi_hit_amount = 3
 animation = ""
+price = 0
 second_target = 0
 second_type = 4
 second_effect_amount = 1

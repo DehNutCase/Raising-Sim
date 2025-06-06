@@ -89,7 +89,7 @@ func draw_card() -> void:
 			card_game_player.draw_pile = card_game_player.discard
 			card_game_player.draw_pile.shuffle()
 			card_game_player.discard = []
-			add_card(card_game_player.pop_back())
+			add_card(card_game_player.draw_pile.pop_back())
 			await get_tree().create_timer(DRAW_INTERVAL).timeout
 	
 func draw_cards(amount: int) -> void:

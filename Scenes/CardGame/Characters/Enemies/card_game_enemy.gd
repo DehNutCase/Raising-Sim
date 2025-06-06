@@ -81,7 +81,7 @@ func set_intent() -> void:
 		printerr("set_intent error")
 
 func perform_intent() -> void:
-	if intent.type == intent.Type.ATTACK:
+	if intent.type == intent.Type.ATTACK or intent.type == intent.Type.ADD_CARD:
 		if intent.enemy_attack_type == intent.EnemyAttackType.RANGED:
 			var tween := create_tween().set_trans(Tween.TRANS_QUINT)
 			var start: Vector2 = %AttackSprite.global_position

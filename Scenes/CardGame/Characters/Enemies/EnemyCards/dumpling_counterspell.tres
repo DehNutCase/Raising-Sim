@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bx005gylvxbuo"]
+
+[ext_resource type="Texture2D" uid="uid://o4i0au4b7b12" path="res://Art/Mori no oku no kakurezato/CardGame/darkness.png" id="1_1oht3"]
+[ext_resource type="Resource" uid="uid://cy13dsg53jjf0" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/spell_residue.tres" id="1_la44g"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_rhui6"]
+
+[resource]
+script = ExtResource("2_rhui6")
+id = "Dumpling Counterspell"
+type = 8
+target = 0
+cost = 0
+effect_amount = 1
+enemy_attack_type = 1
+multi_hit_amount = 0
+animation = ""
+price = 0
+card_to_add = ExtResource("1_la44g")
+second_target = 0
+second_type = 0
+second_effect_amount = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_1oht3")

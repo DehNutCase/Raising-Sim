@@ -1,15 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=10 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
-[ext_resource type="PackedScene" uid="uid://ccequwyn7p8ww" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_11.tscn" id="2_frg7o"]
+[ext_resource type="PackedScene" uid="uid://vh1hidhq371j" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_2.tscn" id="2_egvse"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
-[ext_resource type="Resource" uid="uid://dbwe4auj0drc4" path="res://Scenes/CardGame/Characters/Mao/Cards/utopia.tres" id="5_wiedq"]
+[ext_resource type="Resource" uid="uid://bx005gylvxbuo" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_counterspell.tres" id="5_r08e4"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
-[ext_resource type="Resource" uid="uid://b5pccptmd8sa2" path="res://Scenes/CardGame/Characters/Mao/Cards/ritual.tres" id="6_6ij5e"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
-[ext_resource type="Resource" uid="uid://eapobtksge88" path="res://Scenes/CardGame/Characters/Mao/Cards/defensive_casting.tres" id="7_rklqk"]
-[ext_resource type="Resource" uid="uid://b7u56q8r3yki7" path="res://Scenes/CardGame/Characters/Mao/Cards/explosion.tres" id="8_vt3o1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 600)
@@ -25,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b07j")
-card_game_level = ExtResource("2_frg7o")
+card_game_level = ExtResource("2_egvse")
 metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -63,7 +60,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_wiedq"), ExtResource("6_6ij5e"), ExtResource("6_6ij5e"), ExtResource("6_6ij5e"), ExtResource("7_rklqk"), ExtResource("7_rklqk"), ExtResource("7_rklqk"), ExtResource("8_vt3o1"), ExtResource("8_vt3o1")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_r08e4"), ExtResource("5_r08e4")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]

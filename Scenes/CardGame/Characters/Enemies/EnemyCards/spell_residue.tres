@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://cy13dsg53jjf0"]
+
+[ext_resource type="Texture2D" uid="uid://o4i0au4b7b12" path="res://Art/Mori no oku no kakurezato/CardGame/darkness.png" id="1_ombk2"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_hgwbw"]
+
+[resource]
+script = ExtResource("2_hgwbw")
+id = "Spell Residue"
+type = 3
+target = 0
+cost = 2
+effect_amount = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 0
+second_target = 0
+second_type = 0
+second_effect_amount = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_ombk2")

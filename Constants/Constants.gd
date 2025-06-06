@@ -1828,7 +1828,7 @@ const tower_levels = [
 			},
 		],
 		'image': "res://Art/It Came From The Swamp/Enemies/f_candle.png",
-		'description': "A Dumpling Mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick. Don't ask where the stick came from.\n\nDue to its burn effect, Fireball does more damage than you might expect, so keep your guard up.",
+		'description': "A Dumpling Mage. Good with Fireballs, occasionally buffs, sometimes smacks you with a stick. Don't ask where the stick came from.\n\nMages tend to know a counterspell or two, which can gunk up your spellbook. Due to its burn effect, Fireball does more damage than you might expect, so keep your guard up.",
 		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_2.tscn",
 	},
 	{

@@ -15,6 +15,7 @@ status = ExtResource("3_70np4")
 enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
+price = 0
 second_target = 0
 second_type = 2
 second_effect_amount = 10

@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://cu6q8by0ixsc2"]
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=7 format=3 uid="uid://cu6q8by0ixsc2"]
 
 [ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_tackle.tres" id="1_o7mhc"]
 [ext_resource type="Resource" uid="uid://jqp1l2fmdip1" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_fireball.tres" id="1_rcqog"]
 [ext_resource type="Texture2D" uid="uid://c3cnll5gacj8l" path="res://Art/It Came From The Swamp/Enemies/f_candle.png" id="1_v4e64"]
 [ext_resource type="Resource" uid="uid://8mqdacj0ocke" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_war_cry.tres" id="3_4hri1"]
+[ext_resource type="Resource" uid="uid://bx005gylvxbuo" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_counterspell.tres" id="4_mh1lv"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_lnnd4"]
 
 [resource]
 script = ExtResource("5_lnnd4")
-actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_rcqog"), ExtResource("3_4hri1"), ExtResource("1_o7mhc")])
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_rcqog"), ExtResource("3_4hri1"), ExtResource("1_o7mhc"), ExtResource("4_mh1lv")])
 max_health = 35
 art = ExtResource("1_v4e64")

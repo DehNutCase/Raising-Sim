@@ -1,7 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD}
+enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 
@@ -17,6 +17,7 @@ enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 @export var multi_hit_amount: int
 @export_multiline var animation: String
 @export var price: int
+@export var card_to_add: CardResource
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target
@@ -133,6 +134,8 @@ func apply_effects(targets: Array[Node], user) -> void:
 			pass #POWER is currently only used to make sure a card is one use only
 		Type.GOLD:
 			apply_gold(targets, effect_amount, user)
+		Type.ADD_CARD:
+			apply_add_card(targets, effect_amount, user)
 		_:
 			printerr("Unmatched effect type for apply_effects")
 
@@ -152,6 +155,8 @@ func apply_second_effects(targets: Array[Node], user) -> void:
 			pass
 		Type.GOLD:
 			apply_gold(targets, second_effect_amount, user)
+		Type.ADD_CARD:
+			apply_add_card(targets, second_effect_amount, user)
 		_:
 			printerr("Unmatched effect second_type for apply_effects")
 
@@ -171,6 +176,8 @@ func apply_third_effects(targets: Array[Node], user) -> void:
 			pass
 		Type.GOLD:
 			apply_gold(targets, third_effect_amount, user)
+		Type.ADD_CARD:
+			apply_add_card(targets, third_effect_amount, user)
 		_:
 			printerr("Unmatched effect third_type for apply_effects")
 
@@ -224,3 +231,7 @@ func apply_gold(targets: Array[Node], effect_amount, user) -> void:
 		"gravity": "top",                   # top or bottom
 		"direction": "center",               # left or center or right
 	})
+	
+func apply_add_card(targets: Array[Node], effect_amount, user) -> void:
+	for i in range(effect_amount):
+		Player.card_game_player.draw_pile.append(card_to_add)
