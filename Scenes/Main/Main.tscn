@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=81 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -43,6 +43,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/MissionsContainer.gd" id="30_uj6nt"]
 [ext_resource type="Script" path="res://Scenes/Main/Daily Schedule.gd" id="31_1x7np"]
 [ext_resource type="Script" path="res://Scenes/Main/ActionDescription.gd" id="32_lakgr"]
+[ext_resource type="PackedScene" uid="uid://q84u4t3lxanj" path="res://Scenes/UI/Popup/Popup.tscn" id="43_ck6uc"]
 [ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
 [ext_resource type="Texture2D" uid="uid://ftrly7krq5wf" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_ShoppingCart.png" id="45_03wx0"]
 [ext_resource type="Texture2D" uid="uid://dkqjjjb8c2ysi" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Book.png" id="45_34myw"]
@@ -153,6 +154,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Ui" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [node name="Calendar" parent="Ui" instance=ExtResource("15_pdmo5")]
 offset_bottom = 150.0
@@ -780,7 +782,8 @@ clip_contents = false
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="Deck" type="GridContainer" parent="Ui/MenuPanel/MarginContainer/Spellbook" groups=["ButtonMenu"]]
+[node name="Deck" type="GridContainer" parent="Ui/MenuPanel/MarginContainer/Spellbook"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -821,6 +824,15 @@ theme = ExtResource("1_tshxl")
 [node name="DialogicViewportContainer" parent="Ui/DialogicPanel" instance=ExtResource("26_25225")]
 visible = false
 layout_mode = 2
+
+[node name="Popup" parent="Ui" instance=ExtResource("43_ck6uc")]
+unique_name_in_owner = true
+visible = false
+offset_left = -200.0
+offset_top = -119.0
+offset_right = 200.0
+offset_bottom = 119.0
+metadata/_edit_use_anchors_ = true
 
 [node name="LeftMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -16,6 +16,7 @@ status = ExtResource("4_2ah00")
 enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
+price = 100
 second_target = 1
 second_type = 4
 second_effect_amount = 1

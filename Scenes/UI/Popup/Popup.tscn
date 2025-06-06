@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://q84u4t3lxanj"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Popup/Popup.gd" id="1_0bio3"]
+
+[node name="Popup" type="MarginContainer"]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0bio3")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="PopupLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Title
+Sell card for X? TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST[/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="YesButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Yes"
+
+[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NoButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/CenterContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No/Cancel"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/CenterContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/CenterContainer2/NoButton" to="." method="_on_no_button_pressed"]

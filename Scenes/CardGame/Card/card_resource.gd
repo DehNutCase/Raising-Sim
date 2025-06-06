@@ -16,6 +16,7 @@ enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 #Multi-hit only for first effect
 @export var multi_hit_amount: int
 @export_multiline var animation: String
+@export var price: int
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target

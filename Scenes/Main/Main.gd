@@ -32,8 +32,11 @@ extends Control
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
+@onready var deck = %Deck
 #TODO, add spellbook menu
 @onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook]
+
+@onready var popup = %Popup
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -991,5 +994,13 @@ func play_bedtime_event():
 		await(get_tree().create_timer(.5).timeout)
 
 func _on_card_button_pressed(card: CardResource):
-	print(card)
-	print(card.id)
+	if popup.visible:
+		return
+	popup.set_text("[center]Sell %s for %dG?[center]"%[card.id, card.price]) 
+	popup.show()
+	
+	var sell = await popup.button_clicked
+	if sell:
+		Player.card_game_deck.erase(card)
+		deck.update_buttons()
+		process_stats({'gold': card.price})
