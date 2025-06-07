@@ -1995,7 +1995,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_MinionsB.png',
-		'description': "Two Teru Warriors and a Skeleton Assassin. Assassin is an advanced class with high agility and damage. Due to being an advanced class, their stats are high across the board. It's not recommended to fight an advanced class as a non-combat class.",
+		'description': "Two Teru Warriors and a Skeleton Assassin. Assassin is an advanced class with extremely high agility.\n\nThankfully, you have Rice with you, so you'll almost always have the first turn. Counterintuitively, resistance, scholarship, and skill might be better than agility against enemies that focus on agility.",
 		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_11.tscn",
 	},
 	{
@@ -2018,7 +2018,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
-		'description': "A Skeleton Knight, Teru Mage, and Teru Priest. Knight is an advanced class with strong skills and well-rounded stats.",
+		'description': "A Skeleton Knight, Teru Mage, and Teru Priest. Knight is an advanced class with strong skills and well-rounded stats.\n\nAlthough a Knight's skills combine offense and defense in a balanced way, they tend to be too slow to be dangerous alone.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_12.tscn",
 	},
 	{
 		'level': 13,
@@ -2041,6 +2042,7 @@ const tower_levels = [
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
 		'description': "Two Dumpling Knights and a Dumpling Asassin.\n\nDumpling Knights, as you might expect from their appearance, have a bitter, chocolatey taste. Although wild varieties are unpalatably bitter, domesticated Dumpling Knights are considered a prime tea time snack, pairing well with the sweetness of Dumpling Assassins. Assuming, of course, that you could afford the expense.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_13.tscn",
 	},
 	{
 		'level': 14,

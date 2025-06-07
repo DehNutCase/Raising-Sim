@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://bvw3qdcjx7fne"]
+
+[ext_resource type="Texture2D" uid="uid://c0bnynewesqv4" path="res://Art/Mori no oku no kakurezato/CardGame/element10_01.png" id="1_q77ru"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_bxgvg"]
+[ext_resource type="Resource" uid="uid://dj786we54g0fv" path="res://Scenes/CardGame/Status/agility.tres" id="3_uo2gw"]
+[ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="4_cmfwq"]
+
+[resource]
+script = ExtResource("2_bxgvg")
+id = "Assassin Barrier"
+type = 2
+target = 0
+cost = 1
+effect_amount = 30
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 0
+second_target = 1
+second_type = 4
+second_effect_amount = -2
+second_status = ExtResource("3_uo2gw")
+third_target = 2
+third_type = 4
+third_effect_amount = 2
+third_status = ExtResource("4_cmfwq")
+icon = ExtResource("1_q77ru")

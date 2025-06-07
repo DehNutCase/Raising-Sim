@@ -8,7 +8,7 @@
 script = ExtResource("2_en2jt")
 id = "Assassin Barrier"
 type = 2
-target = 1
+target = 0
 cost = 1
 effect_amount = 30
 enemy_attack_type = 0
@@ -17,7 +17,7 @@ animation = ""
 price = 0
 second_target = 1
 second_type = 4
-second_effect_amount = 3
+second_effect_amount = -3
 second_status = ExtResource("3_jtd30")
 third_target = 0
 third_type = 0

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh0ygfmxm0bo7"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_2eidi"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_gf0sw"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_e684d"]
+[ext_resource type="Resource" uid="uid://dxxqnii3var3b" path="res://Scenes/CardGame/Characters/Enemies/SkeletonKnight.tres" id="4_vffvx"]
+[ext_resource type="Resource" uid="uid://c5m0oocomidej" path="res://Scenes/CardGame/Characters/Enemies/TeruMage.tres" id="5_r2utx"]
+[ext_resource type="Resource" uid="uid://b47wn8pvoknh3" path="res://Scenes/CardGame/Characters/Enemies/TeruPriest.tres" id="6_7igr1"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2eidi")
+background = ExtResource("2_gf0sw")
+victory_reward = "{\"stats\": {\"gold\": 1750, \"experience\": 1750}}"
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_e684d")]
+position = Vector2(200, 250)
+enemy_resource = ExtResource("4_vffvx")
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_e684d")]
+position = Vector2(600, 400)
+enemy_resource = ExtResource("5_r2utx")
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_e684d")]
+position = Vector2(600, 125)
+enemy_resource = ExtResource("6_7igr1")

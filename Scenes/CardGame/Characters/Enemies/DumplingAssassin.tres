@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://dr6b4dvjo7fwg"]
+
+[ext_resource type="Resource" uid="uid://b3ixlfdetsfas" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/assassin_finishing_blow.tres" id="1_642pf"]
+[ext_resource type="Resource" uid="uid://bvw3qdcjx7fne" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_assassin_barrier.tres" id="2_5pyk5"]
+[ext_resource type="Texture2D" uid="uid://coxvlnpvvibcm" path="res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png" id="3_37u3m"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_tdn8l"]
+
+[resource]
+script = ExtResource("4_tdn8l")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_642pf"), ExtResource("2_5pyk5")])
+max_health = 80
+art = ExtResource("3_37u3m")
