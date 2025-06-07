@@ -748,11 +748,22 @@ func _on_timeline_ended() -> void:
 	#Close open menus after timeline ends
 	_on_close_button_pressed()
 	
-func _on_inventory_item_added(item):
+func _on_inventory_item_added(item:InventoryItem):
 	#Note: Do not apply scholarship bonus to items
 	var toast = "Obtained " + item.get_property("name", "")
-	var icon = item.get_property("image", null)
-	display_toast(toast, "bottom", "center", icon)
+	var icon_path = item.get_property("image", null)
+	if item.get_property("special_type", null):
+		match item.get_property("special_type", null):
+			"card_pack":
+				var card_pack = load(item.get_property("card_pack", null))
+				var card = card_pack.cards.pick_random()
+				toast = "Obtained " + card.id
+				icon_path = card.icon.resource_path
+				Player.card_game_deck.append(card)
+				item.get_inventory().remove_item(item)
+			_:
+				printerr("item.get_property('special_type') failed to match")
+	display_toast(toast, "bottom", "center", icon_path)
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
 		

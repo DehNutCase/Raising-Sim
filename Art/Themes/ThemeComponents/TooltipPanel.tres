@@ -1,0 +1,12 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dtfe0wxedjqpg"]
+
+[ext_resource type="Texture2D" uid="uid://delnvblxfdksb" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_rect1-21-8-0-9-0.png" id="1_nvq02"]
+
+[resource]
+texture = ExtResource("1_nvq02")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+region_rect = Rect2(0, 0, 143, 137)
+modulate_color = Color(0.466667, 0.611765, 0.658824, 0.784314)

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=13 format=3 uid="uid://dtitukj07uuwi"]
+
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="1_l5ckb"]
+[ext_resource type="Resource" uid="uid://bdmdjsuftthet" path="res://Scenes/CardGame/Characters/Mao/Cards/shield.tres" id="2_rtw1w"]
+[ext_resource type="Resource" uid="uid://7ncfpp8nwi26" path="res://Scenes/CardGame/Characters/Mao/Cards/power_up.tres" id="3_xge0v"]
+[ext_resource type="Resource" uid="uid://ddj77jp08q84g" path="res://Scenes/CardGame/Characters/Mao/Cards/cantrip.tres" id="4_5g5js"]
+[ext_resource type="Resource" uid="uid://eapobtksge88" path="res://Scenes/CardGame/Characters/Mao/Cards/defensive_casting.tres" id="5_ekgbd"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="5_t6yko"]
+[ext_resource type="Resource" uid="uid://b7u56q8r3yki7" path="res://Scenes/CardGame/Characters/Mao/Cards/explosion.tres" id="6_hx87r"]
+[ext_resource type="Resource" uid="uid://dqpbortarfbwv" path="res://Scenes/CardGame/Characters/Mao/Cards/invocation.tres" id="7_64gs4"]
+[ext_resource type="Resource" uid="uid://ctxtj8jk4xtnc" path="res://Scenes/CardGame/Characters/Mao/Cards/lesser_invocation.tres" id="8_j1rj7"]
+[ext_resource type="Resource" uid="uid://buehpj5ro7ikf" path="res://Scenes/CardGame/Characters/Mao/Cards/prestidigitation.tres" id="9_112jr"]
+[ext_resource type="Resource" uid="uid://b5pccptmd8sa2" path="res://Scenes/CardGame/Characters/Mao/Cards/ritual.tres" id="10_lokaf"]
+[ext_resource type="Resource" uid="uid://c7rmtmb83u3yg" path="res://Scenes/CardGame/Characters/Mao/Cards/sleight_of_hand.tres" id="11_6jqer"]
+
+[resource]
+script = ExtResource("5_t6yko")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_l5ckb"), ExtResource("1_l5ckb"), ExtResource("1_l5ckb"), ExtResource("2_rtw1w"), ExtResource("2_rtw1w"), ExtResource("2_rtw1w"), ExtResource("3_xge0v"), ExtResource("4_5g5js"), ExtResource("5_ekgbd"), ExtResource("6_hx87r"), ExtResource("7_64gs4"), ExtResource("8_j1rj7"), ExtResource("3_xge0v"), ExtResource("9_112jr"), ExtResource("10_lokaf"), ExtResource("11_6jqer")])

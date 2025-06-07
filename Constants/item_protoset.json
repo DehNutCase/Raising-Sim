@@ -111,4 +111,15 @@
 		"price": 1000,
 		"stats": "{}",
 	},
+	"basic_card_pack": {
+		"daily_stats": "{}",
+		"description": "A random card from a selection of basic cards. You probably won't get anything too special, so don't get your hopes up.",
+		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/card04_01.png",
+		"limit": 10,
+		"name": "Basic Card Pack",
+		"price": 250,
+		"stats": "{}",
+		"special_type": "card_pack",
+		"card_pack": "res://Scenes/CardGame/Card/CardPacks/basic_card_pack.tres",
+	},
 }
