@@ -7,6 +7,6 @@
 script = ExtResource("1_qii6w")
 status_icon = ExtResource("2_mpmk4")
 status_name = "Magic"
-status_tooltip = "Magic. Gain [color=blue]X[/color] extra block every time you gain block."
+status_tooltip = "Magic. Effects that give block give [color=blue]X[/color] extra block."
 status_decay = 2
 NegativeStatus = false

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cty1oguwi8ui0"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_l0xsl"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_78cns"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_q12rf"]
+[ext_resource type="Resource" uid="uid://dxxqnii3var3b" path="res://Scenes/CardGame/Characters/Enemies/SkeletonKnight.tres" id="4_d5ybk"]
+[ext_resource type="Resource" uid="uid://dvas2ta2721lt" path="res://Scenes/CardGame/Characters/Enemies/SkeletonWarrior.tres" id="5_xfpmd"]
+[ext_resource type="Resource" uid="uid://cixo6fm8mkpod" path="res://Scenes/CardGame/Characters/Enemies/SkeletonRogue.tres" id="6_ma844"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l0xsl")
+background = ExtResource("2_78cns")
+victory_reward = "{\"stats\": {\"gold\": 3000, \"experience\": 3000}}"
+metadata/_edit_lock_ = true
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_q12rf")]
+position = Vector2(200, 150)
+enemy_resource = ExtResource("4_d5ybk")
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_q12rf")]
+position = Vector2(450, 150)
+enemy_resource = ExtResource("5_xfpmd")
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_q12rf")]
+position = Vector2(700, 150)
+enemy_resource = ExtResource("6_ma844")
+
+[node name="CardGameEnemy4" parent="." instance=ExtResource("3_q12rf")]
+position = Vector2(300, 450)
+enemy_resource = ExtResource("4_d5ybk")
+
+[node name="CardGameEnemy5" parent="." instance=ExtResource("3_q12rf")]
+position = Vector2(550, 450)
+enemy_resource = ExtResource("5_xfpmd")
+
+[node name="CardGameEnemy6" parent="." instance=ExtResource("3_q12rf")]
+position = Vector2(800, 450)
+enemy_resource = ExtResource("6_ma844")

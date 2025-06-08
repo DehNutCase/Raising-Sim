@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://ci2udfbjych0a"]
+
+[ext_resource type="Resource" uid="uid://6rvsmq5hv5r4" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/wizard_amplify_magic.tres" id="1_efocb"]
+[ext_resource type="Resource" uid="uid://byulx8lwu4jen" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/wizard_fireball.tres" id="2_4rxnh"]
+[ext_resource type="Resource" uid="uid://lqlbri74qnx6" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/teru_advanced_attack.tres" id="3_rm2i7"]
+[ext_resource type="Texture2D" uid="uid://jx160m6oowjx" path="res://Art/It Came From The Swamp/Enemies/f_Teruo.png" id="4_055ns"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_rxrpm"]
+
+[resource]
+script = ExtResource("4_rxrpm")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_efocb"), ExtResource("2_4rxnh"), ExtResource("3_rm2i7")])
+max_health = 100
+art = ExtResource("4_055ns")

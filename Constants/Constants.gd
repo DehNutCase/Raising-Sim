@@ -2111,6 +2111,7 @@ const tower_levels = [
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_TeruoB.png',
 		'description': "A Teru adventuring party! Not really. It seems like a trio of Teru gathered together to play pretend adventurers. Please consider buying a demon king costume and getting defeated, it'll make their day.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_16.tscn",
 	},
 	{
 		'level': 17,
@@ -2148,6 +2149,7 @@ const tower_levels = [
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_CaoptainB.png',
 		'description': "A squad of Skeletons on a training trip. Although basic Skeletons are quite weak, it's still dangerous to leave them alone too long.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_17.tscn",
 	},
 	{
 		'level': 18,
@@ -2162,9 +2164,15 @@ const tower_levels = [
 				"character_class": "wizard",
 				"race": "teru",
 			},
+			{
+				"level": 19,
+				"character_class": "wizard",
+				"race": "teru",
+			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_Teruo.png',
-		'description': "A pair of Teru Wizards. Dangerous yet fragile, it's difficult to survive even a single round against Wizards without class changing, so it's recommended to hit fast and hard.\n\nIt's unkown where Teru carry their umbrellas, but even in the rare case that they lose one they take another one out from somewhere.",
+		'description': "A trio of Teru Wizards. The best defense is a fast offense against a team like this.\n\nIt's unkown where Teru carry their umbrellas, but even in the rare case that they lose one they take another one out from somewhere.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_18.tscn",
 	},
 	{
 		'level': 19,
@@ -2191,7 +2199,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_IcedCoffee.png',
-		'description': "A Dumpling adventuring party! Although they trained hard and even class changed, the weakness of Dumplings is starting to show. It should be an easy fight as long as the Wizard is brought down quickly.\n\nAs you might expect, Dumplings are quite fond of flour, so gifting them a bag of flour is an easy way to get close. Since they're fundamentally slimes, Dumplings can eat just about everything, although they have a harder time digesting minerals. Thanks to that, it's quite common to see domesticated Dumplings acting as vacuum cleaners.",
+		'description': "A Dumpling adventuring party! They trained hard and even class changed. Unlike Teru, Dumplings tend to take duels seriously, so please don't hold back.\n\nAs you might expect, Dumplings are quite fond of flour, so gifting them a bag of flour is an easy way to get close. That said, since they're fundamentally slimes, Dumplings can eat just about everything, although they have a harder time digesting minerals. Thanks to that, it's quite common to see domesticated Dumplings acting as vacuum cleaners.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_19.tscn",
 	},
 	{
 		'level': 20,
@@ -2204,6 +2213,7 @@ const tower_levels = [
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
 		'description': "Greater Phantoms can mimic the target's class, making them extremely versatile and significantly stronger compared to Lesser Phantoms. Like all Phantoms, their stats are reduced compared to the original. They're unable to mimic stats from training and their level is capped at lesser of their own level and their target's level. This one is mimicking the Magic Officer class, a strong and versatile class which is nonetheless the weakest of Rice Glassfield's subclasses.\n\nUnfortunately, even a heavily develeled and restricted Rice is still extremely dangerous. Unlike the original, a Phantom rarely has the time to understand the proper usage of their skills and abilities, so it's not necessarily a guaranteed loss to let them have a single turn. Merely very, very, likely.\n\nIt's strongly recommended to class change before proceeding further up the tower.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn",
 	},
 ]
 

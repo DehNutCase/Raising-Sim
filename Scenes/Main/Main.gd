@@ -127,7 +127,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("Housework1")
+		#Dialogic.start("HiyoriCorner")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -726,9 +726,10 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "unlocked_missions" in dialogic_signal:
 		for mission in dialogic_signal.unlocked_missions:
 			Player.unlocked_missions[mission] = dialogic_signal.unlocked_missions[mission]
+	display_stats()
+	#Below might be dangerous, never call timeline inside an actual timeline
 	if "timeline" in dialogic_signal:
 		Dialogic.start(dialogic_signal.timeline)
-	display_stats()
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")

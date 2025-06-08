@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ylkriabjvsse"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_2vixq"]
+[ext_resource type="Texture2D" uid="uid://cs2l6dx4rnoyc" path="res://Art/Background/Background material shop/bg016c.jpg" id="2_xaldh"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_kylnn"]
+[ext_resource type="Resource" uid="uid://ci2udfbjych0a" path="res://Scenes/CardGame/Characters/Enemies/TeruWizard.tres" id="5_jevoq"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2vixq")
+background = ExtResource("2_xaldh")
+victory_reward = "{\"stats\": {\"gold\": 3250, \"experience\": 3250}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_kylnn")]
+position = Vector2(200, 125)
+enemy_resource = ExtResource("5_jevoq")
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_kylnn")]
+position = Vector2(400, 400)
+enemy_resource = ExtResource("5_jevoq")
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_kylnn")]
+position = Vector2(600, 150)
+enemy_resource = ExtResource("5_jevoq")

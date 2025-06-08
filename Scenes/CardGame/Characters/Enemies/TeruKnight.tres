@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://6v7cgobgxjd1"]
+
+[ext_resource type="Resource" uid="uid://diw0xbqi3yeeb" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/knight_tackle.tres" id="1_76tau"]
+[ext_resource type="Resource" uid="uid://bw5s2urd8ss51" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/knight_war_cry.tres" id="2_8cbh3"]
+[ext_resource type="Resource" uid="uid://lqlbri74qnx6" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/teru_advanced_attack.tres" id="3_gyvmq"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_a7dob"]
+[ext_resource type="Texture2D" uid="uid://88ts7ovi6is7" path="res://Art/It Came From The Swamp/Enemies/f_TeruoB.png" id="4_tf467"]
+
+[resource]
+script = ExtResource("4_a7dob")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_76tau"), ExtResource("2_8cbh3"), ExtResource("3_gyvmq")])
+max_health = 150
+art = ExtResource("4_tf467")
