@@ -210,8 +210,23 @@ func apply_status(status_resource: CardGameStatusResource, effect_amount: int, u
 		status_display.stack_label.text = str(active_status[status_resource.status_name].stacks)
 		status_display.tooltip_text = status.status_tooltip
 
+func dispel_status(effect_amount) -> void:
+	for status_name in active_status.duplicate():
+		var status = active_status[status_name]
+		var positive = 1
+		if status.stacks < 0:
+			positive = -1
+		status.stacks = clampi(absi(status.stacks) - effect_amount, 0, absi(status.stacks))
+		status.stacks *= positive
+		status.status_display.stack_label.text = str(status.stacks)
+		if status.stacks == 0:
+			status.status_display.queue_free()
+			active_status.erase(status_name)
+			
+	update_status_display()
+	
 func decay_status(timing: CardGameStatusResource.DecayType) -> void:
-	for status_name in active_status:
+	for status_name in active_status.duplicate():
 		var status = active_status[status_name]
 		if status.status.status_decay == timing:
 			status.stacks -= 1
@@ -221,7 +236,7 @@ func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 				active_status.erase(status_name)
 	
 	if timing == CardGameStatusResource.DecayType.ONE_TURN:
-		for status_name in active_status:
+		for status_name in active_status.duplicate():
 			var status = active_status[status_name]
 			if status.status.status_decay == timing:
 				status.stacks = 0

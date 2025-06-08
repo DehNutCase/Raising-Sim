@@ -193,6 +193,16 @@ func _create_tooltip() -> String:
 						tooltip += "Gain [color=yellow]%d[/color] gold." % this_amount
 			card.Type.ADD_CARD:
 						tooltip += "Add [color=blue]%d[/color] [color=green]%s[/color] into your draw pile." % [this_amount, card.card_to_add.id]
+			card.Type.DISPEL:
+				match this_target:
+					card.Target.SELF:
+						tooltip += "Remove [color=yellow]%d[/color] of every status effect." %this_amount
+					card.Target.SINGLE_ENEMY:
+						tooltip += "Target enemy loses [color=yellow]%d[/color] of every status effect." %this_amount
+					card.Target.ALL_ENEMIES:
+						tooltip += "All enemies loses [color=yellow]%d[/color] of every status effect." %this_amount
+					card.Target.EVERYONE:
+						tooltip += "Everyone loses [color=yellow]%d[/color] of every status effect." %this_amount
 				
 	return tooltip
 

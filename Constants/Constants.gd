@@ -2212,7 +2212,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Characters/Rice/Images/Portrait/idle_000.png',
-		'description': "Greater Phantoms can mimic the target's class, making them extremely versatile and significantly stronger compared to Lesser Phantoms. Like all Phantoms, their stats are reduced compared to the original. They're unable to mimic stats from training and their level is capped at lesser of their own level and their target's level. This one is mimicking the Magic Officer class, a strong and versatile class which is nonetheless the weakest of Rice Glassfield's subclasses.\n\nUnfortunately, even a heavily develeled and restricted Rice is still extremely dangerous. Unlike the original, a Phantom rarely has the time to understand the proper usage of their skills and abilities, so it's not necessarily a guaranteed loss to let them have a single turn. Merely very, very, likely.\n\nIt's strongly recommended to class change before proceeding further up the tower.",
+		'description': "It's Rice again! Not really. Again. This one is a Phantom rather than Lesser Phantom, so it has more health and managed to copy another of Rice's skills.  Dispel isn't very dangerous by itself, but it can cause massive issues for decks that rely on buffs.\n\nDid you know that default amount of cards you draw every turn is two?",
 		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn",
 	},
 ]
