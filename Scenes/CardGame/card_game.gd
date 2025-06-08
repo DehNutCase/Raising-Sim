@@ -30,6 +30,7 @@ func _on_card_ui_reparent_requested(card):
 
 func start_battle() -> void:
 	card_game_player.draw_pile = Player.card_game_deck.duplicate(true)
+	#card_game_player.draw_pile = card_game_player.deck
 	card_game_player.draw_pile.shuffle()
 	card_game_player.discard = []
 	card_game_player.start_first_turn()
@@ -43,7 +44,7 @@ func start_turn() -> void:
 		draw_amount = draw_amount + Player.card_game_player.active_status.get("Skill").stacks
 	if Player.card_game_player.active_status.get("Agility"):
 		draw_amount = draw_amount + Player.card_game_player.active_status.get("Agility").stacks
-	draw_cards(draw_amount)
+	await draw_cards(draw_amount)
 	if state == states.ENEMY_TURN:
 		state = states.PLAYER_TURN
 

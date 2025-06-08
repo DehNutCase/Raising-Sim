@@ -1,7 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD}
+enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 
@@ -108,79 +108,58 @@ func get_third_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Arr
 	return []
 
 func play(targets: Array[Node]) -> void:
-	apply_effects(get_targets(targets), Player.card_game_player)
-	apply_second_effects(get_second_targets(targets), Player.card_game_player)
-	apply_third_effects(get_third_targets(targets), Player.card_game_player)
+	apply_effects(get_targets(targets), Player.card_game_player, 0)
+	apply_effects(get_second_targets(targets), Player.card_game_player, 1)
+	apply_effects(get_third_targets(targets), Player.card_game_player, 2)
 
 func enemy_play(enemy: CardGameEnemy) -> void:
-	apply_effects(get_targets([enemy], enemy), enemy)
-	apply_second_effects(get_second_targets([enemy], enemy), enemy)
-	apply_third_effects(get_third_targets([enemy], enemy), enemy)
+	apply_effects(get_targets([enemy], enemy), enemy, 0)
+	apply_effects(get_second_targets([enemy], enemy), enemy, 1)
+	apply_effects(get_third_targets([enemy], enemy), enemy, 2)
 
-#TODO, implement MANA
-func apply_effects(targets: Array[Node], user) -> void:
-	match type:
+func apply_effects(targets: Array[Node], user, effect_number) -> void:
+	var this_type
+	var this_amount
+	var this_status
+	match effect_number:
+		0:
+			this_type = type
+			this_amount = effect_amount
+			this_status = status
+		1:
+			this_type = second_type
+			this_amount = second_effect_amount
+			this_status = second_status
+		2:
+			this_type = third_type
+			this_amount = third_effect_amount
+			this_status = third_status
+		_:
+			printerr("effect_number failed to match")
+	
+	match this_type:
 		Type.ATTACK:
-			apply_damage(targets, effect_amount, user, multi_hit_amount)
+			apply_damage(targets, this_amount, user, multi_hit_amount)
 		Type.BLOCK:
-			apply_block(targets, effect_amount, user)
+			apply_block(targets, this_amount, user)
 		Type.STATUS:
-			apply_status(targets, effect_amount, user, status)
+			apply_status(targets, this_amount, user, this_status)
 		Type.DRAW:
-			apply_draw(targets, effect_amount, user)
+			apply_draw(targets, this_amount, user)
 		Type.MANA:
-			apply_mana(targets, effect_amount, user)
+			apply_mana(targets, this_amount, user)
 		Type.POWER:
 			pass #POWER is currently only used to make sure a card is one use only
+		Type.NONE:
+			pass #used when a card doesn't have all effect slots filled
 		Type.GOLD:
-			apply_gold(targets, effect_amount, user)
+			apply_gold(targets, this_amount, user)
 		Type.ADD_CARD:
-			apply_add_card(targets, effect_amount, user)
+			apply_add_card(targets, this_amount, user)
+		Type.HEAL:
+			apply_heal(targets, this_amount, user)
 		_:
 			printerr("Unmatched effect type for apply_effects")
-
-func apply_second_effects(targets: Array[Node], user) -> void:
-	match second_type:
-		Type.ATTACK:
-			apply_damage(targets, second_effect_amount, user)
-		Type.BLOCK:
-			apply_block(targets, second_effect_amount, user)
-		Type.STATUS:
-			apply_status(targets, second_effect_amount, user, second_status)
-		Type.DRAW:
-			apply_draw(targets, second_effect_amount, user)
-		Type.MANA:
-			apply_mana(targets, second_effect_amount, user)
-		Type.NONE:
-			pass
-		Type.GOLD:
-			apply_gold(targets, second_effect_amount, user)
-		Type.ADD_CARD:
-			apply_add_card(targets, second_effect_amount, user)
-		_:
-			printerr("Unmatched effect second_type for apply_effects")
-
-func apply_third_effects(targets: Array[Node], user) -> void:
-	match third_type:
-		Type.ATTACK:
-			apply_damage(targets, third_effect_amount, user)
-		Type.BLOCK:
-			apply_block(targets, third_effect_amount, user)
-		Type.STATUS:
-			apply_status(targets, third_effect_amount, user, third_status)
-		Type.DRAW:
-			apply_draw(targets, third_effect_amount, user)
-		Type.MANA:
-			apply_mana(targets, third_effect_amount, user)
-		Type.NONE:
-			pass
-		Type.GOLD:
-			apply_gold(targets, third_effect_amount, user)
-		Type.ADD_CARD:
-			apply_add_card(targets, third_effect_amount, user)
-		_:
-			printerr("Unmatched effect third_type for apply_effects")
-
 
 func apply_block(targets: Array[Node], effect_amount, user) -> void:
 	for target in targets:
@@ -235,3 +214,8 @@ func apply_gold(targets: Array[Node], effect_amount, user) -> void:
 func apply_add_card(targets: Array[Node], effect_amount, user) -> void:
 	for i in range(effect_amount):
 		Player.card_game_player.draw_pile.append(card_to_add)
+
+func apply_heal(targets: Array[Node], effect_amount, user) -> void:
+	for target in targets:
+		if target is CardGameEnemy or target is CardGamePlayer:
+			target.heal_damage(effect_amount)

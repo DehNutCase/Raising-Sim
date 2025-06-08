@@ -78,6 +78,14 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		get_tree().call_group("CardGameMainNode", "check_defeat")
 		
+func heal_damage(amount: int) -> void:
+	modulate = Color(1,1,1,.5)
+	await Player.shake(self, 50)
+	modulate = Color(1,1,1,1)
+	
+	amount = clampi(amount, 0, max_health)
+	health += amount
+	
 func set_health(value: int) -> void:
 	health = clampi(value, 0, max_health)
 	update_stats()

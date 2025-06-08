@@ -66,10 +66,19 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		queue_free()
 		get_tree().call_group("CardGameMainNode", "check_victory")
+
+func heal_damage(amount: int) -> void:
+	modulate = Color(1,1,1,.5)
+	await Player.shake(self, 50)
+	modulate = Color(1,1,1,1)
+	
+	amount = clampi(amount, 0, max_health)
+	health += amount
 	
 func set_intent() -> void:
 	intent = actions.pick_random() as CardResource
-	if intent.type == CardResource.Type.ATTACK or intent.type == CardResource.Type.BLOCK:
+	var amount_show_intent = [CardResource.Type.ATTACK, CardResource.Type.BLOCK, CardResource.Type.HEAL]
+	if intent.type in amount_show_intent:
 		var multi_hit_text = ""
 		if intent.multi_hit_amount:
 			multi_hit_text = " x %d" %intent.multi_hit_amount

@@ -119,131 +119,80 @@ func _set_card(value: CardResource) -> void:
 	
 func _create_tooltip() -> String:
 	var tooltip = "[center][color=Turquoise]%s[/color][/center]\n" %card.id
-	match card.type:
-		card.Type.ATTACK:
-			var multi_text = ""
-			if card.multi_hit_amount:
-				multi_text = " [color=red]%d[/color] times" %card.multi_hit_amount
-			match card.target:
-				card.Target.SELF:
-					tooltip += "Deal [color=red]%d[/color] damage to yourself%s." %[card.effect_amount, multi_text]
-				card.Target.SINGLE_ENEMY:
-					tooltip += "Deal [color=red]%d[/color] damage%s." %[card.effect_amount, multi_text]
-				card.Target.ALL_ENEMIES:
-					tooltip += "Deal [color=red]%d[/color] damage to all enemies%s." %[card.effect_amount, multi_text]
-				card.Target.EVERYONE:
-					tooltip += "Deal [color=red]%d[/color] damage to everyone%s." %[card.effect_amount, multi_text]
-		card.Type.BLOCK:
-			match card.target:
-				card.Target.SELF:
-					tooltip += "Gain [color=blue]%d[/color] block." %card.effect_amount
-				card.Target.SINGLE_ENEMY:
-					tooltip += "Target enemy gains [color=blue]%d[/color] block." %card.effect_amount
-				card.Target.ALL_ENEMIES:
-					tooltip += "All enemies gain [color=blue]%d[/color] block." %card.effect_amount
-				card.Target.EVERYONE:
-					tooltip += "Everyone gains [color=blue]%d[/color] block." %card.effect_amount
-		card.Type.STATUS:
-			match card.target:
-				card.Target.SELF:
-					tooltip += "Gain [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
-				card.Target.SINGLE_ENEMY:
-					tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
-				card.Target.ALL_ENEMIES:
-					tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
-				card.Target.EVERYONE:
-					tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[card.effect_amount, card.status.status_name]
-		card.Type.DRAW:
-					tooltip += "Draw [color=green]%d[/color] card(s)." % card.effect_amount
-		card.Type.MANA:
-					tooltip += "Gain [color=blue]%d[/color] mana." % card.effect_amount
-		#NOTE, power should always be the first effect, doesn't do anything.
-		card.Type.POWER:
-					tooltip += "Once per duel."
-		card.Type.GOLD:
-					tooltip += "Gain [color=yellow]%d[/color] gold." % card.effect_amount
 	
-	#Copy above code for 2nd effect onwards
-	if card.second_type != card.Type.NONE:
-		tooltip += "\n"
-		match card.second_type:
-			card.Type.ATTACK:
-				match card.second_target:
-					card.Target.SELF:
-						tooltip += "Deal [color=red]%d[/color] damage to yourself." %card.second_effect_amount
-					card.Target.SINGLE_ENEMY:
-						tooltip += "Deal [color=red]%d[/color] damage." %card.second_effect_amount
-					card.Target.ALL_ENEMIES:
-						tooltip += "Deal [color=red]%d[/color] damage to all enemies." %card.second_effect_amount
-					card.Target.EVERYONE:
-						tooltip += "Deal [color=red]%d[/color] damage to everyone." %card.second_effect_amount
-			card.Type.BLOCK:
-				match card.second_target:
-					card.Target.SELF:
-						tooltip += "Gain [color=blue]%d[/color] block." %card.second_effect_amount
-					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=blue]%d[/color] block." %card.second_effect_amount
-					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=blue]%d[/color] block." %card.second_effect_amount
-					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=blue]%d[/color] block." %card.second_effect_amount
-			card.Type.STATUS:
-				match card.second_target:
-					card.Target.SELF:
-						tooltip += "Gain [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
-					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
-					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
-					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[card.second_effect_amount, card.second_status.status_name]
-			card.Type.DRAW:
-				tooltip += "Draw [color=green]%d[/color] card(s)." % card.second_effect_amount
-			card.Type.MANA:
-						tooltip += "Gain [color=blue]%d[/color] mana." % card.second_effect_amount
-			card.Type.GOLD:
-						tooltip += "Gain [color=yellow]%d[/color] gold." % card.second_effect_amount
+	for i in range(3):
+		var this_type
+		var this_amount
+		var this_status
+		var this_target
+		match i:
+			0:
+				this_type = card.type
+				this_amount = card.effect_amount
+				this_status = card.status
+				this_target = card.target
+			1:
+				this_type = card.second_type
+				this_amount = card.second_effect_amount
+				this_status = card.second_status
+				this_target = card.second_target
+			2:
+				this_type = card.third_type
+				this_amount = card.third_effect_amount
+				this_status = card.third_status
+				this_target = card.third_target
+			_:
+				printerr("_create_tooltip effect_number failed to match")
 				
-	#Copy above code for 2nd effect onwards
-	if card.third_type != card.Type.NONE:
-		tooltip += "\n"
-		match card.third_type:
+		if this_type != card.Type.NONE:
+			tooltip += "\n"
+			
+		match this_type:
 			card.Type.ATTACK:
-				match card.third_target:
+				var multi_text = ""
+				#multi hits should only ever be first effect
+				if card.multi_hit_amount and i == 0:
+					multi_text = " [color=red]%d[/color] times" %card.multi_hit_amount
+				match this_target:
 					card.Target.SELF:
-						tooltip += "Deal [color=red]%d[/color] damage to yourself." %card.third_effect_amount
+						tooltip += "Deal [color=red]%d[/color] damage to yourself%s." %[this_amount, multi_text]
 					card.Target.SINGLE_ENEMY:
-						tooltip += "Deal [color=red]%d[/color] damage." %card.third_effect_amount
+						tooltip += "Deal [color=red]%d[/color] damage%s." %[this_amount, multi_text]
 					card.Target.ALL_ENEMIES:
-						tooltip += "Deal [color=red]%d[/color] damage to all enemies." %card.third_effect_amount
+						tooltip += "Deal [color=red]%d[/color] damage to all enemies%s." %[this_amount, multi_text]
 					card.Target.EVERYONE:
-						tooltip += "Deal [color=red]%d[/color] damage to everyone." %card.third_effect_amount
+						tooltip += "Deal [color=red]%d[/color] damage to everyone%s." %[this_amount, multi_text]
 			card.Type.BLOCK:
-				match card.third_target:
+				match this_target:
 					card.Target.SELF:
-						tooltip += "Gain [color=blue]%d[/color] block." %card.third_effect_amount
+						tooltip += "Gain [color=blue]%d[/color] block." %this_amount
 					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=blue]%d[/color] block." %card.third_effect_amount
+						tooltip += "Target enemy gains [color=blue]%d[/color] block." %this_amount
 					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=blue]%d[/color] block." %card.third_effect_amount
+						tooltip += "All enemies gain [color=blue]%d[/color] block." %this_amount
 					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=blue]%d[/color] block." %card.third_effect_amount
+						tooltip += "Everyone gains [color=blue]%d[/color] block." %this_amount
 			card.Type.STATUS:
-				match card.third_target:
+				match this_target:
 					card.Target.SELF:
-						tooltip += "Gain [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
+						tooltip += "Gain [color=yellow]%d[/color] %s." %[this_amount, this_status.status_name]
 					card.Target.SINGLE_ENEMY:
-						tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
+						tooltip += "Target enemy gains [color=yellow]%d[/color] %s." %[this_amount, this_status.status_name]
 					card.Target.ALL_ENEMIES:
-						tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
+						tooltip += "All enemies gain [color=yellow]%d[/color] %s." %[this_amount, this_status.status_name]
 					card.Target.EVERYONE:
-						tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[card.third_effect_amount, card.third_status.status_name]
+						tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[this_amount, this_status.status_name]
 			card.Type.DRAW:
-				tooltip += "Draw [color=green]%d[/color] card(s)." % card.third_effect_amount
+						tooltip += "Draw [color=green]%d[/color] card(s)." % this_amount
 			card.Type.MANA:
-					tooltip += "Gain [color=blue]%d[/color] mana." % card.third_effect_amount
+						tooltip += "Gain [color=blue]%d[/color] mana." % this_amount
+			#NOTE, power should always be the first effect, doesn't do anything.
+			card.Type.POWER:
+						tooltip += "Once per duel."
 			card.Type.GOLD:
-						tooltip += "Gain [color=yellow]%d[/color] gold." % card.third_effect_amount
+						tooltip += "Gain [color=yellow]%d[/color] gold." % this_amount
+			card.Type.ADD_CARD:
+						tooltip += "Add [color=blue]%d[/color] [color=green]%s[/color] into your draw pile." % [this_amount, card.card_to_add.id]
 				
 	return tooltip
 

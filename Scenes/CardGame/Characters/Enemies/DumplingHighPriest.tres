@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://cnv8kew3w7ttk"]
+
+[ext_resource type="Resource" uid="uid://ctvs0fr066hqt" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/high_priest_heal.tres" id="1_pv4ua"]
+[ext_resource type="Resource" uid="uid://c4s7ektqhjmc" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/rice_fireball.tres" id="2_w8wus"]
+[ext_resource type="Texture2D" uid="uid://bkfb0i4q31n41" path="res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png" id="4_0tljm"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_fcmgi"]
+
+[resource]
+script = ExtResource("5_fcmgi")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_pv4ua"), ExtResource("2_w8wus"), ExtResource("1_pv4ua")])
+max_health = 100
+art = ExtResource("4_0tljm")

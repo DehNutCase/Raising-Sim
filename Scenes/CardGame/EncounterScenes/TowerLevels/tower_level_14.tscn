@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dudgu157vhvqx"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_3ma87"]
+[ext_resource type="Texture2D" uid="uid://blwikybiv1vto" path="res://Art/Background/Background material shop/bg016a.jpg" id="2_gnkdv"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_84npb"]
+[ext_resource type="Resource" uid="uid://cnv8kew3w7ttk" path="res://Scenes/CardGame/Characters/Enemies/DumplingHighPriest.tres" id="4_f1nou"]
+[ext_resource type="Resource" uid="uid://b4lm3bo7k4r4v" path="res://Scenes/CardGame/Characters/Enemies/DumplingKnight.tres" id="5_g8f88"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ma87")
+background = ExtResource("2_gnkdv")
+victory_reward = "{\"stats\": {\"gold\": 2250, \"experience\": 2250}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_84npb")]
+position = Vector2(200, 125)
+enemy_resource = ExtResource("4_f1nou")
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_84npb")]
+position = Vector2(400, 400)
+enemy_resource = ExtResource("5_g8f88")
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_84npb")]
+position = Vector2(600, 150)
+enemy_resource = ExtResource("4_f1nou")

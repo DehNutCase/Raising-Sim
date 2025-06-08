@@ -2064,7 +2064,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png',
-		'description': "A Dumpling Knight and two Dumpling High Priests. If left alone, the Knight will continually buff the team's defenses, so it's best to defeat it quickly.\n\nDespite appearances, Dumpling High Priests are not vegetables. Although they're nutritious, even domesticated varieties are exceptionally bitter. Some are quite sensitive about their appearance, so it's best not to mistake them for broccoli.",
+		'description': "A Dumpling Knight and two Dumpling High Priests. Although High Priests are good at healing damage, Dumpling High Priests seem to have forgotten how to cast barrier, so they're vulnerable to being focus fired.\n\nDespite appearances, Dumpling High Priests are not vegetables. Although they're nutritious, even domesticated varieties are exceptionally bitter. Some are quite sensitive about their appearance, so it's best not to mistake them for broccoli.",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_14.tscn",
 	},
 	{
 		'level': 15,

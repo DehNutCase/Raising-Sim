@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://ctvs0fr066hqt"]
+
+[ext_resource type="Texture2D" uid="uid://ck3s1g84sghbv" path="res://Art/Mori no oku no kakurezato/CardGame/element52_01.png" id="1_30h6h"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_2x08t"]
+[ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="3_uvfws"]
+
+[resource]
+script = ExtResource("2_2x08t")
+id = "Heal"
+type = 9
+target = 2
+cost = 1
+effect_amount = 50
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 0
+second_target = 2
+second_type = 4
+second_effect_amount = 2
+second_status = ExtResource("3_uvfws")
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_30h6h")
