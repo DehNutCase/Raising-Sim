@@ -726,6 +726,8 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "unlocked_missions" in dialogic_signal:
 		for mission in dialogic_signal.unlocked_missions:
 			Player.unlocked_missions[mission] = dialogic_signal.unlocked_missions[mission]
+	if "timeline" in dialogic_signal:
+		Dialogic.start(dialogic_signal.timeline)
 	display_stats()
 	
 func _on_timeline_started() -> void:
