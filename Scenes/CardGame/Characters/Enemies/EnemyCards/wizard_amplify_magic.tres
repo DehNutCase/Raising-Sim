@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://6rvsmq5hv5r4"]
+
+[ext_resource type="Texture2D" uid="uid://cljkas0fxcjrv" path="res://Art/Mori no oku no kakurezato/CardGame/data01_06.png" id="1_gk6u3"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_4u1th"]
+[ext_resource type="Resource" uid="uid://dt0jx8gkukrmj" path="res://Scenes/CardGame/Status/magic.tres" id="3_qqp7o"]
+[ext_resource type="Resource" uid="uid://bb4l7x0ct60f6" path="res://Scenes/CardGame/Status/resistance.tres" id="5_p3oa0"]
+
+[resource]
+script = ExtResource("2_4u1th")
+id = "Wizard Amplify Magic"
+type = 4
+target = 2
+cost = 1
+effect_amount = 5
+status = ExtResource("3_qqp7o")
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 0
+second_target = 0
+second_type = 2
+second_effect_amount = 10
+third_target = 0
+third_type = 4
+third_effect_amount = 1
+third_status = ExtResource("5_p3oa0")
+icon = ExtResource("1_gk6u3")

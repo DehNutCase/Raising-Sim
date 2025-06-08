@@ -2064,7 +2064,7 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_BroccoliA.png',
-		'description': "A Dumpling Knight and two Dumpling High Priests. Although High Priests are good at healing damage, Dumpling High Priests seem to have forgotten how to cast barrier, so they're vulnerable to being focus fired.\n\nDespite appearances, Dumpling High Priests are not vegetables. Although they're nutritious, even domesticated varieties are exceptionally bitter. Some are quite sensitive about their appearance, so it's best not to mistake them for broccoli.",
+		'description': "A Dumpling Knight and two Dumpling High Priests. High Priests are excellent at healing and protection spells, and being an advanced class means they even have access to fireballs.\n\nDespite appearances, Dumpling High Priests aren't vegetables. Although they're nutritious, even domesticated varieties are exceptionally bitter. Some are quite sensitive about their appearance, so it's best not to mistake them for broccoli.",
 		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_14.tscn",
 	},
 	{
@@ -2087,7 +2087,8 @@ const tower_levels = [
 			},
 		],
 		'image': 'res://Art/It Came From The Swamp/Enemies/f_curry.png',
-		'description': "A Dumpling Wizard and two Teru Mages. It's best to defeat the wizard before it can buff the mages to dangerous levels.\n\nAs a rare exception, even wild Dumpling Wizards have a sweet, mellow taste, making them extremely popular. It's unknown whether the rice portion or the curry portion is the main body. ...What do you mean curry isn't a type of dumpling?",
+		'description': "A Dumpling Wizard and two Teru Mages. Wizards tend to be deceptively hard to defeat as long as they aren't caught flat-footed, thanks to their ability to fast cast shielding spells in addition to another spell.\n\nAs a rare exception, even wild Dumpling Wizards have a sweet, mellow taste, making them extremely popular. It's unknown whether the rice portion or the curry portion is the main body. ...What do you mean curry isn't a type of dumpling?",
+		'encounter': "res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_15.tscn",
 	},
 	{
 		'level': 16,

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://byulx8lwu4jen"]
+
+[ext_resource type="Texture2D" uid="uid://c8cn4ba5bbec4" path="res://Art/Mori no oku no kakurezato/CardGame/element03_01.png" id="1_8gmfq"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_gkfhf"]
+[ext_resource type="Resource" uid="uid://b64eaug32ev60" path="res://Scenes/CardGame/Status/burn.tres" id="3_wg31o"]
+
+[resource]
+script = ExtResource("2_gkfhf")
+id = "Wizard Fireball"
+type = 1
+target = 1
+cost = 1
+effect_amount = 50
+enemy_attack_type = 1
+multi_hit_amount = 0
+animation = ""
+price = 0
+second_target = 1
+second_type = 4
+second_effect_amount = 50
+second_status = ExtResource("3_wg31o")
+third_target = 0
+third_type = 2
+third_effect_amount = 10
+icon = ExtResource("1_8gmfq")
