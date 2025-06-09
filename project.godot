@@ -84,6 +84,8 @@ directories/dch_directory={
 "Mao/Mao": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Mao/Mao.dch",
 "Mao/Mao_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Mao/Mao_Portrait.dch",
 "Mao_Portrait": "res://Characters/Mao/Mao_Portrait.dch",
+"Martin": "res://Characters/Martin/Martin.dch",
+"Martin_Portrait": "res://Characters/Martin/Martin_Portrait.dch",
 "Morgan": "res://Characters/Morgan/Morgan.dch",
 "Morgan/Morgan": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Morgan/Morgan.dch",
 "Morgan/Morgan_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Morgan/Morgan_Portrait.dch",
@@ -112,6 +114,8 @@ directories/dch_directory={
 "Victoria_Portrait": "res://Characters/Victoria/Victoria_Portrait.dch"
 }
 directories/dtl_directory={
+"Acolyte0": "res://Timelines/JobEvents/Acolyte0.dtl",
+"Acolyte1": "res://Timelines/JobEvents/Acolyte1.dtl",
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
 "Bedtime0": "res://Timelines/Bedtime/Bedtime0.dtl",
 "Bedtime1": "res://Timelines/Bedtime/Bedtime1.dtl",

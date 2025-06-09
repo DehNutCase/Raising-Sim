@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://c5bbass6rgj0k"]
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://c5bbass6rgj0k"]
 
 [ext_resource type="Resource" uid="uid://6rvsmq5hv5r4" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/wizard_amplify_magic.tres" id="1_0i2kp"]
 [ext_resource type="Resource" uid="uid://byulx8lwu4jen" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/wizard_fireball.tres" id="2_ssb5h"]
+[ext_resource type="Resource" uid="uid://dg813n86i3bl2" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/wizard_counterspell.tres" id="3_lr2is"]
 [ext_resource type="Texture2D" uid="uid://bkhtbrinvvjtd" path="res://Art/It Came From The Swamp/Enemies/f_curry.png" id="3_oe0r7"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_5q7vs"]
 
 [resource]
 script = ExtResource("5_5q7vs")
-actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_0i2kp"), ExtResource("2_ssb5h")])
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_0i2kp"), ExtResource("2_ssb5h"), ExtResource("3_lr2is")])
 max_health = 80
 art = ExtResource("3_oe0r7")

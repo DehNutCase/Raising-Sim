@@ -43,4 +43,4 @@ Mao_Portrait (Normal): Yes ma'am!
 	update Mao (Excited)
 	Mao_Portrait (Excited): Yay!
 	[signal arg="{"stats": {"stress": -10, "max_mp": 1, "magic": 1,}}"]
-[update_position action="reset_all" position="4" vector="Vector2(0, 150)" time="0.0"]
+[update_position action="reset_all" time="0.0"]
