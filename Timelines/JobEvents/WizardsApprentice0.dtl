@@ -31,7 +31,7 @@ Mao_Portrait (Normal): Oh. I'll be careful.
 	update Mao (Normal)
 	Rice_Portrait (Normal): Minor telekineses is quite simple to learn for anyone magically inclined.
 	Mao_Portrait (Normal): So he writes with his mind? Woah.
-	Rice_Portrait (Normal): You do realize you also write with your mind, yes? Unless your hand has a separate personality I'm not aware of.
+	Rice_Portrait (Normal): Everyone writes with their mind. Unless your hand has a separate personality I'm not aware of.
 	update Mao [animation="Tada" length="1"]
 	update Mao (Excited)
 	Mao_Portrait (Excited): Wow! So picking stuff up with my hand is basically telekinesis. I'm magic!

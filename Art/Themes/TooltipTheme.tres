@@ -1,7 +1,4 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bg42c3x4ca1wd"]
-
-[ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="1_h02ph"]
+[gd_resource type="Theme" format=3 uid="uid://bg42c3x4ca1wd"]
 
 [resource]
 ItemList/font_sizes/font_size = 16
-TooltipPanel/styles/panel = ExtResource("1_h02ph")

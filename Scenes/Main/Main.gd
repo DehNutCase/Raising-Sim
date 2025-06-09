@@ -127,7 +127,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("HiyoriCorner")
+		#Dialogic.start("WizardsApprentice1")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass

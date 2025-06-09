@@ -44,7 +44,7 @@ Mao_Portrait (Normal): (I'll have apple juice!)
 	Fay_Portrait (Surprised): (Oh?)
 	Mao_Portrait (Normal): (Rice lets me take any class I want! I can even rearrange my schedule.)
 	Fay_Portrait (Surprised): (But you attend school every day, do you not?)
-	Rice_Portrait (Normal): (Although that's true. She has permission to skip all her classes if she wished. That is, she has to be in school, but she doesn't have to take classes.)
+	Rice_Portrait (Normal): (Although that's true. Mao has permission to skip all her classes if she wished. That is, she has to be in school, but she doesn't have to take classes.)
 	Rice_Portrait (Normal): (I believe the intent is to establish a habit, like brushing her teeth twice a day.)
 	Mao_Portrait (Normal): (Anyway, let's get started. I need to earn my paycheck.)
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]

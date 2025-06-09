@@ -70,7 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="61_0yijj"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="62_7ii8w"]
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
-[ext_resource type="Texture2D" uid="uid://c1tox7j3h5uef" path="res://Art/Mori no oku no kakurezato/CardGame/book_01.png" id="68_tte6g"]
+[ext_resource type="Texture2D" uid="uid://bc0twdyjkhcdq" path="res://Art/Mori no oku no kakurezato/CardGame/alchemy05_01.png" id="69_djog0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -1013,7 +1013,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme = ExtResource("67_exeng")
 text = "Spellbook"
-icon = ExtResource("68_tte6g")
+icon = ExtResource("69_djog0")
 icon_alignment = 1
 expand_icon = true
 

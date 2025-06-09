@@ -18,7 +18,7 @@
 	},
 	"gray": {
 		"daily_stats": "{\n\"stress\": -5\n, \n\"max_mp\": -1\n}",
-		"description": "An autonomous combat golem created by Hiyori.\nHas a surprisingly high power level, but Mao would never let her fight.\nA small amount of mana is used daily for recharging.",
+		"description": "An autonomous combat golem created by Hiyori.\nHas a surprisingly high power level, but you would never let her fight.\nA small amount of mana is used daily for recharging.",
 		"image": "res://Characters/Cats/Images/grey-kitten1.png",
 		"monthly_stats": "{}",
 		"name": "Gray",
@@ -27,7 +27,7 @@
 	},
 	"big_potato": {
 		"daily_stats": "{}",
-		"description": "A big potato Mao brought home. For some reason.\nEvery once in a while, she brings it out so people could 'behold' it.\nIt's a potato.",
+		"description": "A big potato you brought home. For some reason.\nEvery once in a while, you bring it out so people could 'behold' it.\nIt's a potato.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potato.png",
 		"monthly_stats": "{}",
 		"name": "Big Potato",
@@ -35,7 +35,7 @@
 	},
 	"detergent": {
 		"daily_stats": "{}",
-		"description": "An almost empty bottle of detergent Mao found in a closet.\nAccording to her, it's proof that she's the princess of the Cleaning Kingdom.\nSmells like peppermint.",
+		"description": "An almost empty bottle of detergent you found in a closet.\nAccording to you, it's proof that you're the princess of the Cleaning Kingdom.\nSmells like peppermint.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/detergent01_01.png",
 		"monthly_stats": "{}",
 		"name": "Detergent Bottle",
@@ -43,10 +43,18 @@
 	},
 	"log": {
 		"daily_stats": "{}",
-		"description": "A log that could have became an angel.\nLooking at it fills you with hope.\n...Or so Mao says.",
+		"description": "A log that could have became an angel.\nLooking at it fills you with hope.\n...Or so you say.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/log.png",
 		"monthly_stats": "{}",
 		"name": "Angel's Log",
+		"stats": "{}",
+	},
+	"tasty_mushroom": {
+		"daily_stats": "{}",
+		"description": "A mushroom you dug up. Looking at it fills your mouth with drool.\nSomething tells you not to cook it, apparently, so you've been keeping it safe.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/mushroom1_01.png",
+		"monthly_stats": "{}",
+		"name": "Tasty Mushroom",
 		"stats": "{}",
 	},
 	"class_change_card": {

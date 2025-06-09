@@ -1,0 +1,66 @@
+[background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Goo (Normal) 3 [ mirrored="true"]
+[history action="clear"]
+update Mao (Normal)
+Mao_Portrait (Normal): Why are we in the woods, master?
+update Goo (Normal)
+Goo_Portrait (Normal): Where is master? Goo doesn't see any master.
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Aren't I your apprentice? That makes you my master!
+Goo_Portrait (Normal): Goo is Goo, not master.
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Got it, master Goo!
+Goo_Portrait (Normal): Goo.
+Mao_Portrait (Normal): Master Goo.
+Goo_Portrait (Normal): Goo.
+Rice_Portrait (Normal): Don't be rude.
+update Mao (Blush)
+Mao_Portrait (Blush): Uguu. Sorry, Goo.
+Goo_Portrait (Normal): Goo doesn't mind. Goo is simply reminding you that it's important to call things by their proper names.
+update Mao [animation="Tada" length="1"]
+update Mao (Normal)
+Mao_Portrait (Normal): Got it, Goo!
+- Why are we in the woods?
+	Goo_Portrait (Normal): Goo felt like taking a walk today.
+	Mao_Portrait (Normal): Oh. Do walks make you more magical?
+	Goo_Portrait (Normal): Goo thinks you should go to school if you wanted to learn magic.
+	update Mao [animation="Tada" length="1"]
+	Mao_Portrait (Normal): I do! But maybe there's faster ways.
+	Goo_Portrait (Normal): You don't need to be in a hurry, Goo thinks.
+	Goo_Portrait (Normal): Mana affinity isn't built overnight, says Goo. Just take your time. The mana quality in the capital means you'll naturally grow up to be a great mage.
+	update Mao (Excited)
+	Mao_Portrait (Excited): Wow. Really?
+	Goo_Portrait (Normal): Goo doesn't lie.
+	[signal arg="{"stats": {"stress": -10, "max_mp": 5, "magic": 5, "scholarship": 5,}}"]
+- Can I take a quick break to dig mushrooms? [if !Player.background_inventory.has_item_with_prototype_id("tasty_mushroom")][else="hide"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): I smell something delicious!
+	Goo_Portrait (Normal): Goo would like to you remind you that you're working right now.
+	update Mao [animation="Tada" length="1"]
+	update Mao (Normal)
+	Mao_Portrait (Normal): Okie dokie. Rice, can you help me remember this place? Let's come back later.
+	Goo_Portrait (Normal): *Sighs* Goo supposes we can consider this as looking for magical reagents.
+	Goo_Portrait (Normal): Go ahead, just make sure to keep some extras. I'll have you refine them into potions later.
+	update Mao [animation="Tada" length="1"]
+	Mao_Portrait (Normal): Yay!
+	Mao_Portrait (Normal): Wait, you can turn mushrooms into potions? The kind you eat, I mean. I know we use magic mushrooms.
+	Goo_Portrait (Normal): Goo says it's not usually worth the time, but it is indeed possible to turn ordinary ingredients into magic potions. But Goo would like to add that you'll be making mushroom extract.
+	update Mao [animation="Tada" length="1"]
+	update Mao (Excited)
+	Mao_Portrait (Excited): Seasoning! Yay!
+	# Add item here, mushroom extract or mushroom
+	[signal arg="{"stats": {"stress": -20,}, "background": "tasty_mushroom"}"]
+- Do you know any super special spells?
+	Goo_Portrait (Normal): Goo isn't that kind of wizard.
+	Mao_Portrait (Normal): Wouldn't an alchemist know rare spells?
+	Goo_Portrait (Normal): Alchemist isn't a type of wizard, says Goo. And Goo isn't a proper alchemist anyway, Goo adds.
+	Goo_Portrait (Normal): Goo does know alchemy, and Goo's main focus is indeed spells, but Goo doesn't focus on rare or exotic spells.
+	Goo_Portrait (Normal): Goo's main research is focused on basic spells, small cantrips like levitating a small ball, conjuring a glass of water, wiping dust off a table, and so on.
+	Goo_Portrait (Normal): Goo thinks the basics are the fastest way to discover the rules behind spellcraft.
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): Umu! Rice always to focus on the basic first.
+	update Mao (Normal)
+	Mao_Portrait (Normal): Remember me when you get famous!
+	Goo_Portrait (Normal): Goo isn't particularly forgetful.
+	[signal arg="{"stats": {"scholarship": 10,}}"]

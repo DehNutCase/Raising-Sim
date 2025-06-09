@@ -238,6 +238,7 @@ directories/dtl_directory={
 "WalkEvents/StorageRoom": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/StorageRoom.dtl",
 "WalkEvents/StorageRoomFirst": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/WalkEvents/StorageRoomFirst.dtl",
 "WizardsApprentice0": "res://Timelines/JobEvents/WizardsApprentice0.dtl",
+"WizardsApprentice1": "res://Timelines/JobEvents/WizardsApprentice1.dtl",
 "test": "res://Timelines/Testing/test.dtl"
 }
 glossary/default_case_sensitive=true
