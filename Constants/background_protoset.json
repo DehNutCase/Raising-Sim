@@ -43,7 +43,7 @@
 	},
 	"log": {
 		"daily_stats": "{}",
-		"description": "A log that could have became an angel.\nLooking at it fills you with hope.\n...Or so you say.",
+		"description": "A log that could have became an angel.\nLooking at it fills one with hope.\n...Or so you say.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/log.png",
 		"monthly_stats": "{}",
 		"name": "Angel's Log",
@@ -55,6 +55,14 @@
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/mushroom1_01.png",
 		"monthly_stats": "{}",
 		"name": "Tasty Mushroom",
+		"stats": "{}",
+	},
+	"bottle_of_spring_water": {
+		"daily_stats": "{}",
+		"description": "Spring Water you bottled yourself. Not particularly magical, but quite tasty and refreshing nontheless.\n\nDrinking it fills one with courage\n...Or so you say.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potion3_01.png",
+		"monthly_stats": "{}",
+		"name": "Bottle of Spring Water",
 		"stats": "{}",
 	},
 	"class_change_card": {

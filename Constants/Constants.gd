@@ -147,6 +147,7 @@ const jobs = {
 		},
 		"description": "General cleaning around the local church.\nOccasionally the head priest lets you help with making holy water.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes06_02.png",
+		"timelines": ["Acolyte0", "Acolyte1"],
 	},
 	'Hunting': {
 		'stats': {
@@ -167,8 +168,9 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 25,
-		"description": "Not as bloody as one might expect, since it's Dumpling hunting.\nTranquilizer bolts are provided, but they don't really make a difference against Dumplings.",
+		"description": "Not as bloody as you might expect, since it's Dumpling hunting.\nTranquilizer bolts are provided, but they don't really make a difference against Dumplings.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/weapon02_01.png",
+		"timelines": ["Hunting0", "Hunting1"],
 	},
 	'Cook': {
 		'stats': {

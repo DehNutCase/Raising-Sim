@@ -200,6 +200,8 @@ directories/dtl_directory={
 "Housework0": "res://Timelines/JobEvents/Housework0.dtl",
 "Housework1": "res://Timelines/JobEvents/Housework1.dtl",
 "Housework2": "res://Timelines/JobEvents/Housework2.dtl",
+"Hunting0": "res://Timelines/JobEvents/Hunting0.dtl",
+"Hunting1": "res://Timelines/JobEvents/Hunting1.dtl",
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "InkMageSchoolFirst": "res://Timelines/ActionEvents/InkMageSchool/InkMageSchoolFirst.dtl",
 "MagecraftEducationEnd": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationEnd.dtl",

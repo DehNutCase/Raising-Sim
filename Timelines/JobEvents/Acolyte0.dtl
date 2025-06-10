@@ -10,7 +10,7 @@ Mao_Portrait (Normal): And I think that's a throne over there. Dunno why anyone 
 Rice_Portrait (Normal): The priest here has strange tastes. Since he does his job properly, there's really nothing wrong with decorating his church the way he likes, but I'd advise against emulating him.
 Mao_Portrait (Normal): Okie dokie.
 - Do you know how to make holy water?
-	Rice_Portrait (Normal): I need the recipe in front of me, but that's not difficult when we have intranet access. Assuming we aren't in the middle of nowhere.
+	Rice_Portrait (Normal): I need the recipe in front of me, but that's not difficult when we have intranet access.
 	Mao_Portrait (Normal): Teehee. So you can't just whip up a few bottles if ghosts suddenly pop out?
 	Rice_Portrait (Normal): If I had to, I believe I could. But if all you wanted to do was exorcise them, punching them is sufficient, most of the time.
 	update Mao (Surprised)
