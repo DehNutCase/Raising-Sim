@@ -195,7 +195,7 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'budding_chef',
 		},
-		"description": "Helping out at the palace kitchen.\nTechnically can be considered part of your actual job, but you do get paid for it.",
+		"description": "Helping out at the palace kitchen.\nTechnically part of your actual job, but you do get paid for it.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/book03_01.png",
 	},
 	'Doodle': {
@@ -334,7 +334,7 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 20,
-		"description": "The hardhat isn't really necessary, but it makes you feel smarter.",
+		"description": "The hardhat isn't really necessary, but it makes you feel more professional.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/helmet.png",
 	},
 }
