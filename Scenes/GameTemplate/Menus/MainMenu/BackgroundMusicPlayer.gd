@@ -30,3 +30,9 @@ func play_song(song:String) -> void:
 			await get_tree().create_timer(.1).timeout
 			volume_db += 2
 	return
+
+func pause_song() -> void:
+	stream_paused = true
+
+func resume_song() -> void:
+	stream_paused = false

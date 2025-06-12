@@ -732,6 +732,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 		Dialogic.start(dialogic_signal.timeline)
 	
 func _on_timeline_started() -> void:
+	get_tree().call_group("BackgroundMusicPlayer", "pause_song")
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()
 	dialogic_viewport_container.show()
@@ -740,6 +741,7 @@ func _on_timeline_started() -> void:
 	Player.dialogic_temporary_flags = {}
 	
 func _on_timeline_ended() -> void:
+	get_tree().call_group("BackgroundMusicPlayer", "resume_song")
 	get_tree().call_group("Live2DPlayer", "resume_live2d")
 	update_expressions()
 	dialogic_panel.hide()

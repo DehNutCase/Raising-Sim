@@ -12,7 +12,7 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	Rice_Portrait (Normal): Do you remember where we left off?
 	Mao_Portrait (Normal): It was just after she granted the fisherman's wish a second time!
 	Rice_Portrait (Normal): Very well.
-	Rice_Portrait (Normal): On his return, the fisherman found his home replaced with a castle of stone and iron. It was vast and imposing, standing proudly against the now stormy sky.
+	Rice_Portrait (Normal): On his return, the fisherman found his home replaced with a castle of stone and iron. It was vast and imposing, standing proudly against the stormy sky.
 	Rice_Portrait (Normal): But still, he wasn't satisfied.
 	update Mao (EyesClosed)
 	Rice_Portrait (Normal): (I suppose when they called her the 'Littlest' Goddess, they weren't referring to her rank as a diety.)
@@ -23,39 +23,61 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	Rice_Portrait (Normal): Instead, he walked up to the shrine, loudly stating his wish.
 	Rice_Portrait (Normal): Unlike before, the Littlest Goddess was no longer smiling.
 	Rice_Portrait (Normal): When you return, said the Littlest Goddess, everything will be as you wished.
-	Rice_Portrait (Normal): She had a cold, indifferent look on her face.
-	[signal arg="{"stats": {"stress": -10, "magic": 5,}}"]
+	Rice_Portrait (Normal): She had an indifferent look on her face.
+	Rice_Portrait (Normal): With a superficial 'thank you,' the fisherman headed back home.
+	Rice_Portrait (Normal): On his return, he found maids, butlers, gardeners and so on, all running to and fro, mopping the floors, cleaning the carpets, taking care of the flowers.
+	Rice_Portrait (Normal): When he went into the dining hall, he found a luxurious feast waiting for him. Whether it was exotic fruits imported from abroad, decades old wine aged to perfection, or the finest, most delicious steaks, his table had it all.
+	Rice_Portrait (Normal): Yet, even after enjoying himself, patting his stomach lazily after such a delicious meal, he still wasn't satisfied.
+	Rice_Portrait (Normal): Why should he be called a mere 'milord,' he wondered, when he could be called 'your majesty'?
+	Rice_Portrait (Normal): So he called up his coachman, ordering them to take him to the shrine.
+	Rice_Portrait (Normal): (I wonder if there's going to a moral to the fisherman's wishes. The earlier stories were quite lighthearted, but this fisherman seems like he's going to end badly.)
+	Rice_Portrait (Normal): (Ending up in his old shack is probably the best he could wish for.)
+	[signal arg="{"stats": {"stress": -10,}}"]
 - Do you have any personal stories?
 	Rice_Portrait (Normal): Like I said before, I don't believe my experiences are particularly interesting. But what did you want to hear about?
 	Mao_Portrait (Normal): Haven't you gone on a lot of adventures before?
 	Rice_Portrait (Normal): Adventures? I did wander around Albion for a few years, but the parts of that I found enjoyable would be quite boring to you.
 	Rice_Portrait (Normal): I would be talking about things like a new bookstore that opened in an out of the way city, an interesting lecture I happened to attend, and so on.
 	Rice_Portrait (Normal): Why did you think I went on adventures?
-	Mao_Portrait (Normal): You just seemed like that kind of person!
+	Mao_Portrait (Normal): You just seem like that kind of person!
 	Rice_Portrait (Normal): I see.
 	Rice_Portrait (Normal): I still believe you should ask for something else next time. But I'll talk about the time I climbed Tara's Tower of Light with my best friend.
 	Rice_Portrait (Normal): This was back when I lived in Tara, so it wasn't an adventure in the sense of a journey, but dungeon delving and tower climbing can be considered archetypal adventures, I think.
 	update Mao [animation="Tada" length="1"]
 	Mao_Portrait (Normal): Yay!
-	Rice_Portrait (Normal): It was just after we graduated. Lucca, being the way she is, didn't want to settle down at all, so she came to me with an offer...
+	Rice_Portrait (Normal): It was just after we graduated. Lucca, being the way she is, didn't want to settle down at all, so she came to me with an offer.
 	Rice_Portrait (Normal): (I should probably leave out the part where we almost got total party killed. Or perhaps I should emphasize it? So Mao doesn't go around thinking dungeons and towers are fun places to play. Hmm.)
 	update Mao (EyesClosed)
-	Rice_Portrait (Normal): (I'll think about it later. The start and middle are quite lighthearted.)
-	Rice_Portrait (Normal): (Mao would probably get bored of this before we reach the end.)
-	[signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]
-- Surprise me!
-	Rice_Portrait (Normal): I'll see if there's anything that looks interesting in the intranet library.
-	Rice_Portrait (Normal): How about 'The Dark Dragon and the Hero of Light'? It seems to be a series of children's books.
-	Rice_Portrait (Normal): (I suppose it's only expected that the main character is the 'Dark Dragon.' I suppose this is Albion's version of Hero versus Demon King stories?)
-	Rice_Portrait (Normal): (Wait, that's wrong. The titular character is the 'Hero of Light.' Strange. Shouldn't it have been 'The Hero of Light and the Dark Dragon' then?)
-	Rice_Portrait (Normal): (I wonder if this series is even popular.)
-	Mao_Portrait (Normal): That sounds cool!
-	Rice_Portrait (Normal): I'll begin, then.
-	Rice_Portrait (Normal): A long time ago, there lived an immortal dragon with very many heads. The dragon was proud and vicious, and none could stand in its path and live.
+	Rice_Portrait (Normal): (I'll think about it later. Mao would probably get bored of this before we reach the end.)
+	Rice_Portrait (Normal): She wanted to climb to the top of the tower, or at least a floor where nobody had been before. She was looking for party members.
+	Rice_Portrait (Normal): My family didn't have any particular expectations for me, and I didn't have any personal plans, so I accepted.
+	Rice_Portrait (Normal): Personally, I thought the two of us were more than enough for an Ascension Party, but she wanted to make a 'proper' one, whatever that meant.
+	Rice_Portrait (Normal): So we posted a few recruitment requests while doing some basic commissions in the Tower's lower levels.
+	Rice_Portrait (Normal): The commissions paid surprisingly well, considering how easy they were. But then again, most academy graduates have better things to do than muck around the tower, and most people would be risking their lives even in the lowest levels.
+	Rice_Portrait (Normal): Something like hazard pay.
+	Rice_Portrait (Normal): Lucca realized this might end up something of a problem right away. If our new party members were the typical low leveled and desperate tower climber, then any encounter that could bother two of us wouldn't even leave any stains of our party members behind.
+	Rice_Portrait (Normal): In other words, we needed to either recruit some top level combat power, which definitely wasn't happening, or train up the riff raff we did manage to recruit.
+	Rice_Portrait (Normal): So I ended up the luggage carrier, and she ended up being the 'black' mage. Supportive spells would zero out experience gains, but you could apply curses without being considered a party member for experience purposes.
+	update Mao (Normal)
+	Mao_Portrait (Normal): She made you carry luggage!?
+	Rice_Portrait (Normal): You should be trying to sleep. But yes, I was the porter. I didn't particularly mind the job.
+	Rice_Portrait (Normal): Her reason was quite interesting as well, according to her, the porter should be either the strongest or second strongest person in the party, since they needed to be able to keep the luggage and themselves safe.
+	Rice_Portrait (Normal): It's entirely contrary to the common sense that the porter should be the most disposable member of the party, but there was a certain logic to it.
+	Rice_Portrait (Normal): (Well, going against common sense is part of what led to the mess later, but that's neither here nor there.)
 	update Mao (EyesClosed)
-	Rice_Portrait (Normal): (Isn't this just a typical hero story?)
-	Rice_Portrait (Normal): (Well, looks like Mao likes it, at least. I'll keep reading.)
-	[signal arg="{"stats": {"stress": -5, "agility": 5, "defense": 5,}}"]
+	Rice_Portrait (Normal): Anyway, the plan was that the two of us would take on supporting roles while carefully raising up any party members we managed to recruit.
+	Rice_Portrait (Normal): Neither of us were any good at supporting, Lucca even did some last minute cramming just to learn some basic curses, but she was quite insistent on having a 'proper' party rather than just the two of us.
+	Rice_Portrait (Normal): It ended up working well enough, we recruited a swordsman, an archer, and even a priest. The swordsman got a lot of jealous looks whenever we were in town, since everyone but him were girls.
+	Rice_Portrait (Normal): With the two of us around to handle any contigencies, the other three leveled up quickly and safely. In retrospect, such an easy start probably gave them an overinflated sense of self worth, something like "so these fancy pants academy graduates aren't much after all."
+	Rice_Portrait (Normal): The two of us were massively overleveled, so we couldn't act as 'proper' party members without zeroing out any possible experience gains.
+	Rice_Portrait (Normal): Since we didn't do anything big or flashy, they probably thought we didn't do anything.
+	[signal arg="{"stats": {"stress": -10,}}"]
+- Actually, you don't need to tell me bedtime stories anymore
+	Rice_Portrait (Normal): I see. Then, good night.
+	Mao_Portrait (Normal): Night!
+	# Add flag to stop playing bedtime timelines
+	[signal arg="{"stats": {"stress": -5,}, "event_flags": {"no_bedtime": true}}"]
+	[end_timeline]
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Zzz...
 Rice_Portrait (Normal): (Good night.)
