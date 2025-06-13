@@ -76,6 +76,7 @@ directories/dch_directory={
 "Hiyori/Hiyori": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori.dch",
 "Hiyori/Hiyori_Portrait": "res://android/build/assetPacks/installTime/src/main/assets/Characters/Hiyori/Hiyori_Portrait.dch",
 "Hiyori_Portrait": "res://Characters/Hiyori/Hiyori_Portrait.dch",
+"Item_Placeholder": "res://Characters/Item_Placeholder.dch",
 "Keith": "res://Characters/Keith/Keith.dch",
 "Keith_Portrait": "res://Characters/Keith/Keith_Portrait.dch",
 "Lilian": "res://Characters/Lilian/Lilian.dch",
@@ -277,6 +278,14 @@ animations/leave_default="res://addons/dialogic/Modules/Character/DefaultAnimati
 layout/end_behaviour=1
 choices/hotkey_behaviour=1
 text/autoskip_time_per_event=0.05
+event_default_overrides={
+"Music": {
+"audio_bus": "Music"
+},
+"Sound": {
+"audio_bus": "Effects"
+}
+}
 
 [display]
 

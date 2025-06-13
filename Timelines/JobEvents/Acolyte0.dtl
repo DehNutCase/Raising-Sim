@@ -1,3 +1,4 @@
+[music path="res://Music/Tim Beek/Sun Shine Loop.wav" fade="0.5" volume="0.0" bus=""]
 [background arg="res://Art/Background/Background material shop/bg030a.jpg" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]

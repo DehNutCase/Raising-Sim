@@ -1,3 +1,4 @@
+[music path="res://Music/Tim Beek/Sun Shine Loop.wav" fade="0.5" volume="0.0" bus=""]
 [background arg="res://Art/Background/Background material shop/bg007d.bmp" fade="0.0"]
 join Mao (Normal) 1
 [history action="clear"]
@@ -11,13 +12,27 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	update Mao [animation="Tada" length="1"]
 	Mao_Portrait (Normal): Wait! What happened to the fisherman from last time?
 	Rice_Portrait (Normal): Were you not awake when I read that part? How much do you remember?
-	Rice_Portrait (Normal): (Personally, I think it would've been better if we skipped it.)
+	Rice_Portrait (Normal): (Personally, I think it would be better if we skipped it.)
 	update Mao [animation="Tada" length="1"]
 	Mao_Portrait (Normal): He wanted to be called 'your majesty'!
 	Rice_Portrait (Normal): I'll continue from there, then.
+	Rice_Portrait (Normal): So have you wished, said the goddess, so it shall be.
+	Rice_Portrait (Normal): Return, you are now king.
+	Rice_Portrait (Normal): The fishman turned to leave. But, just as he was stepping into his carriage, a thought occured to him.
+	Rice_Portrait (Normal): Why should he settle for being king, he wondered, when he could be emperor. So he stepped back out of the carriage, heading back to the shrine.
+	Rice_Portrait (Normal): A king isn't enough, he yelled, I need to be emperor.
+	Rice_Portrait (Normal): The goddess nodded her head, no longer bothering to speak, and waved him away.
+	Rice_Portrait (Normal): On the way home, the sea was raging, the sky was dark, and all sorts of animals can be seen fleeing this way and that, but the fisherman paid it no mind, merely ordering his coachman to drive faster.
+	Rice_Portrait (Normal): On his return, he found that his castle was no longer merely stone and iron, but marble and silver. His servants were no longer merely common born maids and butlers, but rather barons, counts, and even the occasional duke.
+	Rice_Portrait (Normal): All the nobles of the kingdom came to pay him homage, and he saw the prettiest princesses and most beautiful queens fighting over who could speak to him first.
+	Rice_Portrait (Normal): Yet even so, he wasn't satisfied.
+	Rice_Portrait (Normal): He spent that night tossing and turning on his bed, wondering what more he could possibly wish for.
+	Rice_Portrait (Normal): It wasn't until the dawn broke, sunlight gently peeking through his bedroom windows, that he finally knew what he would wish for.
+	Rice_Portrait (Normal): Strangely, the weather was perfect, the sky was clear, and the sea smooth as a mirror. Everything was calm and serene.
+	Rice_Portrait (Normal): On the entire way to the shrine, there wasn't a single bug, bird, or animal in sight.
+	# 
 	Rice_Portrait (Normal): After hearing the fisherman's last wish, the Littlest Goddess, unlike every other time the fisherman made a wish, asked the fisherman if he was sure about making such a wish.
-	Rice_Portrait (Normal): I am, said the fisherman. Last night, tossing and turning in his bed, he had thought and thought and thought about what more he could possibly want.
-	Rice_Portrait (Normal): The Littlest Goddess had granted every wish of his before, so he was confident she would grant this one as well.
+	Rice_Portrait (Normal): I am, said the fisherman. The Littlest Goddess had granted every wish of his before, so he was confident she would grant this one as well.
 	Rice_Portrait (Normal): I want to be the great god of this world, the fisherman said once again. I wish the sun to rise at my bidding, and the moon to await my permission to set.
 	Rice_Portrait (Normal): You must have realized, said the Littlest Goddess, every wish except your very first had made you more miserable and less happy. Are you sure, she asked once again.
 	Rice_Portrait (Normal): This will be the last time, she said.
