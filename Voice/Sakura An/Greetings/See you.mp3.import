@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0e5pb7jh1y48"
+path="res://.godot/imported/See you.mp3-15f7c8463d4da6b3fef573749964ad01.mp3str"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Greetings/See you.mp3"
+dest_files=["res://.godot/imported/See you.mp3-15f7c8463d4da6b3fef573749964ad01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -15,7 +15,7 @@ var enemy_scene: CardGameEncounterScene
 @onready var cubism_container: PanelContainer = %CubismContainer
 
 func _ready():
-	get_tree().call_group("BackgroundMusicPlayer", "play_song", "battle")
+	Player.play_song("battle")
 	if Player.encounter:
 		card_game_level = load(Player.encounter)
 	enemy_scene = card_game_level.instantiate()

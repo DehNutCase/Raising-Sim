@@ -93,6 +93,7 @@ func _ready():
 	#Steam initiated here
 	if OS.has_feature("steam"):
 		Steam.steamInitEx()
+	Player.play_song("spring")
 
 func _on_play_button_pressed():
 	play_game()

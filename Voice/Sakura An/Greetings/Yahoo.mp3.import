@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crtee62awiif5"
+path="res://.godot/imported/Yahoo.mp3-bd3462f804e932f6b9446872c892a919.mp3str"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Greetings/Yahoo.mp3"
+dest_files=["res://.godot/imported/Yahoo.mp3-bd3462f804e932f6b9446872c892a919.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

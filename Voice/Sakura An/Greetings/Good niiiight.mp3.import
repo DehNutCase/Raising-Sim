@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg7iaydxa0sxr"
+path="res://.godot/imported/Good niiiight.mp3-df760f68c123974994f9bbcc4aabf961.mp3str"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Greetings/Good niiiight.mp3"
+dest_files=["res://.godot/imported/Good niiiight.mp3-df760f68c123974994f9bbcc4aabf961.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

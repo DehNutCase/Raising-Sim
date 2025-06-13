@@ -15,4 +15,4 @@ func display_day(day: int):
 	#Don't display year for now
 	#text = " Year: %s \n Season: %s \n Day: %s" % [year, seasons[season], date]
 	text = " Season: %s \n Day: %s" % [seasons[season], date]
-	get_tree().call_group("BackgroundMusicPlayer", "play_song", seasons[season])
+	Player.play_song(seasons[season])

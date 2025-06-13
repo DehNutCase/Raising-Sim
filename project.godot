@@ -34,6 +34,7 @@ SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoad
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
 
 [dialogic]
 
@@ -299,7 +300,7 @@ window/ios/allow_high_refresh_rate=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloot/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/toastparty/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloot/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/sound_manager/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [gloot]
 

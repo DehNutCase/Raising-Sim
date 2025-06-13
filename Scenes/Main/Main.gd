@@ -104,6 +104,7 @@ func _ready():
 	
 	if (Player.stats["stress"] < 50):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
+		Player.play_voice("hello")
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 	
@@ -714,7 +715,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 		if (!Player.skill_inventory.get_item_with_prototype_id(dialogic_signal.skill)):
 			Player.skill_inventory.create_and_add_item(dialogic_signal.skill)
 	if "music" in dialogic_signal:
-		get_tree().call_group("BackgroundMusicPlayer", "play_song", dialogic_signal.music)
+		Player.play_song(dialogic_signal.music)
 	if "mission" in dialogic_signal:
 		Player.active_mission = dialogic_signal.mission
 		if Player.active_mission.get('combat'):
@@ -732,7 +733,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 		Dialogic.start(dialogic_signal.timeline)
 	
 func _on_timeline_started() -> void:
-	get_tree().call_group("BackgroundMusicPlayer", "play_song", "cheerful")
+	Player.play_song("cheerful")
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()
 	dialogic_viewport_container.show()

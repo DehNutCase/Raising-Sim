@@ -6,7 +6,7 @@ update Mao [animation="Shake X" length="5"]
 update Mao (Normal)
 Mao_Portrait (Normal): ~Lalala. Cleaning the shelves.~
 Mao_Portrait (Normal): Oh wow, there're a lot of crowns on this shelf. Are they real?
-Rice_Portrait (Normal): I'm not sure what would make a crown 'fake'. But each of these once belonged to a monarch of something or another.
+Rice_Portrait (Normal): I'm not sure what would make a crown 'fake'. But each of these once belonged to a monarch of demonkind.
 Mao_Portrait (Normal): Oh. Hmm. Would I become a king if I put one on?
 Rice_Portrait (Normal): No. And even if you did, it would be a very short reign. Likely less than a day.
 Mao_Portrait (Normal): Huh.
@@ -44,13 +44,13 @@ Mao_Portrait (Normal): Huh.
 	Rice_Portrait (Normal): Our official stance is that we have no idea where the Elf King is. Unofficially, if you really needed to contact him, we can make it happen.
 	Rice_Portrait (Normal): In any case, he's not in Albion.
 	Mao_Portrait (Normal): What about the Crown of Humans?
-	Rice_Portrait (Normal): That one's a bit complicated. Officially, the Emperor Arcadia is also the Human King, and he's wearing the Crown at the moment.
+	Rice_Portrait (Normal): That one's a bit complicated. Officially, the Emperor Arcadia is also the King of Humans, and he's wearing the Crown at the moment.
 	Rice_Portrait (Normal): Have you studied the history of Arcadia? It used to be one of the three super powers of the world.
 	Mao_Portrait (Normal): All I remember from my textbooks is that Arcadia is one of the forbidden zones.
 	Rice_Portrait (Normal): That's right. Although unlike most other forbidden zones, it's not because it's particularly dangerous.
 	Rice_Portrait (Normal): You simply can't leave after entering if you're human.
 	update Mao (Surprised)
-	Mao_Portrait (Surprised): Wow. Is that a special power of the Human King?
+	Mao_Portrait (Surprised): Wow. Is that a special power of the King of Humans?
 	Rice_Portrait (Normal): Yes, but not in the way you'd expect. The officially recognized Emperor Arcadia doesn't have any of the actual powers.
 	update Mao (Normal)
 	Rice_Portrait (Normal): It was a whole mess of a succession struggle that would take quite a few books to describe.

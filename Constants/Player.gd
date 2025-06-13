@@ -367,3 +367,34 @@ func shake(target: Node, strength: float, duration: float = 0.2) -> void:
 	tween.finished.connect(func(): target.position = original_position)
 	await tween.finished
 	
+###Music and Audio section
+var spring_song = preload("res://Music/Last Adventure 87 no afterglow.wav")
+var summer_song = preload("res://Music/Chiptune Dream Loop.wav")
+var autumn_song = preload("res://Music/New Road Loop.wav")
+var winter_song = preload("res://Music/Walk Alone 80 no afterglow.wav")
+var battle_song = preload("res://Music/8Bit DNA Loop.wav")
+var no_exit_song = preload("res://Music/No Exit 106 no afterglow.wav")
+
+var cheerful_song = preload("res://Music/Tim Beek/Sun Shine Loop.wav")
+
+var songs = {
+	"spring": spring_song,
+	"summer": summer_song,
+	"autumn": autumn_song,
+	"winter": winter_song,
+	"battle": battle_song,
+	"no_exit": no_exit_song, #Currently not used
+	"cheerful": cheerful_song,
+}
+
+var voices = {
+	"hello": load("res://Voice/Sakura An/Greetings/Good Morning.mp3"),
+}
+func play_song(song:String) -> void:
+	song = song.to_lower()
+	SoundManager.play_music(songs[song])
+	return
+
+func play_voice(voice: String) -> void:
+	voice = voice.to_lower()
+	SoundManager.play_ambient_sound(voices[voice])
