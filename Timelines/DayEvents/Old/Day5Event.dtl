@@ -5,6 +5,18 @@ join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
 Rice_Portrait (Normal): Can I have a moment?
 update Mao (Normal)
 Mao_Portrait (Normal): Sure, what did you need?
+if not Player.event_flags.get("apprentice_robes_event"):
+	[signal arg="{"stats": {"gold": 10000,}}"]
+	Rice_Portrait (Normal): First of all, here.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Oh wow! What's all this money for?
+	update Mao (Normal)
+	Rice_Portrait (Normal): You.
+	Rice_Portrait (Normal): Her majesty asked me to give this to you in place of your belated birthday present.
+	update Mao (Surprised)
+	Mao_Portrait (Surprised): Isn't this way too much money?
+	update Mao (Normal)
+	Rice_Portrait (Normal): Not at all.
 Rice_Portrait (Normal): Please remember that as part of your agreement with her majesty she'll be checking up on you near the end of month.
 update Mao (Sad)
 Mao_Portrait (Sad): Am I in trouble?

@@ -1,3 +1,4 @@
+[music path="res://Music/Tim Beek/Sun Shine Loop.wav" fade="0.5" volume="0.0" bus=""]
 [background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 1
 join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
@@ -7,47 +8,37 @@ Rice_Portrait (Normal): Sure. Here's your belated birthday present.
 update Mao (Surprised)
 Mao_Portrait (Surprised): Um, didn't you already give me your present yesterday?
 Rice_Portrait (Normal): That was your birthday present. This is your belated birthday present.
-Rice_Portrait (Normal): And it's not from me, her majesty asked me to give it to you on New Year's. Apparently it's supposed to help with your new job.
-update Mao (EyesClosed)
-Mao_Portrait (EyesClosed): (But her majesty was also at the party yesterday? I already received her present.)
-- Accept Robes
-	[signal arg="{"item": "apprentice_robes"}"]
-	update Mao (Normal)
-	Mao_Portrait (Normal): Well, I don't really get it, but thank you.
-	do Player.set_event_flag("apprentice_robes_event")
-- Decline
-	update Mao (Normal)
-	Mao_Portrait (Normal): I already got my present yesterday, so I think you should double check this is for me.
-	Rice_Portrait: Hmm, if you say so.
-	Rice_Portrait: (I should go ahead and let her majesty know.)
-update Mao (Normal)
-Rice_Portrait (Normal): Next. Have you decided on what classes you want to take? Your choice today is by no means final, of course.
+Rice_Portrait (Normal): And it's not from me, her majesty asked me to give it to you on New Year's. Please take a look. You can only take one, so pick the deck you like.
+update Mao [animation="Tada"]
+update Mao (Excited)
+Mao_Portrait (Excited): Oh wow, spell cards! It's time to duel! Teehee.
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Hmm...
-label Elective_Choice
-- Drawing sounds fun (World Painter)
+label Deck_Choice
+- My deck, [Brick Hand Accident], has no weaknesses!
 	update Mao (Normal)
-	Rice_Portrait (Normal): The Ink Mage series is quite flexible, being capable of casting every type of spell, and the World Painter class is one of the highest tier classes alongside classes like Demon King or Hero.
-	Rice_Portrait (Normal): According to her majesty, World Painter isn't even the final class in the series, so Ink Mage has quite a lot of potential.
-	Rice_Portrait (Normal): Unfortunately, it's quite rare. The only reason we know the World Painter class exists at all is because her majesty met one a long time ago.
-	Rice_Portrait (Normal): The base Ink Mage class is also quite weak, and its immediate promotions aren't much better, so you'll need to spend some extra effort to become combat ready. Assuming you're interested in that kind of thing.
-	Rice_Portrait (Normal): To be honest, going down this path will involve a lot of trial and error as we figure out the unlock requirements for the more advanced classes in the Ink Mage series.
-	do Player.set_elective("Ink Mage")
-- I want to be a diplomat (Demon King)
-	Rice_Portrait (Normal): The diplomacy classes won't affect your class progression much. In other words, you'll need to take another set of classes after finishing.
-	Rice_Portrait (Normal): Her majesty is in desperate need of diplomats at the moment, her idea of diplomacy can be summed to\: "I have a bigger fist than you", so taking this course is a fast track towards contributing at the national level.
-	Rice_Portrait (Normal): But only if you want to. The current situation is quite stable, so there's no need to feel pressured.
-	Rice_Portrait (Normal): The classes in this course are quite popular amongst Albion's nobility, so it's also a good opportunity to make connections.
-	do Player.set_elective("Diplomat")
-- You're an Magic Officer, right? (Trailblazer)
-	Rice_Portrait (Normal): The Magic Officer series is still in development at the moment. Although it's an excellent series of classes overall, it suffers from a lack of an endgame, so to speak.
-	Rice_Portrait (Normal): I do spend most of my time in this class, yes, but for pure performance it's not necessarily the best choice. The biggest advantage of the series is how quickly it reaches an acceptable level of strength.
-	Rice_Portrait (Normal): Of course, since it's still development, there's a reasonable chance a proper endgame class for the series will appear eventually.
-	do Player.set_elective("Magic Officer")
+	Rice_Portrait (Normal): Well, it sounds like you know what you're getting into, at least.
+	Rice_Portrait (Normal): In my opinion, this deck is a little too much for you at the moment, but it's probably the strongest of your choices.
+	Rice_Portrait (Normal): If you want to handle it properly, you'll need to work on your mana capacity, skill, and scholarship.
+	Rice_Portrait (Normal): Alternatively, you can focus on raising your agility, which should allow you to win most duels on the first turn.
+	Mao_Portrait (Normal): Umu!
+	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/brick_hand_accident.tres")
+- This deck full of cantrips looks fun [Prestidigitation]
+	update Mao (Normal)
+	Rice_Portrait (Normal): This would be my recommended choice, it's by far the easiest deck to handle.
+	Rice_Portrait (Normal): It's quite strong even if you don't make any changes, but you can consider selling the harder to use cards to make it even stronger and more consistent.
+	Rice_Portrait (Normal): You might run into issues later against enemies with multiple health bars, but it shouldn't be hard to build a better deck by then.
+	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/prestidigitation.tres")
+- I'm not sure why, but I'm really drawn to this deck [Ordinary Beginnings]
+	update Mao (Normal)
+	Rice_Portrait (Normal): Hmm. To put it nicely, this deck has the most potential. To put it bluntly, it's the weakest.
+	Rice_Portrait (Normal): Considering it's meant to be a birthday present, I added a little something extra just in case you decided to pick it, but I would personally recommended you pick something else.
+	Mao_Portrait (Normal): Thanks.
+	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/new_beginning.tres")
 Rice_Portrait (Normal): Are you sure about this choice?
 - Yes
 - Let me think it over again
-	jump Elective_Choice
+	jump Deck_Choice
 Rice_Portrait (Normal): One more thing. I'll be escorting you from today onwards.
 Rice_Portrait (Normal): I'll stay out of sight unless something serious happens, so you can just pretend I'm not here.
 update Mao (Excited)

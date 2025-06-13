@@ -137,6 +137,9 @@ func set_event_flag(flag: String) -> void:
 func set_elective(flag: String) -> void:
 	current_elective = flag
 	
+func set_deck(flag: String) -> void:
+	card_game_deck = load(flag).cards.duplicate()
+	
 #Helper function to calculate ending type and score
 func calculate_ending():
 	#need to return a number score and a string for ending name

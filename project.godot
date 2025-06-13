@@ -209,6 +209,8 @@ directories/dtl_directory={
 "MagecraftEducationFirst": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationFirst.dtl",
 "MagecraftEducationMiddle": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationMiddle.dtl",
 "MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
+"Old/Day1Event": "res://Timelines/DayEvents/Old/Day1Event.dtl",
+"Old/Day5Event": "res://Timelines/DayEvents/Old/Day5Event.dtl",
 "PhysicalEducationEnd": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationEnd.dtl",
 "PhysicalEducationFirst": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationFirst.dtl",
 "PhysicalEducationMiddle": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationMiddle.dtl",
