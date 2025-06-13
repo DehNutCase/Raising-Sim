@@ -732,7 +732,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 		Dialogic.start(dialogic_signal.timeline)
 	
 func _on_timeline_started() -> void:
-	get_tree().call_group("BackgroundMusicPlayer", "pause_song")
+	get_tree().call_group("BackgroundMusicPlayer", "play_song", "cheerful")
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()
 	dialogic_viewport_container.show()
@@ -741,7 +741,7 @@ func _on_timeline_started() -> void:
 	Player.dialogic_temporary_flags = {}
 	
 func _on_timeline_ended() -> void:
-	get_tree().call_group("BackgroundMusicPlayer", "resume_song")
+	day_label.display_day(day)
 	get_tree().call_group("Live2DPlayer", "resume_live2d")
 	update_expressions()
 	dialogic_panel.hide()
@@ -768,7 +768,11 @@ func _on_inventory_item_added(item:InventoryItem):
 				item.get_inventory().remove_item(item)
 			_:
 				printerr("item.get_property('special_type') failed to match")
-	display_toast(toast, "bottom", "center", icon_path)
+	
+	#hide toast when adding initial inventory items
+	if day != 0:
+		display_toast(toast, "bottom", "center", icon_path)
+	
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
 		

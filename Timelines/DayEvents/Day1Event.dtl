@@ -1,4 +1,3 @@
-[music path="res://Music/Tim Beek/Sun Shine Loop.wav" fade="0.5" volume="0.0" bus=""]
 [background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 1
 join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
@@ -26,13 +25,13 @@ label Deck_Choice
 - This deck full of cantrips looks fun [Prestidigitation]
 	update Mao (Normal)
 	Rice_Portrait (Normal): This would be my recommended choice, it's by far the easiest deck to handle.
-	Rice_Portrait (Normal): It's quite strong even if you don't make any changes, but you can consider selling the harder to use cards to make it even stronger and more consistent.
-	Rice_Portrait (Normal): You might run into issues later against enemies with multiple health bars, but it shouldn't be hard to build a better deck by then.
+	Rice_Portrait (Normal): It's quite strong even if you don't make any changes, but you can consider selling the harder to use cards to make it more consistent.
+	Rice_Portrait (Normal): You might run into issues later against enemies with multiple health bars, but it shouldn't be difficult to build a better deck by then.
 	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/prestidigitation.tres")
 - I'm not sure why, but I'm really drawn to this deck [Ordinary Beginnings]
 	update Mao (Normal)
 	Rice_Portrait (Normal): Hmm. To put it nicely, this deck has the most potential. To put it bluntly, it's the weakest.
-	Rice_Portrait (Normal): Considering it's meant to be a birthday present, I added a little something extra just in case you decided to pick it, but I would personally recommended you pick something else.
+	Rice_Portrait (Normal): Considering it's meant to be a birthday present, I added something extra just in case you decided to pick it, but I would personally recommended you pick something else.
 	Mao_Portrait (Normal): Thanks.
 	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/new_beginning.tres")
 Rice_Portrait (Normal): Are you sure about this choice?

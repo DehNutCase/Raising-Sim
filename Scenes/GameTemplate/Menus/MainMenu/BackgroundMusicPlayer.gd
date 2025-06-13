@@ -5,6 +5,9 @@ var autumn_song = preload("res://Music/New Road Loop.wav")
 var winter_song = preload("res://Music/Walk Alone 80 no afterglow.wav")
 var battle_song = preload("res://Music/8Bit DNA Loop.wav")
 var no_exit_song = preload("res://Music/No Exit 106 no afterglow.wav")
+
+var cheerful_song = preload("res://Music/Tim Beek/Sun Shine Loop.wav")
+
 var songs = {
 	"spring": spring_song,
 	"summer": summer_song,
@@ -12,13 +15,13 @@ var songs = {
 	"winter": winter_song,
 	"battle": battle_song,
 	"no_exit": no_exit_song, #Currently not used
+	"cheerful": cheerful_song,
 }
 
 func _ready():
 	play_song("Spring")
 	
 func play_song(song:String) -> void:
-		
 	song = song.to_lower()
 	if stream != songs[song]:
 		for i in range(5):
