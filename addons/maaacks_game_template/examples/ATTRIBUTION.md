@@ -61,6 +61,11 @@ Author: [Tim Beek](http://timbeek.com/)
 Source: [itch.io : Royalty Free Music Pack](https://timbeek.itch.io/royalty-free-music-pack)  
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
+### Sound
+#### Voice
+Author: [Sakura An](https://www.dlsite.com/home/circle/profile/=/maker_id/RG40041.html)  
+Source: [Dlsite : RJ214582](https://www.dlsite.com/home/work/=/product_id/RJ214582.html/?locale=en_US) 
+
 ### Image
 #### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  
@@ -128,6 +133,12 @@ Author: [Gramps](https://github.com/Gramps)
 Contributors: [Contributors](https://godotsteam.com/contribute/contributors/)  
 Source: [github: GodotSteam](https://github.com/GodotSteam/GodotSteam)  
 License: [MIT License](https://github.com/GodotSteam/GodotSteam/blob/godot4/license.txt)  
+
+#### SoundManager
+Author: [Nathan Hoad](https://github.com/nathanhoad)  
+Contributors: [Contributors](https://godotsteam.com/contribute/contributors/)  
+Source: [github: Godot Sound Manager](https://github.com/nathanhoad/godot_sound_manager)  
+License: [MIT License](https://github.com/nathanhoad/godot_sound_manager/blob/main/LICENSE) 
 
 #### Live2D Cubism (CubismNativeFramework)
 Author: [Live2D Inc.](https://www.live2d.com/en/)  
