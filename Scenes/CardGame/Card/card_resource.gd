@@ -187,11 +187,6 @@ func apply_damage(targets: Array[Node], effect_amount, user, multi_hit_amount = 
 
 func apply_draw(targets: Array[Node], effect_amount, user) -> void:
 	var tree := targets[0].get_tree()
-	#TODO, replace draws per turn gain from scholarship with wisdom stacks
-	if user.active_status.get("Skill"):
-		effect_amount = effect_amount + user.active_status.get("Skill").stacks
-	if user.active_status.get("Agility"):
-		effect_amount = effect_amount + user.active_status.get("Agility").stacks
 	tree.call_group("CardGameMainNode", "draw_cards", effect_amount)
 		
 func apply_status(targets: Array[Node], effect_amount, user, status) -> void:

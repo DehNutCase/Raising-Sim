@@ -7,6 +7,6 @@
 script = ExtResource("1_spsik")
 status_icon = ExtResource("2_0mof2")
 status_name = "Agility"
-status_tooltip = "Agility. Draw [color=green]X[/color] extra cards every time cards are drawn. Max hand size increased by [color=green]X[/color]. This effect only lasts one turn."
+status_tooltip = "Agility. Draw [color=green]X[/color] extra cards at the start of turn. Max hand size increased by [color=green]X[/color]. This effect only lasts one turn."
 status_decay = 3
 NegativeStatus = false

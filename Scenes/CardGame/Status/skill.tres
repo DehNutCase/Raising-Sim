@@ -7,6 +7,6 @@
 script = ExtResource("1_63ihp")
 status_icon = ExtResource("2_x07mb")
 status_name = "Skill"
-status_tooltip = "Skill. Draw [color=green]X[/color] extra cards every time cards are drawn. (2 cards are drawn at the start of turn.)"
+status_tooltip = "Skill. Draw [color=green]X[/color] extra cards at the start of turn. (2 cards are drawn at the start of turn by default.)"
 status_decay = 2
 NegativeStatus = false
