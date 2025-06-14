@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bew4a0bn4dc8d"
+path="res://.godot/imported/Start.wav-b46a48d7850f6864c99f83a2f30b6e1e.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/System/Start.wav"
+dest_files=["res://.godot/imported/Start.wav-b46a48d7850f6864c99f83a2f30b6e1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

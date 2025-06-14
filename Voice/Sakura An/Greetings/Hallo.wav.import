@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2rsmqeml6hp2"
+path="res://.godot/imported/Hallo.wav-c54e57007f525f53606cf1d59acc394c.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Greetings/Hallo.wav"
+dest_files=["res://.godot/imported/Hallo.wav-c54e57007f525f53606cf1d59acc394c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

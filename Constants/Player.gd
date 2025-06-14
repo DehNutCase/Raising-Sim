@@ -389,6 +389,7 @@ var songs = {
 
 var voices = {
 	"hello": load("res://Voice/Sakura An/Greetings/Good Morning.mp3"),
+	"damage0": load("res://Voice/Sakura An/Battle/[Damage] Aaah!.mp3")
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()

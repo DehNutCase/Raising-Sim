@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://44qypvr4h4fg"
+path="res://.godot/imported/Install complete.wav-2510afb0a3290d25ddb12c482501a53a.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/System/Install complete.wav"
+dest_files=["res://.godot/imported/Install complete.wav-2510afb0a3290d25ddb12c482501a53a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

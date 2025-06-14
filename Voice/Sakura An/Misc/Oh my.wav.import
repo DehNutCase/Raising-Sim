@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buo4uq8t2gcq8"
+path="res://.godot/imported/Oh my.wav-d9e480561709632f5ad07c9197588d9d.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Misc/Oh my.wav"
+dest_files=["res://.godot/imported/Oh my.wav-d9e480561709632f5ad07c9197588d9d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

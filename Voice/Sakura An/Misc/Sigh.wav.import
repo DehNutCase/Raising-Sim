@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ce52onc0kt58s"
+path="res://.godot/imported/Sigh.wav-dc9fe4c860bc4ad3ed39965b5c18d9d1.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Misc/Sigh.wav"
+dest_files=["res://.godot/imported/Sigh.wav-dc9fe4c860bc4ad3ed39965b5c18d9d1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

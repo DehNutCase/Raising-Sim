@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sxovhshw4636"
+path="res://.godot/imported/[Damage] Ugh!.wav-cc834a1b7c9b115fece677995ca9780b.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Battle/[Damage] Ugh!.wav"
+dest_files=["res://.godot/imported/[Damage] Ugh!.wav-cc834a1b7c9b115fece677995ca9780b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

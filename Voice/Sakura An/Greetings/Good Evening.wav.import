@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmcs64e2j7iyi"
+path="res://.godot/imported/Good Evening.wav-6f266aa9f2efdab565c71a83442f5e7d.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Greetings/Good Evening.wav"
+dest_files=["res://.godot/imported/Good Evening.wav-6f266aa9f2efdab565c71a83442f5e7d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

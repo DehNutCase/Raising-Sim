@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpb2rerhupi61"
+path="res://.godot/imported/Hate.wav-e86c7dce9882d4e7468e8bb9abdedb87.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Misc/Hate.wav"
+dest_files=["res://.godot/imported/Hate.wav-e86c7dce9882d4e7468e8bb9abdedb87.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

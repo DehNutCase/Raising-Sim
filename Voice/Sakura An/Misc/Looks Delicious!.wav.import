@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dya14xegmise6"
+path="res://.godot/imported/Looks Delicious!.wav-2480fe07bf5013e17374131b66a1c3bb.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Misc/Looks Delicious!.wav"
+dest_files=["res://.godot/imported/Looks Delicious!.wav-2480fe07bf5013e17374131b66a1c3bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

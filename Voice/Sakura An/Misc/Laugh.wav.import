@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://84dku4glwn1b"
+path="res://.godot/imported/Laugh.wav-67d483f820528eae490b47c9adfe5488.sample"
+
+[deps]
+
+source_file="res://Voice/Sakura An/Misc/Laugh.wav"
+dest_files=["res://.godot/imported/Laugh.wav-67d483f820528eae490b47c9adfe5488.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
