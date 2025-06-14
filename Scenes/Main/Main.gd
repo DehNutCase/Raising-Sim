@@ -45,6 +45,7 @@ var day: int:
 	get:
 		return Player.day
 	set(value):
+		day_label.display_day(day)
 		Player.day = value
 
 enum states {READY, DIALOGIC, BUSY}
@@ -101,7 +102,7 @@ func _ready():
 		Player.course_list = course_list
 		process_day()
 		
-	
+	day_label.display_day(day)
 	if (Player.stats["stress"] < 50):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
 		Player.play_random_voice("greetings")
@@ -664,7 +665,6 @@ func process_stats(stats, icon = null):
 
 func display_stats() -> void:
 	#TODO, change day label to call group instead
-	day_label.display_day(day)
 	get_tree().call_group("StatBars", "display_stats")
 	#TODO, make sure to only update buttons when something needs to be displayed
 	#Performance issues
