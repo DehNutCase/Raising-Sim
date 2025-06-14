@@ -104,7 +104,7 @@ func _ready():
 	
 	if (Player.stats["stress"] < 50):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
-		Player.play_voice("hello")
+		Player.play_random_voice("greetings")
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 	

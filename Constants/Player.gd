@@ -388,8 +388,19 @@ var songs = {
 }
 
 var voices = {
-	"hello": load("res://Voice/Sakura An/Greetings/Good Morning.mp3"),
-	"damage0": load("res://Voice/Sakura An/Battle/[Damage] Aaah!.mp3")
+	"greeting0": load("res://Voice/Sakura An/Greetings/Hallo.wav"),
+	"greeting1": load("res://Voice/Sakura An/Greetings/Hello.wav"),
+	"greeting2": load("res://Voice/Sakura An/Greetings/Yaho (Hello).wav"),
+	"greeting3": load("res://Voice/Sakura An/Greetings/Good Morning.wav"),
+	"greeting4": load("res://Voice/Sakura An/Greetings/Good Morning polite.wav"),
+	"damage0": load("res://Voice/Sakura An/Battle/[Damage] Ugh!.wav"),
+	"damage1": load("res://Voice/Sakura An/Battle/[Damage] Ugh....wav"),
+	"damage2": load("res://Voice/Sakura An/Battle/[Damage] Ugh.wav"),
+}
+
+var voice_lists = {
+	"damaged": [voices["damage0"], voices["damage1"], voices["damage2"],],
+	"greetings": [voices["greeting0"], voices["greeting1"], voices["greeting2"], voices["greeting3"], voices["greeting4"],],
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()
@@ -399,3 +410,8 @@ func play_song(song:String) -> void:
 func play_voice(voice: String) -> void:
 	voice = voice.to_lower()
 	SoundManager.play_ambient_sound(voices[voice])
+
+func play_random_voice(voice_list: String) -> void:
+	voice_list = voice_list.to_lower()
+	var voice = voice_lists[voice_list].pick_random()
+	SoundManager.play_ambient_sound(voice)
