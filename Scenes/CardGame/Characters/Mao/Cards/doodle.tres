@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c117i1qkv5feb"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://c117i1qkv5feb"]
 
 [ext_resource type="Texture2D" uid="uid://bgpxvdatcnhmw" path="res://Art/Mori no oku no kakurezato/CardGame/palette01_04.png" id="1_gg1jq"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_qp5go"]
+[ext_resource type="AudioStream" uid="uid://dh6iqrb105pe0" path="res://SFX/Shapeforms/Coins and Money/Coin Counter Loop 01.wav" id="3_4mdeq"]
 
 [resource]
 script = ExtResource("2_qp5go")
@@ -14,6 +15,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 1000
+start_sound_effect = ExtResource("3_4mdeq")
 second_target = 0
 second_type = 7
 second_effect_amount = 50

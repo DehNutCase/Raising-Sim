@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://dnawtuwd81u82"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://dnawtuwd81u82"]
 
 [ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_ili2v"]
+[ext_resource type="AudioStream" uid="uid://8sl46yrgn75t" path="res://SFX/Shapeforms/Hit and Punch/PUNCH_DESIGNED_HEAVY_86.wav" id="2_4wh64"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_lbf67"]
 [ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="3_gldpa"]
+[ext_resource type="AudioStream" uid="uid://b83fxc1urg8ge" path="res://SFX/Tom Music/Footsteps/Water/Water Chain Run 5.wav" id="5_rg3js"]
 
 [resource]
 script = ExtResource("2_lbf67")
@@ -15,6 +17,8 @@ enemy_attack_type = 0
 multi_hit_amount = 3
 animation = ""
 price = 0
+start_sound_effect = ExtResource("5_rg3js")
+impact_sound_effect = ExtResource("2_4wh64")
 second_target = 0
 second_type = 4
 second_effect_amount = 1

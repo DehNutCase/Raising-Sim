@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c87hqlwdumwlr"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://c87hqlwdumwlr"]
 
 [ext_resource type="Texture2D" uid="uid://c8mageotyv3bm" path="res://Art/Mori no oku no kakurezato/CardGame/shot.png" id="1_joour"]
+[ext_resource type="AudioStream" uid="uid://drl01g6xb0itl" path="res://SFX/Tom Music/Spells/Spell Impact 3.wav" id="2_wl00m"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_yeyma"]
+[ext_resource type="AudioStream" uid="uid://dy5q5yo4g88we" path="res://SFX/Shapeforms/Arcane/Arcane Wind Chime Gust.wav" id="4_2wki5"]
 
 [resource]
 script = ExtResource("2_yeyma")
@@ -14,6 +16,8 @@ enemy_attack_type = 2
 multi_hit_amount = 0
 animation = "{\"model\": \"res://addons/gd_cubism/example/res/live2d/rice_pro_en/runtime/rice_pro_t03.model3.json\", \"animation\": \"FlickLeft_0\", \"duration\": 3.1,}"
 price = 0
+start_sound_effect = ExtResource("4_2wki5")
+impact_sound_effect = ExtResource("2_wl00m")
 second_target = 0
 second_type = 0
 second_effect_amount = 0

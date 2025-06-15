@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://7ncfpp8nwi26"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=7 format=3 uid="uid://7ncfpp8nwi26"]
 
 [ext_resource type="Texture2D" uid="uid://c33hk6twwxifu" path="res://Art/Mori no oku no kakurezato/CardGame/element26_01.png" id="1_0pkja"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_f7yb3"]
 [ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="3_f26kd"]
+[ext_resource type="AudioStream" uid="uid://gi3n5ixc16jo" path="res://SFX/Shapeforms/Arcane/Glyph Activation Warm Aura.wav" id="4_7o7iu"]
 [ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="4_oeq5t"]
 [ext_resource type="Resource" uid="uid://dt0jx8gkukrmj" path="res://Scenes/CardGame/Status/magic.tres" id="5_ibbc3"]
 
@@ -18,6 +19,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 250
+start_sound_effect = ExtResource("4_7o7iu")
 second_target = 0
 second_type = 4
 second_effect_amount = 1

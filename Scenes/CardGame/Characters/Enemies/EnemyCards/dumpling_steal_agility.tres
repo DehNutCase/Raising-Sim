@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://dwg8npvvw3qxc"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://dwg8npvvw3qxc"]
 
 [ext_resource type="Texture2D" uid="uid://ca1ivs1kuhqpr" path="res://Art/Mori no oku no kakurezato/CardGame/data01_04.png" id="1_74emj"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_y70yn"]
 [ext_resource type="Resource" uid="uid://dj786we54g0fv" path="res://Scenes/CardGame/Status/agility.tres" id="3_yigve"]
 [ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="3_ytkqn"]
+[ext_resource type="AudioStream" uid="uid://cb1wqi7cf4o4" path="res://SFX/Shapeforms/Arcane/Glyph Activation Light 01.wav" id="4_ith1b"]
 
 [resource]
 script = ExtResource("2_y70yn")
@@ -17,6 +18,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 0
+start_sound_effect = ExtResource("4_ith1b")
 second_target = 0
 second_type = 4
 second_effect_amount = 3

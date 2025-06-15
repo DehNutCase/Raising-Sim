@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://c7rmtmb83u3yg"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://c7rmtmb83u3yg"]
 
 [ext_resource type="Texture2D" uid="uid://6yrm27e2dhmk" path="res://Art/Mori no oku no kakurezato/CardGame/capsule01_01.png" id="1_268hd"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_bi1d2"]
+[ext_resource type="AudioStream" uid="uid://csih83ojfiqvc" path="res://SFX/Shapeforms/Hit and Punch/WHOOSH_ARM_SWING_01.wav" id="3_tdtb6"]
 
 [resource]
 script = ExtResource("2_bi1d2")
@@ -14,6 +15,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 100
+start_sound_effect = ExtResource("3_tdtb6")
 second_target = 0
 second_type = 5
 second_effect_amount = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cuoq2jocm5mxc" path="res://Art/Mori no oku no kakurezato/CardGame/data01_03.png" id="1_o3j1j"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_rn61i"]
-[ext_resource type="AudioStream" uid="uid://cb1wqi7cf4o4" path="res://SFX/Shapeforms/Arcane/Glyph Activation Light 01.wav" id="3_ltwc1"]
+[ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_eb4sk"]
 [ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="3_w3ud0"]
 
 [resource]
@@ -17,7 +17,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 0
-start_sound_effect = ExtResource("3_ltwc1")
+start_sound_effect = ExtResource("3_eb4sk")
 second_target = 2
 second_type = 2
 second_effect_amount = 20

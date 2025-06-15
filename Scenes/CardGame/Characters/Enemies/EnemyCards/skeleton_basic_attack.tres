@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://4wq5piixdtsq"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://4wq5piixdtsq"]
 
 [ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_ttqmx"]
+[ext_resource type="AudioStream" uid="uid://8sl46yrgn75t" path="res://SFX/Shapeforms/Hit and Punch/PUNCH_DESIGNED_HEAVY_86.wav" id="2_4cq1d"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_rge7l"]
+[ext_resource type="AudioStream" uid="uid://brimsvtyv2hik" path="res://SFX/Tom Music/Footsteps/Stone/Stone Chain Run 5.wav" id="4_bagqy"]
 
 [resource]
 script = ExtResource("2_rge7l")
@@ -14,6 +16,8 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 0
+start_sound_effect = ExtResource("4_bagqy")
+impact_sound_effect = ExtResource("2_4cq1d")
 second_target = 0
 second_type = 0
 second_effect_amount = 0

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://dqpbortarfbwv"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://dqpbortarfbwv"]
 
 [ext_resource type="Texture2D" uid="uid://c66fi5y0xsfjj" path="res://Art/Mori no oku no kakurezato/CardGame/element02_02.png" id="1_fiqup"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_k3g43"]
+[ext_resource type="AudioStream" uid="uid://buhxt0qhsgurq" path="res://SFX/Tom Music/Spells/Firespray 2.wav" id="3_c1g54"]
 [ext_resource type="Resource" uid="uid://dwkmsyvr4kwx1" path="res://Scenes/CardGame/Status/vulnerable.tres" id="3_rwwwv"]
 
 [resource]
@@ -16,6 +17,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 500
+start_sound_effect = ExtResource("3_c1g54")
 second_target = 2
 second_type = 1
 second_effect_amount = 10

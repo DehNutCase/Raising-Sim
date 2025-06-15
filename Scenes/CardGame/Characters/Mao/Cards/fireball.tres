@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://k2gtw81xb7ta"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://k2gtw81xb7ta"]
 
 [ext_resource type="Texture2D" uid="uid://c8cn4ba5bbec4" path="res://Art/Mori no oku no kakurezato/CardGame/element03_01.png" id="1_vtrcj"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_gxcl1"]
 [ext_resource type="Resource" uid="uid://b64eaug32ev60" path="res://Scenes/CardGame/Status/burn.tres" id="3_ihe3b"]
+[ext_resource type="AudioStream" uid="uid://c6ajx5f5v87dm" path="res://SFX/Tom Music/Spells/Fireball 1.wav" id="4_tyrl0"]
 
 [resource]
 script = ExtResource("2_gxcl1")
@@ -15,6 +16,7 @@ enemy_attack_type = 1
 multi_hit_amount = 0
 animation = ""
 price = 500
+start_sound_effect = ExtResource("4_tyrl0")
 second_target = 1
 second_type = 4
 second_effect_amount = 50

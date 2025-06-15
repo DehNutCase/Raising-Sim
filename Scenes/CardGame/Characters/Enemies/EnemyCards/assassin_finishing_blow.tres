@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://b3ixlfdetsfas"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://b3ixlfdetsfas"]
 
 [ext_resource type="Texture2D" uid="uid://bq10iraedtgqx" path="res://Art/Mori no oku no kakurezato/CardGame/attack.png" id="1_x6bhi"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_m3fqu"]
+[ext_resource type="AudioStream" uid="uid://boa3w7lyb6e8m" path="res://SFX/Tom Music/Attacks/Sword Attacks Hits and Blocks/Sword Impact Hit 3.wav" id="2_qc2qf"]
 [ext_resource type="Resource" uid="uid://dj786we54g0fv" path="res://Scenes/CardGame/Status/agility.tres" id="3_tdnyp"]
+[ext_resource type="AudioStream" uid="uid://70uaaojap0i6" path="res://SFX/Tom Music/Attacks/Sword Attacks Hits and Blocks/Sword Attack 1.wav" id="5_2s6jr"]
 
 [resource]
 script = ExtResource("2_m3fqu")
@@ -15,6 +17,8 @@ enemy_attack_type = 0
 multi_hit_amount = 3
 animation = ""
 price = 0
+start_sound_effect = ExtResource("5_2s6jr")
+impact_sound_effect = ExtResource("2_qc2qf")
 second_target = 1
 second_type = 4
 second_effect_amount = -3

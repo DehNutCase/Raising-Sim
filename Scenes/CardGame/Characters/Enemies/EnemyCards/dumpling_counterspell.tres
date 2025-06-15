@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bx005gylvxbuo"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=6 format=3 uid="uid://bx005gylvxbuo"]
 
 [ext_resource type="Texture2D" uid="uid://o4i0au4b7b12" path="res://Art/Mori no oku no kakurezato/CardGame/darkness.png" id="1_1oht3"]
 [ext_resource type="Resource" uid="uid://cy13dsg53jjf0" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/spell_residue.tres" id="1_la44g"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_rhui6"]
+[ext_resource type="AudioStream" uid="uid://drl01g6xb0itl" path="res://SFX/Tom Music/Spells/Spell Impact 3.wav" id="3_gy7ik"]
+[ext_resource type="AudioStream" uid="uid://dhexj5ph2eif6" path="res://SFX/Shapeforms/Arcane/Arcane Beacon.wav" id="5_qxusv"]
 
 [resource]
 script = ExtResource("2_rhui6")
@@ -16,6 +18,8 @@ multi_hit_amount = 0
 animation = ""
 price = 0
 card_to_add = ExtResource("1_la44g")
+start_sound_effect = ExtResource("5_qxusv")
+impact_sound_effect = ExtResource("3_gy7ik")
 second_target = 0
 second_type = 0
 second_effect_amount = 0

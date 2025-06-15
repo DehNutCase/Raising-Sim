@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0bnynewesqv4" path="res://Art/Mori no oku no kakurezato/CardGame/element10_01.png" id="1_avm8i"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_27y8p"]
-[ext_resource type="AudioStream" uid="uid://dhexj5ph2eif6" path="res://SFX/Shapeforms/Arcane/Arcane Beacon.wav" id="3_r02qw"]
+[ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_otfie"]
 
 [resource]
 script = ExtResource("2_27y8p")
@@ -15,7 +15,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 10
-start_sound_effect = ExtResource("3_r02qw")
+start_sound_effect = ExtResource("3_otfie")
 second_target = 0
 second_type = 0
 second_effect_amount = 0
