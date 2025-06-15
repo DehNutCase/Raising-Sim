@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8jf103e4g744"
+path="res://.godot/imported/UI Message Appear 01.wav-c8a6be46c5d5f88f4ca76af3949fda76.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Arcane/UI Message Appear 01.wav"
+dest_files=["res://.godot/imported/UI Message Appear 01.wav-c8a6be46c5d5f88f4ca76af3949fda76.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

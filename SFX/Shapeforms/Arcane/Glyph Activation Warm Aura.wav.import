@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gi3n5ixc16jo"
+path="res://.godot/imported/Glyph Activation Warm Aura.wav-5c438e3a5d2db6717a9f4597a5723e18.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Arcane/Glyph Activation Warm Aura.wav"
+dest_files=["res://.godot/imported/Glyph Activation Warm Aura.wav-5c438e3a5d2db6717a9f4597a5723e18.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

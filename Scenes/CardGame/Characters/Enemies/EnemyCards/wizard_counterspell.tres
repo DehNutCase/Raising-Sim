@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://dg813n86i3bl2"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=7 format=3 uid="uid://dg813n86i3bl2"]
 
 [ext_resource type="Resource" uid="uid://cy13dsg53jjf0" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/spell_residue.tres" id="1_pkrlk"]
 [ext_resource type="Texture2D" uid="uid://o4i0au4b7b12" path="res://Art/Mori no oku no kakurezato/CardGame/darkness.png" id="2_os4ae"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="3_4dgc1"]
+[ext_resource type="AudioStream" uid="uid://drl01g6xb0itl" path="res://SFX/Tom Music/Spells/Spell Impact 3.wav" id="3_ar7dj"]
 [ext_resource type="Resource" uid="uid://dt0jx8gkukrmj" path="res://Scenes/CardGame/Status/magic.tres" id="4_mpklv"]
+[ext_resource type="AudioStream" uid="uid://dhexj5ph2eif6" path="res://SFX/Shapeforms/Arcane/Arcane Beacon.wav" id="6_08srw"]
 
 [resource]
 script = ExtResource("3_4dgc1")
@@ -17,6 +19,8 @@ multi_hit_amount = 0
 animation = ""
 price = 0
 card_to_add = ExtResource("1_pkrlk")
+start_sound_effect = ExtResource("6_08srw")
+impact_sound_effect = ExtResource("3_ar7dj")
 second_target = 1
 second_type = 4
 second_effect_amount = -5

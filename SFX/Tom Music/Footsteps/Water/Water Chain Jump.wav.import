@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://23xraoyx7iic"
+path="res://.godot/imported/Water Chain Jump.wav-5e5ca585d7766e565a62e01660067c44.sample"
+
+[deps]
+
+source_file="res://SFX/Tom Music/Footsteps/Water/Water Chain Jump.wav"
+dest_files=["res://.godot/imported/Water Chain Jump.wav-5e5ca585d7766e565a62e01660067c44.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

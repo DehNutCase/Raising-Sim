@@ -18,6 +18,8 @@ enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 @export_multiline var animation: String
 @export var price: int
 @export var card_to_add: CardResource
+@export var start_sound_effect: AudioStreamWAV
+@export var impact_sound_effect: AudioStreamWAV
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target
@@ -108,11 +110,17 @@ func get_third_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Arr
 	return []
 
 func play(targets: Array[Node]) -> void:
+	#Player only uses start sound for now
+	if start_sound_effect:
+		SoundManager.play_sound(start_sound_effect)
 	apply_effects(get_targets(targets), Player.card_game_player, 0)
 	apply_effects(get_second_targets(targets), Player.card_game_player, 1)
 	apply_effects(get_third_targets(targets), Player.card_game_player, 2)
 
 func enemy_play(enemy: CardGameEnemy) -> void:
+	#Impact sound here
+	if impact_sound_effect:
+		SoundManager.play_sound(impact_sound_effect)
 	apply_effects(get_targets([enemy], enemy), enemy, 0)
 	apply_effects(get_second_targets([enemy], enemy), enemy, 1)
 	apply_effects(get_third_targets([enemy], enemy), enemy, 2)

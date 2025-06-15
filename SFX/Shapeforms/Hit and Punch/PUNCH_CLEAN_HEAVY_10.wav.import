@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bynfayd3b1d1d"
+path="res://.godot/imported/PUNCH_CLEAN_HEAVY_10.wav-2951b86d1601e7435f9311b028d9f81d.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Hit and Punch/PUNCH_CLEAN_HEAVY_10.wav"
+dest_files=["res://.godot/imported/PUNCH_CLEAN_HEAVY_10.wav-2951b86d1601e7435f9311b028d9f81d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

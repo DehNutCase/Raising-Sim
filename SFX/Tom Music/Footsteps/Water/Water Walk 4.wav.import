@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwg1t3t5g24ag"
+path="res://.godot/imported/Water Walk 4.wav-5c649b69a40dff89a95407ad4b21f89d.sample"
+
+[deps]
+
+source_file="res://SFX/Tom Music/Footsteps/Water/Water Walk 4.wav"
+dest_files=["res://.godot/imported/Water Walk 4.wav-5c649b69a40dff89a95407ad4b21f89d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

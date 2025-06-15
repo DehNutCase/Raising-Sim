@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3uyfsewmet8f"
+path="res://.godot/imported/Bank Card Placed Down 03.wav-d6d3c51b01427dcc94a2f99e12d59870.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Coins and Money/Bank Card Placed Down 03.wav"
+dest_files=["res://.godot/imported/Bank Card Placed Down 03.wav-d6d3c51b01427dcc94a2f99e12d59870.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

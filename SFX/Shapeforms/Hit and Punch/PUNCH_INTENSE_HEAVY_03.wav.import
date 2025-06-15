@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl6pfccnre2cl"
+path="res://.godot/imported/PUNCH_INTENSE_HEAVY_03.wav-a63ac75d72f84218a712fed6e6b6a82b.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Hit and Punch/PUNCH_INTENSE_HEAVY_03.wav"
+dest_files=["res://.godot/imported/PUNCH_INTENSE_HEAVY_03.wav-a63ac75d72f84218a712fed6e6b6a82b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

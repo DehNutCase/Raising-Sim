@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgvrbsh81fjjr"
+path="res://.godot/imported/chop 2.wav-8970ac5e3c6039aa928acd58c538d574.sample"
+
+[deps]
+
+source_file="res://SFX/Tom Music/Chopping and Mining/chop 2.wav"
+dest_files=["res://.godot/imported/chop 2.wav-8970ac5e3c6039aa928acd58c538d574.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

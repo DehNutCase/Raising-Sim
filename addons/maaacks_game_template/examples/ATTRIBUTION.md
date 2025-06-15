@@ -66,6 +66,16 @@ License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 Author: [Sakura An](https://www.dlsite.com/home/circle/profile/=/maker_id/RG40041.html)  
 Source: [Dlsite : RJ214582](https://www.dlsite.com/home/work/=/product_id/RJ214582.html/?locale=en_US) 
 
+### Sound
+#### SFX
+Author: [TomMusic](https://tommusic.itch.io/)  
+Source: [itch.io : Free Fantasy 200 SFX Pack](https://tommusic.itch.io/free-fantasy-200-sfx-pack) 
+
+### Sound
+#### SFX
+Author: [Shapeforms](https://shapeforms.itch.io/)  
+Source: [itch.io : Shapeforms Audio Free Sound Effects](https://shapeforms.itch.io/shapeforms-audio-free-sfx) 
+
 ### Image
 #### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  

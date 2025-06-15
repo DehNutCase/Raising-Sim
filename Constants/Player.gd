@@ -393,13 +393,13 @@ var voices = {
 	"greeting2": load("res://Voice/Sakura An/Greetings/Yaho (Hello).wav"),
 	"greeting3": load("res://Voice/Sakura An/Greetings/Good Morning.wav"),
 	"greeting4": load("res://Voice/Sakura An/Greetings/Good Morning polite.wav"),
-	"damage0": load("res://Voice/Sakura An/Battle/[Damage] Ugh!.wav"),
-	"damage1": load("res://Voice/Sakura An/Battle/[Damage] Ugh....wav"),
-	"damage2": load("res://Voice/Sakura An/Battle/[Damage] Ugh.wav"),
+	"damaged0": load("res://Voice/Sakura An/Battle/[Damage] Ugh!.wav"),
+	"damaged1": load("res://Voice/Sakura An/Battle/[Damage] Ugh....wav"),
+	"damaged2": load("res://Voice/Sakura An/Battle/[Damage] Ugh.wav"),
 }
 
 var voice_lists = {
-	"damaged": [voices["damage0"], voices["damage1"], voices["damage2"],],
+	"damaged": [voices["damaged0"], voices["damaged1"], voices["damaged2"],],
 	"greetings": [voices["greeting0"], voices["greeting1"], voices["greeting2"], voices["greeting3"], voices["greeting4"],],
 }
 func play_song(song:String) -> void:

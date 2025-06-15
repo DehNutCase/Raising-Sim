@@ -90,6 +90,8 @@ func set_intent() -> void:
 		printerr("set_intent error")
 
 func perform_intent() -> void:
+	if intent.start_sound_effect:
+		SoundManager.play_sound(intent.start_sound_effect)
 	if intent.type == intent.Type.ATTACK or intent.type == intent.Type.ADD_CARD:
 		if intent.enemy_attack_type == intent.EnemyAttackType.RANGED:
 			var tween := create_tween().set_trans(Tween.TRANS_QUINT)

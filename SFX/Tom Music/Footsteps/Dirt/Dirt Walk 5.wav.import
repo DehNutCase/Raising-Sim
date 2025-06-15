@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i3wg1h5owi4e"
+path="res://.godot/imported/Dirt Walk 5.wav-fb7042d1e2b3f7bb99b790bc0141b960.sample"
+
+[deps]
+
+source_file="res://SFX/Tom Music/Footsteps/Dirt/Dirt Walk 5.wav"
+dest_files=["res://.godot/imported/Dirt Walk 5.wav-fb7042d1e2b3f7bb99b790bc0141b960.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

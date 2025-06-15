@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wqcjxjb5703s"
+path="res://.godot/imported/Dirt Chain Land.wav-d0d511ace187dbe664fc549f73ae7250.sample"
+
+[deps]
+
+source_file="res://SFX/Tom Music/Footsteps/Dirt/Dirt Chain Land.wav"
+dest_files=["res://.godot/imported/Dirt Chain Land.wav-d0d511ace187dbe664fc549f73ae7250.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

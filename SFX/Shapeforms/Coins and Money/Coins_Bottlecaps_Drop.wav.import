@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cuerrhap1o1px"
+path="res://.godot/imported/Coins_Bottlecaps_Drop.wav-99b1d35d03f4a2d5fabd16b6abfe0a14.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Coins and Money/Coins_Bottlecaps_Drop.wav"
+dest_files=["res://.godot/imported/Coins_Bottlecaps_Drop.wav-99b1d35d03f4a2d5fabd16b6abfe0a14.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

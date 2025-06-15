@@ -72,6 +72,8 @@ func take_damage(damage: int) -> void:
 	var initial_damage = damage
 	
 	damage = clampi(damage - block, 0, damage)
+	if damage > 0:
+		Player.play_random_voice("damaged")
 	block = clampi(block - initial_damage, 0, block)
 	health -= damage
 	

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://bdmdjsuftthet"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bdmdjsuftthet"]
 
 [ext_resource type="Texture2D" uid="uid://c0bnynewesqv4" path="res://Art/Mori no oku no kakurezato/CardGame/element10_01.png" id="1_avm8i"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_27y8p"]
+[ext_resource type="AudioStream" uid="uid://dhexj5ph2eif6" path="res://SFX/Shapeforms/Arcane/Arcane Beacon.wav" id="3_r02qw"]
 
 [resource]
 script = ExtResource("2_27y8p")
@@ -14,6 +15,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 10
+start_sound_effect = ExtResource("3_r02qw")
 second_target = 0
 second_type = 0
 second_effect_amount = 0

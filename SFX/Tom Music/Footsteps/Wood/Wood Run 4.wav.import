@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3hgjnkknfefh"
+path="res://.godot/imported/Wood Run 4.wav-55a3f6f4644936a7184975e5d90a7be6.sample"
+
+[deps]
+
+source_file="res://SFX/Tom Music/Footsteps/Wood/Wood Run 4.wav"
+dest_files=["res://.godot/imported/Wood Run 4.wav-55a3f6f4644936a7184975e5d90a7be6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

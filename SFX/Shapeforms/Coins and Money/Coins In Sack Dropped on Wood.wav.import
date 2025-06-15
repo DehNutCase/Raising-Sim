@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8p1lwlsk7qml"
+path="res://.godot/imported/Coins In Sack Dropped on Wood.wav-ccaa55c6c2b76cbb2d85f83c80d00d77.sample"
+
+[deps]
+
+source_file="res://SFX/Shapeforms/Coins and Money/Coins In Sack Dropped on Wood.wav"
+dest_files=["res://.godot/imported/Coins In Sack Dropped on Wood.wav-ccaa55c6c2b76cbb2d85f83c80d00d77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
