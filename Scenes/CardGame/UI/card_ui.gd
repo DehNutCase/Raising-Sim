@@ -109,7 +109,7 @@ func _set_card(value: CardResource) -> void:
 		await ready
 	card = value
 	cost_label.clear()
-	if Player.card_game_player and card.cost > Player.card_game_player.mana:
+	if is_instance_valid(Player.card_game_player) and card.cost > Player.card_game_player.mana:
 		cost_label.append_text("[center][color=red]" + str(card.cost) + "[/color][/center]")
 	else:
 		cost_label.append_text("[center][color=white]" + str(card.cost) + "[/color][/center]")
