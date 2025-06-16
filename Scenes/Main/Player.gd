@@ -13,15 +13,38 @@ var success_motion_video = load("res://Characters/Mao/Videos/special_01.ogv")
 var failure_motion_video = load("res://Characters/Mao/Videos/special_02.ogv")
 var heal_motion_video = load("res://Characters/Mao/Videos/special_03.ogv")
 
-
+	#"amazing": load("res://Voice/Sakura An/Misc/Amazing.wav"),
+	#"happy": load("res://Voice/Sakura An/Misc/Happy.wav"),
+	#"proud": load("res://Voice/Sakura An/Misc/Proud.wav"),
+	#"boom": load("res://Voice/Sakura An/Misc/Boom.wav"),
+	#"laugh": load("res://Voice/Sakura An/Misc/Laugh.wav"),
+	#"tada": load("res://Voice/Sakura An/Misc/Tada.wav"),
+	#"thank_you": load("res://Voice/Sakura An/Misc/Thank you.wav"),
+	#"thank_you_polite": load("res://Voice/Sakura An/Misc/Thank you polite.wav"),
+	#"keep_it_up": load("res://Voice/Sakura An/Misc/Keep it up.wav"),
+	#"un_yeah": load("res://Voice/Sakura An/Misc/Un (yeah).wav"),
+	#"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"),
+	#"yes_enthusiastic": load("res://Voice/Sakura An/Misc/Yes(Enthusiastic).wav"),
+	#"looks_delicious": load("res://Voice/Sakura An/Misc/Looks Delicious!.wav"),
+	#"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),
+	
+	#"baka": load("res://Voice/Sakura An/Misc/Baka.wav"),
+	#"disappointed": load("res://Voice/Sakura An/Misc/Disappointed.wav"),
+	#"hate": load("res://Voice/Sakura An/Misc/Hate.wav"),
+	#"oh no": load("res://Voice/Sakura An/Misc/Oh no.wav"),
+	#"sigh": load("res://Voice/Sakura An/Misc/Sigh.wav"),
+	#"sorry": load("res://Voice/Sakura An/Misc/Sorry.wav"),
+	#"sorry_polite": load("res://Voice/Sakura An/Misc/Sorry polite.wav"),
+	#"huh!?": load("res://Voice/Sakura An/Misc/Huh!？.wav"),
+	
 var content_motion = { "group": "Idle", "no": 0, "video": content_motion_video, "weight": 10, }
 var idle_motion = { "group": "Idle", "no": 0, "video": idle_motion_video, "weight": 10, }
 var bounce_motion = { "group": "", "no": 0, "video": bounce_motion_video, "weight": 2, }
 var cheerful_motion = { "group": "", "no": 1, "video": cheerful_motion_video, "weight": 4, }
-var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video, "weight": 2, "toasts": ["Everything went okie dokie.", "Meteor! Just kidding!", "Umu!"]}
-var success_motion = { "group": "", "no": 3, "video": success_motion_video, "weight": 1, "toasts": ["I have a good feeling about this. ...Whoa!", "Lalala~ ...Oooh!",  "Easy does it. Looks like it's going well."]}
-var failure_motion = { "group": "", "no": 4, "video": failure_motion_video, "weight": 2, "toasts": ["I have a good feeling about this. ...Oooh. Oh no! Hmph.", "Lalala~ ...Oooh!", "Easy does it. Looks like it's going well. ...Oops."],}
-var heal_motion = { "group": "", "no": 5, "video": heal_motion_video, "weight": 2, "toasts": ["Behold! ...Why are you not beholding?", "I wonder if I can eat this.", "The light of justice! The form of courage! Transform! Teehee."]}
+var hat_tip_motion = { "group": "", "no": 2, "video": hat_tip_motion_video, "weight": 2, "toasts": [["Everything went okie dokie.", "proud"], ["Meteor! Just kidding!", "boom"], ["Un!", "un_yeah"]]}
+var success_motion = { "group": "", "no": 3, "video": success_motion_video, "weight": 1, "toasts": [["I have a good feeling about this. ...Whoa!", "yay!"], ["Lalala~ ...Oooh!", "laugh"],  ["Easy does it. Looks like it's going well.", "yes_enthusiastic"]]}
+var failure_motion = { "group": "", "no": 4, "video": failure_motion_video, "weight": 2, "toasts": [["I have a good feeling about this. ...Oooh. Oh no! Hmph.", "oh no"], ["Lalala~ ...Oooh!", "huh!?"], ["Easy does it. Looks like it's going well. ...Oops.", "disappointed"]],}
+var heal_motion = { "group": "", "no": 5, "video": heal_motion_video, "weight": 2, "toasts": [["Behold! ...Why are you not beholding?", "proud"], ["I wonder if I can eat this.", "looks_delicious"], ["The light of justice! The form of courage! Transform! Teehee.", "happy"]]}
 
 var job_success_motions = [success_motion, heal_motion, hat_tip_motion]
 var job_failure_motions = [failure_motion,]
@@ -46,6 +69,7 @@ var delta_sum = 0
 var frames_to_skip = 5
 
 var timestamp = Time.get_unix_time_from_system()
+var motion_start_timestamp = Time.get_unix_time_from_system()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -83,7 +107,8 @@ func _process(delta):
 		#Making sure motion_video_queue doesn't grow out of control
 		if len(motion_video_queue) > 10:
 			motion_video_queue.pop_back()
-	
+
+#For some reason this is called even when a motion is replaced
 func _on_motion_finished():
 	timestamp = Time.get_unix_time_from_system()
 	var previous_stamp = timestamp
@@ -96,7 +121,7 @@ func _on_motion_finished():
 			await get_tree().create_timer(RandomNumberGenerator.new().randi_range(5, 15)).timeout
 		
 		if timestamp == previous_stamp:
-			start_motion(next_motion)
+			start_motion(next_motion, GDCubismUserModel.PRIORITY_NORMAL)
 			last_motion = next_motion
 			queue_idle_motion()
 
@@ -121,12 +146,12 @@ func _update_live2d_display(live2d_mode) -> void:
 		_:
 			printerr("_update_live2d_display match error")
 			
-func start_motion(motion) -> void:
+func start_motion(motion, priority=GDCubismUserModel.PRIORITY_FORCE) -> void:
 	timestamp = Time.get_unix_time_from_system()
 	var previous_stamp = timestamp
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		remove_breath()
-		cubism_model.start_motion(motion.group, motion.no, GDCubismUserModel.PRIORITY_FORCE)
+		cubism_model.start_motion(motion.group, motion.no, priority)
 		
 		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(0, 10)).timeout
 		if previous_stamp == timestamp:
@@ -155,13 +180,16 @@ func job_motion(motion) -> void:
 	
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		if "toasts" in motion:
-			var text = motion.toasts.pick_random()
+			var toast = motion.toasts.pick_random()
+			var text = toast[0]
+			var voice = toast[1]
+			Player.play_voice(voice)
 			ToastParty.show({
 				"text": text,
 				"gravity": "bottom",
 				"direction": "center",
 			})
-			await(get_tree().create_timer(.5).timeout)
+			#await(get_tree().create_timer(.5).timeout)
 		start_motion(motion)
 		last_motion = motion
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:

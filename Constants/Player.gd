@@ -393,15 +393,44 @@ var voices = {
 	"greeting2": load("res://Voice/Sakura An/Greetings/Yaho (Hello).wav"),
 	"greeting3": load("res://Voice/Sakura An/Greetings/Good Morning.wav"),
 	"greeting4": load("res://Voice/Sakura An/Greetings/Good Morning polite.wav"),
+	"greeting5": load("res://Voice/Sakura An/Greetings/Hi Hi.wav"),
 	"damaged0": load("res://Voice/Sakura An/Battle/[Damage] Ugh!.wav"),
 	"damaged1": load("res://Voice/Sakura An/Battle/[Damage] Ugh....wav"),
 	"damaged2": load("res://Voice/Sakura An/Battle/[Damage] Ugh.wav"),
+	
+	"amazing": load("res://Voice/Sakura An/Misc/Amazing.wav"),
+	"happy": load("res://Voice/Sakura An/Misc/Happy.wav"),
+	"proud": load("res://Voice/Sakura An/Misc/Proud.wav"),
+	"boom": load("res://Voice/Sakura An/Misc/Boom.wav"),
+	"laugh": load("res://Voice/Sakura An/Misc/Laugh.wav"),
+	"tada": load("res://Voice/Sakura An/Misc/Tada.wav"),
+	"thank_you": load("res://Voice/Sakura An/Misc/Thank you.wav"),
+	"thank_you_polite": load("res://Voice/Sakura An/Misc/Thank you polite.wav"),
+	"keep_it_up": load("res://Voice/Sakura An/Misc/Keep it up.wav"),
+	"un_yeah": load("res://Voice/Sakura An/Misc/Un (yeah).wav"),
+	"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"),
+	"yes_enthusiastic": load("res://Voice/Sakura An/Misc/Yes(Enthusiastic).wav"),
+	
+	"baka": load("res://Voice/Sakura An/Misc/Baka.wav"),
+	"disappointed": load("res://Voice/Sakura An/Misc/Disappointed.wav"),
+	"hate": load("res://Voice/Sakura An/Misc/Hate.wav"),
+	"oh no": load("res://Voice/Sakura An/Misc/Oh no.wav"),
+	"sigh": load("res://Voice/Sakura An/Misc/Sigh.wav"),
+	"sorry": load("res://Voice/Sakura An/Misc/Sorry.wav"),
+	"sorry_polite": load("res://Voice/Sakura An/Misc/Sorry polite.wav"),
+	"huh!?": load("res://Voice/Sakura An/Misc/Huh!？.wav"),
+	
+	"looks_delicious": load("res://Voice/Sakura An/Misc/Looks Delicious!.wav"),
+	"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),
 }
 
 var voice_lists = {
 	"damaged": [voices["damaged0"], voices["damaged1"], voices["damaged2"],],
-	"greetings": [voices["greeting0"], voices["greeting1"], voices["greeting2"], voices["greeting3"], voices["greeting4"],],
+	"greetings": [voices["greeting0"], voices["greeting1"], voices["greeting2"], voices["greeting3"], voices["greeting4"], voices["greeting5"],],
+	"success": [voices["amazing"], voices["happy"], voices["proud"], voices["boom"], voices["laugh"], voices["tada"], voices["thank_you"], voices["thank_you_polite"], voices["keep_it_up"], voices["un_yeah"], voices["yay!"], voices["yes_enthusiastic"],],
+	"failure": [voices["baka"], voices["disappointed"], voices["hate"], voices["oh no"], voices["sigh"], voices["sorry"], voices["sorry_polite"], voices["huh!?"],]
 }
+
 func play_song(song:String) -> void:
 	song = song.to_lower()
 	SoundManager.play_music(songs[song])

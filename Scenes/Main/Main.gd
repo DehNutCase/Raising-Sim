@@ -162,7 +162,6 @@ func process_day():
 		#don't do actions day 1
 		action_list = []
 	var i = 0
-	#TODO, add messages as mao does her daily tasks <- important!
 	#TODO, set state to not ready
 	for action in action_list:
 		#TODO, await actions---set time for scene to change etc.
