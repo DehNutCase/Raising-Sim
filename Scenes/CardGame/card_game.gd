@@ -112,9 +112,11 @@ func check_victory() -> void:
 			%FleeButton.text = "Leave"
 
 func check_defeat() -> void:
-	if Player.card_game_player.health <= 0:
+	if Player.card_game_player.health <= 0 and state != states.DEFEAT:
 		state = states.DEFEAT
 		hand.hide()
+		await get_tree().create_timer(.5).timeout
+		Player.play_random_voice("failure")
 		
 func exit_combat() -> void:
 	if state == states.VICTORY:
@@ -133,3 +135,8 @@ func play_live2d_animation(model: String, motion: String, duration: float) -> vo
 	cubism_container.show()
 	await get_tree().create_timer(duration).timeout
 	cubism_container.hide()
+
+func update_mana_labels():
+	if hand:
+		for card:CardUI in hand.get_children():
+			card._update_mana_label()

@@ -2536,67 +2536,10 @@ const missions = {
 		"encounter_difficulty": 10,
 		"mission_complete_image": "res://Timelines/BlackForestOrcs/TheLittleGoblinWhoCould.png",
 		"combats": [
-			{ 'enemies': 
-				[
-					{
-						"level": 5,
-						"character_class": "oliver",
-						"race": "blank",
-					},
-				]
-			},
-			{ 'enemies': 
-				[
-					{
-						"level": 15,
-						"character_class": "hero",
-						"race": "human",
-					},
-					{
-						"level": 10,
-						"character_class": "rogue",
-						"race": "human",
-					},
-					{
-						"level": 10,
-						"character_class": "priest",
-						"race": "human",
-					},
-					{
-						"level": 10,
-						"character_class": "mage",
-						"race": "human",
-					},
-				]
-			},
-			{ 'enemies': 
-				[
-					{
-						"level": 16,
-						"character_class": "knight",
-						"race": "orc",
-					},
-				]
-			},
-			{ 'enemies': 
-				[
-					{
-						"level": 10,
-						"character_class": "knight",
-						"race": "orc",
-					},
-					{
-						"level": 16,
-						"character_class": "chieftain",
-						"race": "orc",
-					},
-					{
-						"level": 10,
-						"character_class": "knight",
-						"race": "orc",
-					},
-				]
-			},
+			"res://Scenes/CardGame/EncounterScenes/MissionCombats/BlackForestOrcs/black_forest_orcs_0.tscn",
+			"res://Scenes/CardGame/EncounterScenes/MissionCombats/BlackForestOrcs/black_forest_orcs_1.tscn",
+			"res://Scenes/CardGame/EncounterScenes/MissionCombats/BlackForestOrcs/black_forest_orcs_2.tscn",
+			"res://Scenes/CardGame/EncounterScenes/MissionCombats/BlackForestOrcs/black_forest_orcs_3.tscn",
 		]
 	},
 }

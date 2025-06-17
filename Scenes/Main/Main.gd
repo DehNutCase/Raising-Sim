@@ -129,6 +129,7 @@ func _ready():
 			Player.event_flags['ExitPass'] = true
 			Dialogic.start("ExitPass")
 		display_stats()
+		
 	#TODO, delete below, dev use only
 	if OS.has_feature("debug"):
 		#Player.active_mission = ""
@@ -576,11 +577,8 @@ func _on_action(button):
 				if !Player.active_mission.get('combat'):
 					Dialogic.start(Player.active_mission.get('next'))
 				else:
-					#'combat' entry should be list of enemies for the fight
-					Player.enemies = Player.active_mission.combat.enemies
-					Player.in_tower = false
-					Player.in_mission = true
-					SceneLoader.load_scene("res://Scenes/Combat/Combat.tscn")
+					#'combat' should be a path to the correct combat scene
+					enter_card_game(Player.active_mission.combat, false, true)
 			else:
 				if Player.unlocked_missions:
 					load_mission_text(Player.unlocked_missions.keys()[0])
@@ -845,14 +843,18 @@ func _on_enter_tower_button_pressed() -> void:
 			_on_close_button_pressed()
 			#TODO, remove all the double checking for whether player is in a mission or tower combat
 			#centralize checks
-			Player.in_tower = true
-			Player.in_mission = false
-			Player.encounter = Constants.tower_levels[Player.tower_level].encounter
-			SceneLoader.load_scene("res://Scenes/CardGame/card_game.tscn")
+			var encounter = Constants.tower_levels[Player.tower_level].encounter
+			enter_card_game(encounter, true, false)
 		else:
 			display_toast("No walks left!", "top")
 	else:
 		display_toast("Rice shakes her head. You can't climb any higher for now.", "top", "center")
+
+func enter_card_game(encounter_path:String , in_tower = false, in_mission = false):
+	Player.in_tower = in_tower
+	Player.in_mission = in_mission
+	Player.encounter = encounter_path
+	SceneLoader.load_scene("res://Scenes/CardGame/card_game.tscn")
 
 func check_and_play_daily_events() -> void:
 	var played = false

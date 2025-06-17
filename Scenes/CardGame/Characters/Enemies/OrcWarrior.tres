@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://bprmx13nm0qya"]
+
+[ext_resource type="Resource" uid="uid://diw0xbqi3yeeb" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/knight_tackle.tres" id="1_qousu"]
+[ext_resource type="Resource" uid="uid://b3ixlfdetsfas" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/assassin_finishing_blow.tres" id="2_1grw3"]
+[ext_resource type="Texture2D" uid="uid://b4kxlrnwsvgn1" path="res://Characters/Orc/Images/Orc_01.png" id="3_mcrj1"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_88asx"]
+
+[resource]
+script = ExtResource("5_88asx")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_qousu"), ExtResource("2_1grw3"), ExtResource("1_qousu")])
+max_health = 300
+art = ExtResource("3_mcrj1")

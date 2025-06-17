@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=6 format=3 uid="uid://dki4hfm7sjeya"]
+
+[ext_resource type="Resource" uid="uid://ctvs0fr066hqt" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/high_priest_heal.tres" id="1_leujl"]
+[ext_resource type="Resource" uid="uid://du1je3b6sy4jw" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/high_priest_mass_shield.tres" id="2_058v5"]
+[ext_resource type="Resource" uid="uid://jqp1l2fmdip1" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_fireball.tres" id="3_famwc"]
+[ext_resource type="Texture2D" uid="uid://dg21xd4avtd7x" path="res://Art/It Came From The Swamp/Enemies/f_ClericC.png" id="4_7l45t"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_d8okt"]
+
+[resource]
+script = ExtResource("5_d8okt")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_leujl"), ExtResource("2_058v5"), ExtResource("3_famwc")])
+max_health = 120
+art = ExtResource("4_7l45t")

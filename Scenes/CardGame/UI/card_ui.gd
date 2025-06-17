@@ -117,6 +117,13 @@ func _set_card(value: CardResource) -> void:
 	tooltip_text = _create_tooltip()
 	card_text_label.parse_bbcode("[center]" + _create_tooltip() + "[/center]")
 	
+func _update_mana_label():
+	cost_label.clear()
+	if is_instance_valid(Player.card_game_player) and card.cost > Player.card_game_player.mana:
+		cost_label.append_text("[center][color=red]" + str(card.cost) + "[/color][/center]")
+	else:
+		cost_label.append_text("[center][color=white]" + str(card.cost) + "[/color][/center]")
+	
 func _create_tooltip() -> String:
 	var tooltip = "[center][color=Turquoise]%s[/color][/center]\n" %card.id
 	

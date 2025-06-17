@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=4 format=3 uid="uid://drribjeyh6g5q"]
+
+[ext_resource type="Resource" uid="uid://4wq5piixdtsq" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/skeleton_basic_attack.tres" id="2_p7b6c"]
+[ext_resource type="Texture2D" uid="uid://dlkaelj0ax1d4" path="res://Characters/Oliver/Images/Goblin_02.png" id="2_qenbs"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_xg0fc"]
+
+[resource]
+script = ExtResource("4_xg0fc")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("2_p7b6c")])
+max_health = 50
+art = ExtResource("2_qenbs")

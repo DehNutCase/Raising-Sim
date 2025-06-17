@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=5 format=3 uid="uid://bf5y2ngn1047e"]
+
+[ext_resource type="Resource" uid="uid://diw0xbqi3yeeb" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/knight_tackle.tres" id="1_k8gsb"]
+[ext_resource type="Resource" uid="uid://bw5s2urd8ss51" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/knight_war_cry.tres" id="2_wfoqd"]
+[ext_resource type="Texture2D" uid="uid://d116cv0p5swl1" path="res://Characters/Orc King/Images/OrcKing_01.png" id="3_mh5m5"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="5_7ftlj"]
+
+[resource]
+script = ExtResource("5_7ftlj")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_k8gsb"), ExtResource("2_wfoqd")])
+max_health = 250
+art = ExtResource("3_mh5m5")

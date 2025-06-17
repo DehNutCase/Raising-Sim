@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1b7knhcv371b"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_eerdp"]
+[ext_resource type="Texture2D" uid="uid://devtl4qkrahb8" path="res://Art/Background/Background material shop/bg026a.jpg" id="2_4nrkq"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_qig2s"]
+[ext_resource type="Resource" uid="uid://bgrur01qases7" path="res://Scenes/CardGame/Characters/Enemies/HumanThiefF.tres" id="4_jhbc7"]
+[ext_resource type="Resource" uid="uid://dt82bp3r71ucu" path="res://Scenes/CardGame/Characters/Enemies/HumanWitch.tres" id="5_nv3gn"]
+[ext_resource type="Resource" uid="uid://dki4hfm7sjeya" path="res://Scenes/CardGame/Characters/Enemies/HumanCleric.tres" id="6_xv7a4"]
+[ext_resource type="Resource" uid="uid://cag08y3q544xn" path="res://Scenes/CardGame/Characters/Enemies/HumanHeroM.tres" id="7_a87kr"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eerdp")
+background = ExtResource("2_4nrkq")
+victory_reward = "{\"stats\": {\"gold\": 2000, \"experience\": 2000}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_qig2s")]
+position = Vector2(200, 400)
+enemy_resource = ExtResource("4_jhbc7")
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_qig2s")]
+position = Vector2(600, 250)
+enemy_resource = ExtResource("5_nv3gn")
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_qig2s")]
+position = Vector2(400, 250)
+enemy_resource = ExtResource("6_xv7a4")
+
+[node name="CardGameEnemy4" parent="." instance=ExtResource("3_qig2s")]
+position = Vector2(200, 125)
+enemy_resource = ExtResource("7_a87kr")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=4 format=3 uid="uid://c8tpsl5d6ddv"]
+
+[ext_resource type="Resource" uid="uid://c0l1w8b5iiavv" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/strong_tackle.tres" id="1_k04t2"]
+[ext_resource type="Texture2D" uid="uid://b4kxlrnwsvgn1" path="res://Characters/Orc/Images/Orc_01.png" id="3_cccc0"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="4_bqdng"]
+
+[resource]
+script = ExtResource("4_bqdng")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_k04t2")])
+max_health = 100
+art = ExtResource("3_cccc0")

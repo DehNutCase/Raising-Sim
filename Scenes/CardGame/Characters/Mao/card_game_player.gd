@@ -27,13 +27,13 @@ func _ready():
 func initialize_stats() -> void:
 	max_health = int(Player.stats.max_hp/5)
 	#debug code
-	if OS.has_feature("debug"):
-		max_health = 5000
+	#if OS.has_feature("debug"):
+		#max_health = 5000
 	health = max_health
 	#Note, give mao block based on defense every turn
 	max_mana = int(Player.stats.max_mp/150 + 2)
-	if OS.has_feature("debug"):
-		max_mana = 5000
+	#if OS.has_feature("debug"):
+		#max_mana = 5000
 	mana = max_mana
 	draw_pile = []
 	discard = []
@@ -51,6 +51,7 @@ func update_stats() -> void:
 	var stats = {"health": health, "block": block, "max_health": max_health}
 	stats_bar.update_stats(stats)
 	mana_label.text = "%s/%s" % [mana, max_mana]
+	get_tree().call_group("CardGameMainNode", "update_mana_labels")
 
 func take_damage(damage: int) -> void:
 	if active_status.get("Defense"):

@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1g0fm5d6rbpk"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_ejxr7"]
+[ext_resource type="Texture2D" uid="uid://cuv41do73btg6" path="res://Art/Background/Background material shop/bg024a.jpg" id="2_b6hnl"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_4qdmg"]
+[ext_resource type="Resource" uid="uid://c8tpsl5d6ddv" path="res://Scenes/CardGame/Characters/Enemies/OrcWarriorWeak.tres" id="4_5qf5f"]
+[ext_resource type="Resource" uid="uid://bf5y2ngn1047e" path="res://Scenes/CardGame/Characters/Enemies/OrcChief.tres" id="5_tyud3"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ejxr7")
+background = ExtResource("2_b6hnl")
+victory_reward = "{\"stats\": {\"gold\": 2500, \"experience\": 2500}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_4qdmg")]
+position = Vector2(450, 400)
+enemy_resource = ExtResource("4_5qf5f")
+
+[node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
+scale = Vector2(2, 2)
+
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(300, 300)
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_4qdmg")]
+position = Vector2(800, 250)
+enemy_resource = ExtResource("5_tyud3")
+
+[node name="CollisionShape2D" parent="CardGameEnemy3" index="0"]
+scale = Vector2(2, 2)
+
+[node name="Sprite" parent="CardGameEnemy3/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(300, 300)
+
+[node name="CardGameEnemy4" parent="." instance=ExtResource("3_4qdmg")]
+position = Vector2(200, 200)
+enemy_resource = ExtResource("4_5qf5f")
+
+[node name="CollisionShape2D" parent="CardGameEnemy4" index="0"]
+scale = Vector2(2, 2)
+
+[node name="Sprite" parent="CardGameEnemy4/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(300, 300)
+
+[editable path="CardGameEnemy"]
+[editable path="CardGameEnemy3"]
+[editable path="CardGameEnemy4"]

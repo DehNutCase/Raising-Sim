@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbcshgvet0q7t"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_n55wq"]
+[ext_resource type="Texture2D" uid="uid://cuv41do73btg6" path="res://Art/Background/Background material shop/bg024a.jpg" id="2_ckcub"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_lx1wi"]
+[ext_resource type="Resource" uid="uid://bprmx13nm0qya" path="res://Scenes/CardGame/Characters/Enemies/OrcWarrior.tres" id="4_xqwaa"]
+[ext_resource type="Texture2D" uid="uid://b4kxlrnwsvgn1" path="res://Characters/Orc/Images/Orc_01.png" id="5_xq73t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq3b"]
+size = Vector2(400, 400)
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n55wq")
+background = ExtResource("2_ckcub")
+victory_reward = "{\"stats\": {\"gold\":1000, \"experience\": 1000}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_lx1wi")]
+position = Vector2(500, 350)
+enemy_resource = ExtResource("4_xqwaa")
+
+[node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
+shape = SubResource("RectangleShape2D_qcq3b")
+
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(400, 400)
+texture = ExtResource("5_xq73t")
+
+[node name="Arrow" parent="CardGameEnemy" index="2"]
+custom_minimum_size = Vector2(500, 500)
+
+[editable path="CardGameEnemy"]
