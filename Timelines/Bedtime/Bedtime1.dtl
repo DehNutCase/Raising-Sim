@@ -19,25 +19,24 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): Return, you are now king.
 	Rice_Portrait (Normal): The fishman turned to leave. But, just as he was stepping into his carriage, a thought occured to him.
 	Rice_Portrait (Normal): Why should he settle for being king, he wondered, when he could be emperor. So he stepped back out of the carriage, heading back to the shrine.
-	Rice_Portrait (Normal): A king isn't enough, he yelled, I need to be emperor.
+	Rice_Portrait (Normal): A king isn't enough, he shouted, I need to be emperor.
 	Rice_Portrait (Normal): The goddess nodded her head, no longer bothering to speak, and waved him away.
-	Rice_Portrait (Normal): On the way home, the sea was raging, the sky was dark, and all sorts of animals can be seen fleeing this way and that, but the fisherman paid it no mind, merely ordering his coachman to drive faster.
-	Rice_Portrait (Normal): On his return, he found that his castle was no longer merely stone and iron, but marble and silver. His servants were no longer merely common born maids and butlers, but rather barons, counts, and even the occasional duke.
+	Rice_Portrait (Normal): On the way home, the sea was raging, the sky was dark, and all sorts of animals can be seen fleeing this way and that, but the fisherman paid them no mind, merely ordering his coachman to drive faster.
+	Rice_Portrait (Normal): On his return, he found that his castle was no longer merely stone and iron, but marble and silver. His servants were no longer common born maids and butlers, but rather barons, counts, and even the occasional duke.
 	Rice_Portrait (Normal): All the nobles of the kingdom came to pay him homage, and he saw the prettiest princesses and most beautiful queens fighting over who could speak to him first.
 	Rice_Portrait (Normal): Yet even so, he wasn't satisfied.
 	Rice_Portrait (Normal): He spent that night tossing and turning on his bed, wondering what more he could possibly wish for.
 	Rice_Portrait (Normal): It wasn't until the dawn broke, sunlight gently peeking through his bedroom windows, that he finally knew what he would wish for.
 	Rice_Portrait (Normal): Strangely, the weather was perfect, the sky was clear, and the sea smooth as a mirror. Everything was calm and serene.
 	Rice_Portrait (Normal): On the entire way to the shrine, there wasn't a single bug, bird, or animal in sight.
-	# 
 	Rice_Portrait (Normal): After hearing the fisherman's last wish, the Littlest Goddess, unlike every other time the fisherman made a wish, asked the fisherman if he was sure about making such a wish.
 	Rice_Portrait (Normal): I am, said the fisherman. The Littlest Goddess had granted every wish of his before, so he was confident she would grant this one as well.
 	Rice_Portrait (Normal): I want to be the great god of this world, the fisherman said once again. I wish the sun to rise at my bidding, and the moon to await my permission to set.
-	Rice_Portrait (Normal): You must have realized, said the Littlest Goddess, every wish except your very first had made you more miserable and less happy. Are you sure, she asked once again.
+	Rice_Portrait (Normal): You must have realized, said the Littlest Goddess, every wish except your very first had made you more miserable than before. Are you sure, she asked once again.
 	Rice_Portrait (Normal): This will be the last time, she said.
 	Rice_Portrait (Normal): I am, said the fisherman, there's nothing more I could possibly want.
 	Rice_Portrait (Normal): Go home, said the Littlest Goddess, you are now the great god of this world. The sun will rise at your bid, and the moon won't set without your leave.
-	Rice_Portrait (Normal): (Hmm, taken literally, this would make the Littlest Goddess one of the peak dieties of this world. But it's more likely she has some ability to manipulate perceptions.)
+	Rice_Portrait (Normal): (Taken literally, this would make the Littlest Goddess one of the peak dieties of this world. But it's more likely she has some ability to manipulate perceptions.)
 	Rice_Portrait (Normal): (Memory manipulation or illusion spells would be the best way to replicate what she did for the fisherman's wishes.)
 	Rice_Portrait (Normal): (I should stop thinking so seriously about this.)
 	update Mao (EyesClosed)
@@ -47,12 +46,60 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): So, once again, he headed towards the shrine of the Littlest Goddess.
 	Rice_Portrait (Normal): But he ran into a certain King of Demons on the way and got murdered for experience points. The end.
 	Rice_Portrait (Normal): The previous sentence was verbatim, as unbelieveable as it sounds.
-	Rice_Portrait (Normal): (...I really want to ask her majesty what she was thinking. Why did she shoehorn herself into a fairytale?)
-	Rice_Portrait (Normal): (No, that's not even the biggest problem. Why did she butcher the story just to do a random cameo?)
+	Rice_Portrait (Normal): (I really want to ask her majesty what she was thinking. Why did she shoehorn herself into a fairytale?)
 	Rice_Portrait (Normal): (Hopefully Mao fell asleep before this travesty of an ending.)
 	[signal arg="{"stats": {"stress": -10,}}"]
 - Tower Climbing
+	Rice_Portrait (Normal): Things were going rather well at this point. Our party wasn't particularly famous, but we could be barely considered one of the rising stars.
+	Rice_Portrait (Normal): Since we limited our range of activity to the mid and lower levels of the tower, we had quite a bit of free time even after finishing our commissions for the day.
+	Rice_Portrait (Normal): A normal party would do something like going to a tavern together, I suppose. To build camaraderie and review everyone's performance for the day.
+	Rice_Portrait (Normal): We did do that sometimes, but most of the time Lucca and I went off to the simulators instead. Our levels were still quite a bit higher than the rest of the party, you see, so we had to train by ourselves.
+	update Mao (Excited)
+	Mao_Portrait (Excited): Simulator?
+	Rice_Portrait (Normal): You should be trying to sleep, so please don't get too excited.
+	update Mao [animation="Tada" length="1"]
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): I'll fall asleep right now!
+	Rice_Portrait (Normal): Anyway, the academy's simulator is one of the marvels of modern magecraft. It could near perfectly replicate anyone in its database, and the combat is real enough that you even get experience for it.
+	Rice_Portrait (Normal): Which meant it was also quite dangerous, and there are occasional fatalities. But you could reduce the risks by adding yourself to the database and having your simulation fight your intended target and observing the fight beforehand.
+	Rice_Portrait (Normal): The infirmary was also right next door.
+	Rice_Portrait (Normal): (Well, it speaks volumes about how dangerous it could be when there are fatalities despite all these precautions.)
+	Rice_Portrait (Normal): In retrospect, we should've done a few more teambuilding exercises. Either more drinking with the rest of the party or, better yet, inviting the party to the simulators with us.
+	Rice_Portrait (Normal): But, at least until this point, it was smooth sailing.
+	Rice_Portrait (Normal): Even the next part can't be called a problem, per se. We were, in fact, ready to climb a bit higher in the tower at this point.
+	Rice_Portrait (Normal): Lucca wanted to stay in the mid levels a while longer to be safe, the swordsman and the archer wanted to push ahead for more lucrative commissions, and the healer and I abstained.
+	Rice_Portrait (Normal): I'm not sure what the healer was thinking, but I simply didn't care.
+	Rice_Portrait (Normal): In that respect, I wasn't a particularly good party member. I didn't care about the three of them then, and I don't care about them now.
+	Rice_Portrait (Normal): It's possible they mistook my indifference for servility. I did notice that they started treating me more and more like a typical porter as we climbed higher.
+	Rice_Portrait (Normal): Looking back on it, I probably could've saved everyone a great deal of pain and trouble if I punched all of them in the face a few times.
+	Mao_Portrait (EyesClosed): Teehee.
+	Rice_Portrait (Normal): Mao.
+	update Mao [animation="Tada" length="1"]
+	Mao_Portrait (EyesClosed): I'm asleep!
+	Rice_Portrait (Normal): (Well, at least she's enjoying this. It seems to be quite a boring story, personally.)
+	Rice_Portrait (Normal): I suppose the next bit could be considered our glory days. I didn't think much of it, personally, but our rapid ascent to the upper levels made us somewhat famous.
+	Rice_Portrait (Normal): (There's a certain irony in the fact that we could've cleared to the top floor on the very first day if it had been just Lucca and myself, but that's neither here nor there.)
+	Rice_Portrait (Normal): Sponsorships, named commissions, and even fangirls became rather common sights.
+	Rice_Portrait (Normal): But not for the two of us, of course. There's no way anyone was going to pay attention to the porter, and the image Lucca had at that point was 'that curse mage who never does anything.'
+	Rice_Portrait (Normal): Not that either of us had money problems, so the lack of sponsorship was hardly an issue. Academy graduates don't have problems making money if they wanted to.
+	Rice_Portrait (Normal): We didn't have much expenses, either. The academy's standard issue equipment were one or two tiers above the best that money could buy, so an adventurer's biggest expense simply didn't apply to us.
+	Rice_Portrait (Normal): We started running into our old classmates at this point, our party was getting famous enough to enter social circles of the truly strong, albeit barely.
+	Rice_Portrait (Normal): They looked at me like I was insane for being a porter, and the party like they were insane for making me one. Lucca laughs about it whenever that happened.
+	Rice_Portrait (Normal): Our old classmates didn't recognize her at all, since she went all-in on the whole gloomy 'curse mage' look.
+	Rice_Portrait (Normal): I doubt anyone could have recognized her as the number one graduate of a knight academy.
+	Rice_Portrait (Normal): I'm still not sure why she bothered buying a whole set of black wizard robe, hat, and cloak. Some kind of roleplay, perhaps?
+	Rice_Portrait (Normal): I did get some private messages to the tune of 'what the hell are you doing as a porter,' but most of them accepted 'Lucca' as a response.
+	Rice_Portrait (Normal): She had something of a reputation.
+	Rice_Portrait (Normal): It still seemed like smooth sailing at this point, at least on the surface. If anything, we leveled even faster than before, and Lucca was starting to get excited about finally being able to show off what we could do.
+	Rice_Portrait (Normal): So it was something of a complete surprise when the other three voted me out of the party. In the middle of a tower climb, no less.
+	Rice_Portrait (Normal): (Hmm. Looks like Mao is asleep already. I'll stop here.)
 	[signal arg="{"stats": {"stress": -10,}}"]
+- Actually, you don't need to tell me bedtime stories anymore
+	Rice_Portrait (Normal): I see. Then, good night.
+	Mao_Portrait (Normal): Night!
+	# Add flag to stop playing bedtime timelines
+	[signal arg="{"stats": {"stress": -5,}, "event_flags": {"no_bedtime": true}}"]
+	[end_timeline]
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Zzz...
 Rice_Portrait (Normal): (Good night.)

@@ -112,6 +112,7 @@ func start_turn() -> void:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
 	block = 0
+	update_status_display()
 
 func end_turn() -> void:
 	decay_status(CardGameStatusResource.DecayType.END_OF_TURN)
@@ -125,7 +126,7 @@ func start_first_turn() -> void:
 	for child in children:
 		child.queue_free()
 		
-	if Player.stats.attack / 150:
+	if int(Player.stats.attack / 150):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Attack"] = {"stacks": int(Player.stats.attack / 150), "status": load("res://Scenes/CardGame/Status/attack.tres"), "status_display": status_display}
 		var status = active_status["Attack"].status
@@ -134,7 +135,7 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Attack"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-	if Player.stats.defense / 150:
+	if int(Player.stats.defense / 150):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Defense"] = {"stacks": int(Player.stats.defense / 150), "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
 		var status = active_status["Defense"].status
@@ -143,7 +144,7 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Defense"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 	
-	if Player.stats.scholarship / 150:
+	if int(Player.stats.scholarship / 150):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Scholarship"] = {"stacks": int(Player.stats.scholarship / 150), "status": load("res://Scenes/CardGame/Status/scholarship.tres"), "status_display": status_display}
 		var status = active_status["Scholarship"].status
@@ -152,7 +153,7 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Scholarship"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-	if Player.stats.skill / 150:
+	if int(Player.stats.skill / 150):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Skill"] = {"stacks": int(Player.stats.skill / 150), "status": load("res://Scenes/CardGame/Status/skill.tres"), "status_display": status_display}
 		var status = active_status["Skill"].status
@@ -162,7 +163,7 @@ func start_first_turn() -> void:
 		status_display.tooltip_text = status.status_tooltip
 
 		
-	if Player.stats.magic / 150:
+	if int(Player.stats.magic / 150):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Magic"] = {"stacks": int(Player.stats.magic / 150), "status": load("res://Scenes/CardGame/Status/magic.tres"), "status_display": status_display}
 		var status = active_status["Magic"].status
@@ -172,7 +173,7 @@ func start_first_turn() -> void:
 		status_display.tooltip_text = status.status_tooltip
 
 		
-	if Player.stats.resistance / 150:
+	if int(Player.stats.resistance / 150):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Resistance"] = {"stacks": int(Player.stats.resistance / 150), "status": load("res://Scenes/CardGame/Status/resistance.tres"), "status_display": status_display}
 		var status = active_status["Resistance"].status
@@ -181,7 +182,7 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Resistance"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-	if Player.stats.agility / 100:
+	if int(Player.stats.agility / 100):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
 		active_status["Agility"] = {"stacks": int(Player.stats.agility / 150), "status": load("res://Scenes/CardGame/Status/agility.tres"), "status_display": status_display}
 		var status = active_status["Agility"].status

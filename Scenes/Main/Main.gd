@@ -28,6 +28,8 @@ extends Control
 @onready var buttons2 = $RightMenuContainer/MenuPanel/VBoxContainer
 @onready var buttons3 = $BottomMenuContainer/HBoxContainer
 
+@onready var schedule_alert_icon = %ScheduleAlertIcon
+
 @onready var button_containers = [buttons, buttons2, buttons3]
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
@@ -45,8 +47,12 @@ var day: int:
 	get:
 		return Player.day
 	set(value):
-		day_label.display_day(day)
 		Player.day = value
+		day_label.display_day(day)
+		if day == 1:
+			schedule_alert_icon.show()
+		else:
+			schedule_alert_icon.hide()
 
 enum states {READY, DIALOGIC, BUSY}
 var current_state = states.READY
@@ -103,6 +109,11 @@ func _ready():
 		process_day()
 		
 	day_label.display_day(day)
+	if day == 1:
+		schedule_alert_icon.show()
+	else:
+		schedule_alert_icon.hide()
+	
 	if (Player.stats["stress"] < 50):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
 		Player.play_random_voice("greetings")
@@ -231,7 +242,6 @@ func process_day():
 	check_and_play_daily_events()
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
-		
 	day_state = states.READY
 
 		
@@ -1007,11 +1017,23 @@ func _on_start_day_button_pressed():
 
 func play_bedtime_event():
 #TODO, at the end of day play specific bedtime event
+	#Don't play even if no_bedtime
+	if Player.event_flags.get("no_bedtime"):
+		return
 	if day == 1:
 		await (get_tree().create_timer(1).timeout)
 		Dialogic.start("BedtimeFirst")
 		await Dialogic.timeline_ended
 		await(get_tree().create_timer(.5).timeout)
+	else:
+		var rng = RandomNumberGenerator.new()
+		if rng.randf() * 100 > (100 - Constants.constants.BEDTIME_EVENT_ODDS):
+			if Player.bedtime_event_number < len(Constants.timelines.bedtime):
+				await (get_tree().create_timer(1).timeout)
+				Dialogic.start(Constants.timelines.bedtime[Player.bedtime_event_number])
+				await Dialogic.timeline_ended
+				await(get_tree().create_timer(.5).timeout)
+				Player.bedtime_event_number += 1
 
 func _on_card_button_pressed(card: CardResource):
 	if popup.visible:

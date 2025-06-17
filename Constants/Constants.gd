@@ -1082,6 +1082,7 @@ const constants = {
 	'DAILY_ACTION_LIMIT' = 3,
 	'BASE_COURSE_PROGRESS' = 1000,
 	'JOB_EVENT_ODDS' = 20, #The percentage chance of triggering a job event
+	'BEDTIME_EVENT_ODDS' = 20,
 	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},
 	'ACTION_TYPES' = {
 		'jobs': {
@@ -2598,6 +2599,10 @@ const missions = {
 			},
 		]
 	},
+}
+
+const timelines = {
+	"bedtime": ["Bedtime0", "Bedtime1"]#, "Bedtime2", "Bedtime3"],
 }
 
 const decks = {

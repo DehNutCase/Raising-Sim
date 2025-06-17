@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=82 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://dk0qq0hktgf0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_!.png" id="56_n3yma"]
 [ext_resource type="Texture2D" uid="uid://bsq8bpm0l38w4" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Clock.png" id="57_bks8t"]
 [ext_resource type="Texture2D" uid="uid://cbrn5vl87lv1t" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Clock.png" id="58_6xyyi"]
+[ext_resource type="Texture2D" uid="uid://bdvsd0uxrqf38" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element46_01.png" id="58_27wwt"]
 [ext_resource type="Texture2D" uid="uid://rvktd8wnbbbq" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_HamburgerMenu.png" id="59_8jab2"]
 [ext_resource type="Texture2D" uid="uid://8phy4gy1nlas" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Note2.png" id="59_chmyp"]
 [ext_resource type="Texture2D" uid="uid://3eakswiet1l3" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Note2.png" id="60_l7j0c"]
@@ -931,6 +932,22 @@ size_flags_vertical = 3
 texture_normal = ExtResource("57_bks8t")
 texture_pressed = ExtResource("58_6xyyi")
 stretch_mode = 3
+
+[node name="ScheduleAlertIcon" type="TextureRect" parent="RightMenuContainer/MenuPanel/VBoxContainer/Schedule"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 25.0
+offset_right = -15.0
+offset_bottom = 50.0
+grow_horizontal = 0
+texture = ExtResource("58_27wwt")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Lessons" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
 layout_mode = 2
