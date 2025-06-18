@@ -70,10 +70,10 @@ func _ready():
 	#Game needs to be loaded here
 	self.hide()
 	if !Player.save_loaded:
-		if OS.has_feature("demo"):
-			Player.load_demo()
-		else:
-			Player.load_game()
+		#if OS.has_feature("demo"):
+			#Player.load_demo()
+		#else:
+		Player.load_game()
 	Player.save_loaded = true
 	
 	#Load font size from settings
@@ -692,11 +692,8 @@ func display_stats() -> void:
 	else:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
 	if OS.has_feature("demo"):
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".hide()
-		#TODO, unhide this for later demo
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Tower".hide()
 		#Hide ways to advance day after demo ends
-		if day > 2 * Constants.constants.days_in_month:
+		if day > 20:
 			$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()
 			$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
 	else:
