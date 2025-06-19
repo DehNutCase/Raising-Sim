@@ -12,14 +12,18 @@ var max_hand_size: int = 2
 var draw_pile: Array[CardResource] = []
 var discard: Array[CardResource] = []
 
-var art = load("res://Characters/Mao/Images/Portrait/exp_01_000.png")
-
 #{"type":String, "stacks":int, "icon":texture}
 var active_status = {}
 
 @onready var sprite = %CharacterTexture
 @onready var stats_bar: CardGameStatsBar = %StatsBar
 @onready var mana_label: Label = %ManaLabel
+
+var player_textures = {
+	"normal": load("res://Characters/Mao/Images/Portrait/exp_01_000.png"),
+	"attacked": load("res://Characters/Mao/Images/Portrait/exp_05_000.png"),
+	"defeated": load("res://Art/KikariStore/l2d.png")
+}
 
 func _ready():
 	initialize_stats()
@@ -44,7 +48,7 @@ func initialize_stats() -> void:
 	update_player()
 
 func update_player() -> void:
-	sprite.texture = art
+	sprite.texture = player_textures["normal"]
 	update_stats()
 
 func update_stats() -> void:
@@ -56,10 +60,12 @@ func update_stats() -> void:
 func take_damage(damage: int) -> void:
 	if active_status.get("Defense"):
 		damage -= active_status.get("Defense").stacks
-		
+	
+	sprite.texture = player_textures["attacked"]
 	modulate = Color(1,1,1,.5)
 	await Player.shake(self, 50)
 	modulate = Color(1,1,1,1)
+	sprite.texture = player_textures["normal"]
 	
 	#adjust dmg here
 	if active_status.get("Immune"):
@@ -80,6 +86,7 @@ func take_damage(damage: int) -> void:
 	
 	if health <= 0:
 		get_tree().call_group("CardGameMainNode", "check_defeat")
+		sprite.texture = player_textures["defeated"]
 		
 func heal_damage(amount: int) -> void:
 	modulate = Color(1,1,1,.5)

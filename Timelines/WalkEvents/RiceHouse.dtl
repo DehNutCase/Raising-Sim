@@ -14,7 +14,7 @@ Rice_Portrait (Normal): So why are you here again?
 Mao_Portrait (Normal): Can't I visit?
 Rice_Portrait (Normal): I don't even live here, Mao.
 - So why do you have a house in the woods, anyway?
-	Rice_Portrait (Normal): It was quiet and out of the way until the princess started handing out my address to everyone she knew.
+	Rice_Portrait (Normal): It was quiet and out of the way until Hiyori started handing out my address to everyone she knew.
 	update Mao (Smile)
 	Mao_Portrait (Smile): So I should thank her for you?
 	Rice_Portrait (Normal): No. No you should not.
@@ -94,18 +94,6 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Mao_Portrait (Angry): Rice...
 		update Mao (Normal)
 		Rice_Portrait (Normal): A lesser phantom isn't particularly dangerous, just knock it down before it can do anything.
-		Mao_Portrait (Normal): But it's so fast!
-		Rice_Portrait (Normal): Not at all. About four hundred standard units should be enough.
-		update Mao (Surprised)
-		Mao_Portrait (Surprised): Standard units?
-		Rice_Portrait (Normal): Of Speed. Four hundred points of speed.
-		update Mao (Normal)
-		Mao_Portrait (Normal): No, I mean, what's a standard unit?
-		Rice_Portrait (Normal): The phrase should be self explanatory; it's just a unit of measurement. You can find the conversions to and from in 'An Introduction to Stats'.
-		Mao_Portrait (Normal): Oh, I think I have that book!
-		update Mao (Angry)
-		Mao_Portrait (Angry): I remember the equations being stupid hard.
-		Rice_Portrait (Normal): The standard units for stats other than Hit Points and Mana aren't linear, so it can't be helped.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 4}}"]
 	elif Player.tower_level  >  7:
@@ -113,16 +101,8 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		update Mao (Normal)
 		Mao_Portrait (Normal): Hehe. Bonk, bonk, bonk.
 		Mao_Portrait (Normal): I think it's getting harder, though.
-		Rice_Portrait (Normal): Your class isn't suited for fighting. I would suggest changing to a combat class if you seriously wanted to climb.
-		Rice_Portrait (Normal): But your contract with her majesty prevents that, correct?
-		update Mao (Surprised)
-		Mao_Portrait (Surprised): Um, I think so?
-		Rice_Portrait (Normal): Please tell me you didn't forget.
-		update Mao (Blush)
-		Mao_Portrait (Blush): Teehee.
-		Rice_Portrait (Normal): (There's something odd here. I don't believe Mao would forget something like that.)
-		Rice_Portrait (Normal): (I'll ask her majesty later.)
-		Rice_Portrait (Normal): If you haven't already, taking some Artillerist classes will teach you Meteor, which is quite useful for wiping out a large group at once.
+		Rice_Portrait (Normal): Hmm. Well, I can't give much specific advice, but getting better cards and building up your stats should make duels easier.
+		Rice_Portrait (Normal): You can also sell the cards you don't need, which will let you draw your important cards more often.
 		update Mao (Normal)
 		[signal arg="{"stats": {"scholarship": 3}}"]
 	else:
