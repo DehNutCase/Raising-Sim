@@ -25,6 +25,8 @@ var player_textures = {
 	"defeated": load("res://Art/KikariStore/l2d.png")
 }
 
+#Stats used "max_hp", "max_mp", "attack", "magic", "skill", "agility", "defense", "resistance"
+
 func _ready():
 	initialize_stats()
 	

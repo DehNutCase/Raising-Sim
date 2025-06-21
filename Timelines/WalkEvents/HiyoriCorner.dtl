@@ -20,9 +20,9 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 	[signal arg="{"location_flags": {"rice_house": true}}"]
 - I'm trying to climb the tower, do you have any advice?
 	Hiyori_Portrait (Surprised): Oh yeah, mom did say she bought you some magic cards earlier.
-	Hiyori_Portrait (Surprised): Well, I'll go over the basics. First of all, the stats that matter for duels are\: Health Points, Mana Points, Attack, Defense, Magic, Skill, Scholarship, Agility.
+	Hiyori_Portrait (Surprised): Well, I'll go over the basics. First of all, the stats that matter for duels are\: Health Points, Mana Points, Attack, Defense, Resistance, Magic, Skill, Scholarship, Agility.
 	Hiyori_Portrait (Surprised): You'll lose the duel when your health goes to zero, and every turn you'll get mana based on your mana points, which you use to play cards.
-	Hiyori_Portrait (Surprised): Attack makes you deal more damage per hit, defense means you take less damage, and magic gets you more block when you use block cards.
+	Hiyori_Portrait (Surprised): Attack makes you deal more damage per hit, defense means you take less damage, magic gets you more block when you use block cards, and resistance lets you prevent debuffs.
 	Hiyori_Portrait (Surprised): Skill affects how many cards you draw at the start of turn, Scholarship determines how many cards you can hold, and Agility affects both, but only for one turn.
 	Hiyori_Portrait (Normal): If you want higher level advice you can try asking Rice. Did you know that she's a Ranker?
 - How have you been?

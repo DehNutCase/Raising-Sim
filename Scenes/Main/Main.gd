@@ -260,6 +260,10 @@ func do_action(action_type:String, action_name: String):
 		await do_cram_school()
 		return
 
+	if action_type == 'expedition':
+		await do_expedition(action_name)
+		return
+		
 	var action_stats = Constants[action_type][action_name].stats
 	var icon = Constants[action_type][action_name].get("icon")
 	var rng = RandomNumberGenerator.new()
@@ -453,6 +457,10 @@ func play_course_progress_timeline(course_name:String, lesson_name:String, index
 func course_button_click(course_name:String, lesson_name:String):
 	course_schedule.add_course(course_name, lesson_name)
 
+func do_expedition(expedition_name:String) -> void:
+	print(expedition_name)
+	return
+	
 func do_rest(rest_name: String) -> void:
 	var rest_stats = Constants.rests[rest_name]["stats"]
 	var cost = 0
@@ -461,7 +469,6 @@ func do_rest(rest_name: String) -> void:
 		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 		return
 	process_stats(rest_stats)
-	#process_day()
 	
 func do_walk(walk_name: String) -> void:
 	if Player.remaining_walks > 0:

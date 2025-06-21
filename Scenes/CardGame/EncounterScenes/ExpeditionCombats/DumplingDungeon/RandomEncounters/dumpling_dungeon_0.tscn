@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu7yg1fil0qil"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_m10c7"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_24e7w"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_mmq3o"]
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m10c7")
+background = ExtResource("2_24e7w")
+victory_reward = "{\"stats\": {\"gold\": 100, \"experience\": 100}}"
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("3_mmq3o")]
+position = Vector2(200, 125)
+
+[node name="CardGameEnemy2" parent="." instance=ExtResource("3_mmq3o")]
+position = Vector2(300, 400)
+
+[node name="CardGameEnemy3" parent="." instance=ExtResource("3_mmq3o")]
+position = Vector2(500, 150)
