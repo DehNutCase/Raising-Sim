@@ -9,6 +9,8 @@ extends Control
 @onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
 @onready var dialogic_panel = $Ui/DialogicPanel
 
+@onready var card_game_panel = %CardGamePanel
+
 @onready var day_label = $Ui/Calendar/VBoxContainer/DayLabel
 
 @onready var menu_panel = $Ui/MenuPanel
@@ -119,16 +121,6 @@ func _ready():
 		Player.play_random_voice("greetings")
 	else:
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
-	
-	if Player.reward_signal:
-		display_toast("Gained rewards from the duel!", "top")
-		await(get_tree().create_timer(.5).timeout)
-		_on_reward_signal(Player.reward_signal)
-		Player.reward_signal = {}
-		if Player.tower_level == 21 and !Player.event_flags.get('ExitPass'):
-			Player.event_flags['ExitPass'] = true
-			Dialogic.start("ExitPass")
-		display_stats()
 		
 	#TODO, delete below, dev use only
 	if OS.has_feature("debug"):
@@ -147,6 +139,7 @@ func _ready():
 		pass
 	#TODO, end dev use section
 	get_tree().call_group("ButtonMenu", "update_buttons")
+	
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -313,50 +306,6 @@ func background_transition(time:String = "morning"):
 	var tweener := tween.tween_property(bg_holder, "material:shader_parameter/progress", 1.0, 4.0).from(0.0)
 	await tweener.finished
 	bg_holder.material.set_shader_parameter("previous_background", next_background)
-	
-
-func do_job(job_name: String) :
-	var job_stats = Constants.jobs[job_name]["stats"]
-	var rng = RandomNumberGenerator.new()
-	if (JobButton.get_success_chance(job_name) > rng.randf() * 100):
-		get_tree().call_group("Live2DPlayer", "job_motion", true)
-		process_stats(job_stats)
-		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain
-		if ('skill' in Constants.jobs[job_name]):
-			if (Player.proficiencies[job_name] >= Constants.jobs[job_name].skill.proficiency_required):
-				if (!Player.skill_inventory.get_item_with_prototype_id(Constants.jobs[job_name].skill.id)):
-					Player.skill_inventory.create_and_add_item(Constants.jobs[job_name].skill.id)
-	else:
-		get_tree().call_group("Live2DPlayer", "job_motion", false)
-		if "stress" in job_stats:
-			process_stats({"stress": job_stats["stress"]})
-		Player.proficiencies[job_name] += Constants.jobs[job_name].proficiency_gain/2
-	#process_day()
-	
-func do_lesson(lesson_name: String) :
-	var lesson_stats = Constants.lessons[lesson_name]["stats"]
-	var cost = 0
-	if "gold" in lesson_stats: cost = -lesson_stats.gold
-	if (cost > Player.stats["gold"]):
-		display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
-		return
-	var rng = RandomNumberGenerator.new()
-	if (LessonButton.get_success_chance(lesson_name) > rng.randf() * 100):
-		get_tree().call_group("Live2DPlayer", "job_motion", true)
-		process_stats(lesson_stats)
-		if 'proficiency' in Constants.lessons[lesson_name]:
-			Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain
-		if ('skill' in Constants.lessons[lesson_name]):
-			if (Player.proficiencies[lesson_name] >= Constants.lessons[lesson_name].skill.proficiency_required):
-				if (!Player.skill_inventory.get_item_with_prototype_id(Constants.lessons[lesson_name].skill.id)):
-					Player.skill_inventory.create_and_add_item(Constants.lessons[lesson_name].skill.id)
-	else:
-		get_tree().call_group("Live2DPlayer", "job_motion", false)
-		if "stress" in lesson_stats:
-			process_stats({"stress": lesson_stats["stress"], "gold": lesson_stats["gold"]})
-		Player.proficiencies[lesson_name] += Constants.lessons[lesson_name].proficiency_gain/2
-	lessons.hide()
-	#process_day()
 
 func daily_course():
 	if day == 1:
@@ -458,7 +407,17 @@ func course_button_click(course_name:String, lesson_name:String):
 	course_schedule.add_course(course_name, lesson_name)
 
 func do_expedition(expedition_name:String) -> void:
-	print(expedition_name)
+	var expedition = Constants.expedition[expedition_name]
+	if !Player.event_flags.get(expedition_name + "_info"):
+		Player.event_flags[expedition_name + "_info"] = true
+		Dialogic.start(expedition.info_timeline)
+		await Dialogic.timeline_ended
+	#Add expedition timeline processing here
+	var encounters = expedition.encounters_before_boss
+	for i in range(encounters):
+		#TODO, check for last encounter results
+		Dialogic.start(expedition.encounter_timeline)
+		await Dialogic.timeline_ended
 	return
 	
 func do_rest(rest_name: String) -> void:
@@ -742,6 +701,11 @@ func _on_reward_signal(dialogic_signal) -> void:
 	#Below might be dangerous, never call timeline inside an actual timeline
 	if "timeline" in dialogic_signal:
 		Dialogic.start(dialogic_signal.timeline)
+	if "card_game_expedition" in dialogic_signal:
+		#TODO, modify card game to use this for daily card games
+		var combats = Constants.expedition[dialogic_signal.card_game_expedition].random_encounters
+		var combat = combats.pick_random()
+		enter_card_game(combat, false, false, true)
 	
 func _on_timeline_started() -> void:
 	Player.play_song("cheerful")
@@ -854,11 +818,30 @@ func _on_enter_tower_button_pressed() -> void:
 	else:
 		display_toast("Rice shakes her head. You can't climb any higher for now.", "top", "center")
 
-func enter_card_game(encounter_path:String , in_tower = false, in_mission = false):
+func enter_card_game(encounter_path:String , in_tower = false, in_mission = false, in_expedition = false):
 	Player.in_tower = in_tower
 	Player.in_mission = in_mission
+	Player.in_expedition = in_expedition
 	Player.encounter = encounter_path
-	SceneLoader.load_scene("res://Scenes/CardGame/card_game.tscn")
+	
+	get_tree().call_group("Live2DPlayer", "pause_live2d")
+	card_game_panel.show()
+	card_game_panel.add_child(load("res://Scenes/CardGame/card_game.tscn").instantiate())
+	#SceneLoader.load_scene("res://Scenes/CardGame/card_game.tscn")
+
+func exit_card_game() -> void:
+	get_tree().call_group("Live2DPlayer", "resume_live2d")
+	day_label.display_day(day)
+	card_game_panel.hide()
+	if Player.reward_signal:
+		display_toast("Gained rewards from the duel!", "top")
+		await(get_tree().create_timer(.5).timeout)
+		_on_reward_signal(Player.reward_signal)
+		Player.reward_signal = {}
+		if Player.tower_level == 21 and !Player.event_flags.get('ExitPass'):
+			Player.event_flags['ExitPass'] = true
+			Dialogic.start("ExitPass")
+		display_stats()
 
 func check_and_play_daily_events() -> void:
 	var played = false

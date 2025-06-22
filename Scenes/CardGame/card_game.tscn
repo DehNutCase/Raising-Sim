@@ -26,24 +26,16 @@ script = ExtResource("1_3b07j")
 card_game_level = ExtResource("2_q6thf")
 metadata/_edit_lock_ = true
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Hand" type="HBoxContainer" parent="UI"]
-custom_minimum_size = Vector2(1600, 300)
-offset_top = 600.0
-offset_right = 1600.0
-offset_bottom = 900.0
-alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="BackgroundCanvas" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="TextureRect" parent="BackgroundCanvas"]
+[node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_uds7l")
@@ -91,6 +83,16 @@ offset_left = -121.0
 offset_bottom = 34.0
 grow_horizontal = 0
 text = "Flee"
+
+[node name="Hand" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1600, 300)
+layout_mode = 0
+offset_top = 600.0
+offset_right = 1600.0
+offset_bottom = 900.0
+alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="CubismContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true

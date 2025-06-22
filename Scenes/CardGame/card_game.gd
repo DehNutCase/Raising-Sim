@@ -1,6 +1,6 @@
 extends Control
 
-@onready var hand = $UI/Hand
+@onready var hand = %Hand
 @onready var card_game_player: CardGamePlayer = %CardGamePlayer
 
 var DRAW_INTERVAL = .05
@@ -124,10 +124,17 @@ func exit_combat() -> void:
 			Player.tower_level += 1
 		if Player.in_mission:
 			Player.active_mission.combat = false
+		#TODO, in expedition flag here
+		if Player.in_expedition:
+			pass
 		Player.reward_signal = enemy_scene.victory_reward
 	Player.in_tower = false
 	Player.in_mission = false
-	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
+	Player.in_expedition = false
+	get_tree().call_group("Main", "exit_card_game")
+	queue_free()
+	#TODO, modify for new card game scene
+	#SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
 
 func play_live2d_animation(model: String, motion: String, duration: float) -> void:
 	cubism_model.assets = model

@@ -1,0 +1,16 @@
+[background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao [animation="Shake X" length="4"]
+update Mao (Normal)
+Mao_Portrait (Normal): ~Doot. Doot.~
+- Let's look for Dumplings
+	Mao_Portrait (Normal): I smell something delicious!
+	[signal arg="{"card_game_expedition": "Dumpling Dungeon"}"]
+- Let's take a break
+	Mao_Portrait (Normal): Teehee. Break time!
+	[signal arg="{"stats": {"stress": -5}}"]
+- Let's ask Rice for advice
+	Mao_Portrait (Normal): Do you have any dungeoneering tips for me?
+	Rice_Portrait (Normal): Hmm. My personal experiences aren't particularly relevant to you, I believe.
+	Rice_Portrait (Normal): In any case, 
