@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("2_6l6nn")
-id = "Dumpling Tackle"
+id = "Tackle"
 type = 1
 target = 1
 cost = 1

@@ -5,7 +5,7 @@ update Mao [animation="Shake X" length="4"]
 update Mao (Normal)
 Mao_Portrait (Normal): ~Doot. Doot.~
 - Let's look for Dumplings
-	Mao_Portrait (Normal): I smell something delicious!
+	Mao_Portrait (Normal): <I smell something delicious!/Muahaha, behold!/Dumplings! Time to say hi!>
 	[signal arg="{"card_game_expedition": "Dumpling Dungeon"}"]
 - Let's take a break
 	Mao_Portrait (Normal): Teehee. Break time!

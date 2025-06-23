@@ -44,6 +44,7 @@ extends Control
 
 signal card_game_finished
 var card_game_victory = false
+var expedition_failed = false
 
 var jobs = Constants.jobs
 var rests = Constants.rests
@@ -176,7 +177,10 @@ func process_day():
 		background_transition(Constants.constants.TIMES_OF_DAY[i])
 		await (get_tree().create_timer(.5).timeout)
 		await do_action(action.action_type, action.action_name)
-		await (get_tree().create_timer(4).timeout)
+		if action.action_type != "expedition":
+			await (get_tree().create_timer(4).timeout)
+		else:
+			await get_tree().create_timer(1).timeout
 		i+=1
 	
 	background_transition(Constants.constants.TIMES_OF_DAY[i])
@@ -415,21 +419,23 @@ func do_expedition(expedition_name:String) -> void:
 		Player.event_flags[expedition_name + "_info"] = true
 		Dialogic.start(expedition.info_timeline)
 		await Dialogic.timeline_ended
-	#Add expedition timeline processing here
+
 	var encounters = expedition.encounters_before_boss
-	#TODO, keep and check player hp before doing more encounters
+	Player.expedition_health = int(Player.stats.max_hp/5)
+	expedition_failed = false
 	for i in range(encounters):
-		#TODO, check for last encounter results
+		if expedition_failed:
+			break
 		Dialogic.start(expedition.encounter_timeline)
 		await Dialogic.timeline_ended
-		
 		if Player.in_expedition:
 			get_tree().call_group("Live2DPlayer", "pause_live2d")
 			await card_game_finished
-			#start reward timeline here, add flag to check vic/defeat
 			if card_game_victory:
 				Dialogic.start(expedition.victory_timeline)
 			else:
+				#defeat timelines should have 2 choices, continue or give up
+				Player.expedition_health += int(Player.stats.max_hp/10) + 1
 				Dialogic.start(expedition.defeat_timeline)
 			await Dialogic.timeline_ended
 	return
@@ -720,6 +726,15 @@ func _on_reward_signal(dialogic_signal) -> void:
 		var combats = Constants.expedition[dialogic_signal.card_game_expedition].random_encounters
 		var combat = combats.pick_random()
 		enter_card_game(combat, false, false, true)
+	if "expedition_failed" in dialogic_signal:
+		expedition_failed = true
+	if "card_pack" in dialogic_signal:
+		var card_pack = load(dialogic_signal.card_pack)
+		var card = card_pack.cards.pick_random()
+		var toast = "Obtained " + card.id
+		var icon_path = card.icon.resource_path
+		Player.card_game_deck.append(card)
+		display_toast(toast, "bottom", "center", icon_path)
 	
 func _on_timeline_started() -> void:
 	Player.play_song("cheerful")

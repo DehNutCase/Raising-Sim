@@ -8,10 +8,10 @@
 
 [resource]
 script = ExtResource("2_ej281")
-id = "Dumpling Fireball"
+id = "Fireball"
 type = 1
 target = 1
-cost = 1
+cost = 2
 effect_amount = 15
 enemy_attack_type = 1
 multi_hit_amount = 0

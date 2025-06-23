@@ -1,7 +1,7 @@
 [background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
-[signal arg="{"stats": {"stress": 5}}"]
+[signal arg="{"stats": {"stress": 10}}"]
 update Mao (Sad)
 Mao_Portrait (Sad): <Owwie./Uguu./Riceeee!>
 Rice_Portrait (Normal): Hmm. Are you sure you want to keep going?
@@ -10,11 +10,10 @@ Rice_Portrait (Normal): Hmm. Are you sure you want to keep going?
 	update Mao [animation="Tada" length="2"]
 	update Mao (Normal)
 	Mao_Portrait (Normal): Teehee. That tickles!
-	# TODO,  signal player healing
 - Let's call it a day
 	update Mao (Normal)
 	Mao_Portrait (Normal): Can we buy some snacks on the way back?
 	Rice_Portrait (Normal): Is that a roundabout way of asking me to treat you? Well, I don't mind.
 	update Mao [animation="Tada" length="1"]
 	Mao_Portrait (Normal): Yay!
-	[signal arg="{"stats": {"stress": -10}}"]
+	[signal arg="{"stats": {"stress": -15}, "expedition_failed": true,}"]

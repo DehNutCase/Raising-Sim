@@ -92,6 +92,7 @@ var class_change_card #variable to hold loaded class change, *do not save*
 var in_tower = false
 var in_mission = false
 var in_expedition = false
+var expedition_health = 10
 var victory_stat_gain = {}
 #TODO, hook this to dialogic signal
 var reward_signal = {}

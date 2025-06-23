@@ -119,6 +119,7 @@ func check_defeat() -> void:
 		Player.play_random_voice("failure")
 		
 func exit_combat() -> void:
+	Player.expedition_health = Player.card_game_player.health
 	if state == states.VICTORY:
 		if Player.in_tower:
 			Player.tower_level += 1

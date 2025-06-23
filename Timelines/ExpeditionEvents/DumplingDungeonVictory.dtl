@@ -3,7 +3,11 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Shake X" length="1"]
 update Mao (Excited)
+[signal arg="{"stats": {"stress": 5}}"]
 Mao_Portrait (Excited): <I won!/Easy peasy./Teehee.>
 update Mao (Normal)
-Mao_Portrait (Normal): Okay, let's see what's the chest the Dumplings are guarding.
-Mao_Portrait (Normal): Time to move on.
+Mao_Portrait (Normal): Okay, let's see what's in the chest the Dumplings are guarding.
+[signal arg="{"card_pack": "res://Scenes/CardGame/Card/CardPacks/dumpling_dungeon_card_pack.tres"}"]
+Mao_Portrait (Normal): Time to put in a textbook.
+Mao_Portrait (Normal): <Umu! Here's a copy of "Beginner Magecraft"./Teehee. Have fun with "Magic Circles, An Introduction"!/It's so weird that all these brand new textbooks turn all old and crumbly looking the moment I put them in the chest./"Fireball for Dummies"!>
+Mao_Portrait (Normal): Let's move on.

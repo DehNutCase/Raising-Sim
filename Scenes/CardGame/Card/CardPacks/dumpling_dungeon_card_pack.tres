@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=8 format=3 uid="uid://ca1k36vmnwpbr"]
+
+[ext_resource type="Resource" uid="uid://jqp1l2fmdip1" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_fireball.tres" id="1_mjmld"]
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="1_p0gvj"]
+[ext_resource type="Resource" uid="uid://bdmdjsuftthet" path="res://Scenes/CardGame/Characters/Mao/Cards/shield.tres" id="2_8w40b"]
+[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_tackle.tres" id="2_52o1r"]
+[ext_resource type="Resource" uid="uid://cy13dsg53jjf0" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/spell_residue.tres" id="3_f5gma"]
+[ext_resource type="Resource" uid="uid://bpfqevvyxtnwq" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_dispel.tres" id="4_kixh8"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="12_64kbv"]
+
+[resource]
+script = ExtResource("12_64kbv")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_mjmld"), ExtResource("2_52o1r"), ExtResource("3_f5gma"), ExtResource("4_kixh8"), ExtResource("1_p0gvj"), ExtResource("2_8w40b")])
