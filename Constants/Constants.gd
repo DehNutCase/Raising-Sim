@@ -2231,6 +2231,8 @@ const expedition = {
 		"info_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonInfo.dtl",
 		"encounter_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonRandomEncounter.dtl",
 		"encounters_before_boss": 3,
+		"victory_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonVictory.dtl",
+		"defeat_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonDefeat.dtl",
 		"finish_timeline": "",
 	}
 }

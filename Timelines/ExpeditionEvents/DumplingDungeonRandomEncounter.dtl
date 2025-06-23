@@ -9,8 +9,13 @@ Mao_Portrait (Normal): ~Doot. Doot.~
 	[signal arg="{"card_game_expedition": "Dumpling Dungeon"}"]
 - Let's take a break
 	Mao_Portrait (Normal): Teehee. Break time!
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): Please wake me up after my nap!
 	[signal arg="{"stats": {"stress": -5}}"]
 - Let's ask Rice for advice
 	Mao_Portrait (Normal): Do you have any dungeoneering tips for me?
 	Rice_Portrait (Normal): Hmm. My personal experiences aren't particularly relevant to you, I believe.
-	Rice_Portrait (Normal): In any case, 
+	Rice_Portrait (Normal): That said, it's my belief that what's most important in a dungeon isn't what you do inside, but the preparations you've done before then.
+	Rice_Portrait (Normal): If you meet difficulties inside the dungeon, consider retreating and working on self improvement, there's no need to force things.
+	Mao_Portrait (Normal): Got it!
+	[signal arg="{"stats": {"scholarship": 1}}"]

@@ -1,0 +1,9 @@
+[background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao [animation="Shake X" length="1"]
+update Mao (Excited)
+Mao_Portrait (Excited): <I won!/Easy peasy./Teehee.>
+update Mao (Normal)
+Mao_Portrait (Normal): Okay, let's see what's the chest the Dumplings are guarding.
+Mao_Portrait (Normal): Time to move on.

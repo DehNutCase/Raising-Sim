@@ -42,6 +42,9 @@ extends Control
 
 @onready var popup = %Popup
 
+signal card_game_finished
+var card_game_victory = false
+
 var jobs = Constants.jobs
 var rests = Constants.rests
 
@@ -414,10 +417,21 @@ func do_expedition(expedition_name:String) -> void:
 		await Dialogic.timeline_ended
 	#Add expedition timeline processing here
 	var encounters = expedition.encounters_before_boss
+	#TODO, keep and check player hp before doing more encounters
 	for i in range(encounters):
 		#TODO, check for last encounter results
 		Dialogic.start(expedition.encounter_timeline)
 		await Dialogic.timeline_ended
+		
+		if Player.in_expedition:
+			get_tree().call_group("Live2DPlayer", "pause_live2d")
+			await card_game_finished
+			#start reward timeline here, add flag to check vic/defeat
+			if card_game_victory:
+				Dialogic.start(expedition.victory_timeline)
+			else:
+				Dialogic.start(expedition.defeat_timeline)
+			await Dialogic.timeline_ended
 	return
 	
 func do_rest(rest_name: String) -> void:
@@ -808,6 +822,7 @@ func _on_enter_tower_button_pressed() -> void:
 	if Player.tower_level < len(Constants.tower_levels):
 		if Player.remaining_walks > 0:
 			Player.remaining_walks -= 1
+			display_stats()
 			_on_close_button_pressed()
 			#TODO, remove all the double checking for whether player is in a mission or tower combat
 			#centralize checks
@@ -834,6 +849,8 @@ func exit_card_game() -> void:
 	day_label.display_day(day)
 	card_game_panel.hide()
 	if Player.reward_signal:
+		card_game_victory = true
+		card_game_finished.emit()
 		display_toast("Gained rewards from the duel!", "top")
 		await(get_tree().create_timer(.5).timeout)
 		_on_reward_signal(Player.reward_signal)
@@ -841,8 +858,11 @@ func exit_card_game() -> void:
 		if Player.tower_level == 21 and !Player.event_flags.get('ExitPass'):
 			Player.event_flags['ExitPass'] = true
 			Dialogic.start("ExitPass")
-		display_stats()
-
+	else:
+		card_game_victory = false
+		card_game_finished.emit()
+	display_stats()
+		
 func check_and_play_daily_events() -> void:
 	var played = false
 	if Player.day == 1 and !('Day1Event' in Player.event_flags):
