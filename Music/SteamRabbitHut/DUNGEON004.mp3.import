@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://bv3m2cb2dfh8o"
+uid="uid://b52f6vq7qjl73"
 path="res://.godot/imported/DUNGEON004.mp3-b7ccccc34e06b1cee3e705b52617c0a1.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/DUNGEON004.mp3-b7ccccc34e06b1cee3e705b52617c0
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

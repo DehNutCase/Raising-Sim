@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://cxw4thijm8uie"
+uid="uid://dqpqpfe4gk57x"
 path="res://.godot/imported/Magicatale_BATTLE_WITCH_002.mp3-4750d2eec1b23ee47b1f0f423703aa45.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Magicatale_BATTLE_WITCH_002.mp3-4750d2eec1b23
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

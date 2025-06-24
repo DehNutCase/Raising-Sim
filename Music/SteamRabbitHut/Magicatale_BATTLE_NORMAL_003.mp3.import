@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://bo5cclwa344l5"
+uid="uid://c6srmpi23lat3"
 path="res://.godot/imported/Magicatale_BATTLE_NORMAL_003.mp3-2f39625856ecad24b25df56479b99fa4.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Magicatale_BATTLE_NORMAL_003.mp3-2f39625856ec
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0
