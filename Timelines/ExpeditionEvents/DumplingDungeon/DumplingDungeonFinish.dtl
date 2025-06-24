@@ -1,0 +1,13 @@
+[background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Umu! My deck has no weaknesses! *Smug*
+update Mao (Normal)
+Mao_Portrait (Normal): Hmm. I feel like having curry, Rice, do you want to go eat?
+Mao_Portrait (Normal): ...Rice?
+update Mao (Angry)
+Mao_Portrait (Angry): Riceeeeeeeeeeeeeeee!
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Angry): Hmph! Well I'll eat your portion too!
+[signal arg="{"stats": {"stress": -5}}"]

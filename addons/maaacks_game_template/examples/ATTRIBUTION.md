@@ -61,6 +61,11 @@ Author: [Tim Beek](http://timbeek.com/)
 Source: [itch.io : Royalty Free Music Pack](https://timbeek.itch.io/royalty-free-music-pack)  
 License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
+### Music
+#### BGM
+Author: [SteamRabbitHut](https://nousagi-san.itch.io/)  
+Source: [itch.io : Free Material BGM(JRPG Taste)](https://nousagi-san.itch.io/freebgm)
+
 ### Sound
 #### Voice
 Author: [Sakura An](https://www.dlsite.com/home/circle/profile/=/maker_id/RG40041.html)  

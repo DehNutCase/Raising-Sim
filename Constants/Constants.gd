@@ -2234,7 +2234,7 @@ const expedition = {
 		"victory_timeline": "DumplingDungeonVictory",
 		"defeat_timeline": "DumplingDungeonDefeat",
 		"boss_timeline": "DumplingDungeonBoss",
-		"finish_timeline": "",
+		"finish_timeline": "DumplingDungeonFinish",
 	}
 }
 const combat_skills = {

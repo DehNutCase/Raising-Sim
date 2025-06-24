@@ -7,6 +7,7 @@ Mao_Portrait (Sad): <Owwie./Uguu./Riceeee!>
 Rice_Portrait (Normal): Hmm. Are you sure you want to keep going?
 - Let's keep going
 	Rice_Portrait (Normal): I see, I'll heal you a little, then. Don't push yourself too hard.
+	[signal arg="{"expedition_heal": 50,}"]
 	update Mao [animation="Tada" length="2"]
 	update Mao (Normal)
 	Mao_Portrait (Normal): Teehee. That tickles!

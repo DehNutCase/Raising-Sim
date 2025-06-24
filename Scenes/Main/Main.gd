@@ -434,17 +434,19 @@ func do_expedition(expedition_name:String) -> void:
 			if card_game_victory:
 				Dialogic.start(expedition.victory_timeline)
 			else:
-				#defeat timelines should have 2 choices, continue or give up
-				Player.expedition_health += int(Player.stats.max_hp/10) + 1
 				Dialogic.start(expedition.defeat_timeline)
 			await Dialogic.timeline_ended
+	
 	if !expedition_failed:
 		Dialogic.start(expedition.boss_timeline)
 		await Dialogic.timeline_ended
 		var combat = expedition.boss_fights.pick_random()
 		enter_card_game(combat, false, false, true)
 		await card_game_finished
-		pass #do boss fight timeline here?
+		
+	if !expedition_failed:
+		Dialogic.start(expedition.finish_timeline)
+		await Dialogic.timeline_ended
 	return
 	
 func do_rest(rest_name: String) -> void:
@@ -729,12 +731,15 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "timeline" in dialogic_signal:
 		Dialogic.start(dialogic_signal.timeline)
 	if "card_game_expedition" in dialogic_signal:
-		#TODO, modify card game to use this for daily card games
+		if Dialogic.current_timeline:
+			await Dialogic.timeline_ended
 		var combats = Constants.expedition[dialogic_signal.card_game_expedition].random_encounters
 		var combat = combats.pick_random()
 		enter_card_game(combat, false, false, true)
 	if "expedition_failed" in dialogic_signal:
 		expedition_failed = true
+	if "expedition_heal" in dialogic_signal:
+		Player.expedition_health += int(dialogic_signal.expedition_heal)
 	if "card_pack" in dialogic_signal:
 		var card_pack = load(dialogic_signal.card_pack)
 		var card = card_pack.cards.pick_random()
