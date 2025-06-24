@@ -438,6 +438,13 @@ func do_expedition(expedition_name:String) -> void:
 				Player.expedition_health += int(Player.stats.max_hp/10) + 1
 				Dialogic.start(expedition.defeat_timeline)
 			await Dialogic.timeline_ended
+	if !expedition_failed:
+		Dialogic.start(expedition.boss_timeline)
+		await Dialogic.timeline_ended
+		var combat = expedition.boss_fights.pick_random()
+		enter_card_game(combat, false, false, true)
+		await card_game_finished
+		pass #do boss fight timeline here?
 	return
 	
 func do_rest(rest_name: String) -> void:

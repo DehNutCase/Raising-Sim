@@ -3,7 +3,7 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Shake X" length="4"]
 update Mao (Normal)
-Mao_Portrait (Normal): ~Doot. Doot.~
+Mao_Portrait (Normal): <~Doot. Doot.~/~Lalala~ Walking in a dungeon./The darkness sealed within my right hand trembles! Teehee.>
 - Let's look for Dumplings
 	Mao_Portrait (Normal): <I smell something delicious!/Muahaha, behold!/Dumplings! Time to say hi!>
 	[signal arg="{"card_game_expedition": "Dumpling Dungeon"}"]

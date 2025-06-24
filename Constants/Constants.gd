@@ -2228,11 +2228,12 @@ const expedition = {
 		"icon": "res://Art/It Came From The Swamp/Enemies/f_manju.png",
 		"description": "Her majesty posted a dungeon delving request for a nearby Dumpling. Apparently she's unsatisfied with the contents of the treasure chests inside, so she wants you to replace them with higher quality items.",
 		"stats": {},
-		"info_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonInfo.dtl",
-		"encounter_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonRandomEncounter.dtl",
+		"info_timeline": "DumplingDungeonInfo",
+		"encounter_timeline": "DumplingDungeonRandomEncounter",
 		"encounters_before_boss": 3,
-		"victory_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonVictory.dtl",
-		"defeat_timeline": "res://Timelines/ExpeditionEvents/DumplingDungeonDefeat.dtl",
+		"victory_timeline": "DumplingDungeonVictory",
+		"defeat_timeline": "DumplingDungeonDefeat",
+		"boss_timeline": "DumplingDungeonBoss",
 		"finish_timeline": "",
 	}
 }
