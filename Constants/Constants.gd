@@ -2226,7 +2226,7 @@ const expedition = {
 		"random_encounters": ["res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_0.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_1.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_2.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_3.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_4.tscn"],
 		"boss_fights": ["res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/BossFights/dumpling_dungeon_boss_fight.tscn"],
 		"icon": "res://Art/It Came From The Swamp/Enemies/f_manju.png",
-		"description": "Her majesty posted a dungeon delving request for a nearby Dumpling. Apparently she's unsatisfied with the contents of the treasure chests inside, so she wants you to replace them with higher quality items.",
+		"description": "Her majesty posted a dungeon delving request for a nearby dungeon. Apparently she's unsatisfied with the contents of the treasure chests inside, so she wants you to replace them with higher quality items.",
 		"stats": {},
 		"info_timeline": "DumplingDungeonInfo",
 		"encounter_timeline": "DumplingDungeonRandomEncounter",
