@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/DUNGEON004.mp3-b7ccccc34e06b1cee3e705b52617c0
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/BATTLE_NORMAL002.mp3-f08992cd531a5405811a3230
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

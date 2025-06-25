@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhux6w3hqrmov"]
+[gd_scene load_steps=8 format=3 uid="uid://bhux6w3hqrmov"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_vpnus"]
 [ext_resource type="Texture2D" uid="uid://blwikybiv1vto" path="res://Art/Background/Background material shop/bg016a.jpg" id="2_h0muo"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_kkx3k"]
+[ext_resource type="AudioStream" uid="uid://b52f6vq7qjl73" path="res://Music/SteamRabbitHut/DUNGEON004.mp3" id="3_ulgh0"]
 [ext_resource type="Resource" uid="uid://bg5gho2ojl2p1" path="res://Scenes/CardGame/Characters/Enemies/DumplingPriest.tres" id="5_7tv4h"]
 [ext_resource type="Resource" uid="uid://cu6q8by0ixsc2" path="res://Scenes/CardGame/Characters/Enemies/DumplingMage.tres" id="5_pyhvg"]
 [ext_resource type="Resource" uid="uid://l8p3b3pg4hij" path="res://Scenes/CardGame/Characters/Enemies/DumplingRogue.tres" id="6_di7ty"]
@@ -19,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_vpnus")
 background = ExtResource("2_h0muo")
 victory_reward = "{\"stats\": {\"gold\": 1000, \"experience\": 1000}}"
+background_music = ExtResource("3_ulgh0")
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_kkx3k")]
 position = Vector2(200, 400)

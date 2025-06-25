@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_b2vut"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_ui28m"]
 
-[node name="TowerLevel0" type="Control"]
+[node name="CardGameEncounterScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -23,6 +23,8 @@ func _ready():
 		%EnemiesContainer.add_child(card_game_level.instantiate())
 		if enemy_scene.background:
 			%Background.texture = enemy_scene.background
+		if enemy_scene.background_music:
+			SoundManager.play_music(enemy_scene.background_music)
 	start_battle()
 	
 func _on_card_ui_reparent_requested(card):

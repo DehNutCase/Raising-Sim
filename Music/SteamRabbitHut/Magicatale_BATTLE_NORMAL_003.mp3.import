@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Magicatale_BATTLE_NORMAL_003.mp3-2f39625856ec
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

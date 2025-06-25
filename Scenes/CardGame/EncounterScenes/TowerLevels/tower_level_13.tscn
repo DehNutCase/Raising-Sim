@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dr6b4dvjo7fwg" path="res://Scenes/CardGame/Characters/Enemies/DumplingAssassin.tres" id="4_vgecs"]
 [ext_resource type="Resource" uid="uid://b4lm3bo7k4r4v" path="res://Scenes/CardGame/Characters/Enemies/DumplingKnight.tres" id="6_vbnqb"]
 
-[node name="TowerLevel0" type="Control"]
+[node name="CardGameEncounterScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck42r2dg0ry7c"]
+[gd_scene load_steps=8 format=3 uid="uid://ck42r2dg0ry7c"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_henlp"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="2_lr172"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_lbw3t"]
+[ext_resource type="AudioStream" uid="uid://c6srmpi23lat3" path="res://Music/SteamRabbitHut/Magicatale_BATTLE_NORMAL_003.mp3" id="3_ldtjc"]
 [ext_resource type="Resource" uid="uid://bcacl8o1f2j3f" path="res://Scenes/CardGame/Characters/Enemies/PhantomRice.tres" id="4_fpa8o"]
 [ext_resource type="Texture2D" uid="uid://bo7hn7qy1awq1" path="res://Characters/Rice/Images/idle_000_cropped.png" id="5_qvr5p"]
 
@@ -21,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_henlp")
 background = ExtResource("2_lr172")
 victory_reward = "{\"stats\": {\"gold\":5000, \"experience\": 5000}}"
+background_music = ExtResource("3_ldtjc")
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_lbw3t")]
 position = Vector2(500, 350)

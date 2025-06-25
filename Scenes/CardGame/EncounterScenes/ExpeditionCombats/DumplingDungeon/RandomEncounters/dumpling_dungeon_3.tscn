@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_llcmy"]
 [ext_resource type="Resource" uid="uid://bg5gho2ojl2p1" path="res://Scenes/CardGame/Characters/Enemies/DumplingPriest.tres" id="4_8sftl"]
 
-[node name="TowerLevel0" type="Control"]
+[node name="CardGameEncounterScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
