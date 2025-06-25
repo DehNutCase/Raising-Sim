@@ -2462,7 +2462,7 @@ const combat_items = {
 
 const player_classes = {
 	"ink_mage": {
-		"description": "A magician with an affinity for ink. A rare non-combat variant of the magician class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
+		"description": "A mage with an affinity for ink. A rare non-combat variant of the mage class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
 		"id": "ink_mage",
 		"label": "Ink Mage",
 		"tier": 0,

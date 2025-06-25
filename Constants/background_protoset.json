@@ -9,7 +9,7 @@
 	},
 	"ink_mage": {
 		"daily_stats": "{}",
-		"description": "A magician with an affinity for ink. A rare non-combat variant of the magician class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
+		"description": "A mage with an affinity for ink. A rare non-combat variant of the mage class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",
 		"image": "res://Art/Portraits/mao_portrait.png",
 		"monthly_stats": "{}",
 		"name": "Ink Mage",

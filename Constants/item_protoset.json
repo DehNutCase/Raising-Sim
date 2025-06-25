@@ -18,7 +18,7 @@
 		"expiration": "monthly",
 	},
 	"problem_set": {
-		"daily_stats": "{\n\"scholarship\": 20,\n\"magic\": 2\n,\n\"stress\": 2\n}",
+		"daily_stats": "{\n\"scholarship\": 2,\n\"magic\": 2\n,\n\"stress\": 2\n}",
 		"description": "A set of problems delivered to your door every single day. Why are you paying money for this?\nExpires monthly, so it's best to buy this at the start of the month.",
 		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/book02_01.png",
 		"limit": 1,
