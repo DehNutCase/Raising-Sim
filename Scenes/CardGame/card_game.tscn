@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
-[ext_resource type="PackedScene" uid="uid://dx08w8afv4ias" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_10.tscn" id="2_01ooj"]
+[ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="Resource" uid="uid://bx005gylvxbuo" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_counterspell.tres" id="5_r08e4"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
-[ext_resource type="Resource" uid="uid://ctvs0fr066hqt" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/high_priest_heal.tres" id="6_bfetc"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
+[ext_resource type="Resource" uid="uid://blybdfs5v0r37" path="res://Scenes/CardGame/Characters/Mao/Cards/meteor.tres" id="7_s6ygv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 600)
@@ -23,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b07j")
-card_game_level = ExtResource("2_01ooj")
+card_game_level = ExtResource("2_c6ssf")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
@@ -53,7 +53,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_r08e4"), ExtResource("6_bfetc")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_r08e4"), ExtResource("7_s6ygv")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]

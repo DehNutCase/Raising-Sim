@@ -1123,7 +1123,7 @@ const locations = {
 			{
 				'stats': {
 				},
-				'weight': 1,
+				'weight': 2,
 				'toasts': ["Found Hiyori's Corner, let's visit."],
 				'timeline': 'res://Timelines/WalkEvents/HiyoriCorner.dtl',
 				'first_toasts': ["Found an interesting door, let's go in."],

@@ -31,8 +31,8 @@ label Deck_Choice
 - I'm not sure why, but I'm really drawn to this deck [Ordinary Beginnings]
 	update Mao (Normal)
 	Rice_Portrait (Normal): Hmm. To put it nicely, this deck has the most potential. To put it bluntly, it's the weakest.
-	Rice_Portrait (Normal): Considering it's meant to be a birthday present, I added something extra just in case you decided to pick it, but I would personally recommended you pick something else.
-	Mao_Portrait (Normal): Thanks.
+	Rice_Portrait (Normal): Considering it's meant to be a birthday present, her majesty added a somewhat special card, but I would personally recommended you pick something else.
+	Mao_Portrait (Normal): Teehee, tell her thanks for me.
 	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/new_beginning.tres")
 Rice_Portrait (Normal): Are you sure about this choice?
 - Yes

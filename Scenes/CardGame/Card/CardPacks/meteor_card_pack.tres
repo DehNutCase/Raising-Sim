@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=3 format=3 uid="uid://ydik28032xlk"]
+
+[ext_resource type="Resource" uid="uid://blybdfs5v0r37" path="res://Scenes/CardGame/Characters/Mao/Cards/meteor.tres" id="1_ngppv"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="7_ko7co"]
+
+[resource]
+script = ExtResource("7_ko7co")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ngppv")])
