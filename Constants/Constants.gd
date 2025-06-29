@@ -898,6 +898,7 @@ const courses = {
 			},
 			"description": "Fortunately, the output of this spell is limited by your personal magic power.\n...Even so, they really shouldn't be teaching this in school.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/meteor.png",
+			"card": "res://Scenes/CardGame/Characters/Mao/Cards/meteor.tres",
 		},
 	},
 	"Witch": {

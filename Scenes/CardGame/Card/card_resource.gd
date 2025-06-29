@@ -110,18 +110,13 @@ func get_third_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Arr
 	return []
 
 func play(targets: Array[Node]) -> void:
-	#targets get cleared from outside if you don't duplicate
-	targets = targets.duplicate()
 	if animation:
 		var data = JSON.parse_string(animation)
 		var main_node = Player.get_tree().get_first_node_in_group("CardGameMainNode")
-		print("hello1")
 		await main_node.play_live2d_animation(data.model, data.animation, data.duration)
 	#Player only uses start sound for now
 	if start_sound_effect:
 		SoundManager.play_sound(start_sound_effect)
-	print("hello2")
-	print(targets)
 	
 	apply_effects(get_targets(targets), Player.card_game_player, 0)
 	apply_effects(get_second_targets(targets), Player.card_game_player, 1)

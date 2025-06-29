@@ -1,8 +1,15 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=3 format=3 uid="uid://ydik28032xlk"]
+[gd_resource type="Resource" script_class="Deck" load_steps=10 format=3 uid="uid://ydik28032xlk"]
 
 [ext_resource type="Resource" uid="uid://blybdfs5v0r37" path="res://Scenes/CardGame/Characters/Mao/Cards/meteor.tres" id="1_ngppv"]
+[ext_resource type="Resource" uid="uid://k2gtw81xb7ta" path="res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres" id="2_pa0ha"]
+[ext_resource type="Resource" uid="uid://dqpbortarfbwv" path="res://Scenes/CardGame/Characters/Mao/Cards/invocation.tres" id="3_sssyg"]
+[ext_resource type="Resource" uid="uid://ctxtj8jk4xtnc" path="res://Scenes/CardGame/Characters/Mao/Cards/lesser_invocation.tres" id="4_4apxe"]
+[ext_resource type="Resource" uid="uid://b5pccptmd8sa2" path="res://Scenes/CardGame/Characters/Mao/Cards/ritual.tres" id="5_6y0cd"]
+[ext_resource type="Resource" uid="uid://b7u56q8r3yki7" path="res://Scenes/CardGame/Characters/Mao/Cards/explosion.tres" id="6_txa74"]
+[ext_resource type="Resource" uid="uid://x3y5ybd7d4ch" path="res://Scenes/CardGame/Characters/Mao/Cards/finishing_blow.tres" id="7_5d4ij"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="7_ko7co"]
+[ext_resource type="Resource" uid="uid://7ncfpp8nwi26" path="res://Scenes/CardGame/Characters/Mao/Cards/power_up.tres" id="8_fyvvg"]
 
 [resource]
 script = ExtResource("7_ko7co")
-cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ngppv")])
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ngppv"), ExtResource("2_pa0ha"), ExtResource("3_sssyg"), ExtResource("4_4apxe"), ExtResource("4_4apxe"), ExtResource("5_6y0cd"), ExtResource("5_6y0cd"), ExtResource("6_txa74"), ExtResource("7_5d4ij"), ExtResource("8_fyvvg")])

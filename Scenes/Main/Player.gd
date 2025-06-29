@@ -146,13 +146,15 @@ func _update_live2d_display(live2d_mode) -> void:
 		_:
 			printerr("_update_live2d_display match error")
 			
-func start_motion(motion, priority=GDCubismUserModel.PRIORITY_FORCE) -> void:
+func start_motion(motion, priority=GDCubismUserModel.PRIORITY_FORCE, seconds_to_skip:float = 0) -> void:
 	timestamp = Time.get_unix_time_from_system()
 	var previous_stamp = timestamp
 	if Player.live2d_mode == Player.live2d_modes.LIVE2D:
 		remove_breath()
 		cubism_model.start_motion(motion.group, motion.no, priority)
-		
+		if seconds_to_skip:
+			await get_tree().create_timer(.1).timeout
+			cubism_model.advance(seconds_to_skip)
 		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(0, 10)).timeout
 		if previous_stamp == timestamp:
 			add_breath()
@@ -165,7 +167,7 @@ func start_expression(expression) -> void:
 		return
 	cubism_model.start_expression(expression)
 
-func job_motion(motion) -> void:
+func job_motion(motion, seconds_to_skip: float = 0) -> void:
 	timestamp = Time.get_unix_time_from_system()
 	var weights = []
 	var motions = job_success_motions
@@ -190,8 +192,9 @@ func job_motion(motion) -> void:
 				"direction": "center",
 			})
 			#await(get_tree().create_timer(.5).timeout)
-		start_motion(motion)
+		start_motion(motion, GDCubismUserModel.PRIORITY_FORCE, seconds_to_skip)
 		last_motion = motion
+		
 	elif Player.live2d_mode == Player.live2d_modes.VIDEO:
 		motion_video_queue.push_front(motion.video)
 		_on_motion_finished()
@@ -230,7 +233,10 @@ func pause_live2d() -> void:
 
 func resume_live2d() -> void:
 	Player.live2d_active = true
-	
+
+func advance_live2d(frames:int) -> void:
+	cubism_model.advance(delta_sum)
+
 #TODO, figure out a way to use effect_breath.active without making model look choppy
 #current implementation is repetitive but smooth
 func add_breath() -> void:

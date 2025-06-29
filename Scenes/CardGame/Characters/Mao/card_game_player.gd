@@ -33,16 +33,16 @@ func _ready():
 func initialize_stats() -> void:
 	max_health = int(Player.stats.max_hp/5)
 	#debug code
-	#if OS.has_feature("debug"):
-		#max_health = 5000
+	if OS.has_feature("debug"):
+		max_health = 5000
 	if Player.in_expedition:
 		health = Player.expedition_health
 	else:
 		health = max_health
 	#Note, give mao block based on defense every turn
 	max_mana = int(Player.stats.max_mp/150 + 2)
-	#if OS.has_feature("debug"):
-		#max_mana = 5000
+	if OS.has_feature("debug"):
+		max_mana = 5000
 	mana = max_mana
 	draw_pile = []
 	discard = []

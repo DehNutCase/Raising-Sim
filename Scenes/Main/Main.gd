@@ -288,7 +288,8 @@ func do_action(action_type:String, action_name: String):
 						await(get_tree().create_timer(.5).timeout)
 						Player.skill_inventory.create_and_add_item(Constants[action_type][action_name].skill.id)
 	else:
-		get_tree().call_group("Live2DPlayer", "job_motion", false)
+		#Change frames to skip if you add other failure motions
+		get_tree().call_group("Live2DPlayer", "job_motion", false, 2.0)
 		if "stress" in action_stats:
 			process_stats({"stress": action_stats["stress"]}, icon)
 		if Constants[action_type][action_name].get("proficiency"):
@@ -400,6 +401,11 @@ func process_course_progress():
 			var skill = Constants.courses[course_name][lesson_name].skill.id
 			if (!Player.skill_inventory.get_item_with_prototype_id(skill)):
 				Player.skill_inventory.create_and_add_item(skill)
+				
+		if Constants.courses[course_name][lesson_name].get("card"):
+			var card_path = Constants.courses[course_name][lesson_name].get("card")
+			var card = load(card_path)
+			Player.card_game_deck.append(card)
 	
 func play_course_progress_timeline(course_name:String, lesson_name:String, index=0):
 	var timelines = Constants.courses[course_name][lesson_name].get("timelines")

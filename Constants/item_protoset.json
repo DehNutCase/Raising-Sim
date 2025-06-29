@@ -122,4 +122,16 @@
 		"special_type": "card_pack",
 		"card_pack": "res://Scenes/CardGame/Card/CardPacks/basic_card_pack.tres",
 	},
+	"meteor_card_pack": {
+		"daily_stats": "{}",
+		"courses_completed": "Artillerist Training (Meteor)",
+		"description": "A card pack for people who love big explosions. Be careful when you drop meteors on people.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/meteor.png",
+		"limit": 10,
+		"name": "Basic Card Pack",
+		"price": 1000,
+		"stats": "{}",
+		"special_type": "card_pack",
+		"card_pack": "res://Scenes/CardGame/Card/CardPacks/meteor_card_pack.tres",
+	},
 }

@@ -79,7 +79,7 @@ func play_card():
 		targets[-1].arrow.hide()
 	if Player.card_game_player.mana >= card.cost:
 		Player.card_game_player.mana -= card.cost
-		card.play(targets)
+		card.play(targets.duplicate())
 		if card.type != card.Type.POWER:
 			discard()
 		else:
