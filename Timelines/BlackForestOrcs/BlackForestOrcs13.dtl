@@ -119,7 +119,7 @@ Rice_Portrait (Normal): This place isn't suitable, so let's move somewhere else.
 [background arg="res://Art/Background/Background material shop/bg017a.jpg" fade="2.0" transition="Push Left"]
 update Oliver 2 [ mirrored="false" move_time="1"]
 update Mao 3 [ move_time="1"]
-Rice_Portrait (Normal): I have some idea of your physical abilities, but it's not detailed enough for an efficient training regimen. So we'll start with a simple hundred kilometer run.
+Rice_Portrait (Normal): I have some idea of your physical abilities, but it's not detailed enough for an efficient training regimen. So we'll start with a simple four hour run.
 update Oliver (Surprised)
 Oliver_Portrait (Surprised): Oliver believes Oliver heard you wrong.
 Rice_Portrait (Normal): While I'm training you, the only reply I'll accept is "Yes Ma'am."
@@ -132,8 +132,8 @@ Mao_Portrait (Sad): Aww...
 update Mao (Normal)
 Mao_Portrait (Normal): I mean, Ma'am, yes Ma'am!
 Oliver_Portrait (Sad): (Oliver is starting to have second thoughts.)
-Rice_Portrait (Normal): You have two hours to finish all one hundred kilos. If I think you won't make it when there's ten minutes left, I'll tie both of you to me and make you finish.
-Rice_Portrait (Normal): You are, of course, free to collapse. Just know that being dragged on the ground at roughly fifty kilometers an hour is even less comfortable than it sounds, even after taking into account the fact I'll heal you up afterwards.
+Rice_Portrait (Normal): Make sure to keep running. Mao, drag him along if you have to. If you can't, then I'll tie both of you to me instead and run in your place.
+Rice_Portrait (Normal): The two of you are, of course, free to collapse. Just know that being dragged on the ground for hours is even less comfortable than it sounds, even after taking into account the fact I'll heal you up afterwards.
 Mao_Portrait (Normal): Yes Ma'am!
 Rice_Portrait (Normal): Oliver.
 update Oliver (Surprised)
@@ -149,7 +149,7 @@ join Oliver (Drool) 2 [ z_index="1"]
 [signal arg="{"stats": {"max_hp": 5, "attack": 5, "agility": 10, "stress":  -5,}}"]
 update Oliver (Drool)
 Oliver_Portrait (Drool): (Oliver is too tired to die.)
-Rice_Portrait (Normal): That will do, take a five minute break. I suggest warm water and walking.
+Rice_Portrait (Normal): That will do, take a fifteen minute break. I suggest warm water and walking.
 update Mao (Smile)
 Mao_Portrait (Smile): Yes Ma'am!
 update Mao (Normal)
@@ -174,12 +174,11 @@ Rice_Portrait (Normal): Ah, I never did say, but I'll stop as soon as he asks.
 update Mao (Normal)
 Oliver_Portrait (Drool): Oliver would like to keep going.
 Mao_Portrait (Normal): You don't sound very convincing like that. But I guess stiff upper lip and all that?
-Rice_Portrait (Normal): Let's move on to light sparring now.
+Rice_Portrait (Normal): Let's move on to light sparring once your break is finished.
 update Mao 2 [ move_time="1"]
 update Oliver 1 [ z_index="1" mirrored="false" move_time="1"]
 join Rice 3 [animation="Slide In Right" length="2"]
-Rice_Portrait (Normal): I'll restrain myself to level 5. As long as you two don't use support skills on each other it'll be considered two separate one on ones, meaning Oliver would still get experience.
-Rice_Portrait (Normal): (Under the extremely unlikely assumption that they manage to win, that is.)
+Rice_Portrait (Normal): I'll restrain myself to level 5, but don't get your hopes up just because of that.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
@@ -195,7 +194,7 @@ leave Oliver [animation="Slide Out Left" length="4"]
 update Mao [animation="Tada" length="1"]
 update Mao (Angry)
 Mao_Portrait (Angry): Cheater! Cheater! There's no way that was level 5!
-Mao_Portrait (Angry): The level 21 phantom in the tower was slower than that!
+Mao_Portrait (Angry): Your phantom in the tower was way slower than that!
 Rice_Portrait (Normal): If simple mimicry were enough to be an equal match, dopplegangers would rule the world right now.
 update Mao (Normal)
 Rice_Portrait (Normal): A phantom wouldn't know how to move my body properly in the first place, much less how to use my skills to full effect.

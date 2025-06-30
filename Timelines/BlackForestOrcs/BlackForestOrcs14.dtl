@@ -5,7 +5,7 @@ join Oliver (Drool) 2
 [signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "attack": 10, "agility": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
 Rice_Portrait (Normal): That's enough for now, take a two hour break.
 update Oliver (Normal)
-Rice_Portrait (Normal): Go run another one hundred kilos.
+Rice_Portrait (Normal): Go run another fifty kilos.
 update Oliver (Surprised)
 Oliver_Portrait (Surprised): Oliver thinks other Albion girl doesn't understand the definition of break.
 Mao_Portrait (Normal): Yes Ma'am!
@@ -52,17 +52,17 @@ Mao_Portrait (Normal): So what will you do if you win the Vote tomorrow?
 update Oliver (Normal)
 Oliver_Portrait (Normal): Go to Albion.
 Mao_Portrait (Normal): Weren't you at the fort just the other day?
-Rice_Portrait (Normal): I believe he means the capital.
+Rice_Portrait (Normal): I believe he meant the capital.
 Mao_Portrait (Normal): No, wait a second. Isn't the vote for selecting the chief for the year? What does that have to do with going to the capital?
 Mao_Portrait (Normal): Oh. Actually. Do we not let people go to the capital if they aren't citizens?
-Rice_Portrait (Normal): That's not the case. It's simply strongly recommended not to go to places far exceeding your level. And it's difficult to raise your level without the national resources of a great power.
+Rice_Portrait (Normal): That's not the case. It's simply strongly recommended not to go to places far exceeding your level. And it's difficult to raise your level without the necessary infrastructure, which usually requires the national resources of a great power.
 Oliver_Portrait (Normal): Oliver isn't entirely sure what other Albion girl is talking about. But pops doesn't allow Oliver to go to Albion.
 update Mao [animation="Tada" length="1"]
 update Mao (Smile)
 Mao_Portrait (Smile): Did you make these sandwiches, by the way? They were delicious.
 Rice_Portrait (Normal): I'll tell Alice you said so.
 update Mao (Normal)
-Mao_Portrait (Normal): So what we doing after dinner?
+Mao_Portrait (Normal): So what are we doing after dinner?
 update Oliver (Sad)
 Rice_Portrait (Normal): You'll be doing nothing in particular, aside from following along. Everything in the Black Forest is too low leveled to matter for you. So just sit back and watch Oliver doing his best to avoid getting eaten.
 update Oliver (Surprised)
@@ -70,6 +70,4 @@ Oliver_Portrait (Surprised): Oliver would like to voice Oliver's objections to t
 Rice_Portrait (Normal): Are you saying you want to stop? I don't particularly mind either way.
 update Oliver (Sad)
 Oliver_Portrait (Sad): Oliver withdraws Oliver's objection.
-# Mao comments next day about jungle cats
-# For the tournament, Mao seeded due to level difference. Skip most of tournament to deal with Hero party?
 [signal arg="{"mission": {"next": "BlackForestOrcs15"}}"]
