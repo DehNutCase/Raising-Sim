@@ -2251,6 +2251,7 @@ const expedition = {
 		"finish_timeline": "DumplingDungeonFinish",
 	}
 }
+
 const combat_skills = {
 	'basic_attack': {
 		'weight': 10,
@@ -2583,4 +2584,14 @@ const decks = {
 	"Brick Hand Accident": "res://Scenes/CardGame/Characters/Mao/Decks/brick_hand_accident.tres",
 	"New Beginning": "res://Scenes/CardGame/Characters/Mao/Decks/new_beginning.tres",
 	"Prestidigitation": "res://Scenes/CardGame/Characters/Mao/Decks/prestidigitation.tres",
+}
+
+const quests = {
+	"good_student": {
+		"name": "Good Student",
+		"requirements": {
+			"stats": {"scholarship": 600}
+		},
+		"description": "A student's job is to study. A good student's job is to study quickly. Get 600 scholarship before the end of the month. Who knows, maybe her majesty will give you a reward?",
+	}
 }

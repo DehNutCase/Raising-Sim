@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bksr65eq5hi5v"]
+
+[ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_pxqye"]
+[ext_resource type="Script" path="res://Scenes/UI/Information/QuestLog.gd" id="2_b2d7b"]
+[ext_resource type="Script" path="res://Scenes/UI/Information/QuestList.gd" id="3_jgssj"]
+
+[node name="QuestLog" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("2_b2d7b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_pxqye")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="QuestList" type="ItemList" parent="HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_jgssj")
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="QuestDescriptionLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="CompleteQuestButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+disabled = true
+text = "Complete Quest"
+
+[connection signal="item_clicked" from="HBoxContainer/MarginContainer/QuestList" to="." method="_on_quest_list_item_clicked"]
+[connection signal="pressed" from="CompleteQuestButton" to="." method="_on_complete_quest_button_pressed"]

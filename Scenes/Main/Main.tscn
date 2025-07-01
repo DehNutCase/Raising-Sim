@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=83 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -43,6 +43,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/MissionsContainer.gd" id="30_uj6nt"]
 [ext_resource type="Script" path="res://Scenes/Main/Daily Schedule.gd" id="31_1x7np"]
 [ext_resource type="Script" path="res://Scenes/Main/ActionDescription.gd" id="32_lakgr"]
+[ext_resource type="PackedScene" uid="uid://bksr65eq5hi5v" path="res://Scenes/UI/Information/QuestLog.tscn" id="36_epuay"]
 [ext_resource type="PackedScene" uid="uid://q84u4t3lxanj" path="res://Scenes/UI/Popup/Popup.tscn" id="43_ck6uc"]
 [ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
 [ext_resource type="Texture2D" uid="uid://ftrly7krq5wf" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_ShoppingCart.png" id="45_03wx0"]
@@ -646,6 +647,11 @@ layout_mode = 2
 columns = 4
 script = ExtResource("21_psxgd")
 
+[node name="QuestLog" parent="Ui/MenuPanel/MarginContainer" instance=ExtResource("36_epuay")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
 [node name="Tower" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
 layout_mode = 2
@@ -870,6 +876,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource("45_34myw")
 texture_pressed = ExtResource("46_oupw1")
+stretch_mode = 3
+
+[node name="Quests" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("55_36a5c")
+texture_pressed = ExtResource("56_n3yma")
 stretch_mode = 3
 
 [node name="Background" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
