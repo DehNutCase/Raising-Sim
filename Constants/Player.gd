@@ -1,7 +1,8 @@
-extends Character
+
+extends Node
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests",]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -37,6 +38,9 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var course_progress = {}
 @export var courses_completed = {}
 @export var current_elective = "Ink Mage"
+
+@export var active_quests = {}
+@export var completed_quests = {}
 
 @export var bedtime_event_number = 0
 
@@ -102,23 +106,61 @@ var save_loaded = false
 var card_game_player: CardGamePlayer
 var card_game_deck: Array[CardResource] = []
 
-func _init():
-	base_stats = {
-		"max_hp": 20,
-		"max_mp": 10,
-		"attack": 10,
-		"magic": 15,
-		"defense": 5,
-		"agility": 10,
-		"resistance": 10,
-		"level": 1,
-		"gold": 0,
-		"bonus_exp": 0,
-		"scholarship": 0,
-		"action_points": 1,
-	}
-	stats = base_stats
-	name = "Player"
+
+
+var base_stats = {
+	"max_hp": 20,
+	"max_mp": 10,
+	"attack": 10,
+	"magic": 15,
+	"defense": 5,
+	"agility": 10,
+	"resistance": 10,
+	"level": 1,
+	"gold": 0,
+	"bonus_exp": 0,
+	"scholarship": 0,
+	"action_points": 1,
+}
+
+@export var stats = {}
+var display_stats = ["level", "experience", "gold", "stress"] + Constants.stats.base_stats + ["scholarship"]
+
+signal experience_gained(growth_data)
+
+@export var experience = 0
+@export var experience_total = 0
+@export var experience_required = 100
+
+func get_required_experience(l) -> int:
+	return int(pow(1.1, l) * 100)
+
+func gain_experience(amount: int) -> void:
+	if ("bonus_exp" in stats):
+		amount = amount * (1 + stats.bonus_exp/100.0)
+		amount = int(amount)
+	experience_total += amount
+	experience += amount
+	var growth_data = []
+	while experience >= experience_required:
+		experience -= experience_required
+		growth_data.append([experience_required,experience_required])
+		level_up()
+	
+	stats.experience = experience
+	growth_data.append([experience, experience_required])
+	emit_signal("experience_gained", growth_data)
+	
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	for stat in display_stats:
+		if !(stat in base_stats):
+			stats[stat] = 0
+		else:
+			stats[stat] = base_stats[stat]
+	for stat in base_stats:
+		if !(stat in stats):
+			stats[stat] = base_stats[stat]
 
 func level_up() -> void:
 	stats["level"] += 1
@@ -179,8 +221,8 @@ func save_game():
 		save_data[data] = self[data]
 
 	#serialize inventories
-	for inventory in inventories:
-		save_data[inventory] = self[inventory].serialize()
+	for inv in inventories:
+		save_data[inv] = self[inv].serialize()
 	
 	#serialize resource arrays
 	for resource_array in resource_arrays:
@@ -217,8 +259,8 @@ func load_game():
 			continue
 		Player[variable] = data[variable]
 	
-	for inventory in data.inventories:
-		if !self[inventory].deserialize(data[inventory]):
+	for inv in data.inventories:
+		if !self[inv].deserialize(data[inv]):
 			printerr("failed to deserialize inventory during load_game")
 	
 	for resource_array in resource_arrays:
@@ -240,8 +282,8 @@ func save_class_change_card(class_change_name:String):
 	for data in save_list:
 		save_data[data] = self[data]
 
-	for inventory in inventories:
-		save_data[inventory] = self[inventory].serialize()
+	for inv in inventories:
+		save_data[inv] = self[inv].serialize()
 	
 	var save_file
 	DirAccess.make_dir_recursive_absolute("user://Saves")
@@ -289,9 +331,9 @@ func load_class_change_card():
 			continue
 		class_change_card[variable] = data[variable]
 	
-	for inventory in data.inventories:
-		class_change_card[inventory] = Inventory.new()
-		if !class_change_card[inventory].deserialize(data[inventory]):
+	for inv in data.inventories:
+		class_change_card[inv] = Inventory.new()
+		if !class_change_card[inv].deserialize(data[inv]):
 			printerr("failed to deserialize inventory during load_class_change_card")
 			
 func delete_class_change_card():
@@ -315,38 +357,38 @@ func load_demo():
 			continue
 		Player[variable] = data[variable]
 	
-	for inventory in data.inventories:
-		if !self[inventory].deserialize(data[inventory]):
+	for inv in data.inventories:
+		if !self[inv].deserialize(data[inv]):
 			printerr("failed to deserialize inventory during load_game")
 
 ##Return max stat which is int
 func calculate_max_stat(stat_name:String):
 	if "max" in Constants.stats[stat_name]:
-		var max = Constants.stats[stat_name].max
+		var max_value = Constants.stats[stat_name].max
 		if stat_name in Player.max_stats:
-			max += Player.max_stats[stat_name]
+			max_value += Player.max_stats[stat_name]
 		else:
 			Player.max_stats[stat_name] = 0
-		return max
+		return max_value
 	else:
 		printerr("tried to find max_stat of a stat without max")
 		
 func calculate_min_stat(stat_name:String):
 	if "min" in Constants.stats[stat_name]:
-		var min = Constants.stats[stat_name].min
+		var min_value = Constants.stats[stat_name].min
 		if stat_name in Player.min_stats:
-			min += Player.min_stats[stat_name]
+			min_value += Player.min_stats[stat_name]
 		else:
 			Player.min_stats[stat_name] = 0
-		return min
+		return min_value
 	else:
 		printerr("tried to find min_stat of a stat without min")
 
 #Helper function for making tooltips, make the relevant control's _make_custom_tooltip(text) function call this
 func make_custom_tooltip(text: String) -> Control:
 	var custom_tooltip:Control = load("res://Scenes/UI/Tooltip/custom_tooltip.tscn").instantiate()
-	var label: RichTextLabel = custom_tooltip.get_child(0)
-	label.parse_bbcode("[center]" + text + "[/center]")
+	var rich_text_label: RichTextLabel = custom_tooltip.get_child(0)
+	rich_text_label.parse_bbcode("[center]" + text + "[/center]")
 	return custom_tooltip
 
 

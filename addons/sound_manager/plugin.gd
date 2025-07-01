@@ -7,7 +7,9 @@ func _enter_tree():
 
 
 func _exit_tree():
-	remove_autoload_singleton("SoundManager")
+	pass
+	#Causing loading issues when removed
+	#remove_autoload_singleton("SoundManager")
 
 
 func get_plugin_path() -> String:
