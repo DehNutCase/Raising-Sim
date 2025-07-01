@@ -12,12 +12,16 @@ func update_buttons():
 		#Don't display locations that aren't unlocked yet
 		if "location_flag" in locations[key] and !(locations[key].location_flag in Player.location_flags):
 			continue
+		if "day" in locations[key] and !(Player.day == locations[key].day):
+			continue
 		if key in buttons:
 			continue
 		buttons.append(key)
 		var button = load("res://Scenes/UI/Actions/walk_button.tscn").instantiate()
 		add_child(button)
 		button.walk_name = key
+		if 'day' in locations[key]:
+			button.day = locations[key].day
 		if "label" in locations[key]:
 			button.update_label(locations[key].label)
 		else:

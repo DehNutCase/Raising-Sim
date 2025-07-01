@@ -892,7 +892,7 @@ const courses = {
 					'scholarship': 2,
 					'stress': 25,
 			},
-			'required_progress': 25000,
+			'required_progress': 1000,
 			'skill':{
 				'id': 'meteor'
 			},
@@ -1110,6 +1110,19 @@ const constants = {
 }
 
 const locations = {
+	'new_years_shrine': {
+		'label': 'Shrine (New Year\'s)',
+		'day': 1,
+		'outcomes':
+			[{
+				'stats': {
+				},
+				'weight': 1,
+				'toasts': ["Let's go visit a shrine for New Year's."],
+				'timeline': "NewYearsShrine",
+			},],
+		"icon": "res://Art/Background/NoranekoGames/Shrine_Spring_Day.png"
+	},
 	'palace': {
 		'label': 'Palace',
 		'outcomes':
