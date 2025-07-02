@@ -63,7 +63,12 @@ func _on_complete_quest_button_pressed():
 		return
 	if check_quest_completion(last_quest):
 		#TODO, implement giving rewards and removing quest from list of active quests
-		print("completed!")
+		var quest_info = Constants.quests[last_quest]
+		get_tree().call_group("Main", "_on_reward_signal", quest_info.rewards)
+		Player.active_quests.erase(last_quest)
+		Player.completed_quests[last_quest] = true
+		last_quest = ""
+		update_quests()
 	else:
 		#might not need this section
 		print("incomplete")

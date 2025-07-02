@@ -2593,5 +2593,12 @@ const quests = {
 			"stats": {"scholarship": 600}
 		},
 		"description": "A student's job is to study. A good student's job is to study quickly. Get 600 scholarship before the end of the month. Who knows, maybe her majesty will give you a reward?",
+		"rewards": {
+			"stats": {
+				"gold": 1000,
+				"stress": -20,
+				"scholarship": 50,
+			}
+		}
 	}
 }

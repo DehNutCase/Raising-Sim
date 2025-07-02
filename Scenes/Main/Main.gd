@@ -709,7 +709,8 @@ func display_stats() -> void:
 		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".show()
 	
 func _on_reward_signal(dialogic_signal) -> void:
-	dialogic_signal = JSON.parse_string(dialogic_signal)
+	if is_instance_of(dialogic_signal, TYPE_STRING):
+		dialogic_signal = JSON.parse_string(dialogic_signal)
 	if "item" in dialogic_signal:
 		#TODO Make sure not to let dialogic create too many items (perhaps add dialogic_limit setting and handler?)
 		Player.inventory.create_and_add_item(dialogic_signal.item)
