@@ -1,7 +1,7 @@
 extends MarginContainer
 
-@onready var quest_list = %QuestList
-@onready var quest_description = %QuestDescriptionLabel
+@onready var quest_list: ItemList = %QuestList
+@onready var quest_description = %QuestDescription
 @onready var complete_quest_button = %CompleteQuestButton
 
 var last_quest: String
@@ -12,7 +12,7 @@ func _ready() -> void:
 func update_quests() -> void:
 	#TODO, only do this for quests in player.active_quests
 	quest_list.clear()
-	for quest in Constants.quests:
+	for quest in Player.active_quests:
 		var quest_data = Constants.quests[quest]
 		var completed = ""
 		if check_quest_completion(quest):
@@ -25,10 +25,12 @@ func update_quests() -> void:
 	
 	if last_quest:
 		display_quest(last_quest)
-	elif quest_list.get_item_metadata(0):
+	elif quest_list.item_count:
 		var quest = quest_list.get_item_metadata(0).id
 		last_quest = quest
 		display_quest(quest)
+	else:
+		display_no_quest()
 
 #TODO, mark progress via icon?
 func _on_quest_list_item_clicked(index, at_position, mouse_button_index):
@@ -43,13 +45,17 @@ func display_quest(quest: String) -> void:
 	quest_description.append_text(Constants.quests[quest].description)
 	complete_quest_button.disabled = !check_quest_completion(quest)
 
+func display_no_quest() -> void:
+	quest_description.clear()
+	quest_description.append_text("You don't have any quests right now.")
+
 #TODO, check quest requirements
 func check_quest_completion(quest: String):
 	var quest_requirements = Constants.quests[quest].requirements
 	if 'stats' in quest_requirements:
 		for stat in quest_requirements.stats:
 			if quest_requirements.stats[stat] > Player.stats[stat]:
-				return true
+				return false
 	return true
 
 func _on_complete_quest_button_pressed():

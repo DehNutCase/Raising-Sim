@@ -23,6 +23,7 @@ extends Control
 @onready var story = $"Ui/MenuPanel/MarginContainer/Story"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 @onready var spellbook = $Ui/MenuPanel/MarginContainer/Spellbook
+@onready var questlog = %QuestLog
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
@@ -37,8 +38,7 @@ extends Control
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
 @onready var deck = %Deck
-#TODO, add spellbook menu
-@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook]
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, questlog]
 
 @onready var popup = %Popup
 
@@ -137,7 +137,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("Day1Event")
+		#Dialogic.start("NewYearsShrine")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -185,7 +185,8 @@ func process_day():
 	
 	background_transition(Constants.constants.TIMES_OF_DAY[i])
 	
-	await play_bedtime_event()
+	if day != 0:
+		await play_bedtime_event()
 	
 	if (day % Constants.constants.days_in_month == 0):
 		var monthly_items = inventory.inventory.get_items().duplicate()
@@ -539,6 +540,8 @@ func _on_action(button):
 			schedule.show()
 		"Spellbook":
 			spellbook.show()
+		"Quests":
+			questlog.show()
 		"Lessons":
 			lessons.show()
 		"Inventory":
@@ -601,8 +604,13 @@ func _on_action(button):
 			menu_panel.visible = true
 		_:
 			printerr("_on_action failed to match")
-			
-	if open_menu == button.name:
+	
+	var button_menu: String
+	for menu in menus:
+		if menu.visible:
+			button_menu = menu.name
+	
+	if open_menu == button_menu:
 		_on_close_button_pressed()
 	else:
 		menu_panel.visible = !menu_panel.visible
@@ -753,6 +761,9 @@ func _on_reward_signal(dialogic_signal) -> void:
 		var icon_path = card.icon.resource_path
 		Player.card_game_deck.append(card)
 		display_toast(toast, "bottom", "center", icon_path)
+	if "start_quest" in dialogic_signal:
+		#TODO, check for quest uniqueness?
+		Player.active_quests[dialogic_signal.start_quest] = true
 	
 func _on_timeline_started() -> void:
 	Player.play_song("cheerful")
