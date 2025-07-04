@@ -12,4 +12,7 @@ Mao_Portrait (Normal): (Hmm. I wonder if I should make a New Year's Resolution?)
 - I'll study hard this year!
 	Mao_Portrait (Normal): (Umu!)
 	[signal arg="{"start_quest": "good_student"}"]
+- Since I finally got a spellbook, let's climb the tower
+	Mao_Portrait (Normal): Teehee. Behold my power!
+	[signal arg="{"start_quest": "tower_climber"}"]
 [update_position action="reset_all" time="0.0"]

@@ -18,7 +18,9 @@ func update_quests() -> void:
 		if check_quest_completion(quest):
 			completed = "✅ "
 		else:
-			completed = "❌ "
+			#Only checkmark for completed instead of X for incomplete
+			pass
+			#completed = "❌ "
 		var index = quest_list.add_item(completed+ quest_data.name)
 		quest_list.set_item_tooltip(index, quest_data.description)
 		quest_list.set_item_metadata(index, {"id": quest})
@@ -55,6 +57,10 @@ func check_quest_completion(quest: String):
 	if 'stats' in quest_requirements:
 		for stat in quest_requirements.stats:
 			if quest_requirements.stats[stat] > Player.stats[stat]:
+				return false
+	if 'player_attribute' in quest_requirements:
+		for attribute in quest_requirements.player_attribute:
+			if quest_requirements.player_attribute[attribute] > Player[attribute]:
 				return false
 	return true
 

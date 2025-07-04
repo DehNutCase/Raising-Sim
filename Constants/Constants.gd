@@ -2590,7 +2590,7 @@ const quests = {
 	"good_student": {
 		"name": "Good Student",
 		"requirements": {
-			"stats": {"scholarship": 600}
+			"stats": {"scholarship": 600},
 		},
 		"description": "A student's job is to study. A good student's job is to study quickly. Get 600 scholarship before the end of the month. Who knows, maybe her majesty will give you a reward?",
 		"rewards": {
@@ -2600,5 +2600,25 @@ const quests = {
 				"scholarship": 50,
 			}
 		}
-	}
+	},
+	"tower_climber": {
+		"name": "Tower Climber",
+		"requirements": {
+			"player_attribute": {
+				"tower_level": 10,
+			},
+		},
+		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, and see if her majesty would be willing to give you a reward or something.",
+		"rewards": {
+			"stats": {
+				"gold": 1000,
+				"stress": -20,
+				"max_hp": 10,
+				"max_mp": 20,
+				"attack": 10,
+				"magic": 10,
+				"agility": 10,
+			}
+		}
+	},
 }
