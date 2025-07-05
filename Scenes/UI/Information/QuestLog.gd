@@ -44,7 +44,36 @@ func _on_quest_list_item_clicked(index, at_position, mouse_button_index):
 func display_quest(quest: String) -> void:
 	quest_description.clear()
 	quest_description.append_text(Constants.quests[quest].name + "\n\n")
-	quest_description.append_text(Constants.quests[quest].description)
+	quest_description.append_text("Description:" + "\n")
+	quest_description.append_text(Constants.quests[quest].description + "\n\n")
+	
+	quest_description.append_text("Requirements:")
+	var quest_requirements = Constants.quests[quest].requirements
+	if 'stats' in quest_requirements:
+		quest_description.append_text("\nStats: ")
+		var stats = []
+		for stat in quest_requirements.stats:
+			var label = stat
+			if ("label" in Constants.stats[stat]):
+				label = Constants.stats[stat]["label"]
+			if ("emoji" in Constants.stats[stat]):
+				label += Constants.stats[stat].emoji
+			var check_mark = "✅"
+			if quest_requirements.stats[stat] > Player.stats[stat]:
+				check_mark = "❌"
+			label += ": " + str(Player.stats[stat]) +  " / " + str(quest_requirements.stats[stat]) + " " + check_mark
+			stats.append(label)
+		var text = ", ".join(stats)
+		quest_description.append_text(text)
+	
+	if 'tower_level' in quest_requirements:
+		quest_description.append_text("\nTower Level: ")
+		var check_mark = "✅"
+		if quest_requirements.tower_level > Player.tower_level:
+			check_mark = "❌"
+		var text = str(Player.tower_level) + " / " + str(quest_requirements.tower_level) + " " + check_mark
+		quest_description.append_text(text)
+	
 	complete_quest_button.disabled = !check_quest_completion(quest)
 
 func display_no_quest() -> void:
@@ -58,10 +87,9 @@ func check_quest_completion(quest: String):
 		for stat in quest_requirements.stats:
 			if quest_requirements.stats[stat] > Player.stats[stat]:
 				return false
-	if 'player_attribute' in quest_requirements:
-		for attribute in quest_requirements.player_attribute:
-			if quest_requirements.player_attribute[attribute] > Player[attribute]:
-				return false
+	if 'tower_level' in quest_requirements:
+		if quest_requirements.tower_level > Player.tower_level:
+			return false
 	return true
 
 func _on_complete_quest_button_pressed():
