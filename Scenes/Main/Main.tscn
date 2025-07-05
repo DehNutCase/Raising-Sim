@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=85 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -50,6 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://dkqjjjb8c2ysi" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Book.png" id="45_34myw"]
 [ext_resource type="Texture2D" uid="uid://dd2eidg8uwsw2" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Book.png" id="46_oupw1"]
 [ext_resource type="Texture2D" uid="uid://bopfr4sya7gqa" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_ShoppingCart.png" id="46_xbpvj"]
+[ext_resource type="Texture2D" uid="uid://cerhwdink223l" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Compass.png" id="47_bd7pa"]
+[ext_resource type="Texture2D" uid="uid://b82rawoiir6r8" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Compass.png" id="48_cktde"]
 [ext_resource type="Texture2D" uid="uid://df7ev6wndct4y" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Ray.png" id="49_3mfmt"]
 [ext_resource type="Texture2D" uid="uid://cnhmc2xefjs4w" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Ray.png" id="50_0lhdw"]
 [ext_resource type="Texture2D" uid="uid://br4cvklfovjdo" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Map.png" id="51_bx1kg"]
@@ -985,8 +987,8 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("55_36a5c")
-texture_pressed = ExtResource("56_n3yma")
+texture_normal = ExtResource("47_bd7pa")
+texture_pressed = ExtResource("48_cktde")
 stretch_mode = 3
 
 [node name="Inventory" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
