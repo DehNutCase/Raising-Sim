@@ -2607,6 +2607,12 @@ const quests = {
 				"stress": -20,
 				"scholarship": 50,
 			}
+		},
+		"failure_conditions": {
+			"day": 30,
+		},
+		"failure_rewards": {
+			
 		}
 	},
 	"tower_climber": {
@@ -2614,7 +2620,7 @@ const quests = {
 		"requirements": {
 			"tower_level": 10,
 		},
-		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?.",
+		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2625,7 +2631,10 @@ const quests = {
 				"magic": 10,
 				"agility": 10,
 			}
-		}
+		},
+		"failure_condition": {
+			"day": 30,
+		},
 	},
 	"conquer_the_world": {
 		"name": "Conquer the World!",
@@ -2644,6 +2653,9 @@ const quests = {
 				"magic": 10,
 				"agility": 10,
 			}
-		}
+		},
+		"failure_condition": {
+			"day": 30,
+		},
 	},
 }

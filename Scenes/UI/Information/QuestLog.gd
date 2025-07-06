@@ -92,6 +92,23 @@ func check_quest_completion(quest: String):
 			return false
 	return true
 
+#TODO, process failures here or elsewhere?
+func check_quest_failure(quest: String):
+	var quest_info = Constants.quests[quest]
+	if 'failure_conditions' in quest_info:
+		var failure_condition = quest_info.failure_condition
+		if 'day' in failure_condition:
+			if Player.day > failure_condition.day:
+				process_quest_failure(quest)
+				return true
+	return false
+
+func process_quest_failure(quest: String):
+	var quest_info = Constants.quests[quest]
+	Player.active_quests.erase(quest)
+	if 'failure_rewards' in quest_info:
+		get_tree().call_group("Main", "_on_reward_signal", quest_info.failure_rewards)
+
 func _on_complete_quest_button_pressed():
 	if !last_quest:
 		return
