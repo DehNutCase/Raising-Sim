@@ -85,7 +85,7 @@
 	"mana_potion": {
 		"combat_item": "mana_potion",
 		"daily_stats": "{}",
-		"description": "A blue potion for enhancing magic.\n\nCombat item. Consumable.",
+		"description": "A blue potion for restoring mana.\n\nCombat item. Consumable.",
 		"image": "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png",
 		"limit": 1,
 		"name": "Mana Potion",

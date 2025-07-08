@@ -14,6 +14,8 @@ var enemy_scene: CardGameEncounterScene
 @onready var cubism_model: GDCubismUserModel = %CubismModel
 @onready var cubism_container: PanelContainer = %CubismContainer
 
+@onready var inventory_item_list: ItemList = %InventoryItemList
+
 func _ready():
 	Player.play_song("battle")
 	if Player.encounter:
@@ -25,6 +27,22 @@ func _ready():
 			%Background.texture = enemy_scene.background
 		if enemy_scene.background_music:
 			SoundManager.play_music(enemy_scene.background_music)
+			
+	if Player.inventory:
+	#Takes from the inventory, i.e., items, here are potions, relics are elsewhere, implement later
+		for item in Player.inventory._items:
+			if item.get_property("combat_item", {}):
+				card_game_player.combat_items.append(item.get_property("combat_item", {}))
+		for item in card_game_player.combat_items:
+			var item_info = Constants.combat_items[item]
+			var index = inventory_item_list.add_item(item_info.label)
+			inventory_item_list.set_item_metadata(index, {"name": item})
+			inventory_item_list.set_item_tooltip(index, item_info.description)
+			inventory_item_list.set_item_icon(index, load(item_info.icon))
+		inventory_item_list.item_clicked.connect(_on_item_press)
+			
+			
+			
 	start_battle()
 	
 func _on_card_ui_reparent_requested(card):
@@ -151,3 +169,49 @@ func update_mana_labels():
 	if hand:
 		for card:CardUI in hand.get_children():
 			card._update_mana_label()
+
+#mouse position and button isn't used
+func _on_item_press(index: int, mouse_position, mouse_button):
+	if state == states.VICTORY:
+		Player.display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		return
+	if state ==  states.DEFEAT:
+		Player.display_toast("Mao is unconsious and can't act!", "top")
+		return
+	if state != states.PLAYER_TURN:
+		return
+		
+	var name = inventory_item_list.get_item_metadata(index).name.to_lower()
+	#TODO, implement logic here
+	var action = Constants.combat_items[name]
+	var effect = action.effects
+	
+	if action.effects.get("health"):
+		card_game_player.heal_damage(action.effects.health)
+	if action.effects.get("mana"):
+		card_game_player.mana += action.effects.mana
+	if action.effects.get("buffs"):
+		var buffs = action.effects.buffs
+		for buff in buffs:
+			var status = load(buff)
+			card_game_player.apply_status(status, buffs[buff])
+	#for stat in action.stats:
+		#if stat == "max_hp":
+			#update_player_hp( action.stats[stat])
+			#continue
+		#player_combat_copy.stats[stat] += action.stats[stat]
+		
+	var item = Player.inventory.get_item_with_prototype_id(name)
+	Player.inventory.remove_item(item)
+	#Remove item from list of items if we don't have it anymore
+	if !Player.inventory.get_item_with_prototype_id(name):
+		Player.combat_items.erase(name)
+		inventory_item_list.remove_item(index)
+		
+	var message = action.message_player
+	Player.display_toast(message)
+	await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
+
+
+func _on_inventory_button_pressed():
+	inventory_item_list.visible = !inventory_item_list.visible

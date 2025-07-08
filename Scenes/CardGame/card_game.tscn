@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=14 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
@@ -8,6 +8,9 @@
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
 [ext_resource type="Resource" uid="uid://blybdfs5v0r37" path="res://Scenes/CardGame/Characters/Mao/Cards/meteor.tres" id="7_s6ygv"]
+[ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="9_wrxuv"]
+[ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="10_nnwkb"]
+[ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 600)
@@ -124,5 +127,42 @@ gui_disable_input = true
 size = Vector2i(768, 768)
 render_target_update_mode = 4
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TopMenuBar" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TopMenuButtons" type="HBoxContainer" parent="MarginContainer/TopMenuBar"]
+layout_mode = 2
+alignment = 1
+
+[node name="InventoryButton" type="TextureButton" parent="MarginContainer/TopMenuBar/TopMenuButtons"]
+layout_mode = 2
+texture_normal = ExtResource("9_wrxuv")
+texture_pressed = ExtResource("10_nnwkb")
+
+[node name="InventoryItemList" type="ItemList" parent="MarginContainer/TopMenuBar"]
+unique_name_in_owner = true
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_height = true
+max_columns = 0
+icon_mode = 0
+icon_scale = 0.5
+script = ExtResource("12_dhls8")
+
 [connection signal="pressed" from="EndTurnButton" to="." method="end_turn"]
 [connection signal="pressed" from="FleeButton" to="." method="exit_combat"]
+[connection signal="pressed" from="MarginContainer/TopMenuBar/TopMenuButtons/InventoryButton" to="." method="_on_inventory_button_pressed"]

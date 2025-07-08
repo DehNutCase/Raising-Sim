@@ -11,7 +11,7 @@ var max_hand_size: int = 2
 @export var deck: Array[CardResource]
 var draw_pile: Array[CardResource] = []
 var discard: Array[CardResource] = []
-
+var combat_items = []
 #{"type":String, "stacks":int, "icon":texture}
 var active_status = {}
 
@@ -204,7 +204,7 @@ func start_first_turn() -> void:
 		status_display.stack_label.text = str(active_status["Agility"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-func apply_status(status_resource: CardGameStatusResource, effect_amount: int, user) -> void:
+func apply_status(status_resource: CardGameStatusResource, effect_amount: int, user = self) -> void:
 	if active_status.get("Resistance") and (status_resource.NegativeStatus or effect_amount < 0):
 		active_status["Resistance"].stacks -= 1
 		active_status["Resistance"].status_display.stack_label.text = str(active_status["Resistance"].stacks)

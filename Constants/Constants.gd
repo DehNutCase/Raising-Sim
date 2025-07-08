@@ -339,6 +339,7 @@ const jobs = {
 	},
 }
 
+#depreciated, use as reference for courses only
 const lessons = {
 	'Basic Magic Training': {
 		'stats': {
@@ -346,7 +347,7 @@ const lessons = {
 			'gold': -100,
 			'magic': 2,
 			'max_mp': 2,
-			'scholarship': 2,
+			'scholarship': 5,
 			'resistance': 1,
 			'stress': 5,
 		},
@@ -419,7 +420,7 @@ const lessons = {
 		'stats': {
 			'experience': 100,
 			'gold': -100,
-			'scholarship': 50,
+			'scholarship': 5,
 			'stress': 10,
 		},
 		'required_stats': {
@@ -685,7 +686,7 @@ const courses = {
 			'stats': {
 				'experience': 100,
 				'gold': -100,
-				'scholarship': 10,
+				'scholarship': 20,
 				'stress': 10,
 			},
 			#Scale so that it takes 10 days at 0 scholarship
@@ -704,7 +705,7 @@ const courses = {
 				'gold': -100,
 				'magic': 2,
 				'max_mp': 2,
-				'scholarship': 2,
+				'scholarship': 10,
 				'resistance': 1,
 				'stress': 5,
 			},
@@ -722,7 +723,7 @@ const courses = {
 				'gold': -100,
 				'attack': 2,
 				'max_hp': 2,
-				'scholarship': 1,
+				'scholarship': 5,
 				'defense': 1,
 				'stress': 5,
 			},
@@ -906,7 +907,6 @@ const courses = {
 	},
 }
 
-#TODO add icon and desc to rests
 const rests = {
 	'Nap': {
 		'stats': {
@@ -1084,6 +1084,7 @@ const constants = {
 	'BASE_COURSE_PROGRESS' = 1000,
 	'JOB_EVENT_ODDS' = 20, #The percentage chance of triggering a job event
 	'BEDTIME_EVENT_ODDS' = 20,
+	'TOAST_TIMEOUT_DURATION' = .5,
 	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},
 	'ACTION_TYPES' = {
 		'jobs': {
@@ -2430,48 +2431,43 @@ const combat_skills = {
 
 const combat_items = {
 	'health_potion': {
-		'stats': {
-			'max_hp': 100,
+		'effects': {
+			'health': 100,
 		},
-		'weight': 5,
-		'effect_target': 'ally',
-		'effect_type': 'buff',
-		'effect_range': 'single',
 		'message': "Health restored!",
 		'message_player': "HP increased!",
 		'label': "Health Potion",
 		'id': "health_potion",
+		'icon': "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_05.png",
+		'description': "A red potion for restoring health. Seems to heal around 100 health.",
 	},
 	'mana_potion': {
-		'stats': {
-			'magic': 100,
+		'effects': {
+			'mana': 5,
 		},
-		'weight': 5,
-		'effect_target': 'ally',
-		'effect_type': 'buff',
-		'effect_range': 'single',
-		'message': "Magic increased!",
-		'message_player': "Magic increased!",
+		'message': "Mana restored!",
+		'message_player': "Mana restored!",
 		'label': "Mana Potion",
 		'id': "mana_potion",
+		'icon': "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png",
+		'description': "A blue potion for restoring mana. To be precise, it restores 5 units of mana.",
 	},
 	'overload_potion': {
-		'stats': {
-			'magic': 100,
-			'attack': 100,
-			'defense': 100,
-			'resistance': 100,
-			'agility': 100,
-			'skill': 100,
+		'effects': {
+			'buffs': {
+				'res://Scenes/CardGame/Status/attack.tres': 2,
+				'res://Scenes/CardGame/Status/magic.tres': 2,
+				'res://Scenes/CardGame/Status/skill.tres': 2,
+				'res://Scenes/CardGame/Status/defense.tres': 2,
+				'res://Scenes/CardGame/Status/resistance.tres': 2,
+			},
 		},
-		'weight': 5,
-		'effect_target': 'ally',
-		'effect_type': 'buff',
-		'effect_range': 'single',
-		'message': "All stats increased!",
-		'message_player': "All stats increased!",
+		'message': "Stats increased!",
+		'message_player': "Stats increased!",
 		'label': "Overload Potion",
 		'id': "overload_potion",
+		'icon': "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png",
+		"description": "An indigo potion which increases all stats when drunk. Increases increases attack, magic, skill, defense, and resistance by 2 stacks each.",
 	},
 }
 
@@ -2591,16 +2587,10 @@ const quests = {
 		"name": "Good Student",
 		"requirements": {
 			"stats": {
-				"scholarship": 600,
-				#TODO, remove below this, testing purposes
-				"max_hp": 10,
-				"max_mp": 20,
-				"attack": 10,
-				"magic": 10,
-				"agility": 10,
+				"scholarship": 100,
 				},
 		},
-		"description": "A student's job is to study. A good student's job is to study quickly. Get 600 scholarship before the end of the month. Who knows, maybe her majesty will give you a reward?",
+		"description": "A student's job is to study. Let's get 100 scholarship in a week.",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2609,10 +2599,10 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 30,
+			"day": 7,
 		},
 		"failure_rewards": {
-			
+			"timeline": "GoodStudentFailure",
 		}
 	},
 	"tower_climber": {
@@ -2621,6 +2611,29 @@ const quests = {
 			"tower_level": 10,
 		},
 		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?",
+		"rewards": {
+			"stats": {
+				"gold": 1000,
+				"stress": -20,
+				"max_hp": 10,
+				"max_mp": 20,
+				"attack": 10,
+				"magic": 10,
+				"agility": 10,
+			}
+		},
+		"failure_condition": {
+			"day": 30,
+		},
+	},
+	"budding_artist": {
+		"name": "Budding Arist",
+		"requirements": {
+			"stats": {
+				"art": 400,
+				},
+		},
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.",
 		"rewards": {
 			"stats": {
 				"gold": 1000,

@@ -26,6 +26,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var proficiencies = {}
 @export var player_class:String = "ink_mage"
 @export var label = "Mao"
+#TODO, remove combat skills? (maybe items as well), holdover from combat scene
 @export var combat_skills = ['paintball',]
 @export var combat_items = []
 @export var class_change_class:String = ""
@@ -489,3 +490,11 @@ func play_random_voice(voice_list: String) -> void:
 	voice_list = voice_list.to_lower()
 	var voice = voice_lists[voice_list].pick_random()
 	SoundManager.play_ambient_sound(voice)
+
+#Helper function for displaying toast, call this if toast is needed?
+func display_toast(message, gravity = "top", direction = "center"):
+	ToastParty.show({
+		"text": message,           # Text (emojis can be used)
+		"gravity": gravity,                   # top or bottom
+		"direction": direction,               # left or center or right
+	})
