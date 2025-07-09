@@ -2471,6 +2471,25 @@ const combat_items = {
 	},
 }
 
+const relics = {
+	"big_potato": {
+		"label": "Big Potato",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potato.png",
+		"message_player": "You take out the Big Potato so people can behold it. It doesn't seem to do anything.",
+		"description": "You lose 30 block at the start of your turn instead of all your block.",
+		#implement additional effects directly in card_game, card is only for on use effect
+		'card': "",
+		"block_reduction": 30,
+	},
+	"detergent": {
+		"label": "Detergent Bottle",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/detergent01_01.png",
+		"message_player": "You spray detergent all over yourself. For some reason.",
+		"description": "Can be used to gain a stack of resistance in exchange for 2 mana.",
+		'card': "res://Scenes/CardGame/Card/Relics/DetergentBottle.tres",
+	},
+}
+
 const player_classes = {
 	"ink_mage": {
 		"description": "A mage with an affinity for ink. A rare non-combat variant of the mage class. \nAs a non-combat class, stat gains from leveling up are low, combat skills are difficult to acquire, and experience can be obtained for non-combat actions.",

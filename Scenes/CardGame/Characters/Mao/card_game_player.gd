@@ -12,6 +12,7 @@ var max_hand_size: int = 2
 var draw_pile: Array[CardResource] = []
 var discard: Array[CardResource] = []
 var combat_items = []
+var relics = []
 #{"type":String, "stacks":int, "icon":texture}
 var active_status = {}
 
@@ -124,7 +125,21 @@ func start_turn() -> void:
 		if status.stacks == 0:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
-	block = 0
+	
+	#Code to implement big potato effect
+	var relic_list: ItemList = get_parent().relic_item_list
+	var relic_count = relic_list.item_count
+	var has_potato = false
+	if relic_count:
+		for i in relic_count:
+			if relic_list.get_item_text(i) == "Big Potato":
+				has_potato = true
+				break
+	if has_potato:
+		var block_reduction = Constants.relics.big_potato.block_reduction
+		block = max(block - block_reduction, 0)
+	else:
+		block = 0
 	update_status_display()
 
 func end_turn() -> void:

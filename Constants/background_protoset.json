@@ -26,6 +26,7 @@
 		"flags": "{\n\"gray\": true\n}",
 	},
 	"big_potato": {
+		"relic": "big_potato",
 		"daily_stats": "{}",
 		"description": "A big potato you brought home. For some reason.\nEvery once in a while, you bring it out so people could 'behold' it.\nIt's a potato.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potato.png",
@@ -34,6 +35,7 @@
 		"stats": "{}",
 	},
 	"detergent": {
+		"relic": "detergent",
 		"daily_stats": "{}",
 		"description": "An almost empty bottle of detergent you found in a closet.\nAccording to you, it's proof that you're the princess of the Cleaning Kingdom.\nSmells like peppermint.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/detergent01_01.png",
@@ -42,7 +44,7 @@
 		"stats": "{}",
 	},
 	"log": {
-		"daily_stats": "{}",
+		"daily_stats": "{\"defense\": 1,}",
 		"description": "A log that could have became an angel.\nLooking at it fills one with hope.\n...Or so you say.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/log.png",
 		"monthly_stats": "{}",
@@ -50,7 +52,7 @@
 		"stats": "{}",
 	},
 	"tasty_mushroom": {
-		"daily_stats": "{}",
+		"daily_stats": "{\"max_hp\": 1,}",
 		"description": "A mushroom you dug up. Looking at it fills your mouth with drool.\nSomething tells you not to cook it, apparently, so you've been keeping it safe.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/mushroom1_01.png",
 		"monthly_stats": "{}",

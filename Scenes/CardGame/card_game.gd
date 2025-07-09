@@ -15,6 +15,7 @@ var enemy_scene: CardGameEncounterScene
 @onready var cubism_container: PanelContainer = %CubismContainer
 
 @onready var inventory_item_list: ItemList = %InventoryItemList
+@onready var relic_item_list: ItemList = %RelicItemList
 
 func _ready():
 	Player.play_song("battle")
@@ -41,8 +42,16 @@ func _ready():
 			inventory_item_list.set_item_icon(index, load(item_info.icon))
 		inventory_item_list.item_clicked.connect(_on_item_press)
 			
-			
-			
+		for item in Player.background_inventory._items:
+			if item.get_property("relic", {}):
+				card_game_player.relics.append(item.get_property("relic", {}))
+		for item in card_game_player.relics:
+			var item_info = Constants.relics[item]
+			var index = relic_item_list.add_item(item_info.label)
+			relic_item_list.set_item_metadata(index, {"name": item})
+			relic_item_list.set_item_tooltip(index, item_info.description)
+			relic_item_list.set_item_icon(index, load(item_info.icon))
+		relic_item_list.item_clicked.connect(_on_relic_press)
 	start_battle()
 	
 func _on_card_ui_reparent_requested(card):
@@ -182,7 +191,7 @@ func _on_item_press(index: int, mouse_position, mouse_button):
 		return
 		
 	var name = inventory_item_list.get_item_metadata(index).name.to_lower()
-	#TODO, implement logic here
+
 	var action = Constants.combat_items[name]
 	var effect = action.effects
 	
@@ -195,11 +204,6 @@ func _on_item_press(index: int, mouse_position, mouse_button):
 		for buff in buffs:
 			var status = load(buff)
 			card_game_player.apply_status(status, buffs[buff])
-	#for stat in action.stats:
-		#if stat == "max_hp":
-			#update_player_hp( action.stats[stat])
-			#continue
-		#player_combat_copy.stats[stat] += action.stats[stat]
 		
 	var item = Player.inventory.get_item_with_prototype_id(name)
 	Player.inventory.remove_item(item)
@@ -212,6 +216,43 @@ func _on_item_press(index: int, mouse_position, mouse_button):
 	Player.display_toast(message)
 	await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
 
+func _on_relic_press(index: int, mouse_position, mouse_button):
+	if state == states.VICTORY:
+		Player.display_toast("Mao is currently doing a victory dance and can't show off her relics!", "top")
+		return
+	if state ==  states.DEFEAT:
+		Player.display_toast("Mao is unconsious and can't act!", "top")
+		return
+	if state != states.PLAYER_TURN:
+		return
+		
+	var name = relic_item_list.get_item_metadata(index).name.to_lower()
 
+	var relic = Constants.relics[name]
+	var card: CardResource = load(relic.card)
+	
+	if card:
+		if card_game_player.mana < card.cost:
+			Player.display_toast("Not enough mana to use this.")
+			await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
+		else:
+			var message = relic.message_player
+			Player.display_toast(message)
+			#TODO, change targets depending on relic targets
+			card_game_player.mana -= card.cost
+			card.play([card_game_player])
+			await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
+	else:
+		var message = relic.message_player
+		Player.display_toast(message)
+		await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
+	
 func _on_inventory_button_pressed():
 	inventory_item_list.visible = !inventory_item_list.visible
+	if inventory_item_list.visible:
+		relic_item_list.hide()
+
+func _on_relic_button_pressed():
+	relic_item_list.visible = !relic_item_list.visible
+	if relic_item_list.visible:
+		inventory_item_list.hide()

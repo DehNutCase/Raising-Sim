@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://c27x3kpy8kh3p"]
+
+[ext_resource type="Texture2D" uid="uid://c2mbu0hr1446b" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/detergent01_01.png" id="1_sxc5m"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_jvkqy"]
+[ext_resource type="AudioStream" uid="uid://duekxx2wbgqnl" path="res://Voice/Sakura An/Greetings/Yaho (Hello).wav" id="3_dtpos"]
+[ext_resource type="Resource" uid="uid://bb4l7x0ct60f6" path="res://Scenes/CardGame/Status/resistance.tres" id="4_0agsq"]
+
+[resource]
+script = ExtResource("2_jvkqy")
+id = "Detergent Bottle"
+type = 4
+target = 0
+cost = 2
+effect_amount = 1
+status = ExtResource("4_0agsq")
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 1000
+start_sound_effect = ExtResource("3_dtpos")
+second_target = 0
+second_type = 0
+second_effect_amount = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_sxc5m")
