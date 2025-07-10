@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=7 format=3 uid="uid://b0evm8ejx0m8k"]
+
+[ext_resource type="Resource" uid="uid://k2gtw81xb7ta" path="res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres" id="2_wrw3a"]
+[ext_resource type="Resource" uid="uid://dwddhb1ggfvcc" path="res://Scenes/CardGame/Characters/Mao/Cards/searing_ritual.tres" id="3_m838m"]
+[ext_resource type="Resource" uid="uid://ctxtj8jk4xtnc" path="res://Scenes/CardGame/Characters/Mao/Cards/lesser_invocation.tres" id="4_6g6o8"]
+[ext_resource type="Resource" uid="uid://7rfcmkux6d6e" path="res://Scenes/CardGame/Characters/Mao/Cards/offensive_casting.tres" id="5_tcknq"]
+[ext_resource type="Resource" uid="uid://x3y5ybd7d4ch" path="res://Scenes/CardGame/Characters/Mao/Cards/finishing_blow.tres" id="7_esby5"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="9_c7r47"]
+
+[resource]
+script = ExtResource("9_c7r47")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("2_wrw3a"), ExtResource("2_wrw3a"), ExtResource("4_6g6o8"), ExtResource("3_m838m"), ExtResource("3_m838m"), ExtResource("7_esby5"), ExtResource("5_tcknq"), ExtResource("5_tcknq")])

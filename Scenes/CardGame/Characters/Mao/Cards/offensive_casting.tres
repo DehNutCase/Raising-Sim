@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://7rfcmkux6d6e"]
+
+[ext_resource type="Texture2D" uid="uid://e75ou2uk5s22" path="res://Art/Mori no oku no kakurezato/CardGame/cube02_03.png" id="1_ayy8j"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_fn0k2"]
+[ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_rus4l"]
+
+[resource]
+script = ExtResource("2_fn0k2")
+id = "Offensive Casting"
+type = 1
+target = 1
+cost = 2
+effect_amount = 20
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 150
+start_sound_effect = ExtResource("3_rus4l")
+second_target = 0
+second_type = 2
+second_effect_amount = 20
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_ayy8j")

@@ -6,6 +6,8 @@ signal reparent_requested(card: CardUI)
 @onready var icon = %CardIcon
 @onready var cost_label: RichTextLabel = %CostLabel
 
+@onready var collision = %CollisionShape2D
+
 enum States {BASE, DRAGGING, RELEASED, DISCARD}
 @export var current_state:States
 @export var initial_state:States
@@ -26,10 +28,13 @@ func enter_state(state:States) -> void:
 			reparent_requested.emit(self)
 			pivot_offset = Vector2.ZERO
 			current_state = States.BASE
+			collision.disabled = true
 		States.DRAGGING:
+			collision.disabled = false
 			reparent(get_tree().get_first_node_in_group("CardGameMainNode"))
 			current_state = States.DRAGGING
 		States.RELEASED:
+			collision.disabled = false
 			current_state = States.RELEASED
 			played = false
 			if targets:

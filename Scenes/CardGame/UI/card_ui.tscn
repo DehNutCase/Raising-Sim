@@ -42,6 +42,7 @@ visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+unique_name_in_owner = true
 position = Vector2(90, 135)
 shape = SubResource("RectangleShape2D_78q6f")
 

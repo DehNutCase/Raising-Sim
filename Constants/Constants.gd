@@ -883,6 +883,7 @@ const courses = {
 			},
 			"description": "A simple and effective offensive spell.\nCan cause suffocation if used in enclosed spaces.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element03_01.png",
+			"card": "res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres",
 		},
 		'Artillerist Training (Meteor)': {
 			'stats': {

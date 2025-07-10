@@ -172,6 +172,7 @@ script = ExtResource("12_dhls8")
 
 [node name="RelicItemList" type="ItemList" parent="MarginContainer/TopMenuBar"]
 unique_name_in_owner = true
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
