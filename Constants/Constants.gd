@@ -2642,7 +2642,7 @@ const quests = {
 				"agility": 10,
 			}
 		},
-		"failure_condition": {
+		"failure_conditions": {
 			"day": 30,
 		},
 	},
@@ -2665,7 +2665,7 @@ const quests = {
 				"agility": 10,
 			}
 		},
-		"failure_condition": {
+		"failure_conditions": {
 			"day": 30,
 		},
 	},
@@ -2687,8 +2687,32 @@ const quests = {
 				"agility": 10,
 			}
 		},
-		"failure_condition": {
+		"failure_conditions": {
 			"day": 30,
+		},
+	},
+	"inspiration": {
+		"name": "Inspiration",
+		"requirements": {
+			"work": {
+				"Doodle": 1,
+				},
+		},
+		"description": "It feels like something good will happen if you try to draw something today.",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_hp": 5,
+				"max_mp": 5,
+				"attack": 5,
+				"magic": 5,
+				"agility": 5,
+				"art": 10,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
 		},
 	},
 }

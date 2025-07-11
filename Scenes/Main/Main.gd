@@ -23,7 +23,7 @@ extends Control
 @onready var story = $"Ui/MenuPanel/MarginContainer/Story"
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 @onready var spellbook = $Ui/MenuPanel/MarginContainer/Spellbook
-@onready var questlog = %QuestLog
+@onready var quest_log = %QuestLog
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
@@ -38,7 +38,7 @@ extends Control
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
 @onready var deck = %Deck
-@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, questlog]
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log]
 
 @onready var popup = %Popup
 
@@ -137,7 +137,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("NewYearsShrine")
+		#Dialogic.start("Inspiration")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -244,10 +244,14 @@ func process_day():
 	check_and_play_daily_events()
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
+	quest_log.check_quests_failure()
 	day_state = states.READY
 
 		
 func do_action(action_type:String, action_name: String):
+	#right now progress doesn't check success, change later?
+	quest_log.quest_work_progress(action_name)
+	
 	if action_type == 'school':
 		await daily_course()
 		#NOTES, the below works as you'd expect, timeline starts and execution continues
@@ -435,6 +439,7 @@ func do_expedition(expedition_name:String) -> void:
 			break
 		Dialogic.start(expedition.encounter_timeline)
 		await Dialogic.timeline_ended
+		await get_tree().create_timer(.5).timeout
 		if Player.in_expedition:
 			get_tree().call_group("Live2DPlayer", "pause_live2d")
 			await card_game_finished
@@ -541,7 +546,7 @@ func _on_action(button):
 		"Spellbook":
 			spellbook.show()
 		"Quests":
-			questlog.show()
+			quest_log.show()
 		"Lessons":
 			lessons.show()
 		"Inventory":
@@ -764,7 +769,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 		display_toast(toast, "bottom", "center", icon_path)
 	if "start_quest" in dialogic_signal:
 		#TODO, check for quest uniqueness?
-		Player.active_quests[dialogic_signal.start_quest] = true
+		Player.active_quests[dialogic_signal.start_quest] = {'active': true}
 	
 func _on_timeline_started() -> void:
 	Player.play_song("cheerful")

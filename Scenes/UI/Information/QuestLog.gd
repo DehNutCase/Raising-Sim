@@ -74,6 +74,20 @@ func display_quest(quest: String) -> void:
 		var text = str(Player.tower_level) + " / " + str(quest_requirements.tower_level) + " " + check_mark
 		quest_description.append_text(text)
 	
+	if 'work' in quest_requirements:
+		quest_description.append_text("\n")
+		var works = []
+		for work in quest_requirements.work:
+			var label = work
+			var check_mark = "✅"
+			if quest_requirements.work[work] > Player.active_quests[quest].work[work]:
+				check_mark = "❌"
+			label += ": " + str(Player.active_quests[quest].work[work]) +  " / " + str(quest_requirements.work[work]) + check_mark
+			works.append(label)
+			
+		var text = ", ".join(works)
+		quest_description.append_text(text)
+	
 	complete_quest_button.disabled = !check_quest_completion(quest)
 
 func display_no_quest() -> void:
@@ -90,22 +104,50 @@ func check_quest_completion(quest: String):
 	if 'tower_level' in quest_requirements:
 		if quest_requirements.tower_level > Player.tower_level:
 			return false
+	if 'work' in quest_requirements:
+		var active_quest_info = Player.active_quests.get(quest)
+		for work in quest_requirements.work:
+			if !active_quest_info.get("work"):
+				active_quest_info.work = {}
+			if !active_quest_info.work.get(work):
+				active_quest_info.work[work] = 0
+			if active_quest_info.work[work] < quest_requirements.work[work]:
+				return false
 	return true
 
+func quest_work_progress(work: String):
+	for quest in Player.active_quests:
+		var quest_requirements = Constants.quests[quest].requirements
+		if 'work' in quest_requirements:
+			var active_quest_info = Player.active_quests.get(quest)
+			if !active_quest_info.get("work"):
+				active_quest_info.work = {}
+			if !active_quest_info.work.get(work):
+				active_quest_info.work[work] = 0
+			active_quest_info.work[work] += 1
+
 #TODO, process failures here or elsewhere?
+#TODO, make quest chains that start a new quest when one is completed. 30d total, so 7 days time limit for each.
 func check_quest_failure(quest: String):
 	var quest_info = Constants.quests[quest]
-	if 'failure_conditions' in quest_info:
-		var failure_condition = quest_info.failure_condition
-		if 'day' in failure_condition:
-			if Player.day > failure_condition.day:
+	#quest is only failed if you haven't completed it
+	if 'failure_conditions' in quest_info and !check_quest_completion(quest):
+		var failure_conditions = quest_info.failure_conditions
+		if 'day' in failure_conditions:
+			if Player.day > failure_conditions.day:
 				process_quest_failure(quest)
 				return true
 	return false
 
+func check_quests_failure():
+	for quest in Player.active_quests:
+		check_quest_failure(quest)
+	
 func process_quest_failure(quest: String):
 	var quest_info = Constants.quests[quest]
 	Player.active_quests.erase(quest)
+	if quest == last_quest:
+		last_quest = ""
 	if 'failure_rewards' in quest_info:
 		get_tree().call_group("Main", "_on_reward_signal", quest_info.failure_rewards)
 

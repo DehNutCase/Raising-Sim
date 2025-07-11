@@ -213,6 +213,7 @@ directories/dtl_directory={
 "Hunting1": "res://Timelines/JobEvents/Hunting1.dtl",
 "Idea/AfterClassChange": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Idea/AfterClassChange.dtl",
 "InkMageSchoolFirst": "res://Timelines/ActionEvents/InkMageSchool/InkMageSchoolFirst.dtl",
+"Inspiration": "res://Timelines/DayEvents/Random/Inspiration.dtl",
 "MagecraftEducationEnd": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationEnd.dtl",
 "MagecraftEducationFirst": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationFirst.dtl",
 "MagecraftEducationMiddle": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationMiddle.dtl",

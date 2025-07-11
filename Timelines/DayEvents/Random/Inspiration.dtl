@@ -1,0 +1,8 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Umu! I feel super inspired today.
+Mao_Portrait (Excited): I should doodle something when I have time.
+[signal arg="{"start_quest": "inspiration"}"]
