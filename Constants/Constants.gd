@@ -2613,13 +2613,79 @@ const quests = {
 		"description": "A student's job is to study. Let's get 100 scholarship in a week.",
 		"rewards": {
 			"stats": {
-				"gold": 1000,
 				"stress": -20,
 				"scholarship": 50,
-			}
+			},
+			"timeline": "GoodStudentSuccess",
 		},
 		"failure_conditions": {
 			"day": 7,
+		},
+		"failure_rewards": {
+			"timeline": "GoodStudentFailure",
+		}
+	},
+	"good_student_2": {
+		"name": "Gooder Student",
+		"requirements": {
+			"stats": {
+				"scholarship": 300,
+				},
+		},
+		"description": "A student's job is to study. Let's get 300 scholarship before the middle of the month.",
+		"rewards": {
+			"stats": {
+				"stress": -20,
+				"scholarship": 50,
+			},
+			"timeline": "GoodStudentSuccess2",
+		},
+		"failure_conditions": {
+			"day": 14,
+		},
+		"failure_rewards": {
+			"timeline": "GoodStudentFailure",
+		}
+	},
+	"good_student_3": {
+		"name": "Goodest Student?",
+		"requirements": {
+			"stats": {
+				"scholarship": 600,
+				},
+		},
+		"description": "A student's job is to study. Let's get 600 scholarship before the 21st.",
+		"rewards": {
+			"stats": {
+				"stress": -20,
+				"scholarship": 50,
+			},
+			"timeline": "GoodStudentSuccess3",
+		},
+		"failure_conditions": {
+			"day": 21,
+		},
+		"failure_rewards": {
+			"timeline": "GoodStudentFailure",
+		}
+	},
+	"good_student_4": {
+		"name": "Good Student, Final Exam",
+		"requirements": {
+			"stats": {
+				"scholarship": 800,
+				},
+		},
+		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and also pass the finals.",
+		"rewards": {
+			"stats": {
+				"stress": -20,
+				"scholarship": 50,
+			},
+			"timeline": "GoodStudentSuccess4",
+		},
+		"failure_conditions": {
+			"day": 21,
 		},
 		"failure_rewards": {
 			"timeline": "GoodStudentFailure",

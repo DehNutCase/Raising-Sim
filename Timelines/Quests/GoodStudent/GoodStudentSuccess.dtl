@@ -1,0 +1,19 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3 [animation="Slide In Right" length="2"]
+join Morgan (Silhouette) 1
+[history action="clear"]
+Morgan_Portrait (Silhouette): Good morning, Mao. You really should get an appointment before barging in like this.
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Yes, ma'am! Can I get my prize, ma'am?
+Morgan_Portrait (Silhouette): Prize?
+update Mao (Normal)
+Mao_Portrait (Normal): I studied hard this week, your majesty!
+Morgan_Portrait (Silhouette): I see.
+Morgan_Portrait (Silhouette): I suppose we'll have to cancel the party I scheduled to celebrate your last place in the mid-terms.
+update Mao (Angry)
+Mao_Portrait (Angry): Your majesty!
+Morgan_Portrait (Silhouette): Fufufu. Keep up the good work.
+update Mao (Excited)
+Mao_Portrait (Excited): Yes ma'am!
+[signal arg="{"start_quest": "good_student_2", "stats": {"gold": 1000,}, }"]

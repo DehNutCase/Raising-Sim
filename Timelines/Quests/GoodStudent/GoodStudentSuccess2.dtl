@@ -1,0 +1,13 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3 [animation="Slide In Right" length="2"]
+join Morgan (Silhouette) 1
+[history action="clear"]
+Morgan_Portrait (Silhouette): Hmm. I should praise you for getting an appointment this time. But, if I'm not wrong, it was Miss Glassfield who did so, correct?
+update Mao (Surprised)
+Mao_Portrait (Surprised): Appointment?
+Morgan_Portrait (Silhouette): Fufufu. Well, no matter. I suppose you're here for your reward again?
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Yay!
+Morgan_Portrait (Silhouette): Don't push yourself too hard, now.
+[signal arg="{"start_quest": "good_student_3", "stats": {"gold": 1000,}, }"]
