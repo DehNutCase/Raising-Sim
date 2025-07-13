@@ -52,6 +52,7 @@ func _ready() -> void:
 	if start_hidden:
 		textbox_root.hide()
 	text = ""
+	clip_contents = false
 
 
 # this is called by the DialogicGameHandler to set text
