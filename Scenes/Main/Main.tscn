@@ -1063,6 +1063,18 @@ expand_icon = true
 script = ExtResource("28_3ijv8")
 pause_menu_packed = ExtResource("29_h0pyo")
 
+[node name="GameOverDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = "Game Over"
+initial_position = 1
+size = Vector2i(473, 125)
+always_on_top = true
+min_size = Vector2i(300, 100)
+ok_button_text = "Load Save"
+dialog_text = "Would you like to restart?"
+dialog_close_on_escape = false
+cancel_button_text = "Restart"
+
 [connection signal="pressed" from="Ui/MarginContainer/HBoxContainer/PauseMenuButton" to="." method="_on_pause_menu_button_pressed"]
 [connection signal="toggled" from="Ui/MarginContainer/HBoxContainer/VolumeButton" to="." method="_on_volume_button_toggled"]
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
@@ -1073,6 +1085,8 @@ pause_menu_packed = ExtResource("29_h0pyo")
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Story/DescriptionContainer/Description/SelectMissionButton" to="." method="_on_select_mission_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="canceled" from="GameOverDialog" to="." method="_on_game_over_dialog_canceled"]
+[connection signal="confirmed" from="GameOverDialog" to="." method="_on_game_over_dialog_confirmed"]
 
 [editable path="GUI (Mouse Ignore)/Counters/gold"]
 [editable path="GUI (Mouse Ignore)/Counters/mood"]

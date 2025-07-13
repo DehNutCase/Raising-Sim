@@ -137,7 +137,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("Inspiration")
+		#Dialogic.start("GoodStudentSuccess")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -1105,3 +1105,13 @@ func _on_card_button_pressed(card: CardResource):
 		Player.card_game_deck.erase(card)
 		deck.update_buttons()
 		process_stats({'gold': card.price})
+
+
+func _on_game_over_dialog_canceled():
+	await Player.delete_game()
+	await OS.set_restart_on_exit(true)
+	get_tree().quit()
+
+func _on_game_over_dialog_confirmed():
+	Player.save_loaded = false
+	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
