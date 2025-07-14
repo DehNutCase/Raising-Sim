@@ -1068,7 +1068,6 @@ unique_name_in_owner = true
 title = "Game Over"
 initial_position = 1
 size = Vector2i(473, 125)
-always_on_top = true
 min_size = Vector2i(300, 100)
 ok_button_text = "Load Save"
 dialog_text = "Would you like to restart?"

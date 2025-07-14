@@ -135,13 +135,13 @@ func check_quest_failure(quest: String):
 		var failure_conditions = quest_info.failure_conditions
 		if 'day' in failure_conditions:
 			if Player.day > failure_conditions.day:
-				process_quest_failure(quest)
+				await process_quest_failure(quest)
 				return true
 	return false
 
 func check_quests_failure():
 	for quest in Player.active_quests:
-		check_quest_failure(quest)
+		await check_quest_failure(quest)
 	
 func process_quest_failure(quest: String):
 	var quest_info = Constants.quests[quest]
@@ -150,6 +150,8 @@ func process_quest_failure(quest: String):
 		last_quest = ""
 	if 'failure_rewards' in quest_info:
 		get_tree().call_group("Main", "_on_reward_signal", quest_info.failure_rewards)
+		if 'timeline' in quest_info.failure_rewards:
+			await Dialogic.timeline_ended
 
 func _on_complete_quest_button_pressed():
 	if !last_quest:

@@ -60,7 +60,7 @@ var day: int:
 		else:
 			schedule_alert_icon.hide()
 
-enum states {READY, DIALOGIC, BUSY}
+enum states {READY, DIALOGIC, BUSY, GAME_OVER}
 var current_state = states.READY
 var day_state = states.READY
 
@@ -137,7 +137,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("GoodStudentSuccess")
+		#Dialogic.start("GoodStudentFailure")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -244,7 +244,7 @@ func process_day():
 	check_and_play_daily_events()
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
-	quest_log.check_quests_failure()
+	await quest_log.check_quests_failure()
 	day_state = states.READY
 
 		
@@ -770,6 +770,9 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "start_quest" in dialogic_signal:
 		#TODO, check for quest uniqueness?
 		Player.active_quests[dialogic_signal.start_quest] = {'active': true}
+	if "game_over" in dialogic_signal:
+		%GameOverDialog.show()
+		current_state = states.GAME_OVER
 	
 func _on_timeline_started() -> void:
 	Player.play_song("cheerful")
