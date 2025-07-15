@@ -53,7 +53,7 @@ Mao_Portrait (Blush): Haha, sorry.
 		Morgan_Portrait (Silhouette): I don't particularly mind.
 		update Mao (Excited)
 		Mao_Portrait (Excited): Yay!
-		[signal arg="{"stats": {"stress": 10, "magic": 10}, "skill":"blessing"}"]
+		[signal arg="{"stats": {"stress": 10, "magic": 10}, "skill":"blessing", "card": "res://Scenes/CardGame/Characters/Mao/Cards/blessing.tres", }"]
 		Morgan_Portrait (Silhouette): It would be better not to use this in front of priests or clerics. Speaking from experience, it could get quite annoying.
 		update Mao (Surprised)
 		Mao_Portrait (Surprised): What do you mean? Would they hunt me down or something?

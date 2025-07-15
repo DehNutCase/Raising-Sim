@@ -148,7 +148,7 @@
 		"name": "Blessing",
 		"stats": "{}",
 		"combat_skill" : "blessing",
-		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element07_01.png",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem01_04.png",
 	},
 	"light_barrier": {
 		"daily_stats": "{\n\"magic\": 1\n,\n\"max_mp\": 1\n}",

@@ -2676,7 +2676,7 @@ const quests = {
 				"scholarship": 800,
 				},
 		},
-		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and also pass the finals.",
+		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and pass the finals.",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2696,7 +2696,31 @@ const quests = {
 		"requirements": {
 			"tower_level": 10,
 		},
-		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?",
+		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?\nTime Limit: Day 14",
+		"rewards": {
+			"stats": {
+				"stress": -20,
+				"max_hp": 10,
+				"max_mp": 20,
+				"attack": 10,
+				"magic": 10,
+				"agility": 10,
+			},
+			"timeline": "TowerClimberSuccess",
+		},
+		"failure_conditions": {
+			"day": 14,
+		},
+		"failure_rewards": {
+			"timeline": "TowerClimberFailure",
+		}
+	},
+	"tower_climber_2": {
+		"name": "Tower Climberer",
+		"requirements": {
+			"tower_level": 20,
+		},
+		"description": "The first ten floors seemed easy enough, let's keep climbing. The goal is floor 20 this time.\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2706,11 +2730,15 @@ const quests = {
 				"attack": 10,
 				"magic": 10,
 				"agility": 10,
-			}
+			},
+			"timeline": "TowerClimberSuccess2",
 		},
 		"failure_conditions": {
 			"day": 30,
 		},
+		"failure_rewards": {
+			"timeline": "TowerClimberFailure",
+		}
 	},
 	"budding_artist": {
 		"name": "Budding Arist",

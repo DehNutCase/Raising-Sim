@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bxuttp3fs7rf1"]
+
+[ext_resource type="Texture2D" uid="uid://dt421k4hs2sq2" path="res://Art/Mori no oku no kakurezato/CardGame/gem02_06.png" id="1_hw60y"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_ek0xw"]
+[ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_w46l6"]
+
+[resource]
+script = ExtResource("2_ek0xw")
+id = "Light Barrier"
+type = 2
+target = 0
+cost = 4
+effect_amount = 50
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 500
+start_sound_effect = ExtResource("3_w46l6")
+second_target = 0
+second_type = 9
+second_effect_amount = 20
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_hw60y")

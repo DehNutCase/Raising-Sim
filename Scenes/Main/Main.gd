@@ -766,6 +766,15 @@ func _on_reward_signal(dialogic_signal) -> void:
 		var toast = "Obtained " + card.id
 		var icon_path = card.icon.resource_path
 		Player.card_game_deck.append(card)
+		await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
+		display_toast(toast, "bottom", "center", icon_path)
+		
+	if "card" in dialogic_signal:
+		var card = load(dialogic_signal.card)
+		var toast = "Obtained " + card.id
+		var icon_path = card.icon.resource_path
+		Player.card_game_deck.append(card)
+		await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
 		display_toast(toast, "bottom", "center", icon_path)
 	if "start_quest" in dialogic_signal:
 		#TODO, check for quest uniqueness?

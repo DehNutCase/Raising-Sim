@@ -215,6 +215,16 @@ func _create_tooltip() -> String:
 						tooltip += "All enemies loses [color=yellow]%d[/color] of every status effect." %this_amount
 					card.Target.EVERYONE:
 						tooltip += "Everyone loses [color=yellow]%d[/color] of every status effect." %this_amount
+			card.Type.HEAL:
+				match this_target:
+					card.Target.SELF:
+						tooltip += "Heal [color=green]%d[/color] health points." %this_amount
+					card.Target.SINGLE_ENEMY:
+						tooltip += "Heal [color=green]%d[/color] health points for target enemy." %this_amount
+					card.Target.ALL_ENEMIES:
+						tooltip += "Heal [color=green]%d[/color] health points for all enemies." %this_amount
+					card.Target.EVERYONE:
+						tooltip += "Heal [color=green]%d[/color] health points for everyone." %this_amount
 				
 	return tooltip
 

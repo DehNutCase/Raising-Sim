@@ -1,0 +1,19 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3 [animation="Slide In Right" length="2"]
+join Morgan (Silhouette) 1
+[history action="clear"]
+Morgan_Portrait (Silhouette): Good morning, Mao. Did you need something?
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Yes, ma'am! Can I get my prize, ma'am?
+Morgan_Portrait (Silhouette): Prize?
+update Mao (Normal)
+Mao_Portrait (Normal): I made it all the way to floor ten of the tower!
+Morgan_Portrait (Silhouette): I see.
+Morgan_Portrait (Silhouette): Hmm. Personally, I don't think I should be encouraging you to go inside the tower.
+Morgan_Portrait (Silhouette): Still, it's quite an accomplishment.
+Mao_Portrait (Normal): Teehee.
+Morgan_Portrait (Silhouette): Keep up the good work.
+update Mao (Excited)
+Mao_Portrait (Excited): Yes ma'am!
+[signal arg="{"start_quest": "tower_climber_2", "stats": {"gold": 1000,}, }"]
