@@ -122,6 +122,17 @@
 		"special_type": "card_pack",
 		"card_pack": "res://Scenes/CardGame/Card/CardPacks/basic_card_pack.tres",
 	},
+	"daily_life_card_pack": {
+		"daily_stats": "{}",
+		"description": "A card pack with a selection of mostly non-combat spell cards. Not very useful for fighting, but convenient in daily life. There's a small 'v' emblazoned on the back of the packaging.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/data01_05.png",
+		"limit": 10,
+		"name": "Daily Life Card Pack",
+		"price": 500,
+		"stats": "{}",
+		"special_type": "card_pack",
+		"card_pack": "res://Scenes/CardGame/Card/CardPacks/daily_life_card_pack.tres",
+	},
 	"fireball_card_pack": {
 		"daily_stats": "{}",
 		"courses_completed": "Basic Combat Magic (Fireball)",

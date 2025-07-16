@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://cosa1b5ntry0y"]
+
+[ext_resource type="Texture2D" uid="uid://bh14tr5kau628" path="res://Art/Mori no oku no kakurezato/CardGame/lunch02_01.png" id="1_d8vwy"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_iwdtd"]
+[ext_resource type="AudioStream" uid="uid://b8jf103e4g744" path="res://SFX/Shapeforms/Arcane/UI Message Appear 01.wav" id="3_m8ks0"]
+
+[resource]
+script = ExtResource("2_iwdtd")
+id = "Conjure Lunch"
+type = 3
+target = 0
+cost = 2
+effect_amount = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 250
+start_sound_effect = ExtResource("3_m8ks0")
+second_target = 0
+second_type = 9
+second_effect_amount = 50
+third_target = 0
+third_type = 6
+third_effect_amount = 2
+icon = ExtResource("1_d8vwy")
