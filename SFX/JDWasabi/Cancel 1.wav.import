@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw0pf62caq8o0"
+path="res://.godot/imported/Cancel 1.wav-00ec331afdf784b5b9c869e31ddb87e9.sample"
+
+[deps]
+
+source_file="res://SFX/JDWasabi/Cancel 1.wav"
+dest_files=["res://.godot/imported/Cancel 1.wav-00ec331afdf784b5b9c869e31ddb87e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

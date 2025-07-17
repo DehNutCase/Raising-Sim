@@ -81,6 +81,16 @@ Source: [itch.io : Free Fantasy 200 SFX Pack](https://tommusic.itch.io/free-fant
 Author: [Shapeforms](https://shapeforms.itch.io/)  
 Source: [itch.io : Shapeforms Audio Free Sound Effects](https://shapeforms.itch.io/shapeforms-audio-free-sfx) 
 
+### Sound
+#### SFX
+Author: [JDWasabi](https://jdwasabi.itch.io/)  
+Source: [itch.io : 8-bit / 16-bit Sound Effects (x25) Pack](https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack) 
+
+### Sound
+#### SFX
+Author: [Atelier Magicae](https://ateliermagicae.itch.io/)  
+Source: [itch.io : Fantasy UI Sound Effects](https://ateliermagicae.itch.io/fantasy-ui-sound-effects) 
+
 ### Image
 #### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  

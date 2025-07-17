@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vkbp65bkshu2"
+path="res://.godot/imported/Fantasy UI Vol (35).wav-de81657bcd89413b4d453804497be289.sample"
+
+[deps]
+
+source_file="res://SFX/Atelier Magicae/Fantasy UI Vol (35).wav"
+dest_files=["res://.godot/imported/Fantasy UI Vol (35).wav-de81657bcd89413b4d453804497be289.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
