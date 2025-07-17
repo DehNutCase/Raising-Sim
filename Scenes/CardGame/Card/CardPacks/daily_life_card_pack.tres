@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=9 format=3 uid="uid://datwffindyqp3"]
+[gd_resource type="Resource" script_class="Deck" load_steps=10 format=3 uid="uid://datwffindyqp3"]
 
 [ext_resource type="Resource" uid="uid://b0qj8wubbege1" path="res://Scenes/CardGame/Characters/Mao/Cards/conjure_food.tres" id="1_ea5pa"]
 [ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="1_vnl65"]
@@ -7,8 +7,9 @@
 [ext_resource type="Resource" uid="uid://c5pcyn1v5xa64" path="res://Scenes/CardGame/Characters/Mao/Cards/conjure_cake.tres" id="3_mfnqv"]
 [ext_resource type="Resource" uid="uid://cosa1b5ntry0y" path="res://Scenes/CardGame/Characters/Mao/Cards/conjure_lunch.tres" id="4_15mkp"]
 [ext_resource type="Resource" uid="uid://dh85lbc3qmlrn" path="res://Scenes/CardGame/Characters/Mao/Cards/conjure_tea.tres" id="5_h0u7f"]
+[ext_resource type="Resource" uid="uid://b5yvab10jb22h" path="res://Scenes/CardGame/Characters/Mao/Cards/minor_cleaning.tres" id="8_35mug"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="12_8u1ip"]
 
 [resource]
 script = ExtResource("12_8u1ip")
-cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ea5pa"), ExtResource("1_ea5pa"), ExtResource("2_fro73"), ExtResource("2_fro73"), ExtResource("3_mfnqv"), ExtResource("4_15mkp"), ExtResource("5_h0u7f"), ExtResource("1_ea5pa"), ExtResource("2_fro73"), ExtResource("1_vnl65"), ExtResource("1_vnl65"), ExtResource("2_sxkh7"), ExtResource("2_sxkh7")])
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_ea5pa"), ExtResource("1_ea5pa"), ExtResource("2_fro73"), ExtResource("2_fro73"), ExtResource("3_mfnqv"), ExtResource("4_15mkp"), ExtResource("5_h0u7f"), ExtResource("1_ea5pa"), ExtResource("2_fro73"), ExtResource("1_vnl65"), ExtResource("1_vnl65"), ExtResource("2_sxkh7"), ExtResource("2_sxkh7"), ExtResource("8_35mug")])

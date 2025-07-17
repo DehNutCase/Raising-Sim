@@ -148,6 +148,16 @@ func check_defeat() -> void:
 		await get_tree().create_timer(1).timeout
 		Player.play_random_voice("failure")
 		
+#Currently race condition due to damage being dealt to player and winning duel at the same time, hence the .5s timer
+func win_duel() -> void:
+	await get_tree().create_timer(.5).timeout
+	await check_defeat()
+	if state != states.DEFEAT:
+		for enemy:CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
+			enemy.health = 0
+			enemy.queue_free()
+		check_victory()
+		
 func exit_combat() -> void:
 	Player.expedition_health = clampi(Player.card_game_player.health, 0 ,Player.card_game_player.health)
 	if state == states.VICTORY:

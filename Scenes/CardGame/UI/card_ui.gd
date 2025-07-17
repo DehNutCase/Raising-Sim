@@ -225,7 +225,8 @@ func _create_tooltip() -> String:
 						tooltip += "Heal [color=green]%d[/color] health points for all enemies." %this_amount
 					card.Target.EVERYONE:
 						tooltip += "Heal [color=green]%d[/color] health points for everyone." %this_amount
-				
+			card.Type.WIN_DUEL:
+				tooltip += "Win the duel."
 	return tooltip
 
 func _make_custom_tooltip(for_text):

@@ -1,7 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL, DISPEL}
+enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL, DISPEL, WIN_DUEL}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 
@@ -173,6 +173,9 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			apply_heal(targets, this_amount, user)
 		Type.DISPEL:
 			apply_dispel(targets, this_amount, user)
+		Type.WIN_DUEL:
+			#Only the player should have access to effects like this
+			apply_win_duel(targets, this_amount, user)
 		_:
 			printerr("Unmatched effect type for apply_effects")
 
@@ -234,3 +237,7 @@ func apply_dispel(targets: Array[Node], effect_amount, user) -> void:
 	for target in targets:
 		if target is CardGameEnemy or target is CardGamePlayer:
 			target.dispel_status(effect_amount)
+			
+func apply_win_duel(targets: Array[Node], effect_amount, user) -> void:
+	var tree := targets[0].get_tree()
+	tree.call_group("CardGameMainNode", "win_duel")

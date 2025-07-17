@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://b5yvab10jb22h"]
+
+[ext_resource type="Texture2D" uid="uid://45lu1fps5jnf" path="res://Art/Mori no oku no kakurezato/CardGame/bucket01_05.png" id="1_6lt3w"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_n8ou3"]
+[ext_resource type="AudioStream" uid="uid://dhexj5ph2eif6" path="res://SFX/Shapeforms/Arcane/Arcane Beacon.wav" id="3_vgr56"]
+
+[resource]
+script = ExtResource("2_n8ou3")
+id = "Minor Cleaning"
+type = 3
+target = 0
+cost = 2
+effect_amount = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 250
+impact_sound_effect = ExtResource("3_vgr56")
+second_target = 3
+second_type = 10
+second_effect_amount = 2
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+icon = ExtResource("1_6lt3w")

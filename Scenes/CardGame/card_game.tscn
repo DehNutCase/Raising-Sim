@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
-[ext_resource type="Resource" uid="uid://dn4l43w0o8gvp" path="res://Scenes/CardGame/Characters/Mao/Cards/blessing.tres" id="5_8r7ch"]
+[ext_resource type="Resource" uid="uid://c5uauj7w44r63" path="res://Scenes/CardGame/Characters/Mao/Cards/paint_the_world.tres" id="5_3o02g"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
 [ext_resource type="Resource" uid="uid://bxuttp3fs7rf1" path="res://Scenes/CardGame/Characters/Mao/Cards/light_barrier.tres" id="6_perpr"]
@@ -58,7 +58,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_8r7ch"), ExtResource("6_perpr")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_3o02g"), ExtResource("6_perpr")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]
