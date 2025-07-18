@@ -18,4 +18,5 @@ func update_label(text: String = button_label.text):
 		%Button.icon = load(task.icon)
 	
 func _on_job_button_pressed():
+	Player.play_ui_sound("bouncy_blop")
 	get_tree().call_group("Main", "course_button_click", course_name, lesson_name)

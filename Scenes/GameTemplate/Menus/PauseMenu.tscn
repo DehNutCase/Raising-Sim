@@ -63,18 +63,18 @@ theme_override_constants/separation = 16
 alignment = 1
 script = ExtResource("4_0i78o")
 
-[node name="ResumeButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="ResumeButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons" groups=["Button"]]
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Resume"
 
-[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="OptionsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 text = "Options"
 
-[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons"]
+[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/MenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
@@ -112,7 +112,7 @@ size_flags_vertical = 3
 layout_mode = 2
 alignment = 1
 
-[node name="BackButton" type="Button" parent="SubMenuContainer/VBoxContainer/HBoxContainer"]
+[node name="BackButton" type="Button" parent="SubMenuContainer/VBoxContainer/HBoxContainer" groups=["Button"]]
 custom_minimum_size = Vector2(62, 40)
 layout_mode = 2
 text = "Back"

@@ -13,4 +13,5 @@ func update_label(text: String):
 	button_label.text = text
 
 func _on_job_button_pressed():
+	Player.play_ui_sound("bouncy_blop")
 	get_tree().call_group("Main", "display_player_class_info", player_class_name)

@@ -15,6 +15,7 @@ enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
 price = 250
+start_sound_effect = ExtResource("3_vgr56")
 impact_sound_effect = ExtResource("3_vgr56")
 second_target = 3
 second_type = 10

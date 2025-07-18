@@ -477,6 +477,18 @@ var voice_lists = {
 	"failure": [voices["baka"], voices["disappointed"], voices["hate"], voices["oh no"], voices["sigh"], voices["sorry"], voices["sorry_polite"], voices["huh!?"],]
 }
 
+#SFX
+
+var sound_effects = {
+	"bubble": load("res://SFX/JDWasabi/Bubble 1.wav"),
+	"select": load("res://SFX/JDWasabi/Select 1.wav"),
+	"confirm": load("res://SFX/JDWasabi/Confirm 1.wav"),
+	"cancel": load("res://SFX/JDWasabi/Cancel 1.wav"),
+	"ping": load("res://SFX/Atelier Magicae/5_ping.wav"),
+	"blop": load("res://SFX/Kronbits/Retro Blop 22.wav"),
+	"cancel_blop": load("res://SFX/Kronbits/Retro Blop 07.wav"),
+	"bouncy_blop": load("res://SFX/Kronbits/Retro Blop StereoUP 09.wav")
+}
 func play_song(song:String) -> void:
 	song = song.to_lower()
 	SoundManager.play_music(songs[song])
@@ -498,3 +510,7 @@ func display_toast(message, gravity = "top", direction = "center"):
 		"gravity": gravity,                   # top or bottom
 		"direction": direction,               # left or center or right
 	})
+
+func play_ui_sound(sound_effect: String) -> void:
+	sound_effect = sound_effect.to_lower()
+	SoundManager.play_ui_sound(sound_effects[sound_effect])

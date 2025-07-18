@@ -200,7 +200,7 @@ layout_mode = 2
 size_flags_vertical = 4
 metadata/_edit_lock_ = true
 
-[node name="PauseMenuButton" type="TextureButton" parent="Ui/MarginContainer/HBoxContainer"]
+[node name="PauseMenuButton" type="TextureButton" parent="Ui/MarginContainer/HBoxContainer" groups=["Button"]]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -209,7 +209,7 @@ texture_pressed = ExtResource("11_8ubdb")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="VolumeButton" type="TextureButton" parent="Ui/MarginContainer/HBoxContainer" groups=["MuteButton"]]
+[node name="VolumeButton" type="TextureButton" parent="Ui/MarginContainer/HBoxContainer" groups=["Button", "MuteButton"]]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -664,7 +664,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("22_1jgxs")
 
-[node name="EnterTowerButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Tower"]
+[node name="EnterTowerButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Tower" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Enter Tower"
@@ -693,7 +693,7 @@ size_flags_vertical = 3
 theme = ExtResource("27_j6jf7")
 bbcode_enabled = true
 
-[node name="SelectClassButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements"]
+[node name="SelectClassButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements" groups=["Button"]]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -761,7 +761,7 @@ size_flags_vertical = 3
 theme = ExtResource("22_1jgxs")
 bbcode_enabled = true
 
-[node name="SelectMissionButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Story/DescriptionContainer/Description"]
+[node name="SelectMissionButton" type="Button" parent="Ui/MenuPanel/MarginContainer/Story/DescriptionContainer/Description" groups=["Button"]]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -799,7 +799,7 @@ size_flags_vertical = 3
 columns = 6
 script = ExtResource("44_3cuex")
 
-[node name="CloseButton" type="Button" parent="Ui/MenuPanel"]
+[node name="CloseButton" type="Button" parent="Ui/MenuPanel" groups=["Button"]]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -872,7 +872,7 @@ layout_mode = 2
 offset_right = 140.0
 offset_bottom = 700.0
 
-[node name="Stats" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Stats" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -880,7 +880,7 @@ texture_normal = ExtResource("45_34myw")
 texture_pressed = ExtResource("46_oupw1")
 stretch_mode = 3
 
-[node name="Quests" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Quests" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -888,7 +888,7 @@ texture_normal = ExtResource("55_36a5c")
 texture_pressed = ExtResource("56_n3yma")
 stretch_mode = 3
 
-[node name="Background" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Background" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -896,7 +896,7 @@ texture_normal = ExtResource("55_ibpv5")
 texture_pressed = ExtResource("56_dpatn")
 stretch_mode = 3
 
-[node name="Skills" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Skills" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -904,7 +904,7 @@ texture_normal = ExtResource("49_3mfmt")
 texture_pressed = ExtResource("50_0lhdw")
 stretch_mode = 3
 
-[node name="Walk" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Walk" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -912,7 +912,7 @@ texture_normal = ExtResource("51_bx1kg")
 texture_pressed = ExtResource("52_pgejv")
 stretch_mode = 3
 
-[node name="Tower" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Tower" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -920,7 +920,7 @@ texture_normal = ExtResource("53_u0am2")
 texture_pressed = ExtResource("54_d2kqu")
 stretch_mode = 3
 
-[node name="Class Change" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Class Change" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 visible = false
 layout_mode = 2
 texture_normal = ExtResource("55_ylipg")
@@ -950,7 +950,7 @@ layout_mode = 2
 offset_right = 140.0
 offset_bottom = 700.0
 
-[node name="Schedule" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Schedule" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -974,7 +974,7 @@ texture = ExtResource("58_27wwt")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Lessons" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Lessons" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -982,7 +982,7 @@ texture_normal = ExtResource("59_8jab2")
 texture_pressed = ExtResource("60_qmxeb")
 stretch_mode = 3
 
-[node name="Story" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Story" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -991,7 +991,7 @@ texture_normal = ExtResource("47_bd7pa")
 texture_pressed = ExtResource("48_cktde")
 stretch_mode = 3
 
-[node name="Inventory" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Inventory" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -999,7 +999,7 @@ texture_normal = ExtResource("61_0yijj")
 texture_pressed = ExtResource("62_7ii8w")
 stretch_mode = 3
 
-[node name="Shop" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Shop" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1007,7 +1007,7 @@ texture_normal = ExtResource("45_03wx0")
 texture_pressed = ExtResource("46_xbpvj")
 stretch_mode = 3
 
-[node name="Save" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Save" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1015,7 +1015,7 @@ texture_normal = ExtResource("59_chmyp")
 texture_pressed = ExtResource("60_l7j0c")
 stretch_mode = 3
 
-[node name="Wishlist" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer"]
+[node name="Wishlist" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["Button"]]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1050,7 +1050,7 @@ layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
 
-[node name="Spellbook" type="Button" parent="BottomMenuContainer/HBoxContainer"]
+[node name="Spellbook" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme = ExtResource("67_exeng")

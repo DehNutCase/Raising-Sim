@@ -14,6 +14,7 @@ func _ready():
 		#texture.tooltip_text = value
 	
 func _on_button_pressed():
+	Player.play_ui_sound("bouncy_blop")
 	get_tree().call_group("Main", "buy_item", item.get_prototype()._id, item.get_property("price"))
 
 func update_labels():

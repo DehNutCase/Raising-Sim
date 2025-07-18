@@ -50,5 +50,13 @@ label_settings = SubResource("LabelSettings_bcu1p")
 text = "~ Albion's Witch ~"
 label_settings = SubResource("LabelSettings_b2sl5")
 
-[node name="PlayButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="0"]
+[node name="PlayButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="0" groups=["Button"]]
 script = ExtResource("8_a4g3w")
+
+[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1" groups=["Button"]]
+
+[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2" groups=["Button"]]
+
+[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3" groups=["Button"]]
+
+[node name="BackButton" parent="FlowControlContainer/FlowControl" index="0" groups=["Button"]]

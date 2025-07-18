@@ -91,6 +91,11 @@ Source: [itch.io : 8-bit / 16-bit Sound Effects (x25) Pack](https://jdwasabi.itc
 Author: [Atelier Magicae](https://ateliermagicae.itch.io/)  
 Source: [itch.io : Fantasy UI Sound Effects](https://ateliermagicae.itch.io/fantasy-ui-sound-effects) 
 
+### Sound
+#### SFX
+Author: [Kronbits](https://kronbits.itch.io/)  
+Source: [itch.io : 200 Free SFX](https://kronbits.itch.io/freesfx) 
+
 ### Image
 #### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  

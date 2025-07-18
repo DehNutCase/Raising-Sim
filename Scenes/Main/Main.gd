@@ -143,18 +143,25 @@ func _ready():
 		pass
 	#TODO, end dev use section
 	get_tree().call_group("ButtonMenu", "update_buttons")
+	var buttons = get_tree().get_nodes_in_group("Button")
+	for button in buttons:
+		button.connect("pressed", _play_button_sound)
 	
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
+		var closed_something := false
 		if menu_panel.visible:
 			_on_close_button_pressed()
 			get_viewport().set_input_as_handled()
+			closed_something = true
 		for item_list in inventory_lists:
 			if item_list.visible:
 				item_list.hide()
 				get_viewport().set_input_as_handled()
-
+				closed_something = true
+		if closed_something:
+			Player.play_ui_sound("cancel_blop")
 #TODO, process day should now call the schedule and then play the end of day scene
 #(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
 #text like walk where you didn't meet someone)
@@ -587,6 +594,7 @@ func _on_action(button):
 					Dialogic.start(Player.active_mission.get('next'))
 				else:
 					#'combat' should be a path to the correct combat scene
+					await get_tree().create_timer(.01).timeout
 					enter_card_game(Player.active_mission.combat, false, true)
 			else:
 				if Player.unlocked_missions:
@@ -634,6 +642,7 @@ func display_toast(message, gravity = "bottom", direction = "center", icon = nul
 		"direction": direction,               # left or center or right
 		"icon": icon,
 	})
+	Player.play_ui_sound("bubble")
 	
 	"""
 		ToastParty.show({
@@ -889,6 +898,7 @@ func _on_enter_tower_button_pressed() -> void:
 			#TODO, remove all the double checking for whether player is in a mission or tower combat
 			#centralize checks
 			var encounter = Constants.tower_levels[Player.tower_level].encounter
+			await get_tree().create_timer(.01).timeout
 			enter_card_game(encounter, true, false)
 		else:
 			display_toast("No walks left!", "top")
@@ -1127,3 +1137,6 @@ func _on_game_over_dialog_canceled():
 func _on_game_over_dialog_confirmed():
 	Player.save_loaded = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
+
+func _play_button_sound() -> void:
+	Player.play_ui_sound("blop")

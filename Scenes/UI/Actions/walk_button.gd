@@ -22,4 +22,5 @@ func update_icon(icon: Texture2D):
 	%Button.icon = icon
 
 func _on_job_button_pressed():
+	Player.play_ui_sound("bouncy_blop")
 	get_tree().call_group("Main", "do_walk", walk_name)

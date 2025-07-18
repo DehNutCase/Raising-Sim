@@ -45,4 +45,5 @@ static func get_success_chance(action_type, action_name):
 	return 100.0 * adjusted_stats / task_total_stats - task["difficulty"] - Player.stats["stress"]
 	
 func _on_action_button_pressed():
+	Player.play_ui_sound("bouncy_blop")
 	get_tree().call_group("DailySchedule", "add_action", action_type, action_name)

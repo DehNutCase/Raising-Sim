@@ -4,7 +4,7 @@ extends CanvasLayer
 @export_file("*.tscn") var main_menu_scene : String
 
 var popup_open
-
+	
 func close_popup():
 	if popup_open != null:
 		popup_open.hide()
@@ -44,6 +44,9 @@ func _ready():
 	_setup_options()
 	_setup_main_menu()
 	InGameMenuController.scene_tree = get_tree()
+	var buttons = get_tree().get_nodes_in_group("Button")
+	for button in buttons:
+		button.connect("pressed", _play_button_sound)
 
 func _on_resume_button_pressed():
 	InGameMenuController.close_menu()
@@ -77,3 +80,6 @@ func _on_confirm_exit_confirmed():
 
 func _on_back_button_pressed():
 	close_options_menu()
+
+func _play_button_sound() -> void:
+	Player.play_ui_sound("blop")

@@ -94,6 +94,9 @@ func _ready():
 	if OS.has_feature("steam"):
 		Steam.steamInitEx()
 	Player.play_song("spring")
+	var buttons = get_tree().get_nodes_in_group("Button")
+	for button in buttons:
+		button.connect("pressed", _play_button_sound)
 
 func _on_play_button_pressed():
 	play_game()
@@ -114,3 +117,6 @@ func _on_credits_end_reached():
 
 func _on_back_button_pressed():
 	_close_sub_menu()
+	
+func _play_button_sound() -> void:
+	Player.play_ui_sound("blop")
