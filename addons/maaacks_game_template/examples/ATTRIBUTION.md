@@ -96,6 +96,11 @@ Source: [itch.io : Fantasy UI Sound Effects](https://ateliermagicae.itch.io/fant
 Author: [Kronbits](https://kronbits.itch.io/)  
 Source: [itch.io : 200 Free SFX](https://kronbits.itch.io/freesfx) 
 
+### Sound
+#### SFX
+Author: [JDSherbert](https://jdsherbert.itch.io/)  
+Source: [itch.io : Tabletop Games SFX Pack](https://jdsherbert.itch.io/tabletop-games-sfx-pack) 
+
 ### Image
 #### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  

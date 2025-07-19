@@ -29,10 +29,12 @@ func enter_state(state:States) -> void:
 			pivot_offset = Vector2.ZERO
 			current_state = States.BASE
 			collision.disabled = true
+			Player.play_ui_sound("discard_card")
 		States.DRAGGING:
 			collision.disabled = false
 			reparent(get_tree().get_first_node_in_group("CardGameMainNode"))
 			current_state = States.DRAGGING
+			Player.play_ui_sound("draw_card")
 		States.RELEASED:
 			collision.disabled = false
 			current_state = States.RELEASED

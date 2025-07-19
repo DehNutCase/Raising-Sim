@@ -97,6 +97,7 @@ func add_card(card: CardResource) -> void:
 	if !card:
 		return
 	#Discard card if too many is drawn
+	Player.play_ui_sound("draw_card")
 	var effective_hand_size = card_game_player.max_hand_size
 	if Player.card_game_player.active_status.get("Agility"):
 		effective_hand_size = effective_hand_size + Player.card_game_player.active_status.get("Agility").stacks
