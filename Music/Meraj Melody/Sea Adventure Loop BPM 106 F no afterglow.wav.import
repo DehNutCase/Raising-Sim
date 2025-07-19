@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ck4qwt46o072x"
+path="res://.godot/imported/Sea Adventure Loop BPM 106 F no afterglow.wav-a16cdafe61da387311792e0b8cbca35f.sample"
+
+[deps]
+
+source_file="res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"
+dest_files=["res://.godot/imported/Sea Adventure Loop BPM 106 F no afterglow.wav-a16cdafe61da387311792e0b8cbca35f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

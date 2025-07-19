@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbu7svdwn6fm2"
+path="res://.godot/imported/Purple Black Loop.wav-feb7b76c6e43613ccbb618c59b056885.sample"
+
+[deps]
+
+source_file="res://Music/Tim Beek/Purple Black Loop.wav"
+dest_files=["res://.godot/imported/Purple Black Loop.wav-feb7b76c6e43613ccbb618c59b056885.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

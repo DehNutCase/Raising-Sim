@@ -414,23 +414,20 @@ func shake(target: Node, strength: float, duration: float = 0.2) -> void:
 	await tween.finished
 	
 ###Music and Audio section
-var spring_song = preload("res://Music/Last Adventure 87 no afterglow.wav")
-var summer_song = preload("res://Music/Chiptune Dream Loop.wav")
-var autumn_song = preload("res://Music/New Road Loop.wav")
-var winter_song = preload("res://Music/Walk Alone 80 no afterglow.wav")
-var battle_song = preload("res://Music/8Bit DNA Loop.wav")
-var no_exit_song = preload("res://Music/No Exit 106 no afterglow.wav")
-
-var cheerful_song = preload("res://Music/Tim Beek/Sun Shine Loop.wav")
-
 var songs = {
-	"spring": spring_song,
-	"summer": summer_song,
-	"autumn": autumn_song,
-	"winter": winter_song,
-	"battle": battle_song,
-	"no_exit": no_exit_song, #Currently not used
-	"cheerful": cheerful_song,
+	"spring": load("res://Music/Meraj Melody/Last Adventure 87 no afterglow.wav"),
+	"summer": load("res://Music/Tim Beek/Chiptune Dream Loop.wav"),
+	"autumn": load("res://Music/Tim Beek/New Road Loop.wav"),
+	"winter": load("res://Music/Meraj Melody/Walk Alone 80 no afterglow.wav"),
+	"battle": load("res://Music/Tim Beek/8Bit DNA Loop.wav"),
+	"cheerful": load("res://Music/Tim Beek/Sun Shine Loop.wav"),
+	"rising_hope": load("res://Music/Tim Beek/Quantum Loop.wav"),
+	"upcoming_battle": load("res://Music/Tim Beek/Purple Black Loop.wav"),
+	"unhappy": load("res://Music/Meraj Melody/Arena Light 106 no afterglow.wav"),
+	"sad": load("res://Music/Meraj Melody/No Exit 106 no afterglow.wav"),
+	"new_dawn": load("res://Music/Meraj Melody/New Dawn 87 no afterglow.wav"),
+	"sea_adventure": load("res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"),
+	"sleep": load("res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"),
 }
 
 var voices = {

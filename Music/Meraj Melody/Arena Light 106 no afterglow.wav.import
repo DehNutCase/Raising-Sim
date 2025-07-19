@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwum0ayyc6sr8"
+path="res://.godot/imported/Arena Light 106 no afterglow.wav-8140b5a2b8843325a9aa092f3bc20e9a.sample"
+
+[deps]
+
+source_file="res://Music/Meraj Melody/Arena Light 106 no afterglow.wav"
+dest_files=["res://.godot/imported/Arena Light 106 no afterglow.wav-8140b5a2b8843325a9aa092f3bc20e9a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

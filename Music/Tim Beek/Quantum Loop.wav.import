@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bw8pwmwe6bish"
+path="res://.godot/imported/Quantum Loop.wav-7a0998eacfd820f7c1c98f8acf925560.sample"
+
+[deps]
+
+source_file="res://Music/Tim Beek/Quantum Loop.wav"
+dest_files=["res://.godot/imported/Quantum Loop.wav-7a0998eacfd820f7c1c98f8acf925560.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
