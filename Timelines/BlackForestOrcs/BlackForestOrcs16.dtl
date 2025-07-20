@@ -1,6 +1,7 @@
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
 join Orc (Normal) 3 [ mirrored="true"]
 join Oliver (Normal) 1 [ z_index="2"]
+[signal arg="{"music": "battle"}"]
 [history action="clear"]
 update Mao (Excited)
 Mao_Portrait (Excited): Oh wow! We made it back before Oliver's first fight finished!
@@ -78,6 +79,7 @@ update Mao (Normal)
 Mao_Portrait (Normal): I mean. Oliver, good job!
 Chief_portrait (Normal): Bwahaha! That's quite enough.
 Chief_portrait (Normal): This winner of this match is Orc Orcsson!
+[signal arg="{"music": "cheerful"}"]
 update Oliver (Normal)
 update Orc (Normal)
 Mao_Portrait (Normal): (Wait, his actual name is 'Orc'?)

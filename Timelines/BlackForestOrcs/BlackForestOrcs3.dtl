@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg003a.jpg" fade="0.0"]
 join Mao (Normal) 2
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Surprised)
 Mao_Portrait (Surprised): Hey, this looks just like the capital!

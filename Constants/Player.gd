@@ -423,8 +423,8 @@ var songs = {
 	"cheerful": load("res://Music/Tim Beek/Sun Shine Loop.wav"),
 	"rising_hope": load("res://Music/Tim Beek/Quantum Loop.wav"),
 	"upcoming_battle": load("res://Music/Tim Beek/Purple Black Loop.wav"),
-	"unhappy": load("res://Music/Meraj Melody/Arena Light 106 no afterglow.wav"),
-	"sad": load("res://Music/Meraj Melody/No Exit 106 no afterglow.wav"),
+	"sad": load("res://Music/Meraj Melody/Arena Light 106 no afterglow.wav"),
+	"slightly_sad": load("res://Music/Meraj Melody/No Exit 106 no afterglow.wav"),
 	"new_dawn": load("res://Music/Meraj Melody/New Dawn 87 no afterglow.wav"),
 	"sea_adventure": load("res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"),
 	"sleep": load("res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"),
@@ -513,3 +513,7 @@ func display_toast(message, gravity = "top", direction = "center"):
 func play_ui_sound(sound_effect: String) -> void:
 	sound_effect = sound_effect.to_lower()
 	SoundManager.play_ui_sound(sound_effects[sound_effect])
+
+func play_sound_effect(sound_effect: String) -> void:
+	sound_effect = sound_effect.to_lower()
+	SoundManager.play_sound(sound_effects[sound_effect])

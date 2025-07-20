@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg007d.bmp" fade="0.0"]
 join Mao (Normal) 1
+[signal arg="{"music": "sleep"}"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)

@@ -1,6 +1,7 @@
 [background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0" transition="Simple Fade"]
 join Mao (Normal) 3
 join Morgan (Silhouette) 1
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 Morgan_Portrait (Silhouette): You're here.
 update Mao (Excited) [animation="Tada"]
@@ -33,6 +34,7 @@ update Mao (Surprised)
 Mao_Portrait (Surprised): No, I mean, don't you have a reason? Like does the Black Forest have a bunch of minerals or maybe the trees are really valuable?
 Morgan_Portrait (Silhouette): The orcs would know better than we do in that respect. And any extraction would be hampered by the previously mentioned issues.
 Morgan_Portrait (Silhouette): You can consider that a reason to try to obtain the orcs as well, if you'd like.
+[signal arg="{"music": "sad"}"]
 update Mao (Sad)
 Mao_Portrait (Sad): What if they don't want to join us and don't want to leave?
 Morgan_Portrait (Silhouette): Considering the relative bargaining positions between us and them, it's not our place to make concessions.

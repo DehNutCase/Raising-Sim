@@ -2,6 +2,7 @@
 join Mao (Normal) 1
 join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
 join Orc (Normal) 4 [ mirrored="true"]
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Normal)
 Mao_Portrait (Normal): Good morning!
@@ -65,6 +66,7 @@ update Mao (Surprised)
 Mao_Portrait (Surprised): What?
 [update_position position="2" vector="Vector2(-70, -350)" time="0.0"]
 join Hero_m_tiny (Frown) 2 [animation="Slide In Down" length="1"]
+[signal arg="{"music": "battle"}"]
 Hero_m_portrait (Frown): Halt, evildoers!
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]

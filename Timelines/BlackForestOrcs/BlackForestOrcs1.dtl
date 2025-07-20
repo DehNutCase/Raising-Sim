@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 2
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Normal) [animation="Shake X" length="4"]
 update Mao (Normal) [animation="Tada" length="4" repeat="0"]

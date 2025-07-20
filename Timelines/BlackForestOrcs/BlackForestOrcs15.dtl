@@ -1,9 +1,10 @@
 [background arg="res://Art/Background/Background material shop/bg006a.jpg" fade="0.0"]
 join Mao (Normal) 2
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao [animation="Tada" length="2" repeat="2"]
 update Mao (Excited)
-Mao_Portrait (Excited): Rice look! Rice look! I'm seeded! I only have one fight before I win the Vote!
+Mao_Portrait (Excited): Rice look! Rice look! I'm seeded! I only have one fight!
 Rice_Portrait (Normal): (Two, counting the chief who won last year. Perhaps she doesn't realize?)
 Rice_Portrait (Normal): Not exactly. You would have gotten a similar bracket at level 1 as well.
 update Mao (Sad)
@@ -76,6 +77,7 @@ leave --All-- [animation="Instant In Or Out"]
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
 join Orc (Normal) 3 [ mirrored="true"]
 join Oliver (Normal) 1 [ z_index="2"]
+[signal arg="{"music": "battle"}"]
 [history action="resume"]
 update Orc (Normal) [animation="Shake X" length="1"]
 update Orc (Normal) 2 [ move_time="0.5"]
@@ -134,6 +136,7 @@ update Mao (Normal)
 Mao_Portrait (Normal): Okie dokie.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+[signal arg="{"music": "cheerful"}"]
 leave --All-- [animation="Instant In Or Out"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="0.0"]
@@ -152,7 +155,7 @@ update Hero_f (Annoyed)
 Hero_f_portrait (Annoyed): And what's a pipsqueak like you supposed to do if they were, exactly? Give them some extra people to ransom?
 update Hero_m (Angry)
 Hero_m_portrait (Angry): I'd fight! And win!
-Rice_Portrait (Normal): (Oh, that's interesting. They somehow managed to bring 'Wisdom.' She'll be hard for Mao to deal with at her current level.)
+Rice_Portrait (Normal): (Oh, that's interesting. They somehow managed to bring 'Wisdom'. She'll be hard for Mao to deal with at her current level.)
 Mao_Portrait (Angry): (Psst. So what do you think we should do, Rice? You said you wanted to investigate something, right? I want to beat him up.)
 update Hero_f [animation="Tada" length="1"]
 Rice_Portrait (Normal): (I've seen enough at this point. 'Wisdom' isn't the kind of card a small backwater kingdom can play.)
@@ -184,7 +187,7 @@ Mao_Portrait (Angry): I have a big stick and I'm not afraid to use it.
 update Hero_f (Annoyed)
 Hero_f_portrait (Annoyed): (This was such a god damned farce.)
 update Hero_f (Normal)
-Hero_f_portrait (Normal): I'm very sorry, young lady. Hey, you apologize too, 'Lance.'
+Hero_f_portrait (Normal): I'm very sorry, young lady. Hey, you apologize too, 'Lance'.
 update Hero_m (Angry)
 Hero_m_portrait (Angry): Maybe you're also in on it!
 update Hero_f (Annoyed)
@@ -202,18 +205,18 @@ update Hero_m (Shocked)
 Hero_m_portrait (Shocked): Gah!
 update Mao (Smile)
 Mao_Portrait (Smile): (Teehee. It's great seeing Rice do that to someone else for once.)
-Hero_f_portrait (Surprised): 'Justice!'
+Hero_f_portrait (Surprised): 'Justice'!
 update Mao (Excited)
 Hero_f_portrait (Surprised): (I don't have enough lives for this kind of bullshit!)
 Rice_Portrait (Normal): Rice Glassfield.
 update Hero_f (Angry)
-Hero_f_portrait (Angry): Yes, Miss Glassfield, Ma'am! 'Lance!' Apologize! Now!
+Hero_f_portrait (Angry): Yes, Miss Glassfield, Ma'am! 'Lance'! Apologize! Now!
 update Mao (Normal)
 update Hero_f [animation="Shake X" length="1"]
 update Hero_m (Frown)
 Hero_m_portrait (Frown): No, just wait a minute. How is two little girls with a bunch of orcs any better than before?
 update Hero_f [animation="Shake X" length="1"]
-Hero_f_portrait (Angry): (Aaaaaaaaaaaaaaaaah! Going to get fucking killed because of this idiot! Aaaaaaaaaaah!)
+Hero_f_portrait (Angry): (Aaaaaaaaaaaaaaaaah! Going to get freaking killed because of this idiot! Aaaaaaaaaaah!)
 update Hero_f [animation="Shake X" length="1"]
 update Hero_m (Frown)
 Hero_f_portrait (Angry): Apologize! Now!

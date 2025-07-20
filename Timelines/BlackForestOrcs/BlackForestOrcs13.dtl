@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg019a.jpg" fade="0.0"]
 join Mao (Normal) 2
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao [animation="Shake Y" length="2" repeat="2"]
 update Mao (Normal)
@@ -9,7 +10,7 @@ Mao_Portrait (Normal): I don't know why, but I've been feeling a bit rusty latel
 Rice_Portrait (Normal): Your diet of ninety-percent Dumplings might have something to do with it.
 update Mao (Angry)
 Mao_Portrait (Angry): Hey! Are you calling me fat?
-Rice_Portrait (Normal): You said that, not me. Expect a lecture from her majesty later.
+Rice_Portrait (Normal): Not directly. Expect a lecture from her majesty later.
 update Mao (Sad)
 Mao_Portrait (Sad): Aww...
 update Mao (Normal)

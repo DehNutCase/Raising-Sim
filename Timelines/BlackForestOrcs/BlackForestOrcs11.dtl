@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg006a.jpg" fade="0.0"]
 join Mao (Normal) 2
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Normal)
 Mao_Portrait (Normal): We're not too early, right? I hope I'm not bothering anyone.
@@ -92,6 +93,7 @@ update Oliver (Cry) 3 [ move_time="0.5"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Sad) [animation="Bounce"]
 update Oliver (Sad) 4 [ move_time="0.5"]
+[signal arg="{"music": "sad"}"]
 Oliver_Portrait (Sad): Oliver just lost a fight with food. Oliver stands corrected about how deep Oliver can sink.
 Mao_Portrait (Angry): Didn't you guys agree to help?
 Dumpling_portrait (f_candle): Juu? Juu!

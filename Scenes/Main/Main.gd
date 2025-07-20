@@ -742,8 +742,15 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "skill" in dialogic_signal:
 		if (!Player.skill_inventory.get_item_with_prototype_id(dialogic_signal.skill)):
 			Player.skill_inventory.create_and_add_item(dialogic_signal.skill)
+	#Sound section
 	if "music" in dialogic_signal:
 		Player.play_song(dialogic_signal.music)
+	if "voice" in dialogic_signal:
+		Player.play_voice(dialogic_signal.voice)
+	if "sound_effect" in dialogic_signal:
+		Player.play_sound_effect(dialogic_signal.sound_effect)
+	if "ui_sound" in dialogic_signal:
+		Player.play_ui_sound(dialogic_signal.ui_sound)
 	if "mission" in dialogic_signal:
 		Player.active_mission = dialogic_signal.mission
 		if Player.active_mission.get('combat'):
@@ -793,7 +800,6 @@ func _on_reward_signal(dialogic_signal) -> void:
 		current_state = states.GAME_OVER
 	
 func _on_timeline_started() -> void:
-	Player.play_song("cheerful")
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()
 	dialogic_viewport_container.show()

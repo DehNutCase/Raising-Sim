@@ -1,6 +1,7 @@
 [background arg="res://Art/Background/Background material shop/bg021a.jpg" fade="0.0"]
 join Mao (Normal) 2
 join Oliver (Normal) 4 [ z_index="1" mirrored="true"]
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Teehee.
@@ -58,6 +59,7 @@ update Oliver (Angry) 4 [ move_time="0.5"]
 update Oliver (Cry)
 Mao_Portrait (Sad): Oliver?
 Oliver_Portrait (Cry): Oliver isn't running! You're running!
+[signal arg="{"music": "winter"}"]
 leave Oliver [animation="Slide Out Right" length="1"]
 Mao_Portrait (Sad): I think we should leave him alone for a bit. But isn't the Black Forest kind of dangerous?
 Rice_Portrait (Normal): Ordinarily speaking, not for him. Oliver lives here, after all, he would know better than we would even when he's like this.

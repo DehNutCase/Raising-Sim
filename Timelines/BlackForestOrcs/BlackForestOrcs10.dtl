@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg019f.jpg" fade="0.0"]
 join Mao (Normal) 1
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Smile)
 Mao_Portrait (Smile): Thanks for calling her majesty so we can camp out.

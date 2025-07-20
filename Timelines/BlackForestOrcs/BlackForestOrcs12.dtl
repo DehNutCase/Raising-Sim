@@ -1,5 +1,6 @@
 [background arg="res://Art/Background/Background material shop/bg019f.jpg" fade="0.0"]
 join Mao (Normal) 1
+[signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Normal)
 Mao_Portrait (Normal): So what do you think I should do about Oliver? We only have another day before the Vote, right?
@@ -9,7 +10,7 @@ Rice_Portrait (Normal): Unless they ask for help themselves, there's no need to 
 Rice_Portrait (Normal): In other words, what you should do is trust him.
 Mao_Portrait (Normal): Oh.
 Mao_Portrait (Normal): What about me, then? Should I do some special training for the Vote?
-Rice_Portrait (Normal): Try not to break anything when you fight. If you think you need speical training for that, go ahead.
+Rice_Portrait (Normal): Try not to break anything. If you think you need speical training for that, go ahead.
 update Mao (Angry)
 Mao_Portrait (Angry): I'm not going to go on a rampage, jeez!
 Rice_Portrait (Normal): That remains to be seen.
