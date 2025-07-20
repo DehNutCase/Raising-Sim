@@ -487,6 +487,8 @@ var sound_effects = {
 	"bouncy_blop": load("res://SFX/Kronbits/Retro Blop StereoUP 09.wav"),
 	"draw_card": load("res://SFX/JDSherbert/JDSherbert - Tabletop Games SFX Pack - Paper Flip - 1.wav"),
 	"discard_card": load("res://SFX/JDSherbert/JDSherbert - Tabletop Games SFX Pack - Deck Deal - 2.wav"),
+	"door": load("res://SFX/Tom Music/Doors Gates and Chests/Door Close 1.wav"),
+	"footsteps": load("res://SFX/Tom Music/Footsteps/Edited/Footsteps.wav"),
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()
