@@ -13,6 +13,7 @@ Oliver_Portrait (Happy): Oliver is pleased by your awe. Now that you know your p
 update Mao (Normal)
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="2.0" transition="Push Left"]
 join Chief (Normal) 4 [animation="Slide In Right" length="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.5" hide_text="false"]
 update Oliver (Normal)
 Oliver_Portrait (Normal): Pops, pops! Weak human girls are here to pay tribute!

@@ -12,6 +12,7 @@ update Mao (Normal)
 Mao_Portrait (Normal): Everything went okie dokie, Ma'am!
 Morgan_Portrait (Silhouette): Fufufu. Yes, good job. Why don't you go share the souvenirs with Hiyori?
 leave Mao [animation="Slide Out Right" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): Yes, Ma'am!
 Rice_Portrait (Normal): About the Lance Hero.
 Morgan_Portrait (Silhouette): They're part of the Blue Dragon Association, yes. I've been monitoring the situation.
@@ -36,7 +37,7 @@ Morgan_Portrait (Silhouette): The Association was most likely trying to make a H
 Morgan_Portrait (Silhouette): It's quite possible the entire village was supposed to be wiped out. But, honestly, killing his entire family twice seems a little overboard.
 Rice_Portrait (Normal): This 'isn't a problem'?
 Morgan_Portrait (Silhouette): Not for us. And, now that the orcs joined us, not for them either.
-Morgan_Portrait (Silhouette): In the first place, the Association made a fundamental misunderstanding about the dichotomy of quality and quantity.
+Morgan_Portrait (Silhouette): In the first place, the Association made a fundamental misunderstanding about what it takes to be strong.
 Morgan_Portrait (Silhouette): Even if they managed to pile up 'coincidence' after 'coincidence' to make an invincible hero, Oliver would still get manhandled by one of our Magic Officer trainees.
 Morgan_Portrait (Silhouette): It's a little similar to the olden days of magical research. Reclusive wizards everywhere thinking that somehow, someway, their individual investigations could outcompete the systematic efforts of a nation-state.
 Rice_Portrait (Normal): I believe there are quite a few of those hermits left even now.
@@ -44,13 +45,14 @@ Morgan_Portrait (Silhouette): Sure. And if they ever stepped out of their little
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 2
 [history action="resume"]
 update Mao (Normal)
 Mao_Portrait (Normal): Come to think of it. 'Lance' and 'Wisdom' meant they were the Hero of the Lance and the Hero of Wisdom, right?
-Rice_Portrait (Normal): Correct. Although 'Lance' would usually be called the Lance Hero instead.
+Rice_Portrait (Normal): Correct. Although 'Lance' would usually be called the Lance Hero rather than the Hero of the Lance.
 update Mao (Excited)
 Mao_Portrait (Excited): Doesn't that mean you're the Hero of Justice?
 update Mao [animation="Tada" length="1"]

@@ -9,6 +9,7 @@ update Mao (Normal)
 Mao_Portrait (Normal): Were they so rich that even cities in the middle of nowhere got this huge?
 Rice_Portrait (Normal): Not exactly. The empire was certainly rich, but this was one of its central provinces until just before the end.
 join Drake 4 [animation="Slide In Right" length="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Drake_Portrait (Frown): Unidentified persons, halt!
 Rice_Portrait (Normal): It would be better if I handled this.
 Mao_Portrait (Normal): Sure! (He said unidentified 'persons,' does that mean he can see Rice when she's like this?)
@@ -34,6 +35,7 @@ update Mao (Normal)
 update Drake (Frown)
 Drake_Portrait (Frown): If you'll excuse me, I need to return to the control room.
 leave Drake [animation="Slide Out Right" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao (Surprised)
 Mao_Portrait (Surprised): Huh. He just left. Wasn't he on patrol or something?
 Rice_Portrait (Normal): That would be why he's going back to the control room. The only reason he came out here was because our teleport showed up on the scanners.

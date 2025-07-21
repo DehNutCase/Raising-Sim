@@ -7,14 +7,18 @@ update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): Teehee.
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
 update Mao (Excited)
 Mao_Portrait (Excited): You're already dead!
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
 update Mao [animation="Tada" length="1" repeat="2"]
@@ -29,7 +33,9 @@ Mao_Portrait (Normal): Do you want to fight a Dumpling instead?
 Oliver_Portrait (Angry): Furious Oliver doesn't play with food!
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 4 [ move_time="0.5"]
 Mao_Portrait (Normal): I lost to Dumplings a lot, you know?
@@ -43,7 +49,9 @@ update Mao (Excited)
 Mao_Portrait (Excited): Then meteors!
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Angry) [animation="Bounce"]
 update Oliver (Angry) 4 [ move_time="0.5"]
 update Mao (Normal)
@@ -53,7 +61,9 @@ Oliver_Portrait (Angry): Mighty Oliver doesn't need help from weak human girls!
 update Mao (Sad)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Angry) [animation="Bounce"]
 update Oliver (Angry) 4 [ move_time="0.5"]
 update Oliver (Cry)
@@ -61,6 +71,7 @@ Mao_Portrait (Sad): Oliver?
 Oliver_Portrait (Cry): Oliver isn't running! You're running!
 [signal arg="{"music": "winter"}"]
 leave Oliver [animation="Slide Out Right" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Sad): I think we should leave him alone for a bit. But isn't the Black Forest kind of dangerous?
 Rice_Portrait (Normal): Ordinarily speaking, not for him. Oliver lives here, after all, he would know better than we would even when he's like this.
 Rice_Portrait (Normal): Ordinarily speaking.
@@ -71,6 +82,7 @@ Rice_Portrait (Normal): Well, you can sleep on that question for now. I do think
 update Mao (Sad)
 Mao_Portrait (Sad): Oliver!
 [background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="2.0" transition="Push Left"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Sad): How is he so fast? I'm way faster but I still can't catch up.
 Rice_Portrait (Normal): You are indeed faster. In a straight line.
 Rice_Portrait (Normal): That wasn't a suggestion to run through trees, by the way. There's no rush to catch up.
@@ -78,17 +90,21 @@ update Mao (Excited)
 Mao_Portrait (Excited): Teehee. Can you film me doing that sometime?
 Rice_Portrait (Normal): Treasure the environment, Mao.
 [background arg="res://Art/Background/Background material shop/bg017a.jpg" fade="2.0" transition="Push Left"]
+[signal arg="{"sound_effect": "footsteps"}"]
 join Oliver (Sad) 4 [animation="Slide In Right" length="2"]
 update Mao (Normal)
 Mao_Portrait (Normal): Whee!
 update Mao (Excited)
 Mao_Portrait (Excited): Roads! I can catch up!
 update Mao 4 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao [animation="Shake Y" length="1"]
 [wait time="1.1" hide_text="false"]
 update Mao 2 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Excited): Tag, you're it!
 update Mao 1 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Excited): Teehee.
 update Oliver [ mirrored="true"]
 update Oliver (Angry)
@@ -97,14 +113,18 @@ Rice_Portrait (Normal): (I'm surprised that worked.)
 update Mao (Sad)
 Mao_Portrait (Sad): Oh, right. I'm bad with trees.
 update Oliver 3 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao (Normal)
 Mao_Portrait (Normal): Oh well.
 update Oliver 2 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): Teehee.
 update Oliver 1 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Oliver [animation="Shake Y" length="1"]
 [wait time="1.1" hide_text="false"]
 update Oliver 3 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): Guess I should've kept running on the road.
 update Oliver (Sad)
 Oliver_Portrait (Sad): Oliver knows.
@@ -119,6 +139,7 @@ Oliver_Portrait (Sad): Albion girl doesn't need to lie to make Oliver feel bette
 Oliver_Portrait (Sad): Oliver will go home now. Albion girl doesn't need to worry about Oliver, Oliver will stay home where it's safe.
 update Oliver [ mirrored="false"]
 leave Oliver [animation="Slide Out Right" length="4"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Sad): I... didn't mean to.
 Mao_Portrait (Sad): I don't get it. Oliver really is strong, so why's he acting like this?
 Rice_Portrait (Normal): Do you think Oliver had been looking forward to joining the Vote?

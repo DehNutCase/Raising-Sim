@@ -19,6 +19,7 @@ Oliver_Portrait (Sad): Oliver has reason to believe that Albion girls' definitio
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017c.jpg" fade="0.0"]
 join Mao (Normal) 3
@@ -33,11 +34,12 @@ Rice_Portrait (Normal): I doubt Oliver will be able to stomach much at this poin
 Rice_Portrait (Normal): We'll be going back to the campsite. You may join us if you wish, it would be less walking for you.
 Oliver_Portrait (Drool): Oliver will do that, it sounds less painful.
 [background arg="res://Art/Background/Background material shop/bg019f.jpg" fade="2.0" transition="Push Left"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao 4 [ move_time="1"]
 update Oliver 1 [ move_time="1"]
 update Mao (Smile)
 Mao_Portrait (Smile): Camping party!
-Mao_Portrait (Smile): I'd love to toast some Dumplings right now, but I learned the hard way that Dumplings don't agree with your stomach after heavy exercise.
+Mao_Portrait (Smile): I'd love to toast some Dumplings right now, but I learned the hard way that Dumplings don't agree with your stomach after working out.
 update Mao (Excited)
 Mao_Portrait (Excited): Ooh! Sandwiches this time?
 update Oliver (Drool)

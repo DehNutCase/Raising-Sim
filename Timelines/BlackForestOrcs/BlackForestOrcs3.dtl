@@ -42,6 +42,7 @@ Mao_Portrait (Normal): Let's go find her.
 [history]
 [background arg="res://Art/Background/Background material shop/bg004a.jpg" fade="2.0" transition="Push Down"]
 leave Mao [animation="Fade Out Down"]
+[signal arg="{"sound_effect": "footsteps"}"]
 join Elizabeth (Frown) 3 [animation="Fade In Up" mirrored="true"]
 join Oliver (Angry) 1 [animation="Fade In Up"]
 [wait time="2.0" hide_text="false"]
@@ -50,14 +51,18 @@ Mao_Portrait (Normal): A fight?
 update Elizabeth (Frown)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Mao_Portrait (Normal): Hey, isn't that orc a little small? I thought orcs were supposed to big and green and super muscular.
 update Elizabeth (Sigh)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Rice_Portrait (Normal): That's because he's a goblin.
@@ -71,7 +76,9 @@ Mao_Portrait (Normal): Like how a rice ball Dumpling evolves into a curry Dumpli
 update Elizabeth (Frown)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Rice_Portrait (Normal): That's not how any of that works.
@@ -91,14 +98,18 @@ update Elizabeth (Sigh)
 update Oliver (Angry) [animation="Shake X" length="1"]
 update Oliver (Angry) 2 [ move_time="0.5"]
 update Mao (Normal)
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Cry) [animation="Bounce"]
 update Oliver (Cry) 1 [ move_time="0.5"]
 Oliver_Portrait (Cry): Oliver isn't running! You're running!
 leave Oliver [animation="Slide Out Left" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Elizabeth (Frown)
 Elizabeth_Portrait (Frown): I hope he stays out of trouble.
 join Mao 1 [animation="Slide In Left" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao (Normal)
 Mao_Portrait (Normal): Hello!
 Elizabeth_Portrait (Frown): Yes. I believe the two of you were looking for me?

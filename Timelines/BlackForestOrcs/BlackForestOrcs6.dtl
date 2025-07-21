@@ -33,12 +33,14 @@ update Orc (Normal)
 Orc_Portrait (Normal): It should take another hour or so to finish packing everything into the wagon.
 update Orc [ mirrored="false"]
 leave Orc [animation="Slide Out Right" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Orc_Portrait (Normal): I should go help with that. Bwahaha.
 update Mao (Normal)
 Mao_Portrait (Normal): Want to play paintball?
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg026a.jpg" fade="0.0"]
 join Mao (Normal) 1
@@ -66,6 +68,7 @@ update Mao (Surprised)
 Mao_Portrait (Surprised): What?
 [update_position position="2" vector="Vector2(-70, -350)" time="0.0"]
 join Hero_m_tiny (Frown) 2 [animation="Slide In Down" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [signal arg="{"music": "battle"}"]
 Hero_m_portrait (Frown): Halt, evildoers!
 update Mao (Normal)

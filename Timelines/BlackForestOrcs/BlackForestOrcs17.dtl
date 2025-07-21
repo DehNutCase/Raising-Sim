@@ -8,6 +8,7 @@ Mao_Portrait (Excited): We met at last, my nemesis.
 update Mao (Normal)
 Orc_Portrait (Normal): Bwahaha! Good job, young lady. This loser will take his leave now.
 update Orc [ mirrored="false"]
+[signal arg="{"sound_effect": "footsteps"}"]
 leave Orc [animation="Slide Out Right" length="2"]
 Rice_Portrait (Normal): (Are you sure this is fine? Holding back like that.)
 update Mao (Smile)
@@ -16,16 +17,19 @@ Orc_Portrait (Smile): (Ah, are you worried about my warrior's honor? If it makes
 Orc_Portrait (Normal): Bwahaha!
 update Mao (Excited)
 update Mao [animation="Shake Y" length="2"]
+[signal arg="{"sound_effect": "jump"}"]
 Orc_Portrait (Normal): (And I didn't hold back all that much. The young lady is quite strong.)
 Rice_Portrait (Normal): (You didn't even use your second life bar.)
 update Mao (Normal)
 update Mao [animation="Bounce" length="2"]
+[signal arg="{"sound_effect": "jump"}"]
 Orc_Portrait (Normal): (Neither did the young lady.)
 Rice_Portrait (Normal): (That's a bit different. You earned yours, hers comes from being a citizen of Albion.)
 update Mao [animation="Shake X" length="2"]
 Orc_Portrait (Normal): (So?)
 Rice_Portrait (Normal): (So she ends up unconsious before it activates. But I see your point.)
 join Chief (Normal) 3 [animation="Slide In Right" length="2" mirrored="true"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Chief (Normal)
 Chief_portrait (Normal): Bwahaha! Now for the finale of this year's Vote.
 update Chief (Smile)

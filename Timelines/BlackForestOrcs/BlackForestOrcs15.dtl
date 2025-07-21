@@ -21,6 +21,7 @@ update Mao (Normal)
 Mao_Portrait (Normal): Looks like Oliver has a tough bracket, he's tied for having the most fights.
 Rice_Portrait (Normal): That's a good thing.
 join Oliver (Drool) 4 [animation="Slide In Right" length="4" mirrored="true"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao [animation="Tada" length="2"]
 Mao_Portrait (Normal): Oh, Oliver woke up. Good morning!
 Oliver_Portrait (Drool): Oliver greets Albion girls.
@@ -41,6 +42,7 @@ Mao_Portrait (Normal): If you say so.
 Oliver_Portrait (Drool): If Albion girls will excuse Oliver, Oliver needs to prepare for the Vote. Oliver's first match is early in the schedule.
 update Oliver [ mirrored="false"]
 leave Oliver [animation="Slide Out Right" length="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao (Smile)
 Mao_Portrait (Smile): Good luck!
 update Mao (Normal)
@@ -73,6 +75,7 @@ Mao_Portrait (Normal): Let's go cheer him on.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
 join Orc (Normal) 3 [ mirrored="true"]
@@ -83,7 +86,9 @@ update Orc (Normal) [animation="Shake X" length="1"]
 update Orc (Normal) 2 [ move_time="0.5"]
 update Oliver (Normal) [animation="Shake X" length="1"]
 update Oliver (Normal) 2 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Orc (Normal) [animation="Bounce"]
 update Orc (Normal) 3 [ move_time="0.5"]
 update Oliver (Normal) [animation="Bounce"]
@@ -96,7 +101,9 @@ update Orc (Normal) [animation="Shake X" length="1"]
 update Orc (Normal) 2 [ move_time="0.5"]
 update Oliver (Normal) [animation="Shake X" length="1"]
 update Oliver (Normal) 2 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Orc (Normal) [animation="Bounce"]
 update Orc (Normal) 3 [ move_time="0.5"]
 update Oliver (Normal) [animation="Bounce"]
@@ -114,7 +121,9 @@ update Orc (Normal) [animation="Shake X" length="1"]
 update Orc (Normal) 2 [ move_time="0.5"]
 update Oliver (Normal) [animation="Shake X" length="1"]
 update Oliver (Normal) 2 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
+[signal arg="{"sound_effect": "jump"}"]
 update Orc (Normal) [animation="Bounce"]
 update Orc (Normal) 3 [ move_time="0.5"]
 update Oliver (Normal) [animation="Bounce"]
@@ -138,6 +147,7 @@ Mao_Portrait (Normal): Okie dokie.
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 [signal arg="{"music": "cheerful"}"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg018a.jpg" fade="0.0"]
 join Hero_f (Annoyed) 3 [ mirrored="true"]
@@ -176,6 +186,7 @@ Hero_f_portrait (Annoyed): No. No she's not.
 Hero_f_portrait (Annoyed): (My professor would pay a king's ransom to find someone who could cast a mental spell that leaves the target's mana flow so clear and smooth. As in, he'd kidnap a king and ransom him if he needed more money to pay.)
 Hero_f_portrait (Annoyed): (Why am I surrounded by jackasses?)
 join Mao 4 [animation="Slide In Right" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Hero_f 2 [ mirrored="false" move_time="1"]
 update Mao (Normal)
 Mao_Portrait (Normal): Hi, I'm Mao.

@@ -6,11 +6,12 @@ join Oliver (Sad) 3 [ mirrored="true"]
 update Mao (Sad)
 Mao_Portrait (Sad): Wait, did I just beat a kid up for his lunch money? Am I a bad guy now?
 update Oliver (Angry)
-Rice_Portrait (Normal): It's better not to think too hard about where the money comes from.
+Rice_Portrait (Normal): It's better not to think too hard about where the money after a duel comes from.
 update Mao (Normal)
 Oliver_Portrait (Angry): Hmph. Mighty Oliver isn't a kid.
 Rice_Portrait (Normal): (He seems to be level 5 or 6, which is quite an accomplishment for his age. The type to be suprisingly popular, I believe.)
 Rice_Portrait (Normal): Hold still and I'll patch both of you up.
+[signal arg="{"sound_effect": "heal"}"]
 update Oliver (Angry)
 Oliver_Portrait (Angry): This isn't over... But Mighty Oliver will call it a draw.
 update Mao (Normal)

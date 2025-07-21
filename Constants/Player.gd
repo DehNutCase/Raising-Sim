@@ -491,6 +491,7 @@ var sound_effects = {
 	"footsteps": load("res://SFX/Tom Music/Footsteps/Edited/Footsteps.wav"),
 	"time_passing": load("res://SFX/Atelier Magicae/Long/Fantasy UI Vol (28).wav"),
 	"jump": load("res://SFX/JDWasabi/Jump 1.wav"),
+	"heal": load("res://SFX/Shapeforms/Arcane/Glyph Activation Warm Aura.wav"),
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()
