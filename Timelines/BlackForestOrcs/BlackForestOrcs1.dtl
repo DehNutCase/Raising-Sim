@@ -4,6 +4,7 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao (Normal) [animation="Shake X" length="4"]
 update Mao (Normal) [animation="Tada" length="4" repeat="0"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): Hey Rice, can you pass me my bath towels?
 Rice_Portrait (Normal): (It looks like she's... packing?)
 update Mao (Surprised)
@@ -28,17 +29,22 @@ update Mao (Normal)
 Mao_Portrait (Normal): So, um, where do I go?
 Rice_Portrait (Normal): The storage room will do. The official mission room also has scrying panels, but we don't need to go there.
 [background arg="res://Art/Background/Background material shop/bg008a.jpg" fade="2.0" transition="Push Left"]
+[signal arg="{"sound_effect": "footsteps"}"]
+[signal arg="{"sound_effect": "door"}"]
 [wait time="1.5" hide_text="false"]
 update Mao (Excited)
 Mao_Portrait (Excited): Mission room?
 Rice_Portrait (Normal): Her majesty doesn't usually give briefings in a closet.
 [background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="2.0" transition="Push Right"]
+[signal arg="{"sound_effect": "footsteps"}"]
+[signal arg="{"sound_effect": "door"}"]
 [wait time="1.5" hide_text="false"]
 update Mao (Normal)
 Mao_Portrait (Normal): This is a really big closet.
 Rice_Portrait (Normal): It's a metaphor.
 Rice_Portrait (Normal): Aisle D has the scrying panels, so if you'll scoot over and look you can watch what I'm doing.
 update Mao (Normal) 4 [animation="Tada" move_time="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): How are you controlling the panels?
 Rice_Portrait (Normal): Prestidigitation.
 Rice_Portrait (Normal): But please pay a bit more attention to what the panel is showing. It won't be a hot landing, so we just need to check for obstructions.

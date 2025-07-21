@@ -4,6 +4,7 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Shake Y" length="2" repeat="2"]
 update Mao (Normal)
+[signal arg="{"sound_effect": "jump"}"]
 Mao_Portrait (Normal): One! Two! One! Two!
 [signal arg="{"stats": {"max_hp": 1, "agility": 1, "stress":  -5,}}"]
 Mao_Portrait (Normal): I don't know why, but I've been feeling a bit rusty lately.
@@ -28,6 +29,7 @@ Mao_Portrait (Normal): Hey, that sounds like Mao logic, not Rice logic.
 Rice_Portrait (Normal): Neither. The logical thing to do in their position would be trying to rescue you tonight.
 Rice_Portrait (Normal): When seemingly unrelated timings start lining up, you should start wondering who lined them up. That is---
 join Oliver (Normal) 4 [animation="Slide In Right" length="2" mirrored="true"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Oliver_Portrait (Normal): Good morning, Albion girls.
 update Mao [animation="Tada" length="1"]
 Mao_Portrait (Normal): Good morning!
@@ -51,6 +53,7 @@ Rice_Portrait (Normal): It does concern you, of course, so I won't stop you if w
 Oliver_Portrait (Normal): Oliver thinks that sounds boring. But Oliver affirms bro and pops are both setting up the Vote. Oh, and Oliver would like to let Albion girl know that Albion girl was given permission to participate.
 Oliver_Portrait (Normal): Oliver will lead the way if Albion girls want to find pops.
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="2.0" transition="Push Left"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao 1 [ move_time="1"]
 update Oliver 2 [ mirrored="false" move_time="1"]
 join Chief (Normal) 4 [animation="Slide In Right" length="2"]
@@ -68,11 +71,13 @@ Oliver_Portrait (Normal): (Oliver thinks so as well. Oliver doesn't know what th
 update Oliver [ mirrored="true"]
 leave Oliver [animation="Slide Out Left" length="4"]
 leave Mao [animation="Slide Out Left" length="4"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Rice_Portrait (Normal): Don't go too far.
 Mao_Portrait (Normal): Okie dokie!
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/Edited/bg021a_edited_multiple_dumpling.jpg" fade="0.0"]
 join Mao (Normal) 4
@@ -81,23 +86,29 @@ join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
 update Mao [animation="Tada" length="2"]
 Mao_Portrait (Normal): The light of damnation. The herald of the world's final terminus. The star of extinction bringing an end to all things. Meteor!
 update Oliver (Normal) [animation="Shake X" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Oliver (Normal) 2 [ move_time="0.5"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Normal) [animation="Bounce"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Normal) 3 [ move_time="0.5"]
 Dumpling_portrait (f_LunaChime): Juu!
 update Oliver (Normal) [animation="Shake X" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Oliver (Normal) 2 [ move_time="0.5"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Normal) [animation="Bounce"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Normal) 3 [ move_time="0.5"]
 update Mao [animation="Shake X" length="1"]
 Mao_Portrait (Normal): No, it can't be! How could such a powerful barrier exist?
 Dumpling_portrait (f_candle): Juu, juu!
 update Oliver (Normal) [animation="Shake X" length="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Oliver (Normal) 2 [ move_time="0.5"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Normal) [animation="Bounce"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Normal) 3 [ move_time="0.5"]
 update Mao [animation="Shake X" length="2"]
 Mao_Portrait (Normal): Nooooooooooo!
@@ -120,6 +131,7 @@ Rice_Portrait (Normal): This place isn't suitable, so let's move somewhere else.
 [background arg="res://Art/Background/Background material shop/bg017a.jpg" fade="2.0" transition="Push Left"]
 update Oliver 2 [ mirrored="false" move_time="1"]
 update Mao 3 [ move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Rice_Portrait (Normal): I have some idea of your physical abilities, but it's not detailed enough for an efficient training regimen. So we'll start with a simple four hour run.
 update Oliver (Surprised)
 Oliver_Portrait (Surprised): Oliver believes Oliver heard you wrong.
@@ -142,6 +154,7 @@ Oliver_Portrait (Surprised): Yes Ma'am.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017a.jpg" fade="0.0"]
 join Mao (Normal) 3
@@ -179,9 +192,11 @@ Rice_Portrait (Normal): Let's move on to light sparring once your break is finis
 update Mao 2 [ move_time="1"]
 update Oliver 1 [ z_index="1" mirrored="false" move_time="1"]
 join Rice 3 [animation="Slide In Right" length="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Rice_Portrait (Normal): I'll restrain myself to level 5, but don't get your hopes up just because of that.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+[signal arg="{"sound_effect": "time_passing"}"]
 leave --All-- [animation="Instant In Or Out"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017b.jpg" fade="0.0"]
@@ -192,6 +207,7 @@ join Oliver (Drool) 1 [ z_index="1"]
 Rice_Portrait (Normal): Another break. Ten minutes this time, go use the restroom if you need to.
 update Oliver [ mirrored="true"]
 leave Oliver [animation="Slide Out Left" length="4"]
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao [animation="Tada" length="1"]
 update Mao (Angry)
 Mao_Portrait (Angry): Cheater! Cheater! There's no way that was level 5!

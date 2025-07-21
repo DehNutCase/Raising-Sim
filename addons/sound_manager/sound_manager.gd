@@ -158,7 +158,7 @@ func set_music_volume(volume_between_0_and_1: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(music.bus), linear_to_db(volume_between_0_and_1))
 
 
-func play_music(resource: AudioStream, crossfade_duration: float = 5, override_bus: String = "") -> AudioStreamPlayer:
+func play_music(resource: AudioStream, crossfade_duration: float = 3, override_bus: String = "") -> AudioStreamPlayer:
 	return music.play(resource, 0.0,  0.0, crossfade_duration, override_bus)
 
 

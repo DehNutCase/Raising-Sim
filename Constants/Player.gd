@@ -489,11 +489,12 @@ var sound_effects = {
 	"discard_card": load("res://SFX/JDSherbert/JDSherbert - Tabletop Games SFX Pack - Deck Deal - 2.wav"),
 	"door": load("res://SFX/Tom Music/Doors Gates and Chests/Door Close 1.wav"),
 	"footsteps": load("res://SFX/Tom Music/Footsteps/Edited/Footsteps.wav"),
+	"time_passing": load("res://SFX/Atelier Magicae/Long/Fantasy UI Vol (28).wav"),
+	"jump": load("res://SFX/JDWasabi/Jump 1.wav"),
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()
 	SoundManager.play_music(songs[song])
-	return
 
 func play_voice(voice: String) -> void:
 	voice = voice.to_lower()

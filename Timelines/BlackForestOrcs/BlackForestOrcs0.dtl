@@ -34,15 +34,17 @@ update Mao (Surprised)
 Mao_Portrait (Surprised): No, I mean, don't you have a reason? Like does the Black Forest have a bunch of minerals or maybe the trees are really valuable?
 Morgan_Portrait (Silhouette): The orcs would know better than we do in that respect. And any extraction would be hampered by the previously mentioned issues.
 Morgan_Portrait (Silhouette): You can consider that a reason to try to obtain the orcs as well, if you'd like.
-[signal arg="{"music": "sad"}"]
 update Mao (Sad)
 Mao_Portrait (Sad): What if they don't want to join us and don't want to leave?
 Morgan_Portrait (Silhouette): Considering the relative bargaining positions between us and them, it's not our place to make concessions.
 Mao_Portrait (Sad): But...
 Morgan_Portrait (Silhouette): If you have no other questions, I'll consider this matter settled.
 Mao_Portrait (Sad): But, your maj---
+[signal arg="{"music": "sad"}"]
 Rice_Portrait (Normal): Please excuse us, your majesty.
 [background arg="res://Art/Background/Background material shop/bg008a.jpg" fade="2.0" transition="Push Left"]
+[signal arg="{"sound_effect": "footsteps"}"]
+[signal arg="{"sound_effect": "door"}"]
 leave Morgan [animation="Slide Out Left" length="1"]
 update Mao 1 [ move_time="2"]
 join Rice 2 [animation="Slide In Left" length="2" wait="true"]

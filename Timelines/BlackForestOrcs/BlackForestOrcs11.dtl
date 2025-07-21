@@ -13,12 +13,14 @@ Mao_Portrait (Normal): Um, do you know where Oliver lives, Rice?
 Rice_Portrait (Normal): If you're looking for him rather than his house, he's actually over there.
 update Mao (Normal) 1 [ move_time="2"]
 join Oliver (Sad) 4 [animation="Slide In Right" length="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): Oh! It looks like he's exercising. I thought he'd be more down, but I guess I didn't need to worry?
 Rice_Portrait (Normal): (I would say it's more like he's still taking the Vote seriously. Not surprising, since the Vote is a big part of the reason he's depressed in the first place.)
 Rice_Portrait (Normal): (Her majesty would be quite interested in him, I believe. Someone who works hard even when they don't think it matters has excellent prospects.)
 update Mao [animation="Tada" length="1"]
 Mao_Portrait (Normal): Good morning, Oliver!
 update Oliver 3 [ mirrored="true" move_time="1"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Oliver_Portrait (Sad): Oliver greets Albion girl, although Oliver would still rather be alone right now.
 update Mao (Surprised)
 Mao_Portrait (Surprised): Oh. Um. It's just, I kind of thought of a way for you to get stronger, so I'm wondering if you want to try it?
@@ -50,6 +52,7 @@ Mao_Portrait (Normal): Follow me!
 update Mao 3 [ move_time="2"]
 update Oliver 4 [ move_time="2"]
 [background arg="res://Art/Background/Background material shop/Edited/bg021a_edited_single_dumpling.jpg" fade="3.0" transition="Push Right"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.5" hide_text="false"]
 update Mao (Normal)
 Mao_Portrait (Normal): Teehee. Watch this!
@@ -57,6 +60,7 @@ update Mao (Excited)
 Mao_Portrait (Excited): Okay. Please split!
 Dumpling_portrait (f_manju): Juu!
 [background arg="res://Art/Background/Background material shop/Edited/bg021a_edited_multiple_dumpling.jpg" fade="1.0"]
+[signal arg="{"sound_effect": "time_passing"}"]
 [wait time="0.5" hide_text="false"]
 update Mao (Smile)
 Mao_Portrait (Smile): This is the Dumpling party. I asked them for help.
@@ -73,25 +77,32 @@ update Oliver [animation="Tada" length="2"]
 Oliver_Portrait (Sad): Still, Oliver thanks Dumpling friends for helping Oliver.
 Dumpling_portrait (f_candle): Juu, juu!
 leave Mao [animation="Slide Out Right" length="2"]
+[signal arg="{"sound_effect": "footsteps"}"]
 Mao_Portrait (Normal): I'll just get out of your way now.
 Rice_Portrait (Normal): (Overall, it's not a bad plan. There's just one slight problem. This would work a lot better if she asked Teru or even Skeletons rather than Dumplings.)
 update Oliver (Cry) [animation="Shake X" length="1"]
 update Oliver (Cry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Sad) [animation="Bounce"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Sad) 4 [ move_time="0.5"]
 Rice_Portrait (Normal): (Then again, I sincerely hope she isn't stuffing her hoodie or hat with random Skeletons. Even Teru would be problematic.)
 update Oliver (Cry) [animation="Shake X" length="1"]
 update Oliver (Cry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Sad) [animation="Bounce"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Sad) 4 [ move_time="0.5"]
 Rice_Portrait (Normal): A small reminder. If you or I heal him before the fight ends we'd be considered part of his party, which would zero out any possible gains.
 Mao_Portrait (Normal): Oh, the level thing, right?
 update Oliver (Cry) [animation="Shake X" length="1"]
 update Oliver (Cry) 3 [ move_time="0.5"]
+[signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.1" hide_text="false"]
 update Oliver (Sad) [animation="Bounce"]
+[signal arg="{"sound_effect": "jump"}"]
 update Oliver (Sad) 4 [ move_time="0.5"]
 [signal arg="{"music": "sad"}"]
 Oliver_Portrait (Sad): Oliver just lost a fight with food. Oliver stands corrected about how deep Oliver can sink.
