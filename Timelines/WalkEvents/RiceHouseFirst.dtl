@@ -20,6 +20,8 @@ update Mao (Normal) [animation="Tada" length="4" repeat="0"]
 Mao_Portrait (Normal): *Humming*
 Rice_Portrait (Normal): (There's so much I want to say to that. She wasn't even knocking, just saying 'knock' over and over.)
 Rice_Portrait (Normal): You might as well come in, then.
+[signal arg="{"sound_effect": "footsteps"}"]
+[signal arg="{"sound_effect": "door"}"]
 join Rice (Normal) 4 [animation="Instant In Or Out" length="0"]
 update Rice (Normal) 2 [ move_time="1"]
 update Mao (Normal) 1 [ move_time="1"]
@@ -38,6 +40,7 @@ Rice_Portrait (Normal): I answer when there's a reason. I'm your escort, not you
 update Mao (Sad)
 Mao_Portrait (Sad): But we're friends.
 Rice_Portrait (Normal): Not when I'm working.
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao (Angry)
 leave Mao [animation="Slide Out Left" length="2"]
 Mao_Portrait (Angry): Well fine!

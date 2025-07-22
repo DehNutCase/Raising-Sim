@@ -3,6 +3,7 @@ join Mao (Normal) 2
 [history action="clear"]
 [signal arg="{"stats": {"stress": 10}}"]
 update Mao (Sad)
+[signal arg="{"random_voice": "damaged"}"]
 Mao_Portrait (Sad): <Owwie./Uguu./Riceeee!>
 Rice_Portrait (Normal): Hmm. Are you sure you want to keep going?
 - Let's keep going

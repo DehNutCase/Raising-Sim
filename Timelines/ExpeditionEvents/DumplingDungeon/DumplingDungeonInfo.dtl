@@ -5,6 +5,7 @@ join Morgan (Silhouette) 1
 Morgan_Portrait (Silhouette): Hello, Mao.
 update Mao [animation="Tada" length="1"]
 update Mao (Smile)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Smile): Hello!
 update Mao (Normal)
 Morgan_Portrait (Silhouette): Do you have any questions about what you need to do inside the dungeon?

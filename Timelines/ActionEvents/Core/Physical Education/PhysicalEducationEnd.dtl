@@ -5,6 +5,7 @@ update Mao (Normal)
 Mao_Portrait (Normal): I guess I'm almost done with PE this semester. How does that work, anyway? Being 'done' with PE. Rice?
 Rice_Portrait (Normal): Your stats don't drop unless you do something to decrease them, so there's no harm in taking breaks.
 Mao_Portrait (Normal): Thanks for not ignoring me. Hmm... I should go say goodbye to Lilian. Oh, looks like she had the same idea.
+[signal arg="{"sound_effect": "footsteps"}"]
 join Lilian 3 [animation="Slide In Right" length="4"]
 update Mao 1 [ move_time="2"]
 update Lilian (Grin)

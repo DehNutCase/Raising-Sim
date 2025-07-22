@@ -4,6 +4,7 @@ join Lilian (Grin) 3 [ mirrored="true"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Hey, hey! Victoria's something or another, excuse me!
 update Lilian [ mirrored="false"]
 Lilian_Portrait (Grin): Do you mean me? Not that I mind, but what do you mean by 'something or another'?

@@ -4,6 +4,7 @@ join Drake (Frown) 3
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+[signal arg="{"voice": "boom"}"]
 Mao_Portrait (Normal): Dumplings! Crossbows! Explosions!
 update Drake (Frown)
 Drake_Portrait (Frown): The second shouldn't happen, and the last better not.

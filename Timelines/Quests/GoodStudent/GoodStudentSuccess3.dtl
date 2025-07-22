@@ -3,6 +3,7 @@ join Mao (Normal) 3 [animation="Slide In Right" length="2"]
 join Morgan (Silhouette) 1
 [history action="clear"]
 update Mao (Normal)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Good morning!
 Morgan_Portrait (Silhouette): Oh my, it seems you've made the appointment yourself this time? Fufufu.
 update Mao (EyesClosed)

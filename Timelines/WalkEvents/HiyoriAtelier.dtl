@@ -2,6 +2,7 @@
 join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Hello Hiyori.
 Hiyori_Portrait (Normal): Welcome, I guess.
 # Use get to return null rather than throw an error if index isn't present

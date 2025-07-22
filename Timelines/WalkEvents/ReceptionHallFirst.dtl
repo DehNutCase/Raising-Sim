@@ -4,6 +4,7 @@ join Mao (Normal) 2
 update Mao (Sad)
 Mao_Portrait (Sad): What happened to all the maids? There's nobody here today.
 Mao_Portrait (Sad): (Ugh, it feels kind of spooky.)
+[signal arg="{"sound_effect": "footsteps"}"]
 join Morgan (Silhouette) 3 [animation="Bounce In" length="0.3" wait="true"]
 update Mao (Surprised) 1 [animation="Bounce" length="1" move_time="1"]
 Morgan_Portrait (Silhouette): I like to think I'm somebody.

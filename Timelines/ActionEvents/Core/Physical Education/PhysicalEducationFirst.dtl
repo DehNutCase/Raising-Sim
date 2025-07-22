@@ -3,6 +3,7 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao (Normal)
 Mao_Portrait (Normal): Wow, there're so many upperclassmen in this class. Wait, wouldn't it be kind of unfair for my team if we had a competition?
+[signal arg="{"sound_effect": "footsteps"}"]
 join Lilian (Grin) 3 [animation="Slide In Right" length="3"]
 update Mao (Normal) 1 [ move_time="2"]
 update Lilian (Grin)
@@ -18,6 +19,7 @@ update Lilian (Grin)
 Lilian_Portrait (Grin): (I'm actually not sure if she'd get mad at Mao or not for that, since they're both pipsqueaks.)
 Mao_Portrait (Normal): That seems mean.
 Lilian_Portrait (Grin): Then I guess I'm a mean person.
+[signal arg="{"sound_effect": "footsteps"}"]
 update Lilian [ mirrored="true"]
 leave Lilian [animation="Slide Out Right" length="3"]
 Lilian_Portrait (Grin): Anyway, it's nice meeting you, but I should leave before they get on my case about fraternizing with the enemy.

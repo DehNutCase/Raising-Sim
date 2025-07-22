@@ -1,6 +1,8 @@
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0" transition="Simple Fade"]
 join Mao (Normal) 2
 [history action="clear"]
+[signal arg="{"sound_effect": "footsteps"}"]
+[signal arg="{"sound_effect": "door"}"]
 Rice_Portrait (Normal): Come in.
 join Rice (Normal) 4 [animation="Instant In Or Out" length="0"]
 update Rice (Normal) 2 [ move_time="1"]

@@ -137,7 +137,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("GoodStudentFailure")
+		Dialogic.start("MagecraftEducationMiddle")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -747,6 +747,8 @@ func _on_reward_signal(dialogic_signal) -> void:
 		Player.play_song(dialogic_signal.music)
 	if "voice" in dialogic_signal:
 		Player.play_voice(dialogic_signal.voice)
+	if "random_voice" in dialogic_signal:
+		Player.play_random_voice(dialogic_signal.random_voice)
 	if "sound_effect" in dialogic_signal:
 		Player.play_sound_effect(dialogic_signal.sound_effect)
 	if "ui_sound" in dialogic_signal:

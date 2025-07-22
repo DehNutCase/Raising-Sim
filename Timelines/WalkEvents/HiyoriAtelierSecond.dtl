@@ -3,6 +3,7 @@ join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
 Hiyori_Portrait (Normal): I don't mind if you want to come over to relax, but I don't think there's anything interesting here.
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Hello Hiyori. Your sculptures are great, you know? It's fun to look at them.
 update Mao (Excited)
 Mao_Portrait (Excited): By the way, where's Gray?

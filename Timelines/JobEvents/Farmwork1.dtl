@@ -4,6 +4,7 @@ join Keith (Normal) 3 [ mirrored="true"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Good morning, boss!
 update Keith (Normal)
 Keith_Portrait (Normal): Good morning. Is everything going well?

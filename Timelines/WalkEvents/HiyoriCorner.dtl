@@ -2,6 +2,7 @@
 # Need to be redone due to game rework
 join Hiyori (Desk) 2
 Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner, the helpful hideout that provides facts and tips to the lost and confused.
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Hello Hiyori.
 # Use get to return null rather than throw an error if index isn't present
 if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_event"):

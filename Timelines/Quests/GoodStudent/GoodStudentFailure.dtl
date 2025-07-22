@@ -13,6 +13,7 @@ Mao_Portrait (Angry): Hmph. Watch, I'll explode right now!
 # Add explosion sound effect and game over
 update Mao [animation="Shake X" length="1" repeat="2"]
 update Mao (Normal)
+[signal arg="{"voice": "boom"}"]
 Mao_Portrait (Normal): Boom!
 Rice_Portrait (Normal): ...I suppose I better go inform her majesty that you exploded.
 [signal arg="{"game_over": true}"]

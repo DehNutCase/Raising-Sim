@@ -6,6 +6,7 @@ join Morgan (Silhouette) 1
 [history action="clear"]
 update Mao [animation="Tada"]
 update Mao (Excited)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Excited): I'm back! Niziiro Mao reporting! I brought souvenirs!
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)

@@ -32,6 +32,7 @@ update Oliver 3 [ move_time="1"]
 update Oliver (Happy)
 Oliver_Portrait (Happy): Bwahaha. Weak human runs from Mighty Oliver, everything is as it should be.
 update Mao (Smile)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Smile): Hi! I'm Mao! Are you a baby orc? How come you're so scawney? Oh, and aren't orcs supposed to talk like cavemen? Me Mao, why you so weak? Me speak caveman correct?
 update Oliver (Angry)
 Rice_Portrait (Normal): (Then again, I should also consider the possibility that she learned everything properly and simply chooses to act like this.)

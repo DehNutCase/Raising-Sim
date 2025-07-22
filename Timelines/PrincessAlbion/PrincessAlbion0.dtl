@@ -13,6 +13,7 @@ join Fiona (Grin) 4 [ mirrored="true"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Excited): Teehee. Thanks for coming, everyone! 🎉
 Victoria_Portrait (Frown): I'm not sure why you said that, seeing how I'm the host. Then again, I'm still not entirely sure why we're holding a welcome party for you.
 update Mao (Normal)

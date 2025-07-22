@@ -15,9 +15,11 @@ Rice_Portrait (Normal): ...Don't start fires in an enclosed space, Mao.
 Rice_Portrait (Normal): (Perhaps they should give out pamphlets on basic spell safety as part of this course, hmm...)
 Mao_Portrait (Normal): (Psst. Is it just me, or is that girl staring at me again?)
 Rice_Portrait (Normal): In your general direction, yes.
+[signal arg="{"sound_effect": "footsteps"}"]
 update Mao 3 [animation="Tada" length="1" move_time="1"]
 update Stella (Surprise)
 update Stella [animation="Tada" length="1"]
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Hello! Did you need me for something?
 Stella_Portrait (Surprise): Ah. Um, I apologize for bothering you.
 update Stella (Frown)

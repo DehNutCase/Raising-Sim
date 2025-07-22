@@ -189,6 +189,7 @@ join Mao 4 [animation="Slide In Right" length="1"]
 [signal arg="{"sound_effect": "footsteps"}"]
 update Hero_f 2 [ mirrored="false" move_time="1"]
 update Mao (Normal)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Hi, I'm Mao.
 update Hero_f (Normal)
 Mao_Portrait (Normal): Apparently you're here to rescue me to something?

@@ -28,7 +28,7 @@ Mao_Portrait (Normal): Okie dokie.
 - By the way, aren't you a nun or something?
 	Rice_Portrait (Normal): No.
 	Mao_Portrait (Normal): But don't you use a lot of holy magic?
-	Rice_Portrait (Normal): It's not particularly hard to learn holy magic. Although the base output is below average, enemies that resist or absorb holy magic are quite rare. It's comparable to non-elemental spells in that respect.
+	Rice_Portrait (Normal): It's not particularly difficult to learn holy magic. Although the base output is below average, enemies that resist or absorb holy magic are quite rare. It's comparable to non-elemental spells in that respect.
 	Rice_Portrait (Normal): Due to my circumstances, holy is slightly more efficient than non-elemental, that's all.
 	Mao_Portrait (Normal): The circumstance being the fact you're a nun? Teehee.
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]

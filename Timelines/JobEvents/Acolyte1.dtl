@@ -9,6 +9,7 @@ join Martin (Tired) 3 [ mirrored="true"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Normal): Good morning, Father Martin! What kind of dark and dastardly ritual are we doing today?
 update Martin [animation="Tada" length="4"]
 update Martin (Tired)
@@ -25,7 +26,7 @@ Mao_Portrait (Normal): Okie dokie.
 	[signal arg="{"stats": {"scholarship": 5, "max_mp": 5, "magic": 5, }}"]
 - Wouldn't it be faster if turned everything into holy water before bottling?
 	Martin_Portrait (Tired): I don't have that kind of mana.
-	Mao_Portrait (Normal): What does mana have to do with holy water? Isn't it a miracle from god?
+	Mao_Portrait (Normal): What does mana have to do with holy water? Isn't holy water supposed to be a miracle or something?
 	Martin_Portrait (Tired): *Yawn* Maybe that's how they do it elsewhere, but it's not much different from purifying water with mana here.
 	Mao_Portrait (Normal): Oh. What makes it holy, then?
 	Martin_Portrait (Tired): *Yawn* Maybe that's how they do it elsewhere, but it's not much different from purifying water with mana here.

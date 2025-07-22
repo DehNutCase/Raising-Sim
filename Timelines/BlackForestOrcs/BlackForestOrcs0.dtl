@@ -5,6 +5,7 @@ join Morgan (Silhouette) 1
 [history action="clear"]
 Morgan_Portrait (Silhouette): You're here.
 update Mao (Excited) [animation="Tada"]
+[signal arg="{"random_voice": "greetings"}"]
 Mao_Portrait (Excited): Yes, ma'am! Niziiro Mao reporting, ma'am!
 Morgan_Portrait (Silhouette): Ah. I believe what I should say here is 'at ease,' correct?
 update Mao (Normal)
