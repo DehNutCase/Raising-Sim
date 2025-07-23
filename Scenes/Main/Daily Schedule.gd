@@ -23,7 +23,7 @@ func add_action(action_type:String, action_name:String):
 	if cost > 0:
 		if Player.stats.gold - cost < 0:
 			ToastParty.show({
-				"text": "Mao doesn't have the gold to pay for this. " + "(" + str(cost) + ")",
+				"text": "You don't have the gold to pay for this. " + "(" + str(cost) + ")",
 				"gravity": "top",
 				"direction": "center",
 			})

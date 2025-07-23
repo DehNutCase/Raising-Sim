@@ -137,7 +137,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		Dialogic.start("MagecraftEducationMiddle")
+		#Dialogic.start("MagecraftEducationMiddle")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -382,7 +382,7 @@ func do_cram_school():
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats(course_daily_stats, icon)
 	else:
-		display_toast("Mao doesn't have any classes scheduled.", "top")
+		display_toast("You don't have any classes scheduled.", "top")
 		await(get_tree().create_timer(.5).timeout)
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		process_stats({"stress": -10})

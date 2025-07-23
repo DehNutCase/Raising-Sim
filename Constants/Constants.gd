@@ -364,7 +364,7 @@ const lessons = {
 			'proficiency_required': 100,
 			'id': 'basic_magic_training',
 		},
-		'description': "An introductory class to magecraft. Mao doesn't really need to take this, but it's part of the standard curriculum.",
+		'description': "An introductory class to magecraft. You don't really need to take this, but it's part of the standard curriculum.",
 	},
 	'Basic Melee Training': {
 		'stats': {
