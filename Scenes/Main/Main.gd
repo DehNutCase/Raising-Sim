@@ -164,7 +164,7 @@ func _input(event):
 #(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
 #text like walk where you didn't meet someone)
 func process_day():
-	day_state = states.BUSY
+	_change_day_state(states.BUSY)
 	
 	var action_list = []
 	action_list.append_array(Player.mandatory_daily_schedule_list)
@@ -250,7 +250,7 @@ func process_day():
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 	await quest_log.check_quests_failure()
-	day_state = states.READY
+	_change_day_state(states.READY)
 
 		
 func do_action(action_type:String, action_name: String):
@@ -717,8 +717,6 @@ func display_stats() -> void:
 		if day > 20:
 			$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()
 			$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
-	else:
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Save".show()
 	
 func _on_reward_signal(dialogic_signal) -> void:
 	if is_instance_of(dialogic_signal, TYPE_STRING):
@@ -797,23 +795,22 @@ func _on_reward_signal(dialogic_signal) -> void:
 		Player.active_quests[dialogic_signal.start_quest] = {'active': true}
 	if "game_over" in dialogic_signal:
 		%GameOverDialog.show()
-		current_state = states.GAME_OVER
+		_change_current_state(states.GAME_OVER)
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	dialogic_panel.show()
 	dialogic_viewport_container.show()
-	current_state = states.DIALOGIC
+	_change_current_state(states.DIALOGIC)
 	#Clear temporary flags
 	Player.dialogic_temporary_flags = {}
 	
 func _on_timeline_ended() -> void:
+	_change_current_state(states.READY)
 	day_label.display_day(day)
-	get_tree().call_group("Live2DPlayer", "resume_live2d")
 	update_expressions()
 	dialogic_panel.hide()
 	dialogic_viewport_container.hide()
-	current_state = states.READY
 	display_stats()
 	#Clear temporary flags
 	Player.dialogic_temporary_flags = {}
@@ -1166,3 +1163,33 @@ func _on_game_over_dialog_confirmed():
 
 func _play_button_sound() -> void:
 	Player.play_ui_sound("blop")
+
+func _change_current_state(state: states) -> void:
+	match state:
+		states.READY:
+			get_tree().call_group("Live2DPlayer", "resume_live2d")
+			current_state = states.READY
+		states.DIALOGIC:
+			get_tree().call_group("Live2DPlayer", "pause_live2d")
+			current_state = states.DIALOGIC
+		states.GAME_OVER:
+			get_tree().call_group("Live2DPlayer", "resume_live2d")
+			current_state = states.GAME_OVER
+		states.BUSY:
+			current_state = states.BUSY
+			printerr("busy in change_current_state, not supposed to happen")
+		_:
+			printerr("Unmatched state in _change_current_state")
+
+func _change_day_state(state: states) -> void:
+	match state:
+		states.READY:
+			for button in get_tree().get_nodes_in_group("ActionButton"):
+				button.show()
+			day_state = states.READY
+			display_stats()
+		states.BUSY:
+			for button in get_tree().get_nodes_in_group("ActionButton"):
+				button.hide()
+		_:
+			printerr("Unmatched state in _change_day_state")
