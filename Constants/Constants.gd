@@ -2614,7 +2614,7 @@ const quests = {
 		"rewards": {
 			"stats": {
 				"stress": -20,
-				"scholarship": 50,
+				"scholarship": 20,
 			},
 			"timeline": "GoodStudentSuccess",
 		},
@@ -2636,7 +2636,7 @@ const quests = {
 		"rewards": {
 			"stats": {
 				"stress": -20,
-				"scholarship": 50,
+				"scholarship": 20,
 			},
 			"timeline": "GoodStudentSuccess2",
 		},
@@ -2658,7 +2658,7 @@ const quests = {
 		"rewards": {
 			"stats": {
 				"stress": -20,
-				"scholarship": 50,
+				"scholarship": 20,
 			},
 			"timeline": "GoodStudentSuccess3",
 		},
@@ -2680,7 +2680,7 @@ const quests = {
 		"rewards": {
 			"stats": {
 				"stress": -20,
-				"scholarship": 50,
+				"scholarship": 20,
 			},
 			"timeline": "GoodStudentSuccess4",
 		},

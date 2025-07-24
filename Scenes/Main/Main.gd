@@ -33,8 +33,6 @@ extends Control
 
 @onready var schedule_alert_icon = %ScheduleAlertIcon
 
-@onready var button_containers = [buttons, buttons2, buttons3]
-
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
 @onready var deck = %Deck
@@ -96,9 +94,9 @@ func _ready():
 	for inventory_name in Player.inventories:
 		Player[inventory_name].item_added.connect(_on_inventory_item_added)
 		
-	for button_container in button_containers:
-		for button in button_container.get_children():
-			button.pressed.connect(_on_action.bind(button))
+	for button in get_tree().get_nodes_in_group("ActionButton"):
+		button.pressed.connect(_on_action.bind(button))
+		
 	get_tree().call_group("MuteButton", "_update")
 	display_stats()
 	self.show()

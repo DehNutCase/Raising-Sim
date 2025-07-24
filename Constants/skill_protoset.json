@@ -34,7 +34,7 @@
 	"diligent_student":{
 		"daily_stats": "{\n\"experience\": 1,\n\"scholarship\": 1\n}",
 		"description": "A diligent student who studies every day.",
-		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/note01_04.png",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_02.png",
 		"monthly_stats": "{\n\"experience\": 100\n}",
 		"name": "Diligent Student",
 		"stats": "{}",
