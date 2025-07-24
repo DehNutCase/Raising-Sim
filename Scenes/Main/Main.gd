@@ -977,9 +977,29 @@ func check_and_play_daily_events() -> void:
 	
 	#TODO, add check for if class changed (either have exitpass *or* is class changed)
 	if !Player.event_flags.get('mission_information_event') and Player.event_flags.get('ExitPass') and !played:
+			played = true
 			Player.event_flags['mission_information_event'] = true
 			Dialogic.start("MissionRoom")
 	
+	var rng = RandomNumberGenerator.new()
+	if rng.randf() * 100 > (100 - Constants.constants.JOB_EVENT_ODDS) and !played:
+		played = true
+		var weights = []
+		var outcomes = Constants.random_daily_events
+		for outcome in outcomes:
+			if ('weight' in outcome):
+				var weight = outcome.weight
+				weights.append(weight)
+			else:
+				weights.append(1)
+		var outcome = outcomes[rand_weighted(weights)]
+		if outcome.get("toast"):
+			display_toast(outcome.toast)
+		if outcome.get("stats"):
+			process_stats(outcome.stats)
+			await get_tree().create_timer(.1).timeout
+		if outcome.get("timeline"):
+			Dialogic.start(outcome.timeline)
 #Tooltip replacement for mobile which doesn't have hover tooltips
 func _on_player_inventory_item_activated(tooltip):
 	#Check if mobile and replace tooltips with toast
