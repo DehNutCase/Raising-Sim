@@ -11,7 +11,7 @@
 		"daily_stats": "{\n\"experience\": 1\n}",
 		"description": "A novice potato farmer.",
 		"image": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
-		"monthly_stats": "{\n\"attack\": 5\n}",
+		"monthly_stats": "{\n\"max_hp\": 5\n}",
 		"name": "Apprentice Farmer",
 		"stats": "{}"
 	},

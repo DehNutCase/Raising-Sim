@@ -336,9 +336,6 @@ func daily_course():
 	
 	
 	if Player.course_list:
-		await process_course_progress()
-		await(get_tree().create_timer(.5).timeout)
-		
 		var course_name = Player.course_list[0].course_name
 		var lesson_name = Player.course_list[0].lesson_name
 		var icon = Constants.courses[course_name][lesson_name].get("icon")
@@ -347,6 +344,8 @@ func daily_course():
 		#School is free so remove gold cost
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		course_daily_stats.erase("gold")
+		await process_course_progress()
+		await(get_tree().create_timer(.5).timeout)
 		process_stats(course_daily_stats, icon) 
 		
 
