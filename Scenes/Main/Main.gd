@@ -769,6 +769,11 @@ func _on_reward_signal(dialogic_signal) -> void:
 		var combats = Constants.expedition[dialogic_signal.card_game_expedition].random_encounters
 		var combat = combats.pick_random()
 		enter_card_game(combat, false, false, true)
+	if "card_game" in dialogic_signal:
+		if Dialogic.current_timeline:
+			await Dialogic.timeline_ended
+		var combat = load(dialogic_signal.card_game)
+		enter_card_game(combat)
 	if "expedition_failed" in dialogic_signal:
 		expedition_failed = true
 	if "expedition_heal" in dialogic_signal:
@@ -781,7 +786,6 @@ func _on_reward_signal(dialogic_signal) -> void:
 		Player.card_game_deck.append(card)
 		await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
 		display_toast(toast, "bottom", "center", icon_path)
-		
 	if "card" in dialogic_signal:
 		var card = load(dialogic_signal.card)
 		var toast = "Obtained " + card.id
@@ -864,6 +868,9 @@ func _on_inventory_item_added(item:InventoryItem):
 		
 	if item.get_property("walks", 0):
 		Player.max_walks += int(item.get_property("walks", 0))
+		
+	if item.get_property("card", ""):
+		_on_reward_signal({"card": item.get_property("card")})
 
 #helper function due to 4.2 lacking 4.3's weighted random chocie
 func rand_weighted(weights) -> int:

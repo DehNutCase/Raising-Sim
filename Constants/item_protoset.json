@@ -51,7 +51,8 @@
 		"limit": 1,
 		"name": "Backup Palette",
 		"price": 5000,
-		"stats": "{\n\"bonus_exp\": 10\n}"
+		"stats": "{\n\"bonus_exp\": 10\n}",
+		"card": "res://Scenes/CardGame/Characters/Mao/Cards/doodle.tres",
 	},
 	"lucky_clover": {
 		"daily_stats": "{}",
