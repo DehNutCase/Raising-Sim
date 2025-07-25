@@ -894,7 +894,7 @@ const courses = {
 					'scholarship': 2,
 					'stress': 25,
 			},
-			'required_progress': 1000,
+			'required_progress': 25000,
 			'skill':{
 				'id': 'meteor'
 			},
