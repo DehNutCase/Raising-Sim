@@ -1,0 +1,17 @@
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3
+join Morgan (Silhouette) 1
+[history action="clear"]
+Morgan_Portrait (Silhouette): You're here.
+update Mao (Excited)
+update Mao [animation="Tada"]
+[signal arg="{"random_voice": "greetings"}"]
+Mao_Portrait (Excited): Good morning!
+Morgan_Portrait (Silhouette): Have you been cleaning your room recently?
+update Mao (Normal)
+Mao_Portrait (Normal): The other maids have been taking care of it!
+Morgan_Portrait (Silhouette): That's fine, but you should clean your room yourself once in a while, don't you think?
+update Mao (Excited)
+update Mao [animation="Tada"]
+Mao_Portrait (Excited): Wait, is this a quest? I'll get right on it, your majesty!
+[signal arg="{"start_quest": "chores"}"]

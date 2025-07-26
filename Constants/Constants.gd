@@ -2809,6 +2809,28 @@ const quests = {
 			"day": 0,
 		},
 	},
+	"chores": {
+		"name": "Chores",
+		"requirements": {
+			"work": {
+				"Housework": 1,
+				},
+		},
+		"description": "Her majesty asked you to clean your room. Clearly, this is a quest with huge rewards. (No it's not.)",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_hp": 5,
+				"skill": 5,
+				"agility": 10,
+				"scholarship": 5,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
 }
 
 const random_daily_events = [
@@ -2818,5 +2840,12 @@ const random_daily_events = [
 		'weight': 1,
 		'toast': "Eureka!",
 		'timeline': "Inspiration",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "Eureka!",
+		'timeline': "Chores",
 	},
 ]

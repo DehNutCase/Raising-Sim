@@ -4,9 +4,6 @@ var text1: String
 @onready var label1 = $Stats
 var text2: String
 @onready var label2 = $Stats2
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
 
 #TODO, make the parent not disable tabs until class change card is read
 func display_stats():

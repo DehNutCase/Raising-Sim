@@ -168,6 +168,7 @@ directories/dtl_directory={
 "BlessedPlainsFirst": "res://Timelines/WalkEvents/BlessedPlainsFirst.dtl",
 "Carpentry0": "res://Timelines/JobEvents/Carpentry0.dtl",
 "Carpentry1": "res://Timelines/JobEvents/Carpentry1.dtl",
+"Chores": "res://Timelines/DayEvents/Random/Chores.dtl",
 "CityGates": "res://Timelines/WalkEvents/CityGates.dtl",
 "CityGatesFirst": "res://Timelines/WalkEvents/CityGatesFirst.dtl",
 "ColorTheoryEducationEnd": "res://Timelines/ActionEvents/InkMageSchool/ColorTheory/ColorTheoryEducationEnd.dtl",
