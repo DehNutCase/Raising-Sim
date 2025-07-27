@@ -2845,7 +2845,7 @@ const random_daily_events = [
 		'stats': {
 		},
 		'weight': 1,
-		'toast': "Eureka!",
+		'toast': "Her majesty called you over.",
 		'timeline': "Chores",
 	},
 ]

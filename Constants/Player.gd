@@ -513,6 +513,7 @@ func display_toast(message, gravity = "top", direction = "center"):
 		"gravity": gravity,                   # top or bottom
 		"direction": direction,               # left or center or right
 	})
+	Player.play_ui_sound("bubble")
 
 func play_ui_sound(sound_effect: String) -> void:
 	sound_effect = sound_effect.to_lower()
@@ -521,3 +522,8 @@ func play_ui_sound(sound_effect: String) -> void:
 func play_sound_effect(sound_effect: String) -> void:
 	sound_effect = sound_effect.to_lower()
 	SoundManager.play_sound(sound_effects[sound_effect])
+
+func start_quest(quest: String) -> void:
+	active_quests[quest] = {'active': true}
+	display_toast("Quest added: " + Constants.quests[quest].name)
+	

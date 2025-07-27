@@ -795,7 +795,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 		display_toast(toast, "bottom", "center", icon_path)
 	if "start_quest" in dialogic_signal:
 		#TODO, check for quest uniqueness?
-		Player.active_quests[dialogic_signal.start_quest] = {'active': true}
+		Player.start_quest(dialogic_signal.start_quest)
 	if "game_over" in dialogic_signal:
 		%GameOverDialog.show()
 		_change_current_state(states.GAME_OVER)
