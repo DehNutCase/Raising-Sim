@@ -72,32 +72,49 @@ offset_left = -1000.0
 offset_bottom = 600.0
 grow_horizontal = 0
 
-[node name="EndTurnButton" type="Button" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 12.0
-offset_bottom = 12.0
-text = "END TURN"
+offset_left = 1479.0
+offset_right = 1537.0
+offset_bottom = 40.0
 
-[node name="FleeButton" type="Button" parent="."]
+[node name="FleeButton" type="Button" parent="." groups=["Button"]]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 35)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -121.0
-offset_bottom = 34.0
+offset_left = -120.0
+offset_bottom = 35.0
 grow_horizontal = 0
 text = "Flee"
 
-[node name="Hand" type="HBoxContainer" parent="."]
+[node name="BottomUiMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -800.0
+offset_top = -300.0
+offset_right = 800.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Hand" type="HBoxContainer" parent="BottomUiMargin"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1600, 300)
-layout_mode = 0
-offset_top = 600.0
-offset_right = 1600.0
-offset_bottom = 900.0
+layout_mode = 2
 alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="EndTurnButton" type="Button" parent="BottomUiMargin" groups=["Button"]]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "END TURN"
 
 [node name="CubismContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -131,13 +148,8 @@ render_target_update_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
+offset_right = 204.0
+offset_bottom = 100.0
 
 [node name="TopMenuBar" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -156,11 +168,11 @@ layout_mode = 2
 texture_normal = ExtResource("9_wrxuv")
 texture_pressed = ExtResource("10_nnwkb")
 
-[node name="InventoryItemList" type="ItemList" parent="MarginContainer/TopMenuBar"]
+[node name="InventoryItemList" type="ItemList" parent="MarginContainer/TopMenuBar/TopMenuButtons"]
 unique_name_in_owner = true
 visible = false
 clip_contents = false
-custom_minimum_size = Vector2(800, 0)
+custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -170,11 +182,11 @@ icon_mode = 0
 icon_scale = 0.5
 script = ExtResource("12_dhls8")
 
-[node name="RelicItemList" type="ItemList" parent="MarginContainer/TopMenuBar"]
+[node name="RelicItemList" type="ItemList" parent="MarginContainer/TopMenuBar/TopMenuButtons"]
 unique_name_in_owner = true
 visible = false
 clip_contents = false
-custom_minimum_size = Vector2(800, 0)
+custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -184,7 +196,7 @@ icon_mode = 0
 icon_scale = 0.5
 script = ExtResource("12_dhls8")
 
-[connection signal="pressed" from="EndTurnButton" to="." method="end_turn"]
 [connection signal="pressed" from="FleeButton" to="." method="exit_combat"]
+[connection signal="pressed" from="BottomUiMargin/EndTurnButton" to="." method="end_turn"]
 [connection signal="pressed" from="MarginContainer/TopMenuBar/TopMenuButtons/RelicButton" to="." method="_on_relic_button_pressed"]
 [connection signal="pressed" from="MarginContainer/TopMenuBar/TopMenuButtons/InventoryButton" to="." method="_on_inventory_button_pressed"]

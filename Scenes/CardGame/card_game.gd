@@ -17,6 +17,8 @@ var enemy_scene: CardGameEncounterScene
 @onready var inventory_item_list: ItemList = %InventoryItemList
 @onready var relic_item_list: ItemList = %RelicItemList
 
+@onready var flee_button = %FleeButton
+
 func _ready():
 	Player.play_song("battle")
 	if Player.encounter:
@@ -52,6 +54,11 @@ func _ready():
 			relic_item_list.set_item_tooltip(index, item_info.description)
 			relic_item_list.set_item_icon(index, load(item_info.icon))
 		relic_item_list.item_clicked.connect(_on_relic_press)
+		
+	var buttons = get_tree().get_nodes_in_group("Button")
+	for button in buttons:
+		button.connect("pressed", _play_button_sound)
+		
 	start_battle()
 	
 func _on_card_ui_reparent_requested(card):
@@ -139,12 +146,14 @@ func check_victory() -> void:
 	if won:
 		if state != states.DEFEAT and Player.card_game_player.health >= 0:
 			state = states.VICTORY
+			flee_button.custom_minimum_size = Vector2(240,70)
 			hand.hide()
-			%FleeButton.text = "Leave"
+			flee_button.text = "Leave"
 
 func check_defeat() -> void:
 	if Player.card_game_player.health <= 0 and state != states.DEFEAT:
 		state = states.DEFEAT
+		flee_button.custom_minimum_size = Vector2(240,70)
 		hand.hide()
 		await get_tree().create_timer(1).timeout
 		Player.play_random_voice("failure")
@@ -193,10 +202,10 @@ func update_mana_labels():
 #mouse position and button isn't used
 func _on_item_press(index: int, mouse_position, mouse_button):
 	if state == states.VICTORY:
-		Player.display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		Player.display_toast("You're currently doing a victory dance and can't act!", "top")
 		return
 	if state ==  states.DEFEAT:
-		Player.display_toast("Mao is unconsious and can't act!", "top")
+		Player.display_toast("You're unconsious and can't act!", "top")
 		return
 	if state != states.PLAYER_TURN:
 		return
@@ -229,10 +238,10 @@ func _on_item_press(index: int, mouse_position, mouse_button):
 
 func _on_relic_press(index: int, mouse_position, mouse_button):
 	if state == states.VICTORY:
-		Player.display_toast("Mao is currently doing a victory dance and can't show off her relics!", "top")
+		Player.display_toast("You're currently doing a victory dance and can't show off your relics!", "top")
 		return
 	if state ==  states.DEFEAT:
-		Player.display_toast("Mao is unconsious and can't act!", "top")
+		Player.display_toast("You're unconsious and can't act!", "top")
 		return
 	if state != states.PLAYER_TURN:
 		return
@@ -267,3 +276,6 @@ func _on_relic_button_pressed():
 	relic_item_list.visible = !relic_item_list.visible
 	if relic_item_list.visible:
 		inventory_item_list.hide()
+	
+func _play_button_sound() -> void:
+	Player.play_ui_sound("blop")

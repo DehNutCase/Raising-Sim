@@ -2763,8 +2763,8 @@ const quests = {
 			"day": 30,
 		},
 	},
-	"conquer_the_world": {
-		"name": "Conquer the World!",
+	"overlord": {
+		"name": "Super Duper Ultra Supreme Overlord!",
 		"requirements": {
 			"tower_level": 20,
 			"stats": {"scholarship": 600},

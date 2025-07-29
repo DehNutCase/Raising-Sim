@@ -332,7 +332,7 @@ func daily_course():
 		await Dialogic.timeline_ended
 		await(get_tree().create_timer(.5).timeout)
 	
-	display_toast("Mao went to class!", "top")
+	display_toast("You went to class!", "top")
 	
 	
 	if Player.course_list:
@@ -372,7 +372,7 @@ func do_cram_school():
 			#display_toast("Not enough gold! " + "(" + str(cost) + ")", "top", "center")
 			#return
 		
-		display_toast("Mao went to cram school.", "top")
+		display_toast("You went to cram school.", "top")
 		await process_course_progress()
 		
 		await(get_tree().create_timer(.5).timeout)

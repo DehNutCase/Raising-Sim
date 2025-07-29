@@ -37,7 +37,7 @@ func add_action(action_type:String, action_name:String):
 			Player.daily_schedule_list.push_front({"action_type": action_type, "action_name": action_name})
 		else:
 			ToastParty.show({
-				"text": "Mao's schedule can't be changed right now.",
+				"text": "Your schedule can't be changed right now.",
 				"gravity": "top",
 				"direction": "center",
 			})

@@ -88,7 +88,7 @@ func _ready():
 	
 func process_turns(player_action: String):
 	if player_combat_copy.stats.current_hp <= 0:
-		display_toast("Mao is unconsious and can't act!", "top")
+		display_toast("You're unconsious and can't act!", "top")
 		return
 	order.sort_custom(agility_sort)
 	var message = ""
@@ -321,7 +321,7 @@ func _on_action(button):
 		if button.text == "Leave" or button.text == "Flee":
 			exit_combat()
 			return
-		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		display_toast("You're currently doing a victory dance and can't act!", "top")
 		return
 		
 	state = states.PROCESSING
@@ -344,7 +344,7 @@ func _on_skill_press(index: int):
 	if state != states.READY:
 		return
 	if fight_won:
-		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		display_toast("You're currently doing a victory dance and can't act!", "top")
 		return
 	state = states.PROCESSING
 	await process_turns(skill_menu.get_item_metadata(index).name.to_lower())
@@ -354,10 +354,10 @@ func _on_item_press(index: int):
 	if state != states.READY:
 		return
 	if fight_won:
-		display_toast("Mao is currently doing a victory dance and can't act!", "top")
+		display_toast("You're currently doing a victory dance and can't act!", "top")
 		return
 	if player_combat_copy.stats.current_hp <= 0:
-		display_toast("Mao is unconsious and can't act!", "top")
+		display_toast("You're unconsious and can't act!", "top")
 		return
 		
 	state = states.PROCESSING
