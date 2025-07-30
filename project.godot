@@ -232,6 +232,7 @@ directories/dtl_directory={
 "PrincessAlbion1": "res://Timelines/PrincessAlbion/PrincessAlbion1.dtl",
 "ReceptionHall": "res://Timelines/WalkEvents/ReceptionHall.dtl",
 "ReceptionHallFirst": "res://Timelines/WalkEvents/ReceptionHallFirst.dtl",
+"RemedialLessonsPerspective": "res://Timelines/Perspectives/RemedialLessonsPerspective.dtl",
 "RiceHouse": "res://Timelines/WalkEvents/RiceHouse.dtl",
 "RiceHouseFirst": "res://Timelines/WalkEvents/RiceHouseFirst.dtl",
 "SacredWoods": "res://Timelines/WalkEvents/SacredWoods.dtl",

@@ -1,0 +1,12 @@
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+join Mao (Normal) 1
+join Lilian (Grin) 2
+[history action="clear"]
+update Mao [animation="Tada" length="1"]
+update Mao (Excited)
+[signal arg="{"random_voice": "greetings"}"]
+Mao_Portrait (Excited): Yay! Good morning, Lilian!
+update Lilian (Grin)
+Lilian_Portrait (Grin): Oh, you have remedial lessons too?
+update Mao (Blush)
+Mao_Portrait (Blush): Teehee. I didn't finish all my classes before summer break started.

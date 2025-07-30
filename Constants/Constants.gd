@@ -2849,3 +2849,12 @@ const random_daily_events = [
 		'timeline': "Chores",
 	},
 ]
+
+const perspectives = {
+	"remedial_lessons": {
+		"label": "The Perspective of Remedial Lessons",
+		"timeline": "RemedialLessonsPerspective",
+		"icon": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
+		#TODO, add requirements
+	}
+}

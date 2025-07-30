@@ -53,10 +53,18 @@ label_settings = SubResource("LabelSettings_b2sl5")
 [node name="PlayButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="0" groups=["Button"]]
 script = ExtResource("8_a4g3w")
 
-[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1" groups=["Button"]]
+[node name="PerspectivesButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="1" groups=["Button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+text = "Perspectives"
 
-[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2" groups=["Button"]]
+[node name="OptionsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="2" groups=["Button"]]
 
-[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3" groups=["Button"]]
+[node name="CreditsButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="3" groups=["Button"]]
+
+[node name="ExitButton" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons" index="4" groups=["Button"]]
 
 [node name="BackButton" parent="FlowControlContainer/FlowControl" index="0" groups=["Button"]]
+
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/PerspectivesButton" to="." method="_on_perspectives_button_pressed"]
