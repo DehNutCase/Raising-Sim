@@ -133,6 +133,8 @@ signal experience_gained(growth_data)
 @export var experience_total = 0
 @export var experience_required = 100
 
+@export var perspectives = {}
+
 func get_required_experience(l) -> int:
 	return int(pow(1.1, l) * 100)
 
@@ -154,6 +156,7 @@ func gain_experience(amount: int) -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	load_perspectives()
 	for stat in display_stats:
 		if !(stat in base_stats):
 			stats[stat] = 0
@@ -249,7 +252,7 @@ func load_game():
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
 	if not parse_result == OK:
-		printerr("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		printerr("load_game JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 		return
 	var data = json.get_data()
 	
@@ -276,6 +279,30 @@ func delete_game():
 	#TODO, fix save issue if we return to main menu
 	#OS.set_restart_on_exit(true)
 	#get_tree().quit()
+	
+func save_perspectives() -> void:
+	var save_data = self.perspectives
+	var save_file
+	DirAccess.make_dir_recursive_absolute("user://Saves")
+	save_file = FileAccess.open("user://Saves/perspectives_save.json", FileAccess.WRITE)
+	if save_file:
+		save_file.store_line(JSON.stringify(save_data))
+	else:
+		printerr("save_perspectives failed to save")
+
+func load_perspectives() -> void:
+	var save_file
+	save_file = FileAccess.open("user://Saves/perspectives_save.json", FileAccess.READ)
+	if !save_file:
+		return
+	var json_string = save_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		printerr("load_perspectives JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	var data = json.get_data()
+	perspectives = data
 	
 func save_class_change_card(class_change_name:String):
 	class_change_class = class_change_name
