@@ -4,9 +4,49 @@ join Lilian (Grin) 2
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
-[signal arg="{"random_voice": "greetings"}"]
+# Main isn't loaded for perspective timelines, so call play_song and play_voice etc. directly via Player
+do Player.play_song("cheerful")
+do Player.play_random_voice("greetings")
 Mao_Portrait (Excited): Yay! Good morning, Lilian!
 update Lilian (Grin)
 Lilian_Portrait (Grin): Oh, you have remedial lessons too?
 update Mao (Blush)
 Mao_Portrait (Blush): Teehee. I didn't finish all my classes before summer break started.
+Lilian_Portrait (Grin): Hah. Well, Stella took lots of notes, so let me know what classes you have and I can hook you up.
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Thanks!
+[history]
+leave --All-- [animation="Instant In Or Out"]
+do Player.play_sound_effect("time_passing")
+[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+[wait time="1.0" hide_text="false"]
+join Mao (Normal) 2
+[background arg="res://Art/Background/UncleMugen/Classroom_04_day.webp" fade="0.0"]
+A few days later.
+update Mao (Surprised)
+Mao_Portrait (Surprised): Huh? Lilian isn't here.
+do Player.play_sound_effect("ping")
+update Mao (Normal)
+Mao_Portrait (Normal): [Lilian? Class is about to start.]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [I finished all my lessons already.🎉🥳🎉 Let me know when you're done with yours and we can hang out.]
+do Player.play_sound_effect("ping")
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): [What!? But you were gone for half the semester, how did you finish before me?]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [You can ask to take the exams early to skip the remedial lessons, you know? I crammed with Stella's notes and passed.]
+do Player.play_sound_effect("ping")
+update Mao (Sad)
+Mao_Portrait (Sad): [Uguu.😭You ditched me!😭]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [😜]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [But seriously, just take the exams.]
+do Player.play_sound_effect("ping")
+update Mao (Angry)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Angry): [Hmph! I'll show you!😠]
+do Player.play_sound_effect("ping")
+Mao_Portrait (Angry): [I'll show you all!🔥🔥🔥]

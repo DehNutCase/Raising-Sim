@@ -3,6 +3,7 @@ extends MarginContainer
 
 @onready var button_label = $Button/Label
 var timeline = ""
+var perspective = ""
 
 signal pressed
 
@@ -13,8 +14,9 @@ func _ready():
 
 func check_requirements() -> void:
 	#Check requirements here, and blank & disable if not met
-	if false:
+	if !Player.perspectives.get(perspective):
 		update_icon(load("res://Art/Background/BlackBackground.png"))
+		#maybe leave label alone?
 		update_label("???")
 		%Button.disabled = true
 	 
