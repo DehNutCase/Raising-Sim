@@ -281,7 +281,7 @@ func delete_game():
 	#get_tree().quit()
 	
 func save_perspectives() -> void:
-	var save_data = self.perspectives
+	var save_data = perspectives
 	var save_file
 	DirAccess.make_dir_recursive_absolute("user://Saves")
 	save_file = FileAccess.open("user://Saves/perspectives_save.json", FileAccess.WRITE)
@@ -303,7 +303,11 @@ func load_perspectives() -> void:
 		return
 	var data = json.get_data()
 	perspectives = data
-	
+
+func unlock_perspective(perspective: String) -> void:
+	perspectives[perspective] = true
+	save_perspectives()
+
 func save_class_change_card(class_change_name:String):
 	class_change_class = class_change_name
 	var save_data = {}
@@ -554,3 +558,11 @@ func start_quest(quest: String) -> void:
 	active_quests[quest] = {'active': true}
 	display_toast("Quest added: " + Constants.quests[quest].name)
 	
+func check_course_completion(course: String) -> bool:
+	var course_data = Constants.courses[course]
+	var completed := true
+	for course_name in course_data:
+		if !course_name in courses_completed:
+			completed = false
+			break
+	return completed

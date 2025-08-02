@@ -135,7 +135,7 @@ func _ready():
 		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Dialogic.start("MagecraftEducationMiddle")
+		Dialogic.start("Day30Event")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -799,6 +799,8 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "game_over" in dialogic_signal:
 		%GameOverDialog.show()
 		_change_current_state(states.GAME_OVER)
+	if "unlock_perspective" in dialogic_signal:
+		Player.unlock_perspective(dialogic_signal.unlock_perspective)
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
