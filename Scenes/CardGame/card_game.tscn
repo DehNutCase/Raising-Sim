@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=17 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
+[ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="4_3opov"]
 [ext_resource type="Resource" uid="uid://c5uauj7w44r63" path="res://Scenes/CardGame/Characters/Mao/Cards/paint_the_world.tres" id="5_3o02g"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
@@ -31,20 +32,24 @@ script = ExtResource("1_3b07j")
 card_game_level = ExtResource("2_c6ssf")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="TextureRect" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="BackgroundVBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -380.0
+offset_right = 1760.0
+offset_bottom = 1780.0
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="BackgroundVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 texture = ExtResource("3_uds7l")
 metadata/_edit_lock_ = true
+
+[node name="HandBackground" type="TextureRect" parent="BackgroundVBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_3opov")
 
 [node name="TargetArea" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
@@ -71,6 +76,7 @@ anchor_right = 1.0
 offset_left = -1000.0
 offset_bottom = 600.0
 grow_horizontal = 0
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -98,10 +104,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -800.0
-offset_top = -300.0
+offset_top = -200.0
 offset_right = 800.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_lock_ = true
 
 [node name="Hand" type="HBoxContainer" parent="BottomUiMargin"]
 unique_name_in_owner = true
@@ -111,6 +119,7 @@ alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="EndTurnButton" type="Button" parent="BottomUiMargin" groups=["Button"]]
+custom_minimum_size = Vector2(120, 35)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

@@ -2851,10 +2851,20 @@ const random_daily_events = [
 ]
 
 const perspectives = {
+	#Use Player.unlock_perspective to unlock perspectives
 	"remedial_lessons": {
 		"label": "The Perspective of Remedial Lessons",
 		"timeline": "RemedialLessonsPerspective",
 		"icon": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
-		#TODO, add requirements
-	}
+	},
+	"bankrupt": {
+		"label": "The Perspective of Being a Debtor",
+		"timeline": "BankruptPerspective",
+		"icon": "res://Art/Background/Background material shop/bg014a.jpg",
+	},
+	"test": {
+		"label": "Test Perspective",
+		"timeline": "RemedialLessonsPerspective",
+		"icon": "res://Art/Background/Background material shop/bg001a.jpg",
+	},
 }

@@ -119,6 +119,7 @@ directories/dtl_directory={
 "Acolyte0": "res://Timelines/JobEvents/Acolyte0.dtl",
 "Acolyte1": "res://Timelines/JobEvents/Acolyte1.dtl",
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
+"BankruptPerspective": "res://Timelines/Perspectives/BankruptPerspective.dtl",
 "Bedtime0": "res://Timelines/Bedtime/Bedtime0.dtl",
 "Bedtime1": "res://Timelines/Bedtime/Bedtime1.dtl",
 "Bedtime2": "res://Timelines/Bedtime/Bedtime2.dtl",

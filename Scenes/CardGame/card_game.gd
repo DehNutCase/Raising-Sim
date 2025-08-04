@@ -153,6 +153,7 @@ func check_victory() -> void:
 func check_defeat() -> void:
 	if Player.card_game_player.health <= 0 and state != states.DEFEAT:
 		state = states.DEFEAT
+		flee_button.text = "Leave"
 		flee_button.custom_minimum_size = Vector2(240,70)
 		hand.hide()
 		await get_tree().create_timer(1).timeout

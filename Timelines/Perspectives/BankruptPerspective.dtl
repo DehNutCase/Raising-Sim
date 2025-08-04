@@ -1,0 +1,13 @@
+[background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3
+join Morgan (Silhouette) 1
+[signal arg="{"music": "cheerful"}"]
+[history action="clear"]
+Morgan_Portrait (Silhouette): You're here.
+update Mao (Normal)
+update Mao [animation="Tada"]
+[signal arg="{"random_voice": "greetings"}"]
+Mao_Portrait (Normal): Good morning! What did you need me for?
+Morgan_Portrait (Silhouette): It's not a big deal, but did you know that you're out of money?
+update Mao (Blush)
+Mao_Portrait (Blush): Umm, I'll pay you back?

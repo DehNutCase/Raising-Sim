@@ -566,3 +566,9 @@ func check_course_completion(course: String) -> bool:
 			completed = false
 			break
 	return completed
+
+func check_gold_below_zero() -> bool:
+	if Player.stats.gold < 0:
+		return true
+	else:
+		return false

@@ -9,3 +9,8 @@ else:
 	# Core classes aren't finished, activate remedial lessons
 	False
 	[signal arg="{"unlock_perspective": "remedial_lessons"}"]
+if {Player.check_gold_below_zero()}:
+	Below 0
+	[signal arg="{"unlock_perspective": "bankrupt"}"]
+else:
+	0 or higher
