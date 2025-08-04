@@ -132,10 +132,10 @@ func _ready():
 		#Player.skill_inventory.create_and_add_item("meteor")
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
 		#Player.inventory.remove_item(item)
-		#Player.stats.gold = 0
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		Dialogic.start("Day30Event")
+		#Player.stats.gold = -1
+		#Dialogic.start("Day30Event")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -414,7 +414,11 @@ func process_course_progress():
 		if Constants.courses[course_name][lesson_name].get("card"):
 			var card_path = Constants.courses[course_name][lesson_name].get("card")
 			var card = load(card_path)
+			var toast = "Obtained " + card.id
+			var icon_path = card.icon.resource_path
 			Player.card_game_deck.append(card)
+			await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
+			display_toast(toast, "bottom", "center", icon_path)
 	
 func play_course_progress_timeline(course_name:String, lesson_name:String, index=0):
 	var timelines = Constants.courses[course_name][lesson_name].get("timelines")

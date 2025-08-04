@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://ca6asxvhlbu51"]
 
 [ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
 [ext_resource type="StyleBox" uid="uid://ca05p6m8lph5q" path="res://Art/Themes/ThemeComponents/WindowBackground.tres" id="1_olt2s"]
@@ -9,6 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://c7vgqg4bs5tes" path="res://Art/Themes/ThemeComponents/Progress_Bar_Background.tres" id="6_8q4b0"]
 [ext_resource type="StyleBox" uid="uid://c4npmocm3s7p3" path="res://Art/Themes/ThemeComponents/Progress_Bar_Fill.tres" id="7_t7wje"]
 [ext_resource type="StyleBox" uid="uid://dtfe0wxedjqpg" path="res://Art/Themes/ThemeComponents/TooltipPanel.tres" id="9_nmgag"]
+[ext_resource type="StyleBox" uid="uid://6stps2itb27m" path="res://Art/Themes/ThemeComponents/ActiveTabStyleboxTexture.tres" id="9_xu8ox"]
 [ext_resource type="FontFile" uid="uid://bau34tojtndvr" path="res://Art/Fonts/Gluten-VariableFont_slnt,wght.ttf" id="10_vd05d"]
 [ext_resource type="FontFile" uid="uid://865wdbswk5y5" path="res://Art/Fonts/seguiemj.ttf" id="11_jquc4"]
 
@@ -73,7 +74,7 @@ TabContainer/font_sizes/font_size = 18
 TabContainer/styles/panel = ExtResource("5_4bo2n")
 TabContainer/styles/tab_disabled = ExtResource("1_ggqsi")
 TabContainer/styles/tab_hovered = ExtResource("2_o15uc")
-TabContainer/styles/tab_selected = ExtResource("2_o15uc")
+TabContainer/styles/tab_selected = ExtResource("9_xu8ox")
 TabContainer/styles/tab_unselected = ExtResource("3_vgx6v")
 TooltipPanel/styles/panel = ExtResource("9_nmgag")
 Window/colors/title_color = Color(1, 1, 1, 1)

@@ -713,6 +713,7 @@ const courses = {
 			#TODO,  implement skill for magic training
 			'skill':{
 			},
+			"card": "res://Scenes/CardGame/Characters/Mao/Cards/power_up.tres",
 			'timelines': ["MagecraftEducationFirst", "MagecraftEducationMiddle", "MagecraftEducationEnd"],
 			"description": "Since you already know how to cast spells, this class is a freebie.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_01.png",
