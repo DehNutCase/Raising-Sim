@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=86 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -60,19 +60,20 @@
 [ext_resource type="Texture2D" uid="uid://dyy8e80kjheom" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Sword.png" id="54_d2kqu"]
 [ext_resource type="Texture2D" uid="uid://nmxkvhcx1h75" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_!.png" id="55_36a5c"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="55_ibpv5"]
+[ext_resource type="Texture2D" uid="uid://c6oa25heovscs" path="res://Art/UI/mandinhart/More Icons/Clen booton/C_LeftArrow1.png" id="55_puqgj"]
 [ext_resource type="Texture2D" uid="uid://culaeiormlg1q" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Return1.png" id="55_ylipg"]
 [ext_resource type="Texture2D" uid="uid://bnn64h7si3og2" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Return1.png" id="56_7gqg0"]
 [ext_resource type="Texture2D" uid="uid://bl2icsbl8w5m0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Caracter.png" id="56_dpatn"]
 [ext_resource type="Texture2D" uid="uid://dk0qq0hktgf0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_!.png" id="56_n3yma"]
 [ext_resource type="Texture2D" uid="uid://bsq8bpm0l38w4" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Clock.png" id="57_bks8t"]
 [ext_resource type="Texture2D" uid="uid://cbrn5vl87lv1t" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Clock.png" id="58_6xyyi"]
-[ext_resource type="Texture2D" uid="uid://bdvsd0uxrqf38" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element46_01.png" id="58_27wwt"]
 [ext_resource type="Texture2D" uid="uid://rvktd8wnbbbq" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_HamburgerMenu.png" id="59_8jab2"]
 [ext_resource type="Texture2D" uid="uid://8phy4gy1nlas" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Note2.png" id="59_chmyp"]
 [ext_resource type="Texture2D" uid="uid://3eakswiet1l3" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Note2.png" id="60_l7j0c"]
 [ext_resource type="Texture2D" uid="uid://vdfclm4jhwe7" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_HamburgerMenu.png" id="60_qmxeb"]
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="61_0yijj"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="62_7ii8w"]
+[ext_resource type="Texture2D" uid="uid://dnwdwoslwcp5y" path="res://Art/UI/mandinhart/More Icons/Clen booton/C_RightArrow1.png" id="62_342ff"]
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
 [ext_resource type="Texture2D" uid="uid://bc0twdyjkhcdq" path="res://Art/Mori no oku no kakurezato/CardGame/alchemy05_01.png" id="69_djog0"]
 
@@ -912,6 +913,26 @@ texture_normal = ExtResource("51_bx1kg")
 texture_pressed = ExtResource("52_pgejv")
 stretch_mode = 3
 
+[node name="WalkAlertIcon" type="TextureRect" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Walk"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("55_puqgj")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="Tower" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -961,16 +982,17 @@ stretch_mode = 3
 [node name="ScheduleAlertIcon" type="TextureRect" parent="RightMenuContainer/MenuPanel/VBoxContainer/Schedule"]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_top = 25.0
-offset_right = -15.0
-offset_bottom = 50.0
-grow_horizontal = 0
-texture = ExtResource("58_27wwt")
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_vertical = 2
+texture = ExtResource("62_342ff")
 expand_mode = 3
 stretch_mode = 5
 

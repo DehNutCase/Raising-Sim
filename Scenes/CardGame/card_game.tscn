@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="4_3opov"]
-[ext_resource type="Resource" uid="uid://c5uauj7w44r63" path="res://Scenes/CardGame/Characters/Mao/Cards/paint_the_world.tres" id="5_3o02g"]
+[ext_resource type="Resource" uid="uid://c5uauj7w44r63" path="res://Scenes/CardGame/Characters/Mao/Cards/super_duper_paint_spray.tres" id="5_3o02g"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
-[ext_resource type="Resource" uid="uid://bxuttp3fs7rf1" path="res://Scenes/CardGame/Characters/Mao/Cards/light_barrier.tres" id="6_perpr"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
+[ext_resource type="Resource" uid="uid://k2gtw81xb7ta" path="res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres" id="7_mocat"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="9_cpfh3"]
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="9_wrxuv"]
 [ext_resource type="Texture2D" uid="uid://bl2icsbl8w5m0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Caracter.png" id="10_fvy2a"]
@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
-size = Vector2(1600, 600)
+size = Vector2(1600, 650)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6gfkx"]
 viewport_path = NodePath("CubismContainer/CubismTexture/CubismModel")
@@ -55,7 +55,7 @@ texture = ExtResource("4_3opov")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea"]
-position = Vector2(800, 300)
+position = Vector2(800, 325)
 shape = SubResource("RectangleShape2D_yxqvk")
 debug_color = Color(0.107029, 0.26902, 0.854055, 0.419608)
 metadata/_edit_lock_ = true
@@ -63,7 +63,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_3o02g"), ExtResource("6_perpr")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_3o02g"), ExtResource("7_mocat")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]

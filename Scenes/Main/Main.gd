@@ -32,6 +32,7 @@ extends Control
 @onready var buttons3 = $BottomMenuContainer/HBoxContainer
 
 @onready var schedule_alert_icon = %ScheduleAlertIcon
+@onready var walk_alert_icon = %WalkAlertIcon
 
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
@@ -55,8 +56,11 @@ var day: int:
 		day_label.display_day(day)
 		if day == 1:
 			schedule_alert_icon.show()
+			walk_alert_icon.show()
+			print(walk_alert_icon.visible)
 		else:
 			schedule_alert_icon.hide()
+			walk_alert_icon.hide()
 
 enum states {READY, DIALOGIC, BUSY, GAME_OVER}
 var current_state = states.READY
@@ -115,8 +119,10 @@ func _ready():
 	day_label.display_day(day)
 	if day == 1:
 		schedule_alert_icon.show()
+		walk_alert_icon.show()
 	else:
 		schedule_alert_icon.hide()
+		walk_alert_icon.hide()
 	
 	if (Player.stats["stress"] < 50):
 		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)

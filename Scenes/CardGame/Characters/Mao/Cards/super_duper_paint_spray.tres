@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_qhn1b")
-id = "Paint The World"
+id = "Super Duper Paint Spray"
 type = 3
 target = 0
 cost = 10
