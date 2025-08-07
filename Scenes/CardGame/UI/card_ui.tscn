@@ -108,7 +108,7 @@ bbcode_enabled = true
 text = "CARD TEXT"
 scroll_active = false
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ManaCostTexture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 1
 anchors_preset = -1
@@ -119,7 +119,7 @@ texture = ExtResource("6_cckm6")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="CostLabel" type="RichTextLabel" parent="TextureRect"]
+[node name="CostLabel" type="RichTextLabel" parent="ManaCostTexture"]
 unique_name_in_owner = true
 clip_contents = false
 custom_minimum_size = Vector2(20, 20)

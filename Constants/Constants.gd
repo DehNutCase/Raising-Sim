@@ -2853,6 +2853,12 @@ const random_daily_events = [
 
 const perspectives = {
 	#Use Player.unlock_perspective to unlock perspectives
+	"vanishing_point": {
+		"unlock": true,
+		"label": "Vanishing Point Perspective",
+		"timeline": "VanishingPointPerspective",
+		"icon": "res://Art/Background/Background material shop/bg005e.jpg",
+	},
 	"remedial_lessons": {
 		"label": "The Perspective of Remedial Lessons",
 		"timeline": "RemedialLessonsPerspective",

@@ -881,6 +881,20 @@ texture_normal = ExtResource("45_34myw")
 texture_pressed = ExtResource("46_oupw1")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Stats"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -31.0
+offset_right = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Stats"
+
 [node name="Quests" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -888,6 +902,20 @@ size_flags_vertical = 3
 texture_normal = ExtResource("55_36a5c")
 texture_pressed = ExtResource("56_n3yma")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Quests"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quests"
 
 [node name="Background" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
@@ -897,6 +925,21 @@ texture_normal = ExtResource("55_ibpv5")
 texture_pressed = ExtResource("56_dpatn")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Background"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Special
+"
+
 [node name="Skills" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -904,6 +947,21 @@ size_flags_vertical = 3
 texture_normal = ExtResource("49_3mfmt")
 texture_pressed = ExtResource("50_0lhdw")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Skills"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Skills
+"
 
 [node name="Walk" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
@@ -933,6 +991,21 @@ texture = ExtResource("55_puqgj")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Walk"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Walk
+"
+
 [node name="Tower" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -941,12 +1014,40 @@ texture_normal = ExtResource("53_u0am2")
 texture_pressed = ExtResource("54_d2kqu")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Tower"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Tower"
+
 [node name="Class Change" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 visible = false
 layout_mode = 2
 texture_normal = ExtResource("55_ylipg")
 texture_pressed = ExtResource("56_7gqg0")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="LeftMenuContainer/MenuPanel/VBoxContainer/Class Change"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Class Change"
 
 [node name="RightMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -996,6 +1097,20 @@ texture = ExtResource("62_342ff")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/Schedule"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.5
+offset_top = -31.0
+offset_right = 71.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Schedule"
+
 [node name="Lessons" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1003,6 +1118,20 @@ size_flags_vertical = 3
 texture_normal = ExtResource("59_8jab2")
 texture_pressed = ExtResource("60_qmxeb")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/Lessons"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Courses"
 
 [node name="Story" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 visible = false
@@ -1013,6 +1142,20 @@ texture_normal = ExtResource("47_bd7pa")
 texture_pressed = ExtResource("48_cktde")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/Story"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Story"
+
 [node name="Inventory" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1020,6 +1163,21 @@ size_flags_vertical = 3
 texture_normal = ExtResource("61_0yijj")
 texture_pressed = ExtResource("62_7ii8w")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/Inventory"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Inventory
+"
 
 [node name="Shop" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
@@ -1029,6 +1187,20 @@ texture_normal = ExtResource("45_03wx0")
 texture_pressed = ExtResource("46_xbpvj")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/Shop"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Shop"
+
 [node name="Save" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1036,6 +1208,21 @@ size_flags_vertical = 3
 texture_normal = ExtResource("59_chmyp")
 texture_pressed = ExtResource("60_l7j0c")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/Save"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Save
+"
 
 [node name="Wishlist" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
 visible = false
