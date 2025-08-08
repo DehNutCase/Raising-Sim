@@ -9,7 +9,7 @@ do Player.play_song("slightly_sad")
 [history action="clear"]
 update Mao (Normal)
 do Player.play_voice("hmm")
-Mao_Portrait (Normal): (This is... Hmm, strange, I don't remember this perspective. Did I mess up?)
+Mao_Portrait (Normal): (This is... Hmm, weird, I don't remember this perspective. Did I mess up my spell?)
 Mao_Portrait (Normal): (For the time being, I should at least put the fire out.)
 [background arg="res://Art/Background/Background material shop/bg005a.jpg" fade="3.0" transition="Simple Fade"]
 do Player.play_voice("proud")
@@ -20,14 +20,14 @@ update Mao [animation="Tada"]
 update Mao (Surprised)
 do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Gah! What the heck?
-Rice_Portrait (Normal): An oddly refreshing response. May I ask why you're here this time, 'Vanishing Point'?
+Rice_Portrait (Normal): An oddly refreshing response, considering. May I ask why you're here this time, 'Vanishing Point'?
 update Mao (Angry)
 Mao_Portrait (Angry): I'm afraid you have the advantage of me.
 Rice_Portrait (Normal): Really. Well, if it's our first meeting, I should introduce myself.
 Rice_Portrait (Normal): Rice Glassfield. I'm this generation's hero, miss demon lord.
 update Mao (Surprised)
 do Player.play_voice("hmm")
-Mao_Portrait (Surprised): (Hmm, I don't remember her. Did I accidentally mess up the time? She could be a hero from after my time.)
+Mao_Portrait (Surprised): (Hmm, I don't remember her. Did I accidentally mess up the time coordinates? She could be a hero from after my time.)
 update Mao (EyesClosed)
 Mao_Portrait (EyesClosed): (No, this is definitely my body, and the time should be more or less right. But it's strange that I don't remember this place.)
 update Mao (Normal)
@@ -39,4 +39,13 @@ Rice_Portrait (Normal): Sure. Now, if you don't mind, could you tell me why you'
 do Player.play_voice("happy")
 update Mao (Blush)
 Mao_Portrait (Blush): Um. I think I got lost. Teehee.
+update Mao (Normal)
+Mao_Portrait (Normal): I was in the mood for a vacation, so I popped in to enjoy a summer break at the beach.
+Rice_Portrait (Normal): It's winter.
+Mao_Portrait (Normal): Hang on, let me figure out where I am.
+update Mao [animation="Tada" length="3"]
+do Player.play_sound_effect("heal")
+update Mao (Surprised)
+Mao_Portrait (Normal): Locator spell, go! Teehee.
+Mao_Portrait (Surprised): Wait, this is Albion!? Why am I on the other side of the planet?
 [update_position action="reset_all" time="0.0"]

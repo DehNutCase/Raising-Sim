@@ -101,6 +101,11 @@ Source: [itch.io : 200 Free SFX](https://kronbits.itch.io/freesfx)
 Author: [JDSherbert](https://jdsherbert.itch.io/)  
 Source: [itch.io : Tabletop Games SFX Pack](https://jdsherbert.itch.io/tabletop-games-sfx-pack) 
 
+### Sound
+#### SFX
+Author: [Leohpaz](https://leohpaz.itch.io/)  
+Source: [itch.io : RPG Essentials SFX - Free!](https://leohpaz.itch.io/rpg-essentials-sfx-free) 
+
 ### Image
 #### Character Sprites
 Author: [POMPACK](https://pompack-en.stores.jp/about)  
