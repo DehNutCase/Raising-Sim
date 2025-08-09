@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=22 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
@@ -9,11 +9,16 @@
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
 [ext_resource type="Resource" uid="uid://k2gtw81xb7ta" path="res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres" id="7_mocat"]
+[ext_resource type="StyleBox" uid="uid://dbhg2yav7ap6u" path="res://Art/Themes/ThemeComponents/DefaultButtonNormal.tres" id="8_q06d8"]
+[ext_resource type="StyleBox" uid="uid://c7r2jxhbcch2g" path="res://Art/Themes/ThemeComponents/DefaultButtonHover.tres" id="9_4y1vj"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="9_cpfh3"]
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="9_wrxuv"]
 [ext_resource type="Texture2D" uid="uid://bl2icsbl8w5m0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Caracter.png" id="10_fvy2a"]
+[ext_resource type="StyleBox" uid="uid://k5d5xj0eovxl" path="res://Art/Themes/ThemeComponents/DefaultButtonPressed.tres" id="10_gnlme"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="10_nnwkb"]
+[ext_resource type="StyleBox" uid="uid://jy8bapewhgwe" path="res://Art/Themes/ThemeComponents/DefaultButtonDisabledTexture.tres" id="11_8jwc3"]
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
+[ext_resource type="StyleBox" uid="uid://oajujgbhe6pk" path="res://Art/Themes/ThemeComponents/DefaultButtonFocus.tres" id="12_y7e5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 650)
@@ -50,6 +55,7 @@ metadata/_edit_lock_ = true
 [node name="HandBackground" type="TextureRect" parent="BackgroundVBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_3opov")
+metadata/_edit_lock_ = true
 
 [node name="TargetArea" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
@@ -123,6 +129,11 @@ custom_minimum_size = Vector2(120, 35)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_styles/normal = ExtResource("8_q06d8")
+theme_override_styles/hover = ExtResource("9_4y1vj")
+theme_override_styles/pressed = ExtResource("10_gnlme")
+theme_override_styles/disabled = ExtResource("11_8jwc3")
+theme_override_styles/focus = ExtResource("12_y7e5o")
 text = "END TURN"
 
 [node name="CubismContainer" type="PanelContainer" parent="."]
