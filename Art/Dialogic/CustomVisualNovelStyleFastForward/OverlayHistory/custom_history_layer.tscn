@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgduepcisex0h"]
+[gd_scene load_steps=8 format=3 uid="uid://cgduepcisex0h"]
 
 [ext_resource type="Script" path="res://Art/Dialogic/CustomVisualNovelStyleFastForward/OverlayHistory/history_layer.gd" id="1_4mqm3"]
 [ext_resource type="PackedScene" uid="uid://cuoywrmvda1yg" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.tscn" id="2_x1xgk"]
+[ext_resource type="Theme" uid="uid://bpmpi75l7q4kv" path="res://Art/Themes/DefaultButtonTheme.tres" id="3_kyyx0"]
 [ext_resource type="Texture2D" uid="uid://0tq2ptiphuep" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_RightArrow3.png" id="3_nrdnd"]
 [ext_resource type="Script" path="res://Art/Dialogic/CustomVisualNovelStyleFastForward/OverlayHistory/AutoSkip.gd" id="3_pc3tq"]
 [ext_resource type="Texture2D" uid="uid://c3jj7xm78tnoa" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_RightArrow3.png" id="4_6em7s"]
@@ -68,6 +69,7 @@ offset_bottom = 48.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_kyyx0")
 text = "History"
 
 [node name="AutoSkip" type="TextureButton" parent="."]

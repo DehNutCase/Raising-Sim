@@ -60,7 +60,16 @@ func _ready():
 		button.connect("pressed", _play_button_sound)
 		
 	start_battle()
-	
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		var visible = inventory_item_list.visible or relic_item_list.visible
+		inventory_item_list.hide()
+		relic_item_list.hide()
+		if visible:
+			Player.play_ui_sound("cancel_blop")
+			get_viewport().set_input_as_handled()
+		
 func _on_card_ui_reparent_requested(card):
 	card.reparent(hand)
 
