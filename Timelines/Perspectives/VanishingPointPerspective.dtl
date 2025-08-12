@@ -7,6 +7,9 @@ join Mao (Normal) 2
 [update_position position="4" vector="Vector2(0, 150)" time="0.0"]
 do Player.play_song("slightly_sad")
 [history action="clear"]
+She awakened to the gentle swaying motion of the small wooden boat. The boat was moving forward by itself, getting closer and closer to the flames.
+Having just finished casting what could be considered the world's most useless movement spell, it was natural to feel a little disoriented.
+The spell's effect was rather simple, it allowed the caster to move to the caster's location. Considering the long cast time, it wasn't even useful for wasting mana.
 update Mao (Normal)
 do Player.play_voice("hmm")
 Mao_Portrait (Normal): (This is... Hmm, weird, I don't remember this perspective. Did I mess up my spell?)
@@ -23,13 +26,16 @@ Mao_Portrait (Surprised): Gah! What the heck?
 Rice_Portrait (Normal): An oddly refreshing response, considering. May I ask why you're here this time, 'Vanishing Point'?
 update Mao (Angry)
 Mao_Portrait (Angry): I'm afraid you have the advantage of me.
-Rice_Portrait (Normal): Really. Well, if it's our first meeting, I should introduce myself.
-Rice_Portrait (Normal): Rice Glassfield. I'm this generation's hero, miss demon lord.
+Rice_Portrait (Normal): Is that so. Well, if it's our first meeting, I should introduce myself.
+Rice_Portrait (Normal): Rice Glassfield. A Magic Officer serving her majesty.
+update Mao (Normal)
+Mao_Portrait (Normal): Magic Officer, not Hero?
+Rice_Portrait (Normal): Magic Officer is my primary class.
 update Mao (Surprised)
 do Player.play_voice("hmm")
-Mao_Portrait (Surprised): (Hmm, I don't remember her. Did I accidentally mess up the time coordinates? She could be a hero from after my time.)
+Mao_Portrait (Surprised): (Hmm, I don't remember her, but she seems to be familiar with me. Did I accidentally mess up the time coordinates? She could be someone I met later.)
 update Mao (EyesClosed)
-Mao_Portrait (EyesClosed): (No, this is definitely my body, and the time should be more or less right. But it's strange that I don't remember this place.)
+Mao_Portrait (EyesClosed): (No, the time should be more or less right. But it's weird that I don't remember this place.)
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]
 Mao_Portrait (Normal): Okay, I have no idea what's going on!
