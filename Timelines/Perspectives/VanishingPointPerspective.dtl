@@ -5,15 +5,16 @@ join Mao (Normal) 2
 [update_position position="2" vector="Vector2(0, 150)" time="0.0"]
 [update_position position="3" vector="Vector2(0, 150)" time="0.0"]
 [update_position position="4" vector="Vector2(0, 150)" time="0.0"]
-do Player.play_song("slightly_sad")
+do Player.play_song("winter")
 [history action="clear"]
-She awakened to the gentle swaying motion of the small wooden boat. The boat was moving forward by itself, getting closer and closer to the flames.
+She awakened to the gentle swaying motion of the small wooden boat. The boat was moving forward by itself, getting closer and closer to the burning town.
 Having just finished casting what could be considered the world's most useless movement spell, it was natural to feel a little disoriented.
-The spell's effect was rather simple, it allowed the caster to move to the caster's location. Considering the long cast time, it wasn't even useful for wasting mana.
+The spell's effect was rather simple, it transports the caster to the caster's location. Considering the long cast time, it wasn't even useful for wasting mana.
 update Mao (Normal)
 do Player.play_voice("hmm")
 Mao_Portrait (Normal): (This is... Hmm, weird, I don't remember this perspective. Did I mess up my spell?)
 Mao_Portrait (Normal): (For the time being, I should at least put the fire out.)
+do Player.play_sound_effect("water")
 [background arg="res://Art/Background/Background material shop/bg005a.jpg" fade="3.0" transition="Simple Fade"]
 do Player.play_voice("proud")
 update Mao (EyesClosed)
@@ -31,10 +32,9 @@ Rice_Portrait (Normal): Rice Glassfield. A Magic Officer serving her majesty.
 update Mao (Normal)
 Mao_Portrait (Normal): Magic Officer, not Hero?
 Rice_Portrait (Normal): Magic Officer is my primary class.
-update Mao (Surprised)
-do Player.play_voice("hmm")
-Mao_Portrait (Surprised): (Hmm, I don't remember her, but she seems to be familiar with me. Did I accidentally mess up the time coordinates? She could be someone I met later.)
 update Mao (EyesClosed)
+do Player.play_voice("hmm")
+Mao_Portrait (EyesClosed): (Hmm, I don't remember her, but she seems to be familiar with me. Did I accidentally mess up the time coordinates? She could be someone I met later.)
 Mao_Portrait (EyesClosed): (No, the time should be more or less right. But it's weird that I don't remember this place.)
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]
@@ -48,10 +48,46 @@ Mao_Portrait (Blush): Um. I think I got lost. Teehee.
 update Mao (Normal)
 Mao_Portrait (Normal): I was in the mood for a vacation, so I popped in to enjoy a summer break at the beach.
 Rice_Portrait (Normal): It's winter.
-Mao_Portrait (Normal): Hang on, let me figure out where I am.
+Mao_Portrait (Normal): Hmm? Okay, hang on, let me figure out where I am.
 update Mao [animation="Tada" length="3"]
 do Player.play_sound_effect("heal")
-update Mao (Surprised)
 Mao_Portrait (Normal): Locator spell, go! Teehee.
+update Mao (Surprised)
 Mao_Portrait (Surprised): Wait, this is Albion!? Why am I on the other side of the planet?
+Rice_Portrait (Normal): Unintentional entry, then. For the time being, you should apply for an entry visa.
+update Mao (Normal)
+Mao_Portrait (Normal): Hmm? Shouldn't I have one already?
+Rice_Portrait (Normal): Strictly speaking, Niiziro Mao is a permanent resident, so she doesn't have one. But even if she had one, you don't.
+Mao_Portrait (Normal): ...But I'm me?
+Rice_Portrait (Normal): You are clearly two different people.
+update Mao (Sad)
+Mao_Portrait (Sad): Wait, am I going to be arrested for body snatching? 
+Rice_Portrait (Normal): Since it was a consensual possession, there's no need to worry on that front.
+update Mao (Surprised)
+Mao_Portrait (Surprised): ...I don't remember getting permission?
+Rice_Portrait (Normal): We wouldn't be discussing this peacefully if you didn't have permission.
+update Mao (Normal)
+Rice_Portrait (Normal): I suppose a demonstration is in order. I'll send you the instructions for how to apply for an entry visa, so please have the forms filled out the next time you enter Albion.
+Rice_Portrait (Normal): Ahem. It's almost dinner time, what would you like to eat?
+update Mao (Surprised)
+Mao_Portrait (Surprised): What does that have to do---
+update Mao [animation="Tada" length="1" repeat="0"]
+update Mao (Excited)
+Mao_Portrait (Excited): Dumpling curry!
+Rice_Portrait (Normal): (Honestly, it's a little strange that Mao has the mental strength to push out a future version of herself, but I suppose it's because it wasn't a hostile possession to begin with.)
+update Mao (Sad)
+Mao_Portrait (Sad): Wait, she's gone?
+Mao_Portrait (Sad): Aww, I wanted to get a super power up from my secret evil side.
+Rice_Portrait (Normal): Was that why you gave her permission to possess you?
+update Mao (Normal)
+Mao_Portrait (Normal): Nope! I just thought it'd be fun to trick you and go 'teehee, the person you were talking to wasn't me!', but you found out right away!
+Mao_Portrait (Normal): How did you do that, anyway?
+Rice_Portrait (Normal): I see.
+Mao_Portrait (Normal): No, really, how did you find out?
+Rice_Portrait (Normal): It's better not to randomly let people possess you.
+update Mao (Angry)
+Mao_Portrait (Angry): Riceeee!
+update Mao [animation="Tada" length="2"]
+Mao_Portrait (Angry): Hmph!
+It was another peaceful day.
 [update_position action="reset_all" time="0.0"]

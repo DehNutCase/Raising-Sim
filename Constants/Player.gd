@@ -524,6 +524,7 @@ var sound_effects = {
 	"time_passing": load("res://SFX/Atelier Magicae/Long/Fantasy UI Vol (28).wav"),
 	"jump": load("res://SFX/JDWasabi/Jump 1.wav"),
 	"heal": load("res://SFX/Leohpaz/8_Buffs_Heals_SFX/02_Heal_02.wav"),
+	"water": load("res://SFX/Leohpaz/8_Atk_Magic_SFX/22_Water_02.wav"),
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()

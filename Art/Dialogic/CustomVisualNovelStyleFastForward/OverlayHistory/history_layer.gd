@@ -55,7 +55,11 @@ func _ready() -> void:
 		return
 	DialogicUtil.autoload().History.open_requested.connect(_on_show_history_pressed)
 	DialogicUtil.autoload().History.close_requested.connect(_on_hide_history_pressed)
-
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if get_history_box().visible:
+			_on_hide_history_pressed()
 
 func _apply_export_overrides() -> void:
 	var history_subsystem: Node = DialogicUtil.autoload().get(&'History')
@@ -141,6 +145,7 @@ func show_history() -> void:
 	get_show_history_button().hide()
 	get_hide_history_button().visible = show_close_button
 	get_history_box().show()
+	Player.play_ui_sound("blop")
 
 
 func _on_hide_history_pressed() -> void:
@@ -149,3 +154,4 @@ func _on_hide_history_pressed() -> void:
 	get_hide_history_button().hide()
 	var history_subsystem: Node = DialogicUtil.autoload().get(&'History')
 	get_show_history_button().visible = show_open_button and history_subsystem.get(&'simple_history_enabled')
+	Player.play_ui_sound("cancel_blop")
