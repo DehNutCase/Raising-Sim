@@ -14,6 +14,7 @@ type = 4
 target = 0
 cost = 3
 effect_amount = 5
+bonus_effect = 0
 status = ExtResource("4_oeq5t")
 enemy_attack_type = 0
 multi_hit_amount = 0

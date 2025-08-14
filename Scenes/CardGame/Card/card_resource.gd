@@ -4,6 +4,7 @@ extends Resource
 enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL, DISPEL, WIN_DUEL}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum EnemyAttackType {MELEE, RANGED, ANIMATION}
+enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 
 @export_group("Card Attributes")
 @export var id: String
@@ -11,6 +12,7 @@ enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 @export var target: Target
 @export var cost: int
 @export var effect_amount: int
+@export var bonus_effect: BonusEffectType
 @export var status: CardGameStatusResource
 @export var enemy_attack_type: EnemyAttackType
 #Multi-hit only for first effect
@@ -25,12 +27,14 @@ enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 @export var second_target: Target
 @export var second_type: Type
 @export var second_effect_amount: int
+@export var second_bonus_effect: BonusEffectType
 @export var second_status: CardGameStatusResource
 
 @export_group("Third Effect Attributes")
 @export var third_target: Target
 @export var third_type: Type
 @export var third_effect_amount: int
+@export var third_bonus_effect: BonusEffectType
 @export var third_status: CardGameStatusResource
 
 @export_group("Card Visuals")
@@ -139,14 +143,50 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_type = type
 			this_amount = effect_amount
 			this_status = status
+			
+			match bonus_effect:
+				BonusEffectType.NONE:
+					pass
+				BonusEffectType.CARDS_IN_DECK:
+					this_amount += Player.card_game_player.draw_pile.size()
+					pass
+				BonusEffectType.CARDS_IN_DISCARD:
+					this_amount += Player.card_game_player.discard.size()
+					pass
+				_:
+					printerr("Unmatched first bonus_effect")
 		1:
 			this_type = second_type
 			this_amount = second_effect_amount
 			this_status = second_status
+			
+			match second_bonus_effect:
+				BonusEffectType.NONE:
+					pass
+				BonusEffectType.CARDS_IN_DECK:
+					this_amount += Player.card_game_player.draw_pile.size()
+					pass
+				BonusEffectType.CARDS_IN_DISCARD:
+					this_amount += Player.card_game_player.discard.size()
+					pass
+				_:
+					printerr("Unmatched second bonus_effect")
 		2:
 			this_type = third_type
 			this_amount = third_effect_amount
 			this_status = third_status
+			
+			match third_bonus_effect:
+				BonusEffectType.NONE:
+					pass
+				BonusEffectType.CARDS_IN_DECK:
+					this_amount += Player.card_game_player.draw_pile.size()
+					pass
+				BonusEffectType.CARDS_IN_DISCARD:
+					this_amount += Player.card_game_player.discard.size()
+					pass
+				_:
+					printerr("Unmatched third bonus_effect")
 		_:
 			printerr("effect_number failed to match")
 	

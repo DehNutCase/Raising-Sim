@@ -11,6 +11,7 @@ type = 2
 target = 0
 cost = 1
 effect_amount = 8
+bonus_effect = 0
 enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""

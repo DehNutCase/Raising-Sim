@@ -139,28 +139,32 @@ func _create_tooltip() -> String:
 		var this_amount
 		var this_status
 		var this_target
+		var this_bonus_effect
 		match i:
 			0:
 				this_type = card.type
 				this_amount = card.effect_amount
 				this_status = card.status
 				this_target = card.target
+				this_bonus_effect = card.bonus_effect
 			1:
 				this_type = card.second_type
 				this_amount = card.second_effect_amount
 				this_status = card.second_status
 				this_target = card.second_target
+				this_bonus_effect = card.second_bonus_effect
 			2:
 				this_type = card.third_type
 				this_amount = card.third_effect_amount
 				this_status = card.third_status
 				this_target = card.third_target
+				this_bonus_effect = card.third_bonus_effect
 			_:
 				printerr("_create_tooltip effect_number failed to match")
 				
 		if this_type != card.Type.NONE:
 			tooltip += "\n"
-			
+		
 		match this_type:
 			card.Type.ATTACK:
 				var multi_text = ""
@@ -229,6 +233,18 @@ func _create_tooltip() -> String:
 						tooltip += "Heal [color=green]%d[/color] health points for everyone." %this_amount
 			card.Type.WIN_DUEL:
 				tooltip += "Win the duel."
+		match this_bonus_effect:
+			card.BonusEffectType.NONE:
+				#None type bonus effect doesn't add tooltip
+				pass
+			card.BonusEffectType.CARDS_IN_DECK:
+				var bonus_amount = Player.card_game_player.draw_pile.size()
+				tooltip += " (%d bonus from cards remaining in deck.)" %bonus_amount
+			card.BonusEffectType.CARDS_IN_DISCARD:
+				var bonus_amount = Player.card_game_player.discard.size()
+				tooltip += " (%d bonus from cards in discard pile.)" %bonus_amount
+			_:
+				printerr("match this_bonus_effect failed")
 	return tooltip
 
 func _make_custom_tooltip(for_text):
