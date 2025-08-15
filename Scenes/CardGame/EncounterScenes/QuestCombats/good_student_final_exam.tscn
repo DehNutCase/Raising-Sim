@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdhjbtjmwe27v"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_di5xa"]
+[ext_resource type="Texture2D" uid="uid://t04knd8wovbi" path="res://Art/Background/UncleMugen/Classroom_03_day.webp" id="2_k6eyy"]
+[ext_resource type="AudioStream" uid="uid://c4bwabl24mb22" path="res://Music/SteamRabbitHut/Magicatale_FIELD_01.mp3" id="3_6003h"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="4_2osfs"]
+[ext_resource type="Resource" uid="uid://bvtp4bmwjsu2u" path="res://Scenes/CardGame/Characters/Enemies/GoodStudentFinalExam.tres" id="5_oiskk"]
+[ext_resource type="Texture2D" uid="uid://kg5b20cw7ism" path="res://Art/Mori no oku no kakurezato/CardGame/book02_05.png" id="6_0qlg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq3b"]
+size = Vector2(250, 250)
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_di5xa")
+background = ExtResource("2_k6eyy")
+victory_reward = "{\"stats\": {\"gold\": 1000, \"experience\": 1000, \"scholarship\": 50,}}"
+background_music = ExtResource("3_6003h")
+metadata/_edit_lock_ = true
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("4_2osfs")]
+position = Vector2(500, 300)
+enemy_resource = ExtResource("5_oiskk")
+
+[node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
+shape = SubResource("RectangleShape2D_qcq3b")
+
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(200, 200)
+texture = ExtResource("6_0qlg5")
+flip_h = false
+
+[node name="Arrow" parent="CardGameEnemy" index="2"]
+custom_minimum_size = Vector2(500, 500)
+
+[editable path="CardGameEnemy"]

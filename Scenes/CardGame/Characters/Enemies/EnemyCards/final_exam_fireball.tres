@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=7 format=3 uid="uid://vfksfug2omlu"]
+
+[ext_resource type="Texture2D" uid="uid://c8cn4ba5bbec4" path="res://Art/Mori no oku no kakurezato/CardGame/element03_01.png" id="1_2y843"]
+[ext_resource type="AudioStream" uid="uid://vwm0awfp8bx7" path="res://SFX/Tom Music/Spells/Spell Impact 1.wav" id="2_iiysd"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="3_ygmlb"]
+[ext_resource type="Resource" uid="uid://b64eaug32ev60" path="res://Scenes/CardGame/Status/burn.tres" id="4_2yfqb"]
+[ext_resource type="AudioStream" uid="uid://c6ajx5f5v87dm" path="res://SFX/Tom Music/Spells/Fireball 1.wav" id="5_38oge"]
+[ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="6_spdgg"]
+
+[resource]
+script = ExtResource("3_ygmlb")
+id = "Final Exam Fireball"
+type = 1
+target = 1
+cost = 2
+effect_amount = 25
+bonus_effect = 0
+enemy_attack_type = 1
+multi_hit_amount = 0
+animation = ""
+price = 100
+start_sound_effect = ExtResource("5_38oge")
+impact_sound_effect = ExtResource("2_iiysd")
+second_target = 1
+second_type = 4
+second_effect_amount = 25
+second_bonus_effect = 0
+second_status = ExtResource("4_2yfqb")
+third_target = 1
+third_type = 4
+third_effect_amount = -10
+third_bonus_effect = 0
+third_status = ExtResource("6_spdgg")
+icon = ExtResource("1_2y843")

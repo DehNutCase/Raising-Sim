@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
-[ext_resource type="PackedScene" uid="uid://ck42r2dg0ry7c" path="res://Scenes/CardGame/EncounterScenes/TowerLevels/tower_level_20.tscn" id="2_c6ssf"]
+[ext_resource type="PackedScene" uid="uid://cdhjbtjmwe27v" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn" id="2_icbau"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="4_3opov"]
 [ext_resource type="Resource" uid="uid://c5uauj7w44r63" path="res://Scenes/CardGame/Characters/Mao/Cards/super_duper_paint_spray.tres" id="5_3o02g"]
@@ -34,26 +34,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b07j")
-card_game_level = ExtResource("2_c6ssf")
+card_game_level = ExtResource("2_icbau")
 metadata/_edit_lock_ = true
 
-[node name="BackgroundVBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = -160.0
-offset_top = -415.0
-offset_right = 1760.0
-offset_bottom = 1745.0
-theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
-
-[node name="Background" type="TextureRect" parent="BackgroundVBoxContainer"]
+[node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_top = -415.0
+offset_right = 960.0
+offset_bottom = 665.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("3_uds7l")
 metadata/_edit_lock_ = true
 
-[node name="HandBackground" type="TextureRect" parent="BackgroundVBoxContainer"]
+[node name="HandBackground" type="TextureRect" parent="."]
 layout_mode = 2
+offset_left = -160.0
+offset_top = 665.0
+offset_right = 1760.0
+offset_bottom = 1745.0
 texture = ExtResource("4_3opov")
 metadata/_edit_lock_ = true
 
