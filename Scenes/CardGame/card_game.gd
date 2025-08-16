@@ -82,6 +82,19 @@ func start_battle() -> void:
 	card_game_player.start_first_turn()
 	state = states.PLAYER_TURN
 	start_turn()
+	
+	if enemy_scene.starting_status_enemy:
+		for i in range(enemy_scene.starting_status_enemy.size()):
+			var status = enemy_scene.starting_status_enemy[i]
+			var stacks = enemy_scene.starting_status_stacks_enemy[i]
+			for enemy:CardGameEnemy in get_tree().get_nodes_in_group("CardGameEnemies"):
+				enemy.apply_status(status, stacks, enemy)
+	if enemy_scene.starting_status_player:
+		for i in range(enemy_scene.starting_status_player.size()):
+			var status = enemy_scene.starting_status_player[i]
+			var stacks = enemy_scene.starting_status_stacks_player[i]
+			print(status, stacks)
+			card_game_player.apply_status(status, stacks, card_game_player)
 
 func start_turn() -> void:
 	card_game_player.start_turn()
