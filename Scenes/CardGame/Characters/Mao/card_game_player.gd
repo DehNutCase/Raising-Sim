@@ -116,16 +116,15 @@ func set_mana(value: int) -> void:
 	
 func start_turn() -> void:
 	mana = max_mana
-	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
 	if active_status.get("Burn"):
 		var status = active_status.get("Burn")
-		take_damage(status.stacks)
+		await take_damage(status.stacks)
 		status.stacks = int(status.stacks/2)
 		status.status_display.stack_label.text = str(status.stacks)
 		if status.stacks == 0:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
-	
+	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
 	#Code to implement big potato effect
 	var relic_list: ItemList = get_parent().relic_item_list
 	var relic_count = relic_list.item_count
