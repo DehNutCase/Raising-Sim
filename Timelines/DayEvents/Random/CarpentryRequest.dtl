@@ -1,0 +1,34 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Fay (Normal) 3 [ mirrored="true"]
+[history action="clear"]
+do Player.play_random_voice("greetings")
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Good morning!
+update Fay (Normal)
+Fay_Portrait (Normal): Morning, dear.
+[signal arg="{"random_voice": "greetings"}"]
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Good morning!
+update Fay (Playful)
+Fay_Portrait (Playful): Hallo.
+[signal arg="{"random_voice": "greetings"}"]
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Good morning!
+Rice_Portrait (Normal): I believe I should stop this. Mao, don't forget you have classes in the morning.
+do Player.play_voice("sigh")
+update Mao (Sad)
+Mao_Portrait (Sad): Aww...
+update Fay (Normal)
+Fay_Portrait (Normal): Heehee.
+Fay_Portrait (Normal): It's not a big deal, dear, but if you have time, can you come help at my workshop? It's been a bit busy recently.
+update Mao (Normal)
+Fay_Portrait (Normal): I'll give you some extra snacks as a bonus.
+do Player.play_voice("yay!")
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Yay!
+[signal arg="{"start_quest": "carpentry_request"}"]

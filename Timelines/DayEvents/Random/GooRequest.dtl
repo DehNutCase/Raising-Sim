@@ -1,0 +1,17 @@
+[background arg="res://Art/Background/Background material shop/bg004a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3
+join Goo (Normal) 1
+[history action="clear"]
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+do Player.play_random_voice("greetings")
+Mao_Portrait (Normal): Oh, it's Goo. Good morning!
+update Goo (Normal)
+Goo_Portrait (Normal): Good morning.
+Mao_Portrait (Normal): Are you on your way to eat breakfast? Can I come with?
+Rice_Portrait (Normal): We're on our way back after eating breakfast, in case you've forgotten.
+Mao_Portrait (Normal): But not second breakfast!
+Goo_Portrait (Normal): Goo appreciates the offer, but will refuse.
+Goo_Portrait (Normal): But if you have time, please visit Goo today. It's a good day for making certain types of potions.
+Mao_Portrait (Normal): I'll see if I have time!
+[signal arg="{"start_quest": "goos_request"}"]

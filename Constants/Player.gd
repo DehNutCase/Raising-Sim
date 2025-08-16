@@ -493,6 +493,7 @@ var voices = {
 	"sorry": load("res://Voice/Sakura An/Misc/Sorry.wav"),
 	"sorry_polite": load("res://Voice/Sakura An/Misc/Sorry polite.wav"),
 	"huh!?": load("res://Voice/Sakura An/Misc/Huh!？.wav"),
+	"eh_no_way": load("res://Voice/Sakura An/Misc/Uh...(No way).wav"),
 	
 	"looks_delicious": load("res://Voice/Sakura An/Misc/Looks Delicious!.wav"),
 	"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),
@@ -557,6 +558,9 @@ func play_sound_effect(sound_effect: String) -> void:
 	SoundManager.play_sound(sound_effects[sound_effect])
 
 func start_quest(quest: String) -> void:
+	#Don't start duplicate quests
+	if active_quests.get(quest):
+		return
 	active_quests[quest] = {'active': true}
 	display_toast("Quest added: " + Constants.quests[quest].name)
 	

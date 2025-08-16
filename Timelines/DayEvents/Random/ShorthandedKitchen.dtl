@@ -1,0 +1,21 @@
+[background arg="res://Art/Background/NoranekoGames/Sitting_Room.png" fade="0.0"]
+join Mao (Normal) 1
+join Alice (Normal) 3
+[update_position vector="Vector2(0, 150)" time="0.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+[history action="clear"]
+do Player.play_random_voice("greetings")
+update Mao (Normal)
+Mao_Portrait (Normal): Happy breakfast!
+update Alice (Normal)
+Alice_Portrait (Normal): Was that a greeting? Good morning.
+Mao_Portrait (Normal): By the way, how come I haven't seen you much recently?
+Alice_Portrait (Normal): The kitchens have been extra busy recently, so I've been asked to help.
+Alice_Portrait (Normal): Today is even busier, actually, so it'd be great if you can come.
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): I'll check my schedule!
+[signal arg="{"start_quest": "shorthanded_kitchen"}"]
+[update_position action="reset_all" time="0.0"]

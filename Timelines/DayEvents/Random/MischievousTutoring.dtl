@@ -1,0 +1,30 @@
+[background arg="res://Art/Background/Background material shop/bg019a.bmp" fade="0.0"]
+join Mao (Normal) 3
+join Hiyori (Normal) 1
+[history action="clear"]
+do Player.play_voice("boom")
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): Boo!
+update Hiyori (Normal)
+Hiyori_Portrait (Normal): Good morning, did you need something?
+do Player.play_voice("disappointed")
+update Mao (Sad)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Sad): Boo?
+Hiyori_Portrait (Normal): Yes?
+do Player.play_voice("eh_no_way")
+update Mao (Sad)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Sad): Boo...
+Hiyori_Portrait (Normal): (I guess I should play along.)
+Hiyori_Portrait (Normal): It's a ghost?
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee. *Smug*
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Okay, I need to get ready for class now. See you, Hiyori!
+Hiyori_Portrait (Normal): Please wait a minute.
+Hiyori_Portrait (Normal): If you don't mind, can you tutor me today? Mom still won't let me leave the palace, but she won't mind it if we wander around inside.
+Mao_Portrait (Normal): Can I think about it?
+Hiyori_Portrait (Normal): Sure.
+[signal arg="{"start_quest": "tutoring_request"}"]

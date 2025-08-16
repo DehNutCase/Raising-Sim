@@ -4,8 +4,8 @@ join Morgan (Silhouette) 1
 [history action="clear"]
 Morgan_Portrait (Silhouette): You're here.
 update Mao (Excited)
-update Mao [animation="Tada"]
-[signal arg="{"random_voice": "greetings"}"]
+update Mao [animation="Tada" length="1"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Excited): Good morning!
 Morgan_Portrait (Silhouette): Have you been cleaning your room recently?
 update Mao (Normal)
