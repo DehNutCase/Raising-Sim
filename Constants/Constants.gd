@@ -2443,7 +2443,7 @@ const combat_items = {
 		'message_player': "HP increased!",
 		'label': "Health Potion",
 		'id': "health_potion",
-		'icon': "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_05.png",
+		'icon': "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potion1_05.png",
 		'description': "A red potion for restoring health. Seems to heal around 100 health.",
 	},
 	'mana_potion': {
@@ -2454,7 +2454,7 @@ const combat_items = {
 		'message_player': "Mana restored!",
 		'label': "Mana Potion",
 		'id': "mana_potion",
-		'icon': "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png",
+		'icon': "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potion1_01.png",
 		'description': "A blue potion for restoring mana. To be precise, it restores 5 units of mana.",
 	},
 	'overload_potion': {
@@ -2471,7 +2471,7 @@ const combat_items = {
 		'message_player': "Stats increased!",
 		'label': "Overload Potion",
 		'id': "overload_potion",
-		'icon': "res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_02.png",
+		'icon': "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potion1_02.png",
 		"description": "An indigo potion which increases all stats when drunk. Increases increases attack, magic, skill, defense, and resistance by 2 stacks each.",
 	},
 }

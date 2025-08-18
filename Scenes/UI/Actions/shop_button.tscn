@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brfrkkss3t44b"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Actions/shop_button.gd" id="1_8cxwa"]
-[ext_resource type="Texture2D" uid="uid://m77qcs0rlxo4" path="res://Art/Mori no oku no kakurezato/Potions/Resized/potion1_01.png" id="4_orxau"]
+[ext_resource type="Texture2D" uid="uid://cttrfike84e1k" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potion1_01.png" id="4_orxau"]
 [ext_resource type="Theme" uid="uid://bg42c3x4ca1wd" path="res://Art/Themes/TooltipTheme.tres" id="4_ut51h"]
 
 [node name="Shop" type="Control"]

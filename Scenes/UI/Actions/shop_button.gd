@@ -24,7 +24,8 @@ func update_labels():
 	if tooltip_text: 
 		tooltip_text += "\n"
 	tooltip_text += item.get_property("description", "tooltip error")
-
+	tooltip_text += "\n"
+	
 	var daily_stats:Dictionary = item.get_property("daily_stats", {})
 	if (!daily_stats.keys().is_empty()):
 		tooltip_text += "\nDaily Stats:"

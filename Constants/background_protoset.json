@@ -2,7 +2,7 @@
 	"royal_backing": {
 		"daily_stats": "{}",
 		"description": "An employee of the royal family. Unconditional access to part time jobs and academy classes. Monthly salary of 1000g.",
-		"image": "res://Art/Mori no oku no kakurezato/Head/Resized/crown01_01.png",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/crown01_01.png",
 		"monthly_stats": "{\n\"gold\": 1000\n}",
 		"name": "Roya Backing",
 		"stats": "{}",
@@ -70,7 +70,7 @@
 	"leftover_bread": {
 		"daily_stats": "{\"magic\": 1,}",
 		"description": "Leftover bread from a nice picnic with Hiyori and Alice. You asked Rice to cast preservation magic on this for some reason.\n\nThe preservation magic is so high quality that just looking at it makes you a better mage.",
-		"image": "res://Art/Mori no oku no kakurezato/Food/Resized/bread01_01.png",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/bread01_01.png",
 		"monthly_stats": "{}",
 		"name": "Leftover Bread",
 		"stats": "{}",
@@ -96,7 +96,7 @@
 	"class_change_card": {
 		"daily_stats": "{}",
 		"description": "A blue I.D. card allowing access to the class change hall for tier 1 classes.\nBy design, it doesn't update your information after being printed, so you would need to print a new one to update your information.\nFor various reasons, it's best to class change on your birthday, so have this ready at the end of the year.",
-		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/card03_01.png",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/card03_01.png",
 		"monthly_stats": "{}",
 		"name": "Class Change Card",
 		"stats": "{}",
@@ -104,7 +104,7 @@
 	"class_change_card_witch": {
 		"daily_stats": "{}",
 		"description": "A slightly ominous black I.D. card which allows access to the tier 0 class change hall.\nSimilar to other class change cards, you need to print a new one to update your information.\nBecause it's a class change within the same tier, certain penalties will be applied after class change.",
-		"image": "res://Art/Mori no oku no kakurezato/Items/Resized/card04_01.png",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/card04_01.png",
 		"monthly_stats": "{}",
 		"name": "Class Change Card",
 		"stats": "{}",

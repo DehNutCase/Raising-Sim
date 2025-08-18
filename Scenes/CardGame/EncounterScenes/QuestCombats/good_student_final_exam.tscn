@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_di5xa"]
 [ext_resource type="Texture2D" uid="uid://t04knd8wovbi" path="res://Art/Background/UncleMugen/Classroom_03_day.webp" id="2_k6eyy"]
 [ext_resource type="AudioStream" uid="uid://c4bwabl24mb22" path="res://Music/SteamRabbitHut/Magicatale_FIELD_01.mp3" id="3_6003h"]
-[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/immune.tres" id="3_nivl2"]
+[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/invulnerable.tres" id="3_nivl2"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="4_2osfs"]
 [ext_resource type="Resource" uid="uid://bvtp4bmwjsu2u" path="res://Scenes/CardGame/Characters/Enemies/GoodStudentFinalExam.tres" id="5_oiskk"]
 [ext_resource type="Texture2D" uid="uid://kg5b20cw7ism" path="res://Art/Mori no oku no kakurezato/CardGame/book02_05.png" id="6_0qlg5"]

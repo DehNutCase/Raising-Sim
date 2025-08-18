@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://bb4l7x0ct60f6"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_lorcn"]
-[ext_resource type="Texture2D" uid="uid://cljkas0fxcjrv" path="res://Art/Mori no oku no kakurezato/CardGame/data01_06.png" id="2_v8f3c"]
+[ext_resource type="Texture2D" uid="uid://bata6fsvyebft" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/data01_RES.png" id="2_vajpu"]
 
 [resource]
 script = ExtResource("1_lorcn")
-status_icon = ExtResource("2_v8f3c")
+status_icon = ExtResource("2_vajpu")
 status_name = "Resistance"
 status_tooltip = "Resistance. Negates negative status effects [color=yellow]X[/color] times."
 status_decay = 2
