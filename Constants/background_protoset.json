@@ -67,6 +67,23 @@
 		"name": "Bottle of Spring Water",
 		"stats": "{}",
 	},
+	"leftover_bread": {
+		"daily_stats": "{\"magic\": 1,}",
+		"description": "Leftover bread from a nice picnic with Hiyori and Alice. You asked Rice to cast preservation magic on this for some reason.\n\nThe preservation magic is so high quality that just looking at it makes you a better mage.",
+		"image": "res://Art/Mori no oku no kakurezato/Food/Resized/bread01_01.png",
+		"monthly_stats": "{}",
+		"name": "Leftover Bread",
+		"stats": "{}",
+	},
+	"lots_of_doodles": {
+		"daily_stats": "{\"stress\": -1, \"art\": 1,}",
+		"description": "A bunch of doodles you did in a hurry, since her majesty promised not to display them. Alice packed them into a box for you.\n\nLooking at them fills you with relief. (And maybe, a little disappointment?)",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/box01_01.png",
+		"monthly_stats": "{}",
+		"max_stats": "{\"art\": 100}",
+		"name": "Box of Doodles",
+		"stats": "{}",
+	},
 	"class_change_card": {
 		"daily_stats": "{}",
 		"description": "A blue I.D. card allowing access to the class change hall for tier 1 classes.\nBy design, it doesn't update your information after being printed, so you would need to print a new one to update your information.\nFor various reasons, it's best to class change on your birthday, so have this ready at the end of the year.",

@@ -26,10 +26,10 @@ Rice_Portrait (Normal): You should ask her majesty about that. But it's better n
 Mao_Portrait (Normal): Okie dokie.
 update Mao [animation="Tada" length="1"]
 Mao_Portrait (Normal): Oh, right! I should text Stella and ask if I should take notes for them.
-[signal arg="{"sound_effect": "ping"}"]
+do Player.play_sound_effect("ping")
 Mao_Portrait (Normal): [Should 🖌️ take 📖 for you guys? 🫠]
 Stella_Portrait (Frown): Why are you texting me when we're in the same classroom? Thanks for the thought, but I'll be taking notes as usual today.
-[signal arg="{"sound_effect": "ping"}"]
+do Player.play_sound_effect("ping")
 Mao_Portrait (Normal): [Okie dokie! 🫠🙃🫠]
 Mao_Portrait (Normal): Teehee.
 [signal arg="{"stats": {"scholarship": 5, "stress": -5}}"]

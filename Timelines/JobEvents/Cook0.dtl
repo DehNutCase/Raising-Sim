@@ -1,0 +1,60 @@
+[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+join Mao (Normal) 1
+join Alice (Normal) 3
+[update_position vector="Vector2(0, 150)" time="0.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+[history action="clear"]
+do Player.play_voice("looks_delicious")
+update Mao (Normal)
+update Mao [animation="Shake X" length="2"]
+Mao_Portrait (Normal): Order for table A!🤤
+update Alice (Normal)
+Alice_Portrait (Normal): (I'm starting to wonder if it was a good idea to let Mao work in the cafeteria.)
+update Alice 4 [ mirrored="true" move_time="1"]
+Alice_Portrait (Normal): May I take your order?
+Alice_Portrait (Normal): One hamburger combo and a kid's meal, understood.
+update Alice 3 [ mirrored="false" move_time="1"]
+Alice_Portrait (Normal): Mao.
+leave Mao [animation="Slide Out Left" length="2"]
+Mao_Portrait (Normal): On it!
+do Player.play_voice("looks_delicious")
+Mao_Portrait (Normal): Oh wow, the kid's meal looks delicious!
+Alice_Portrait (Normal): (I wonder if it's better or worse that she's only drooling over the food rather than sneaking nibbles...)
+join Mao (Normal) 1 [animation="Slide In Left" length="2"]
+do Player.play_voice("tada")
+Mao_Portrait (Normal): One hambuger combo and a kid's meal! Tada!
+- Try your best to work properly. Fighting!
+	[history]
+	[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+	leave --All-- [animation="Instant In Or Out"]
+	do Player.play_sound_effect("time_passing")
+	[wait time="1.0" hide_text="false"]
+	[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+	join Mao (Normal) 1
+	join Alice (Normal) 3 [ z_index="1"]
+	[history action="resume"]
+	Alice_Portrait (Normal): You worked hard today. Hmm... as a reward, I'll make you something. Why don't you find a table and sit down?
+	do Player.play_voice("yay!")
+	Mao_Portrait (Normal): Yay! Food!
+	[signal arg="{"stats": {"stress": -20, "max_hp": 5, "agility": 5,}}"]
+- I should try learning to cook while I'm here!
+	[history]
+	[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+	leave --All-- [animation="Instant In Or Out"]
+	do Player.play_sound_effect("time_passing")
+	[wait time="1.0" hide_text="false"]
+	[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+	join Mao (Normal) 1
+	join Alice (Normal) 3 [ z_index="1"]
+	[history action="resume"]
+	do Player.play_voice("un_yeah")
+	Mao_Portrait (Normal): Umu! So that's how to make a proper Dumpling curry!
+	update Alice (Normal)
+	Alice_Portrait (Normal): Are you planning to work in the kitchen from now on? (I wonder if I should put a stop to this...)
+	Mao_Portrait (Normal): I don't know! But it's fun!
+	Alice_Portrait (Normal): I see. (Hmm... She's been working well so far, so let's just wait and see.)
+	[signal arg="{"stats": {"stress": -10, "magic": 5, "scholarship": 10,}}"]
+[update_position action="reset_all" time="0.0"]

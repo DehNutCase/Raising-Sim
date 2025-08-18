@@ -141,7 +141,7 @@ func _ready():
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
 		#Player.stats.gold = -1
-		#Dialogic.start("Day30Event")
+		#Dialogic.start("SuperInspiration")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -150,6 +150,7 @@ func _ready():
 	var buttons = get_tree().get_nodes_in_group("Button")
 	for button in buttons:
 		button.connect("pressed", _play_button_sound)
+	_change_day_state(states.READY)
 	
 
 func _input(event):
@@ -348,10 +349,10 @@ func daily_course():
 		#Can only modify a duplicate if changing the stat array is needed
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats.duplicate()
 		#School is free so remove gold cost
-		get_tree().call_group("Live2DPlayer", "job_motion", true)
-		course_daily_stats.erase("gold")
 		await process_course_progress()
 		await(get_tree().create_timer(.5).timeout)
+		get_tree().call_group("Live2DPlayer", "job_motion", true)
+		course_daily_stats.erase("gold")
 		process_stats(course_daily_stats, icon) 
 		
 
@@ -708,24 +709,6 @@ func display_stats() -> void:
 	get_tree().call_group("ActionButton", "update_difficulty_color")
 	get_tree().call_group("Job_Button", "update_difficulty_color")
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")
-	#Update Menu Button displays
-	if Player.event_flags.get("class_change_information_event"):
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
-	else:
-		$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
-	if Player.unlocked_missions:
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Story".show()
-	else:
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Story".hide()
-	if OS.has_feature("playtest") or OS.has_feature("demo"):
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
-	else:
-		$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
-	if OS.has_feature("demo"):
-		#Hide ways to advance day after demo ends
-		if day > 20:
-			$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()
-			$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
 	
 func _on_reward_signal(dialogic_signal) -> void:
 	if is_instance_of(dialogic_signal, TYPE_STRING):
@@ -1206,6 +1189,24 @@ func _change_day_state(state: states) -> void:
 				button.show()
 			day_state = states.READY
 			display_stats()
+			#Update Menu Button displays
+			if Player.event_flags.get("class_change_information_event"):
+				$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
+			else:
+				$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
+			if Player.unlocked_missions:
+				$"RightMenuContainer/MenuPanel/VBoxContainer/Story".show()
+			else:
+				$"RightMenuContainer/MenuPanel/VBoxContainer/Story".hide()
+			if OS.has_feature("playtest") or OS.has_feature("demo"):
+				$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
+			else:
+				$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
+			if OS.has_feature("demo"):
+				#Hide ways to advance day after demo ends
+				if day > 20:
+					$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()
+					$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
 		states.BUSY:
 			for button in get_tree().get_nodes_in_group("ActionButton"):
 				button.hide()

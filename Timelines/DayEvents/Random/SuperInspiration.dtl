@@ -1,0 +1,9 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+do Player.play_voice("amazing")
+Mao_Portrait (Excited): Yay! I feel great!🎉🥳🎉
+Mao_Portrait (Excited): I feel like I can paint more than one but less than three paintings today!
+[signal arg="{"start_quest": "super_inspiration"}"]

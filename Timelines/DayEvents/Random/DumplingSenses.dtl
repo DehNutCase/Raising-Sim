@@ -4,6 +4,6 @@ join Mao (Normal) 2
 update Mao (Excited)
 update Mao [animation="Tada" length="1"]
 do Player.play_voice("un_yeah")
-Mao_Portrait (Excited): Umu! I feel super inspired today.
-Mao_Portrait (Excited): I should doodle something when I have time.
-[signal arg="{"start_quest": "inspiration"}"]
+Mao_Portrait (Excited): Umu! I feel like something good will happen if I go looking for Dumplings!
+Mao_Portrait (Excited): Let's go to the dungeon!
+[signal arg="{"start_quest": "dumpling_senses"}"]

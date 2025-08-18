@@ -498,6 +498,7 @@ var voices = {
 	"looks_delicious": load("res://Voice/Sakura An/Misc/Looks Delicious!.wav"),
 	"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),
 	"hmm": load("res://Voice/Sakura An/Misc/Hmm.wav"),
+	"good_night": load("res://Voice/Sakura An/Greetings/Good Night.wav"),
 }
 
 var voice_lists = {

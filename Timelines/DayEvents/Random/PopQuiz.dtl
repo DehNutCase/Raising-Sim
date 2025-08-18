@@ -1,0 +1,22 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [Everyone, don't forget there's a quiz tomorrow for homeroom.]
+do Player.play_voice("huh!?")
+update Mao (Surprised)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Surprised): Huh!?
+do Player.play_sound_effect("ping")
+Mao_Portrait (Surprised): [Is that true? I didn't study!😭😭😭]
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [As long as you've been studying properly so far, you should be fine. I'm just sending a reminder.]
+update Mao (Blush)
+do Player.play_sound_effect("ping")
+Mao_Portrait (Blush): [Umm...😅]
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [...Well, you can try taking extra lessons to catch up. Try signing up for cram school. My notes are posted at the usual place you want them.]
+update Mao (Normal)
+do Player.play_sound_effect("ping")
+Mao_Portrait (Normal): [Okie dokie!🥰]
+[signal arg="{"start_quest": "pop_quiz"}"]

@@ -1,0 +1,79 @@
+[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+join Mao (Normal) 3
+join Alice (Normal) 2 [ mirrored="true"]
+[update_position vector="Vector2(0, 150)" time="0.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+[history action="clear"]
+do Player.play_voice("yay!")
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Yay! Break time!
+Mao_Portrait (Normal): Let's eat together!
+update Alice (Normal)
+Alice_Portrait (Normal): Sure. What do you want to eat?
+- Dumpling Curry!
+	[history]
+	[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+	leave --All-- [animation="Instant In Or Out"]
+	do Player.play_sound_effect("time_passing")
+	[wait time="1.0" hide_text="false"]
+	[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+	join Mao (Normal) 3
+	join Alice (Normal) 2 [ z_index="1" mirrored="true"]
+	[history action="resume"]
+	Alice_Portrait (Normal): Here you go.
+	Alice_Portrait (Normal): Eating this is fine occasionally, but don't do it all the time. You'll get fat.
+	do Player.play_voice("disappointed")
+	update Mao (Sad)
+	Mao_Portrait (Sad): Aww... But it's so tasy.
+	[signal arg="{"stats": {"stress": -30, "max_hp": 10, "agility": -5,}}"]
+- I heard there's a secret menu? [if !Player.background_inventory.has_item_with_prototype_id("leftover_bread")][else="hide"]
+	update Alice (Confused)
+	Alice_Portrait (Confused): I don't think so? You can tell the chef if you have any special requests, but that's not really a menu.
+	Mao_Portrait (Normal): Hmm... Let me think. Oh, I know!
+	Mao_Portrait (Normal): I'll take a picnic basket!
+	update Alice (Normal)
+	Alice_Portrait (Normal): (That's not exactly an order, but I'll go make one for her.)
+	[history]
+	[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+	leave --All-- [animation="Instant In Or Out"]
+	do Player.play_sound_effect("time_passing")
+	[wait time="1.0" hide_text="false"]
+	[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+	join Mao (Normal) 3
+	join Alice (Normal) 2 [ z_index="1" mirrored="true"]
+	[history action="resume"]
+	Alice_Portrait (Normal): Here you go.
+	Alice_Portrait (Normal): Will you be eating here?
+	do Player.play_voice("yay!")
+	update Mao [animation="Tada" length="1"]
+	Mao_Portrait (Normal): Thank you! I'll be eating with Hiyori! Want to come with?
+	Alice_Portrait (Normal): Since it's break time, sure.
+	[signal arg="{"background": "leftover_bread"}"]
+	[signal arg="{"stats": {"stress": -20, "max_hp": 5,  "agility": 5, "defense": 5,}}"]
+- I'll leave it to you!
+	[history]
+	[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+	leave --All-- [animation="Instant In Or Out"]
+	do Player.play_sound_effect("time_passing")
+	[wait time="1.0" hide_text="false"]
+	[background arg="res://Art/Background/NoranekoGames/Edited/Restaurant_B.png" fade="0.0"]
+	join Mao (Normal) 3
+	join Alice (Normal) 2 [ z_index="1" mirrored="true"]
+	[history action="resume"]
+	update Alice (Normal)
+	Alice_Portrait (Normal): Here's today's special. Just a turkey sandwich and a bowl of soup, but it goes great with salad. Don't forget the salad bar is over there.
+	do Player.play_voice("looks_delicious")
+	update Mao (Normal)
+	Mao_Portrait (Normal): It looks delicious!
+	Mao_Portrait (Normal): Wait, why are you eating the same thing?
+	update Alice (Confused)
+	Alice_Portrait (Confused): Hmm? Is that a problem?
+	Mao_Portrait (Normal): Not really, but I thought we could share if they were different!
+	update Alice (Normal)
+	Alice_Portrait (Normal): I see.
+	[signal arg="{"stats": {"stress": -10, "max_hp": 5, "attack": 5, "agility": 5, "defense": 5,}}"]
+[update_position action="reset_all" time="0.0"]

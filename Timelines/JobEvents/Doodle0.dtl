@@ -1,0 +1,14 @@
+[background arg="res://Art/Background/Background material shop/bg019a.bmp" fade="0.0"]
+join Mao (Normal) 3
+join Hiyori (Normal) 1
+[history action="clear"]
+Hiyori_Portrait (Normal): If you don't mind me asking, why are you in my room?
+do Player.play_voice("un_yeah")
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): I'm painting!
+Hiyori_Portrait (Normal): ...Does that answer my question?
+update Mao [animation="Tada" length="1"]
+do Player.play_voice("laugh")
+Mao_Portrait (Normal): It's really comfortable to paint in your room!
+Hiyori_Portrait (Normal): I see. Well, I suppose it's fine.
+[signal arg="{"stats": {"stress": -10, "scholarship": 10, "art": 20, }}"]

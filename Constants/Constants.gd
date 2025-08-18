@@ -195,8 +195,9 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'budding_chef',
 		},
-		"description": "Helping out at the palace kitchen.\nTechnically part of your actual job, but you do get paid for it.",
+		"description": "Helping out at the palace kitchen. Technically part of your actual job, but you do get paid extra for this.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/book03_01.png",
+		"timelines": ["Cook0", "Cook1"],
 	},
 	'Doodle': {
 		'stats': {
@@ -211,8 +212,9 @@ const jobs = {
 		'difficulty': -50,
 		'proficiency': 100,
 		'proficiency_gain': 25,
-		"description": "Her majesty is willing to pay for your doodles.\nThat said, it might be a good idea to reconsider.\nDo you really want her to have a collection of your earliest, ugliest works?\nShe'll happily put them on display, you know?",
+		"description": "Her majesty is willing to pay for your doodles. That said, it might be a good idea to reconsider. Do you really want her to have a collection of your earliest, ugliest works? She'll happily put them on display, you know?",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_04.png",
+		"timelines": ["Doodle0", "Doodle1"],
 	},
 	'Painting': {
 		'stats': {
@@ -228,7 +230,7 @@ const jobs = {
 		'difficulty': 0,
 		'proficiency': 200,
 		'proficiency_gain': 25,
-		"description": "Officially, your paintings are being sold on the open market.\nUnofficially, her majesty is collecting most of them.\nHopefully she won't use them to make fun of you later.",
+		"description": "Officially, your paintings are being sold on the open market. Unofficially, her majesty is collecting most of them. Hopefully she won't use them to make fun of you later.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_01.png",
 	},
 	'Court Painter': {
@@ -245,7 +247,7 @@ const jobs = {
 		'difficulty': 25,
 		'proficiency': 200,
 		'proficiency_gain': 25,
-		"description": "Unsurprisingly, her majesty pays quite well for commissioned works.\nHopefully the request to paint the ceilings isn't just another prank.",
+		"description": "Unsurprisingly, her majesty pays quite well for commissioned works. Hopefully the request to paint the ceilings isn't just another prank.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/paint01_08.png",
 	},
 	'Preach': {
@@ -270,7 +272,7 @@ const jobs = {
 			'proficiency_required': 100,
 			'id': 'local_preacher',
 		},
-		"description": "The job is more like handing out fliers than actual missionary work.\nTry not to bother anyone.",
+		"description": "The job is more like handing out fliers than actual missionary work. Try not to bother anyone.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/rosary_02.png",
 	},
 	'Teaching Assistant': {
@@ -312,7 +314,7 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 20,
-		"description": "The fact that you could get a classroom to teach can only be attributed to nepotism.\nThat said, you still need to lecture properly to get paid.",
+		"description": "The fact that you could get a classroom to teach can only be attributed to nepotism. That said, you still need to lecture properly to get paid.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/file01_04.png",
 	},
 	'Architect': {
@@ -2810,6 +2812,68 @@ const quests = {
 			"day": 0,
 		},
 	},
+	"super_inspiration": {
+		"name": "Super Duper Inspired!",
+		"requirements": {
+			"work": {
+				"Painting": 2,
+				},
+		},
+		"description": "You feel super duper inspired today, let's try drawing a lot!",
+		"rewards": {
+			"stats": {
+				"gold": 500,
+				"scholarship": 10,
+				"art": 40,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"potato_senses": {
+		"name": "Potato Senses",
+		"requirements": {
+			"work": {
+				"Farmwork": 1,
+				},
+		},
+		"description": "You detected delicious potatoes. To the fields!",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_hp": 10,
+				"attack": 10,
+				"defense": 10,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"carpentry_request": {
+		"name": "Carpentry Request",
+		"requirements": {
+			"work": {
+				"Carpentry": 1,
+				},
+		},
+		"description": "Fay asked you to help out at a busy time. It's not mandatory, but she promised snacks if you go help.",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -30,
+				"max_hp": 5,
+				"attack": 5,
+				"skill": 15,
+				"defense": 5,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
 	"chores": {
 		"name": "Chores",
 		"requirements": {
@@ -2826,6 +2890,145 @@ const quests = {
 				"skill": 5,
 				"agility": 10,
 				"scholarship": 5,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"tutoring_request": {
+		"name": "Tutoring?",
+		"requirements": {
+			"work": {
+				"Tutoring": 1,
+				},
+		},
+		"description": "Hiyori asked if you could tutor (play with) her today. She's still grounded, but the palace is more than big enough to qualify as a dungeon, so there's plenty of places to play around.",
+		"rewards": {
+			"stats": {
+				"gold": 500,
+				"stress": -20,
+				"max_hp": 5,
+				"max_mp": 5,
+				"magic": 5,
+				"scholarship": 15,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"goos_request": {
+		"name": "Goo's Request",
+		"requirements": {
+			"work": {
+				"Wizard's Apprentice": 1,
+				},
+		},
+		"description": "Goo asked you to come work at his workshop today. Apparently there's a success rate buff for crafting certain potions today.",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_mp": 5,
+				"magic": 5,
+				"skill": 10,
+				"scholarship": 10,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"shorthanded_kitchen": {
+		"name": "Shorthanded Kitchen",
+		"requirements": {
+			"work": {
+				"Cook": 1,
+				},
+		},
+		"description": "The kitchen is extra busy today so Alice asked you for help.",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_hp": 5,
+				"attack": 5,
+				"agility": 10,
+				"skill": 10,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"sleepyhead": {
+		"name": "Sleepyhead",
+		"requirements": {
+			"work": {
+				"Nap": 2,
+				},
+		},
+		"description": "For some reason, you feel extra sleepy today. You can probably push through, but maybe something good will happen if you take lots of naps?",
+		"rewards": {
+			"stats": {
+				"stress": -50,
+				"max_hp": 10,
+				"max_mp": 10,
+				"attack": 10,
+				"magic": 10,
+				"skill": 10,
+				"agility": 10,
+				"defense": 10,
+				"resistance": 10,
+				"art": 10,
+				"scholarship": 10,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"dumpling_senses": {
+		"name": "Dumpling Senses",
+		"requirements": {
+			"work": {
+				"Dumpling Dungeon": 1,
+				},
+		},
+		"description": "It feels like something good will happen if you head into the Dumpling Dungeon.",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_hp": 5,
+				"max_mp": 5,
+				"attack": 5,
+				"magic": 5,
+				"defense": 5,
+				"resistance": 5,
+			}
+		},
+		"failure_conditions": {
+			"day": 0,
+		},
+	},
+	"pop_quiz": {
+		"name": "Pop Quiz",
+		"requirements": {
+			"work": {
+				"Cram School": 1,
+				},
+		},
+		"description": "The dastardly homeroom teacher is planning to surprise you with a cruel and vicious pop quiz tomorrow, quickly attend cram school to foil their evil plot! (Actually, the exam schedule has been posted since day 1 of the class.)",
+		"rewards": {
+			"stats": {
+				"gold": 100,
+				"stress": -20,
+				"max_mp": 5,
+				"magic": 5,
+				"skill": 5,
+				"scholarship": 15,
 			}
 		},
 		"failure_conditions": {
@@ -2849,11 +3052,76 @@ const random_daily_events = [
 		'toast': "Her majesty called you over.",
 		'timeline': "Chores",
 	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "Your potato senses are tingling!",
+		'timeline': "PotatoSenses",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "Oh? Someone is at the door.",
+		'timeline': "CarpentryRequest",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "You suddenly feel the urge to play a prank on Hiyori!",
+		'timeline': "MischievousTutoring",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "You decided to eat out for breakfast and ran into Goo.",
+		'timeline': "GooRequest",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "You decided to eat breakfast with Alice today.",
+		'timeline': "ShorthandedKitchen",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "You feel sleepier than usual today.",
+		'timeline': "SleepyInTheMorning",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "Your Dumpling senses are tingling!",
+		'timeline': "DumplingSenses",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "You got a text message!",
+		'timeline': "PopQuiz",
+	},
+	{
+		'stats': {
+		},
+		'weight': 1,
+		'toast': "You feel super duper inspired today!",
+		'timeline': "SuperInspiration",
+	},
+	#acolyte
 ]
 
 const perspectives = {
 	#Use Player.unlock_perspective to unlock perspectives
 	"vanishing_point": {
+		#unluck: true forces the perspective to always be visible
 		"unlock": true,
 		"label": "Vanishing Point Perspective",
 		"timeline": "VanishingPointPerspective",
