@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=6 format=3 uid="uid://dmrhafwp3p0gn"]
+
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="1_o0fut"]
+[ext_resource type="Resource" uid="uid://bdmdjsuftthet" path="res://Scenes/CardGame/Characters/Mao/Cards/shield.tres" id="2_r7sdg"]
+[ext_resource type="Resource" uid="uid://7ncfpp8nwi26" path="res://Scenes/CardGame/Characters/Mao/Cards/power_up.tres" id="3_oewhh"]
+[ext_resource type="Resource" uid="uid://c117i1qkv5feb" path="res://Scenes/CardGame/Characters/Mao/Cards/doodle.tres" id="4_omukn"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="5_xlid8"]
+
+[resource]
+script = ExtResource("5_xlid8")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_o0fut"), ExtResource("1_o0fut"), ExtResource("1_o0fut"), ExtResource("2_r7sdg"), ExtResource("2_r7sdg"), ExtResource("2_r7sdg"), ExtResource("3_oewhh"), ExtResource("4_omukn")])

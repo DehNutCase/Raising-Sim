@@ -1,0 +1,53 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Morgan (Silhouette) 3
+[history action="clear"]
+update Mao (Normal)
+do Player.play_random_voice("greetings")
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Good morning, your majesty! Are you here to watch me paint?
+Morgan_Portrait (Silhouette): Fufufu, please, don't mind me.
+update Mao (Angry)
+do Player.play_voice("hate")
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Angry): My danger senses are tingling! What are you up to, your majesty?
+Morgan_Portrait (Silhouette): Nothing at all?
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Angry): Good adults don't lie!
+Morgan_Portrait (Silhouette): Since I'm only planning to do what I usually do, it's not a lie to say that I'm not up to anything, don't you think?
+do Player.play_voice("disappointed")
+Mao_Portrait (Angry): Uguu.
+update Mao (Normal)
+- Try to ignore her majesty, keep painting
+	[history]
+	[background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
+	leave --All-- [animation="Instant In Or Out"]
+	do Player.play_sound_effect("time_passing")
+	[wait time="1.0" hide_text="false"]
+	[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+	join Mao (Angry) 1
+	join Morgan (Silhouette) 3
+	[history action="resume"]
+	Morgan_Portrait (Silhouette): Pardon me if I'm wrong, but I don't think you were originally planning to use such dark colors?
+	do Player.play_voice("disappointed")
+	Mao_Portrait (Angry): Uguu.
+	Morgan_Portrait (Silhouette): In my opinion, it still turned out quite well. But will you agree that I didn't do anything the whole time?
+	do Player.play_voice("disappointed")
+	Mao_Portrait (Angry): Uguu....
+	Morgan_Portrait (Silhouette): Fufufu.
+	[signal arg="{"stats": {"stress": 10, "max_mp": 10, "magic": 10, "art": 20, "scholarship": 10, }}"]
+- Your majesty, please don't bother me! [if !Player.background_inventory.has_item_with_prototype_id("magic_towel")][else="hide"]
+	Morgan_Portrait (Silhouette): Well, since you said please...
+	update Mao (Normal)
+	Morgan_Portrait (Silhouette): Hmm.
+	update Mao (Sad)
+	Morgan_Portrait (Silhouette): Nope.
+	do Player.play_voice("disappointed")
+	Mao_Portrait (Sad): Your majesty!
+	Morgan_Portrait (Silhouette): Fufufu. Oh, very well, I'll leave you alone.
+	update Mao (Normal)
+	Morgan_Portrait (Silhouette): But do let me know when you finish your painting, I'd like to take a look.
+	do Player.play_voice("yes_enthusiastic")
+	Mao_Portrait (Normal): Okie dokie!
+	[signal arg="{"background": "magic_towel"}"]
+	[signal arg="{"stats": {"stress": -20, "art": 20,}}"]

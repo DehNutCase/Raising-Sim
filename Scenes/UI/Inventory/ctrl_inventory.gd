@@ -90,6 +90,7 @@ func make_tooltip(item):
 	var tooltip = item.get_property("name", "")
 	if tooltip: tooltip += "\n"
 	tooltip += item.get_property("description", "Tooltip Error")
+	if tooltip: tooltip += "\n"
 	var daily_stats:Dictionary = item.get_property("daily_stats", {})
 	if (!daily_stats.keys().is_empty()):
 		tooltip += "\nDaily Stats:"

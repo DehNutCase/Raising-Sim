@@ -74,7 +74,7 @@ func take_damage(damage: int) -> void:
 	sprite.texture = player_textures["normal"]
 	
 	#adjust dmg here
-	if active_status.get("Immune"):
+	if active_status.get("Invulnerable"):
 		return
 	if damage <= 0:
 		return

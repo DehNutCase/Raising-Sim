@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://eapobtksge88"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://eapobtksge88"]
 
 [ext_resource type="Texture2D" uid="uid://g5t5njs43n2w" path="res://Art/Mori no oku no kakurezato/CardGame/cube02_01.png" id="1_7gtbo"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_6udjk"]
-[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/immune.tres" id="3_qtp1f"]
 [ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_sm8pi"]
 
 [resource]
@@ -12,7 +11,7 @@ type = 5
 target = 0
 cost = 3
 effect_amount = 2
-status = ExtResource("3_qtp1f")
+bonus_effect = 0
 enemy_attack_type = 0
 multi_hit_amount = 0
 animation = ""
@@ -21,7 +20,9 @@ start_sound_effect = ExtResource("3_sm8pi")
 second_target = 0
 second_type = 2
 second_effect_amount = 15
+second_bonus_effect = 0
 third_target = 0
 third_type = 0
 third_effect_amount = 0
+third_bonus_effect = 0
 icon = ExtResource("1_7gtbo")

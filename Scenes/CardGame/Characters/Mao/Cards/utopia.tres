@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bgg4op021ngxi" path="res://Art/Mori no oku no kakurezato/CardGame/element07_01.png" id="1_cm265"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_6ff4e"]
 [ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_60rua"]
-[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/immune.tres" id="3_fp5h2"]
+[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/invulnerable.tres" id="3_fp5h2"]
 
 [resource]
 script = ExtResource("2_6ff4e")

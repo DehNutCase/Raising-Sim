@@ -235,6 +235,7 @@ directories/dtl_directory={
 "NewYearsShrine": "res://Timelines/WalkEvents/EventWalks/NewYearsShrine.dtl",
 "Old/Day1Event": "res://Timelines/DayEvents/Old/Day1Event.dtl",
 "Old/Day5Event": "res://Timelines/DayEvents/Old/Day5Event.dtl",
+"Painting0": "res://Timelines/JobEvents/Painting0.dtl",
 "PhysicalEducationEnd": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationEnd.dtl",
 "PhysicalEducationFirst": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationFirst.dtl",
 "PhysicalEducationMiddle": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationMiddle.dtl",

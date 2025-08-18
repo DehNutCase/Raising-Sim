@@ -84,6 +84,15 @@
 		"name": "Box of Doodles",
 		"stats": "{}",
 	},
+	"magic_towel": {
+		"daily_stats": "{\"art\": 2,}",
+		"description": "A painting you drew after asking her majesty to leave you alone. Why is it on a towel? You asked Rice to move your finished painting to a towel.\n\nIt's not actually magic.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/figure_towel.png",
+		"monthly_stats": "{}",
+		"max_stats": "{\"art\": 200}",
+		"name": "Magic Towel",
+		"stats": "{}",
+	},
 	"class_change_card": {
 		"daily_stats": "{}",
 		"description": "A blue I.D. card allowing access to the class change hall for tier 1 classes.\nBy design, it doesn't update your information after being printed, so you would need to print a new one to update your information.\nFor various reasons, it's best to class change on your birthday, so have this ready at the end of the year.",

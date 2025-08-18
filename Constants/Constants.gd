@@ -232,6 +232,7 @@ const jobs = {
 		'proficiency_gain': 25,
 		"description": "Officially, your paintings are being sold on the open market. Unofficially, her majesty is collecting most of them. Hopefully she won't use them to make fun of you later.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_01.png",
+		"timelines": ["Painting0"],
 	},
 	'Court Painter': {
 		'stats': {
@@ -314,7 +315,7 @@ const jobs = {
 		'difficulty': 50,
 		'proficiency': 200,
 		'proficiency_gain': 20,
-		"description": "The fact that you could get a classroom to teach can only be attributed to nepotism. That said, you still need to lecture properly to get paid.",
+		"description": "The fact that you could get a classroom to teach can only be attributed to nepotism. That said, you still need to teach properly to get paid.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/file01_04.png",
 	},
 	'Architect': {
@@ -1086,7 +1087,7 @@ const constants = {
 	'TIMES_OF_DAY' = ['morning', 'afternoon', 'night', 'bedtime'],
 	'DAILY_ACTION_LIMIT' = 3,
 	'BASE_COURSE_PROGRESS' = 1000,
-	'JOB_EVENT_ODDS' = 20, #The percentage chance of triggering a job event
+	'JOB_EVENT_ODDS' = 40, #The percentage chance of triggering a job event
 	'BEDTIME_EVENT_ODDS' = 20,
 	'TOAST_TIMEOUT_DURATION' = .5,
 	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},

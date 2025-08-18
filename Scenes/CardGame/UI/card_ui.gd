@@ -8,7 +8,7 @@ signal reparent_requested(card: CardUI)
 
 @onready var collision = %CollisionShape2D
 
-enum States {BASE, DRAGGING, RELEASED, DISCARD}
+enum States {BASE, DRAGGING, RELEASED, DISCARD, SPELLBOOK}
 @export var current_state:States
 @export var initial_state:States
 
@@ -251,6 +251,9 @@ func _make_custom_tooltip(for_text):
 	return Player.make_custom_tooltip(for_text)
 
 func discard() -> void:
+	if current_state == States.SPELLBOOK:
+		queue_free()
+		return
 	Player.card_game_player.discard.append(card)
 	enter_state(States.DISCARD)
 	queue_free()

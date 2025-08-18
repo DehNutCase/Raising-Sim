@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_m7ly0")
 status_icon = ExtResource("2_62sm3")
-status_name = "Immune"
-status_tooltip = "Immune. Negates incoming damage."
+status_name = "Invulnerable"
+status_tooltip = "Invulnerable. Negates incoming damage."
 status_decay = 0
 NegativeStatus = false

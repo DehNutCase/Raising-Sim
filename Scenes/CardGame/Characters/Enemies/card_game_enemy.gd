@@ -50,7 +50,7 @@ func take_damage(damage: int) -> void:
 	
 	if health <= 0:
 		return
-	if active_status.get("Immune"):
+	if active_status.get("Invulnerable"):
 		return
 		
 	if active_status.get("Vulnerable"):

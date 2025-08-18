@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
-[ext_resource type="Resource" uid="uid://k2gtw81xb7ta" path="res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres" id="7_mocat"]
+[ext_resource type="Resource" uid="uid://c117i1qkv5feb" path="res://Scenes/CardGame/Characters/Mao/Cards/doodle.tres" id="7_grfbv"]
 [ext_resource type="StyleBox" uid="uid://dbhg2yav7ap6u" path="res://Art/Themes/ThemeComponents/DefaultButtonNormal.tres" id="8_q06d8"]
 [ext_resource type="StyleBox" uid="uid://c7r2jxhbcch2g" path="res://Art/Themes/ThemeComponents/DefaultButtonHover.tres" id="9_4y1vj"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="9_cpfh3"]
@@ -73,7 +73,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_3o02g"), ExtResource("7_mocat")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_3o02g"), ExtResource("7_grfbv")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]

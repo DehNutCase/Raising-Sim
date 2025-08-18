@@ -26,14 +26,14 @@ label Deck_Choice
 	update Mao (Normal)
 	Rice_Portrait (Normal): This would be my recommended choice, it's by far the easiest deck to handle.
 	Rice_Portrait (Normal): It's quite strong even if you don't make any changes, but you can consider selling the harder to use cards to make it more consistent.
-	Rice_Portrait (Normal): You might run into issues later against enemies with multiple health bars, but it shouldn't be difficult to build a better deck by then.
+	Rice_Portrait (Normal): You might run into issues later against enemies with multiple health bars, but those are quite rare, and it shouldn't be difficult to build a better deck by then.
 	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/prestidigitation.tres")
-- I'm not sure why, but I'm really drawn to this deck [Ordinary Beginnings]
+- My [Doodle] senses tells me this is the deck I want!
 	update Mao (Normal)
 	Rice_Portrait (Normal): Hmm. To put it nicely, this deck has the most potential. To put it bluntly, it's the weakest.
 	Rice_Portrait (Normal): Considering it's meant to be a birthday present, her majesty added a somewhat special card, but I would personally recommended you pick something else.
 	Mao_Portrait (Normal): Teehee, tell her thanks for me.
-	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/new_beginning.tres")
+	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/doodle.tres")
 Rice_Portrait (Normal): Are you sure about this choice?
 - Yes
 - Let me think it over again
