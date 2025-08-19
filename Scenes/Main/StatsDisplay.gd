@@ -27,12 +27,18 @@ func display_stats():
 			if stat == "experience":
 				text2 += label + ": " + str(Player.stats[stat]) + " / " + str(Player.get_required_experience(Player.stats.level - 1)) + "\n"
 			else:
-				text2 += label + ": " + str(Player.stats[stat]) + "\n"
+				var max = ""
+				if Player.calculate_max_stat(stat):
+					max = " / " + str(Player.calculate_max_stat(stat))
+				text2 += label + ": " + str(Player.stats[stat]) + max + "\n"
 		else:
 			counter += 1
 			if stat == "experience":
 				text1 += label + ": " + str(Player.stats[stat]) + " / " + str(Player.get_required_experience(Player.stats.level - 1)) + "\n"
 			else:
-				text1 += label + ": " + str(Player.stats[stat]) + "\n"
+				var max = ""
+				if Player.calculate_max_stat(stat):
+					max = " / " + str(Player.calculate_max_stat(stat))
+				text1 += label + ": " + str(Player.stats[stat]) + max + "\n"
 	label1.text = text1
 	label2.text = text2

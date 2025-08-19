@@ -1041,7 +1041,6 @@ const stats = {
 	'level' = {
 		'label': 'Level',
 		'min': 1,
-		'max': 1000,
 		'value': 20,
 	},
 	'experience' = {
@@ -1051,7 +1050,6 @@ const stats = {
 	'gold' = {
 		'label': 'Gold',
 		'emoji': '🪙',
-		'max': 1000000,
 		'value': .01,
 	},
 	'scholarship' = {
@@ -1071,7 +1069,6 @@ const stats = {
 	'bonus_exp' = {
 		'label': 'Exp Bonus',
 		'emoji': '',
-		'min': 0,
 	},
 	'action_points' = {
 		'label': 'Action Point',

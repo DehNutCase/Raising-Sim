@@ -393,9 +393,9 @@ func load_demo():
 		if !self[inv].deserialize(data[inv]):
 			printerr("failed to deserialize inventory during load_game")
 
-##Return max stat which is int
-func calculate_max_stat(stat_name:String):
-	if "max" in Constants.stats[stat_name]:
+##Return max stat which is int, return 0 if no max stat
+func calculate_max_stat(stat_name:String) -> int:
+	if Constants.stats[stat_name].get("max"):
 		var max_value = Constants.stats[stat_name].max
 		if stat_name in Player.max_stats:
 			max_value += Player.max_stats[stat_name]
@@ -403,7 +403,7 @@ func calculate_max_stat(stat_name:String):
 			Player.max_stats[stat_name] = 0
 		return max_value
 	else:
-		printerr("tried to find max_stat of a stat without max")
+		return 0
 		
 func calculate_min_stat(stat_name:String):
 	if "min" in Constants.stats[stat_name]:
@@ -499,6 +499,7 @@ var voices = {
 	"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),
 	"hmm": load("res://Voice/Sakura An/Misc/Hmm.wav"),
 	"good_night": load("res://Voice/Sakura An/Greetings/Good Night.wav"),
+	"wow_blank_stare": load("res://Voice/Sakura An/Misc/Wow...(Blank stare).wav"),
 }
 
 var voice_lists = {

@@ -230,6 +230,7 @@ directories/dtl_directory={
 "MagecraftEducationEnd": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationEnd.dtl",
 "MagecraftEducationFirst": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationFirst.dtl",
 "MagecraftEducationMiddle": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationMiddle.dtl",
+"MagicLessonPerspective": "res://Timelines/Perspectives/MagicLessonPerspective.dtl",
 "MischievousTutoring": "res://Timelines/DayEvents/Random/MischievousTutoring.dtl",
 "MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
 "NewYearsShrine": "res://Timelines/WalkEvents/EventWalks/NewYearsShrine.dtl",
