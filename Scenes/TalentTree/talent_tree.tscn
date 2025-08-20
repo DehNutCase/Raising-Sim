@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlveg5i5gaxps"]
+
+[ext_resource type="Script" path="res://Scenes/TalentTree/talent_tree.gd" id="1_eycjw"]
+[ext_resource type="Theme" uid="uid://dlhcpidg6dmi8" path="res://Art/Themes/TalentTreeTheme.tres" id="2_1jffm"]
+
+[node name="TalentTree" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1jffm")
+script = ExtResource("1_eycjw")

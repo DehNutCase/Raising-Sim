@@ -2,7 +2,7 @@
 extends Node
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests",]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree",]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -34,6 +34,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var unlocked_missions = {}
 @export var max_stats = {}
 @export var min_stats = {}
+@export var talent_tree = {}
 
 @export var course_list = []
 @export var course_progress = {}
@@ -122,6 +123,7 @@ var base_stats = {
 	"bonus_exp": 0,
 	"scholarship": 0,
 	"action_points": 1,
+	"talent_point": 1,
 }
 
 @export var stats = {}

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dlhcpidg6dmi8"]
+
+[ext_resource type="StyleBox" uid="uid://bx3avxxgv8s8y" path="res://Art/Themes/ThemeComponents/TalentTreeStyleBox.tres" id="1_71od6"]
+
+[resource]
+PanelContainer/styles/panel = ExtResource("1_71od6")
+VBoxContainer/constants/separation = 32

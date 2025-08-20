@@ -1074,6 +1074,10 @@ const stats = {
 		'label': 'Action Point',
 		'emoji': '',
 		'min': 1,
+	},
+	'talent_point' = {
+		'label': 'Talent Point',
+		'emoji': '',
 	}
 }
 
@@ -1083,6 +1087,7 @@ const constants = {
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
 	'TIMES_OF_DAY' = ['morning', 'afternoon', 'night', 'bedtime'],
 	'DAILY_ACTION_LIMIT' = 3,
+	'TALENT_TIERS' = 1,
 	'BASE_COURSE_PROGRESS' = 1000,
 	'JOB_EVENT_ODDS' = 40, #The percentage chance of triggering a job event
 	'BEDTIME_EVENT_ODDS' = 20,
@@ -3139,5 +3144,35 @@ const perspectives = {
 		"label": "Test Perspective",
 		"timeline": "RemedialLessonsPerspective",
 		"icon": "res://Art/Background/Background material shop/bg001a.jpg",
+	},
+}
+
+const talents = {
+	"cheerful" = {
+		"label": "Cheerful",
+		"tier": 0,
+		"cost": 1,
+		"max_stats": {"stress": -5,},
+		"max_stacks": 5,
+		"description": "A naturally bright and cheerful disposition. No matter how stressed you get during the day, a good night's nap makes everything better.\n\nLowers maximum stress.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/smile.png",
+	},
+	"s" = {
+		"label": "s",
+		"tier": 0,
+		"cost": 1,
+		"max_stats": {"stress": -5,},
+		"max_stacks": 5,
+		"description": "A naturally bright and cheerful disposition. No matter how stressed you get during the day, a good night's nap makes everything better.\n\nLowers maximum stress.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/smile.png",
+	},
+	"t" = {
+		"label": "t",
+		"tier": 2,
+		"cost": 1,
+		"max_stats": {"stress": -5,},
+		"max_stacks": 5,
+		"description": "A naturally bright and cheerful disposition. No matter how stressed you get during the day, a good night's nap makes everything better.\n\nLowers maximum stress.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/smile.png",
 	},
 }

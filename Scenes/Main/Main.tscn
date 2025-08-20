@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=88 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/Daily Schedule.gd" id="31_1x7np"]
 [ext_resource type="Script" path="res://Scenes/Main/ActionDescription.gd" id="32_lakgr"]
 [ext_resource type="PackedScene" uid="uid://bksr65eq5hi5v" path="res://Scenes/UI/Information/QuestLog.tscn" id="36_epuay"]
+[ext_resource type="PackedScene" uid="uid://dlveg5i5gaxps" path="res://Scenes/TalentTree/talent_tree.tscn" id="42_ya2xs"]
 [ext_resource type="PackedScene" uid="uid://q84u4t3lxanj" path="res://Scenes/UI/Popup/Popup.tscn" id="43_ck6uc"]
 [ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
 [ext_resource type="Texture2D" uid="uid://ftrly7krq5wf" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_ShoppingCart.png" id="45_03wx0"]
@@ -498,7 +499,6 @@ autoplay = true
 expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
-visible = false
 clip_contents = true
 custom_minimum_size = Vector2(1300, 600)
 anchors_preset = 8
@@ -800,6 +800,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 6
 script = ExtResource("44_3cuex")
+
+[node name="TalentTree" parent="Ui/MenuPanel" instance=ExtResource("42_ya2xs")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="CloseButton" type="Button" parent="Ui/MenuPanel" groups=["Button"]]
 custom_minimum_size = Vector2(25, 25)

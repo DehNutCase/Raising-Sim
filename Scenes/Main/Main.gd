@@ -1155,7 +1155,12 @@ func _on_card_button_pressed(card: CardResource):
 		deck.update_buttons()
 		process_stats({'gold': card.price})
 
-
+func _on_talent_button_pressed(talent: String):
+	var talent_data = Constants.talents.get(talent)
+	if popup.visible or !talent_data:
+		return
+	popup.set_text("[center]Pay %d to increase %s by one?" % [talent_data.cost, talent_data.label])
+		
 func _on_game_over_dialog_canceled():
 	await Player.delete_game()
 	await OS.set_restart_on_exit(true)
