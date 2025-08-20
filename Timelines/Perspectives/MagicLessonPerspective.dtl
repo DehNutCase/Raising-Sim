@@ -1,0 +1,55 @@
+[background arg="res://Art/Background/Background material shop/bg016c.jpg" fade="0.0"]
+join Mao (Normal) 1
+join Morgan (Grin) 3
+do Player.play_song("sleep")
+[history action="clear"]
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+do Player.play_voice("amazing")
+Mao_Portrait (Excited): Magic time!
+Morgan_Portrait (Grin): Fufufu, there's no need to be so excited.
+update Mao (Excited)
+do Player.play_voice("yay!")
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): But it's magic!
+update Mao (Surprised)
+Mao_Portrait (Surprised): Oh yeah. Can you tell me why you're only teaching me magic now? You always said no before.
+Morgan_Portrait (Grin): Strictly speaking, it's still a little too early for you. Until your tenth birthday, you'll remain under the effects of the [Beginner Protection Period].
+Morgan_Portrait (Grin): It's a strong defense that even I can't break, but in exchange, none of your stats can increase, nor can you learn new spells.
+do Player.play_voice("huh?")
+Mao_Portrait (Surprised): But I can shoot paintballs? Oh! And everyone else learns magic just fine!
+Morgan_Portrait (Grin): Not everyone has Beginner Protection, it's something you have to pay for before you're born. As for your paintball spell, you don't really know it.
+Morgan_Portrait (Grin): To be more precise, you haven't learned the paintball spell itself, but thanks to your practice, you have enough proficiency to cast it without knowing the spell.
+do Player.play_voice("wow_blank_stare")
+update Mao (Normal)
+Mao_Portrait (Normal): Umm, yes, I understand everything now... *Completely Lost*
+Morgan_Portrait (Grin): Fufufu. There's no need to be fussy about the details.
+Morgan_Portrait (Grin): For the time being, just know that I'm not really expecting you to learn any spells for tonight's lesson.
+Morgan_Portrait (Grin): Strictly speaking, what we're doing is something of an exploit. Although you can't learn spells, you can still acquire proficiency.
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): Hmm... like my paintball spell?
+Morgan_Portrait (Grin): Fufufu. Indeed.
+Morgan_Portrait (Grin): For now. Look up.
+[history]
+[background arg="res://Art/Background/Background material shop/bg035c.jpg" fade="2.0" transition="Push Down"]
+leave --All-- [animation="Fade Out Down"]
+[wait time="2.0" hide_text="false"]
+[history action="resume"]
+Mao_Portrait (Normal): Teehee. I wish Hiyori was here.
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): Hmm. But it's also nice to watch the stars with just the two of us?
+Mao_Portrait (Normal): I don't know what I want!
+Morgan_Portrait (Grin): Fufufu.
+Morgan_Portrait (Grin): We can have a moon watching party later, but for now, let's start your first magic lesson.
+Morgan_Portrait (Grin): Would you like to start with theory first, or practice?
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): I don't really know? Let's just go with theory.
+Morgan_Portrait (Grin): Very well. For starters, your Ink Mage class is quite similar to my Witch in that it has access to most types of magic, so you can cast just about any spell without restrictions.
+Morgan_Portrait (Grin): You'd still have to learn the spells first, of course.
+Morgan_Portrait (Grin): Unlike Witch or the generic Mage class, however, you have a minor boost to color related spells, and a minor penalty for everything else.
+Morgan_Portrait (Grin): Since most advanced classes tend to specialize in certain types of magic, it's best to always keep at least one level in Ink Mage, even if it slows down experience gain.
+Morgan_Portrait (Grin): This way, you'll be able to cast niche spells on an ad hoc basis when needed.
+do Player.play_voice("good_night")
+Mao_Portrait (EyesClosed): Zzz...
+Morgan_Portrait (Grin): Fufufu. Oh dear.
+Morgan_Portrait (Grin): Perhaps a night lesson wasn't the best idea?

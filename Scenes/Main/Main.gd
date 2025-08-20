@@ -78,6 +78,7 @@ func _ready():
 	#Game needs to be loaded here
 	self.hide()
 	if !Player.save_loaded:
+		#No need for the demo to have a separate save currently
 		#if OS.has_feature("demo"):
 			#Player.load_demo()
 		#else:
@@ -140,8 +141,8 @@ func _ready():
 		#Player.inventory.remove_item(item)
 		#Player.stats.art = 500
 		#Player.stats.skill = 0
-		#Player.stats.gold = -1
-		#Dialogic.start("SuperInspiration")
+		#Player.stats.gold = 100000
+		#Dialogic.start("Chores")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -470,6 +471,8 @@ func do_expedition(expedition_name:String) -> void:
 		var combat = expedition.boss_fights.pick_random()
 		enter_card_game(combat, false, false, true)
 		await card_game_finished
+		if !card_game_victory:
+			expedition_failed = true
 		
 	if !expedition_failed:
 		Dialogic.start(expedition.finish_timeline)
@@ -765,7 +768,7 @@ func _on_reward_signal(dialogic_signal) -> void:
 	if "card_game" in dialogic_signal:
 		if Dialogic.current_timeline:
 			await Dialogic.timeline_ended
-		var combat = load(dialogic_signal.card_game)
+		var combat = dialogic_signal.card_game
 		enter_card_game(combat)
 	if "expedition_failed" in dialogic_signal:
 		expedition_failed = true

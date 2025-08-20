@@ -160,4 +160,16 @@
 		"special_type": "card_pack",
 		"card_pack": "res://Scenes/CardGame/Card/CardPacks/meteor_card_pack.tres",
 	},
+	"color_card_pack": {
+		"daily_stats": "{}",
+		"courses_completed": "Color Theory (Magic)",
+		"description": "A card pack full of uncommon spells, mostly ink and color magic.\n\nInk Mages are quite rare, so it's strange that such a card pack is on sale at all. (It's because her majesty specially commissioned them.)",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/Edited/card04_01_PURPLE.png",
+		"limit": 10,
+		"name": "Color Card Pack",
+		"price": 1000,
+		"stats": "{}",
+		"special_type": "card_pack",
+		"card_pack": "res://Scenes/CardGame/Card/CardPacks/color_card_pack.tres",
+	},
 }

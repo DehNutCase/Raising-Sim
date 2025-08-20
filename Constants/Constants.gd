@@ -2686,7 +2686,7 @@ const quests = {
 			"timeline": "GoodStudentSuccess4",
 		},
 		"failure_conditions": {
-			"day": 21,
+			"day": 30,
 		},
 		"failure_rewards": {
 			"timeline": "GoodStudentFailure",
@@ -2697,7 +2697,7 @@ const quests = {
 		"requirements": {
 			"tower_level": 10,
 		},
-		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?\nTime Limit: Day 14",
+		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?\nTime Limit: Day 20",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2710,7 +2710,7 @@ const quests = {
 			"timeline": "TowerClimberSuccess",
 		},
 		"failure_conditions": {
-			"day": 14,
+			"day": 20,
 		},
 		"failure_rewards": {
 			"timeline": "TowerClimberFailure",

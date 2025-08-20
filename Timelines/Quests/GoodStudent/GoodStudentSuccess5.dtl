@@ -1,0 +1,25 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3 [animation="Slide In Right" length="2"]
+join Morgan (Silhouette) 1
+[history action="clear"]
+update Mao (Normal)
+do Player.play_random_voice("greetings")
+Mao_Portrait (Normal): Good morning!
+Morgan_Portrait (Silhouette): Oh my, it looks like you passed your final exam?
+do Player.play_voice("proud")
+update Mao (EyesClosed)
+Mao_Portrait (EyesClosed): Umu! *Smug*
+Morgan_Portrait (Silhouette): But it's a bit of a shame that I can't throw a pity party any more. Tsk, tsk. If only you failed.
+do Player.play_voice("hate")
+update Mao (Angry)
+Mao_Portrait (Angry): Can't we have a party to congratulate me?
+Morgan_Portrait (Silhouette): But where the fun in that?
+do Player.play_voice("disappointed")
+update Mao (Angry)
+Mao_Portrait (Angry): Uguu...
+Morgan_Portrait (Silhouette): Fufufu. In all seriousness, since you won't be taking remedial classes this summer, we can have a beach party.
+do Player.play_voice("yay!")
+update Mao (Excited)
+Mao_Portrait (Excited): Yay! Will you be coming with?
+Morgan_Portrait (Silhouette): Fufufu. Who knows?
+[signal arg="{"stats": {"stress": -20, "gold": 1000,},}"]

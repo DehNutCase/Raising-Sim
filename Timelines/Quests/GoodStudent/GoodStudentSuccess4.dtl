@@ -1,0 +1,19 @@
+[background arg="res://Art/Background/UncleMugen/Classroom_03_day.webp" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 1
+[update_position vector="Vector2(0, 150)" time="0.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="0.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+[history action="clear"]
+update Mao (Normal)
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): Hmm, I wonder why her majesty told me to come to class? There's nobody here.
+Rice_Portrait (Normal): You'll be taking your final exam here.
+do Player.play_voice("oh...")
+Mao_Portrait (Normal): Oh... Are you my examiner, then?
+Rice_Portrait (Normal): No. But tell me when you're ready and we can start the exam.
+do Player.play_voice("huh?")
+Mao_Portrait (Normal): Huh? Well, I guess I'm ready?
+[signal arg="{"card_game": "res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn"}"]
+[update_position action="reset_all" vector="Vector2(0, 150)" time="0.0"]

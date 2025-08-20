@@ -202,6 +202,8 @@ func exit_combat() -> void:
 		if Player.in_expedition:
 			pass
 		Player.reward_signal = enemy_scene.victory_reward
+	else:
+		Player.reward_signal = enemy_scene.defeat_reward
 	Player.in_tower = false
 	Player.in_mission = false
 	Player.in_expedition = false

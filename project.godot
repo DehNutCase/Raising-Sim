@@ -30,11 +30,11 @@ Constants="*res://Constants/Constants.gd"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
 Player="*res://Constants/Player.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -214,6 +214,8 @@ directories/dtl_directory={
 "GoodStudentSuccess": "res://Timelines/Quests/GoodStudent/GoodStudentSuccess.dtl",
 "GoodStudentSuccess2": "res://Timelines/Quests/GoodStudent/GoodStudentSuccess2.dtl",
 "GoodStudentSuccess3": "res://Timelines/Quests/GoodStudent/GoodStudentSuccess3.dtl",
+"GoodStudentSuccess4": "res://Timelines/Quests/GoodStudent/GoodStudentSuccess4.dtl",
+"GoodStudentSuccess5": "res://Timelines/Quests/GoodStudent/GoodStudentSuccess5.dtl",
 "HiyoriAtelier": "res://Timelines/WalkEvents/HiyoriAtelier.dtl",
 "HiyoriAtelierFirst": "res://Timelines/WalkEvents/HiyoriAtelierFirst.dtl",
 "HiyoriAtelierSecond": "res://Timelines/WalkEvents/HiyoriAtelierSecond.dtl",
@@ -257,7 +259,9 @@ directories/dtl_directory={
 "StorageRoomFirst": "res://Timelines/WalkEvents/StorageRoomFirst.dtl",
 "SuperInspiration": "res://Timelines/DayEvents/Random/SuperInspiration.dtl",
 "Testing/test": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/Testing/test.dtl",
+"TowerClimberFailure": "res://Timelines/Quests/TowerClimber/TowerClimberFailure.dtl",
 "TowerClimberSuccess": "res://Timelines/Quests/TowerClimber/TowerClimberSuccess.dtl",
+"TowerClimberSuccess2": "res://Timelines/Quests/TowerClimber/TowerClimberSuccess2.dtl",
 "TriggeredEvents/ExitPass": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/TriggeredEvents/ExitPass.dtl",
 "TriggeredEvents/MissionRoom": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/TriggeredEvents/MissionRoom.dtl",
 "Tutoring0": "res://Timelines/JobEvents/Tutoring0.dtl",
