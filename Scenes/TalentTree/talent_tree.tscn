@@ -3,11 +3,18 @@
 [ext_resource type="Script" path="res://Scenes/TalentTree/talent_tree.gd" id="1_eycjw"]
 [ext_resource type="Theme" uid="uid://dlhcpidg6dmi8" path="res://Art/Themes/TalentTreeTheme.tres" id="2_1jffm"]
 
-[node name="TalentTree" type="VBoxContainer"]
+[node name="TalentTree" type="ScrollContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_1jffm")
+horizontal_scroll_mode = 0
 script = ExtResource("1_eycjw")
+
+[node name="TalentRows" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_1jffm")

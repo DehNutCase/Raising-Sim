@@ -2,7 +2,7 @@
 extends Node
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree",]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "daily_action_limit", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree", "talent_points_spent"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -16,6 +16,7 @@ extends Node
 @export var day: int = 0
 @export var max_walks: int = 1
 @export var remaining_walks: int = 0
+@export var daily_action_limit: int = 3
 @export var event_flags = {}
 @export var rest_flags = {}
 @export var lesson_flags = {}
@@ -35,6 +36,7 @@ enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
 @export var max_stats = {}
 @export var min_stats = {}
 @export var talent_tree = {}
+@export var talent_points_spent = 0
 
 @export var course_list = []
 @export var course_progress = {}
@@ -105,7 +107,7 @@ var reward_signal = {}
 var save_loaded = false
 
 #Easy access to card game player stuff
-var card_game_player: CardGamePlayer
+var card_game_player: CardGamePlayer = CardGamePlayer.new()
 var card_game_deck: Array[CardResource] = []
 
 

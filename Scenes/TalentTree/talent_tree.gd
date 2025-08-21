@@ -1,18 +1,24 @@
-extends VBoxContainer
+class_name TalentTree
+extends ScrollContainer
 
+@onready var talent_rows = %TalentRows
 
 func _ready() -> void:
-	_update_rows()
+	visibility_changed.connect(_update_rows)
 
 #Use modulate to signify disabled talent choices
 func _update_rows() -> void:
+	for node in talent_rows.get_children():
+		talent_rows.remove_child(node)
+		node.queue_free()
+	
 	for i in range(Constants.constants.TALENT_TIERS):
 		var row = load("res://Scenes/TalentTree/talent_row.tscn").instantiate()
-		add_child(row)
+		talent_rows.add_child(row)
+
 		for talent in Constants.talents:
 			if i == Constants.talents[talent].tier:
 				var talent_button: TalentButton = load("res://Scenes/TalentTree/talent_button.tscn").instantiate()
 				talent_button.talent = talent
 				row.add_child(talent_button)
-		
-	pass
+

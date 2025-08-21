@@ -4,4 +4,4 @@
 
 [resource]
 PanelContainer/styles/panel = ExtResource("1_71od6")
-VBoxContainer/constants/separation = 32
+VBoxContainer/constants/separation = 16

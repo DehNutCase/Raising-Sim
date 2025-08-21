@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=89 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -78,6 +78,7 @@
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
 [ext_resource type="Texture2D" uid="uid://bc0twdyjkhcdq" path="res://Art/Mori no oku no kakurezato/CardGame/alchemy05_01.png" id="69_djog0"]
 [ext_resource type="Theme" uid="uid://bpmpi75l7q4kv" path="res://Art/Themes/DefaultButtonTheme.tres" id="73_17ulr"]
+[ext_resource type="Texture2D" uid="uid://dkr5yma1b7dy8" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png" id="76_w8p4g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -499,6 +500,7 @@ autoplay = true
 expand = true
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(1300, 600)
 anchors_preset = 8
@@ -803,6 +805,7 @@ script = ExtResource("44_3cuex")
 
 [node name="TalentTree" parent="Ui/MenuPanel" instance=ExtResource("42_ya2xs")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="CloseButton" type="Button" parent="Ui/MenuPanel" groups=["Button"]]
@@ -1265,6 +1268,15 @@ custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
+
+[node name="TalentTreeButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["ActionButton", "Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("67_exeng")
+text = "Talents"
+icon = ExtResource("76_w8p4g")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Spellbook" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["ActionButton", "Button"]]
 custom_minimum_size = Vector2(128, 128)

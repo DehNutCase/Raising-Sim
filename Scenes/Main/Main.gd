@@ -24,6 +24,8 @@ extends Control
 @onready var stats = $Ui/MenuPanel/MarginContainer/Stats
 @onready var spellbook = $Ui/MenuPanel/MarginContainer/Spellbook
 @onready var quest_log = %QuestLog
+@onready var talent_tree = %TalentTree
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log, talent_tree]
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
@@ -37,7 +39,7 @@ extends Control
 @onready var gray_portrait = $Ui/PlayerControl/Player/Gray
 
 @onready var deck = %Deck
-@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log]
+
 
 @onready var popup = %Popup
 
@@ -57,7 +59,6 @@ var day: int:
 		if day == 1:
 			schedule_alert_icon.show()
 			walk_alert_icon.show()
-			print(walk_alert_icon.visible)
 		else:
 			schedule_alert_icon.hide()
 			walk_alert_icon.hide()
@@ -139,7 +140,7 @@ func _ready():
 		#Player.skill_inventory.create_and_add_item("meteor")
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
 		#Player.inventory.remove_item(item)
-		#Player.stats.art = 500
+		#Player.stats.max_hp = 1000
 		#Player.stats.skill = 0
 		#Player.stats.gold = 100000
 		#Dialogic.start("Chores")
@@ -238,6 +239,13 @@ func process_day():
 	
 	for item in item_deletion_queue:
 		inventory.inventory.remove_item(item)
+	
+	for talent in Player.talent_tree:
+		var talent_data = Constants.talents.get(talent)
+		for stat in talent_data.get("daily_stats", {}):
+			var stacks = talent_data.daily_stats[stat]
+			print(stacks)
+			Player.stats[stat] += talent_data.get("daily_stats")[stat] * stacks
 	
 	for stat in Player.stats:
 		if !stat in Constants.stats:
@@ -563,6 +571,8 @@ func _on_action(button):
 			schedule.show()
 		"Spellbook":
 			spellbook.show()
+		"TalentTreeButton":
+			talent_tree.show()
 		"Quests":
 			quest_log.show()
 		"Lessons":
@@ -860,12 +870,18 @@ func _on_inventory_item_added(item:InventoryItem):
 				Player.skill_flags[flag] = value
 		else:
 			Player.skill_flags[flag] = value
-			
+	
+	#Deprecated (card game doesn't use combat skills)
 	if item.get_property("combat_skill", {}):
 		Player.combat_skills.append(item.get_property("combat_skill", {}))
 		
 	if item.get_property("walks", 0):
 		Player.max_walks += int(item.get_property("walks", 0))
+		Player.remaining_walks += int(item.get_property("walks", 0))
+		display_stats()
+		
+	if item.get_property("daily_action_limit", 0):
+		Player.daily_action_limit += int(item.get_property("daily_action_limit", 0))
 		
 	if item.get_property("card", ""):
 		_on_reward_signal({"card": item.get_property("card")})
@@ -1117,7 +1133,7 @@ func _on_volume_button_toggled(toggled_on):
 
 func _on_start_day_button_pressed():
 	var action_amount = len(Player.mandatory_daily_schedule_list) + len(Player.daily_schedule_list)
-	if action_amount >= Constants.constants.DAILY_ACTION_LIMIT:
+	if action_amount >= Player.daily_action_limit:
 		_on_close_button_pressed()
 		process_day()
 	else:
@@ -1159,8 +1175,46 @@ func _on_talent_button_pressed(talent: String):
 	var talent_data = Constants.talents.get(talent)
 	if popup.visible or !talent_data:
 		return
-	popup.set_text("[center]Pay %d to increase %s by one?" % [talent_data.cost, talent_data.label])
+	popup.set_text("[center]Pay %d talent point(s) to rank up %s?" % [talent_data.cost, talent_data.label])
+	popup.show()
+	
+	var buy_talent = await popup.button_clicked
+	if buy_talent:
+		Player.talent_points_spent += talent_data.cost
+		Player.stats.talent_point -= talent_data.cost
+		if Player.talent_tree.get(talent):
+			Player.talent_tree[talent] += 1
+		else:
+			Player.talent_tree[talent] = 1
+		talent_tree._update_rows()
+		var toast = "Gained 1 rank in %s!" %talent_data.label
+		display_toast(toast, "top")
 		
+		for stat in talent_data.get("stats", {}):
+			Player.stats[stat] += talent_data.get("stats")[stat]
+			
+		for stat in talent_data.get("max_stats", {}):
+			if Player.max_stats.get(stat):
+				Player.max_stats[stat] += talent_data.get("max_stats")[stat]
+			else:
+				Player.max_stats[stat] = talent_data.get("max_stats")[stat]
+		
+		for stat in talent_data.get("min_stats", {}):
+			if Player.min_stats.get(stat):
+				Player.min_stats[stat] += talent_data.get("min_stats")[stat]
+			else:
+				Player.min_stats[stat] = talent_data.get("min_stats")[stat]
+				
+		if talent_data.get("walks", 0):
+			Player.max_walks += talent_data.get("walks", 0)
+			Player.remaining_walks +=  talent_data.get("walks", 0)
+			
+		if talent_data.get("daily_action_limit", 0):
+			Player.daily_action_limit += talent_data.get("daily_action_limit", 0)
+			
+		if talent_data.get("card", ""):
+			_on_reward_signal({"card": talent_data.get("card")})
+
 func _on_game_over_dialog_canceled():
 	await Player.delete_game()
 	await OS.set_restart_on_exit(true)
