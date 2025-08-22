@@ -1214,6 +1214,33 @@ func _on_talent_button_pressed(talent: String):
 			
 		if talent_data.get("card", ""):
 			_on_reward_signal({"card": talent_data.get("card")})
+	
+		if talent_data.get("card_game_starting_status", ""):
+			for status_data in talent_data.get("card_game_starting_status", ""):
+				var status: CardGameStatusResource = load(status_data.status)
+				var stacks = status_data.stacks
+				var status_name = status.status_name
+				if Player.card_game_starting_status.get(status_name):
+					Player.card_game_starting_status[status_name].stacks += stacks
+				else:
+					Player.card_game_starting_status[status_name] = {
+						"status": status,
+						"stacks": stacks
+					}
+			
+		if talent_data.get("remove_mandatory_daily_schedule", ""):
+			var schedule = Player.mandatory_daily_schedule_list
+			var schedule_to_remove = talent_data["remove_mandatory_daily_schedule"]
+			var indices_to_remove = []
+			for i in range(schedule.size()):
+				if schedule[i].get("action_name") == schedule_to_remove:
+					indices_to_remove.append(i)
+			indices_to_remove.reverse()
+			for i in indices_to_remove:
+				Player.mandatory_daily_schedule_list.remove_at(i)
+		if talent_data.get("add_mandatory_daily_schedule"):
+			var schedule_to_add = talent_data.get("add_mandatory_daily_schedule")
+			Player.mandatory_daily_schedule_list.append(schedule_to_add)
 
 func _on_game_over_dialog_canceled():
 	await Player.delete_game()

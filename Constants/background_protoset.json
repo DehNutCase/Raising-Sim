@@ -14,7 +14,7 @@
 		"monthly_stats": "{}",
 		"name": "Ink Mage",
 		"stats": "{}",
-		"level_up_stats": "{\n\"magic\": 5\n,\n\"max_hp\": 3\n,\n\"max_mp\": 3\n,\n\"agility\": 2\n,\n\"resistance\": 2\n}",
+		"level_up_stats": "{\n\"magic\": 5\n,\n\"max_hp\": 3\n,\n\"max_mp\": 3\n,\n\"agility\": 2\n,\n\"resistance\": 2\n,\"talent_point\": 1}",
 	},
 	"gray": {
 		"daily_stats": "{\n\"stress\": -5\n, \n\"max_mp\": -1\n}",

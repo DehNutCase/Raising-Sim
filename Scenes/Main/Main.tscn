@@ -1262,12 +1262,14 @@ offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BottomMenuContainer"]
 custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
+metadata/_edit_lock_ = true
 
 [node name="TalentTreeButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["ActionButton", "Button"]]
 custom_minimum_size = Vector2(128, 128)

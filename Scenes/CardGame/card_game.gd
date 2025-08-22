@@ -81,7 +81,6 @@ func start_battle() -> void:
 	card_game_player.discard = []
 	card_game_player.start_first_turn()
 	state = states.PLAYER_TURN
-	start_turn()
 	
 	if enemy_scene.starting_status_enemy:
 		for i in range(enemy_scene.starting_status_enemy.size()):
@@ -93,11 +92,19 @@ func start_battle() -> void:
 		for i in range(enemy_scene.starting_status_player.size()):
 			var status = enemy_scene.starting_status_player[i]
 			var stacks = enemy_scene.starting_status_stacks_player[i]
-			print(status, stacks)
 			card_game_player.apply_status(status, stacks, card_game_player)
+	
+	for status_name in Player.card_game_starting_status:
+		var status = Player.card_game_starting_status[status_name].status
+		var stacks = Player.card_game_starting_status[status_name].stacks
+		card_game_player.apply_status(status, stacks, card_game_player)
+	
+	start_turn(true)
+	
 
-func start_turn() -> void:
-	card_game_player.start_turn()
+
+func start_turn(first_turn=false) -> void:
+	card_game_player.start_turn(first_turn)
 	var draw_amount = card_game_player.cards_per_turn
 	if Player.card_game_player.active_status.get("Skill"):
 		draw_amount = draw_amount + Player.card_game_player.active_status.get("Skill").stacks

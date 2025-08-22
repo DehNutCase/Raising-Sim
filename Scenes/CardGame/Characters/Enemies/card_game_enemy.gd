@@ -55,6 +55,12 @@ func take_damage(damage: int) -> void:
 		
 	if active_status.get("Vulnerable"):
 		damage = int(damage * 3 / 2)
+	if damage <= 0:
+		return
+	if active_status.get("Rage"):
+		var stacks = active_status.get("Rage").stacks
+		var attack = load("res://Scenes/CardGame/Status/attack.tres")
+		apply_status(attack, stacks, self)
 		
 	var initial_damage = damage
 	

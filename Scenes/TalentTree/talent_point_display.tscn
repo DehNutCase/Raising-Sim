@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cksg80glwquse"]
+
+[ext_resource type="Script" path="res://Scenes/TalentTree/talent_point_display.gd" id="1_ihyva"]
+[ext_resource type="Texture2D" uid="uid://dkr5yma1b7dy8" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png" id="2_33v3m"]
+
+[node name="TalentPointDisplay" type="Node2D"]
+script = ExtResource("1_ihyva")
+
+[node name="TalentPointLabel" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="TalentPointTexture" type="TextureRect" parent="TalentPointLabel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_33v3m")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TalentPointLabel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "11"
+vertical_alignment = 1

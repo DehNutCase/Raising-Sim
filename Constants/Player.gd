@@ -109,7 +109,7 @@ var save_loaded = false
 #Easy access to card game player stuff
 var card_game_player: CardGamePlayer = CardGamePlayer.new()
 var card_game_deck: Array[CardResource] = []
-
+var card_game_starting_status = {}
 
 
 var base_stats = {
@@ -140,7 +140,7 @@ signal experience_gained(growth_data)
 @export var perspectives = {}
 
 func get_required_experience(l) -> int:
-	return int(pow(1.1, l) * 100)
+	return int(pow(1.1, l) * 200)
 
 func gain_experience(amount: int) -> void:
 	if ("bonus_exp" in stats):

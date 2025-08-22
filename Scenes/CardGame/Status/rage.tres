@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://b81a4ys4lvmjo"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_bf0vc"]
+[ext_resource type="Texture2D" uid="uid://b4yftkru7mwnp" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element21_01.png" id="2_k5em8"]
+
+[resource]
+script = ExtResource("1_bf0vc")
+status_icon = ExtResource("2_k5em8")
+status_name = "Rage"
+status_tooltip = "Rage. Gain [color=red]X[/color] Attack when being damaged."
+status_decay = 2
+NegativeStatus = false

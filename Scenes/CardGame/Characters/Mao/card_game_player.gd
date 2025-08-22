@@ -78,7 +78,11 @@ func take_damage(damage: int) -> void:
 		return
 	if damage <= 0:
 		return
-		
+	if active_status.get("Rage"):
+		var stacks = active_status.get("Rage").stacks
+		var attack = load("res://Scenes/CardGame/Status/attack.tres")
+		apply_status(attack, stacks)
+	
 	if active_status.get("Vulnerable"):
 		damage = int(damage * 3 / 2)
 		
@@ -114,8 +118,14 @@ func set_mana(value: int) -> void:
 	mana = value
 	update_stats()
 	
-func start_turn() -> void:
+func start_turn(first_turn = false) -> void:
 	mana = max_mana
+	
+	#Don't decay status during first turn
+	if first_turn:
+		update_status_display()
+		return
+	
 	if active_status.get("Burn"):
 		var status = active_status.get("Burn")
 		await take_damage(status.stacks)

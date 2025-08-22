@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cdhjbtjmwe27v" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn" id="2_icbau"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="4_3opov"]
-[ext_resource type="Resource" uid="uid://c5uauj7w44r63" path="res://Scenes/CardGame/Characters/Mao/Cards/super_duper_paint_spray.tres" id="5_3o02g"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
@@ -17,6 +16,7 @@
 [ext_resource type="StyleBox" uid="uid://k5d5xj0eovxl" path="res://Art/Themes/ThemeComponents/DefaultButtonPressed.tres" id="10_gnlme"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="10_nnwkb"]
 [ext_resource type="StyleBox" uid="uid://jy8bapewhgwe" path="res://Art/Themes/ThemeComponents/DefaultButtonDisabledTexture.tres" id="11_8jwc3"]
+[ext_resource type="Resource" uid="uid://c7rmtmb83u3yg" path="res://Scenes/CardGame/Characters/Mao/Cards/sleight_of_hand.tres" id="11_mvfoe"]
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
 [ext_resource type="StyleBox" uid="uid://oajujgbhe6pk" path="res://Art/Themes/ThemeComponents/DefaultButtonFocus.tres" id="12_y7e5o"]
 
@@ -112,7 +112,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("5_3o02g"), ExtResource("7_grfbv")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("11_mvfoe"), ExtResource("7_grfbv")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]
