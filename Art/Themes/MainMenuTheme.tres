@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://ca6asxvhlbu51"]
 
 [ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
 [ext_resource type="StyleBox" uid="uid://ca05p6m8lph5q" path="res://Art/Themes/ThemeComponents/WindowBackground.tres" id="1_olt2s"]
@@ -24,6 +24,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27ta3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cha08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylsbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tygf4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iuln8"]
 
 [sub_resource type="FontVariation" id="FontVariation_u3uuf"]
 fallbacks = Array[Font]([ExtResource("11_jquc4")])
@@ -56,6 +62,14 @@ Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/line_spacing = 3
 Label/constants/outline_size = 4
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(1, 1, 1, 1)
+LineEdit/constants/caret_width = 1
+LineEdit/constants/outline_size = 4
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_ylsbn")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_tygf4")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_iuln8")
 Panel/styles/panel = ExtResource("5_4bo2n")
 PanelContainer/styles/panel = ExtResource("5_4bo2n")
 ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)

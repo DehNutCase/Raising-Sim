@@ -3340,7 +3340,7 @@ const talents = {
 	},
 	"power_of_anger" = {
 		"label": "The Power Of Anger",
-		"tier": 0,
+		"tier": 4,
 		"cost": 1,
 		"max_stacks": 5,
 		"daily_stats": {"stress": 1,},

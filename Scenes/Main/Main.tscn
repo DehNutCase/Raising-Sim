@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=90 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -78,6 +78,7 @@
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
 [ext_resource type="Texture2D" uid="uid://bc0twdyjkhcdq" path="res://Art/Mori no oku no kakurezato/CardGame/alchemy05_01.png" id="69_djog0"]
 [ext_resource type="Theme" uid="uid://bpmpi75l7q4kv" path="res://Art/Themes/DefaultButtonTheme.tres" id="73_17ulr"]
+[ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="76_5tlhe"]
 [ext_resource type="Texture2D" uid="uid://dkr5yma1b7dy8" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png" id="76_w8p4g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
@@ -482,6 +483,7 @@ size = Vector2i(700, 700)
 render_target_update_mode = 4
 
 [node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
+visible = false
 material = ExtResource("16_3c6c7")
 clip_contents = true
 anchors_preset = 7
@@ -1270,6 +1272,14 @@ layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
 metadata/_edit_lock_ = true
+
+[node name="TrainButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["ActionButton", "Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("67_exeng")
+text = "Train"
+icon = ExtResource("76_5tlhe")
+icon_alignment = 1
 
 [node name="TalentTreeButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["ActionButton", "Button"]]
 custom_minimum_size = Vector2(128, 128)

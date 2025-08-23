@@ -1218,13 +1218,14 @@ func _on_talent_button_pressed(talent: String):
 		if talent_data.get("card_game_starting_status", ""):
 			for status_data in talent_data.get("card_game_starting_status", ""):
 				var status: CardGameStatusResource = load(status_data.status)
+				var status_path: String = status_data.statuss
 				var stacks = status_data.stacks
 				var status_name = status.status_name
 				if Player.card_game_starting_status.get(status_name):
 					Player.card_game_starting_status[status_name].stacks += stacks
 				else:
 					Player.card_game_starting_status[status_name] = {
-						"status": status,
+						"status": status_path,
 						"stacks": stacks
 					}
 			

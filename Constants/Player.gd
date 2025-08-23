@@ -2,7 +2,7 @@
 extends Node
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "daily_action_limit", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree", "talent_points_spent"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "daily_action_limit", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree", "talent_points_spent", "card_game_starting_status"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -111,6 +111,19 @@ var card_game_player: CardGamePlayer = CardGamePlayer.new()
 var card_game_deck: Array[CardResource] = []
 var card_game_starting_status = {}
 
+var dumpling_stats = {
+	"name": "Dumpling",
+	"stats": {
+		"mood": 50,
+		"bond": 0,
+		"clean": 100,
+		"strength": 0,
+		"stamina": 0,
+		"speed": 0,
+	},
+	"action_per_day": 2,
+	"remaining_actions": 2,
+}
 
 var base_stats = {
 	"max_hp": 20,
@@ -586,3 +599,6 @@ func check_gold_below_zero() -> bool:
 		return true
 	else:
 		return false
+		
+func _play_button_sound() -> void:
+	Player.play_ui_sound("blop")

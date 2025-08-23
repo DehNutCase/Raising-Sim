@@ -1,0 +1,238 @@
+[gd_scene load_steps=14 format=3 uid="uid://d10vtsn3erj52"]
+
+[ext_resource type="Script" path="res://Scenes/DumplingRaising/dumpling_raising.gd" id="1_ydh2m"]
+[ext_resource type="Material" uid="uid://dqjkyvr3074m0" path="res://Art/Shaders/CircleShader.tres" id="2_7257w"]
+[ext_resource type="Texture2D" uid="uid://bhmuhiv4q75vf" path="res://Art/Background/Background material shop/Edited/bg007c_CROPPED.bmp" id="2_nkooc"]
+[ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="3_jp042"]
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="4_i85qf"]
+[ext_resource type="Texture2D" uid="uid://cc25upf6ikqmy" path="res://Art/UI/mandinhart/Buttons/Config.png" id="5_06ymi"]
+[ext_resource type="Texture2D" uid="uid://btvyv4pl767ol" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element51_01.png" id="5_spm00"]
+[ext_resource type="Texture2D" uid="uid://di1cy433su4xr" path="res://Art/UI/mandinhart/Buttons/Press-config.png" id="6_pkn88"]
+[ext_resource type="Texture2D" uid="uid://b3guylivnti8x" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/flour01_01.png" id="6_wrnrp"]
+[ext_resource type="Texture2D" uid="uid://c32y6kvocnxaw" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/bath01_01.png" id="7_5j8d6"]
+[ext_resource type="Texture2D" uid="uid://c5yg5je6gsyk7" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/training01_01.png" id="8_eds71"]
+[ext_resource type="Texture2D" uid="uid://cskw3xvam5ljs" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/swimring01_02.png" id="9_atewk"]
+[ext_resource type="Texture2D" uid="uid://8e20aycymvfy" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element04_03.png" id="10_8t8ww"]
+
+[node name="DumplingRaising" type="Panel"]
+custom_minimum_size = Vector2(1200, 540)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ydh2m")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = ExtResource("2_7257w")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nkooc")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -56.0
+offset_right = 80.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jp042")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TopMenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -509.0
+offset_right = 509.0
+offset_bottom = 138.0
+grow_horizontal = 2
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopMenuContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TopMenuContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="TopMenuContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Dumpling"
+alignment = 1
+editable = false
+expand_to_text_length = true
+select_all_on_focus = true
+
+[node name="NameConfigButton" type="TextureButton" parent="TopMenuContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_06ymi")
+texture_pressed = ExtResource("6_pkn88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopMenuContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopMenuContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BondLabel" type="Label" parent="TopMenuContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Bond: 10"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TopMenuContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FullLabel" type="Label" parent="TopMenuContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Full: 10"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="TopMenuContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CleanLabel" type="Label" parent="TopMenuContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clean: 10"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="TopMenuContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StrLabel" type="Label" parent="TopMenuContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "STR: 10"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="TopMenuContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StaLabel" type="Label" parent="TopMenuContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "STA: 10"
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="TopMenuContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SpdLabel" type="Label" parent="TopMenuContainer/VBoxContainer/HBoxContainer/VBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SPD: 10"
+
+[node name="BottomMenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -138.0
+offset_right = 480.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomMenuContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="ChatButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("4_i85qf")
+icon = ExtResource("5_spm00")
+icon_alignment = 1
+expand_icon = true
+
+[node name="FeedButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("4_i85qf")
+icon = ExtResource("6_wrnrp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BatheButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("4_i85qf")
+icon = ExtResource("7_5j8d6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StrengthTrainingButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("4_i85qf")
+icon = ExtResource("8_eds71")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StaminaTrainingButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("4_i85qf")
+icon = ExtResource("9_atewk")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SpeedTrainingButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["Button"]]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("4_i85qf")
+icon = ExtResource("10_8t8ww")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="text_changed" from="TopMenuContainer/VBoxContainer/HBoxContainer2/NameEdit" to="." method="_on_dumpling_name_changed"]
+[connection signal="pressed" from="TopMenuContainer/VBoxContainer/HBoxContainer2/NameConfigButton" to="." method="_on_name_config_button_pressed"]
