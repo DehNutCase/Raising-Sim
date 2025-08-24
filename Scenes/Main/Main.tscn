@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=91 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" path="res://Scenes/Main/Daily Schedule.gd" id="31_1x7np"]
 [ext_resource type="Script" path="res://Scenes/Main/ActionDescription.gd" id="32_lakgr"]
 [ext_resource type="PackedScene" uid="uid://bksr65eq5hi5v" path="res://Scenes/UI/Information/QuestLog.tscn" id="36_epuay"]
+[ext_resource type="PackedScene" uid="uid://d10vtsn3erj52" path="res://Scenes/DumplingRaising/dumpling_raising.tscn" id="42_8o55t"]
 [ext_resource type="PackedScene" uid="uid://dlveg5i5gaxps" path="res://Scenes/TalentTree/talent_tree.tscn" id="42_ya2xs"]
 [ext_resource type="PackedScene" uid="uid://q84u4t3lxanj" path="res://Scenes/UI/Popup/Popup.tscn" id="43_ck6uc"]
 [ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
@@ -804,6 +805,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 6
 script = ExtResource("44_3cuex")
+
+[node name="Train" parent="Ui/MenuPanel/MarginContainer" instance=ExtResource("42_8o55t")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [node name="TalentTree" parent="Ui/MenuPanel" instance=ExtResource("42_ya2xs")]
 unique_name_in_owner = true

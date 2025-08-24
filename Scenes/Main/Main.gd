@@ -25,7 +25,8 @@ extends Control
 @onready var spellbook = $Ui/MenuPanel/MarginContainer/Spellbook
 @onready var quest_log = %QuestLog
 @onready var talent_tree = %TalentTree
-@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log, talent_tree]
+@onready var train = %Train
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log, talent_tree, train]
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
@@ -573,6 +574,8 @@ func _on_action(button):
 			spellbook.show()
 		"TalentTreeButton":
 			talent_tree.show()
+		"TrainButton":
+			train.show()
 		"Quests":
 			quest_log.show()
 		"Lessons":

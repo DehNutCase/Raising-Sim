@@ -95,7 +95,7 @@ func start_battle() -> void:
 			card_game_player.apply_status(status, stacks, card_game_player)
 	
 	for status_name in Player.card_game_starting_status:
-		var status = Player.card_game_starting_status[status_name].status
+		var status = load(Player.card_game_starting_status[status_name].status)
 		var stacks = Player.card_game_starting_status[status_name].stacks
 		card_game_player.apply_status(status, stacks, card_game_player)
 	

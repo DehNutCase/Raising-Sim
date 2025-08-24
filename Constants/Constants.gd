@@ -1091,6 +1091,7 @@ const constants = {
 	'JOB_EVENT_ODDS' = 40, #The percentage chance of triggering a job event
 	'BEDTIME_EVENT_ODDS' = 20,
 	'TOAST_TIMEOUT_DURATION' = .5,
+	'FAST_TOAST_TIMEOUT_DURATION' = .05,
 	'ALWAYS_ACTIVE_COURSES' = {"Core": true, "Extra": true},
 	'ACTION_TYPES' = {
 		'jobs': {

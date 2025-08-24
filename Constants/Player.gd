@@ -116,10 +116,11 @@ var dumpling_stats = {
 	"stats": {
 		"mood": 50,
 		"bond": 0,
+		"full": 100,
 		"clean": 100,
-		"strength": 0,
-		"stamina": 0,
-		"speed": 0,
+		"strength": randi_range(0,5),
+		"stamina": randi_range(0,5),
+		"speed": randi_range(0,5),
 	},
 	"action_per_day": 2,
 	"remaining_actions": 2,
@@ -562,11 +563,12 @@ func play_random_voice(voice_list: String) -> void:
 	SoundManager.play_ambient_sound(voice)
 
 #Helper function for displaying toast, call this if toast is needed?
-func display_toast(message, gravity = "top", direction = "center"):
+func display_toast(message, gravity = "top", direction = "center", icon = null):
 	ToastParty.show({
 		"text": message,           # Text (emojis can be used)
 		"gravity": gravity,                   # top or bottom
 		"direction": direction,               # left or center or right
+		"icon": icon,
 	})
 	Player.play_ui_sound("bubble")
 
