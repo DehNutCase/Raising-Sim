@@ -194,9 +194,20 @@ func update_display() -> void:
 		for button in buttons:
 			button.disabled = false
 	
+	#Make sure stats are between min and max
+	for stat in Player.dumpling_stats.stats:
+		var max = dumpling_stats[stat].get("max")
+		if max and Player.dumpling_stats.stats[stat] > max:
+			Player.dumpling_stats.stats[stat] = max
+			
+		var min = dumpling_stats[stat].get("min")
+		if min and Player.dumpling_stats.stats[stat] < min:
+			Player.dumpling_stats.stats[stat] = min
+	
 	bond_label.text = "Bond: %d" %Player.dumpling_stats.stats.bond
 	mood_label.text = "Mood: %d" %Player.dumpling_stats.stats.mood
 	full_label.text = "Full: %d" %Player.dumpling_stats.stats.full
+	clean_label.text = "Clean: %d" %Player.dumpling_stats.stats.clean
 	str_label.text = "Strength: %d" %Player.dumpling_stats.stats.strength
 	sta_label.text = "Stamina: %d" %Player.dumpling_stats.stats.stamina
 	spd_label.text = "Speed: %d" %Player.dumpling_stats.stats.speed
@@ -261,19 +272,43 @@ func do_dumpling_action(action_name: String) -> void:
 	match action_name:
 		"chat":
 			action_info = dumpling_actions.get("chat")
+			var action_bonus = Player.dumpling_stats.action_bonuses.get("chat")
+			if action_bonus:
+				for stat in action_bonus:
+					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"feed":
 			action_info = dumpling_actions.get("feed")
+			var action_bonus = Player.dumpling_stats.action_bonuses.get("feed")
+			if action_bonus:
+				for stat in action_bonus:
+					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"bathe":
 			action_info = dumpling_actions.get("bathe")
+			var action_bonus = Player.dumpling_stats.action_bonuses.get("bathe")
+			if action_bonus:
+				for stat in action_bonus:
+					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"strength_training":
 			action_info = dumpling_actions.get("strength_training")
 			main_stat = "strength"
+			var action_bonus = Player.dumpling_stats.action_bonuses.get("strength_training")
+			if action_bonus:
+				for stat in action_bonus:
+					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"stamina_training":
 			action_info = dumpling_actions.get("stamina_training")
 			main_stat = "stamina"
+			var action_bonus = Player.dumpling_stats.action_bonuses.get("stamina_training")
+			if action_bonus:
+				for stat in action_bonus:
+					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"speed_training":
 			action_info = dumpling_actions.get("speed_training")
 			main_stat = "speed"
+			var action_bonus = Player.dumpling_stats.action_bonuses.get("speed_training")
+			if action_bonus:
+				for stat in action_bonus:
+					action_info.dumpling_stats[stat] += action_bonus[stat]
 
 	var player_stats = action_info.stats
 	get_tree().call_group("Main", "process_stats", player_stats)

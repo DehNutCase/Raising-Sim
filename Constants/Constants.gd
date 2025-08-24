@@ -3207,6 +3207,34 @@ const talents = {
 		"description": "A truly sunny disposition gives you the ability to be more cheerful than humanly possible.\n\nIncreases maximum mood.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/weather01_01.png",
 	},
+	"beginner_dumpling_trainer" = {
+		"label": "Beginner Dumpling Trainer",
+		"tier": 2,
+		"cost": 2,
+		"max_stacks": 1,
+		"dumpling_action_bonus": {
+			"chat": {
+				"bond": 1,
+			},
+			"feed": {
+				"bond": 1,
+			},
+			"bathe": {
+				"bond": 1,
+			},
+			"strength_training": {
+				"bond": 1,
+			},
+			"stamina_training": {
+				"bond": 1,
+			},
+			"speed_training": {
+				"bond": 1,
+			},
+		},
+		"description": "I'll raise the most delicious Dumpling ever! Is what you annouced out of the blue. Although Rice tried to tell you that's not how Dumpling domestication works, you ignored her.\n\nYou have an easier time bonding with Dumplings you train.",
+		"icon": "res://Characters/Dumpling/Images/Portraits/f_manju.png",
+	},
 	"apprentice_witch" = {
 		"label": "Apprentice Witch",
 		"tier": 1,

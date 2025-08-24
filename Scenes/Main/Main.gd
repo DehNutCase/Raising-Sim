@@ -296,8 +296,6 @@ func do_action(action_type:String, action_name: String):
 	var rng = RandomNumberGenerator.new()
 	if (ActionButton.get_success_chance(action_type, action_name) > rng.randf() * 100):
 		#Occasionally play a random event
-		#TODO, change 0 to 95 or whatever is appropriate (odds = 100 - x)
-		#if rng.randf() * 100 > 0:
 		if rng.randf() * 100 > (100 - Constants.constants.JOB_EVENT_ODDS):
 			if Constants[action_type][action_name].get("timelines"):
 				var timeline = Constants[action_type][action_name].get("timelines").pick_random()
@@ -1245,6 +1243,17 @@ func _on_talent_button_pressed(talent: String):
 		if talent_data.get("add_mandatory_daily_schedule"):
 			var schedule_to_add = talent_data.get("add_mandatory_daily_schedule")
 			Player.mandatory_daily_schedule_list.append(schedule_to_add)
+			
+		if talent_data.get("dumpling_action_bonus", {}):
+			for action in talent_data.dumpling_action_bonus:
+				var action_bonus = talent_data.dumpling_action_bonus[action]
+				if !Player.dumpling_stats.action_bonuses.get(action):
+					Player.dumpling_stats.action_bonuses[action] = {}
+				for stat in action_bonus:
+					if !Player.dumpling_stats.action_bonuses[action].get(stat):
+						Player.dumpling_stats.action_bonuses[action][stat] = action_bonus[stat]
+					else:
+						Player.dumpling_stats.action_bonuses[action][stat] += action_bonus[stat]
 
 func _on_game_over_dialog_canceled():
 	await Player.delete_game()
