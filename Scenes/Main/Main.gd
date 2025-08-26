@@ -1218,7 +1218,7 @@ func _on_talent_button_pressed(talent: String):
 		if talent_data.get("card_game_starting_status", ""):
 			for status_data in talent_data.get("card_game_starting_status", ""):
 				var status: CardGameStatusResource = load(status_data.status)
-				var status_path: String = status_data.statuss
+				var status_path: String = status_data.status
 				var stacks = status_data.stacks
 				var status_name = status.status_name
 				if Player.card_game_starting_status.get(status_name):
@@ -1253,6 +1253,10 @@ func _on_talent_button_pressed(talent: String):
 						Player.dumpling_stats.action_bonuses[action][stat] = action_bonus[stat]
 					else:
 						Player.dumpling_stats.action_bonuses[action][stat] += action_bonus[stat]
+						
+		if talent_data.get("dumpling_action_per_day", 0):
+			Player.dumpling_stats.action_per_day += talent_data.dumpling_action_per_day
+			Player.dumpling_stats.remaining_actions += talent_data.dumpling_action_per_day
 
 func _on_game_over_dialog_canceled():
 	await Player.delete_game()

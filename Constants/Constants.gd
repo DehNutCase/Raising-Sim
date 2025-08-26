@@ -3266,6 +3266,15 @@ const talents = {
 		"description": "A new tapioca tea parlor popped up recently. It doesn't seem very good for you, but it's delicious. According to Rice, the tapioca pearls seem to be made of Dumplings.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/tapioka01_01.png",
 	},
+	"low_maintainence_dumpling" = {
+		"label": "Low Maintainence Dumpling",
+		"tier": 3,
+		"cost": 2,
+		"max_stacks": 1,
+		"dumpling_action_per_day": 1,
+		"description": "Your Dumpling is exceptionally easy to take care of, giving you more time to take care of it. What do you mean that doesn't make sense?\n\nGives one additional Dumpling training action per day.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/hourglass01_02.png",
+	},
 	"potion_brewing" = {
 		"label": "Potion Brewing",
 		"tier": 2,
