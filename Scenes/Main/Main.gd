@@ -41,7 +41,6 @@ extends Control
 
 @onready var deck = %Deck
 
-
 @onready var popup = %Popup
 
 signal card_game_finished
@@ -245,7 +244,6 @@ func process_day():
 		var talent_data = Constants.talents.get(talent)
 		for stat in talent_data.get("daily_stats", {}):
 			var stacks = talent_data.daily_stats[stat]
-			print(stacks)
 			Player.stats[stat] += talent_data.get("daily_stats")[stat] * stacks
 	
 	for stat in Player.stats:
@@ -267,6 +265,7 @@ func process_day():
 	if (Player.background_inventory.has_item_with_prototype_id("gray")):
 		gray_portrait.show()
 	await quest_log.check_quests_failure()
+	train.process_dumpling_daily_stats()
 	_change_day_state(states.READY)
 
 		

@@ -197,11 +197,11 @@ func update_display() -> void:
 	#Make sure stats are between min and max
 	for stat in Player.dumpling_stats.stats:
 		var max = dumpling_stats[stat].get("max")
-		if max and Player.dumpling_stats.stats[stat] > max:
+		if "max" in dumpling_stats[stat] and Player.dumpling_stats.stats[stat] > max:
 			Player.dumpling_stats.stats[stat] = max
-			
+		
 		var min = dumpling_stats[stat].get("min")
-		if min and Player.dumpling_stats.stats[stat] < min:
+		if "min" in dumpling_stats[stat] and Player.dumpling_stats.stats[stat] < min:
 			Player.dumpling_stats.stats[stat] = min
 	
 	bond_label.text = "Bond: %d" %Player.dumpling_stats.stats.bond
@@ -271,39 +271,39 @@ func do_dumpling_action(action_name: String) -> void:
 	var main_stat = ""
 	match action_name:
 		"chat":
-			action_info = dumpling_actions.get("chat")
+			action_info = dumpling_actions.get("chat").duplicate(true)
 			var action_bonus = Player.dumpling_stats.action_bonuses.get("chat")
 			if action_bonus:
 				for stat in action_bonus:
 					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"feed":
-			action_info = dumpling_actions.get("feed")
+			action_info = dumpling_actions.get("feed").duplicate(true)
 			var action_bonus = Player.dumpling_stats.action_bonuses.get("feed")
 			if action_bonus:
 				for stat in action_bonus:
 					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"bathe":
-			action_info = dumpling_actions.get("bathe")
+			action_info = dumpling_actions.get("bathe").duplicate(true)
 			var action_bonus = Player.dumpling_stats.action_bonuses.get("bathe")
 			if action_bonus:
 				for stat in action_bonus:
 					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"strength_training":
-			action_info = dumpling_actions.get("strength_training")
+			action_info = dumpling_actions.get("strength_training").duplicate(true)
 			main_stat = "strength"
 			var action_bonus = Player.dumpling_stats.action_bonuses.get("strength_training")
 			if action_bonus:
 				for stat in action_bonus:
 					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"stamina_training":
-			action_info = dumpling_actions.get("stamina_training")
+			action_info = dumpling_actions.get("stamina_training").duplicate(true)
 			main_stat = "stamina"
 			var action_bonus = Player.dumpling_stats.action_bonuses.get("stamina_training")
 			if action_bonus:
 				for stat in action_bonus:
 					action_info.dumpling_stats[stat] += action_bonus[stat]
 		"speed_training":
-			action_info = dumpling_actions.get("speed_training")
+			action_info = dumpling_actions.get("speed_training").duplicate(true)
 			main_stat = "speed"
 			var action_bonus = Player.dumpling_stats.action_bonuses.get("speed_training")
 			if action_bonus:
@@ -324,37 +324,43 @@ func do_dumpling_action(action_name: String) -> void:
 		var training_rng_value: int = randi_range(0,100) + Player.dumpling_stats.stats.mood + Player.dumpling_stats.stats.bond - Player.dumpling_stats.stats[main_stat]
 		var training_toast = ""
 		if training_rng_value > 100:
+			Player.play_ui_sound("great_success")
 			training_toast = training_toasts.great_success_toast
 			for stat in dumpling_action_stats:
 				if !stat in training_stats:
 					continue
 				dumpling_action_stats[stat] = int(dumpling_action_stats[stat] * (1 + randf()))
-			get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
+			await get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
 			Player.display_toast(training_toast)
 		elif training_rng_value > 50:
+			Player.play_ui_sound("success")
 			training_toast = training_toasts.success_toast
 			for stat in dumpling_action_stats:
 				if !stat in training_stats:
 					continue
 				dumpling_action_stats[stat] = int(dumpling_action_stats[stat] * (.5 + randf()))
-			get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
+			await get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
 			Player.display_toast(training_toast)
 		elif training_rng_value > 0:
+			Player.play_ui_sound("failure")
 			training_toast = training_toasts.failure_toast
 			for stat in dumpling_action_stats:
 				if !stat in training_stats:
 					continue
 				dumpling_action_stats[stat] = int(dumpling_action_stats[stat] * (randf()))
-			get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
+			await get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
 			Player.display_toast(training_toast)
 		else:
+			Player.play_ui_sound("great_failure")
 			training_toast = training_toasts.big_failure_toast
-			training_toast = training_toasts.failure_toast
 			for stat in dumpling_action_stats:
 				if !stat in training_stats:
 					continue
-				dumpling_action_stats[stat] = int(dumpling_action_stats[stat] * (-randf()))
-		get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
+				dumpling_action_stats[stat] = int(dumpling_action_stats[stat] * (-1 - randf()))
+			await get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
+			Player.display_toast(training_toast)
+		
+		await get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
 		process_dumpling_stats(dumpling_action_stats, icon)
 	await get_tree().create_timer(FAST_TOAST_TIMEOUT_DURATION).timeout
 	
@@ -366,6 +372,25 @@ func do_dumpling_action(action_name: String) -> void:
 		if message.get("voice"):
 			Player.play_voice(message.voice)
 			
+func process_dumpling_daily_stats() -> void:
+	#Runs every day
+	#Lowers bond and mood if full is low
+	if Player.dumpling_stats.stats.full < 20:
+		Player.dumpling_stats.stats.bond -= 20 -Player.dumpling_stats.stats.full
+		Player.dumpling_stats.stats.mood -= 20 -Player.dumpling_stats.stats.full
 
-func check_action_success() -> bool:
-	return false
+	if Player.dumpling_stats.stats.full > 80:
+		Player.dumpling_stats.stats.mood += 5
+	if Player.dumpling_stats.stats.clean > 80:
+		Player.dumpling_stats.stats.mood += 5
+	#Increases bond if mood is high
+	if Player.dumpling_stats.stats.mood > 90:
+		Player.dumpling_stats.stats.bond += 1
+	
+	if Player.dumpling_stats.stats.full < 20 and Player.dumpling_stats.stats.mood < 20 and Player.dumpling_stats.stats.bond < 20:
+		if randi_range(0,100) > Player.dumpling_stats.stats.full + Player.dumpling_stats.stats.mood + Player.dumpling_stats.stats.bond + 70:
+			pass #Do run away code here
+	
+	Player.dumpling_stats.stats.full -= 15
+	Player.dumpling_stats.stats.clean -= 10
+	update_display()

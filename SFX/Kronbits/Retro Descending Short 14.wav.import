@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://72yr1midklc1"
+path="res://.godot/imported/Retro Descending Short 14.wav-870ccdafbf23520f0306dc3ea0b335ae.sample"
+
+[deps]
+
+source_file="res://SFX/Kronbits/Retro Descending Short 14.wav"
+dest_files=["res://.godot/imported/Retro Descending Short 14.wav-870ccdafbf23520f0306dc3ea0b335ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

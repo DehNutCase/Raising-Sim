@@ -549,6 +549,11 @@ var sound_effects = {
 	"jump": load("res://SFX/JDWasabi/Jump 1.wav"),
 	"heal": load("res://SFX/Leohpaz/8_Buffs_Heals_SFX/02_Heal_02.wav"),
 	"water": load("res://SFX/Leohpaz/8_Atk_Magic_SFX/22_Water_02.wav"),
+	"success": load("res://SFX/Kronbits/Retro Event Acute 08.wav"),
+	"great_success": load("res://SFX/Kronbits/Retro Success Melody 01 - sawtooth lead 1.wav"),
+	"failure": load("res://SFX/Kronbits/Retro Descending Short 14.wav"),
+	"great_failure": load("res://SFX/Kronbits/Retro Negative Melody 01 - aCustom1.wav"),
+	
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()
