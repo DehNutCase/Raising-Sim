@@ -3270,7 +3270,7 @@ const talents = {
 		"label": "Low Maintainence Dumpling",
 		"tier": 3,
 		"cost": 2,
-		"max_stacks": 1,
+		"max_stacks": 2,
 		"dumpling_action_per_day": 1,
 		"description": "Your Dumpling is exceptionally easy to take care of, giving you more time to take care of it. What do you mean that doesn't make sense?\n\nGives one additional Dumpling training action per day.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/hourglass01_02.png",
@@ -3390,5 +3390,49 @@ const talents = {
 		],
 		"description": "By unlocking the power of Anger, you get stronger whenever you get hit! It's awfully stressful to be angry, though.\n\nStart with an additional 3 stacks of Anger during duels.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element21_01.png",
+	},
+}
+
+const endings = {
+	"scholarly_ink_mage": {
+		"points": 1000,
+		"label": "Scholarly Ink Mage",
+		"requirements": {
+			"stats": {
+				"max_mp": 800,
+				"magic": 800,
+				"scholarship": 800,
+			},
+			"courses_completed": ["General Education", "Basics of Magecraft", "Physical Education", "Color Theory (Magic)", "Line, Color, and Composition", "Imaging and Illustration", "Introduction to Illusion Magecraft"]
+		},
+		"timeline": "",
+	},
+	"budding_scholar": {
+		"points": 500,
+		"label": "Budding Scholar",
+		"requirements": {
+			"stats": {
+				"scholarship": 1000,
+			},
+			"courses_completed": ["General Education", "Basics of Magecraft", "Physical Education"]
+		},
+		"timeline": "",
+	},
+	"meteor_fanatic": {
+		"points": 500,
+		"label": "Meteor Fanatic",
+		"requirements": {
+			"stats": {
+				"attack": 500,
+				"magic": 800,
+				"max_mp": 800,
+			},
+			"courses_completed": ["Artillerist Training (Meteor)"]
+		},
+		"timeline": "",
+	},
+	"oddly_ordinary": {
+		"points": 100,
+		"timeline": "",
 	},
 }

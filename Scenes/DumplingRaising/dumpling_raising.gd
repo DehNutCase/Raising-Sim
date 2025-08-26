@@ -368,7 +368,11 @@ func do_dumpling_action(action_name: String) -> void:
 	message = action_info.messages.pick_random()
 	if message:
 		if message.get("toast"):
-			Player.display_toast(message.toast)
+			#Mao is speaking for 'chat' action, so put the message on the bottom
+			var position = "top"
+			if action_name == "chat":
+				position = "bottom"
+			Player.display_toast(message.toast, position)
 		if message.get("voice"):
 			Player.play_voice(message.voice)
 			

@@ -210,6 +210,7 @@ func set_deck(flag: String) -> void:
 	
 #Helper function to calculate ending type and score
 func calculate_ending():
+	Player.event_flags["ending_reached"] = true
 	#need to return a number score and a string for ending name
 	#give every stat a score value which is multiplied to get added to score in constants
 	#TODO, add ending requirements to constants

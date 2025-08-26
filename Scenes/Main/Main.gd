@@ -807,6 +807,8 @@ func _on_reward_signal(dialogic_signal) -> void:
 		_change_current_state(states.GAME_OVER)
 	if "unlock_perspective" in dialogic_signal:
 		Player.unlock_perspective(dialogic_signal.unlock_perspective)
+	if "calculate_ending" in dialogic_signal:
+		Player.calculate_ending()
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")

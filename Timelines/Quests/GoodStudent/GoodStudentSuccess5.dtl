@@ -17,9 +17,10 @@ Morgan_Portrait (Silhouette): But where the fun in that?
 do Player.play_voice("disappointed")
 update Mao (Angry)
 Mao_Portrait (Angry): Uguu...
-Morgan_Portrait (Silhouette): Fufufu. In all seriousness, since you won't be taking remedial classes this summer, we can have a beach party.
+Morgan_Portrait (Silhouette): Fufufu. In all seriousness, since you won't be taking remedial classes this summer, we can have a beach party later.
 do Player.play_voice("yay!")
 update Mao (Excited)
 Mao_Portrait (Excited): Yay! Will you be coming with?
 Morgan_Portrait (Silhouette): Fufufu. Who knows?
 [signal arg="{"stats": {"stress": -20, "gold": 1000,},}"]
+[signal arg="{"calculate_ending": true}"]

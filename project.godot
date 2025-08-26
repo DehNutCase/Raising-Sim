@@ -253,6 +253,7 @@ directories/dtl_directory={
 "RiceHouseFirst": "res://Timelines/WalkEvents/RiceHouseFirst.dtl",
 "SacredWoods": "res://Timelines/WalkEvents/SacredWoods.dtl",
 "SacredWoodsFirst": "res://Timelines/WalkEvents/SacredWoodsFirst.dtl",
+"ScholarlyInkMageEnding": "res://Timelines/Ending/ScholarlyInkMageEnding.dtl",
 "ShorthandedKitchen": "res://Timelines/DayEvents/Random/ShorthandedKitchen.dtl",
 "SleepyInTheMorning": "res://Timelines/DayEvents/Random/SleepyInTheMorning.dtl",
 "StorageRoom": "res://Timelines/WalkEvents/StorageRoom.dtl",
