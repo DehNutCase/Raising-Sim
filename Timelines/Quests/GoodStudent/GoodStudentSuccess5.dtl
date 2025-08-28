@@ -22,5 +22,6 @@ do Player.play_voice("yay!")
 update Mao (Excited)
 Mao_Portrait (Excited): Yay! Will you be coming with?
 Morgan_Portrait (Silhouette): Fufufu. Who knows?
+do Player.set_event_flag("ending_reached")
+do Player.set_event_flag("good_student_final_exam")
 [signal arg="{"stats": {"stress": -20, "gold": 1000,},}"]
-[signal arg="{"calculate_ending": true}"]

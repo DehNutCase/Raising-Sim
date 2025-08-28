@@ -209,16 +209,55 @@ func set_deck(flag: String) -> void:
 	card_game_deck = load(flag).cards.duplicate()
 	
 #Helper function to calculate ending type and score
-func calculate_ending():
-	Player.event_flags["ending_reached"] = true
-	#need to return a number score and a string for ending name
-	#give every stat a score value which is multiplied to get added to score in constants
-	#TODO, add ending requirements to constants
+func calculate_ending(final_ending: bool = false):
+	#Player.event_flags["ending_reached"] = true
 	var score = 0
 	for stat in stats:
 		if "value" in Constants.stats[stat]:
 			score += Constants.stats[stat].value * stats[stat]
-	return [int(score), "Ending Name"]
+			
+	var endings_reached = []
+	var highest_ending = ""
+	
+	for ending in Constants.endings:
+		if !check_ending_requirements(ending):
+			continue
+		else:
+			endings_reached.append(ending)
+			if !highest_ending:
+				highest_ending = ending
+			var highest_ending_score = Constants.endings[highest_ending].points
+			var ending_score = Constants.endings[ending].points
+			if ending_score > highest_ending_score:
+				highest_ending = ending
+				
+	var highest_ending_info = Constants.endings[highest_ending]
+	
+	if final_ending:
+		var timeline = highest_ending_info.get("timeline")
+		if timeline:
+			Dialogic.start(timeline)
+	return [int(score), highest_ending_info.label]
+
+func check_ending_requirements(ending: String) -> bool:
+	var requirements = Constants.endings[ending].requirements
+	var stat_requirements = requirements.get("stats", {})
+	for stat in stat_requirements:
+		if Player.stats[stat] < stat_requirements[stat]:
+			return false
+	var course_requirements = requirements.get("courses_completed", [])
+	for course in course_requirements:
+		if !check_course_completion(course):
+			return false
+	var lesson_requirements = requirements.get("lessons_completed", [])
+	for lesson in lesson_requirements:
+		if !lesson in courses_completed:
+			return false
+	var event_requirements = requirements.get("events", [])
+	for event_flag in event_requirements:
+		if !event_flag in Player.event_flags:
+			return false
+	return true
 
 #TODO, put descriptions for each job in the constants file and return it
 #Helper function to calculate ending type and score
@@ -600,7 +639,6 @@ func check_course_completion(course: String) -> bool:
 	for course_name in course_data:
 		if !course_name in courses_completed:
 			completed = false
-			break
 	return completed
 
 func check_gold_below_zero() -> bool:

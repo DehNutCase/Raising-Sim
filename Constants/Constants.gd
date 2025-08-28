@@ -2765,9 +2765,13 @@ const quests = {
 				"agility": 10,
 			}
 		},
+		"timeline": "BuddingArtistSuccess",
 		"failure_conditions": {
 			"day": 30,
 		},
+		"failure_rewards": {
+			"timeline": "BuddingArtistFailure",
+		}
 	},
 	"overlord": {
 		"name": "Super Duper Ultra Supreme Overlord!",
@@ -3403,9 +3407,9 @@ const endings = {
 				"magic": 800,
 				"scholarship": 800,
 			},
-			"courses_completed": ["General Education", "Basics of Magecraft", "Physical Education", "Color Theory (Magic)", "Line, Color, and Composition", "Imaging and Illustration", "Introduction to Illusion Magecraft"]
+			"courses_completed": ["Core", "Ink Mage"]
 		},
-		"timeline": "",
+		"timeline": "ScholarlyInkMageEnding",
 	},
 	"budding_scholar": {
 		"points": 500,
@@ -3414,7 +3418,8 @@ const endings = {
 			"stats": {
 				"scholarship": 1000,
 			},
-			"courses_completed": ["General Education", "Basics of Magecraft", "Physical Education"]
+			"courses_completed": ["Core"],
+			"events": ["good_student_final_exam"], #Flag from timeline after defeating final exam
 		},
 		"timeline": "",
 	},
@@ -3427,12 +3432,15 @@ const endings = {
 				"magic": 800,
 				"max_mp": 800,
 			},
-			"courses_completed": ["Artillerist Training (Meteor)"]
+			"lessons_completed": ["Artillerist Training (Meteor)"]
 		},
 		"timeline": "",
 	},
 	"oddly_ordinary": {
 		"points": 100,
+		"label": "Oddly Ordinary",
 		"timeline": "",
+		"requirements": {
+		},
 	},
 }

@@ -141,8 +141,7 @@ func _ready():
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
 		#Player.inventory.remove_item(item)
 		#Player.stats.max_hp = 1000
-		#Player.stats.skill = 0
-		#Player.stats.gold = 100000
+		#print(Player.calculate_ending())
 		#Dialogic.start("Chores")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
@@ -807,8 +806,6 @@ func _on_reward_signal(dialogic_signal) -> void:
 		_change_current_state(states.GAME_OVER)
 	if "unlock_perspective" in dialogic_signal:
 		Player.unlock_perspective(dialogic_signal.unlock_perspective)
-	if "calculate_ending" in dialogic_signal:
-		Player.calculate_ending()
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
@@ -1301,6 +1298,10 @@ func _change_day_state(state: states) -> void:
 				$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
 			else:
 				$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
+			if Player.event_flags.get("ending_reached"):
+				$"RightMenuContainer/MenuPanel/VBoxContainer/EndingButton".show()
+			else:
+				$"RightMenuContainer/MenuPanel/VBoxContainer/EndingButton".hide()
 			if Player.unlocked_missions:
 				$"RightMenuContainer/MenuPanel/VBoxContainer/Story".show()
 			else:

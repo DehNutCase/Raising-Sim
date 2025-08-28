@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=93 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -79,7 +79,9 @@
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
 [ext_resource type="Texture2D" uid="uid://bc0twdyjkhcdq" path="res://Art/Mori no oku no kakurezato/CardGame/alchemy05_01.png" id="69_djog0"]
 [ext_resource type="Theme" uid="uid://bpmpi75l7q4kv" path="res://Art/Themes/DefaultButtonTheme.tres" id="73_17ulr"]
+[ext_resource type="Texture2D" uid="uid://dsa0ggh4o2mre" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Medal2.png" id="75_qch2x"]
 [ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="76_5tlhe"]
+[ext_resource type="Texture2D" uid="uid://pbfp5dbku8m" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Medal2.png" id="76_i7we7"]
 [ext_resource type="Texture2D" uid="uid://dkr5yma1b7dy8" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png" id="76_w8p4g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
@@ -953,7 +955,7 @@ offset_top = -31.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Special
+text = "Self
 "
 
 [node name="Skills" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
@@ -1238,6 +1240,30 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Save
+"
+
+[node name="EndingButton" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("75_qch2x")
+texture_pressed = ExtResource("76_i7we7")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="RightMenuContainer/MenuPanel/VBoxContainer/EndingButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Endings
 "
 
 [node name="Wishlist" type="Button" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
