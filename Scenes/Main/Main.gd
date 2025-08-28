@@ -26,7 +26,8 @@ extends Control
 @onready var quest_log = %QuestLog
 @onready var talent_tree = %TalentTree
 @onready var train = %Train
-@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log, talent_tree, train]
+@onready var ending = %Ending
+@onready var menus = [shop, walk, stats, tower, class_change, story, schedule, lessons, spellbook, quest_log, talent_tree, train, ending]
 
 @onready var course_schedule = $"Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer/TabContainer/Course Schedule"
 
@@ -137,6 +138,7 @@ func _ready():
 		#Player.active_mission = ""
 		#Player.max_walks = 100
 		#Player.tower_level = 0
+		#Player.stats.talent_point = 100
 		#Player.skill_inventory.create_and_add_item("meteor")
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
 		#Player.inventory.remove_item(item)
@@ -168,9 +170,7 @@ func _input(event):
 				closed_something = true
 		if closed_something:
 			Player.play_ui_sound("cancel_blop")
-#TODO, process day should now call the schedule and then play the end of day scene
-#(EOD scene mostly night events---bedtime story with Rice etc. sometimes just tiny
-#text like walk where you didn't meet someone)
+
 func process_day():
 	_change_day_state(states.BUSY)
 	
@@ -178,15 +178,12 @@ func process_day():
 	action_list.append_array(Player.mandatory_daily_schedule_list)
 	action_list.append_array(Player.daily_schedule_list)
 	
-	#TODO, handle main scene background changes here?
-	#TODO, hide all open menus
 	if day == 0:
 		#don't do actions day 1
 		action_list = []
 	var i = 0
 	#TODO, set state to not ready
 	for action in action_list:
-		#TODO, await actions---set time for scene to change etc.
 		background_transition(Constants.constants.TIMES_OF_DAY[i])
 		await (get_tree().create_timer(.5).timeout)
 		await do_action(action.action_type, action.action_name)
@@ -572,6 +569,8 @@ func _on_action(button):
 			talent_tree.show()
 		"TrainButton":
 			train.show()
+		"EndingButton":
+			ending.show()
 		"Quests":
 			quest_log.show()
 		"Lessons":
@@ -616,6 +615,7 @@ func _on_action(button):
 					#'combat' should be a path to the correct combat scene
 					await get_tree().create_timer(.01).timeout
 					enter_card_game(Player.active_mission.combat, false, true)
+					menu_panel.visible = true
 			else:
 				if Player.unlocked_missions:
 					load_mission_text(Player.unlocked_missions.keys()[0])
@@ -1257,6 +1257,16 @@ func _on_talent_button_pressed(talent: String):
 			Player.dumpling_stats.action_per_day += talent_data.dumpling_action_per_day
 			Player.dumpling_stats.remaining_actions += talent_data.dumpling_action_per_day
 
+func _on_play_ending_button_pressed():
+	if popup.visible:
+		return
+	popup.set_text("Are you sure? (Playing the ending will delete the current save)") 
+	popup.show()
+	
+	var play_ending = await popup.button_clicked
+	if play_ending:
+		Player.calculate_ending(true)
+
 func _on_game_over_dialog_canceled():
 	await Player.delete_game()
 	await OS.set_restart_on_exit(true)
@@ -1298,7 +1308,7 @@ func _change_day_state(state: states) -> void:
 				$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".show()
 			else:
 				$"LeftMenuContainer/MenuPanel/VBoxContainer/Class Change".hide()
-			if Player.event_flags.get("ending_reached"):
+			if Player.event_flags.get("ending_reached") or Player.day>30:
 				$"RightMenuContainer/MenuPanel/VBoxContainer/EndingButton".show()
 			else:
 				$"RightMenuContainer/MenuPanel/VBoxContainer/EndingButton".hide()

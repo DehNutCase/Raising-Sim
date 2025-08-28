@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=94 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://d10vtsn3erj52" path="res://Scenes/DumplingRaising/dumpling_raising.tscn" id="42_8o55t"]
 [ext_resource type="PackedScene" uid="uid://dlveg5i5gaxps" path="res://Scenes/TalentTree/talent_tree.tscn" id="42_ya2xs"]
 [ext_resource type="PackedScene" uid="uid://q84u4t3lxanj" path="res://Scenes/UI/Popup/Popup.tscn" id="43_ck6uc"]
+[ext_resource type="PackedScene" uid="uid://di5h8hcjdudlh" path="res://Scenes/Ending/ending.tscn" id="43_ymd8e"]
 [ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
 [ext_resource type="Texture2D" uid="uid://ftrly7krq5wf" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_ShoppingCart.png" id="45_03wx0"]
 [ext_resource type="Texture2D" uid="uid://dkqjjjb8c2ysi" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Book.png" id="45_34myw"]
@@ -811,6 +812,10 @@ script = ExtResource("44_3cuex")
 [node name="Train" parent="Ui/MenuPanel/MarginContainer" instance=ExtResource("42_8o55t")]
 unique_name_in_owner = true
 visible = false
+layout_mode = 2
+
+[node name="Ending" parent="Ui/MenuPanel/MarginContainer" instance=ExtResource("43_ymd8e")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TalentTree" parent="Ui/MenuPanel" instance=ExtResource("42_ya2xs")]

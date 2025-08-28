@@ -3439,7 +3439,8 @@ const endings = {
 	"oddly_ordinary": {
 		"points": 100,
 		"label": "Oddly Ordinary",
-		"timeline": "",
+		#TODO, update ending timeline
+		"timeline": "EndingTimeline",
 		"requirements": {
 		},
 	},

@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://di5h8hcjdudlh"]
+
+[ext_resource type="Script" path="res://Scenes/Ending/ending.gd" id="1_qx5ms"]
+
+[node name="Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_qx5ms")
+
+[node name="EndingText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayEndingButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_top = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Play Ending"
+
+[connection signal="pressed" from="PlayEndingButton" to="." method="_on_play_ending_button_pressed"]

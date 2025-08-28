@@ -154,6 +154,8 @@ signal experience_gained(growth_data)
 
 @export var perspectives = {}
 
+@export var new_game_plus_bonuses = {}
+
 func get_required_experience(l) -> int:
 	return int(pow(1.1, l) * 200)
 
@@ -237,7 +239,18 @@ func calculate_ending(final_ending: bool = false):
 		var timeline = highest_ending_info.get("timeline")
 		if timeline:
 			Dialogic.start(timeline)
-	return [int(score), highest_ending_info.label]
+		#TODO, delete game on pressed, currently disabled for dev work
+		#delete_game()
+		#TODO, update new game plus bonuses from talents, items, etc.
+		for talent in talent_tree:
+			var new_game_plus_bonuses = Constants.talents[talent].get("new_game_plus_bonuses")
+			if !new_game_plus_bonuses:
+				continue
+			for bonus in new_game_plus_bonuses:
+				update_new_game_plus_bonus(bonus, new_game_plus_bonuses[bonus])
+			
+			print(talent)
+	return [int(score), highest_ending_info.label, highest_ending]
 
 func check_ending_requirements(ending: String) -> bool:
 	var requirements = Constants.endings[ending].requirements
@@ -429,6 +442,38 @@ func load_class_change_card():
 			
 func delete_class_change_card():
 	DirAccess.remove_absolute("user://Saves/class_change_card.json")
+
+func save_new_game_plus_bonuses() -> void:
+	var save_data = new_game_plus_bonuses
+	var save_file
+	DirAccess.make_dir_recursive_absolute("user://Saves")
+	save_file = FileAccess.open("user://Saves/new_game_plus.json", FileAccess.WRITE)
+	if save_file:
+		save_file.store_line(JSON.stringify(save_data))
+	else:
+		printerr("save_perspectives failed to save")
+
+func load_new_game_plus_bonuses() -> void:
+	var save_file
+	save_file = FileAccess.open("user://Saves/new_game_plus.json", FileAccess.READ)
+	if !save_file:
+		return
+	var json_string = save_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		printerr("load_perspectives JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	var data = json.get_data()
+	new_game_plus_bonuses = data
+
+#make sure new game plus bonuses are in the format of name: value
+func update_new_game_plus_bonus(bonus: String, value: int) -> void:
+	if bonus in new_game_plus_bonuses:
+		new_game_plus_bonuses[bonus] += value
+	else:
+		new_game_plus_bonuses[bonus] = value
+	save_new_game_plus_bonuses()
 
 func load_demo():
 	var save_file
