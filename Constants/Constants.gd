@@ -2753,7 +2753,7 @@ const quests = {
 				"art": 400,
 				},
 		},
-		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.",
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\nTime Limit: Day 21",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2767,6 +2767,33 @@ const quests = {
 		},
 		"timeline": "BuddingArtistSuccess",
 		"failure_conditions": {
+			"day": 21,
+		},
+		"failure_rewards": {
+			"timeline": "BuddingArtistFailure",
+		}
+	},
+	"budding_artist_2": {
+		"name": "Budding Arist 2",
+		"requirements": {
+			"stats": {
+				"art": 800,
+				},
+		},
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\nTime Limit: Day 30",
+		"rewards": {
+			"stats": {
+				"gold": 1000,
+				"stress": -20,
+				"max_hp": 10,
+				"max_mp": 20,
+				"attack": 10,
+				"magic": 10,
+				"agility": 10,
+			}
+		},
+		"timeline": "BuddingArtistSuccess2",
+		"failure_conditions": {
 			"day": 30,
 		},
 		"failure_rewards": {
@@ -2779,7 +2806,7 @@ const quests = {
 			"tower_level": 20,
 			"stats": {"scholarship": 600},
 		},
-		"description": "Now that you have some magic cards, it's time to turn evil! Get your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game.",
+		"description": "Now that you have some magic cards, it's time to turn evil! Get your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game. Yes, this is definitely how to become an evil overlord, it's a method approved by her majesty!\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2791,9 +2818,13 @@ const quests = {
 				"agility": 10,
 			}
 		},
+		"timeline": "OverlordSuccess",
 		"failure_conditions": {
 			"day": 30,
 		},
+		"failure_rewards": {
+			"timeline": "OverlordFailure",
+		}
 	},
 	"inspiration": {
 		"name": "Inspiration",
@@ -3395,6 +3426,17 @@ const talents = {
 		"description": "By unlocking the power of Anger, you get stronger whenever you get hit! It's awfully stressful to be angry, though.\n\nStart with an additional 3 stacks of Anger during duels.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element21_01.png",
 	},
+	"vanishing_point" = {
+		"label": "Vanishing Point",
+		"tier": 1, #8
+		"cost": 5,
+		"max_stacks": 1,
+		"new_game_plus_bonuses": {
+			"stats": {"talent_points": 5,}
+		},
+		"description": "The ability to teleport from where you are to where you are. It's a very advanced spell. Definitely. Cough.\n\nIf you reach the ending with this talent unlocked, you'll start with additional talent points in future games.",
+		"icon": "res://Art/KikariStore/Resized/e1a.png",
+	},
 }
 
 const endings = {
@@ -3423,6 +3465,44 @@ const endings = {
 		},
 		"timeline": "",
 	},
+	"beginner_climber": {
+		"points": 250,
+		"label": "Beginner Climber",
+		"requirements": {
+			"tower_level": 10,
+		},
+		"timeline": "",
+	},
+	"tower_climber": {
+		"points": 450,
+		"label": "Tower Climber",
+		"requirements": {
+			"tower_level": 20,
+		},
+		"timeline": "",
+	},
+	"beginner_artist": {
+		"points": 100,
+		"label": "Beginner Artist",
+		"requirements": {
+			"stats": {
+				"art": 400,
+			},
+		},
+		"timeline": "",
+	},
+	"artist": {
+		"points": 500,
+		"label": "Artist",
+		"requirements": {
+			"stats": {
+				"art": 800,
+			},
+			"events": ["artist"],
+		},
+		"Description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
+		"timeline": "",
+	},
 	"meteor_fanatic": {
 		"points": 500,
 		"label": "Meteor Fanatic",
@@ -3432,16 +3512,18 @@ const endings = {
 				"magic": 800,
 				"max_mp": 800,
 			},
-			"lessons_completed": ["Artillerist Training (Meteor)"]
+			"lessons_completed": ["Artillerist Training (Meteor)"],
 		},
+		"Description": "Art is a meteor! In pursuit of the biggest bang, you rushed to learn how to summon flaming rocks from the sky. It's a little concerning that they teach spells like this in school.",
 		"timeline": "",
 	},
 	"oddly_ordinary": {
-		"points": 100,
+		"points": 50,
 		"label": "Oddly Ordinary",
-		#TODO, update ending timeline
-		"timeline": "EndingTimeline",
 		"requirements": {
 		},
+		"Description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending.",
+		#TODO, update ending timeline,
+		"timeline": "EndingTimeline",
 	},
 }

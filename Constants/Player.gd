@@ -243,13 +243,19 @@ func calculate_ending(final_ending: bool = false):
 		#delete_game()
 		#TODO, update new game plus bonuses from talents, items, etc.
 		for talent in talent_tree:
-			var new_game_plus_bonuses = Constants.talents[talent].get("new_game_plus_bonuses")
-			if !new_game_plus_bonuses:
+			var bonuses = Constants.talents[talent].get("new_game_plus_bonuses")
+			if !bonuses:
 				continue
-			for bonus in new_game_plus_bonuses:
-				update_new_game_plus_bonus(bonus, new_game_plus_bonuses[bonus])
 			
-			print(talent)
+			var stat_bonuses = bonuses.get("stats", {})
+			for bonus in stat_bonuses:
+				update_new_game_plus_bonus("stats", bonus, stat_bonuses[bonus])
+			
+			var talent_bonuses = bonuses.get("talents", {})
+			for bonus in talent_bonuses:
+				update_new_game_plus_bonus("stats", bonus, talent_bonuses[bonus])
+			
+
 	return [int(score), highest_ending_info.label, highest_ending]
 
 func check_ending_requirements(ending: String) -> bool:
@@ -270,6 +276,9 @@ func check_ending_requirements(ending: String) -> bool:
 	for event_flag in event_requirements:
 		if !event_flag in Player.event_flags:
 			return false
+	var tower_level_requirements = requirements.get("tower_level", 0)
+	if !Player.tower_level >= tower_level_requirements:
+		return false
 	return true
 
 #TODO, put descriptions for each job in the constants file and return it
@@ -468,11 +477,14 @@ func load_new_game_plus_bonuses() -> void:
 	new_game_plus_bonuses = data
 
 #make sure new game plus bonuses are in the format of name: value
-func update_new_game_plus_bonus(bonus: String, value: int) -> void:
-	if bonus in new_game_plus_bonuses:
-		new_game_plus_bonuses[bonus] += value
+func update_new_game_plus_bonus(category: String, bonus: String, value: int) -> void:
+	if !category in new_game_plus_bonuses:
+		new_game_plus_bonuses[category] = {}
+		
+	if bonus in new_game_plus_bonuses[category]:
+		new_game_plus_bonuses[category][bonus] += value
 	else:
-		new_game_plus_bonuses[bonus] = value
+		new_game_plus_bonuses[category][bonus] = value
 	save_new_game_plus_bonuses()
 
 func load_demo():

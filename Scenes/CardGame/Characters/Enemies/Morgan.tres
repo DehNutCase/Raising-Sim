@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardGameEnemyStats" load_steps=7 format=3 uid="uid://u4sbh5tnh7sa"]
+
+[ext_resource type="Resource" uid="uid://rx7e3fbshy4s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_tackle.tres" id="1_r22u4"]
+[ext_resource type="Resource" uid="uid://t35mloke521s" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_block.tres" id="2_4qsa4"]
+[ext_resource type="Resource" uid="uid://jqp1l2fmdip1" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/dumpling_fireball.tres" id="3_hg244"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy_stats.gd" id="3_wfgum"]
+[ext_resource type="Resource" uid="uid://o08f3hrm6ojs" path="res://Scenes/CardGame/Characters/Enemies/EnemyCards/morgan_counterspell.tres" id="4_cffeu"]
+[ext_resource type="Texture2D" uid="uid://dwcso6et36duw" path="res://Characters/Morgan/Images/Edited/003ff_Saint_Lady_B_scaled.png" id="5_mq0fm"]
+
+[resource]
+script = ExtResource("3_wfgum")
+actions = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_r22u4"), ExtResource("2_4qsa4"), ExtResource("3_hg244"), ExtResource("4_cffeu")])
+max_health = 1000
+art = ExtResource("5_mq0fm")

@@ -1,0 +1,19 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 3 [animation="Slide In Right" length="2"]
+join Morgan (Silhouette) 1
+[history action="clear"]
+Morgan_Portrait (Silhouette): Good morning, Mao.
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Excited): I made a painting!
+Morgan_Portrait (Silhouette): Hmm?
+update Mao (Normal)
+update Mao [animation="Tada" length="1"]
+Mao_Portrait (Normal): Please put this on display instead of my doodle!
+Morgan_Portrait (Silhouette): But it's a very pretty doodle?
+update Mao (Sad)
+Mao_Portrait (Sad): Uguu... But it's embarrassing.
+Morgan_Portrait (Silhouette): Not for me. Fufufu.
+update Mao (Angry)
+Mao_Portrait (Angry): Your majesty!
+[signal arg="{"card_game": "res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn"}"]

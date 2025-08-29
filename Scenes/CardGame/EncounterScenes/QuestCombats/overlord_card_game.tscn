@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://lcmukph0b1ku"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_xhmwk"]
+[ext_resource type="Texture2D" uid="uid://b43w6g4abj5pf" path="res://Art/Background/Background material shop/bg007a.jpg" id="2_h6inf"]
+[ext_resource type="Resource" uid="uid://drbxwlyogo6g6" path="res://Scenes/CardGame/Status/attack.tres" id="3_1r68m"]
+[ext_resource type="Resource" uid="uid://dt0jx8gkukrmj" path="res://Scenes/CardGame/Status/magic.tres" id="4_oorv1"]
+[ext_resource type="AudioStream" uid="uid://c55addfc4yvb5" path="res://Music/SteamRabbitHut/BATTLE_NORMAL001.mp3" id="4_p5cc3"]
+[ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="5_4oetr"]
+[ext_resource type="Resource" uid="uid://c0f10ufjgepyh" path="res://Scenes/CardGame/Status/defense.tres" id="5_opeeo"]
+[ext_resource type="Resource" uid="uid://u4sbh5tnh7sa" path="res://Scenes/CardGame/Characters/Enemies/Morgan.tres" id="6_vuyxj"]
+[ext_resource type="Resource" uid="uid://bb4l7x0ct60f6" path="res://Scenes/CardGame/Status/resistance.tres" id="6_x0lgo"]
+[ext_resource type="Texture2D" uid="uid://cu6e6xk2os3c3" path="res://Characters/Morgan/Images/003ff_Saint_Lady_B.png" id="7_xekfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq3b"]
+size = Vector2(400, 400)
+
+[node name="TowerLevel0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhmwk")
+background = ExtResource("2_h6inf")
+victory_reward = "{\"stats\": {\"gold\": 10000, \"experience\": 10000,}, \"timeline\": \"OverlordFailure2\",}"
+defeat_reward = " {\"timeline\": \"OverlordFailure\",}"
+starting_status_enemy = Array[Resource("res://Scenes/CardGame/Status/card_game_status_resource.gd")]([ExtResource("3_1r68m"), ExtResource("4_oorv1"), ExtResource("5_opeeo"), ExtResource("6_x0lgo")])
+starting_status_stacks_enemy = Array[int]([99, 99, 99, 99])
+background_music = ExtResource("4_p5cc3")
+metadata/_edit_lock_ = true
+
+[node name="CardGameEnemy" parent="." instance=ExtResource("5_4oetr")]
+position = Vector2(500, 300)
+enemy_resource = ExtResource("6_vuyxj")
+
+[node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
+shape = SubResource("RectangleShape2D_qcq3b")
+
+[node name="MarginContainer2" parent="CardGameEnemy/VBoxContainer" index="0"]
+z_index = 1
+
+[node name="MarginContainer4" parent="CardGameEnemy/VBoxContainer" index="1"]
+theme_override_constants/margin_bottom = -50
+
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer/MarginContainer4" index="0"]
+custom_minimum_size = Vector2(600, 600)
+texture = ExtResource("7_xekfa")
+flip_h = false
+
+[node name="Arrow" parent="CardGameEnemy" index="2"]
+custom_minimum_size = Vector2(500, 500)
+
+[editable path="CardGameEnemy"]

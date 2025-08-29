@@ -20,4 +20,4 @@ Morgan_Portrait (Silhouette): Keep up the good work, I'll have the kitchen make 
 update Mao (Excited)
 Mao_Portrait (Excited): Yay!
 do Player.set_event_flag("ending_reached")
-#[signal arg="{"stats": {"stress": -50, "gold": 1000,},}"]
+[signal arg="{"stats": {"stress": -50, "gold": 1000,},}"]

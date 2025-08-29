@@ -18,7 +18,11 @@ func update_display() -> void:
 	var ending_info = Constants.endings[ending]
 	
 	ending_text.clear()
-	ending_text.append_text("Your current ending is: %s.\n\nYour current score is: %d \n\n" %[ending_info.label, score])
+	ending_text.append_text("Your current ending is: %s\n\nYour current score is: %d \n\n" %[ending_info.label, score])
+	
+	var description = Constants.endings[ending].get("description")
+	if description:
+		ending_text.append_text("\n\n" + description)
 
 
 func _on_play_ending_button_pressed():

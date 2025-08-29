@@ -62,7 +62,10 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "5"
 
-[node name="Sprite" type="TextureRect" parent="VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite" type="TextureRect" parent="VBoxContainer/MarginContainer4"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2

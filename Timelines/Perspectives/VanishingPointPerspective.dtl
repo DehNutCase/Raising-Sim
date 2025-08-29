@@ -53,7 +53,7 @@ update Mao [animation="Tada" length="3"]
 do Player.play_sound_effect("heal")
 Mao_Portrait (Normal): Locator spell, go! Teehee.
 update Mao (Surprised)
-Mao_Portrait (Surprised): Wait, this is Albion!? Why am I on the other side of the planet?
+Mao_Portrait (Surprised): Wait, this is Lubek!? Why am I on the other side of the planet?
 Rice_Portrait (Normal): Unintentional entry, then. For the time being, you should apply for an entry visa.
 update Mao (Normal)
 Mao_Portrait (Normal): Hmm? Shouldn't I have one already?

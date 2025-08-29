@@ -1,0 +1,21 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Sad)
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Oh no! My New Year's Resolution...
+Mao_Portrait (Sad): Now I'm gonna explode. 😭
+Rice_Portrait (Normal): As far as I know, failing a New Year's Resolution doesn't have any consequences.
+Mao_Portrait (Sad): Nuh uh. I'll be exploding any moment now. 😭
+Rice_Portrait (Normal): (I don't believe I should play along with this.)
+Rice_Portrait (Normal): You'll be fine.
+update Mao (Angry)
+Mao_Portrait (Angry): Hmph. Watch, I'll explode right now!
+# Add explosion sound effect and game over
+update Mao [animation="Shake X" length="1" repeat="2"]
+update Mao (Normal)
+do Player.play_voice("boom")
+Mao_Portrait (Normal): Boom!
+Rice_Portrait (Normal): ...I suppose I better go inform her majesty that you exploded.
+[signal arg="{"game_over": true}"]
+Mao_Portrait (Normal): Into tiny pieces!
