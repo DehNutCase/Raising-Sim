@@ -600,6 +600,7 @@ var voices = {
 	"un_yeah": load("res://Voice/Sakura An/Misc/Un (yeah).wav"),
 	"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"),
 	"yes_enthusiastic": load("res://Voice/Sakura An/Misc/Yes(Enthusiastic).wav"),
+	"yes_reluctant": load("res://Voice/Sakura An/Misc/Yes(Reluctant).wav"),
 	"oh!": load("res://Voice/Sakura An/Misc/Oh!.wav"),
 	"oh...":load("res://Voice/Sakura An/Misc/Oh....wav"),
 	

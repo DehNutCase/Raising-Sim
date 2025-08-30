@@ -3426,9 +3426,17 @@ const talents = {
 		"description": "By unlocking the power of Anger, you get stronger whenever you get hit! It's awfully stressful to be angry, though.\n\nStart with an additional 3 stacks of Anger during duels.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element21_01.png",
 	},
+	"baron" = {
+		"label": "Baron",
+		"tier": 1, 
+		"cost": 5,
+		"max_stacks": 1,
+		"description": "The management rights of a certain city.\n\nCurrently not implemented.",
+		"icon": "res://Art/Background/Background material shop/Edited/bg005a_squared.jpg",
+	},
 	"vanishing_point" = {
 		"label": "Vanishing Point",
-		"tier": 1, #8
+		"tier": 8, 
 		"cost": 5,
 		"max_stacks": 1,
 		"new_game_plus_bonuses": {
@@ -3440,6 +3448,16 @@ const talents = {
 }
 
 const endings = {
+	"overlord": {
+		"points": 2550,
+		"label": "Overlord",
+		"requirements": {
+			"events": ["overlord_combat_success"], 
+		},
+		"timeline": "",
+		"description": "You managed to defeat her majesty in a children's card game, that makes you the new Queen of Albion! (Not really.) Although her majesty didn't fight you seriously, it's still an amazing achievement.\n\nYou can probably ask for a county or two on the basis of this achievement.",
+		#TODO, add a new game bonus of starting with a territory to manage
+	},
 	"scholarly_ink_mage": {
 		"points": 1000,
 		"label": "Scholarly Ink Mage",

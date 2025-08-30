@@ -241,6 +241,8 @@ directories/dtl_directory={
 "NewYearsShrine": "res://Timelines/WalkEvents/EventWalks/NewYearsShrine.dtl",
 "Old/Day1Event": "res://Timelines/DayEvents/Old/Day1Event.dtl",
 "Old/Day5Event": "res://Timelines/DayEvents/Old/Day5Event.dtl",
+"OverlordCombatFailure": "res://Timelines/Quests/Overlord/OverlordCombatFailure.dtl",
+"OverlordCombatSuccess": "res://Timelines/Quests/Overlord/OverlordCombatSuccess.dtl",
 "OverlordSuccess": "res://Timelines/Quests/Overlord/OverlordSuccess.dtl",
 "Painting0": "res://Timelines/JobEvents/Painting0.dtl",
 "PhysicalEducationEnd": "res://Timelines/ActionEvents/Core/Physical Education/PhysicalEducationEnd.dtl",

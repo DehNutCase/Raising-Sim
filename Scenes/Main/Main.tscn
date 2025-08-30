@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=95 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -84,6 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="76_5tlhe"]
 [ext_resource type="Texture2D" uid="uid://pbfp5dbku8m" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Medal2.png" id="76_i7we7"]
 [ext_resource type="Texture2D" uid="uid://dkr5yma1b7dy8" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png" id="76_w8p4g"]
+[ext_resource type="Texture2D" uid="uid://cy4ao7j0f6jn0" path="res://Art/Background/Background material shop/Edited/bg005a_oval.png" id="80_oi3av"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
 font_size = 28
@@ -1311,6 +1312,17 @@ layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 2
 metadata/_edit_lock_ = true
+
+[node name="ManagementButton" type="Button" parent="BottomMenuContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme = ExtResource("67_exeng")
+text = "Manage"
+icon = ExtResource("80_oi3av")
+clip_text = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="TrainButton" type="Button" parent="BottomMenuContainer/HBoxContainer" groups=["ActionButton", "Button"]]
 custom_minimum_size = Vector2(128, 128)

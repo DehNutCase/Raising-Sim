@@ -144,7 +144,7 @@ func _ready():
 		#Player.inventory.remove_item(item)
 		#Player.stats.max_hp = 1000
 		#print(Player.calculate_ending())
-		#Dialogic.start("Chores")
+		Dialogic.start("OverlordSuccess")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -822,6 +822,8 @@ func _on_timeline_ended() -> void:
 	dialogic_panel.hide()
 	dialogic_viewport_container.hide()
 	display_stats()
+	#Below might not be needed, currently day state used to control button visibility
+	_change_day_state(day_state)
 	#Clear temporary flags
 	Player.dialogic_temporary_flags = {}
 	#Close open menus after timeline ends
@@ -969,27 +971,28 @@ func check_and_play_daily_events() -> void:
 		Player.event_flags['Day5Event'] = true
 		played = true
 	
+	#TODO, fix these events
 	#Note, this triggers at the last day of the month
-	if Player.day == Constants.constants.days_in_month:
-		Dialogic.start("Day30Event")
-		played = true
-	
-	if Player.day == Constants.constants.days_in_month * 2:
-		Dialogic.start("Day60Event")
-		played = true
-		
-	if Player.day == Constants.constants.days_in_month * 3:
-		Dialogic.start("Day90Event")
-		played = true
-	
-	#Give the player a few days before the end of the year for this.
-	if Player.day == Constants.constants.days_in_month * 4 - 5:
-		Dialogic.start("Day120Event")
-		played = true
-	
-	if Player.day == Constants.constants.days_in_month * 4 and Player.event_flags.get("class_change_information_event"):
-		Dialogic.start("EndOfYearEvent")
-		played = true
+	#if Player.day == Constants.constants.days_in_month:
+		#Dialogic.start("Day30Event")
+		#played = true
+	#
+	#if Player.day == Constants.constants.days_in_month * 2:
+		#Dialogic.start("Day60Event")
+		#played = true
+		#
+	#if Player.day == Constants.constants.days_in_month * 3:
+		#Dialogic.start("Day90Event")
+		#played = true
+	#
+	##Give the player a few days before the end of the year for this.
+	#if Player.day == Constants.constants.days_in_month * 4 - 5:
+		#Dialogic.start("Day120Event")
+		#played = true
+	#
+	#if Player.day == Constants.constants.days_in_month * 4 and Player.event_flags.get("class_change_information_event"):
+		#Dialogic.start("EndOfYearEvent")
+		#played = true
 	
 	#TODO, add check for if class changed (either have exitpass *or* is class changed)
 	if !Player.event_flags.get('mission_information_event') and Player.event_flags.get('ExitPass') and !played:

@@ -1,0 +1,21 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Normal) 1
+join Morgan (Grin) 3
+[history action="clear"]
+update Mao (Normal)
+do Player.play_voice("amazing")
+Mao_Portrait (Normal): Umu! Great victory! *Smug*
+Morgan_Portrait (Grin): Oh my, that was quite the fight.
+Morgan_Portrait (Grin): At this level, taking over a city or two wouldn't be a problem. Let me know if you ever want to try managing a county, fufufu.
+update Mao (Angry)
+do Player.play_voice("yes_reluctant")
+Mao_Portrait (Angry): This isn't one of your trick rewards, right? Where you pretend to reward me but it's actually a trap.
+Morgan_Portrait (Grin): Oh my, I didn't know I was so untrustworthy. Managing a territory isn't exactly easy, but it's not intended to be a trap.
+update Mao (Normal)
+Morgan_Portrait (Grin): Hmm, how about this, we can have a celebration dinner later, I'll give you special permission to decide the menu for tonight. Just let the kitchen know.
+update Mao (Excited)
+update Mao [animation="Tada" length="1"]
+do Player.play_voice("happy")
+Mao_Portrait (Excited): Yay!
+do Player.set_event_flag("overlord_combat_success")
+[signal arg="{"stats": {"stress": -50,},}"]

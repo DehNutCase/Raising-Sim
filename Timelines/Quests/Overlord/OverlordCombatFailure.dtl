@@ -1,0 +1,21 @@
+[background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
+join Mao (Sad) 1
+join Morgan (Silhouette) 3
+[history action="clear"]
+update Mao (Sad)
+do Player.play_random_voice("damaged")
+Mao_Portrait (Sad): Uguu...
+Morgan_Portrait (Silhouette): Fufufu. Well, that was certainly a pleasant distraction.
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): You weren't even fighting me seriously...
+Morgan_Portrait (Silhouette): How would you judge if I was serious or not?
+update Mao (Angry)
+do Player.play_voice("hate")
+Mao_Portrait (Angry): I heard you chanting 'Dumpling Fireball' and 'Dumpling Barrier'!
+Morgan_Portrait (Silhouette): Fufufu.
+Morgan_Portrait (Silhouette): Well, leaving that aside for now, you've certainly worked hard. Let's have a party later to celebrate your defeat.
+do Player.play_voice("huh?")
+update Mao (Angry)
+Mao_Portrait (Angry): Your majesty...
+Morgan_Portrait (Silhouette): Fufufu.
+[signal arg="{"stats": {"stress": -20, "gold": 5000,},}"]

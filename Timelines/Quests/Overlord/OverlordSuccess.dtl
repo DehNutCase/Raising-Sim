@@ -1,19 +1,27 @@
 [background arg="res://Art/Background/Background material shop/bg007a.jpg" fade="0.0" transition="Simple Fade"]
-join Mao (Normal) 3 [animation="Slide In Right" length="2"]
-join Morgan (Silhouette) 1
+join Mao (Normal) 1 [animation="Slide In Left" length="2"]
+join Morgan (Silhouette) 3
 [history action="clear"]
 Morgan_Portrait (Silhouette): Good morning, Mao.
+update Mao (Normal)
+do Player.play_random_voice("greetings")
+Mao_Portrait (Normal): Good morning!
+Morgan_Portrait (Silhouette): So why are you here this time?
 update Mao (Excited)
 update Mao [animation="Tada" length="1"]
-Mao_Portrait (Excited): I made a painting!
-Morgan_Portrait (Silhouette): Hmm?
-update Mao (Normal)
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Excited): Succeeding you!
+Morgan_Portrait (Silhouette): Fufufu. That's Hiyori's job, not yours.
+update Mao (Excited)
 update Mao [animation="Tada" length="1"]
-Mao_Portrait (Normal): Please put this on display instead of my doodle!
-Morgan_Portrait (Silhouette): But it's a very pretty doodle?
-update Mao (Sad)
-Mao_Portrait (Sad): Uguu... But it's embarrassing.
-Morgan_Portrait (Silhouette): Not for me. Fufufu.
-update Mao (Angry)
-Mao_Portrait (Angry): Your majesty!
-[signal arg="{"card_game": "res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn"}"]
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Excited): Then I'm helping Hiyori succeed you!
+Mao_Portrait (Excited): Wait, no, I'm a super duper supreme overlord! I'm succeeding you myself!
+do Player.play_voice("boom")
+Mao_Portrait (Excited): I challenge you to a duel!
+Morgan_Portrait (Silhouette): Oh, is that so?
+update Morgan (Grin)
+update Morgan [animation="Tada" length="1"]
+Morgan_Portrait (Grin): Then I suppose I'd better take this seriously.
+do Player.set_event_flag("ending_reached")
+[signal arg="{"card_game": "res://Scenes/CardGame/EncounterScenes/QuestCombats/overlord_card_game.tscn"}"]
