@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://8127ei8vemkx"]
+
+[ext_resource type="StyleBox" uid="uid://bu7bbjmxl2l0o" path="res://Art/UI/PIPOYA/ButtonHoverPIPOYA.tres" id="1_0c36m"]
+[ext_resource type="StyleBox" uid="uid://ch8f5wse0q754" path="res://Art/UI/PIPOYA/ButtonDisabledPIPOYA.tres" id="1_2i1rt"]
+[ext_resource type="StyleBox" uid="uid://bwd5tfwr6h0ni" path="res://Art/UI/PIPOYA/ButtonNormalPIPOYA.tres" id="2_fmn6g"]
+[ext_resource type="StyleBox" uid="uid://cbbymdli7k1au" path="res://Art/UI/PIPOYA/ButtonPressedPIPOYA.tres" id="3_rj600"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_2i1rt")
+Button/styles/hover = ExtResource("1_0c36m")
+Button/styles/normal = ExtResource("2_fmn6g")
+Button/styles/pressed = ExtResource("3_rj600")

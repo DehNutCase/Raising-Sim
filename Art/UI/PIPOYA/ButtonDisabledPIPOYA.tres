@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ch8f5wse0q754"]
+
+[ext_resource type="Texture2D" uid="uid://bbis2ydktynft" path="res://Art/UI/PIPOYA/WindowBaseSet2-4/120/pipo-WindowBaseSet2a_09.png" id="1_cwv74"]
+
+[resource]
+texture = ExtResource("1_cwv74")
+modulate_color = Color(0.392157, 0.392157, 0.392157, 1)

@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bwd5tfwr6h0ni"]
+
+[ext_resource type="Texture2D" uid="uid://bbis2ydktynft" path="res://Art/UI/PIPOYA/WindowBaseSet2-4/120/pipo-WindowBaseSet2a_09.png" id="1_73404"]
+
+[resource]
+texture = ExtResource("1_73404")
