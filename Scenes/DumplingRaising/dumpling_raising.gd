@@ -397,4 +397,6 @@ func process_dumpling_daily_stats() -> void:
 	
 	Player.dumpling_stats.stats.full -= 15
 	Player.dumpling_stats.stats.clean -= 10
+	
+	Player.dumpling_stats.remaining_actions = Player.dumpling_stats.action_per_day
 	update_display()

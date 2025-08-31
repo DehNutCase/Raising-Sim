@@ -2702,7 +2702,7 @@ const quests = {
 		"requirements": {
 			"tower_level": 10,
 		},
-		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?\nTime Limit: Day 20",
+		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?\n\nTime Limit: Day 20",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2726,7 +2726,7 @@ const quests = {
 		"requirements": {
 			"tower_level": 20,
 		},
-		"description": "The first ten floors seemed easy enough, let's keep climbing. The goal is floor 20 this time.\nTime Limit: Day 30",
+		"description": "The first ten floors seemed easy enough, let's keep climbing. The goal is floor 20 this time.\n\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2753,7 +2753,7 @@ const quests = {
 				"art": 400,
 				},
 		},
-		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\nTime Limit: Day 21",
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\n\nTime Limit: Day 21",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2780,7 +2780,7 @@ const quests = {
 				"art": 800,
 				},
 		},
-		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\nTime Limit: Day 30",
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\n\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2806,7 +2806,7 @@ const quests = {
 			"tower_level": 20,
 			"stats": {"scholarship": 600},
 		},
-		"description": "Now that you have some magic cards, it's time to turn evil! Get your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game. Yes, this is definitely how to become an evil overlord, it's a method approved by her majesty!\nTime Limit: Day 30",
+		"description": "Now that you have some magic cards, it's time to turn evil! Get your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game. Yes, this is definitely how to become an evil overlord, it's a method approved by her majesty!\n\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2941,7 +2941,7 @@ const quests = {
 				"Tutoring": 1,
 				},
 		},
-		"description": "Hiyori asked if you could tutor (play with) her today. She's still grounded, but the palace is more than big enough to qualify as a dungeon, so there's plenty of places to play around.",
+		"description": "Hiyori asked if you could tutor (play with) her today. She's still grounded, but the palace is more than big enough to qualify as a dungeon, so there're plenty of places to play around.",
 		"rewards": {
 			"stats": {
 				"gold": 500,
@@ -3263,7 +3263,7 @@ const talents = {
 			"stamina_training": {
 				"bond": 1,
 			},
-			"speed_training": {
+			"agility_training": {
 				"bond": 1,
 			},
 		},
@@ -3426,9 +3426,36 @@ const talents = {
 		"description": "By unlocking the power of Anger, you get stronger whenever you get hit! It's awfully stressful to be angry, though.\n\nStart with an additional 3 stacks of Anger during duels.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element21_01.png",
 	},
+	"holy_sword_liberation" = {
+		"label": "Holy Sword (Liberation)",
+		"tier": 5, 
+		"cost": 5,
+		"max_stacks": 1,
+		"max_stats": {"attack": 100, "magic": 50, "agility": 50, "skill": 100, "defense": 50,},
+		"description": "The right to borrow a certain sword from her majesty's treasury. You don't know how to swing a sword properly, so borrowing this will only grant you passive bonuses.\n\nSince divine artifacts stop being divine artifacts when the god or goddess who made them dies, her majesty doesn't actually have as many of these as you might expect. Of course, she does have quite the collection of items that used to be divine artifacts.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/sword12_02.png",
+	},
+	"cursed_staff" = {
+		"label": "Cursed Staff",
+		"tier": 5, 
+		"cost": 5,
+		"max_stacks": 1,
+		"max_stats": {"max_mp": 150, "magic": 150, "resistance": 100,},
+		"description": "The right to borrow a certain staff from her majesty's treasury. Since the staff is cursed, it's better not to touch it directly. As a former divine artifact, its passive bonuses are quite good.\n\nThe product of an experiment to repower a former divine artifact via curses. Since usability was the main concern, it's not particularly powerful compared to what it might have been, but in exchange the curse is extremely light. Simply put, you won't be able to unequip this once you equip it. Of course, it's trivial for her majesty to remove the curse.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/weapon01_01.png",
+	},
+	"suspicious_staff" = {
+		"label": "Suspicious 'Staff'",
+		"tier": 5,
+		"cost": 5,
+		"max_stacks": 1,
+		"max_stats": {"attack": 150, "agility": 50, "skill": 100,},
+		"description": "The right to borrow a certain 'staff' from her majesty's treasury. Her majesty insists this is a staff whenever you ask her, something about being family friendly.\n\nIt doesn't come with any ammo, and you don't really have a way to get any yourself. On the plus side, just the passive effects from owning this 'staff' is already quite something.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gun_smg03_02.png",
+	},
 	"baron" = {
 		"label": "Baron",
-		"tier": 1, 
+		"tier": 6, 
 		"cost": 5,
 		"max_stacks": 1,
 		"description": "The management rights of a certain city.\n\nCurrently not implemented.",
@@ -3518,7 +3545,7 @@ const endings = {
 			},
 			"events": ["artist"],
 		},
-		"Description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
+		"description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
 		"timeline": "",
 	},
 	"meteor_fanatic": {
@@ -3532,7 +3559,7 @@ const endings = {
 			},
 			"lessons_completed": ["Artillerist Training (Meteor)"],
 		},
-		"Description": "Art is a meteor! In pursuit of the biggest bang, you rushed to learn how to summon flaming rocks from the sky. It's a little concerning that they teach spells like this in school.",
+		"description": "Art is a meteor! In pursuit of the biggest bang, you rushed to learn how to summon flaming rocks from the sky. It's a little concerning that they teach spells like this in school.",
 		"timeline": "",
 	},
 	"oddly_ordinary": {
@@ -3540,7 +3567,7 @@ const endings = {
 		"label": "Oddly Ordinary",
 		"requirements": {
 		},
-		"Description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending.",
+		"description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending.",
 		#TODO, update ending timeline,
 		"timeline": "EndingTimeline",
 	},

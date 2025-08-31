@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cu6e6xk2os3c3" path="res://Characters/Morgan/Images/003ff_Saint_Lady_B.png" id="7_xekfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq3b"]
-size = Vector2(400, 400)
+size = Vector2(400, 500)
 
 [node name="TowerLevel0" type="Control"]
 layout_mode = 3

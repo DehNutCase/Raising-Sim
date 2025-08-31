@@ -144,7 +144,7 @@ func _ready():
 		#Player.inventory.remove_item(item)
 		#Player.stats.max_hp = 1000
 		#print(Player.calculate_ending())
-		Dialogic.start("OverlordSuccess")
+		#Dialogic.start("OverlordSuccess")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -972,6 +972,7 @@ func check_and_play_daily_events() -> void:
 		played = true
 	
 	#TODO, fix these events
+	##START commented out section
 	#Note, this triggers at the last day of the month
 	#if Player.day == Constants.constants.days_in_month:
 		#Dialogic.start("Day30Event")
@@ -993,7 +994,7 @@ func check_and_play_daily_events() -> void:
 	#if Player.day == Constants.constants.days_in_month * 4 and Player.event_flags.get("class_change_information_event"):
 		#Dialogic.start("EndOfYearEvent")
 		#played = true
-	
+	##END
 	#TODO, add check for if class changed (either have exitpass *or* is class changed)
 	if !Player.event_flags.get('mission_information_event') and Player.event_flags.get('ExitPass') and !played:
 			played = true
@@ -1329,6 +1330,7 @@ func _change_day_state(state: states) -> void:
 					$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()
 					$"RightMenuContainer/MenuPanel/VBoxContainer/Demo".show()
 		states.BUSY:
+			day_state = states.BUSY
 			for button in get_tree().get_nodes_in_group("ActionButton"):
 				button.hide()
 		_:

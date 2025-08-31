@@ -31,6 +31,12 @@ Source: [itch.io : UI Mobile](https://verzatiledev.itch.io/ui-mobile)
 License: [CC BY 4.0](https://verzatiledev.itch.io/license)
 
 ### Images
+#### UI
+Author: [PIPOYA](https://pipoya.net/sozai)  
+Source: [アイコン画像](https://pipoya.net/sozai/assets/icon/icon-image/)
+License: [Terms of use](https://pipoya.net/sozai/terms-of-use/)
+
+### Images
 #### Backgrounds
 Author: [Background material shop](https://www.dlsite.com/home/circle/profile/=/maker_id/RG49639.html/?locale=en_US)  
 Source: [Dlsite : RG49639](https://www.dlsite.com/home/circle/profile/=/maker_id/RG49639.html/?locale=en_US)  

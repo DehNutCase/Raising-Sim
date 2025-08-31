@@ -160,6 +160,7 @@ func get_required_experience(l) -> int:
 	return int(pow(1.1, l) * 200)
 
 func gain_experience(amount: int) -> void:
+	var starting_level = Player.stats.level
 	if ("bonus_exp" in stats):
 		amount = amount * (1 + stats.bonus_exp/100.0)
 		amount = int(amount)
@@ -174,6 +175,8 @@ func gain_experience(amount: int) -> void:
 	stats.experience = experience
 	growth_data.append([experience, experience_required])
 	emit_signal("experience_gained", growth_data)
+	if Player.stats.level > starting_level:
+		display_toast("Leveled up from %d to %d!" % [starting_level, Player.stats.level])
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
