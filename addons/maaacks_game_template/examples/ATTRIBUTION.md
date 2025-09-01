@@ -42,6 +42,11 @@ Author: [Background material shop](https://www.dlsite.com/home/circle/profile/=/
 Source: [Dlsite : RG49639](https://www.dlsite.com/home/circle/profile/=/maker_id/RG49639.html/?locale=en_US)  
 
 ### Images
+#### Backgrounds
+Author: [kimlong lehoang](https://kimlonglehoang2.artstation.com/)  
+Source: [Artstation : 200 Anime Japan City & Countryside Landscape Pack 1](https://www.artstation.com/marketplace/p/Lm5z5/200-anime-japan-city-countryside-landscape-pack-1?utm_source=artstation&utm_medium=referral&utm_campaign=homepage&utm_term=marketplace)  
+
+### Images
 #### Enemy Art
 Author: [It Came From The Swamp](http://kb147.web.fc2.com/)  
 Source: [Dlsite : RG25185](https://www.dlsite.com/home/circle/profile/=/maker_id/RG25185.html/?locale=en_US)  

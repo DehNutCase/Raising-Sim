@@ -22,8 +22,8 @@ const jobs = {
 		},
 		"description": "Helping out at a traditional potato farm.\nSince modern agriculture is heavily magicalized, this is more of a hobby than a real job.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/ingredients_hempbag01_03.png",
-		#TODO, add more farmwork timelines
 		"timelines": ["Farmwork0", "Farmwork1"],
+		"background": "res://Art/Background/kimlong lehoang/T_Japan_Countryside_05.PNG",
 	},
 	'Housework': {
 		'stats': {
@@ -47,6 +47,7 @@ const jobs = {
 		"description": "Technically, this is your job.\nYou don't get paid extra just for doing your job, unfortunately.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes05_01.png",
 		"timelines": ["Housework0", "Housework1", "Housework2"],
+		"background": "res://Art/Background/NoranekoGames/Futon_Room.png",
 	},
 	'Carpentry': {
 		'stats': {
@@ -71,6 +72,7 @@ const jobs = {
 		"description": "It might be better to call this 'hauling' than 'carpentry.'\nIt's mostly just carrying planks around for the actual carpenter.\nThis kind of menial work is better left to golems, but it's good exercise.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/wood.png",
 		"timelines": ["Carpentry0", "Carpentry1"],
+		"background": "res://Art/Background/Background material shop/bg014a.jpg",
 	},
 	'Tutoring': {
 		'stats': {
@@ -97,6 +99,7 @@ const jobs = {
 		"description": "A good way to be paid while doing classwork.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/note01_04.png",
 		"timelines": ["Tutoring0", "Tutoring1"],
+		"background": "res://Art/Background/UncleMugen/library.webp",
 	},
 	"Wizard's Apprentice": {
 		'stats': {
@@ -122,6 +125,7 @@ const jobs = {
 		"description": "Helping out at a certain alchemist's workshop.\nSurprisingly, not as smelly as one might expect, but a busy and stressful job nontheless.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/alchemy01_01.png",
 		"timelines": ["WizardsApprentice0", "WizardsApprentice1"],
+		"background": "res://Art/Background/Background material shop/Edited/bg014a_cauldron.png",
 	},
 	'Acolyte': {
 		'stats': {
@@ -148,6 +152,7 @@ const jobs = {
 		"description": "General cleaning around the local church.\nOccasionally the head priest lets you help with making holy water.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/clothes06_02.png",
 		"timelines": ["Acolyte0", "Acolyte1"],
+		"background": "res://Art/Background/Background material shop/bg030a.jpg",
 	},
 	'Hunting': {
 		'stats': {
@@ -171,6 +176,7 @@ const jobs = {
 		"description": "Not as bloody as you might expect, since it's Dumpling hunting.\nTranquilizer bolts are provided, but they don't really make a difference against Dumplings.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/weapon02_01.png",
 		"timelines": ["Hunting0", "Hunting1"],
+		"background": "res://Art/Background/Background material shop/Edited/BlessedPlains.png",
 	},
 	'Cook': {
 		'stats': {
@@ -198,6 +204,7 @@ const jobs = {
 		"description": "Helping out at the palace kitchen. Technically part of your actual job, but you do get paid extra for this.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/book03_01.png",
 		"timelines": ["Cook0", "Cook1"],
+		"background": "res://Art/Background/NoranekoGames/Edited/Restaurant_B.png",
 	},
 	'Doodle': {
 		'stats': {
@@ -215,6 +222,7 @@ const jobs = {
 		"description": "Her majesty is willing to pay for your doodles. That said, it might be a good idea to reconsider. Do you really want her to have a collection of your earliest, ugliest works? She'll happily put them on display, you know?",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_04.png",
 		"timelines": ["Doodle0", "Doodle1"],
+		"background": "res://Art/Background/Background material shop/bg019a.bmp",
 	},
 	'Painting': {
 		'stats': {
@@ -233,6 +241,7 @@ const jobs = {
 		"description": "Officially, your paintings are being sold on the open market. Unofficially, her majesty is collecting most of them. Hopefully she won't use them to make fun of you later.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/palette01_01.png",
 		"timelines": ["Painting0"],
+		"background": "res://Art/Background/Background material shop/bg007a.bmp",
 	},
 	'Court Painter': {
 		'stats': {
@@ -250,6 +259,7 @@ const jobs = {
 		'proficiency_gain': 25,
 		"description": "Unsurprisingly, her majesty pays quite well for commissioned works. Hopefully the request to paint the ceilings isn't just another prank.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/paint01_08.png",
+		"background": "res://Art/Background/Background material shop/bg008a.jpg",
 	},
 	'Preach': {
 		'stats': {
@@ -275,6 +285,7 @@ const jobs = {
 		},
 		"description": "The job is more like handing out fliers than actual missionary work. Try not to bother anyone.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/rosary_02.png",
+		"background": "res://Art/Background/kimlong lehoang/T_Japan_Urban_14.PNG",
 	},
 	'Teaching Assistant': {
 		'stats': {
@@ -295,6 +306,7 @@ const jobs = {
 		'proficiency_gain': 20,
 		"description": "Helping out at the academy.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/eraser01_02.png",
+		"background": "res://Art/Background/UncleMugen/uncle mugen school classroom 01.webp",
 	},
 	'Lecture': {
 		'stats': {
@@ -317,6 +329,7 @@ const jobs = {
 		'proficiency_gain': 20,
 		"description": "The fact that you could get a classroom to teach can only be attributed to nepotism. That said, you still need to teach properly to get paid.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/file01_04.png",
+		"background": "res://Art/Background/UncleMugen/uncle mugen school classroom 01.webp",
 	},
 	'Architect': {
 		'stats': {
@@ -339,6 +352,7 @@ const jobs = {
 		'proficiency_gain': 20,
 		"description": "The hardhat isn't really necessary, but it makes you feel more professional.",
 		"icon": "res://Art/Mori no oku no kakurezato/Job Icons/Resized/helmet.png",
+		"background": "res://Art/Background/UncleMugen/uncle mugen school classroom 01.webp",
 	},
 }
 

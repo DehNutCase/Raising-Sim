@@ -44,6 +44,9 @@ extends Control
 
 @onready var popup = %Popup
 
+@onready var working_animation_container = %WorkingAnimationContainer
+@onready var working_animation = %WorkingAnimation
+
 signal card_game_finished
 var card_game_victory = false
 var expedition_failed = false
@@ -297,8 +300,9 @@ func do_action(action_type:String, action_name: String):
 				Dialogic.start(timeline)
 				await Dialogic.timeline_ended
 				await(get_tree().create_timer(.5).timeout)
-				
+			
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
+		play_work_animation(action_type, action_name, true)
 		process_stats(action_stats, icon)
 		if Constants[action_type][action_name].get("proficiency"):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain
@@ -310,10 +314,24 @@ func do_action(action_type:String, action_name: String):
 	else:
 		#Change frames to skip if you add other failure motions
 		get_tree().call_group("Live2DPlayer", "job_motion", false, 2.0)
+		play_work_animation(action_type, action_name, false)
 		if "stress" in action_stats:
 			process_stats({"stress": action_stats["stress"]}, icon)
 		if Constants[action_type][action_name].get("proficiency"):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain/2
+	
+
+func play_work_animation(action_type: String, action_name: String, success:bool) -> void:
+	if action_type == "jobs":
+		working_animation_container.show()
+		var walk_background = Constants[action_type][action_name].background
+		var job_texture = Constants[action_type][action_name].icon
+		var type = "failure"
+		if success:
+			type = "success"
+		working_animation.work_animation_sprite.walk_animation(type, walk_background, job_texture)
+		await get_tree().create_timer(4).timeout
+		working_animation_container.hide()
 	
 func background_transition(time:String = "morning"):
 	var bg_holder:TextureRect= $Ui/BackgroundLayer/BackgroundHolder
@@ -1163,7 +1181,7 @@ func play_bedtime_event():
 				Player.bedtime_event_number += 1
 
 func _on_card_button_pressed(card: CardResource):
-	if popup.visible:
+	if popup.is_visible_in_tree():
 		return
 	popup.set_text("[center]Sell %s for %dG?[center]"%[card.id, card.price]) 
 	popup.show()
@@ -1176,7 +1194,7 @@ func _on_card_button_pressed(card: CardResource):
 
 func _on_talent_button_pressed(talent: String):
 	var talent_data = Constants.talents.get(talent)
-	if popup.visible or !talent_data:
+	if popup.is_visible_in_tree() or !talent_data:
 		return
 	popup.set_text("[center]Pay %d talent point(s) to rank up %s?" % [talent_data.cost, talent_data.label])
 	popup.show()
@@ -1262,7 +1280,7 @@ func _on_talent_button_pressed(talent: String):
 			Player.dumpling_stats.remaining_actions += talent_data.dumpling_action_per_day
 
 func _on_play_ending_button_pressed():
-	if popup.visible:
+	if popup.is_visible_in_tree():
 		return
 	popup.set_text("Are you sure? (Playing the ending will delete the current save)") 
 	popup.show()

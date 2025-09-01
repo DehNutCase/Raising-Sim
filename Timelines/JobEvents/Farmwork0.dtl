@@ -1,4 +1,4 @@
-[background arg="res://Art/Background/UncleMugen/glorious_ricefield_day.webp" fade="0.0"]
+[background arg="res://Art/Background/kimlong lehoang/T_Japan_Countryside_05.PNG" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Tada" length="1"]

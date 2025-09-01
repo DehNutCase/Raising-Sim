@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bulbrstb1aw0l"]
+[gd_scene load_steps=5 format=3 uid="uid://bulbrstb1aw0l"]
 
 [ext_resource type="Texture2D" uid="uid://dylcohsvg3spb" path="res://Art/Background/UncleMugen/Classroom_04_day.webp" id="1_2iu7q"]
+[ext_resource type="Script" path="res://Scenes/Working/WorkingAnimation.gd" id="1_f7rlb"]
 [ext_resource type="Texture2D" uid="uid://cwvmnxkoho24o" path="res://Characters/Mao/Images/exp_02_000.png" id="2_le5yg"]
 [ext_resource type="Script" path="res://Scenes/Working/MaoSprite.gd" id="3_4i21k"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f7rlb")
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -23,11 +25,43 @@ grow_vertical = 2
 texture = ExtResource("1_2iu7q")
 stretch_mode = 5
 
-[node name="MaoSprite" type="Sprite2D" parent="."]
-position = Vector2(300, 800)
+[node name="ResultSprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 3
+
+[node name="WorkAnimationSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(300, 700)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_le5yg")
 offset = Vector2(0, -300)
 script = ExtResource("3_4i21k")
 rotation_frequency = 6.0
 amp = 0.1
+
+[node name="JobIcon" type="TextureRect" parent="WorkAnimationSprite"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -728.0
+offset_top = -900.0
+offset_right = -472.0
+offset_bottom = -644.0
+grow_horizontal = 2
+stretch_mode = 5

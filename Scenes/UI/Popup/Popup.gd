@@ -8,7 +8,7 @@ signal button_clicked(value: bool)
 
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel") and visible:
+	if event.is_action_pressed("ui_cancel") and is_visible_in_tree():
 		_on_no_button_pressed()
 		get_viewport().set_input_as_handled()
 

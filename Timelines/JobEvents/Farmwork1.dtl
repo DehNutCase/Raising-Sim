@@ -1,10 +1,10 @@
-[background arg="res://Art/Background/UncleMugen/glorious_ricefield_day.webp" fade="0.0"]
+[background arg="res://Art/Background/kimlong lehoang/T_Japan_Countryside_05.PNG" fade="0.0"]
 join Mao (Normal) 1
 join Keith (Normal) 3 [ mirrored="true"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
-[signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): Good morning, boss!
 update Keith (Normal)
 Keith_Portrait (Normal): Good morning. Is everything going well?
