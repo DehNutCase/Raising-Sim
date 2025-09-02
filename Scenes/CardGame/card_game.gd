@@ -214,6 +214,7 @@ func exit_combat() -> void:
 	Player.in_tower = false
 	Player.in_mission = false
 	Player.in_expedition = false
+	Player.card_game_player = CardGamePlayer.new()
 	get_tree().call_group("Main", "exit_card_game")
 	queue_free()
 	#TODO, modify for new card game scene
