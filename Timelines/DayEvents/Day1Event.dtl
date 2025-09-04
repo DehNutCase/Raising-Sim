@@ -2,16 +2,20 @@
 join Mao (Normal) 1
 join Rice (Normal) 2 [animation="Instant In Or Out" length="0"]
 [history action="clear"]
+#Due to the way main scene is coded, Mao will already play a greeting voice when the game is launched and this timeline starts playing
 Mao_Portrait (Normal): Hey Rice, happy New Year's.
 Rice_Portrait (Normal): Sure. Here's your belated birthday present.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Um, didn't you already give me your present yesterday?
 Rice_Portrait (Normal): That was your birthday present. This is your belated birthday present.
 Rice_Portrait (Normal): And it's not from me, her majesty asked me to give it to you on New Year's. Please take a look. You can only take one, so pick the deck you like.
 update Mao [animation="Tada"]
 update Mao (Excited)
+do Player.play_voice("happy")
 Mao_Portrait (Excited): Oh wow, spell cards! It's time to duel! Teehee.
 update Mao (EyesClosed)
+do Player.play_voice("hmm")
 Mao_Portrait (EyesClosed): Hmm...
 label Deck_Choice
 - My deck, [Brick Hand Accident], has no weaknesses!
@@ -20,6 +24,7 @@ label Deck_Choice
 	Rice_Portrait (Normal): In my opinion, this deck is a little too much for you at the moment, but it's probably the strongest of your choices.
 	Rice_Portrait (Normal): If you want to handle it properly, you'll need to work on your mana capacity, skill, and scholarship.
 	Rice_Portrait (Normal): Alternatively, you can focus on raising your agility, which should allow you to win most duels on the first turn.
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): Umu!
 	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/brick_hand_accident.tres")
 - This deck full of cantrips looks fun [Prestidigitation]
@@ -32,6 +37,7 @@ label Deck_Choice
 	update Mao (Normal)
 	Rice_Portrait (Normal): Hmm. To put it nicely, this deck has the most potential. To put it bluntly, it's the weakest.
 	Rice_Portrait (Normal): Considering it's meant to be a birthday present, her majesty added a somewhat special card, but I would personally recommended you pick something else.
+	do Player.play_voice("happy")
 	Mao_Portrait (Normal): Teehee, tell her thanks for me.
 	do Player.set_deck("res://Scenes/CardGame/Characters/Mao/Decks/doodle.tres")
 Rice_Portrait (Normal): Are you sure about this choice?
@@ -41,13 +47,17 @@ Rice_Portrait (Normal): Are you sure about this choice?
 Rice_Portrait (Normal): One more thing. I'll be escorting you from today onwards.
 Rice_Portrait (Normal): I'll stay out of sight unless something serious happens, so you can just pretend I'm not here.
 update Mao (Excited)
+do Player.play_voice("proud")
 Mao_Portrait (Excited): Oh wow, a bodyguard. I guess I'm someone important now. But why?
 update Mao (Normal)
 Rice_Portrait (Normal): I didn't ask. Now if you don't mind, it's time for me to start working.
 leave Rice
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Don't you have a---
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Wait, she vanished!?
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): (Why is everyone from the palace a weirdo?)

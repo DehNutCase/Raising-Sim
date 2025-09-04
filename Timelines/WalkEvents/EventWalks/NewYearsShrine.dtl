@@ -10,9 +10,20 @@ Mao_Portrait (Normal): Teehee. I hope I get good luck this year.
 [signal arg="{"stats": {"stress": -10, }}"]
 Mao_Portrait (Normal): (Hmm. I wonder if I should make a New Year's Resolution?)
 - I'll study hard this year!
-	Mao_Portrait (Normal): (Umu!)
+	Mao_Portrait (Normal): Umu!
 	[signal arg="{"start_quest": "good_student"}"]
 - Since I finally got a spellbook, let's climb the tower
 	Mao_Portrait (Normal): Teehee. Behold my power!
 	[signal arg="{"start_quest": "tower_climber"}"]
+- Art is my true calling
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): I wish to be a better artist this year.
+	Rice_Portrait (Normal): As far as I know, this shrine doesn't have any wish granting properties.
+	update Mao (Angry)
+	Mao_Portrait (Angry): Just play along, geez.
+	[signal arg="{"start_quest": "budding_artist"}"]
+- Super Duper Ultra Supreme Overlord!
+	update Mao (EyesClosed)
+	Mao_Portrait (EyesClosed): (Time to turn evil! Teehee.)
+	[signal arg="{"start_quest": "overlord"}"]
 [update_position action="reset_all" time="0.0"]
