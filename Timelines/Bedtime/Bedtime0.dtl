@@ -4,18 +4,22 @@ do Player.play_song("sleep")
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+do Player.play_voice("amazing")
 Mao_Portrait (Normal): Yay, story time!
 Rice_Portrait (Normal): Try not to get too excited. It'll be a problem if you couldn't sleep later.
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): I'll just take the day off!
 Rice_Portrait (Normal): I see.
 Rice_Portrait (Normal): Do you have a specific story you want to hear?
 - The one about the little goddess, please
 	Rice_Portrait (Normal): Do you remember where we left off?
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): It was just after she granted the fisherman's wish a second time!
 	Rice_Portrait (Normal): Very well.
 	Rice_Portrait (Normal): On his return, the fisherman found his home replaced with a castle of stone and iron. It was vast and imposing, standing proudly against the stormy sky.
 	Rice_Portrait (Normal): But still, he wasn't satisfied.
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Rice_Portrait (Normal): (I suppose when they called her the 'Littlest' Goddess, they weren't referring to her rank as a diety.)
 	Rice_Portrait (Normal): (Given the scale of her wishes, she's at least mid-rank. Well, I probably shouldn't be taking this story seriously.)
 	Rice_Portrait (Normal): What was the point of a castle, he thought, if he had no servants to wait on him?
@@ -36,19 +40,23 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	[signal arg="{"stats": {"stress": -10,}}"]
 - Do you have any personal stories?
 	Rice_Portrait (Normal): Like I said before, I don't believe my experiences are particularly interesting. But what did you want to hear about?
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Haven't you gone on a lot of adventures before?
 	Rice_Portrait (Normal): Adventures? I did wander around Albion for a few years, but the parts of that I found enjoyable would be quite boring to you.
 	Rice_Portrait (Normal): I would be talking about things like a new bookstore that opened in an out of the way city, an interesting lecture I happened to attend, and so on.
 	Rice_Portrait (Normal): Why did you think I went on adventures?
+	do Player.play_voice("because")
 	Mao_Portrait (Normal): You just seem like that kind of person!
 	Rice_Portrait (Normal): I see.
 	Rice_Portrait (Normal): I still believe you should ask for something else next time. But I'll talk about the time I climbed Tara's Tower of Light with my best friend.
 	Rice_Portrait (Normal): This was back when I lived in Tara, so it wasn't an adventure in the sense of a journey, but dungeon delving and tower climbing can be considered archetypal adventures, I think.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("amazing")
 	Mao_Portrait (Normal): Yay!
 	Rice_Portrait (Normal): It was just after we graduated. Lucca, being the way she is, didn't want to settle down at all, so she came to me with an offer.
 	Rice_Portrait (Normal): (I should probably leave out the part where we almost got total party killed. Or perhaps I should emphasize it? So Mao doesn't go around thinking dungeons and towers are fun places to play. Hmm.)
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Rice_Portrait (Normal): (I'll think about it later. Mao would probably get bored of this before we reach the end.)
 	Rice_Portrait (Normal): She wanted to climb to the top of the tower, or at least a floor where nobody had been before. She was looking for party members.
 	Rice_Portrait (Normal): My family didn't have any particular expectations for me, and I didn't have any personal plans, so I accepted.
@@ -60,12 +68,14 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	Rice_Portrait (Normal): In other words, we needed to either recruit some top level combat power, which definitely wasn't happening, or train up the riff raff we did manage to recruit.
 	Rice_Portrait (Normal): So I ended up the luggage carrier, and she ended up being the 'black' mage. Supportive spells would zero out experience gains, but you could apply curses without being considered a party member for experience purposes.
 	update Mao (Normal)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Normal): She made you carry luggage!?
 	Rice_Portrait (Normal): You should be trying to sleep. But yes, I was the porter. I didn't particularly mind the job.
 	Rice_Portrait (Normal): Her reason was quite interesting as well, according to her, the porter should be either the strongest or second strongest person in the party, since they needed to be able to keep the luggage and themselves safe.
 	Rice_Portrait (Normal): It's entirely contrary to the common sense that the porter should be the most disposable member of the party, but there was a certain logic to it.
 	Rice_Portrait (Normal): (Well, going against common sense is part of what led to the mess later, but that's neither here nor there.)
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Rice_Portrait (Normal): Anyway, the plan was that the two of us would take on supporting roles while carefully raising up any party members we managed to recruit.
 	Rice_Portrait (Normal): Neither of us were any good at supporting, Lucca even did some last minute cramming just to learn some basic curses, but she was quite insistent on having a 'proper' party rather than just the two of us.
 	Rice_Portrait (Normal): It ended up working well enough, we recruited a swordsman, an archer, and even a priest. The swordsman got a lot of jealous looks whenever we were in town, since everyone but him were girls.

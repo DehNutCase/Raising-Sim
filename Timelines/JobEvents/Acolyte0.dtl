@@ -3,32 +3,42 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Shake X" length="4"]
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): ~Lalala, sweeping the floor.~
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Hey, Rice, how come we have lava and gargoyles in a church?
 Mao_Portrait (Normal): They look great and all, but I thought churches are supposed to be, I don't know, angelic or something?
 Mao_Portrait (Normal): And I think that's a throne over there. Dunno why anyone would want to sit in a chair that's hotter than a frying pan, though.
 Rice_Portrait (Normal): The priest here has strange tastes. Since he does his job properly, there's really nothing wrong with decorating his church the way he likes, but I'd advise against emulating him.
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): Okie dokie.
 - Do you know how to make holy water?
 	Rice_Portrait (Normal): I need the recipe in front of me, but that's not difficult when we have intranet access.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee. So you can't just whip up a few bottles if ghosts suddenly pop out?
 	Rice_Portrait (Normal): If I had to, I believe I could. But if all you wanted to do was exorcise them, punching them is sufficient, most of the time.
 	update Mao (Surprised)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Surprised): Really?
 	Rice_Portrait (Normal): Contingent on having enough mana and mental fortidude.
 	update Mao (Normal)
+	do Player.play_voice("oh...")
 	Mao_Portrait (Normal): Oh. I'll be counting on you to deal with any ghosts, then. Teehee.
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
 - So do you know what the throne is about?
 	Rice_Portrait (Normal): No. But I can tell you that it's a replica of the one in the Demon King's castle.
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): That explains why it doesn't look anything like the one in the palace, I guess.
+	do Player.play_voice("looks_delicious")
 	Mao_Portrait (Normal): I wonder if the head priest would get mad if I made fried eggs in here. I heard volcano eggs taste great.
 	Mao_Portrait (Normal): *Drools*
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
 - By the way, aren't you a nun or something?
 	Rice_Portrait (Normal): No.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): But don't you use a lot of holy magic?
 	Rice_Portrait (Normal): It's not particularly difficult to learn holy magic. Although the base output is below average, enemies that resist or absorb holy magic are quite rare. It's comparable to non-elemental spells in that respect.
 	Rice_Portrait (Normal): Due to my circumstances, holy is slightly more efficient than non-elemental, that's all.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): The circumstance being the fact you're a nun? Teehee.
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]

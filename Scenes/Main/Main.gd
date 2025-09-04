@@ -147,7 +147,7 @@ func _ready():
 		#Player.inventory.remove_item(item)
 		#Player.stats.max_hp = 1000
 		#print(Player.calculate_ending())
-		#Dialogic.start("OverlordSuccess")
+		#Dialogic.start("Acolyte1")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass

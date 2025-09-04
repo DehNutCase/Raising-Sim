@@ -4,16 +4,20 @@ do Player.play_song("sleep")
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+do Player.play_voice("amazing")
 Mao_Portrait (Normal): Teehee. Bedtime!
 Rice_Portrait (Normal): I take it you want a bedtime story again?
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (Let's see, this time I want...)
 - Littlest Goddess
 	Rice_Portrait (Normal): The small elf thought and thought, but even after a long time, she didn't know what to wish for. So she asked if the goddess wanted anything.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Wait! What happened to the fisherman from last time?
 	Rice_Portrait (Normal): Were you not awake when I read that part? How much do you remember?
 	Rice_Portrait (Normal): (Personally, I think it would be better if we skipped it.)
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): He wanted to be called 'your majesty'!
 	Rice_Portrait (Normal): I'll continue from there, then.
 	Rice_Portrait (Normal): So have you wished, said the goddess, so it shall be.
@@ -41,6 +45,7 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): (Memory manipulation or illusion spells would be the best way to replicate what she did for the fisherman's wishes.)
 	Rice_Portrait (Normal): (I should stop thinking so seriously about this.)
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Rice_Portrait (Normal): And the fisherman returned to his home, no longer a shack, a mansion, a palace, or even a castle. His estate was now the world's tallest peak, and his home its greatest temple.
 	Rice_Portrait (Normal): There he sat, overlooking the world from on high, ruling over not just the world, but the sun, the moon, and the stars as well.
 	Rice_Portrait (Normal): But still, he was not satisfied.
@@ -56,10 +61,12 @@ Mao_Portrait (Normal): (Let's see, this time I want...)
 	Rice_Portrait (Normal): A normal party would do something like going to a tavern together, I suppose. To build camaraderie and review everyone's performance for the day.
 	Rice_Portrait (Normal): We did do that sometimes, but most of the time Lucca and I went off to the simulators instead. Our levels were still quite a bit higher than the rest of the party, you see, so we had to train by ourselves.
 	update Mao (Excited)
+	do Player.play_voice("amazing")
 	Mao_Portrait (Excited): Simulator?
 	Rice_Portrait (Normal): You should be trying to sleep, so please don't get too excited.
 	update Mao [animation="Tada" length="1"]
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Mao_Portrait (EyesClosed): I'll fall asleep right now!
 	Rice_Portrait (Normal): Anyway, the academy's simulator is one of the marvels of modern magecraft. It could near perfectly replicate anyone in its database, and the combat is real enough that you even get experience for it.
 	Rice_Portrait (Normal): Which meant it was also quite dangerous, and there are occasional fatalities. But you could reduce the risks by adding yourself to the database and having your simulation fight your intended target and observing the fight beforehand.

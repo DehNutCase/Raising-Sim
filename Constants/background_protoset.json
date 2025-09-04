@@ -61,7 +61,7 @@
 	},
 	"bottle_of_spring_water": {
 		"daily_stats": "{\"max_mp\": 1,}",
-		"description": "Spring Water you bottled yourself. Not particularly magical, but quite tasty and refreshing nontheless.\n\nDrinking it fills one with courage\n...Or so you say.",
+		"description": "Spring Water you bottled yourself. Not particularly magical, but quite tasty and refreshing nontheless.\n\nDrinking it fills one with courage.\n...Or so you say.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/potion3_01.png",
 		"monthly_stats": "{}",
 		"name": "Bottle of Spring Water",

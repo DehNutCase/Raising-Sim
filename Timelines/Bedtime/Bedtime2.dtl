@@ -4,8 +4,11 @@ do Player.play_song("sleep")
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Cheers!
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (Let's see, this time I want...)
+#TODO, unfinished, finish
 - Littlest Goddess
 	Rice_Portrait (Normal): The small elf thought and thought, but even after a long time, she didn't know what to wish for. So she asked if the goddess wanted anything.
 	update Mao [animation="Tada" length="1"]

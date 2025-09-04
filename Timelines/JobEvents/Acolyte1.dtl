@@ -10,36 +10,44 @@ join Martin (Tired) 3 [ mirrored="true"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): Good morning, Father Martin! What kind of dark and dastardly ritual are we doing today?
 update Martin [animation="Tada" length="4"]
 update Martin (Tired)
 Martin_Portrait (Tired): *Yawn* Sorry, did you say something? I was up late last night.
 Martin_Portrait (Tired): Anyhoo, please help me bottle some water, we'll be making holy water today.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Okie dokie.
 - I always wanted to ask this, but how come we can't just use tap water?
 	Martin_Portrait (Tired): *Yawn* We can. At least in the capital, there's not much difference between using spring water or tap water.
 	Martin_Portrait (Tired): But what can you do if people pay more for spring water?
+	do Player.play_voice("really?")
 	Mao_Portrait (Normal): Can't you just lie?
 	update Martin (Frown)
 	Martin_Portrait (Frown): Young lady.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee.
 	[signal arg="{"stats": {"scholarship": 5, "max_mp": 5, "magic": 5, }}"]
 - Wouldn't it be faster if turned everything into holy water before bottling?
 	Martin_Portrait (Tired): I don't have that kind of mana.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): What does mana have to do with holy water? Isn't holy water supposed to be a miracle or something?
 	Martin_Portrait (Tired): *Yawn* Maybe that's how they do it elsewhere, but it's not much different from purifying water with mana here.
 	Mao_Portrait (Normal): Oh. What makes it holy, then?
-	Martin_Portrait (Tired): *Yawn* Maybe that's how they do it elsewhere, but it's not much different from purifying water with mana here.
+	Martin_Portrait (Tired): Holy water has a strictly defined set of properties, purification, sanctification, resistance to corruption and so on. Anything that meets those requirements is holy water.
 	Martin_Portrait (Tired): I believe there are even alchemists working on automated setups that could mass produce bottled holy water.
 	update Mao (Sad)
+	do Player.play_voice("oh no")
 	Mao_Portrait (Sad): Oh no. Are we going to go broke?
 	Martin_Portrait (Tired): Hmm? Ah, there's no need to worry. The church won't go under even if we stop selling holy water entirely.
 	update Mao [animation="Tada" length="1"]
 	update Mao (Normal)
+	do Player.play_voice("amazing")
 	Mao_Portrait (Normal): Yay.
 	[signal arg="{"stats": {"scholarship": 5, "max_mp": 5, "magic": 5, }}"]
 - Can I take a bottle home? [if !Player.background_inventory.has_item_with_prototype_id("bottle_of_spring_water")][else="hide"]
 	Martin_Portrait (Tired): Of the water here? Hmm, sure.
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): I'll pay for it!
 	Martin_Portrait (Tired): There's no need for that.
 	[signal arg="{"stats": {"stress": -10,}, "background": "bottle_of_spring_water"}"]
