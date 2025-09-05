@@ -4,13 +4,13 @@ do Player.play_song("sleep")
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
-do Player.play_voice("amazing")
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee. Bedtime!
 Rice_Portrait (Normal): I take it you want a bedtime story again?
 do Player.play_voice("hmm")
 Mao_Portrait (Normal): (Let's see, this time I want...)
 - Littlest Goddess
-	Rice_Portrait (Normal): The small elf thought and thought, but even after a long time, she didn't know what to wish for. So she asked if the goddess wanted anything.
+	Rice_Portrait (Normal): The small elf thought and thought, but even after a long time, she didn't know what to wish for. So she asked the goddess if she wanted anything.
 	update Mao [animation="Tada" length="1"]
 	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Wait! What happened to the fisherman from last time?

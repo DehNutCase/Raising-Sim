@@ -3,53 +3,67 @@ join Mao (Normal) 1
 do Player.play_song("sleep")
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("amazing")
 Mao_Portrait (Normal): Yay, bedtime!
 Mao_Portrait (Normal): Hey, Rice, are you still ignoring me?
 Rice_Portrait (Normal): I never was.
 - Can you tell me a bedtime story?
 	Rice_Portrait (Normal): Hmm.
 	update Mao (Sad)
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Sad): Is that not okay?
 	Rice_Portrait (Normal): It's a perfectly reasonable request. Simply unexpected.
 	update Mao (Excited)
+	do Player.play_voice("amazing")
 	Mao_Portrait (Excited): Yay!
 	update Mao (Normal)
 	Rice_Portrait (Normal): (I'll check for childrens' books in the intranet library.)
 	Rice_Portrait (Normal): "The Littlest Goddess" seems appropriate, so I'll read this one.
+	do Player.play_voice("really?")
 	Mao_Portrait (Normal): Aww. No personal stories?
 	Rice_Portrait (Normal): In my opinion, my personal experiences aren't appropriate for bedtime stories. Nor are they particularly interesting.
+	do Player.play_voice("sure")
 	Mao_Portrait (Normal): If you say so.
 	Rice_Portrait (Normal): I'll go ahead and get started. "Long ago and far away, in a kingdom by the sea, there was a small wooden shrine..."
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Rice_Portrait (Normal): (I wonder how I got roped into being a babysitter. Then again, the fact we have the leeway to have me babysit should be a good thing.)
 	Rice_Portrait (Normal): (I'll keep reading for a while. I should check how much she remembers tomorrow in case she asks me for another bedtime story.)
 	[signal arg="{"stats": {"stress": -5,}}"]
 - How come I have to go to school?
 	Rice_Portrait (Normal): You don't have to.
 	update Mao (Surprised)
+	do Player.play_voice("really?")
 	Mao_Portrait (Surprised): Should you really be saying that?
 	Rice_Portrait (Normal): You'll have to take remedial classes over the summer if you don't finish at least your Core courses, but you're free to drop all your classes and skive.
 	update Mao (Normal)
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): I guess I should work hard for my summer vacation.
 	Rice_Portrait (Normal): There's nothing stopping you from ditching the remedial classes as well.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Should I tell her majesty you're a bad influence?
 	Rice_Portrait (Normal): The worst grade I've ever gotten in school is second.
 	update Mao (EyesClosed)
+	do Player.play_voice("oh...")
 	Mao_Portrait (EyesClosed): Must, *yawn*, must've been a small school.
 	Mao_Portrait (EyesClosed): So do you have any advice for me?
 	Rice_Portrait (Normal): Learn how to learn first. General Education is a good place to start.
+	do Player.play_voice("good_night")
 	Mao_Portrait (EyesClosed): *Yawn*
 	[signal arg="{"stats": {"scholarship": 5,}}"]
 - So when do you sleep, anyway?
 	Rice_Portrait (Normal): I'm technically off-duty right now.
 	update Mao (Normal)
+	do Player.play_voice("oh!")
 	Mao_Portrait (Normal): Am I keeping you from bed time? I'll fall asleep as fast as I can.
 	Rice_Portrait (Normal): Sure.
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Mao_Portrait (EyesClosed): Can you sing me a lullaby? Teehee.
 	Rice_Portrait (Normal): I'll refuse. But I can play some music if you'd like.
+	do Player.play_voice("oh...")
 	Mao_Portrait (EyesClosed): You know how to play an instrument?
-	Rice_Portrait (Normal): To clarify, I was talking about a spell.
+	Rice_Portrait (Normal): To clarify, I was talking about a music spell.
 	Mao_Portrait (EyesClosed): Oh. *Yawn* Teach me later?
 	[signal arg="{"stats": {"stress": -5,}}"]
 update Mao (EyesClosed)

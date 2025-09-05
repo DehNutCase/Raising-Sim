@@ -58,15 +58,15 @@ Rice_Portrait (Normal): Do you have a specific story you want to hear?
 	update Mao (EyesClosed)
 	do Player.play_voice("good_night")
 	Rice_Portrait (Normal): (I'll think about it later. Mao would probably get bored of this before we reach the end.)
-	Rice_Portrait (Normal): She wanted to climb to the top of the tower, or at least a floor where nobody had been before. She was looking for party members.
+	Rice_Portrait (Normal): She wanted to climb to the top of the tower, or at least a floor where nobody had been before. So she was looking for party members.
 	Rice_Portrait (Normal): My family didn't have any particular expectations for me, and I didn't have any personal plans, so I accepted.
 	Rice_Portrait (Normal): Personally, I thought the two of us were more than enough for an Ascension Party, but she wanted to make a 'proper' one, whatever that meant.
 	Rice_Portrait (Normal): So we posted a few recruitment requests while doing some basic commissions in the Tower's lower levels.
-	Rice_Portrait (Normal): The commissions paid surprisingly well, considering how easy they were. But then again, most academy graduates have better things to do than muck around the tower, and most people would be risking their lives even in the lowest levels.
+	Rice_Portrait (Normal): The commissions paid surprisingly well, considering how easy they were. But then again, most academy graduates have better things to do than muck around the tower, and most ordinary people would be risking their lives even in the lowest levels.
 	Rice_Portrait (Normal): Something like hazard pay.
 	Rice_Portrait (Normal): Lucca realized this might end up something of a problem right away. If our new party members were the typical low leveled and desperate tower climber, then any encounter that could bother two of us wouldn't even leave any stains of our party members behind.
 	Rice_Portrait (Normal): In other words, we needed to either recruit some top level combat power, which definitely wasn't happening, or train up the riff raff we did manage to recruit.
-	Rice_Portrait (Normal): So I ended up the luggage carrier, and she ended up being the 'black' mage. Supportive spells would zero out experience gains, but you could apply curses without being considered a party member for experience purposes.
+	Rice_Portrait (Normal): So I ended up the luggage carrier, and she ended up being the 'black' mage. Supportive spells would zero out experience gains due to the level difference, but you could apply curses without being considered a party member for experience purposes.
 	update Mao (Normal)
 	do Player.play_voice("huh!?")
 	Mao_Portrait (Normal): She made you carry luggage!?

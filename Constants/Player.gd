@@ -613,6 +613,7 @@ var voices = {
 	"really!?": load("res://Voice/Sakura An/Misc/Really！？.wav"),
 	"really_like": load("res://Voice/Sakura An/Misc/Really like.wav"),
 	"because": load("res://Voice/Sakura An/Misc/Because.wav"),
+	"sure": load("res://Voice/Sakura An/Misc/Sure.wav"),
 	
 	"baka": load("res://Voice/Sakura An/Misc/Baka.wav"),
 	"disappointed": load("res://Voice/Sakura An/Misc/Disappointed.wav"),
