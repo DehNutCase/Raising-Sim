@@ -669,10 +669,16 @@ func play_song(song:String) -> void:
 	SoundManager.play_music(songs[song])
 
 func play_voice(voice: String) -> void:
+	#Don't play voice if skipping and a timeline is open
+	if Dialogic.Inputs.auto_skip.enabled and Dialogic.current_timeline:
+		return
 	voice = voice.to_lower()
 	SoundManager.play_ambient_sound(voices[voice])
 
 func play_random_voice(voice_list: String) -> void:
+	#Don't play voice if skipping and a timeline is open
+	if Dialogic.Inputs.auto_skip.enabled and Dialogic.current_timeline:
+		return
 	voice_list = voice_list.to_lower()
 	var voice = voice_lists[voice_list].pick_random()
 	SoundManager.play_ambient_sound(voice)
@@ -692,6 +698,9 @@ func play_ui_sound(sound_effect: String) -> void:
 	SoundManager.play_ui_sound(sound_effects[sound_effect])
 
 func play_sound_effect(sound_effect: String) -> void:
+	#Don't play SFX if skipping and a timeline is open
+	if Dialogic.Inputs.auto_skip.enabled and Dialogic.current_timeline:
+		return
 	sound_effect = sound_effect.to_lower()
 	SoundManager.play_sound(sound_effects[sound_effect])
 

@@ -3,95 +3,137 @@ join Mao (Normal) 1
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): So what do you think I should do about Oliver? We only have another day before the Vote, right?
 Rice_Portrait (Normal): Nothing.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Huh?
 Rice_Portrait (Normal): Unless they ask for help themselves, there's no need to do anything for someone who can get up on their own.
 Rice_Portrait (Normal): In other words, what you should do is trust him.
+do Player.play_voice("oh...")
 Mao_Portrait (Normal): Oh.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): What about me, then? Should I do some special training for the Vote?
 Rice_Portrait (Normal): Try not to break anything. If you think you need speical training for that, go ahead.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): I'm not going to go on a rampage, jeez!
 Rice_Portrait (Normal): That remains to be seen.
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Trust Oliver this, trust Oliver that. Why don't you trust me, huh?
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Trust Mao.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Jokes aside. Even if I win the Vote and get them to join Albion, how would that work, anyway?
+do Player.play_voice("really?")
 Mao_Portrait (Normal): It's not like I'll end up a baron or something, right?
 Rice_Portrait (Normal): I would say this is something you should have asked a lot earlier, but at least you asked it now.
 Rice_Portrait (Normal): Here's the mission briefing her majesty asked me to prepare.
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Wait, you had this the whole time? Why didn't you let me read them earlier?
 Rice_Portrait (Normal): It was my judgement that allowing you to go in with as little bias as possible was best. Now that you've actually met the orcs here, you can compare the briefing with what you've experienced.
 update Mao (EyesClosed)
+do Player.play_voice("hmm")
 Mao_Portrait (EyesClosed): Hmm.
+do Player.play_voice("i_see")
 Mao_Portrait (EyesClosed): I guess I kind of get it?
 update Mao (Normal)
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): No, wait, I don't see anything about how they'd actually join Albion at all? All I see is a bunch of stuff on Albion's historical relationship with the orc here and a bunch of references to Acts of Union, whatever those are.
 Rice_Portrait (Normal): (I'm slightly tempted to make a snide comment here.)
 Rice_Portrait (Normal): I believe her majesty's intention was to have you read all that, see that it's too complicated, and then say something to the effect of\: "I don't get it at all. Rice, can you handle this for me?"
 update Mao (Angry)
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Angry): Oh yeah? Well I'll show her!
 update Mao (Normal)
+do Player.play_voice("oh...")
 Mao_Portrait (Normal): I don't get it at all. Rice, can you handle this for me?
 Rice_Portrait (Normal): This is how you 'show her'?
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Yeah. I'm showing her that I'm exactly the person she thought I was.
 update Mao (Smile)
+do Player.play_voice("really_like")
 Mao_Portrait (Smile): Isn't that what it means to trust someone?
 Rice_Portrait (Normal): I see.
 Rice_Portrait (Normal): I suppose this means you stopped thinking we're the bad guys?
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): I don't know.
 Rice_Portrait (Normal): Hmm?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I don't know if we're good guys, bad guys, or whatever.
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): But I did realize a few things, I think.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): You know that thing Oliver's big brother said before about how only winners have the right reason? I don't think he's completely right, but he has a point.
 update Mao (Angry)
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Like let's use the loser Hero party jerks from before as an example.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): You said they were bandits, right? But also people who would do their best to rescue me because they think I'm kidnapped. If we just look that the first half they sound like bad guys, and the second half makes them sound like good guys.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): But that's not true at all. They lost. They can't be bad guys if they tried, and they can't be good guys either. They're just guys.
 Rice_Portrait (Normal): (Hmm.)
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): And I'm in the same situation. I didn't figure this out myself either, Oliver realized it first.
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Like it feels nice going "Muahaha, I'm invincible!" and knocking everyone down. But that's only because this is the kiddie pool, and I was getting swimming lessons in the ocean the whole time before this.
 Rice_Portrait (Normal): (It's a little surprising that Mao didn't let everything go to her head when she realized she's the biggest fish around.)
 Rice_Portrait (Normal): (I can see why her majesty thought Mao was ready for missions already.)
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): So once I realized that, everything became a lot easier. I didn't have to think about what to do since I can't really 'do' anything, right?
 update Mao (Smile)
+do Player.play_voice("thank_you")
 Mao_Portrait (Smile): Like Oliver said, thanks for playing along with me.
 Rice_Portrait (Normal): I would say that was an remarkably accurate self-assessment, with one caveat. You have what her majesty would call a 'Diplomacy build,' which is quite effective even when underleveled.
 update Mao (Normal)
 Rice_Portrait (Normal): Generally speaking, someone's SSR skill is the centerpiece of their build, and yours is definitely relationship focused.
 Rice_Portrait (Normal): (Well, it might be more accurate to call it a personal skill instead, since not everyone has an SSR skill.)
 update Mao (Angry)
+do Player.play_voice("disappointed")
 Mao_Portrait (Angry): Uguu. I wish she'd just tell me what it's called already.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Also, I don't feel all that charismatic?
+do Player.play_voice("really?")
 Mao_Portrait (Normal): Shouldn't I be, I don't know, more persuady if I have a 'Diplomacy build' or whatever?
 Rice_Portrait (Normal): (It took you maybe five minutes to go from insulting Oliver to his face to becoming his friend. I'm not quite sure what to call that, but it certainly wasn't a combat technique.)
 Rice_Portrait (Normal): Should I ask her majesty for remedial etiquette and social studies in addition to ethics?
 update Mao (Blush)
+do Player.play_voice("laugh")
 Mao_Portrait (Blush): Teehee. Please don't.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Anyway, after that all I had to do was think about was what it would look like if I just followed her majesty's plan.
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): And I think it looks good?
 Rice_Portrait (Normal): Oh? It's my understanding that you don't know how the integration would work.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I don't. But I lived in capital for a long time, and if there's anywhere that you could call Albion, it'd be the capital, right?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): And then we played around at the fort for a bit, and now we're here. If having the orcs join us means making this place a little more like Albion, I don't think it's a bad thing?
 update Mao (Smile)
+do Player.play_voice("proud")
 Mao_Portrait (Smile): Only if they agree, though.
 update Mao (Angry)
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Oh, and I'll still get really mad if we turn out to be secretly the big bad evil guys later.
 Rice_Portrait (Normal): For what it's worth, her majesty is the type to drop the secret part of the 'secret big bad evil guy'.
+do Player.play_voice("baka")
 Mao_Portrait (Angry): That doesn't make me feel any better.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Anyway, that was everything. What do you think?
 Rice_Portrait (Normal): I believe you should say all of this to her majesty later, she'll be quite happy.
 update Mao (Excited)
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): Ooh! Like an after action report?
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Excited): Yes ma'am!
 Rice_Portrait (Normal): (Not exactly what I meant, but as long as she's happy.)
 [signal arg="{"mission": {"next": "BlackForestOrcs13"}}"]
