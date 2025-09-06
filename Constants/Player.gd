@@ -621,14 +621,15 @@ var voices = {
 	"sigh": load("res://Voice/Sakura An/Misc/Sigh.wav"),
 	"sorry": load("res://Voice/Sakura An/Misc/Sorry.wav"),
 	"sorry_polite": load("res://Voice/Sakura An/Misc/Sorry polite.wav"),
-	"huh!?": load("res://Voice/Sakura An/Misc/Huh!？.wav"),
 	"eh_no_way": load("res://Voice/Sakura An/Misc/Uh...(No way).wav"),
 	
 	"looks_delicious": load("res://Voice/Sakura An/Misc/Looks Delicious!.wav"),
 	"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),
+	"huh!?": load("res://Voice/Sakura An/Misc/Huh!？.wav"),
 	"hmm": load("res://Voice/Sakura An/Misc/Hmm.wav"),
 	"good_night": load("res://Voice/Sakura An/Greetings/Good Night.wav"),
 	"wow_blank_stare": load("res://Voice/Sakura An/Misc/Wow...(Blank stare).wav"),
+	"wow": load("res://Voice/Sakura An/Misc/Wow.wav"),
 }
 
 var voice_lists = {

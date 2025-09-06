@@ -5,6 +5,7 @@ do Player.play_song("sleep")
 update Mao (Normal)
 do Player.play_voice("amazing")
 Mao_Portrait (Normal): Yay, bedtime!
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Hey, Rice, are you still ignoring me?
 Rice_Portrait (Normal): I never was.
 - Can you tell me a bedtime story?

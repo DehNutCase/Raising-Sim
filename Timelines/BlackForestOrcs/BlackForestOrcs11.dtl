@@ -3,53 +3,68 @@ join Mao (Normal) 2
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): We're not too early, right? I hope I'm not bothering anyone.
 Rice_Portrait (Normal): Everyone seems be awake already.
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_voice("greeting3")
 Mao_Portrait (Excited): Good morning everyone!
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Um, do you know where Oliver lives, Rice?
 Rice_Portrait (Normal): If you're looking for him rather than his house, he's actually over there.
 update Mao (Normal) 1 [ move_time="2"]
 join Oliver (Sad) 4 [animation="Slide In Right" length="2"]
 [signal arg="{"sound_effect": "footsteps"}"]
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Oh! It looks like he's exercising. I thought he'd be more down, but I guess I didn't need to worry?
 Rice_Portrait (Normal): (I would say it's more like he's still taking the Vote seriously. Not surprising, since the Vote is a big part of the reason he's depressed in the first place.)
 Rice_Portrait (Normal): (Her majesty would be quite interested in him, I believe. Someone who works hard even when they don't think it matters has excellent prospects.)
 update Mao [animation="Tada" length="1"]
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_voice("greeting0")
 Mao_Portrait (Normal): Good morning, Oliver!
 update Oliver 3 [ mirrored="true" move_time="1"]
 [signal arg="{"sound_effect": "footsteps"}"]
 Oliver_Portrait (Sad): Oliver greets Albion girl, although Oliver would still rather be alone right now.
 update Mao (Surprised)
+do Player.play_voice("sorry_polite")
 Mao_Portrait (Surprised): Oh. Um. It's just, I kind of thought of a way for you to get stronger, so I'm wondering if you want to try it?
 Oliver_Portrait (Sad): Oliver is doubtful. Oliver would like to inform Albion girl that it's not like Oliver's family hadn't taught Oliver.
 Oliver_Portrait (Sad): What worked for Albion girl probably wouldn't work for Oliver.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Rice?
 Rice_Portrait (Normal): You never told me what you were planning.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Oh. Um, fighting still works for him right?
 Rice_Portrait (Normal): There's heavy diminishing returns from non-lethal combat with the same person. But, generally speaking, Oliver would get stronger faster than you would from fighting. He's in a combat class.
 Rice_Portrait (Normal): (The diminishing returns should be part of why the Vote is held every year. It's long enough that everyone would get close to the maximum amount of experience per fight, yet short enough that the experience over time is still decent.)
 update Mao (Excited)
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): That's great! You heard that, right? Rice is super strong so you can trust her.
 update Mao (Normal)
+do Player.play_voice("proud")
 Mao_Portrait (Normal): I have a plan.
 Oliver_Portrait (Sad): Oliver would like to remind Albion girl that Oliver would still need to win the fight to get stronger.
 update Mao (Sad)
+do Player.play_voice("oh no")
 Mao_Portrait (Sad): Oh. Right.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Does it work if other side holds back?
 Rice_Portrait (Normal): Sort of. It's generally not worth it because it's harder to find a high level sparring partner than a lower one, and holding back is effectively turning a high level partner into a low level one.
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): My plan still works, then.
 update Mao (Excited)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Excited): Oliver?
 Oliver_Portrait (Sad): Oliver is still doubtful, but willing to play along. Oliver believes that's only fair.
 update Mao (Normal)
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): Follow me!
 update Mao 3 [ move_time="2"]
 update Oliver 4 [ move_time="2"]
@@ -57,21 +72,27 @@ update Oliver 4 [ move_time="2"]
 [signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.5" hide_text="false"]
 update Mao (Normal)
+do Player.play_voice("proud")
 Mao_Portrait (Normal): Teehee. Watch this!
 update Mao (Excited)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Excited): Okay. Please split!
 Dumpling_portrait (f_manju): Juu!
 [background arg="res://Art/Background/Background material shop/Edited/bg021a_edited_multiple_dumpling.jpg" fade="1.0"]
 [signal arg="{"sound_effect": "time_passing"}"]
 [wait time="0.5" hide_text="false"]
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): This is the Dumpling party. I asked them for help.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Um, actually, I think this is the Dumpling party's younger siblings or something? The ones I met in the tower are higher leveled now.
+do Player.play_voice("proud")
 Mao_Portrait (Normal): But that was still cool, right?
 Rice_Portrait (Normal): (Despite how it looked, the Dumpling didn't actually split. The other three were hiding behind the first one.)
 Rice_Portrait (Normal): (It's a trick that takes advantage of the fact that, unlike regular slimes, Dumplings are highly compressible, so they can expand and contract easily.)
 Rice_Portrait (Normal): (That said, I don't really see a point. Dumplings already have the ability to combine and split to begin with.)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Anyway, I asked everyone yesterday if they wanted to help out, and they said they'd be happy to.
 Oliver_Portrait (Sad): Oliver is about to have a serious fight with food. Oliver is sinking to depths Oliver never thought possible.
 Oliver_Portrait (Sad): No, Oliver takes that back. Oliver isn't sinking, Oliver was never higher than this to begin with.
@@ -80,6 +101,7 @@ Oliver_Portrait (Sad): Still, Oliver thanks Dumpling friends for helping Oliver.
 Dumpling_portrait (f_candle): Juu, juu!
 leave Mao [animation="Slide Out Right" length="2"]
 [signal arg="{"sound_effect": "footsteps"}"]
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): I'll just get out of your way now.
 Rice_Portrait (Normal): (Overall, it's not a bad plan. There's just one slight problem. This would work a lot better if she asked Teru or even Skeletons rather than Dumplings.)
 update Oliver (Cry) [animation="Shake X" length="1"]
@@ -98,6 +120,7 @@ update Oliver (Sad) [animation="Bounce"]
 [signal arg="{"sound_effect": "jump"}"]
 update Oliver (Sad) 4 [ move_time="0.5"]
 Rice_Portrait (Normal): A small reminder. If you or I heal him before the fight ends we'd be considered part of his party, which would zero out any possible gains.
+do Player.play_voice("oh...")
 Mao_Portrait (Normal): Oh, the level thing, right?
 update Oliver (Cry) [animation="Shake X" length="1"]
 update Oliver (Cry) 3 [ move_time="0.5"]
@@ -108,24 +131,29 @@ update Oliver (Sad) [animation="Bounce"]
 update Oliver (Sad) 4 [ move_time="0.5"]
 [signal arg="{"music": "sad"}"]
 Oliver_Portrait (Sad): Oliver just lost a fight with food. Oliver stands corrected about how deep Oliver can sink.
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Didn't you guys agree to help?
 Dumpling_portrait (f_candle): Juu? Juu!
 Rice_Portrait (Normal): (It's strange that she forgot Dumplings always take things seriously. There was no way they'd lose a fight to Oliver.)
 Rice_Portrait (Normal): (Even the Hero party would've gotten annihilated if they fought.)
 Oliver_Portrait (Sad): Please don't get mad at Dumpling friends, Oliver could tell Dumpling friends were doing their best.
 Oliver_Portrait (Sad): Does Albion girl have any other ideas? Like Oliver said earlier, Oliver believes it's only fair to play along since Albion girl also played along with Oliver.
+do Player.play_voice("sorry")
 Mao_Portrait (Sad): I, um, I'd need more time to think. But the Vote's in two days, right?
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): Are you sure you won't teach him, Rice?
 Rice_Portrait (Normal): Like I said before, Oliver isn't a citizen of Albion.
 Oliver_Portrait (Sad): Oliver doesn't know what that implies.
 Rice_Portrait (Normal): It's a matter of rights, privileges, duties, and obligations. As a somewhat extreme example, once you become a citizen, there are only two ways to stop being one.
 Rice_Portrait (Normal): The first way is being honorably discharged from military service.
 Rice_Portrait (Normal): The second way is to die.
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): What?
 Rice_Portrait (Normal): If you think about it, both methods are quite similar.
 Rice_Portrait (Normal): The process is entirely voluntary, of course. Being honorably discharged simply gives you the right to leave Albion entirely if you wished, you are by no means obligated to do so.
 Rice_Portrait (Normal): Ah, that was by no means a suggestion, Oliver. In the first place, you have yet to reach the age of majority, so your parents would decide for you.
 Rice_Portrait (Normal): (The rules of citizenship are somewhat looser for minors, but her majesty had always been greedy for talent. So it's not actually that much easier to stop being a citizen even if one naturalized as a minor.)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): That was the worst sales pitch I ever heard.
 Oliver_Portrait (Sad): Oliver still isn't sure what Albion citizenship has to do with teaching Oliver.
 Rice_Portrait (Normal): It's not a matter of official policy, hence why I'm not stopping Mao from training you. It's simply a personal belief that it's not a very good idea export military technology to people I might need to deal with later.
@@ -136,11 +164,14 @@ Rice_Portrait (Normal): Currently, your most valuable possession is your own sel
 Rice_Portrait (Normal): (Of course, if all her majesty wanted were cannon fodder or unpaid labor, a sufficient demonstration of force would be enough. It would be balancing their lives with their lives, which is almost tautologically equal.)
 Rice_Portrait (Normal): (Not that it matters. Her majesty isn't that kind of person.)
 Rice_Portrait (Normal): (She should be quite content with the current arrangement with the orcs here. If anything, I would guess that the main reason for this mission was simply to give Mao some field experience.)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): You should really stop trying to do the whole 'we're the bad guys' vibe, you know? It really doesn't work for you.
 Oliver_Portrait (Sad): Oliver remains confused.
 Oliver_Portrait (Sad): If Albion girl has no other ideas, Oliver believes Oliver should keep thinking while training by himself.
+do Player.play_voice("sorry")
 Mao_Portrait (Sad): Oh. Um.
 Mao_Portrait (Sad): (I guess I really should leave him alone for a bit?)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Sad): We'll be at our campsite if you need us.
 Oliver_Portrait (Sad): Oliver thanks Albion girls and Dumpling friends for their consideration.
 [signal arg="{"mission": {"next": "BlackForestOrcs12"}}"]

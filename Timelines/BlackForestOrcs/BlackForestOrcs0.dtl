@@ -7,6 +7,7 @@ Morgan_Portrait (Silhouette): You're here.
 update Mao (Excited)
 update Mao [animation="Tada"]
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Excited): Yes, ma'am! Niziiro Mao reporting, ma'am!
 Morgan_Portrait (Silhouette): Ah. I believe what I should say here is 'at ease,' correct?
 update Mao (Normal)
@@ -15,6 +16,7 @@ Morgan_Portrait (Silhouette): Your first mission is relatively easy. The locatio
 Morgan_Portrait (Silhouette): A mutually beneficial agreement should be simple enough, but I would accept an outcome that's beneficial to Albion alone.
 update Mao (Surprised)
 Morgan_Portrait (Silhouette): To be clear, that's an euphemism for beating the crap out of them and forcing them to accept all of our demands.
+do Player.play_voice("hmm")
 Mao_Portrait (Surprised): Umm...
 Morgan_Portrait (Silhouette): No questions for now, please.
 update Mao (Sad)
@@ -22,25 +24,30 @@ Morgan_Portrait (Silhouette): I'll give a little more background. The Black Fore
 Morgan_Portrait (Silhouette): It's not a very strategic location except in the sense that I do keep the fort nearby garrisoned in case an exceptionally stupid commander decides to march an army through while fighting mosquitos, swamp fever, and their own supply lines.
 Rice_Portrait (Normal): And man eating panthers.
 update Mao (Surprised)
-Morgan_Portrait (Silhouette): Those too. Let's just say there's a reason the fort's stockpile has more aid kits than weapons.
+Morgan_Portrait (Silhouette): Indeed. Let's just say there's a reason the fort's stockpile has more aid kits than weapons.
 Morgan_Portrait (Silhouette): The orcs there moved in around a decade ago as part of the general upheaval around the civil war. I'm not sure if the reason was drought, famine, or just general misgovernment, and it doesn't matter in any case.
 update Mao (Normal)
 Morgan_Portrait (Silhouette): Scans have confirmed that their numbers have held steady with a slight uptrend. There's a small amount of trade between them and the fort, but they largely keep to themselves.
 Morgan_Portrait (Silhouette): You won't get a friendly reception, but they shouldn't be hostile either. Unless you shoot first.
 Morgan_Portrait (Silhouette): I'll take questions now.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): So why are we doing this?
 Morgan_Portrait (Silhouette): Because I can.
 Morgan_Portrait (Silhouette): To be more precise, Albion had the capability for years now, and, as of just now, I decided to use it.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): No, I mean, don't you have a reason? Like does the Black Forest have a bunch of minerals or maybe the trees are really valuable?
 Morgan_Portrait (Silhouette): The orcs would know better than we do in that respect. And any extraction would be hampered by the previously mentioned issues.
 Morgan_Portrait (Silhouette): You can consider that a reason to try to obtain the orcs as well, if you'd like.
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): What if they don't want to join us and don't want to leave?
 Morgan_Portrait (Silhouette): Considering the relative bargaining positions between us and them, it's not our place to make concessions.
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Sad): But...
 Morgan_Portrait (Silhouette): If you have no other questions, I'll consider this matter settled.
+do Player.play_voice("huh!?")
 Mao_Portrait (Sad): But, your maj---
 [signal arg="{"music": "sad"}"]
 Rice_Portrait (Normal): Please excuse us, your majesty.
@@ -51,24 +58,29 @@ leave Morgan [animation="Slide Out Left" length="1"]
 update Mao 1 [ move_time="2"]
 join Rice 2 [animation="Slide In Left" length="2" wait="true"]
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): Are we... are we the bad guys?
 Rice_Portrait (Normal): Only if we lose.
 update Mao (Angry)
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Rice!
 Rice_Portrait (Normal): I know what you meant. To answer your question properly is difficult, since the judge that matters can only be yourself.
 update Mao (Surprised)
 Rice_Portrait (Normal): If you're asking what I think of her majesty, hmmm.
 Rice_Portrait (Normal): To paraphrase the first and most important promise her majesty made to me\: "As long as I'm alive, I won't allow anyone to save the world."
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): So we *are* the bad guys.
 Rice_Portrait (Normal): Is that what you got from that?
 Rice_Portrait (Normal): I'm not saying you're wrong. Your judgement has to be yours. But part of the reason for this mission is to give you a different pespective on things.
 Rice_Portrait (Normal): To be clear, what her majesty meant by considering this 'settled' was that she would accept it if you decided to simply do nothing.
 update Mao (Surprised)
 Rice_Portrait (Normal): You can consider this something close to a field trip, if you'd like.
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Why didn't she just say so then?
 Rice_Portrait (Normal): And if her orders had been something you truly couldn't abide no matter what?
 update Mao (Sad)
+do Player.play_voice("huh?")
 Mao_Portrait (Sad): Huh?
 Rice_Portrait (Normal): You don't have to answer now, perhaps not ever. But her intent was to let you know that a question like that could exist at all.
 [signal arg="{"stats": {"stress": 10,}}"]
