@@ -5,26 +5,35 @@ join Mao (Normal) 2
 update Mao [animation="Shake Y" length="2" repeat="2"]
 update Mao (Normal)
 [signal arg="{"sound_effect": "jump"}"]
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): One! Two! One! Two!
 [signal arg="{"stats": {"max_hp": 1, "agility": 1, "stress":  -5,}}"]
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): I don't know why, but I've been feeling a bit rusty lately.
 Rice_Portrait (Normal): Your diet of ninety-percent Dumplings might have something to do with it.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Hey! Are you calling me fat?
 Rice_Portrait (Normal): Not directly. Expect a lecture from her majesty later.
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): Aww...
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): So what should we do today? You said the Hero party is going to arriving soon, right? Should we dig traps or something?
 Rice_Portrait (Normal): I would suggest against traps. They'll either bring helpers or they won't. In the case they do, the fort would intercept them beforehand. If they don't, you won't need any help.
 Rice_Portrait (Normal): Traps would just make it harder on the people living here.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Okie dokie.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Do you have a guess on exactly when?
 Rice_Portrait (Normal): If we ignore the possibility of teleportation, the earliest would be some time tonight. If I had to guess, however, it would be sometime tomorrow, likely during the Vote.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Why?
 Rice_Portrait (Normal): Because it would be more dramatic that way.
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Hey, that sounds like Mao logic, not Rice logic.
 Rice_Portrait (Normal): Neither. The logical thing to do in their position would be trying to rescue you tonight.
 Rice_Portrait (Normal): When seemingly unrelated timings start lining up, you should start wondering who lined them up. That is---
@@ -32,27 +41,25 @@ join Oliver (Normal) 4 [animation="Slide In Right" length="2" mirrored="true"]
 [signal arg="{"sound_effect": "footsteps"}"]
 Oliver_Portrait (Normal): Good morning, Albion girls.
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("greeting3")
 Mao_Portrait (Normal): Good morning!
 Mao_Portrait (Normal): (Oliver looks a lot happier today.)
 update Oliver [animation="Tada" length="1"]
 Oliver_Portrait (Normal): Oliver made a decision yesterday and convinced pops. Please take a look at this.
-Rice_Portrait (Normal): (This is... an application for naturalization.)
-update Mao (Surprised)
-Mao_Portrait (Surprised): (Whoa! I felt that. The ambient mana just shook.)
-update Mao (Sad)
-Mao_Portrait (Sad): (The last time I felt this was when Rice was training me and I was about to hurt myself. But why would she get mad about Oliver trying to join Albion?)
-Mao_Portrait (Sad): (Wasn't that the whole point of us being here?)
+Rice_Portrait (Normal): (This is... an apprenticeship contract from Albion? Did they get this from the fort?)
 Rice_Portrait (Normal): If you don't mind, Mao, I would like to speak to Oliver's parents.
 update Mao (Normal)
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Why would you need my permission for that? I'm fine with it, of course.
 Rice_Portrait (Normal): I'm your escort. If you had somewhere else to be, I would naturally prioritize that.
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): (I wonder if anyone ever told Rice she takes everything a bit too seriously.)
 Oliver_Portrait (Normal): Oliver isn't sure why that's necessary. Oliver already convinced bro and pops.
-Rice_Portrait (Normal): (That's precisely the problem.)
-Rice_Portrait (Normal): It does concern you, of course, so I won't stop you if wanted to come along as well, Oliver. They should be preparing for the Vote right now, correct?
+Rice_Portrait (Normal): It does concern you, Oliver, so I won't stop you if wanted to come along as well. They should be preparing for the Vote right now, correct?
 Oliver_Portrait (Normal): Oliver thinks that sounds boring. But Oliver affirms bro and pops are both setting up the Vote. Oh, and Oliver would like to let Albion girl know that Albion girl was given permission to participate.
 Oliver_Portrait (Normal): Oliver will lead the way if Albion girls want to find pops.
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="2.0" transition="Push Left"]
+#TODO
 [signal arg="{"sound_effect": "footsteps"}"]
 update Mao 1 [ move_time="1"]
 update Oliver 2 [ mirrored="false" move_time="1"]
@@ -61,11 +68,14 @@ join Chief (Normal) 4 [animation="Slide In Right" length="2"]
 Oliver_Portrait (Normal): Hey pops! Other Albion girl wants to talk to you.
 update Chief [ mirrored="true"]
 Chief_portrait (Normal): Ah, I see. What did you need, young lady?
-Rice_Portrait (Normal): Please correct me if I'm wrong, but I believe you signed this? I hope you understand that Oliver is still a minor. He's too young to be making decisions that could decide the rest of his life.
-Chief_portrait (Normal): If a man wants to get stronger, I don't see a reason to object. Oliver is strong enough to participate in the Vote. That makes him a man, and not a boy.
-Rice_Portrait (Normal): A decision can only be called a decision if it's an informed choice. A trade is only fair if both parties understand what's on the scales.
+Rice_Portrait (Normal): It's about this apprenticeship contract, specifically, its terms.
+Chief_portrait (Normal): Hmm, is the payment not enough?
+Rice_Portrait (Normal): It's not a matter of payment, are you quite aware what it means for someone from your village to sign an apprenticeship contract with someone from Albion?
+Rice_Portrait (Normal): Albion citizenship is virtually an one way street.
+Chief_portrait (Normal): Bwahaha! I did tell him, but I also didn't see a reason to object when a man wants to get stronger.
 Rice_Portrait (Normal): This isn't a decision that should be made without a long time to think things over.
-Chief_portrait (Normal): Young lady, I believe you are underestimating us. Why do you think we had a copy of Albion's naturalization application to begin with?
+Chief_portrait (Normal): Young lady, I believe you are underestimating us. Why do you think we had a copy of the apprenticeship contract to begin with?
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (I think they'll be talking about adult stuff for a long time. Want to go play?)
 Oliver_Portrait (Normal): (Oliver thinks so as well. Oliver doesn't know what the big deal is.)
 update Oliver [ mirrored="true"]
@@ -73,17 +83,19 @@ leave Oliver [animation="Slide Out Left" length="4"]
 leave Mao [animation="Slide Out Left" length="4"]
 [signal arg="{"sound_effect": "footsteps"}"]
 Rice_Portrait (Normal): Don't go too far.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Okie dokie!
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
-[signal arg="{"sound_effect": "time_passing"}"]
+do Player.play_sound_effect("time_passing")
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/Edited/bg021a_edited_multiple_dumpling.jpg" fade="0.0"]
 join Mao (Normal) 4
 join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
 [history action="resume"]
 update Mao [animation="Tada" length="2"]
+do Player.play_voice("boom")
 Mao_Portrait (Normal): The light of damnation. The herald of the world's final terminus. The star of extinction bringing an end to all things. Meteor!
 update Oliver (Normal) [animation="Shake X" length="1"]
 [signal arg="{"sound_effect": "footsteps"}"]
@@ -101,6 +113,7 @@ update Oliver (Normal) [animation="Bounce"]
 [signal arg="{"sound_effect": "jump"}"]
 update Oliver (Normal) 3 [ move_time="0.5"]
 update Mao [animation="Shake X" length="1"]
+do Player.play_voice("oh no")
 Mao_Portrait (Normal): No, it can't be! How could such a powerful barrier exist?
 Dumpling_portrait (f_candle): Juu, juu!
 update Oliver (Normal) [animation="Shake X" length="1"]
@@ -111,18 +124,22 @@ update Oliver (Normal) [animation="Bounce"]
 [signal arg="{"sound_effect": "jump"}"]
 update Oliver (Normal) 3 [ move_time="0.5"]
 update Mao [animation="Shake X" length="2"]
+do Player.play_voice("oh no")
 Mao_Portrait (Normal): Nooooooooooo!
 Rice_Portrait (Normal): I'm back.
 update Mao (Smile)
+do Player.play_voice("greeting1")
 Mao_Portrait (Smile): Hey Rice, how'd it go?
-Rice_Portrait (Normal): To make a long story short, I agreed to train Oliver. Here's your naturalization application back, hold on to it for now. It's not denied, but that doesn't mean we accept it either.
+Rice_Portrait (Normal): To make a long story short, I agreed to train Oliver. Here's your apprenticeship contract back, hold on to it for now. It's not rejected, but that doesn't mean we accept it either.
 Oliver_Portrait (Normal): Oliver still doesn't understand the fuss over this little bit of paperwork.
-Rice_Portrait (Normal): (Which is my issue with it. But nevermind.)
-Rice_Portrait (Normal): Ordinarily speaking, it would be more efficient if we waited for the Vote to finish before I started training you, Oliver. Training is more effective if we started low and worked our way up, but none of us have that kind of time.
+Rice_Portrait (Normal): Ordinarily speaking, it would be more efficient if we waited for the Vote to finish before I started training you, Oliver. Training is more effective if we started low and worked our way up, but we don't have that kind of time.
 update Mao (Excited)
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): (Oh boy! This is going to be great.)
+do Player.play_voice("laugh")
 Mao_Portrait (Excited): (Training from hell~, training from hell~, Rice will make you wish for death's sweet embrace~.)
 update Mao (Normal)
+do Player.play_voice("looks_delicious")
 Mao_Portrait (Normal): (Pass me some popcorn.)
 Dumpling_portrait (f_manju): Juu?
 update Oliver (Sad)
@@ -138,15 +155,19 @@ Oliver_Portrait (Surprised): Oliver believes Oliver heard you wrong.
 Rice_Portrait (Normal): While I'm training you, the only reply I'll accept is "Yes Ma'am."
 update Oliver (Sad)
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): (Teehee.)
 Rice_Portrait (Normal): Why are you acting like it doesn't concern you, Mao? Get ready to run as well, I'll be tying Oliver to you. Try to run a little faster than his max speed.
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): Aww...
 update Mao (Normal)
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): I mean, Ma'am, yes Ma'am!
 Oliver_Portrait (Sad): (Oliver is starting to have second thoughts.)
 Rice_Portrait (Normal): Make sure to keep running. Mao, drag him along if you have to. If you can't, then I'll tie both of you to me instead and run in your place.
 Rice_Portrait (Normal): The two of you are, of course, free to collapse. Just know that being dragged on the ground for hours is even less comfortable than it sounds, even after taking into account the fact I'll heal you up afterwards.
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Yes Ma'am!
 Rice_Portrait (Normal): Oliver.
 update Oliver (Surprised)
@@ -154,7 +175,7 @@ Oliver_Portrait (Surprised): Yes Ma'am.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
-[signal arg="{"sound_effect": "time_passing"}"]
+do Player.play_sound_effect("time_passing")
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017a.jpg" fade="0.0"]
 join Mao (Normal) 3
@@ -165,6 +186,7 @@ update Oliver (Drool)
 Oliver_Portrait (Drool): (Oliver is too tired to die.)
 Rice_Portrait (Normal): That will do, take a fifteen minute break. I suggest warm water and walking.
 update Mao (Smile)
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Smile): Yes Ma'am!
 update Mao (Normal)
 update Mao [animation="Tada" length="4"]
@@ -172,21 +194,27 @@ Rice_Portrait (Normal): (Oliver's foundation is... surprisingly solid. It seems 
 Rice_Portrait (Normal): (In that case, I can push him a bit further before we move on to leveling.)
 update Oliver (Surprised)
 Oliver_Portrait (Surprised): (Oliver just got more goosebumps.)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Permission to speak freely, Ma'am?
 update Oliver (Drool)
 Rice_Portrait (Normal): You're on break right now. So, yes.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): How come you're working Oliver so hard? You were a lot gentler with me.
+do Player.play_voice("really?")
 Mao_Portrait (Normal): I mean, this is easy for me now, but I think it would've seriously killed me at the start of the year?
 Rice_Portrait (Normal): Two reasons. One is the time constraint. The second is that his foundation is better, both in terms of willpower and physical abilities.
 Rice_Portrait (Normal): Better than I expected, even, since you only dragged him on the ground for the last few kilos.
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Wait, you planned that?
 Rice_Portrait (Normal): A healthy dose of pain and fear is very motivating.
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): Are we actually the bad guys?
 Rice_Portrait (Normal): Ah, I never did say, but I'll stop as soon as he asks.
 update Mao (Normal)
 Oliver_Portrait (Drool): Oliver would like to keep going.
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): You don't sound very convincing like that. But I guess stiff upper lip and all that?
 Rice_Portrait (Normal): Let's move on to light sparring once your break is finished.
 update Mao 2 [ move_time="1"]
@@ -196,11 +224,12 @@ join Rice 3 [animation="Slide In Right" length="2"]
 Rice_Portrait (Normal): I'll restrain myself to level 5, but don't get your hopes up just because of that.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
-[signal arg="{"sound_effect": "time_passing"}"]
+do Player.play_sound_effect("time_passing")
 leave --All-- [animation="Instant In Or Out"]
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017b.jpg" fade="0.0"]
 join Mao (Normal) 2
+join Rice 3
 join Oliver (Drool) 1 [ z_index="1"]
 [history action="resume"]
 [signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "attack": 10, "agility": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
@@ -210,7 +239,9 @@ leave Oliver [animation="Slide Out Left" length="4"]
 [signal arg="{"sound_effect": "footsteps"}"]
 update Mao [animation="Tada" length="1"]
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Cheater! Cheater! There's no way that was level 5!
+do Player.play_voice("really!?")
 Mao_Portrait (Angry): Your phantom in the tower was way slower than that!
 Rice_Portrait (Normal): If simple mimicry were enough to be an equal match, dopplegangers would rule the world right now.
 update Mao (Normal)
