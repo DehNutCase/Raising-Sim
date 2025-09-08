@@ -7,13 +7,16 @@ join Morgan (Silhouette) 1
 update Mao [animation="Tada"]
 update Mao (Excited)
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Excited): I'm back! Niziiro Mao reporting! I brought souvenirs!
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+do Player.play_voice("proud")
 Mao_Portrait (Normal): Everything went okie dokie, Ma'am!
 Morgan_Portrait (Silhouette): Fufufu. Yes, good job. Why don't you go share the souvenirs with Hiyori?
 leave Mao [animation="Slide Out Right" length="1"]
 [signal arg="{"sound_effect": "footsteps"}"]
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Yes, Ma'am!
 Rice_Portrait (Normal): About the Lance Hero.
 Morgan_Portrait (Silhouette): They're part of the Blue Dragon Association, yes. I've been monitoring the situation.
@@ -25,7 +28,7 @@ Morgan_Portrait (Silhouette): Years. Seasons. Months. Days. It's a rather simple
 Morgan_Portrait (Silhouette): Even now, I'm not entirely sure if the Association thinks everyone else is stupid, or if everyone in the human kingdoms is actually that stupid.
 Morgan_Portrait (Silhouette): It could be both.
 Rice_Portrait (Normal): Should I deal with them?
-Morgan_Portrait (Silhouette): It's fine. The Association isn't a problem. I might use their extermination to train Mao once she's older.
+Morgan_Portrait (Silhouette): It's fine, the Association isn't a problem. Maybe I'll have Mao deal with them as one of her missions. Once she's ready, of course.
 Morgan_Portrait (Silhouette): If you really can't stand them, you may take care of them on your vacation. I'll compensate you with some extra vacation days.
 Rice_Portrait (Normal): I'll think about it.
 Morgan_Portrait (Silhouette): Any other questions?
@@ -46,32 +49,39 @@ Morgan_Portrait (Silhouette): Sure. And if they ever stepped out of their little
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
-[signal arg="{"sound_effect": "time_passing"}"]
+do Player.play_sound_effect("time_passing")
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
 join Mao (Normal) 2
 [history action="resume"]
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Come to think of it. 'Lance' and 'Wisdom' meant they were the Hero of the Lance and the Hero of Wisdom, right?
 Rice_Portrait (Normal): Correct. Although 'Lance' would usually be called the Lance Hero rather than the Hero of the Lance.
 update Mao (Excited)
+do Player.play_voice("really!?")
 Mao_Portrait (Excited): Doesn't that mean you're the Hero of Justice?
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): Kyaa! Can I get an autograph?
 Rice_Portrait (Normal): I'm not.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Huh?
 Rice_Portrait (Normal): Being the Hero of Wisdom means that she has Hero (Wisdom) as one of her classes. And Hero (Lance) for 'Lance.'
 update Mao (Normal)
 Rice_Portrait (Normal): Hero (Justice) isn't one of my classes.
 Rice_Portrait (Normal): In my case it's a simple nickname, the kind you'd give a soldier during a war.
 update Mao (Excited)
+do Player.play_voice("because")
 Mao_Portrait (Excited): But the fact you're called 'Justice' meant you acted like a hero, right?
 Rice_Portrait (Normal): That would depend on your point of view. Personally, I don't think so.
 update Mao (Normal)
+do Player.play_voice("happy")
 Mao_Portrait (Normal): I think you're great!
 Rice_Portrait (Normal): I don't believe you have enough information to make a meaningful judgement.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Jeez. There you go again with the fake 'I'm totally a bad guy' vibes again.
 # TODO, logic for finishing mission
 [signal arg="{"mission": {"next": ""}, "event_flags":{"black_forest_orcs": true}}"]

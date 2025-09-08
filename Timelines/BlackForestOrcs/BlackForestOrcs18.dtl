@@ -4,52 +4,70 @@ join Mao (Normal) 1 [ z_index="2"]
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): What the heck? That wasn't a one on one at all!
 update Chief (Normal)
 Chief_portrait (Normal): Bwahaha! I apologize, young lady, but those young lads didn't believe that you could've won with your own strength, you see.
 update Chief (Smile)
 Chief_portrait (Smile): So I offered them the chance to fight you personally.
+do Player.play_voice("hate")
 Mao_Portrait (Angry): But this is a tournament! Isn't that cheating?
 update Chief (Normal)
 Chief_portrait (Normal): Oh, no. You won the Vote already once you beat Orc. Fighting me was just a bonus.
 Chief_portrait (Normal): This way we don't have the same person sitting in the big chair every year, you see. Bwahaha!
 update Mao (Excited)
+do Player.play_voice("huh!?")
 Mao_Portrait (Excited): Wait. Does that make me the chief now? Am I the Orc King? Should I wear the crown under my hat or over it?
 Rice_Portrait (Normal): Are you sure you want her majesty coming after you?
 update Mao (Surprised)
+do Player.play_voice("hate")
 Mao_Portrait (Surprised): Gah! Stop that!
 Rice_Portrait (Normal): I'm being quite serious. Her majesty has a zero tolerance policy towards kings, even if it's you.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Hmph. I was just joking. Jeez.
 update Mao (Sad)
+do Player.play_voice("sigh")
 Mao_Portrait (Sad): (I was going to have everyone make me a giant throne with spikes and skulls and shinies and have everyone bow down, but I guess Rice won't let me do that. Phooey.)
 Chief_portrait (Normal): Bwahaha! We certainly wouldn't mind if you decided to stay. But I understand you're planning to return to Albion?
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Oh yeah. I guess I can't just stay here for a whole year.
 update Mao (Excited)
+do Player.play_voice("oh...")
 Mao_Portrait (Excited): Actually. Wait. Can't I?
 Rice_Portrait (Normal): Mao.
 update Mao (Normal)
+do Player.play_voice("disappointed")
 Mao_Portrait (Normal): Spoilsport.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): So, um, do I need to do anything at this point? Rice?
 Rice_Portrait (Normal): If you're talking about the mission, we've already completed the negotiations earlier and her majesty has already been informed.
 Rice_Portrait (Normal): For the time being, there won't be any major changes. We'll be sending some instructors over and loosening the level restrictions on the Black Forest slightly, but the effects won't be readily apparent for a while.
-Rice_Portrait (Normal): (As might be expected of Orcs, they were quite interested in Albion's advancements in military science.)
+Rice_Portrait (Normal): (As might be expected of Orcs, they were quite interested in Albion's military science.)
 Rice_Portrait (Normal): (We might also see Oliver in the capital as an exchange student if everything goes well, but it's better not to get Mao's hopes up for now.)
 update Mao (Normal)
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): When did you do that?
 Rice_Portrait (Normal): Why did you think I agreed to train Oliver? I didn't do it on a whim.
 update Mao (Normal)
+do Player.play_voice("oh!")
 Mao_Portrait (Normal): Oh.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Wait. Did we even need me for anything?
 Rice_Portrait (Normal): I would say that you were the most important part of the mission, yes, even if it's not obvious.
 update Mao (Smile)
+do Player.play_voice("happy")
 Rice_Portrait (Normal): (If I'm not wrong, her majesty would consider the orcs a nice side bonus at best, even considering Oliver. I wonder if Mao realizes just how much her majesty cares about her.)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Smile): Well, can I at least give one quick order before I leave, then?
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Let's take a group picture!
 update Mao (Normal)
+do Player.play_voice("lets_go")
 Mao_Portrait (Normal): You too, Rice!
 Rice_Portrait (Normal): I'll pass.
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Spoilsport. Teehee
 [signal arg="{"mission": {"next": "BlackForestOrcs19"}}"]

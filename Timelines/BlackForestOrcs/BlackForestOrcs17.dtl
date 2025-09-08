@@ -4,6 +4,7 @@ join Mao (Normal) 1 [ z_index="2"]
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Excited)
+do Player.play_voice("proud")
 Mao_Portrait (Excited): We met at last, my nemesis.
 update Mao (Normal)
 Orc_Portrait (Normal): Bwahaha! Good job, young lady. This loser will take his leave now.
@@ -35,10 +36,12 @@ Chief_portrait (Normal): Bwahaha! Now for the finale of this year's Vote.
 update Chief (Smile)
 Chief_portrait (Smile): Great job, young lady, now you may face the champion.
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Wait, that wasn't the last fight?
 update Chief (Normal)
 Chief_portrait (Normal): Ah. I'm sorry if the bracket I gave you caused any confusion. Would you like more time to prepare?
 update Mao (Excited)
+do Player.play_voice("lets_go")
 Mao_Portrait (Excited): I'm fine!
 update Mao (Normal)
 Chief_portrait (Normal): Bwahaha!
