@@ -92,7 +92,7 @@ Mao_Portrait (Normal): Let's go cheer him on.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
-[signal arg="{"sound_effect": "time_passing"}"]
+do Player.play_sound_effect("time_passing")
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
 join Orc (Normal) 3 [ mirrored="true"]
