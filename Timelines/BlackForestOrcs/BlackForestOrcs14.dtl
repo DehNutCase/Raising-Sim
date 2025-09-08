@@ -6,20 +6,23 @@ join Oliver (Drool) 2
 [signal arg="{"stats": {"max_hp": 10, "max_mp": -5, "magic": 5, "attack": 10, "agility": 10,  "defense": 10, "resistance": 5, "stress":  10,}}"]
 Rice_Portrait (Normal): That's enough for now, take a two hour break.
 update Oliver (Normal)
-Rice_Portrait (Normal): Go run another fifty kilos.
+Rice_Portrait (Normal): Go run another twenty kilos.
 update Oliver (Surprised)
 Oliver_Portrait (Surprised): Oliver thinks other Albion girl doesn't understand the definition of break.
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Yes Ma'am!
 Rice_Portrait (Normal): I will let backtalk slide exactly once, Oliver.
 update Oliver (Sad)
 Oliver_Portrait (Sad): Yes ma'am!
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): Come on. The faster we finish the faster we can get dinner.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Rice never made me do heavy stuff after dark, so it should be easy after this.
 Oliver_Portrait (Sad): Oliver has reason to believe that Albion girls' definition of easy is synonymous with impossible.
 [history]
 [background arg="res://Art/Background/BlackBackground.png" fade="0.0"]
 leave --All-- [animation="Instant In Or Out"]
-[signal arg="{"sound_effect": "time_passing"}"]
+do Player.play_sound_effect("time_passing")
 [wait time="1.0" hide_text="false"]
 [background arg="res://Art/Background/Background material shop/bg017c.jpg" fade="0.0"]
 join Mao (Normal) 3
@@ -28,6 +31,7 @@ join Oliver (Drool) 2 [ z_index="1"]
 [signal arg="{"stats": {"max_hp": 5, "attack": 5, "agility": 10, "stress":  -5,}}"]
 Rice_Portrait (Normal): I'd say good job finishing faster this time, but that was just you dragging him.
 Rice_Portrait (Normal): If you were going to do that to finish faster, why not just carry him?
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): I thought that wasn't allowed Ma'am!
 Oliver_Portrait (Drool): (Oliver is reflecting on Oliver's life choices that led to this point.)
 Rice_Portrait (Normal): I doubt Oliver will be able to stomach much at this point, so have a light dinner and thirty extra minutes. Eat slowly.
@@ -35,36 +39,45 @@ Rice_Portrait (Normal): We'll be going back to the campsite. You may join us if 
 Oliver_Portrait (Drool): Oliver will do that, it sounds less painful.
 [background arg="res://Art/Background/Background material shop/bg019f.jpg" fade="2.0" transition="Push Left"]
 [signal arg="{"sound_effect": "footsteps"}"]
-update Mao 4 [ move_time="1"]
+update Mao 4 [ move_time="3"]
 update Oliver 1 [ move_time="1"]
 update Mao (Smile)
+do Player.play_voice("yay!")
 Mao_Portrait (Smile): Camping party!
 Mao_Portrait (Smile): I'd love to toast some Dumplings right now, but I learned the hard way that Dumplings don't agree with your stomach after working out.
 update Mao (Excited)
+do Player.play_voice("oh!")
 Mao_Portrait (Excited): Ooh! Sandwiches this time?
 update Oliver (Drool)
 Oliver_Portrait (Drool): Oliver would have preferred food that didn't require Oliver to use his hands. Oliver could barely move Oliver's mouth.
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee. Want me to feed you?
 Oliver_Portrait (Drool): Oliver will eat by Oliver's own self. But Oliver thanks Albion girl for the thought.
 Rice_Portrait (Normal): (It's a pity the Hero party hasn't arrived yet, they would've made excellent punching bags.)
 Rice_Portrait (Normal): (As is, Mao's Dumplings are still too strong for Oliver to handle, and I'd rather not destroy the local environment just to level him up. Hmm.)
-Rice_Portrait (Normal): (Teleporting isn't feasible since Oliver doesn't have a large mana reserve, and teleporting enemies to us is too expensive.)
+Rice_Portrait (Normal): (Teleporting isn't feasible since Oliver doesn't have a large mana reserve.)
 Rice_Portrait (Normal): (Looks like the simplest method would be to head deeper into the Black Forest.)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): So what will you do if you win the Vote tomorrow?
 update Oliver (Normal)
 Oliver_Portrait (Normal): Go to Albion.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Weren't you at the fort just the other day?
 Rice_Portrait (Normal): I believe he meant the capital.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): No, wait a second. Isn't the vote for selecting the chief for the year? What does that have to do with going to the capital?
+do Player.play_voice("oh my")
 Mao_Portrait (Normal): Oh. Actually. Do we not let people go to the capital if they aren't citizens?
-Rice_Portrait (Normal): That's not the case. It's simply strongly recommended not to go to places far exceeding your level. And it's difficult to raise your level without the necessary infrastructure, which usually requires the national resources of a great power.
+Rice_Portrait (Normal): That's not the case. It's simply strongly recommended not to go to places far exceeding your level. And it's difficult to drastically raise your level without the necessary infrastructure, which usually requires the national resources of a great power.
 Oliver_Portrait (Normal): Oliver isn't entirely sure what other Albion girl is talking about. But pops doesn't allow Oliver to go to Albion.
 update Mao [animation="Tada" length="1"]
 update Mao (Smile)
+do Player.play_voice("really_like")
 Mao_Portrait (Smile): Did you make these sandwiches, by the way? They were delicious.
 Rice_Portrait (Normal): I'll tell Alice you said so.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): So what are we doing after dinner?
 update Oliver (Sad)
 Rice_Portrait (Normal): You'll be doing nothing in particular, aside from following along. Everything in the Black Forest is too low leveled to matter for you. So just sit back and watch Oliver doing his best to avoid getting eaten.
