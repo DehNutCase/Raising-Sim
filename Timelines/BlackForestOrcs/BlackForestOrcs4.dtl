@@ -6,6 +6,7 @@ join Elizabeth (Frown) 3 [ mirrored="true"]
 Elizabeth_Portrait (Frown): I'm not good with kids either, but it's still better than the train wreck that would happen if the commander handled it.
 Elizabeth_Portrait (Frown): Anyway, we're here. I can introduce you if you'd like. Not sure how helpful that'll be, seeing how I just finished making their kid cry.
 update Mao (Angry)
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Hey, Rice! I thought you said goblins don't evolve into orcs!
 update Elizabeth (Sweatdrop)
 Elizabeth_Portrait (Sweatdrop): They don't.
@@ -32,7 +33,7 @@ update Oliver 3 [ move_time="1"]
 update Oliver (Happy)
 Oliver_Portrait (Happy): Bwahaha. Weak human runs from Mighty Oliver, everything is as it should be.
 update Mao (Smile)
-[signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Smile): Hi! I'm Mao! Are you a baby orc? How come you're so scawney? Oh, and aren't orcs supposed to talk like cavemen? Me Mao, why you so weak? Me speak caveman correct?
 update Oliver (Angry)
 Rice_Portrait (Normal): (Then again, I should also consider the possibility that she learned everything properly and simply chooses to act like this.)

@@ -4,6 +4,7 @@ join Oliver (Sad) 3 [ mirrored="true"]
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Sad)
+do Player.play_voice("oh no")
 Mao_Portrait (Sad): Wait, did I just beat a kid up for his lunch money? Am I a bad guy now?
 update Oliver (Angry)
 Rice_Portrait (Normal): It's better not to think too hard about where the money after a duel comes from.
@@ -15,6 +16,7 @@ Rice_Portrait (Normal): Hold still and I'll patch both of you up.
 update Oliver (Angry)
 Oliver_Portrait (Angry): This isn't over... But Mighty Oliver will call it a draw.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Sure! Want a Dumpling?
 update Oliver (Drool)
 Rice_Portrait (Normal): For future reference, it's best not to bring creatures from the capital to other places.
@@ -23,12 +25,15 @@ Rice_Portrait (Normal): (The teleport spell should have taken care of this to be
 update Oliver (Normal)
 Oliver_Portrait (Normal): Oliver will accept tribute from weak human girl.
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): Just tell me if you want more, I have lots.
 update Oliver (Happy)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Smile): So can I visit your village? I'm on a super secret mission to conquer the world, or something like that.
 Oliver_Portrait (Happy): Bro?
 Orc_Portrait (Normal): It's fine. But introduce her to pops when we get back.
 Orc_Portrait (Normal): We'll be here for another day, so let's meet up here tomorrow morning.
 update Mao (Normal)
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Okie dokie.
 [signal arg="{"mission": {"next": "BlackForestOrcs6"}}"]
