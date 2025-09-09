@@ -4,10 +4,11 @@ join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Excited)
+do Player.play_voice("wow")
 Mao_Portrait (Excited): Wow, everything's made of stone! It's like you all live in little castles!
 Rice_Portrait (Normal): (There don't seem to be as many children as you would expect from a pre-magical society. According to my cursory examination, the demographics are roughly similar to Albion's.)
 Rice_Portrait (Normal): (Assuming they aren't hiding the children from us, which is unlikely, this implies their society is heavily magicalized.)
-Rice_Portrait (Normal): (I wonder if it's because they never lost the knowledge of old empire, or if trade with Albion meant they had constant access to magical technology. If we checked the wagon, there might be a surprising amount of spellbooks and magical reagents.)
+Rice_Portrait (Normal): (I wonder if it's because they never lost the knowledge of the old empire, or if trade with Albion meant they had constant access to magical technology. If we checked the wagon, there might be a surprising amount of spellbooks and magical reagents.)
 Rice_Portrait (Normal): (Well, deductions like this don't really matter. A simple scanning spell would provide more accurate information, even if it's something of a faux pas to do so.)
 Oliver_Portrait (Happy): Oliver is pleased by your awe. Now that you know your place, Dignified Oliver will lead you to pops.
 update Mao (Normal)
@@ -21,8 +22,10 @@ Chief_portrait (Normal): This place looks good for this year's Vote, so let's ho
 update Chief [ mirrored="true"]
 Chief_portrait (Normal): Ah. What did you need, Oliver?
 update Mao (Excited)
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): Wow! Your hat is even bigger than her majesty's! That must mean you're an emperor!
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("greeting4")
 Mao_Portrait (Excited): Niziiro Mao greets the Orc Emperor, your August Majesty! I have Dumplings! Please have some.
 Rice_Portrait (Normal): I apologize for this, sir.
 update Chief (Smile)
@@ -30,10 +33,12 @@ Chief_portrait (Smile): Bwahaha. Thank you for the Dumpling, little lady. But I'
 update Chief (Normal)
 Chief_portrait (Normal): It's quite dangerous to be the Orc King, much less an emperor.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Huh? Why?
 Rice_Portrait (Normal): Because her majesty would either hunt them down personally or send someone to do so.
 Rice_Portrait (Normal): The reason is complicated. Just know that part of the reasons for the civil war were all the kings tearing Albion apart.
 update Mao (Sad)
+do Player.play_voice("sorry")
 Mao_Portrait (Sad): Oh. Um, sorry. Did I get you in trouble?
 update Chief (Smile)
 Chief_portrait (Smile): Bwahaha.
@@ -64,11 +69,13 @@ update Chief (Smile)
 Chief_portrait (Smile): Do you want to participate in the Vote this year? I believe you're ready. Don't worry about winning or losing, everyone has a hard time in their first Vote.
 update Oliver (Surprised) [ mirrored="false"]
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (Psst, Rice, what's the Vote supposed to be?)
 Rice_Portrait (Normal): (If I'm not wrong, it should be how they select their Chief for the year. Given the orcs' straightforward and logical nature, it's most likely a fighting tournament. Either the winner becomes Chief or the votes are weighted by performance.)
 update Oliver (Happy)
 update Chief (Normal)
 Rice_Portrait (Normal): (That said, rather than taking my word for it, you should simply ask the people in question instead.)
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): (Logical?)
 Rice_Portrait (Normal): (It's one of the reasons her majesty respects the orcs a great deal. You can deduce their situation from their actions and vice versa.)
 Rice_Portrait (Normal): (This tribe escaped here to avoid the chaos of the civil war, understanding that it's a low value area with a high cost to invade for the surrounding kingdoms.)
@@ -84,28 +91,36 @@ update Chief (Normal)
 Chief_portrait (Normal): Bwahaha!
 update Oliver (Normal)
 Rice_Portrait (Normal): (You might not like this bit of advice, but you can try asking to particiate.)
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): (Why wouldn't I like that?)
 Rice_Portrait (Normal): (Because it would be, ahem, "beating the crap out of them and forcing them to accept all of our demands.")
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): (I can just tell them to do what they want, right?)
 Rice_Portrait (Normal): (They would just hold another Vote in that case, with you excluded.)
 update Mao (EyesClosed)
+do Player.play_voice("hmm")
 Mao_Portrait (EyesClosed): (Hmm...)
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Okay.
 update Mao (Excited)
+do Player.play_voice("really?")
 Mao_Portrait (Excited): Can I vote? I fought Oliver to a draw!
 update Oliver [ mirrored="true"]
 update Chief (Normal)
 Chief_portrait (Normal): Bwahaha! Are you sure, young lady? We don't vote with ballot boxes here.
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Excited): It's a super big fighting tournament, right? I fought slimes before, and paper dolls! I'm a super fighting expert.
 update Oliver (Normal)
 Oliver_Portrait (Normal): Serious Oliver agrees. But Serious Oliver promises that things won't be the same next time Serious Oliver and weak human girl fight.
 update Mao (Normal)
 update Chief (Normal)
 Chief_portrait (Normal): Well, an entry like this is hardly unprecedented, but I would need to let everyone know and see if they have objections. I'll let you know in a day or two if you can participate.
+do Player.play_voice("yay!")
 Mao_Portrait (Normal): Yay!
 Oliver_Portrait (Normal): Bro saw how weak human girl fought, you should ask bro about her, pops.
 Oliver_Portrait (Normal): Serious Oliver will go train now. Regretful Oliver apologizes for not showing weak human girl around more, but Serious Oliver takes the Vote seriously.
 update Mao (Excited)
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): Ooh, ooh! Can I come with?
 [signal arg="{"mission": {"next": "BlackForestOrcs9"}}"]

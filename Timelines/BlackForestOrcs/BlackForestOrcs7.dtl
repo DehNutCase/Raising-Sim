@@ -4,16 +4,20 @@ join Oliver (Normal) 3 [ z_index="1" mirrored="true"]
 [signal arg="{"music": "cheerful"}"]
 [history action="clear"]
 update Mao (Angry)
+do Player.play_voice("disappointed")
 Mao_Portrait (Angry): What the heck? Those guys were so weak.
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Woah, they're loaded! I'm rich!
 Rice_Portrait (Normal): Remedial. Ethics.
 update Mao (Sad)
+do Player.play_voice("sorry")
 Mao_Portrait (Sad): I wasn't thinking it'd be nice to heal them up and fight them again. (Okay-maybe-a-little. Just a little bit.) Please don't tell her majesty.
 update Oliver (Smile)
 Oliver_Portrait (Smile): Weak human Hero fled before Mighty Oliver, weak human knew what's good for him.
 update Mao (Surprised)
-Mao_Portrait (Surprised): Wait, they ran? I thought I knocked the souls out of them or something when they turned into blue ghosts.
+do Player.play_voice("huh?")
+Mao_Portrait (Surprised): Wait, they ran? I thought I knocked their souls out of them or something when they turned into blue ghosts.
 update Oliver (Normal)
 Rice_Portrait (Normal): That was Contingency Teleport. Using single-use magical items, since they weren't high enough leveled to cast it themselves.
 update Mao (Normal)
@@ -21,43 +25,55 @@ Rice_Portrait (Normal): (But they weren't high enough leveled to own teleport it
 Rice_Portrait (Normal): (Tara doesn't have any reason to mess with us right now, and the neighboring human kingdoms aren't rich enough to sponsor hero parties, even low leveled ones. I need to report this.)
 Rice_Portrait (Normal): I'm surprised you fought them. Are we not the 'bad guys'?
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): I'm not going to turn on my friends just for a bunch of good guys I don't even know, jeez!
 Rice_Portrait (Normal): Hmm. Well, leaving that aside for now, good job not doing anything that would have gotten you arrested.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): What?
 Rice_Portrait (Normal): They were bandits, Mao. Adventuring parties don't hide next to roads for fun. Considering it was an actual Hero leading the group, I give it a fifty-fifty chance that they would leave anyone at all alive.
 Rice_Portrait (Normal): Well, that's only if we didn't fight back. There was zero chance they'd win an actual fight.
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): But weren't they trying to, um, rescue me or something? They seemed like decent people.
 Rice_Portrait (Normal): Orcs aren't human, Mao.
 update Mao (Angry)
+do Player.play_voice("hate")
 Mao_Portrait (Angry): How the heck did that guy become a Hero?
 Rice_Portrait (Normal): They were at least trying to do the right thing. Personally, I think that's quite commendable.
 Orc_Portrait (Normal): Bwahaha. Take it from me, young lady, everyone who fights has a reason. And only the winners have the right reason.
 update Mao (Sad)
+do Player.play_voice("sigh")
 Mao_Portrait (Sad): Uguu. I don't want to talk about this anymore.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Oh yeah, how was that guy so weak anyway? I fought Dumplings stronger than they were.
+do Player.play_voice("really?")
 Mao_Portrait (Normal): Actually, I think that Dumpling party would've knocked those losers senseless?
 Rice_Portrait (Normal): That would be a combination of two things. First, I believe you think the 'Hero' is the counterpart to the 'Demon King', yes?
 update Mao (Smile)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Smile): Umu.
 Rice_Portrait (Normal): He wasn't. That is, he wasn't 'The' Hero, merely 'a' Hero. Although every Hero class is technically unique, anyone with the qualifications can designate a Hero.
 update Mao (Normal)
-Rice_Portrait (Normal): Namely, every diety, the ruling power of a major nation-state, or an exceptionally powerful individual.
+Rice_Portrait (Normal): At the minimum, every diety, ruling power of a major nation-state, or exceptionally powerful individual would have the qualifications.
 Rice_Portrait (Normal): Her majesty, for example, tried to designate herself as 'Hero (Albion)' almost immediately after her coronation. She got herself struck by lightning for trying.
 update Mao (Surprised)
+do Player.play_voice("oh no")
 Mao_Portrait (Surprised): Was she okay!?
 Rice_Portrait (Normal): It wasn't serious. To be precise, it was certainly divine punishment, and it would've vaporized anyone else, but it was more or less just the world telling her to knock it off already.
 update Mao (Normal)
 Rice_Portrait (Normal): So the Hero of Albion position is still available if you want it.
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Normal): I'll pass.
 Rice_Portrait (Normal): The second reason is that the Dumplings you fought were actually higher leveled. If I'm not wrong, the Hero was level 15, maybe 16, and the rest were around level 10.
 Rice_Portrait (Normal): So yes, you could've won by tossing the Dumplings you keep snacking on at them.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): They keep sounding more and more like a party of gigantic losers.
 update Oliver (Happy)
 Oliver_Portrait (Happy): Genius Oliver would like to remind weak human girl that Oliver thought weak humans were weak the whole time.
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): Teehee. Sorry I ever doubted you.
 [signal arg="{"mission": {"next": "BlackForestOrcs8"}}"]
