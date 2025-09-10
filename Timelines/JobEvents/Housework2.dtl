@@ -2,34 +2,48 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): ~Doot doot. Folding the blankets.~
 update Mao 4 [ move_time="3"]
 update Mao [animation="Tada" length="3"]
+do Player.play_voice("happy")
 Mao_Portrait (Normal): ~Beep beep. Putting the blankets away.~
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Huh? There's a bottle of detergent in here.
 - It must be a sign! [if !Player.background_inventory.has_item_with_prototype_id("detergent")][else="hide"]
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee. I must be the secret princess of the Cleaning Kingdom!
+	do Player.play_voice("proud")
 	Mao_Portrait (Normal): Make sure to add 'Your Highness' when you talk to me in the future, Rice!
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Rice?
 	update Mao (Angry)
+	do Player.play_voice("baka")
 	Mao_Portrait (Angry): Hmph. Ignoring royalty is lese majesty, you know?
 	Rice_Portrait (Normal): (I would say impersonating one is the real lèse-majesté, but her majesty doesn't really care about this kind of thing.)
 	update Mao (Normal)
+	do Player.play_voice("oh!")
 	Mao_Portrait (Normal): Oh. It's almost empty. Hmm.
+	do Player.play_voice("keep_it_up")
 	Mao_Portrait (Normal): I'll go get a new one from the storage room.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): (And I'm sure no one would mind if I kept this bottle. Teehee.)
 	[signal arg="{"background": "detergent"}"]
 - Oh well, back to work.
 	update Mao 2 [ move_time="3"]
 	update Mao [animation="Tada" length="3"]
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): ~Doot doot. Folding more blankets.~
 	[signal arg="{"stats": {"stress": -10, "agility": 5,}}"]
 - It has a nice smell, I'm getting hungry.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Rice, do you know what we're having for dinner tonight?
 	Rice_Portrait (Normal): It's usually posted on the intranet, but I'll check.
-	Rice_Portrait (Normal): Looks like it's "C" today.
+	Rice_Portrait (Normal): Looks like it's the "C" menu today.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("yay!")
 	Mao_Portrait (Normal): Yay, mushrooms! *Drool*
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Do you think they'll mind if I went to the kitchen for a taste test?
 	Rice_Portrait (Normal): The cafeteria hours are recommendations, not rules. But wipe off your drool first.
 	[signal arg="{"stats": {"stress": -15,}}"]

@@ -3,21 +3,29 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Shake X" length="4"]
 update Mao (Normal)
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): Into the bag, please! Yes, yes, you too. Ah, not you. You're ice cream, I have a different bag for you.
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Hmm. I should head back soon, I can't carry much more than this.
 Dumpling_portrait (f_manju): Juu!
+do Player.play_voice("sorry")
 Mao_Portrait (Normal): Sorry, you can't follow me home. Rice brought me here with teleport, so we'll be teleporting back.
 Dumpling_portrait (f_manju): Juu?
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Maybe I'll be back later? I dunno.
 - It's fine if I took a bite, right?
 	Mao_Portrait (Normal): *Drool*
 	Rice_Portrait (Normal): Please remember what happened the last time you tried nibbling on wild Dumplings.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee. Maybe they'll taste better this time.
 	Rice_Portrait (Normal): They won't.
+	do Player.play_voice("keep_it_up")
 	Mao_Portrait (Normal): You don't know that. Watch, I'll prove it!
 	Dumpling_portrait (f_manju): Juu?
 	update Mao (Sad)
+	do Player.play_voice("oh no")
 	Mao_Portrait (Sad): Uguu. It's so bitter.
 	Dumpling_portrait (f_manju): Juu...
 	[signal arg="{"stats": {"stress": 10, "max_hp": 5,  "max_mp": 5, "magic": 5, "agility": 5, "defense": 5, "resistance": 5,}}"]
@@ -26,8 +34,10 @@ Mao_Portrait (Normal): Maybe I'll be back later? I dunno.
 	Rice_Portrait (Normal): We'll separate the higher leveled ones since they're a little dangerous. The smarter ones will end up working in the palace after some training, the popular ones will go to zoos, and the rest here and there, depending on the specific variety.
 	Rice_Portrait (Normal): The academy has a request for some Dumpling Wizards, for example.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("really?")
 	Mao_Portrait (Normal): Aren't we going to cook any? Dumpling steak is delicious!
 	Rice_Portrait (Normal): The palace uses domesticated Dumplings for cooking. We use wild Dumplings for seasoning occasionally, but never the main course.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee. I hope we're having Dumpling tonight.
 	[signal arg="{"stats": {"stress": -20,}}"]
 # Ignore

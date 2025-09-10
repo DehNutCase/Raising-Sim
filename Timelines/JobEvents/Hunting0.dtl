@@ -4,41 +4,52 @@ join Drake (Frown) 3
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
-[signal arg="{"voice": "boom"}"]
+do Player.play_voice("boom")
 Mao_Portrait (Normal): Dumplings! Crossbows! Explosions!
 update Drake (Frown)
 Drake_Portrait (Frown): The second shouldn't happen, and the last better not.
 update Drake (Sigh)
 Drake_Portrait (Sigh): If you truly insist on practicing your aim, I won't stop you, but it's easier to catch Dumplings by walking up to them and picking them up.
 update Drake (Frown)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee.
 - Do I  know you?
 	Drake_Portrait (Frown): For the sake of my personal health, I believe it's best if we pretended we don't know each other.
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): Okie dokie.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Wait, shouldn't I get something out of this?
 	Drake_Portrait (Frown): Your paycheck.
+	do Player.play_voice("happy")
 	Mao_Portrait (Normal): No, I mean something extra. Isn't this like blackmail right now?
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Pay up! Teehee.
 	Drake_Portrait (Frown): My health is related to my wealth, so I'll refuse.
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Normal): Aww...
 	[signal arg="{"stats": {"stress": -10, "max_hp": 5, "agility": 5,}}"]
 - Aren't hunters supposed to be handsome old men with cool beards and fur hats?
-	Drake_Portrait (Frown): Hmm. Who knows. I'm not exactly a hunter by profession.
+	Drake_Portrait (Frown): Who knows. I'm not exactly a hunter by profession.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Why did you hire me, then?
 	Drake_Portrait (Frown): I didn't. I'm in the capital for my yearly assessment, and some pencil pusher somewhere decided they might as well use me to manage the Dumpling population while I'm here.
 	Drake_Portrait (Frown): You were simply assigned to me.
 	update Mao (Sad)
+	do Player.play_voice("oh...")
 	Mao_Portrait (Sad): Oh. Does that mean you don't know any hunting spells? I wanted to learn some.
 	Drake_Portrait (Frown): I don't. My magical knowledge is limited to the spells from officer training. You'll be better off going to officer school if you wanted to learn what I know.
 	update Mao (Excited)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Excited): Wait! You're a Magic Officer?
 	Drake_Portrait (Frown): In the sense that every commissioned officer in the Albion military is a Magic Officer, sure.
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
 - Ready to work, sir!
 	Drake_Portrait (Frown): I suppose it's good that you're enthusiastic. Here's the list of Dumplings you should catch.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Um... I think some of these are stronger than me.
 	Drake_Portrait (Frown): You don't need to catch all of them, and it's fine to catch more than the amount listed. Think of the list as a guideline to go for if reasonably practical.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("yes_enthusiastic")
 	Mao_Portrait (Normal): Okie dokie. Niziiro Mao, moving out!
 	[signal arg="{"stats": {"stress": -10, "max_hp": 5, "agility": 5,}}"]

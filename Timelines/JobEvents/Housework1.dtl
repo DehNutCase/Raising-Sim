@@ -4,38 +4,49 @@ join Mao (Normal) 2
 update Mao [animation="Tada" length="5"]
 update Mao [animation="Shake X" length="5"]
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): ~Lalala. Cleaning the shelves.~
+do Player.play_voice("wow")
 Mao_Portrait (Normal): Oh wow, there're a lot of crowns on this shelf. Are they real?
 Rice_Portrait (Normal): I'm not sure what would make a crown 'fake'. But each of these once belonged to a monarch of demonkind.
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): Oh. Hmm. Would I become a king if I put one on?
 Rice_Portrait (Normal): No. And even if you did, it would be a very short reign. Likely less than a day.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Huh.
 - The onyx on this one is beautiful.
 	Rice_Portrait (Normal): This is one of the oldest crowns here. It's the Crown of Vampires, and belonged to the previous Demon King.
 	update Mao (Excited)
+	do Player.play_voice("wow")
 	Mao_Portrait (Excited): Wow! It must be worth a lot.
 	Rice_Portrait (Normal): It's certainly valuable, although finding a buyer would be difficult.
 	update Mao (Normal)
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee. Does it have any special powers?
 	Rice_Portrait (Normal): Like the other crowns of demonkind, it can locate its king. That is, if a King of Vampires appears, we can find them with it.
 	Rice_Portrait (Normal): It does have other abilities if worn by said Vampire King, but they aren't really relevant.
 	[signal arg="{"stats": {"scholarship": 5}}"]
 - This silver crown looks a bit out of place, it's too ordinary.
 	Rice_Portrait (Normal): That's the Crown of Angels, and it's the oldest one here. It belonged to the Demon King of the Beginning. That is, the very first Demon King.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Aren't angels the opposite of demons?
 	Rice_Portrait (Normal): What gave you that idea? If any species can be considered most demon-like, it would be angels.
 	Rice_Portrait (Normal): I suppose devils might be a close second.
 	Rice_Portrait (Normal): In any case, demonkind is a very inclusive category. Any species that produes a King of Demons becomes part of demonkind.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): How does that work? Don't you have to be a demon in the first place to become a Demon King?
 	Rice_Portrait (Normal): By collecting the crowns. That is, the ones on this shelf. You don't need to collect all of them, and the amount you need varies.
 	update Mao (Excited)
+	do Player.play_voice("yay!")
 	Mao_Portrait (Excited): Wait!
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("really!?")
 	Mao_Portrait (Excited): Does that mean if I just grabbed all of these crowns I'll become the Demon King?
 	Rice_Portrait (Normal): No. In the first place, you're a subject of her majesty.
 	Rice_Portrait (Normal): Secondly, her majesty is still alive, so a new Demon King won't appear unless she abdicates.
 	update Mao [animation="Tada" length="1"]
 	update Mao (Surprised)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Surprised): Her majesty is the Demon King!?
 	Rice_Portrait (Normal): ...Why was that a surprise?
 	[signal arg="{"stats": {"scholarship": 5}}"]
@@ -43,20 +54,24 @@ Mao_Portrait (Normal): Huh.
 	Rice_Portrait (Normal): Those are meant for the Crown of Humans and Crown of Elves.
 	Rice_Portrait (Normal): Our official stance is that we have no idea where the Elf King is. Unofficially, if you really needed to contact him, we can make it happen.
 	Rice_Portrait (Normal): In any case, he's not in Albion.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): What about the Crown of Humans?
 	Rice_Portrait (Normal): That one's a bit complicated. Officially, the Emperor Arcadia is also the King of Humans, and he's wearing the Crown at the moment.
 	Rice_Portrait (Normal): Have you studied the history of Arcadia? It used to be one of the three super powers of the world.
+	do Player.play_voice("oh...")
 	Mao_Portrait (Normal): All I remember from my textbooks is that Arcadia is one of the forbidden zones.
 	Rice_Portrait (Normal): That's right. Although unlike most other forbidden zones, it's not because it's particularly dangerous.
 	Rice_Portrait (Normal): You simply can't leave after entering if you're human.
 	update Mao (Surprised)
+	do Player.play_voice("wow")
 	Mao_Portrait (Surprised): Wow. Is that a special power of the King of Humans?
 	Rice_Portrait (Normal): Yes, but not in the way you'd expect. The officially recognized Emperor Arcadia doesn't have any of the actual powers.
 	update Mao (Normal)
 	Rice_Portrait (Normal): It was a whole mess of a succession struggle that would take quite a few books to describe.
-	Rice_Portrait (Normal): Long story short, Arcadia isn't relevant any more, the Crown of Humans is quite dangerous, so her majesty keeps it on her person, and the 'real' Emperor Arcadia doesn't even live in Arcadia.
+	Rice_Portrait (Normal): Long story short, Arcadia isn't relevant any more, the Crown of Humans is quite dangerous, so her majesty keeps it on her person, and the rightful Emperor Arcadia doesn't even live in Arcadia.
 	Rice_Portrait (Normal): He has a room in the palace, and you've ran into him a few times.
 	update Mao (Surprised)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Surprised): What? I have?
 	Rice_Portrait (Normal): He goes by a pseudonym, and in any case he's quite low key, so it's not surprising if you don't remember him.
 	[signal arg="{"stats": {"scholarship": 5}}"]
