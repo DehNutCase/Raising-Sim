@@ -7,9 +7,11 @@ do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): Good morning!
 Morgan_Portrait (Silhouette): Oh my, it seems you've made the appointment yourself this time? Fufufu.
 update Mao (EyesClosed)
+do Player.play_voice("proud")
 Mao_Portrait (EyesClosed): Umu! *Smug*
 Morgan_Portrait (Silhouette): Good job. You're in the final strech now, so watch out not to stumble at the last step.
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Yes, your majesty!
 [signal arg="{"start_quest": "good_student_4", "stats": {"gold": 1000,}, }"]

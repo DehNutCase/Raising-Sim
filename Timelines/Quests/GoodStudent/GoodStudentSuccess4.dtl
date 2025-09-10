@@ -13,7 +13,7 @@ Rice_Portrait (Normal): You'll be taking your final exam here.
 do Player.play_voice("oh...")
 Mao_Portrait (Normal): Oh... Are you my examiner, then?
 Rice_Portrait (Normal): No. But tell me when you're ready and we can start the exam.
-do Player.play_voice("huh?")
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): Huh? Well, I guess I'm ready?
 [signal arg="{"card_game": "res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn"}"]
 [update_position action="reset_all" vector="Vector2(0, 150)" time="0.0"]
