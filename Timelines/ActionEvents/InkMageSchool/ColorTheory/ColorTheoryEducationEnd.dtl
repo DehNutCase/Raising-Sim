@@ -5,32 +5,42 @@ join Fiona (Grin) 2 [ mirrored="true"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): Fiona! Fiona! Here!
 update Fiona (Surprise)
 Fiona_Portrait (Surprise): Yes? Why did you give me bread?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Isn't that the normal going away present?
 update Fiona (Grin)
 Fiona_Portrait (Grin): I... see?
+do Player.play_voice("yay!")
 Mao_Portrait (Normal): Rice said that I'm almost done with this class, but I'll see you in my other classes!
 Fiona_Portrait (Grin): (Then why the going away present?)
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): Here's my contact!
 Fiona_Portrait (Grin): Are you always this forward?
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): This is my easygoing mode.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): By the way, are we the same age? How come you're so much taller?
 Rice_Portrait (Normal): She's a few year's older than you.
+do Player.play_voice("oh!")
 Mao_Portrait (Normal): Oh. Why do we have the same classes, then?
 Fiona_Portrait (Grin): Lilian asked me to delay the classes outside my major so we can take them together. She was planning to take them with Her Highness.
 update Fiona (Laugh)
 Fiona_Portrait (Laugh): Like a lot of Lilian's plans, it didn't end well. The academy lets you take profiency exams to get course credit in lieu of taking classes. Her Highness being Her Highness, she took the exams to skip a few years' worth of classes.
 Fiona_Portrait (Laugh): So now Lilian's desperately cramming to catch up, and I'm left all alone.
+do Player.play_voice("proud")
 Mao_Portrait (Normal): You have me!
 update Fiona (Grin)
 Fiona_Portrait (Grin): Yes, yes. Thank you.
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("really!?")
 Mao_Portrait (Normal): Are you not taking me seriously? I'm a professional friend!
 Fiona_Portrait (Grin): (I wonder if she realizes that being a professional means being paid for it, and that's not exactly the best kind of friend.)
 Fiona_Portrait (Grin): Of course I am. Let's go to a dessert buffet later.
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Yay!
 [signal arg="{"stats": {"stress": -5, "scholarship": 5,}}"]

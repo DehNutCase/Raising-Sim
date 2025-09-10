@@ -2,7 +2,9 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (Smile) [animation="Shake X" length="4" repeat="10"]
+do Player.play_voice("happy")
 Mao_Portrait (Smile): *Humming*
 Rice_Portrait (Normal): (...She's been standing in line to exit the city just to stand in line to get back in.)
+do Player.play_voice("happy")
 Mao_Portrait (Smile): *Humming*
 [signal arg="{"stats": {"stress": -5,"max_hp":5,"strength":5,"agility":5,}}"]

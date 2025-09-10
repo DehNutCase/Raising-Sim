@@ -2,12 +2,17 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (EyesClosed)
+do Player.play_voice("proud")
 Mao_Portrait (EyesClosed): Umu! My deck has no weaknesses! *Smug*
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Hmm. I feel like having curry, Rice, do you want to go eat?
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Normal): ...Rice?
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Riceeeeeeeeeeeeeeee!
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Hmph! Well I'll eat your portion too!
 [signal arg="{"stats": {"stress": -5}}"]

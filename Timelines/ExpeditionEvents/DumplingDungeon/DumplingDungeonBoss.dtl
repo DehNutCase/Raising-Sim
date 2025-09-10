@@ -3,4 +3,5 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
+do Player.play_voice("looks_delicious")
 Mao_Portrait (Excited): Oh wow, is that a boss Dumpling? It looks delicious!
