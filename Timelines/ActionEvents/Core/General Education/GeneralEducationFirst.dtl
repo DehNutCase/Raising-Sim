@@ -4,11 +4,14 @@ join Victoria (Frown) 2
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Yay! I got a seat at the back of the class, now I can slack off without the teacher catching me.
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee.
 update Victoria (Frown)
 Victoria_Portrait (Frown): If you don't mind me asking, why are you in this class?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I don't know! Rice led me here.
 Rice_Portrait (Normal): Since her majesty wanted to give Mao the freedom to choose her own courses, she's been given permission to attend any class that still has seats available.
 Rice_Portrait (Normal): If you don't want to see her, I can avoid your classes in the future.
@@ -16,22 +19,28 @@ Victoria_Portrait (Frown): I don't believe you need to take my opinion into cons
 Victoria_Portrait (Frown): Welcome.
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+do Player.play_voice("thank_you")
 Mao_Portrait (Normal): Thanks! Have a Dumpling!
 update Victoria (Sweatdrop)
 Victoria_Portrait (Sweatdrop): Thank you, I suppose.
 update Victoria (Frown)
 Victoria_Portrait (Frown): (I'll ask Lilian to take care of it later. Isn't it a bit strange to give a pet as a greeting gift?)
 Victoria_Portrait (Frown): Since it sounds like your attendence will be irregular, I can have Stella give you a copy of her notes. Here's her contact.
+do Player.play_voice("yay!")
 Mao_Portrait (Normal): Yay! But why not your own notes? Not that there's anything wrong with that.
 Victoria_Portrait (Frown): I don't take notes. At least, not for my own use. And Stella never had less than perfect attendence, so I never needed to take notes for someone else.
 update Mao (Excited)
+do Player.play_voice("wow")
 Mao_Portrait (Excited): Wow! So do you have a perfect memory?
 Victoria_Portrait (Frown): No. I simply believe jobs should be done by the appropriate people.
 update Mao (Normal)
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Huh?
 Victoria_Portrait (Frown): Compared to ten people writing one book each, a single person writing ten books would produce higher quality work. At least, that's my opinion.
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): I... see?
 update Victoria [ mirrored="true"]
 Victoria_Portrait (Frown): It's simply a small and meaningless opinion. Class will start soon.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (Victoria seems really nice, I wonder why she frowns all the time?)
 [signal arg="{"stats": {"stress": -5}}"]
