@@ -2,13 +2,14 @@
 # Need to be redone due to game rework
 join Hiyori (Desk) 2
 Hiyori_Portrait (Normal): Hello, welcome to Hiyori's Corner, the helpful hideout that provides facts and tips to the lost and confused.
-[signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): Hello Hiyori.
 # Use get to return null rather than throw an error if index isn't present
 if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_event"):
 	Hiyori_Portrait (Normal): (What was the name again? I think it was Gray.)
 	Hiyori_Portrait (Surprised): You picked up Gray, right?
 	Hiyori_Portrait (Normal): You should get a golem handler's license if you're planning to keep it. You don't absolutely need it, but it's the rules.
+	do Player.play_voice("oh!")
 	Mao_Portrait (Surprised): Oh, I didn't know that.
 	Hiyori_Portrait (Normal): It's not a big deal, really.
 	[signal arg="{"location_flags": {"testing_center": true}}"]
@@ -16,6 +17,7 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 Hiyori_Portrait (Normal): So what would you like to learn about today?
 - I can't find Rice.
 	Hiyori_Portrait (Surprised): Isn't she right next to you?
+	do Player.play_voice("hate")
 	Mao_Portrait (Angry): She won't talk to me.
 	Hiyori_Portrait (Normal): Hmm... I don't think she's ignoring you to be mean, so you can try visiting her house.
 	[signal arg="{"location_flags": {"rice_house": true}}"]
@@ -30,6 +32,7 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 	Hiyori_Portrait (Smile): Same as usual. Mom's been getting on my case about my classes lately, but she always does that.
 	Hiyori_Portrait (Surprised): Oh, actually, I've been learning sculpting.
 	Hiyori_Portrait (Smile): Everything turns out ugly and messed up, but it's been fun.
+	do Player.play_voice("wow")
 	Mao_Portrait (Excited): Wow. Can I take a look at them?
 	Hiyori_Portrait (Normal): Maybe later, they look really embarassing right now.
 	[signal arg="{"location_flags": {"atelier": true}}"]
@@ -38,22 +41,27 @@ Hiyori_Portrait (Normal): So what would you like to learn about today?
 	Hiyori_Portrait (Surprised): It's a bit dangerous to go out looking for them, but you have Rice with you so it should be fine.
 	Hiyori_Portrait (Normal): You can also try helping out in the kitchen. I heard they're looking for a cook lately, so maybe you'll get a salary bump for working there.
 	Hiyori_Portrait (Surprised): But why do you even have money problems? I'm sure mom'll be happy to cover the tuition if you're trying to take classes.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Blush): Teehee. Um...
 	Hiyori_Portrait (Normal): Well, I won't pry. You can try asking mom for some pocket money. Make an appointment later.
 	[signal arg="{"location_flags": {"reception_hall": true}}"]
 - So why is there a classroom here, anyway?
 	Hiyori_Portrait (Normal): It's not a classroom! Hiyori's Corner is a helpful hideout that provides facts and tips to the lost and confused.
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): If you say so. Why is Hiyori's Corner here, then?
 	Hiyori_Portrait (Normal): I asked one of the maids to build a secret hideout for me, and this is how it ended up.
 	Mao_Portrait (EyesClosed): (But why did they make it a classroom?)
 - I can't seem to do anything right.
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Sad): I keep messing up my jobs.
 	Hiyori_Portrait (Normal): Are you managing stress properly? High stress makes it hard to work. Try taking relaxing walks before doing something hard.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Blush): Umm...
 	[signal arg="{"stats": {"stress": -5}}"]
 	Hiyori_Portrait (Normal): Leaving that aside for now, having higher stats also helps a lot. You can do the same thing over and over and it'll get easier even if you keep failing, but that's slow and inefficient.
 	Hiyori_Portrait (Surprised): Scholarship📖 helps you finish your courses faster, and with Rice around I don't think you need to worry about failing them.
 	Hiyori_Portrait (Normal): For jobs it's a bit harder to tell what stats you need, there's no hard or fast rule, but you should have a good sense of whether a job is easy or hard from just your intuition.
+	do Player.play_voice("really?")
 	Mao_Portrait (Surprised): Really?
 	Hiyori_Portrait (Normal): I hope so, anyway.
 Hiyori_Portrait (Smile): That's all for this time's consultation, we hope to see you again.

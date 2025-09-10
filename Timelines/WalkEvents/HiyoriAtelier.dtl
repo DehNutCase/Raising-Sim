@@ -10,6 +10,7 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Normal): (What was the name again? I think it was Gray.)
 	Hiyori_Portrait (Surprised): You picked up Gray, right?
 	Hiyori_Portrait (Normal): You should get a golem handler's license if you're planning to keep it. You don't absolutely need it, but it's the rules.
+	do Player.play_voice("oh!")
 	Mao_Portrait (Surprised): Oh, I didn't know that.
 	Hiyori_Portrait (Normal): It's not a big deal, really.
 	[signal arg="{"location_flags": {"testing_center": true}}"]
@@ -19,8 +20,10 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Normal): Nothing, actually.
 	Hiyori_Portrait (Smile): Classes have been a bit tiring lately so I've been hiding here.
 	update Mao (Sad)
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Sad): So no more cats?
 	Hiyori_Portrait (Surprised): What's with you and cats? I don't usually make animal sculptures, so no, no more cats.
+	do Player.play_voice("eh_no_way")
 	Mao_Portrait (Sad): Aww...
 	update Mao (Normal)
 	[signal arg="{"stats": {"scholarship": 2}}"]
@@ -28,21 +31,27 @@ if Player.skill_flags.get("gray") and not Player.event_flags.get("atelier_gray_e
 	Hiyori_Portrait (Surprised): Phrasing.
 	Hiyori_Portrait (Smile): I'd love to, but I'm actually grounded right now.
 	update Mao (Surprised)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Surprised): But who would stop you from just walking out the front door?
 	Rice_Portrait (Normal): I would, for one.
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Surprised): Gah!
 	update Mao (Angry)
+	do Player.play_voice("hate")
 	Mao_Portrait (Angry): Please stop doing that!
 	update Mao (Normal)
 	Hiyori_Portrait (Smile): Yes, something like that.
 	Hiyori_Portrait (Normal): I think I can break out if I really needed to, but hanging out isn't a big enough emergency to go breaking down doors for.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Oh, then do you have anything to do here?
 	Hiyori_Portrait (Normal): I have some boardgames somewhere if you'd like to play those.
 	update Mao (Excited)
+	do Player.play_voice("yay!")
 	Mao_Portrait (Excited): Sure!
 	update Mao (Normal)
 	[signal arg="{"stats": {"stress": -10}}"]
 Hiyori_Portrait (Normal): See you.
 update Mao (Smile)
+do Player.play_voice("happy")
 Mao_Portrait (Smile): It was fun!
 [signal arg="{"stats": {"stress": -5, "art": 10,}}"]

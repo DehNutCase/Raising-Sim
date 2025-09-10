@@ -3,31 +3,39 @@ join Mao (Normal) 1
 join Hiyori (Normal) 3
 [history action="clear"]
 Hiyori_Portrait (Surprised): Mao? What are you doing here?
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Didn't you say I could come take a look?
 Hiyori_Portrait (Normal): I said the exact opposite of that, actually. But welcome.
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Yay! So is there anything you've been working on recently?
 update Mao (Normal)
 Hiyori_Portrait (Surprised): Well there's this, I suppose, but it's not really a sculpture.
 join Gray (Normal) 2
 Hiyori_Portrait (Normal): Here.
 update Mao (Smile)
+do Player.play_voice("really_like")
 Mao_Portrait (Smile): Aww.
 update Mao (Excited)
+do Player.play_voice("really?")
 Mao_Portrait (Excited): Can I pet it?
 Hiyori_Portrait (Normal): Sure, but it's just a golem.
 # Z-index is based on last movement, so move last the portrait meant to be on top
 update Gray 1
 update Mao (Smile) 2 [animation="Tada" move_time="0.3"]
 update Gray 2
+do Player.play_voice("happy")
 Mao_Portrait (Smile): So why were you embarrassed anyway? She's so cute!
 Hiyori_Portrait (Surprised): (She?)
 update Mao (EyesClosed)
 Hiyori_Portrait (Normal): Like I said, this one isn't really a sculpture. It's more like something I cheated out, so it doesn't count.
+do Player.play_voice("huh?")
 Mao_Portrait (EyesClosed): Cheated?
 Hiyori_Portrait (Normal): It's the difference between rolling up your sleeves and working hard to make a painting and waving your brush once to poof into existence. This one is the second kind.
+do Player.play_voice("sure")
 Mao_Portrait (EyesClosed): There's nothing wrong with that.
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): Haha, her fur is so soft.
 Hiyori_Portrait (Normal): (Looks like she's having fun. I'll leave her alone for now.)
 [signal arg="{"stats": {"stress": -50}}"]
