@@ -5,14 +5,19 @@ join Morgan (Silhouette) 1
 Morgan_Portrait (Silhouette): Good morning, Mao. Did you need something?
 update Mao (Excited)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("tada")
 Mao_Portrait (Excited): Look at my sketch!
 Morgan_Portrait (Silhouette): Hmm?
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("proud")
 Mao_Portrait (Normal): I made a super doodle!
 Morgan_Portrait (Silhouette): Did you now. Are you, perhaps, asking me to preserve this carefully so that I might display it later?
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Normal): (I wonder why I'm starting to get a bad feeling about this?)
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): I guess?
 Morgan_Portrait (Silhouette): Well, it's certainly a very pretty doodle. A reward is in order.
+do Player.play_voice("proud")
 Mao_Portrait (Normal): Teehee. *Proud*
 [signal arg="{"start_quest": "budding_artist_2", "stats": {"gold": 1000,},}"]

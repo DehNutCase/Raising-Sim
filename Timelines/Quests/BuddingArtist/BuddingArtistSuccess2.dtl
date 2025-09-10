@@ -5,16 +5,20 @@ join Morgan (Silhouette) 1
 Morgan_Portrait (Silhouette): Good morning, Mao.
 update Mao (Excited)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("tada")
 Mao_Portrait (Excited): I made a painting!
 Morgan_Portrait (Silhouette): Hmm?
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): Please put this on display instead of my doodle!
 Morgan_Portrait (Silhouette): But it's a very pretty doodle?
 update Mao (Sad)
+do Player.play_voice("oh...")
 Mao_Portrait (Sad): Uguu... But it's embarrassing.
 Morgan_Portrait (Silhouette): Not for me. Fufufu.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Your majesty!
 do Player.set_event_flag("ending_reached")
 do Player.set_event_flag("artist")

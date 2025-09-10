@@ -5,9 +5,11 @@ Rice_Portrait (Normal): From here we can head towards the Sacred Woods, the Old 
 Rice_Portrait (Normal): Playing with Dumplings is also an option.
 - Let's go to the woods
 	update Mao (Normal)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): So are the woods 'sacred' because her majesty keeps exploding everything inside?
 	Rice_Portrait (Normal): ...What kind of image do you have of her majesty, exactly?
 	Rice_Portrait (Normal): Moving on, the Sacred Woods are the one place nearby where the undead isn't a problem. They avoid it.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): So I should head over there if a zombie apocalypse happens?
 	Rice_Portrait (Normal): You shouldn't be watching those kinds of movies.
 	Rice_Portrait (Normal): It wouldn't be the worst idea, but it would be better to stick close to me or her majesty.
@@ -15,68 +17,87 @@ Rice_Portrait (Normal): Playing with Dumplings is also an option.
 - Isn't the capital the Old City?
 	Rice_Portrait (Normal): The older city, technically. The capital is built on the burnt down ruins of the old one.
 	update Mao (Normal)
+	do Player.play_voice("oh no")
 	Mao_Portrait (Normal): That sounds really unlucky.
 	Rice_Portrait (Normal): That's precisely the problem. If no one dealt with it, everywhere within a hundred kilos would've been uninhabitable from all the undead. It's part of why her majesty stays in the capital most of the time.
 	update Mao (Sad)
+	do Player.play_voice("eh_no_way")
 	Mao_Portrait (Sad): Should I be worried?
 	Rice_Portrait (Normal): You've fought undead in the tower, did they feel worrying?
 	update Mao (Normal)
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Not really. They looked kind of cute, actually.
 	Rice_Portrait (Normal): Yes. Everything's mostly dealt with at this point.
 	Rice_Portrait (Normal): Her majesty still can't leave for long because the undead are still spawning naturally, but it's possible to co-exist with the current kind.
 	update Mao (Surprised)
-	Mao_Portrait (Surprised): Don't the undead get angry from her majesty blasting their friends to bits all the time?
+	do Player.play_voice("huh?")
+	Mao_Portrait (Surprised): Don't they get angry from her majesty blasting their friends to bits all the time?
 	Rice_Portrait (Normal): Just because they're undead doesn't mean they're suicidal, Mao.
 	update Mao (Normal)
+	do Player.play_voice("i_see")
 	[signal arg="{"location_flags": {"old_city": true}}"]
 - So who's the person named 'Prospector'?
 	Rice_Portrait (Normal): Strictly speaking, it should be called Prospectors' Road, but it ended up this way. According to what I've read, there was a gold rush a few decades ago.
 	update Mao (Normal)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Anything special?
 	Rice_Portrait (Normal): There's still some gold in the river if you want to go panning. It also leads to the Haunted Mines and the Forgotten Valley.
 	update Mao (Excited)
+	do Player.play_voice("amazing")
 	Mao_Portrait (Excited): Gold!
 	Rice_Portrait (Normal): It's just a shiny rock.
 	update Mao (Normal)
+	do Player.play_voice("disappointed")
 	[signal arg="{"location_flags": {"prospectors_road": true}}"]
 - Compass?
 	Rice_Portrait (Normal): It should be part of the standard curriculum, so I'm sure you've learned it.
 	update Mao (Blush)
+	do Player.play_voice("oh...")
 	Mao_Portrait (Blush): Umm... yes. Exactly.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Blush): But can you give me a demonstration anyway?
 	Rice_Portrait (Normal): Sure.
 	[signal arg="{"stats": {"magic": 10,}}"]
 	update Mao (Normal)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): So why do we need the coordinates anyway? Don't you have them already?
 	Rice_Portrait (Normal): I do. But it's better for you to get some practice with Compass.
 	Rice_Portrait (Normal): As for why we need the coordinates, people used to use physical markers for teleportation, but that has obvious issues like getting lost, stolen, or destroyed.
 	Rice_Portrait (Normal): Now it's standard practice to set coordinates relative to a fixed beacon. In our case we're using the Royal Tower that you've been climbing.
 	update Mao (Surprised)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Surprised): Compass is giving me three different coordinates.
 	Rice_Portrait (Normal): The first one is relative to the Royal Tower, the other two are the backups at Norfolk and Cumbria. You should memorize or write down all three. But, practically speaking, you'll have bigger problems than teleport coordinates if the Royal Tower goes down.
 	update Mao (Normal)
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): Okie dokie.
 - Playing with Dumplings sounds fun
 	update Mao (Smile)
 	update Mao [animation="Shake X" length="4" repeat="0"]
 	update Mao [animation="Tada" length="4" repeat="2"]
+	do Player.play_voice("happy")
 	Mao_Portrait (Smile): Heehee.
 	[signal arg="{"stats": {"stress": -10}}"]
+	do Player.play_voice("hmm")
 	Mao_Portrait (Smile): By the way, isn't this dangerous? Some of these guys look really high level.
-	Rice_Portrait (Normal): Not at all, it's quite safe even for ordinary citizens. And you waited until you climbed past level 20 in the tower before coming out here.
+	Rice_Portrait (Normal): Not particularly all, it's quite safe even for ordinary citizens. And you waited until you climbed past level 20 in the tower before coming out here.
 	update Mao (Normal)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Isn't level 20 really low?
 	Rice_Portrait (Normal): The enemies in the tower are all stronger than their ordinary counterparts. Being able to clear level 20 is enough to make you one of the best fighters in a small kingdom.
 	update Mao (Excited)
+	do Player.play_voice("really?")
 	Mao_Portrait (Excited): Does that mean I'm someone awesome now?
 	Rice_Portrait (Normal): Only if you're planning to move to the middle of nowhere.
 	update Mao (Sad)
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Sad): Aww...
 	update Mao (Normal)
 - So why are there so many Dumplings here anyway?
 	Rice_Portrait (Normal): They're attracted to the residual holy mana in the air.
 	Rice_Portrait (Normal): Her majesty's mana has a very high level of purity, so Dumplings, which are almost elemental creatures, are naturally attracted.
 	update Mao (Normal)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Does that mean I can summon Dumplings if I keep learning holy magic?
-	Rice_Portrait (Normal): Enchantment or Conjuration spells would be better if you're looking for a pet, and you'll  have problems with mana purity as you are now.
+	Rice_Portrait (Normal): Enchantment or Conjuration spells would be better if you're looking for a meat shield, and you'll have problems with mana purity as you are now.
 [signal arg="{"stats": {"stress": -10, "magic": 5,}}"]
