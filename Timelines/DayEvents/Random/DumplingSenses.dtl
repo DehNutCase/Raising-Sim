@@ -5,5 +5,6 @@ update Mao (Excited)
 update Mao [animation="Tada" length="1"]
 do Player.play_voice("un_yeah")
 Mao_Portrait (Excited): Umu! I feel like something good will happen if I go looking for Dumplings!
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Excited): Let's go to the dungeon!
 [signal arg="{"start_quest": "dumpling_senses"}"]

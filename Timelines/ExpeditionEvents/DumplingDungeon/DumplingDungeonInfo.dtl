@@ -6,37 +6,48 @@ Morgan_Portrait (Silhouette): Hello, Mao.
 update Mao [animation="Tada" length="1"]
 update Mao (Smile)
 [signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Smile): Hello!
 update Mao (Normal)
 Morgan_Portrait (Silhouette): Do you have any questions about what you need to do inside the dungeon?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I do! But I think Rice will tell me once I'm inside.
 Morgan_Portrait (Silhouette): Fufufu. While it's nice to have someone you can depend on, you should try doing your best by yourself, first.
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Yes, your majesty!
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Um. So I know I'm going inside to replace the treasure chests, but I don't know why?
 Morgan_Portrait (Silhouette): The reason is nothing spectacular. The spells and equipment that would ordinarily appear are simply too shoddy.
 Morgan_Portrait (Silhouette): As you might already know, the Dumpling Dungeon is something of a training ground for newbie adventuers. Even academy students sometimes take commissions inside, whether for a bit of extra pocket money or extracurricular credits.
 Morgan_Portrait (Silhouette): Now, if all they did was complete their commissions and sell whatever comes out of the treasure chests, there's no issue, but the problem appears once they keep and use the spells and equipment inside.
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
+do Player.play_voice("amazing")
 Mao_Portrait (Excited): Because they're too awesome?
 Morgan_Portrait (Silhouette): Mao.
 update Mao (Blush)
+do Player.play_voice("happy")
 Mao_Portrait (Blush): Teehee.
 update Mao (Normal)
 Morgan_Portrait (Silhouette): Well, the equipment isn't too much of a problem. Mediocre, but at least usable. The spells, on the other hand, are so out of date that it's causing a noticable drop in grades for the students who tried to study them.
 Morgan_Portrait (Silhouette): Perhaps due to the misconception that everything from a chest is good quality, too many students are wasting too much time trying to decipher spells that have been obsolete for years, if not decades.
+do Player.play_voice("proud")
 Mao_Portrait (Normal): And that's where I come in! Umu!
 Morgan_Portrait (Silhouette): Fufufu. Indeed.
 Morgan_Portrait (Silhouette): Your task will be to replace the out of date spellbooks with textbooks.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Textbooks?
 Morgan_Portrait (Silhouette): They'll be slightly modified such that they resemble the spellbooks they replace. By the time anyone notices they're textbooks, they'll have already memorized a few spells.
 update Mao (Sad)
+do Player.play_voice("oh no")
 Mao_Portrait (Sad): That sounds really mean. Tricking people into doing homework?
 Morgan_Portrait (Silhouette): Fufufu.
 Morgan_Portrait (Silhouette): Go along now.
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): (Well, at least I'm not the one being tricked. Teehee.)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Normal): Yes, your majesty!

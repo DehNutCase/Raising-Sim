@@ -9,25 +9,30 @@ Mao_Portrait (Normal): Good morning, boss!
 update Keith (Normal)
 Keith_Portrait (Normal): Good morning. Is everything going well?
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Everything is okie dokie, boss!
 - Why do you run a potato farm?
 	update Keith (Laugh)
 	Keith_Portrait (Laugh): It's fun.
 	update Keith (Normal)
 	Keith_Portrait (Normal): I'd like to say that I inherited this farm from my parents, who inherited it from their parents, and so on. But alas, I only bought it a few years ago.
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee.
 	Keith_Portrait (Normal): Keep up the good work.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("yes_enthusiastic")
 	Mao_Portrait (Normal): Yes boss!
 	[signal arg="{"stats": {"stress": -10}}"]
 - Can I get a raise?
 	update Keith (Laugh)
 	Keith_Portrait (Laugh): Personally, I wouldn't mind paying you more.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("yay!")
 	Mao_Portrait (Normal): Yay!
 	update Keith (Normal)
 	Keith_Portrait (Normal): But I can't.
 	update Mao (Sad)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Sad): What? Why?
 	Keith_Portrait (Normal): Strictly speaking, I'm not even the one paying you. At least, not directly.
 	update Mao (Normal)
@@ -36,18 +41,22 @@ Mao_Portrait (Normal): Everything is okie dokie, boss!
 	Keith_Portrait (Normal): In other words, you should talk to the treasury department.
 	update Keith (Laugh)
 	Keith_Portrait (Laugh): For all I know, you're already being paid more than I send over.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): Huh.
 	update Keith (Normal)
 	[signal arg="{"stats": {"scholarship": 5}}"]
 - How come you don't use golems?
 	Keith_Portrait (Normal): Ah. I'm not a Luddite, if that's what you're asking.
 	Keith_Portrait (Normal): I run the farm for fun, so it would defeat the point if I were to offload the work to golems.
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): How come I never see you work, then?
 	update Keith (Laugh)
 	Keith_Portrait (Laugh): Isn't it more fun to order people around than working yourself? Kon.
 	update Keith (Normal)
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): I see?
 	Keith_Portrait (Normal): Keep up the good work.
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("yes_enthusiastic")
 	Mao_Portrait (Normal): Yes boss!
 	[signal arg="{"stats": {"stress": -10,}}"]

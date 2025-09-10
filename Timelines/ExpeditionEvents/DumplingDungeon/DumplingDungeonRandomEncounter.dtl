@@ -3,19 +3,25 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao [animation="Shake X" length="4"]
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): <~Doot. Doot.~/~Lalala~ Walking in a dungeon./The darkness sealed within my right hand trembles! Teehee.>
 - Let's look for Dumplings
+	do Player.play_voice("looks_delicious")
 	Mao_Portrait (Normal): <I smell something delicious!/Muahaha, behold!/Dumplings! Time to say hi!>
 	[signal arg="{"card_game_expedition": "Dumpling Dungeon"}"]
 - Let's take a break
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): Teehee. Break time!
 	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
 	Mao_Portrait (EyesClosed): Please wake me up after my nap!
 	[signal arg="{"stats": {"stress": -5}}"]
 - Let's ask Rice for advice
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Do you have any dungeoneering tips for me?
 	Rice_Portrait (Normal): Hmm. My personal experiences aren't particularly relevant to you, I believe.
 	Rice_Portrait (Normal): That said, it's my belief that what's most important in a dungeon isn't what you do inside, but the preparations you've done before then.
 	Rice_Portrait (Normal): If you meet difficulties inside the dungeon, consider retreating and working on self improvement, there's no need to force things.
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): Got it!
 	[signal arg="{"stats": {"scholarship": 1}}"]
