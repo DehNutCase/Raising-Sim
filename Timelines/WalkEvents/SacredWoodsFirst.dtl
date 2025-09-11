@@ -3,27 +3,33 @@ join Mao (Normal) 2
 [history action="clear"]
 Rice_Portrait (Normal): Looks like someone was preparing a campfire here.
 update Mao (Excited)
+do Player.play_voice("really?")
 Mao_Portrait (Excited): Are we going to have company?
 Rice_Portrait (Normal): It would be better not to run into company here. The woods are only a few steps away from being declared one of the world's forbidden zones.
 update Mao (Sad)
 Rice_Portrait (Normal): Anyone you meet here is either exceptionally dangerous or exceptionally desperate.
 Rice_Portrait (Normal): We fall into the first category, incidentally.
+do Player.play_voice("oh no")
 Mao_Portrait (Sad): Should we really be here right now?
 Rice_Portrait (Normal): It's everyone else who shouldn't be here. Give me a moment.
 [background arg="res://Art/Background/Background material shop/bg019b.jpg" fade="1.0" transition="Simple Fade"]
 update Mao (Excited)
+do Player.play_voice("tada")
 Mao_Portrait (Excited): Fwoosh!
 Rice_Portrait (Normal): ...Why did you make sound effects?
 update Mao (Normal)
+do Player.play_voice("because")
 Mao_Portrait (Normal): You have to make sound effects when lighting a fire. It's the rules.
 Rice_Portrait (Normal): If you say so.
 Rice_Portrait (Normal): Whoever prepared this should know to leave and find somewhere else to hide now that I lit the fire.
 update Mao (Surprised)
 Rice_Portrait (Normal): If you don't have anything else to do here, I'll lead you to one of the shrines. It should be more interesting than staying here.
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Wait, why are you chasing them away?
 Rice_Portrait (Normal): Officially, I should be hunting them down right now. Assuming whoever prepared this is who I think they are.
 Rice_Portrait (Normal): Unofficially, we don't want to catch them, they don't want to be caught, so it's better to look the other way.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Wouldn't it be fine to just officially not catch them, then?
 Rice_Portrait (Normal): That's a question you should ask her majesty.
 [signal arg="{"location_flags": {"hidden_shrine": true}}"]

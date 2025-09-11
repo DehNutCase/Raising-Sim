@@ -2,14 +2,18 @@
 join Mao (Normal) 2
 [history action="clear"]
 Alice_Portrait (Normal): Here's the storage room. Ring the bell next to the door if you need help finding something.
+do Player.play_voice("thank_you")
 Mao_Portrait (Normal): Thank you.
 update Mao (Excited)
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Excited): (Time to find Gray!)
 update Mao (Normal) [animation="Tada" length="3"]
 update Mao [animation="Shake X" length="3" wait="true"]
 join Gray 2
 update Mao (Smile)
+do Player.play_voice("yay!")
 Mao_Portrait (Smile): Here you are!
 update Mao (Excited)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Excited): (Okay, let's bring you home.)
 [signal arg="{"stats": {"stress": -20}, "background": "gray"}"]

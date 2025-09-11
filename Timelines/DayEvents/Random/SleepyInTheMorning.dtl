@@ -3,14 +3,14 @@ join Mao (EyesClosed) 1
 [history action="clear"]
 Rice_Portrait (Normal): It's almost time for class. You should wake up.
 update Mao (EyesClosed)
-[signal arg="{"voice": "good_night"}"]
+do Player.play_voice("greeting3")
 Mao_Portrait (EyesClosed): I'm awake! Zzz...
 Rice_Portrait (Normal): Mao.
-[signal arg="{"voice": "good_night"}"]
+do Player.play_voice("good_night")
 Mao_Portrait (EyesClosed): Awak... Zzz...
 Rice_Portrait (Normal): It's almost time for breakfast.
-[signal arg="{"voice": "looks_delicious"}"]
+do Player.play_voice("looks_delicious")
 Mao_Portrait (EyesClosed): Food! Yay! Zzz...
 Rice_Portrait (Normal): (Hmm. This seems serious.)
-Rice_Portrait (Normal): (It's better not to use magic to wake Mao up since she's still growing. Well, it's not too much trouble for me to carry her to class.)
+Rice_Portrait (Normal): (It's better not to use magic to wake her up since Mao's still growing. Well, it's not too much trouble for me to carry her to class.)
 [signal arg="{"start_quest": "sleepyhead"}"]

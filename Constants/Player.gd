@@ -575,6 +575,7 @@ var songs = {
 	"upcoming_battle": load("res://Music/Tim Beek/Purple Black Loop.wav"),
 	"sad": load("res://Music/Meraj Melody/Arena Light 106 no afterglow.wav"),
 	"slightly_sad": load("res://Music/Meraj Melody/No Exit 106 no afterglow.wav"),
+	"no_exit": load("res://Music/Meraj Melody/No Exit 106 no afterglow.wav"), #same as above
 	"new_dawn": load("res://Music/Meraj Melody/New Dawn 87 no afterglow.wav"),
 	"sea_adventure": load("res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"),
 	"sleep": load("res://Music/Meraj Melody/Sea Adventure Loop BPM 106 F no afterglow.wav"),

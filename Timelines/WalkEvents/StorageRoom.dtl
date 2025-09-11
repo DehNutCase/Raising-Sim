@@ -3,50 +3,68 @@ join Mao (Normal) 2
 [history action="clear"]
 Alice_Portrait (Normal): Here's the storage room. It's fine to look around, but please let us know if you take anything.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): Wait, so I can just take stuff?
 Alice_Portrait (Normal): It's all Miss Hiyori's old projects in here, and she already gave you permission. You just need to let us know so we can keep proper inventory.
 update Mao (Normal)
 Alice_Portrait (Normal): Some of her projects are also a little dangerous, so we can warn you about anything you need to pay attention to.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Oh. Okay.
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (I'm not going to take anything, but it'll be fun to look around.)
 label Choice
 - Look at Hiyori's paintings
 	update Mao (Normal) [animation="Tada" length="3"]
 	update Mao [animation="Shake X" length="3" wait="true"]
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (Looks like it's mostly landscapes.)
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): (Oh, a portrait of her majesty.)
 	update Mao (Excited)
+	do Player.play_voice("wow")
 	Mao_Portrait (Excited): (A lion!)
 	update Mao (Normal)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (I wonder how Hiyori found the time to paint so much.)
 	[signal arg="{"stats": {"art": 15,}}"]
 - Wander around the sculptures
 	update Mao (Normal) [animation="Tada" length="3"]
 	update Mao [animation="Shake X" length="3" wait="true"]
+	do Player.play_voice("laugh")
 	Mao_Portrait (Normal): *Humming*
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (There aren't as many scupltures as I thought.)
 	update Mao (Surprised)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Surprised): (Lots of empty pedestals though, did they take some out?)
 	update Mao (Normal)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (I wonder if any of these move.)
 	update Mao (Surprised)
+	do Player.play_voice("oh!")
 	Mao_Portrait (Surprised): (Ah, I should probably ask a maid before trying to make these move. I'll do that later.)
 	[signal arg="{"stats": {"scholarship": 2, "art": 5,}}"]
 - Check out the music sheets
 	update Mao (Sad)
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Sad): (Why am I looking at these? I don't know how to read sheet music.)
 	update Mao (Surprised)
-	Mao_Portrait (Surprised): (Oh there's one of those music sampler things.)
-	[signal arg="{"music": "no_exit"}"]
+	do Player.play_voice("oh...")
+	Mao_Portrait (Surprised): (Oh, there's one of those music sampler things.)
 	update Mao (Normal)
+	do Player.play_voice("laugh")
+	do Player.play_song("slightly_sad")
 	Mao_Portrait (Normal): Hehe. Poke!
 	update Mao (Smile)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Smile): (I can't tell if this is good or not. It sounds nice though.)
 - Time to take everything and cart them away! [if {StorageRoomWheelbarrel} == false]
 	set {StorageRoomWheelbarrel} = true
 	update Mao (Angry)
+	do Player.play_voice("baka")
 	Mao_Portrait (Angry): (I'm not going to do that. Why would I do that?)
 	jump Choice
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): (That was fun, but I should get going.)
 [signal arg="{"stats": {"stress": -5, "art": 10,}}"]

@@ -2,32 +2,40 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (Excited)
+do Player.play_voice("wow")
 Mao_Portrait (Excited): Wow, the fire's still lit. Time to toast Dumplings.
 - So how does the campfire stay lit, anyway?
 	Rice_Portrait (Normal): The mechanics are similar to a burning candle. It's better to think of the wood as a wick rather than the fuel, what's burning right now is the ambient mana.
 	update Mao (Surprised)
+	do Player.play_voice("oh!")
 	Mao_Portrait (Surprised): Oh. Should I put this out?
 	Rice_Portrait (Normal): It doesn't matter much either way.
 	[signal arg="{"stats": { "stress": -10}}"]
 - Do you want some?
 	Rice_Portrait (Normal): I'd rather not. Her majesty's mana and mine don't mix well.
 	update Mao (Surprised)
+	do Player.play_voice("oh...")
 	Mao_Portrait (Surprised): Oh. Is it like allergies?
 	Rice_Portrait (Normal): Nothing so bad. The problem is that our mana is too similar, so I end up feeling slightly off for the rest of the day.
 	update Mao (Normal)
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): Huh.
 - So who do you think made this?
 	Rice_Portrait (Normal): It should be one of the revolutionaries.
 	update Mao (Normal)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): The who?
 	Rice_Portrait (Normal): One of the people who built the country you're living in right now.
 	update Mao (Surprised)
+	do Player.play_voice("really?")
 	Mao_Portrait (Surprised): Why are they hiding then? Sounds like they won.
 	Rice_Portrait (Normal): Her majesty is a lot of things. Autocrat is one of them.
 	update Mao (Normal)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): But you said that you don't really want to catch them, right?
 	Rice_Portrait (Normal): It's a bit complicated, but yes.
 	Rice_Portrait (Normal): From what I understand, her majesty's opinion is that they're all very useful people if the country is in a crisis. Since that's exactly the kind of situation she's trying to avoid, the current situation is that they're too useful to throw away, but problematic if kept around.
+	do Player.play_voice("hmm...")
 	Mao_Portrait (Normal): I have no idea what you're talking about.
 	Rice_Portrait (Normal): Have another Dumpling, don't worry about it.
 	# TODO, add hidden_camp to meet revolutionary
