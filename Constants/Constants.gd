@@ -715,6 +715,7 @@ const courses = {
 			'timelines': ["GeneralEducationFirst", "GeneralEducationMiddle", "GeneralEducationEnd"],
 			"description": "The main thing you learn in this class is how to learn.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_02.png",
+			"background": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
 		},
 		'Basics of Magecraft': {
 			'stats': {
@@ -734,6 +735,7 @@ const courses = {
 			'timelines': ["MagecraftEducationFirst", "MagecraftEducationMiddle", "MagecraftEducationEnd"],
 			"description": "Since you already know how to cast spells, this class is a freebie.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_01.png",
+			"background": "res://Art/Background/Background material shop/bg027a.jpg",
 		},
 		'Physical Education': {
 			'stats': {
@@ -752,6 +754,7 @@ const courses = {
 			'timelines': ["PhysicalEducationFirst", "PhysicalEducationMiddle", "PhysicalEducationEnd"],
 			"description": "Mostly physical exercise, but there are some lectures about how to train properly.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/planner01_05.png",
+			"background": "res://Art/Background/UncleMugen/this_is_da_school_track_en_field_and_in_it_is_the_skool_jim.webp",
 		},
 	},
 	"Ink Mage": {
@@ -771,6 +774,7 @@ const courses = {
 			'timelines': ["ColorTheoryEducationFirst", "ColorTheoryEducationMiddle", "ColorTheoryEducationEnd"],
 			"description": "You'll get ninety percent of the questions right if you just answer 'blue.'",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element02_01.png",
+			"background": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
 		},
 		'Line, Color, and Composition': {
 			'stats': {
@@ -785,6 +789,7 @@ const courses = {
 			},
 			"description": "Just a regular art class.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/book04_01.png",
+			"background": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
 		},
 		'Imaging and Illustration': {
 			'stats': {
@@ -799,6 +804,7 @@ const courses = {
 			},
 			"description": "Another relaxing art class.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/book04_03.png",
+			"background": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
 		},
 		'Introduction to Illusion Magecraft': {
 			'stats': {
@@ -816,6 +822,7 @@ const courses = {
 			},
 			"description": "Conceptually speaking, ink magic and illusion magic should be very similar.\nHence why you're taking this class.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element02_03.png",
+			"background": "res://Art/Background/UncleMugen/Classroom_04_day.webp",
 		},
 	},
 	"Magic Officer": {
@@ -902,6 +909,7 @@ const courses = {
 			"description": "A simple and effective offensive spell.\nCan cause suffocation if used in enclosed spaces.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element03_01.png",
 			"card": "res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres",
+			"background": "res://Art/Background/Background material shop/bg027a.jpg",
 		},
 		'Artillerist Training (Meteor)': {
 			'stats': {
@@ -919,6 +927,7 @@ const courses = {
 			"description": "Fortunately, the output of this spell is limited by your personal magic power.\n...Even so, they really shouldn't be teaching this in school.",
 			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/meteor.png",
 			"card": "res://Scenes/CardGame/Characters/Mao/Cards/meteor.tres",
+			"background": "res://Art/Background/Background material shop/bg027a.jpg",
 		},
 	},
 	"Witch": {
@@ -943,6 +952,7 @@ const rests = {
 		},
 		"description": "There's a nominal fee to enter, but the local library has quite a collection of books.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element45_01.png",
+		"background": "res://Art/Background/Background material shop/bg007a.bmp",
 	},
 	'Dessert Buffet': {
 		'stats': {
@@ -955,6 +965,7 @@ const rests = {
 		},
 		"description": "Surprisingly cheap, considering how much they let you eat.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/cake01_01.png",
+		"background": "res://Art/Background/NoranekoGames/Edited/Restaurant_B.png",
 	},
 	'Vacation': {
 		'stats': {
@@ -966,6 +977,7 @@ const rests = {
 		},
 		"description": "It sure is convenient when a beach resort is only a teleport hop away.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/weather01_02.png",
+		"background": "res://Art/Background/kimlong lehoang/T_Japan_Countryside_11.PNG",
 	},
 }
 

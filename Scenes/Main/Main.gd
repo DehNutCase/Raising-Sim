@@ -274,11 +274,6 @@ func do_action(action_type:String, action_name: String):
 	
 	if action_type == 'school':
 		await daily_course()
-		#NOTES, the below works as you'd expect, timeline starts and execution continues
-		#Once signal is sent
-		#TODO, add check for flags of timelines (only play ink mage school once etc.)
-		#Dialogic.start("InkMageSchoolFirst")
-		#await Dialogic.timeline_ended
 		return
 	
 	if action_name == 'Cram School':
@@ -332,6 +327,31 @@ func play_work_animation(action_type: String, action_name: String, success:bool)
 		working_animation.work_animation_sprite.walk_animation(type, walk_background, job_texture)
 		await get_tree().create_timer(4).timeout
 		working_animation_container.hide()
+		
+	if action_type == "courses":
+		var course_name = Player.course_list[0].course_name
+		var lesson_name = Player.course_list[0].lesson_name
+		var job_texture = Constants.courses[course_name][lesson_name].icon
+		var walk_background = Constants.courses[course_name][lesson_name].background
+		
+		working_animation_container.show()
+		var type = "failure"
+		if success:
+			type = "success"
+		working_animation.work_animation_sprite.walk_animation(type, walk_background, job_texture)
+		await get_tree().create_timer(4).timeout
+		working_animation_container.hide()
+		
+	if action_type == "rests":
+		working_animation_container.show()
+		var walk_background = Constants[action_type][action_name].background
+		var job_texture = Constants[action_type][action_name].icon
+		var type = "failure"
+		if success:
+			type = "success"
+		working_animation.work_animation_sprite.walk_animation(type, walk_background, job_texture)
+		await get_tree().create_timer(4).timeout
+		working_animation_container.hide()
 	
 func background_transition(time:String = "morning"):
 	var bg_holder:TextureRect= $Ui/BackgroundLayer/BackgroundHolder
@@ -374,6 +394,7 @@ func daily_course():
 		await(get_tree().create_timer(.5).timeout)
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		course_daily_stats.erase("gold")
+		play_work_animation("courses", course_name, true)
 		process_stats(course_daily_stats, icon) 
 		
 
@@ -405,6 +426,7 @@ func do_cram_school():
 		
 		await(get_tree().create_timer(.5).timeout)
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
+		play_work_animation("courses", course_name, true)
 		process_stats(course_daily_stats, icon)
 	else:
 		display_toast("You don't have any classes scheduled.", "top")
@@ -442,7 +464,7 @@ func process_course_progress():
 		if Constants.courses[course_name][lesson_name].get("card"):
 			var card_path = Constants.courses[course_name][lesson_name].get("card")
 			var card = load(card_path)
-			var toast = "Obtained " + card.id
+			var toast = "Obtained a " + card.id + " card"
 			var icon_path = card.icon.resource_path
 			Player.card_game_deck.append(card)
 			await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
