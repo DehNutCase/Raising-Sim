@@ -2,38 +2,47 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): I guess I'm almost done with PE this semester. How does that work, anyway? Being 'done' with PE. Rice?
 Rice_Portrait (Normal): Your stats don't drop unless you do something to decrease them, so there's no harm in taking breaks.
+do Player.play_voice("thank_you")
 Mao_Portrait (Normal): Thanks for not ignoring me. Hmm... I should go say goodbye to Lilian. Oh, looks like she had the same idea.
 [signal arg="{"sound_effect": "footsteps"}"]
 join Lilian 3 [animation="Slide In Right" length="4"]
 update Mao 1 [ move_time="2"]
 update Lilian (Grin)
 Lilian_Portrait (Grin): Here!
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Thanks. Um, this is bread?
 update Lilian (Laugh)
 Lilian_Portrait (Laugh): Cafeteria bread.
 update Lilian (Grin)
 Lilian_Portrait (Grin): I have to go back to my estates for a few days since something came up, so I figured I'd buy you something. Do your best to miss me, got it?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Okie dokie.
 update Lilian (Laugh)
 Lilian_Portrait (Laugh): And tease Vicky for me while I'm gone.
 update Mao (Blush)
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Blush): Um, that's a bit...
 update Mao (Normal)
 Lilian_Portrait (Laugh): Hah. Well, no need to force yourself.
 update Lilian (Grin)
 Lilian_Portrait (Grin): But you should make sure to eat well, got it? Life's not fun if you stay a pipsqueak forever.
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Normal): I'm growing as fast as I can.
 Lilian_Portrait (Grin): Sure. Sure.
 update Mao (Excited)
+do Player.play_voice("oh!")
 Mao_Portrait (Excited): Oh, right! Can I visit your estates sometime?
 Lilian_Portrait (Grin): Hmm... I don't really mind, but it's a bit dangerous.
 update Mao (Normal)
 Rice_Portrait (Normal): Perhaps when you're older.
 Lilian_Portrait (Grin): You heard her.
+do Player.play_voice("disappointed")
 Mao_Portrait (Normal): Aww.
 update Mao (Smile)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Smile): Tell me when you get back, okay?
 update Lilian (Laugh)
 Lilian_Portrait (Laugh): Hah. Sure.

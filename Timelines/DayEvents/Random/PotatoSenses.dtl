@@ -3,6 +3,6 @@ join Mao (Normal) 2
 [history action="clear"]
 update Mao (Excited)
 update Mao [animation="Tada" length="1"]
-[signal arg="{"voice": "looks_delicious"}"]
+do Player.play_voice("looks_delicious")
 Mao_Portrait (Excited): I sense something delicious! To the farm!
 [signal arg="{"start_quest": "potato_senses"}"]

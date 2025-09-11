@@ -4,20 +4,24 @@ join Morgan (Silhouette) 3
 [history action="clear"]
 Morgan_Portrait (Silhouette): I see you still don't have an appointment. What can I do for you?
 update Mao (Blush)
+do Player.play_voice("sorry")
 Mao_Portrait (Blush): Haha, sorry.
 - Can I have some pocket money?
 	update Mao (Normal)
 	Morgan_Portrait (Silhouette): I don't mind, but you really should work for it.
 	[signal arg="{"stats": {"gold":250,}}"]
 	update Mao (Excited)
+	do Player.play_voice("yay!")
 	Mao_Portrait (Excited): Yay!
 	Morgan_Portrait (Silhouette): I hope that wasn't all you were here for.
 	update Mao (Blush)
+	do Player.play_voice("eh_no_way")
 	Mao_Portrait (Blush): Um... no?
 	Morgan_Portrait (Silhouette): Fufufu, don't worry.
 	Morgan_Portrait (Silhouette): Take care of yourself. You too, Miss Glassfield.
 	Rice_Portrait (Normal): Yes, your majesty.
 	update Mao (Surprised)
+	do Player.play_voice("huh!?")
 	Mao_Portrait (Surprised): Gah!
 	[signal arg="{"stats": {"stress": 10}}"]
 	[end_timeline]
@@ -26,13 +30,16 @@ Mao_Portrait (Blush): Haha, sorry.
 	Morgan_Portrait (Silhouette): Advice, you say.
 	Morgan_Portrait (Silhouette): If you ask whether I have any or not, I do. Yet I believe it would be meaningful for you to do as you wished, at least for now.
 	update Mao (Surprised)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Surprised): Um...?
 	Morgan_Portrait (Silhouette): If you truly wished for it. If you wish for me to control all your choices for the foreseeable future. Certainly, I can give you 'advice',
 	update Mao (Sad)
+	do Player.play_voice("eh_no_way")
 	Mao_Portrait (Sad): You're starting to sound creepy, your majesty.
 	Morgan_Portrait (Silhouette): Fufufu.
 	Morgan_Portrait (Silhouette): For the time being, doing what I wouldn't do should be informative in its own way.
 	update Mao (Angry)
+	do Player.play_voice("baka")
 	Mao_Portrait (Angry): Aren't you just too lazy to bother?
 	Morgan_Portrait (Silhouette): Fufufu.
 	[signal arg="{"stats": {"scholarship": 2}}"]
@@ -42,40 +49,50 @@ Mao_Portrait (Blush): Haha, sorry.
 	Morgan_Portrait (Silhouette): Well I'll have you know what you've succeeded.
 	Morgan_Portrait (Silhouette): So what did you want from me? More pocket money, perhaps?
 	update Mao (Angry)
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Angry): Your majesty...
 	Morgan_Portrait (Silhouette): Fufufu. I'm in a good mood right now, so I will allow most requests.
 	update Mao (Normal)
+	do Player.play_voice("eh_no_way")
 	Mao_Portrait (Normal): I don't really need anything right now.
 	update Mao (Surprised)
+	do Player.play_voice("oh!")
 	Mao_Portrait (Surprised): Oh, actually, can you teach me some spells?
 	update Mao (Normal)
 	if Player.stats.get("magic") > 500:
 		Morgan_Portrait (Silhouette): I don't particularly mind.
 		update Mao (Excited)
+		do Player.play_voice("yay!")
 		Mao_Portrait (Excited): Yay!
 		[signal arg="{"stats": {"stress": 10, "magic": 10}, "skill":"blessing", "card": "res://Scenes/CardGame/Characters/Mao/Cards/blessing.tres", }"]
 		Morgan_Portrait (Silhouette): It would be better not to use this in front of priests or clerics. Speaking from experience, it could get quite annoying.
 		update Mao (Surprised)
+		do Player.play_voice("huh?")
 		Mao_Portrait (Surprised): What do you mean? Would they hunt me down or something?
 		update Mao (Normal)
 		Morgan_Portrait (Silhouette): In a manner of speaking. Fufufu.
 		update Mao (Sad)
+		do Player.play_voice("oh no")
 		Mao_Portrait (Sad): Should I be worried?
 		update Mao (Excited)
+		do Player.play_voice("un_yeah")
 		Mao_Portrait (Excited): Wait, I have Rice. You'll keep me safe, right?
 		Rice_Portrait (Normal): Of course.
 		update Mao (Normal)
 		Morgan_Portrait (Silhouette): Oh, what's this? Getting attached?
 		Rice_Portrait (Normal): Please don't tease her too much, your majesty.
 		update Mao (Sad)
+		do Player.play_voice("huh?")
 		Mao_Portrait (Sad): (I have no idea what's going on anymore.)
 	else:
 		Morgan_Portrait (Silhouette): I don't particularly mind, but you don't quite have the foundation for them. How about a quick magic lesson instead?
 		update Mao (Excited)
+		do Player.play_voice("yay!")
 		Mao_Portrait (Excited): Yay!
 		[signal arg="{"stats": {"stress": 10, "magic": 10, "max_mp":10}}"]
 update Mao (Normal)
 Morgan_Portrait (Silhouette): That will be all for today.
 update Mao (Sad)
+do Player.play_voice("hmm")
 Mao_Portrait (Sad): (I don't know why, but it's kind of scary when her majesty is all shadowy like this. It's weird, since she's still just as nice as usual.)
 [signal arg="{"stats": {"stress": 10, "max_hp": 1, "max_mp":1}}"]

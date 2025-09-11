@@ -4,11 +4,12 @@ join Lilian (Grin) 3 [ mirrored="true"]
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
-[signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): Hey, hey! Victoria's something or another, excuse me!
 update Lilian [ mirrored="false"]
 Lilian_Portrait (Grin): Do you mean me? Not that I mind, but what do you mean by 'something or another'?
 update Mao (Blush)
+do Player.play_voice("laugh")
 Mao_Portrait (Blush): Teehee, I never got your name. And Victoria said I shouldn't call you her minion.
 update Mao (Normal)
 Lilian_Portrait (Grin): Minion, huh? Hmm...
@@ -16,12 +17,15 @@ update Lilian (Laugh)
 Lilian_Portrait (Laugh): That's exactly right. Hah.
 update Lilian (Grin)
 Lilian_Portrait (Grin): Lilian Grey, Victoria's minion, at your service.
+do Player.play_voice("really?")
 Mao_Portrait (Normal): Is it actually okay to call you that?
 Lilian_Portrait (Grin): Vicky might try to stab you for it, but I don't mind.
 Lilian_Portrait (Grin): So did you need anything?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I just wanted to say hi. And, um, I guess I won't call you her minion after all.
 Lilian_Portrait (Grin): That's a shame, minion had a nice ring to it.
 update Mao (Surprised)
+do Player.play_voice("oh!")
 Mao_Portrait (Surprised): Oh, right! I'm not getting you in trouble by talking to you, am I?
 update Mao (Normal)
 update Lilian (Grin)
@@ -29,5 +33,6 @@ Lilian_Portrait (Grin): Hmm? Oh, right. Don't worry about it, I was joking.
 Lilian_Portrait (Grin): Vicky is just a bit stiff about doing every 'properly,' so I'm the one in charge of getting her to loosen up a little.
 update Lilian (Laugh)
 Lilian_Portrait (Laugh): I'll let you know if she's in a bad mood so we can pretend not to know each other. Hah.
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Okie dokie.
 [signal arg="{"stats": {"stress": -5}}"]

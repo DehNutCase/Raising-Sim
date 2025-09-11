@@ -2,6 +2,7 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("wow")
 Mao_Portrait (Normal): Wow, there're so many upperclassmen in this class. Wait, wouldn't it be kind of unfair for my team if we had a competition?
 [signal arg="{"sound_effect": "footsteps"}"]
 join Lilian (Grin) 3 [animation="Slide In Right" length="3"]
@@ -9,6 +10,7 @@ update Mao (Normal) 1 [ move_time="2"]
 update Lilian (Grin)
 Lilian_Portrait (Grin): Oh my, someone sounds confident. To answer your question, this isn't primary school anymore, so everyone shares classes.
 update Mao (Blush)
+do Player.play_voice("laugh")
 Mao_Portrait (Blush): Um. I meant my team would lose. Teehee.
 update Mao (Normal)
 Lilian_Portrait (Grin): Is that so? If it makes you feel better, age barely matters once you're old enough for the academy.
@@ -17,6 +19,7 @@ update Lilian (Laugh)
 Lilian_Portrait (Laugh): Ah, wait. I'm still bigger than her. Hah. She gets really mad when you tease her about it, so you should try it sometime.
 update Lilian (Grin)
 Lilian_Portrait (Grin): (I'm actually not sure if she'd get mad at Mao or not for that, since they're both pipsqueaks.)
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Normal): That seems mean.
 Lilian_Portrait (Grin): Then I guess I'm a mean person.
 [signal arg="{"sound_effect": "footsteps"}"]
@@ -24,9 +27,12 @@ update Lilian [ mirrored="true"]
 leave Lilian [animation="Slide Out Right" length="3"]
 Lilian_Portrait (Grin): Anyway, it's nice meeting you, but I should leave before they get on my case about fraternizing with the enemy.
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): The enemy?
 Rice_Portrait (Normal): Things have quieted down at this point, but Victoria is the leader of the second biggest political faction in Albion.
+do Player.play_voice("baka")
 Mao_Portrait (Surprised): Gah! Stop that!
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (And isn't Victoria a bit young to be the leader? It'd be like if Hiyori was her majesty.)
 [signal arg="{"stats": {"stress": -5}}"]

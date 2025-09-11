@@ -2,32 +2,42 @@
 join Mao (Normal) 2
 [history action="clear"]
 update Mao (Sad)
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Sad): What happened to all the maids? There's nobody here today.
+do Player.play_voice("sigh")
 Mao_Portrait (Sad): (Ugh, it feels kind of spooky.)
 [signal arg="{"sound_effect": "footsteps"}"]
 join Morgan (Silhouette) 3 [animation="Bounce In" length="0.3" wait="true"]
 update Mao (Surprised) 1 [animation="Bounce" length="1" move_time="1"]
 Morgan_Portrait (Silhouette): I like to think I'm somebody.
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Gah! What the heck?
 Morgan_Portrait (Silhouette): It's fine to say 'what the hell' in front of me.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): What are you doing, your majesty?
 Morgan_Portrait (Silhouette): Considering the time, I should be asking you that question. Do you have an appointment?
 update Mao (Sad)
+do Player.play_voice("hmm")
 Mao_Portrait (Sad): No, I mean, why do you look like that?
 Morgan_Portrait (Silhouette): Like what?
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Your majesty...
 Morgan_Portrait (Silhouette): Fufufu. Doesn't it make me look dark and mysterious?
+do Player.play_voice("hmm")
 Mao_Portrait (Angry): (Only if you kept quiet... Let's just play along.)
 update Mao (Normal)
+do Player.play_voice("yes_reluctant")
 Mao_Portrait (Normal): Of course, your majesty. Very, um, magnificent and awe inspiring.
 Morgan_Portrait (Silhouette): Somehow, I don't think your heart was in it. We'll talk later.
 Morgan_Portrait (Silhouette): So what brings you here today?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I asked Hiyori about making money and she said something about you covering my tuition? Not sure why.
 Morgan_Portrait (Silhouette): You don't know why, you say...
 Morgan_Portrait (Silhouette): Well, I believe it would be meaningful for you to work for your tuition, at least for the time being. But I'll give you some pocket money.
 update Mao (Sad)
+do Player.play_voice("huh?")
 Mao_Portrait (Sad): (Did I forget something? She's talking like I should know about the tuition thing already.)
 Morgan_Portrait (Silhouette): I don't mind if you visited once in a while, but try to make an appointment next time.
 [signal arg="{"stats": {"stress": 5, "gold":1000,}}"]

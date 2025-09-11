@@ -9,59 +9,72 @@ update Rice (Normal) 2 [ move_time="1"]
 update Mao (Normal) 1 [ move_time="1"]
 [background arg="res://Art/Background/NoranekoGames/Edited/Livingroom_Day.png" fade="1.0" transition="Swipe Right To Left"]
 update Mao (Smile)
+do Player.play_random_voice("greetings")
 Mao_Portrait (Smile): Hey Rice.
 update Mao (Normal)
 Rice_Portrait (Normal): Sure.
 Rice_Portrait (Normal): So why are you here again?
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Can't I visit?
 Rice_Portrait (Normal): I don't even live here, Mao.
 - So why do you have a house in the woods, anyway?
 	Rice_Portrait (Normal): It was quiet and out of the way until Hiyori started handing out my address to everyone she knew.
 	update Mao (Smile)
+	do Player.play_voice("laugh")
 	Mao_Portrait (Smile): So I should thank her for you?
 	Rice_Portrait (Normal): No. No you should not.
 	Rice_Portrait (Normal): If you have nothing else to joke about, have some tea instead.
 	[signal arg="{"stats": { "stress": -10}}"]
 	update Mao (Excited)
+	do Player.play_voice("yay!")
 	Mao_Portrait (Excited): Yay!
 - Can I have something to eat?
 	Rice_Portrait (Normal): ...Sure.
 	update Mao (Excited) [animation="Tada" length="1" wait="true"]
 	[signal arg="{"stats": { "stress": -5, "max_hp":1,"max_mp":1}}"]
+	do Player.play_voice("wow")
 	Mao_Portrait (Excited): Oh wow, these are great!
 	update Mao (Normal)
 	Rice_Portrait (Normal): You say that like you expected them to be terrible.
 	update Mao (Smile)
+	do Player.play_voice("laugh")
 	Mao_Portrait (Smile): Teehee.
 	update Mao (Surprised)
+	do Player.play_voice("huh?")
 	Mao_Portrait (Surprised): But why don't you cook more when you can make something like this?
 	update Mao (Normal)
 	Rice_Portrait (Normal): I have no reason to. If I wanted something to eat I would ring for a maid.
 - Thanks.
 	Rice_Portrait (Normal): For what?
 	update Mao (Smile)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Smile): Haven't you been taking care of me recently?
 	Rice_Portrait (Normal): I see.
 	Rice_Portrait (Normal): You're welcome.
 	update Mao (Normal)
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): ...Well?
 	Rice_Portrait (Normal): Yes?
 	update Mao (Blush)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Blush): Don't I get a reward?
 	Rice_Portrait (Normal): I believe you have a fundamental misunderstanding of what thanking someone entails.
 	update Mao (Sad)
+	do Player.play_voice("disappointed")
 	Mao_Portrait (Sad): Aww...
-	Rice_Portrait (Normal): *Sigh*
-	Rice_Portrait (Normal): What do you want?
+	Rice_Portrait (Normal): (Well, it shouldn't be a problem to play along.)
+	Rice_Portrait (Normal): Very well, what do you want?
 	update Mao (Smile)
+	do Player.play_voice("keep_it_up")
 	Mao_Portrait (Smile): Let's have lunch together! There's a great restaurant on the way back.
-	Rice_Portrait (Normal): Fine.
+	Rice_Portrait (Normal): Sure.
 	[signal arg="{"stats": {"stress": -15, "max_hp": 1, "agility": 1}}"]
 	[end_timeline]
 - What's a Ranker?
 	Rice_Portrait (Normal): ...Someone on a ranking board somewhere?
 	Rice_Portrait (Normal): Apologies, I don't know what you're talking about.
 	update Mao (Surprised)
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Surprised): Hiyori said you were a Ranker.
 	update Mao (Normal)
 	Rice_Portrait (Normal): Ah.
@@ -70,6 +83,7 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	Rice_Portrait (Normal): The title doesn't mean much, but it can serve as a basic proof of competence.
 	Rice_Portrait (Normal): I did climb to the most recently completed floor of one such tower, once, but its grown since then.
 	update Mao (Excited)
+	do Player.play_voice("wow")
 	Mao_Portrait (Excited): Wow! Does that mean you're someone amazing?
 	Rice_Portrait (Normal): For entirely unrelated reasons.
 	[signal arg="{"stats": {"scholarship": 2}}"]
@@ -77,22 +91,28 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	if Player.tower_level == 10:
 		# TODO, add check for defeat at stage 14
 		update Mao (Sad)
+		do Player.play_voice("disappointed")
 		Mao_Portrait (Sad): And you're kicking my ass.
 		Rice_Portrait (Normal): I'm sorry?
+		do Player.play_voice("disappointed")
 		Mao_Portrait (Sad): Weren't you there? Your went all woosh and bam and there was a bright light and then I got knocked out.
 		update Mao (Normal)
 		Rice_Portrait (Normal): Oh, you mean the phantom.
+		do Player.play_voice("un_yeah")
 		Mao_Portrait (Normal): Yeah, so can you help me fight it?
 		Rice_Portrait (Normal): I can. I won't.
 		update Mao (Surprised)
+		do Player.play_voice("huh?")
 		Mao_Portrait (Surprised): Why not?
 		Rice_Portrait (Normal): Like I mentioned before, I don't think you're suited for something like climbing the tower.
 		update Mao (Normal)
 		Rice_Portrait (Normal): Besides, her majesty gave you the access pass because she thought it would be meaningful for you to do your best own your own.
 		update Mao (Sad)
+		do Player.play_voice("disappointed")
 		Mao_Portrait (Sad): Aww. Can you at least give me some advice?
 		Rice_Portrait (Normal): Hit it until it's dead.
 		update Mao (Angry)
+		do Player.play_voice("baka")
 		Mao_Portrait (Angry): Rice...
 		update Mao (Normal)
 		Rice_Portrait (Normal): A lesser phantom isn't particularly dangerous, just knock it down before it can do anything.
@@ -101,7 +121,9 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 	elif Player.tower_level  >  7:
 		Rice_Portrait (Normal): Do you really need help? You seem to be doing well so far.
 		update Mao (Normal)
+		do Player.play_voice("laugh")
 		Mao_Portrait (Normal): Hehe. Bonk, bonk, bonk.
+		do Player.play_voice("hmm")
 		Mao_Portrait (Normal): I think it's getting harder, though.
 		Rice_Portrait (Normal): Hmm. Well, I can't give much specific advice, but getting better cards and building up your stats should make duels easier.
 		Rice_Portrait (Normal): You can also sell the cards you don't need, which will let you draw your important cards more often.
@@ -111,9 +133,11 @@ Rice_Portrait (Normal): I don't even live here, Mao.
 		Rice_Portrait (Normal): Don't.
 		Rice_Portrait (Normal): You aren't suited for it, and you don't get much out of it.
 		update Mao (Normal)
+		do Player.play_voice("laugh")
 		Mao_Portrait (Normal): But it's fun!
 		Rice_Portrait (Normal): Fun?
 		update Mao (Excited)
+		do Player.play_voice("yes_enthusiastic")
 		Mao_Portrait (Excited): Yeah! I go bonk, bonk, bonk on their heads and then they fall down.
 		Rice_Portrait (Normal): I see...
 		update Mao (Normal)
@@ -123,6 +147,7 @@ update Mao (Normal)
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="1.0" transition="Swipe Left To Right"]
 Rice_Portrait (Normal): I still think it's a waste of time to come here.
 update Mao (Smile)
+do Player.play_voice("laugh")
 Mao_Portrait (Smile): It was fun!
 Rice_Portrait (Normal): If you say so.
 [signal arg="{"stats": {"stress": -5, "max_hp": 1, "agility": 1}}"]

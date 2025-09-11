@@ -1,22 +1,28 @@
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
+do Player.play_voice("happy")
 Mao_Portrait (Normal): Knock, knock.
 update Mao (Normal) [animation="Shake X" length="4"]
 update Mao (Normal) [animation="Tada" length="4" repeat="0"]
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): *Humming*
 update Mao (Smile) [animation="Shake X" length="4" repeat="0"]
 update Mao (Smile) [animation="Tada" length="4" repeat="0"]
+do Player.play_voice("happy")
 Mao_Portrait (Smile): Knock, knock.
 update Mao (Excited) [animation="Shake X" length="4" repeat="0"]
 update Mao (Excited) [animation="Tada" length="4" repeat="0"]
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Excited): Knock! Knock!
 Rice_Portrait (Normal): Should I... bring you to the hospital?
 Rice_Portrait (Normal): What are you doing?
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I'm waiting for you to answer the door.
 update Mao (Normal) [animation="Shake X" length="4"]
 update Mao (Normal) [animation="Tada" length="4" repeat="0"]
+do Player.play_voice("happy")
 Mao_Portrait (Normal): *Humming*
 Rice_Portrait (Normal): (There's so much I want to say to that. She wasn't even knocking, just saying 'knock' over and over.)
 Rice_Portrait (Normal): You might as well come in, then.
@@ -27,22 +33,28 @@ update Rice (Normal) 2 [ move_time="1"]
 update Mao (Normal) 1 [ move_time="1"]
 [background arg="res://Art/Background/NoranekoGames/Edited/Livingroom_Day.png" fade="1.0" transition="Swipe Right To Left"]
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Yay!
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): So why do you live in the woods anyway? It's relaxing and all, but isn't it inconvenient to go to work?
 Rice_Portrait (Normal): I don't.
 Rice_Portrait (Normal): You've been to my room before, so I'm not sure why you're even asking this.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): What's this place, then?
 Rice_Portrait (Normal): Vacation house.
 Rice_Portrait (Normal): So, care to explain why you're here?
+do Player.play_voice("oh!")
 Mao_Portrait (Normal): Oh yeah, I wanted to ask you something. How come you never answer when I call you?
 Rice_Portrait (Normal): I answer when there's a reason. I'm your escort, not your maid.
 update Mao (Sad)
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): But we're friends.
 Rice_Portrait (Normal): Not when I'm working.
 [signal arg="{"sound_effect": "footsteps"}"]
 update Mao (Angry)
 leave Mao [animation="Slide Out Left" length="2"]
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Well fine!
 Rice_Portrait (Normal): (I should buy her a snack on the way back.)
 [signal arg="{"stats": {"stress": -10, "max_hp": 1, "agility":1}}"]
