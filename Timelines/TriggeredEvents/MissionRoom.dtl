@@ -3,22 +3,27 @@ join Mao (Normal) 2
 [history action="clear"]
 Rice_Portrait (Normal): If you're free, her majesty wants to see you.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): What for?
 Rice_Portrait (Normal): It would be better if she explained herself.
 update Mao (Normal)
 [signal arg="{"sound_effect": "footsteps"}"]
 [background arg="res://Art/Background/Background material shop/bg014a.jpg" fade="2.0" transition="Push Left"]
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Hey, isn't this Hiyori's storage room?
 join Morgan (Silhouette) 1 [animation="Slide In Left" length="2"]
 update Mao (Normal) 3 [ move_time="2"]
 Morgan_Portrait (Silhouette): It was originally mine, but you can say that of everything.
 Morgan_Portrait (Silhouette): Good morning, Mao.
 update Mao (Smile)
+do Player.play_voice("greeting3")
 Mao_Portrait (Smile): Good morning!
 update Mao (Normal)
 Morgan_Portrait (Silhouette): I called you to let you know that you're ready to start taking missions from me. But only if you want to.
 Morgan_Portrait (Silhouette): My kingdom isn't so fragile that it can't handle children playing around rather than working.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): I'm already working though?
 Morgan_Portrait (Silhouette): Fufufu. Sure. And very hard too.
 Morgan_Portrait (Silhouette): Here's some pocket money, go take the day off and have fun.
+do Player.play_voice("yay!")
 [signal arg="{"stats": {"stress": -20, "gold": 1000,}, "event_flags":{"mission_information_event": true}, "unlocked_missions": {"black_forest_orcs": true},}"]

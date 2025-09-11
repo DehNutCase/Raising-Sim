@@ -6,24 +6,31 @@ join Mao (Normal) 2
 [update_position position="3" vector="Vector2(0, 150)" time="0.0"]
 [update_position position="4" vector="Vector2(0, 150)" time="0.0"]
 [history action="clear"]
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee. I hope I get good luck this year.
 [signal arg="{"stats": {"stress": -10, }}"]
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): (Hmm. I wonder if I should make a New Year's Resolution?)
 - I'll study hard this year!
+	do Player.play_voice("yes_enthusiastic")
 	Mao_Portrait (Normal): Umu!
 	[signal arg="{"start_quest": "good_student"}"]
 - Since I finally got a spellbook, let's climb the tower
+	do Player.play_voice("tada")
 	Mao_Portrait (Normal): Teehee. Behold my power!
 	[signal arg="{"start_quest": "tower_climber"}"]
 - Art is my true calling
 	update Mao (EyesClosed)
+	do Player.play_voice("yay!")
 	Mao_Portrait (EyesClosed): I wish to be a better artist this year.
 	Rice_Portrait (Normal): As far as I know, this shrine doesn't have any wish granting properties.
 	update Mao (Angry)
+	do Player.play_voice("baka")
 	Mao_Portrait (Angry): Just play along, geez.
 	[signal arg="{"start_quest": "budding_artist"}"]
 - Super Duper Ultra Supreme Overlord!
 	update Mao (EyesClosed)
+	do Player.play_voice("laugh")
 	Mao_Portrait (EyesClosed): (Time to turn evil! Teehee.)
 	[signal arg="{"start_quest": "overlord"}"]
 [update_position action="reset_all" time="0.0"]

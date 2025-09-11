@@ -631,6 +631,7 @@ var voices = {
 	"good_night": load("res://Voice/Sakura An/Greetings/Good Night.wav"),
 	"wow_blank_stare": load("res://Voice/Sakura An/Misc/Wow...(Blank stare).wav"),
 	"wow": load("res://Voice/Sakura An/Misc/Wow.wav"),
+	"game_over": load("res://Voice/Sakura An/System/Game Over.wav"),
 }
 
 var voice_lists = {
