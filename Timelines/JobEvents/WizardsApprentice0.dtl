@@ -3,47 +3,62 @@ join Mao (Normal) 0
 join Goo (Normal) 2 [ mirrored="true"]
 [history action="clear"]
 update Mao (Normal)
+do Player.play_voice("amazing")
 Mao_Portrait (Normal): What a pretty cauldron.
 update Goo (Normal)
 Goo_Portrait (Normal): Be careful around it, now. Goo would be quite sad if Goo had to bury another apprentice.
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): It's that dangerous?
 Goo_Portrait (Normal): Goo follows proper spell safety, and that includes being careful around things that could be dangerous.
 Goo_Portrait (Normal): Goo's workshop is safe, but the same can't be said for Goo's apprentices'.
 update Mao (Normal)
+do Player.play_voice("i_see")
 Mao_Portrait (Normal): Oh. I'll be careful.
 - Why are you green?
+	do Player.play_voice("hmm")
 	Goo_Portrait (Normal): Goo doesn't understand the question.
 	Mao_Portrait (Normal): Aren't slimes supposed to be white?
 	Goo_Portrait (Normal): Ah. Are you thinking of Dumplings? Goo isn't a Dumpling.
 	Goo_Portrait (Normal): Goo is Goo.
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): Oh. Are Goos a type of slime?
 	Goo_Portrait (Normal): No. Like Goo said, Goo is Goo. Goo.
+	do Player.play_voice("huh?")
 	Mao_Portrait (Normal): (I'm completely lost.)
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
 - How did you get your wizarding license?
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): I heard there's a written portion?
 	Goo_Portrait (Normal): Goo is literate.
 	update Mao [animation="Tada" length="2"]
 	update Mao (Blush)
+	do Player.play_voice("sorry")
 	Mao_Portrait (Blush): No, I mean. Um. *Desperately not pointing out the fact Goo doesn't have hands*
+	do Player.play_voice("oh no")
 	Mao_Portrait (Blush): Rice, help?
 	update Mao (Normal)
 	Rice_Portrait (Normal): Minor telekineses is quite simple to learn for anyone magically inclined.
+	do Player.play_voice("wow")
 	Mao_Portrait (Normal): So he writes with his mind? Woah.
 	Rice_Portrait (Normal): Everyone writes with their mind. Unless your hand has a separate personality I'm not aware of.
 	update Mao [animation="Tada" length="1"]
 	update Mao (Excited)
+	do Player.play_voice("amazing")
 	Mao_Portrait (Excited): Wow! So picking stuff up with my hand is basically telekinesis. I'm magic!
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
 - What are we making today?
 	Goo_Portrait (Normal): Goo will be preparing the base for some potions today. Goo's apprentice will watch, learn, and try not to explode, set herself on fire, or otherwise make a mess of things.
 	Goo_Portrait (Normal): If you could manage to do nothing at all today, you would be the second best apprentice Goo ever had.
 	update Mao (Normal)
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): Okie dokie!
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (Psst, Rice. Do the things he said usually happen?)
 	Rice_Portrait (Normal): (Alchemy and magecraft are both somewhat dangerous by themselves, and moreso when combined. But Goo's a proper wizard, so you wouldn't be in danger even if I weren't here.)
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): Can I take notes?
 	Goo_Portrait (Normal): Only if you don't use your wand.
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): Okie dokie. Rice, can I borrow a pen?
 	[signal arg="{"stats": {"scholarship": 10,}}"]

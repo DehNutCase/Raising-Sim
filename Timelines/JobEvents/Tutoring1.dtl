@@ -3,19 +3,23 @@ join Mao (Normal) 1
 join Fay (Normal) 3 [ mirrored="true"]
 [history action="clear"]
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): (Boss? Why are you in the academy?)
 update Fay (Smile)
 Fay_Portrait (Smile): (Why else but to learn, dear?)
 update Mao (Normal)
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): (Teehee. While you're here, can you help me find the person I'm supposed to tutor? We were supposed to meet here right now, but I don't see them.)
 update Fay (Playful)
 Fay_Portrait (Playful): (Sure.)
 Rice_Portrait (Normal): (Mao.)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): (Yes?)
 Rice_Portrait (Normal): (Fay's the one you're looking for.)
 Fay_Portrait (Playful): (Heehee.)
 update Mao [animation="Tada" length="1"]
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): (Boss!)
 update Fay (Smile)
 Fay_Portrait (Smile): (Sorry dear, I couldn't resist.)
@@ -25,32 +29,41 @@ update Fay (Normal)
 Fay_Portrait (Normal): (There, there. I'll treat you to some juice after we're done.)
 update Mao [animation="Tada" length="1"]
 update Mao (Normal)
+do Player.play_voice("yay!")
 Mao_Portrait (Normal): (I'll have apple juice!)
 [signal arg="{"stats": {"stress": -5,}}"]
 - By the way, why do you need magic tutoring?
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (Aren't fairies magic?)
 	Fay_Portrait (Normal): (Aren't you magic?)
 	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("amazing")
 	Mao_Portrait (Normal): (Yeah, but fairies are like, double magic. I can't turn into a fairy, but you can turn into a witch. Magic squared!)
 	Fay_Portrait (Normal): (Heehee. Leaving aside how a fairy witch would work, the academy teaches all kinds of spells.)
 	Fay_Portrait (Normal): (I'm trying to learn one of those today.)
+	do Player.play_voice("keep_it_up")
 	Mao_Portrait (Normal): (Umu. I'll do my best!)
 	[signal arg="{"stats": {"scholarship": 10,}}"]
 - Do you take classes here?
 	Fay_Portrait (Normal): (I do, but not the way you think.)
 	Fay_Portrait (Normal): (I only do it when the shop isn't busy, so I don't attend classes regularly. When I do attend, it's mostly cramming so I can finish a class before things get busy again.)
+	do Player.play_voice("really?")
 	Mao_Portrait (Normal): (Oh, that's just like me!)
 	update Fay (Surprised)
 	Fay_Portrait (Surprised): (Oh?)
+	do Player.play_voice("un_yeah")
 	Mao_Portrait (Normal): (Rice lets me take any class I want! I can even rearrange my schedule.)
 	Fay_Portrait (Surprised): (But you attend school every day, do you not?)
 	Rice_Portrait (Normal): (Although that's true. Mao has permission to skip all her classes if she wished. That is, she has to be in school, but she doesn't have to take classes.)
 	Rice_Portrait (Normal): (I believe the intent is to establish a habit, like brushing her teeth twice a day.)
+	do Player.play_voice("keep_it_up")
 	Mao_Portrait (Normal): (Anyway, let's get started. I need to earn my paycheck.)
 	[signal arg="{"stats": {"stress": -10, "scholarship": 5,}}"]
 - Wouldn't it have been better to meet in the dungeon?
+	do Player.play_voice("hmm")
 	Mao_Portrait (Normal): (Rice says it's safer for magic practice.)
 	Fay_Portrait (Normal): (That's true, but I'm just learning the theory right now.)
 	Fay_Portrait (Normal): (I can practice on my own time, after all.)
+	do Player.play_voice("i_see")
 	Mao_Portrait (Normal): (Umu.)
 	[signal arg="{"stats": {"scholarship": 10,}}"]

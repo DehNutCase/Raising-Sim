@@ -13,11 +13,12 @@ The spell's effect was rather simple, it transports the caster to the caster's l
 update Mao (Normal)
 do Player.play_voice("hmm")
 Mao_Portrait (Normal): (This is... Hmm, weird, I don't remember this perspective. Did I mess up my spell?)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): (For the time being, I should at least put the fire out.)
 do Player.play_sound_effect("water")
 [background arg="res://Art/Background/Background material shop/bg005a.jpg" fade="3.0" transition="Simple Fade"]
-do Player.play_voice("proud")
 update Mao (EyesClosed)
+do Player.play_voice("proud")
 Mao_Portrait (EyesClosed): Behold! Teehee.
 Rice_Portrait (Normal): Are you not going to hide yourself?
 update Mao [animation="Tada"]
@@ -26,68 +27,88 @@ do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Gah! What the heck?
 Rice_Portrait (Normal): An oddly refreshing response, considering. May I ask why you're here this time, 'Vanishing Point'?
 update Mao (Angry)
+do Player.play_voice("huh?")
 Mao_Portrait (Angry): I'm afraid you have the advantage of me.
 Rice_Portrait (Normal): Is that so. Well, if it's our first meeting, I should introduce myself.
 Rice_Portrait (Normal): Rice Glassfield. A Magic Officer serving her majesty.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Magic Officer, not Hero?
 Rice_Portrait (Normal): Magic Officer is my primary class.
 update Mao (EyesClosed)
 do Player.play_voice("hmm")
 Mao_Portrait (EyesClosed): (Hmm, I don't remember her, but she seems to be familiar with me. Did I accidentally mess up the time coordinates? She could be someone I met later.)
+do Player.play_voice("oh...")
 Mao_Portrait (EyesClosed): (No, the time should be more or less right. But it's weird that I don't remember this place.)
 update Mao (Normal)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("eh_no_way")
 Mao_Portrait (Normal): Okay, I have no idea what's going on!
 do Player.play_random_voice("greetings")
 Mao_Portrait (Normal): But it's nice to meet you! I'm Mao! Hello!
 Rice_Portrait (Normal): Sure. Now, if you don't mind, could you tell me why you're here?
-do Player.play_voice("happy")
 update Mao (Blush)
+do Player.play_voice("laugh")
 Mao_Portrait (Blush): Um. I think I got lost. Teehee.
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): I was in the mood for a vacation, so I popped in to enjoy a summer break at the beach.
 Rice_Portrait (Normal): It's winter.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): Hmm? Okay, hang on, let me figure out where I am.
 update Mao [animation="Tada" length="3"]
 do Player.play_sound_effect("heal")
 Mao_Portrait (Normal): Locator spell, go! Teehee.
 update Mao (Surprised)
+do Player.play_voice("huh!?")
 Mao_Portrait (Surprised): Wait, this is Lubek!? Why am I on the other side of the planet?
 Rice_Portrait (Normal): Unintentional entry, then. For the time being, you should apply for an entry visa.
 update Mao (Normal)
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): Hmm? Shouldn't I have one already?
 Rice_Portrait (Normal): Strictly speaking, Niiziro Mao is a permanent resident, so she doesn't have one. But even if she had one, you don't.
+do Player.play_voice("huh?")
 Mao_Portrait (Normal): ...But I'm me?
 Rice_Portrait (Normal): You are clearly two different people.
 update Mao (Sad)
+do Player.play_voice("oh no")
 Mao_Portrait (Sad): Wait, am I going to be arrested for body snatching? 
 Rice_Portrait (Normal): Since it was a consensual possession, there's no need to worry on that front.
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): ...I don't remember getting permission?
 Rice_Portrait (Normal): We wouldn't be discussing this peacefully if you didn't have permission.
 update Mao (Normal)
 Rice_Portrait (Normal): I suppose a demonstration is in order. I'll send you the instructions for how to apply for an entry visa, so please have the forms filled out the next time you enter Albion.
 Rice_Portrait (Normal): Ahem. It's almost dinner time, what would you like to eat?
 update Mao (Surprised)
+do Player.play_voice("huh?")
 Mao_Portrait (Surprised): What does that have to do---
 update Mao [animation="Tada" length="1" repeat="0"]
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Dumpling curry!
 Rice_Portrait (Normal): (Honestly, it's a little strange that Mao has the mental strength to push out a future version of herself, but I suppose it's because it wasn't a hostile possession to begin with.)
 update Mao (Sad)
+do Player.play_voice("huh?")
 Mao_Portrait (Sad): Wait, she's gone?
+do Player.play_voice("disappointed")
 Mao_Portrait (Sad): Aww, I wanted to get a super power up from my secret evil side.
 Rice_Portrait (Normal): Was that why you gave her permission to possess you?
 update Mao (Normal)
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Nope! I just thought it'd be fun to trick you and go 'teehee, the person you were talking to wasn't me!', but you found out right away!
+do Player.play_voice("hmm")
 Mao_Portrait (Normal): How did you do that, anyway?
 Rice_Portrait (Normal): I see.
+do Player.play_voice("really?")
 Mao_Portrait (Normal): No, really, how did you find out?
 Rice_Portrait (Normal): It's better not to randomly let people possess you.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Riceeee!
 update Mao [animation="Tada" length="2"]
+do Player.play_voice("hate")
 Mao_Portrait (Angry): Hmph!
 It was another peaceful day.
 [update_position action="reset_all" time="0.0"]

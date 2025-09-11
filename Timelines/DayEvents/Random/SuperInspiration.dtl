@@ -5,5 +5,6 @@ update Mao (Excited)
 update Mao [animation="Tada" length="1"]
 do Player.play_voice("amazing")
 Mao_Portrait (Excited): Yay! I feel great!🎉🥳🎉
+do Player.play_voice("keep_it_up")
 Mao_Portrait (Excited): I feel like I can paint more than one but less than three paintings today!
 [signal arg="{"start_quest": "super_inspiration"}"]

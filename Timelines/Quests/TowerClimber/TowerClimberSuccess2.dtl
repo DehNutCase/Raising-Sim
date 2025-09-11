@@ -5,19 +5,24 @@ join Morgan (Silhouette) 1
 Morgan_Portrait (Silhouette): Good morning, Mao. Did you need something?
 update Mao (Excited)
 update Mao [animation="Tada" length="1"]
+do Player.play_voice("yes_enthusiastic")
 Mao_Portrait (Excited): Yes, ma'am! Can I get my prize, ma'am?
 Morgan_Portrait (Silhouette): Prize?
 update Mao (Normal)
+do Player.play_voice("proud")
 Mao_Portrait (Normal): I made it all the way to the top of the tower!
 Morgan_Portrait (Silhouette): Did you now.
 Rice_Portrait (Normal): I stopped her from going further than floor twenty.
 update Mao (Angry)
+do Player.play_voice("baka")
 Mao_Portrait (Angry): Hmph! That means I climbed to the top! Since I climbed as high as I can.
 update Mao (Normal)
 Morgan_Portrait (Silhouette): Is that so. Well, you certainly deserve a reward.
+do Player.play_voice("laugh")
 Mao_Portrait (Normal): Teehee. *Proud*
 Morgan_Portrait (Silhouette): Keep up the good work, I'll have the kitchen make a special celebration dinner for you later.
 update Mao (Excited)
+do Player.play_voice("yay!")
 Mao_Portrait (Excited): Yay!
 do Player.set_event_flag("ending_reached")
 [signal arg="{"stats": {"stress": -50, "gold": 1000,},}"]
