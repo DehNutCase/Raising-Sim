@@ -316,7 +316,7 @@ func do_action(action_type:String, action_name: String):
 			Player.proficiencies[action_name] += Constants[action_type][action_name].proficiency_gain/2
 	
 
-func play_work_animation(action_type: String, action_name: String, success:bool) -> void:
+func play_work_animation(action_type: String, action_name: String, success:bool, lesson_name: String = "") -> void:
 	if action_type == "jobs":
 		working_animation_container.show()
 		var walk_background = Constants[action_type][action_name].background
@@ -329,8 +329,7 @@ func play_work_animation(action_type: String, action_name: String, success:bool)
 		working_animation_container.hide()
 		
 	if action_type == "courses":
-		var course_name = Player.course_list[0].course_name
-		var lesson_name = Player.course_list[0].lesson_name
+		var course_name = action_name
 		var job_texture = Constants.courses[course_name][lesson_name].icon
 		var walk_background = Constants.courses[course_name][lesson_name].background
 		
@@ -394,7 +393,7 @@ func daily_course():
 		await(get_tree().create_timer(.5).timeout)
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
 		course_daily_stats.erase("gold")
-		play_work_animation("courses", course_name, true)
+		play_work_animation("courses", course_name, true, lesson_name)
 		process_stats(course_daily_stats, icon) 
 		
 
@@ -426,7 +425,7 @@ func do_cram_school():
 		
 		await(get_tree().create_timer(.5).timeout)
 		get_tree().call_group("Live2DPlayer", "job_motion", true)
-		play_work_animation("courses", course_name, true)
+		play_work_animation("courses", course_name, true, lesson_name)
 		process_stats(course_daily_stats, icon)
 	else:
 		display_toast("You don't have any classes scheduled.", "top")
