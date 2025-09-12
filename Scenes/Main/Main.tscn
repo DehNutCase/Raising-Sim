@@ -743,18 +743,16 @@ layout_mode = 2
 mouse_filter = 2
 script = ExtResource("25_7vaom")
 
-[node name="Stats" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
+[node name="Stats" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
 texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 text = "StatLabel"
 
-[node name="Stats2" type="Label" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
+[node name="Stats2" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
 texture_filter = 4
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 text = "StatLabel"
 
 [node name="Story" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
