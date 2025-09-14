@@ -141,7 +141,7 @@ func _ready():
 		#Player.active_mission = ""
 		#Player.max_walks = 100
 		#Player.tower_level = 0
-		#Player.stats.talent_point = 100
+		#Player.stats.talent_points = 100
 		#Player.skill_inventory.create_and_add_item("meteor")
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
 		#Player.inventory.remove_item(item)
@@ -1223,7 +1223,7 @@ func _on_talent_button_pressed(talent: String):
 	var buy_talent = await popup.button_clicked
 	if buy_talent:
 		Player.talent_points_spent += talent_data.cost
-		Player.stats.talent_point -= talent_data.cost
+		Player.stats.talent_points -= talent_data.cost
 		if Player.talent_tree.get(talent):
 			Player.talent_tree[talent] += 1
 		else:
@@ -1363,7 +1363,7 @@ func _change_day_state(state: states) -> void:
 				$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".show()
 			else:
 				$"RightMenuContainer/MenuPanel/VBoxContainer/Wishlist".hide()
-			if OS.has_feature("demo"):
+			if OS.has_feature("demo") or OS.has_feature("web"):
 				#Hide ways to advance day after demo ends
 				if day > 20:
 					$"RightMenuContainer/MenuPanel/VBoxContainer/Schedule".hide()

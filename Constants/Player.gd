@@ -140,7 +140,7 @@ var base_stats = {
 	"bonus_exp": 0,
 	"scholarship": 0,
 	"action_points": 1,
-	"talent_point": 1,
+	"talent_points": 1,
 }
 
 @export var stats = {}

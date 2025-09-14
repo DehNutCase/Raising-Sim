@@ -8,4 +8,4 @@ func _ready() -> void:
 	update_label()
 	
 func update_label() -> void:
-	label.text = str(Player.stats.talent_point)
+	label.text = str(Player.stats.talent_points)

@@ -1097,14 +1097,15 @@ const stats = {
 		'emoji': '',
 	},
 	'action_points' = {
-		'label': 'Action Point',
+		'label': 'Action Points',
 		'emoji': '',
 		'min': 1,
 	},
-	'talent_point' = {
-		'label': 'Talent Point',
+	'talent_points' = {
+		'label': 'Talent Points',
 		'emoji': '',
-	}
+		'icon': 'res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png',
+	},
 }
 
 const constants = {
@@ -3306,6 +3307,18 @@ const talents = {
 		"description": "Although the first step to big explosions is small explosions, you decided to start with the basics instead. The basics of making big explosions is having enough mana, so you asked her majesty how to become more magical.\n\nHer majesty gave you a small booklet on meditation and a dress that may or may not be enchanted.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/clothes08_03.png",
 	},
+	"diligent_maid" = {
+		"label": "Diligent Maid",
+		"tier": 1,
+		"cost": 3,
+		"max_stacks": 1,
+		"daily_stats": {"max_hp": -1,},
+		"max_stats": {"max_hp": -50},
+		"daily_action_limit": 1,
+		"add_mandatory_daily_schedule": {"action_name": "Housework", "action_type": "jobs"},
+		"description": "By waking up early, you get the extra time to do your job as a maid.\n\nIt's not very good for your health to wake up so early...",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/clothes05_01.png",
+	},
 	"Foodie" = {
 		"label": "Foodie",
 		"tier": 1,
@@ -3326,15 +3339,6 @@ const talents = {
 		"daily_action_limit": -1,
 		"description": "A new tapioca tea parlor popped up recently. It doesn't seem very good for you, but it's delicious. According to Rice, the tapioca pearls seem to be made of Dumplings.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/tapioka01_01.png",
-	},
-	"low_maintainence_dumpling" = {
-		"label": "Low Maintainence Dumpling",
-		"tier": 3,
-		"cost": 2,
-		"max_stacks": 2,
-		"dumpling_action_per_day": 1,
-		"description": "Your Dumpling is exceptionally easy to take care of, giving you more time to take care of it. What do you mean that doesn't make sense?\n\nGives one additional Dumpling training action per day.",
-		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/hourglass01_02.png",
 	},
 	"potion_brewing" = {
 		"label": "Potion Brewing",
@@ -3385,6 +3389,15 @@ const talents = {
 		"max_stats": {"magic": 50, "art": 100},
 		"description": "You got a part time job painting figurines. It's mysterious how hand painted figurines can make money even though it's trivial to mass produce them with magical automation.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/figure01_01.png",
+	},
+	"low_maintainence_dumpling" = {
+		"label": "Low Maintainence Dumpling",
+		"tier": 3,
+		"cost": 2,
+		"max_stacks": 2,
+		"dumpling_action_per_day": 1,
+		"description": "Your Dumpling is exceptionally easy to take care of, giving you more time to take care of it. What do you mean that doesn't make sense?\n\nGives one additional Dumpling training action per day.",
+		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/hourglass01_02.png",
 	},
 	"early_summer_break" = {
 		"label": "Early Summer Break",
