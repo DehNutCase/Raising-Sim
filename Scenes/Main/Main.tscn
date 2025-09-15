@@ -478,8 +478,8 @@ PartHoodie = 1.0
 PartLeg = 1.0
 PartArmLA = 1.0
 PartArmRA = 1.0
-PartArmLB = 1.0
-PartArmRB = 1.0
+PartArmLB = 0.0
+PartArmRB = 0.0
 PartEyeBall = 1.0
 PartWandA = 1.0
 PartWandB = 1.0
@@ -879,13 +879,13 @@ offset_bottom = 119.0
 metadata/_edit_use_anchors_ = true
 
 [node name="LeftMenuContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(140, 750)
+custom_minimum_size = Vector2(200, 750)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -700.0
-offset_right = 140.0
+offset_top = -750.0
+offset_right = 200.0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -896,7 +896,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LeftMenuContainer/MenuPanel"]
 layout_mode = 2
-offset_right = 140.0
+offset_right = 200.0
 offset_bottom = 700.0
 
 [node name="Stats" type="TextureButton" parent="LeftMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
@@ -1076,15 +1076,15 @@ grow_vertical = 0
 text = "Class Change"
 
 [node name="RightMenuContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(140, 750)
+custom_minimum_size = Vector2(200, 750)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -140.0
-offset_top = -700.0
+offset_left = -200.0
+offset_top = -750.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -1096,7 +1096,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RightMenuContainer/MenuPanel"]
 layout_mode = 2
-offset_right = 140.0
+offset_right = 200.0
 offset_bottom = 700.0
 
 [node name="Schedule" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
