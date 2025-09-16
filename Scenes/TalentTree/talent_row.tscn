@@ -2,6 +2,3 @@
 
 [node name="TalentRow" type="HBoxContainer"]
 alignment = 1
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 2

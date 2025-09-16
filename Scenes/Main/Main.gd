@@ -761,90 +761,145 @@ func display_stats() -> void:
 	get_tree().call_group("Job_Button", "update_difficulty_color")
 	get_tree().call_group("Lesson_Button", "update_difficulty_color")
 	
-func _on_reward_signal(dialogic_signal) -> void:
-	if is_instance_of(dialogic_signal, TYPE_STRING):
-		dialogic_signal = JSON.parse_string(dialogic_signal)
-	if "item" in dialogic_signal:
+func _on_reward_signal(reward_signal) -> void:
+	if is_instance_of(reward_signal, TYPE_STRING):
+		reward_signal = JSON.parse_string(reward_signal)
+	if "item" in reward_signal:
 		#TODO Make sure not to let dialogic create too many items (perhaps add dialogic_limit setting and handler?)
-		Player.inventory.create_and_add_item(dialogic_signal.item)
-	if "stats" in dialogic_signal:
-		process_stats(dialogic_signal.stats)
-	if "location_flags" in dialogic_signal:
-		for flag in dialogic_signal.location_flags:
-			Player.location_flags[flag] = dialogic_signal.location_flags[flag]
-	if "event_flags" in dialogic_signal:
-		for flag in dialogic_signal.event_flags:
-			Player.event_flags[flag] = dialogic_signal.event_flags[flag]
-	if "background" in dialogic_signal:
-		if (!Player.background_inventory.get_item_with_prototype_id(dialogic_signal.background)):
-			Player.background_inventory.create_and_add_item(dialogic_signal.background)
-	if "skill" in dialogic_signal:
-		if (!Player.skill_inventory.get_item_with_prototype_id(dialogic_signal.skill)):
-			Player.skill_inventory.create_and_add_item(dialogic_signal.skill)
+		Player.inventory.create_and_add_item(reward_signal.item)
+	if "stats" in reward_signal:
+		process_stats(reward_signal.stats)
+	for stat in reward_signal.get("max_stats", {}):
+		if Player.max_stats.get(stat):
+			Player.max_stats[stat] += reward_signal.get("max_stats")[stat]
+		else:
+			Player.max_stats[stat] = reward_signal.get("max_stats")[stat]
+	for stat in reward_signal.get("min_stats", {}):
+		if Player.min_stats.get(stat):
+			Player.min_stats[stat] += reward_signal.get("min_stats")[stat]
+		else:
+			Player.min_stats[stat] = reward_signal.get("min_stats")[stat]
+	if reward_signal.get("walks", 0):
+		Player.max_walks += reward_signal.get("walks", 0)
+		Player.remaining_walks +=  reward_signal.get("walks", 0)
+	if reward_signal.get("daily_action_limit", 0):
+		Player.daily_action_limit += reward_signal.get("daily_action_limit", 0)
+	if reward_signal.get("remove_mandatory_daily_schedule", ""):
+		var schedule = Player.mandatory_daily_schedule_list
+		var schedule_to_remove = reward_signal["remove_mandatory_daily_schedule"]
+		var indices_to_remove = []
+		for i in range(schedule.size()):
+			if schedule[i].get("action_name") == schedule_to_remove:
+				indices_to_remove.append(i)
+		indices_to_remove.reverse()
+		for i in indices_to_remove:
+			Player.mandatory_daily_schedule_list.remove_at(i)
+	if reward_signal.get("card_game_starting_status", ""):
+		for status_data in reward_signal.get("card_game_starting_status", ""):
+			var status: CardGameStatusResource = load(status_data.status)
+			var status_path: String = status_data.status
+			var stacks = status_data.stacks
+			var status_name = status.status_name
+			if Player.card_game_starting_status.get(status_name):
+				Player.card_game_starting_status[status_name].stacks += stacks
+			else:
+				Player.card_game_starting_status[status_name] = {
+					"status": status_path,
+					"stacks": stacks
+				}
+	if reward_signal.get("add_mandatory_daily_schedule"):
+		var schedule_to_add = reward_signal.get("add_mandatory_daily_schedule")
+		Player.mandatory_daily_schedule_list.append(schedule_to_add)
+	if reward_signal.get("dumpling_action_bonus", {}):
+		for action in reward_signal.dumpling_action_bonus:
+			var action_bonus = reward_signal.dumpling_action_bonus[action]
+			if !Player.dumpling_stats.action_bonuses.get(action):
+				Player.dumpling_stats.action_bonuses[action] = {}
+			for stat in action_bonus:
+				if !Player.dumpling_stats.action_bonuses[action].get(stat):
+					Player.dumpling_stats.action_bonuses[action][stat] = action_bonus[stat]
+				else:
+					Player.dumpling_stats.action_bonuses[action][stat] += action_bonus[stat]
+					
+	if reward_signal.get("dumpling_action_per_day", 0):
+		Player.dumpling_stats.action_per_day += reward_signal.dumpling_action_per_day
+		Player.dumpling_stats.remaining_actions += reward_signal.dumpling_action_per_day
+	if "location_flags" in reward_signal:
+		for flag in reward_signal.location_flags:
+			Player.location_flags[flag] = reward_signal.location_flags[flag]
+	if "event_flags" in reward_signal:
+		for flag in reward_signal.event_flags:
+			Player.event_flags[flag] = reward_signal.event_flags[flag]
+	if "background" in reward_signal:
+		if (!Player.background_inventory.get_item_with_prototype_id(reward_signal.background)):
+			Player.background_inventory.create_and_add_item(reward_signal.background)
+	if "skill" in reward_signal:
+		if (!Player.skill_inventory.get_item_with_prototype_id(reward_signal.skill)):
+			Player.skill_inventory.create_and_add_item(reward_signal.skill)
 	#Sound section
-	if "music" in dialogic_signal:
-		Player.play_song(dialogic_signal.music)
-	if "voice" in dialogic_signal:
-		Player.play_voice(dialogic_signal.voice)
-	if "random_voice" in dialogic_signal:
-		Player.play_random_voice(dialogic_signal.random_voice)
-	if "sound_effect" in dialogic_signal:
-		Player.play_sound_effect(dialogic_signal.sound_effect)
-	if "ui_sound" in dialogic_signal:
-		Player.play_ui_sound(dialogic_signal.ui_sound)
-	if "mission" in dialogic_signal:
-		Player.active_mission = dialogic_signal.mission
+	if "music" in reward_signal:
+		Player.play_song(reward_signal.music)
+	if "voice" in reward_signal:
+		Player.play_voice(reward_signal.voice)
+	if "random_voice" in reward_signal:
+		Player.play_random_voice(reward_signal.random_voice)
+	if "sound_effect" in reward_signal:
+		Player.play_sound_effect(reward_signal.sound_effect)
+	if "ui_sound" in reward_signal:
+		Player.play_ui_sound(reward_signal.ui_sound)
+	if "mission" in reward_signal:
+		Player.active_mission = reward_signal.mission
 		if Player.active_mission.get('combat'):
 			var mission = Player.active_mission.combat.split(',')[0]
 			var combat_number = int(Player.active_mission.combat.split(',')[1])
 			Player.active_mission.combat = Constants.missions[mission].combats[combat_number]
 		#recognize mission is finished when there's no timeline next
 		if !Player.active_mission.get('next'): Player.active_mission = false
-	if "unlocked_missions" in dialogic_signal:
-		for mission in dialogic_signal.unlocked_missions:
-			Player.unlocked_missions[mission] = dialogic_signal.unlocked_missions[mission]
+	if "unlocked_missions" in reward_signal:
+		for mission in reward_signal.unlocked_missions:
+			Player.unlocked_missions[mission] = reward_signal.unlocked_missions[mission]
 	display_stats()
 	#Below might be dangerous, never call timeline inside an actual timeline
-	if "timeline" in dialogic_signal:
-		Dialogic.start(dialogic_signal.timeline)
-	if "card_game_expedition" in dialogic_signal:
+	if "timeline" in reward_signal:
+		Dialogic.start(reward_signal.timeline)
+	if "card_game_expedition" in reward_signal:
 		if Dialogic.current_timeline:
 			await Dialogic.timeline_ended
-		var combats = Constants.expedition[dialogic_signal.card_game_expedition].random_encounters
+		var combats = Constants.expedition[reward_signal.card_game_expedition].random_encounters
 		var combat = combats.pick_random()
 		enter_card_game(combat, false, false, true)
-	if "card_game" in dialogic_signal:
+	if "card_game" in reward_signal:
 		if Dialogic.current_timeline:
 			await Dialogic.timeline_ended
-		var combat = dialogic_signal.card_game
+		var combat = reward_signal.card_game
 		enter_card_game(combat)
-	if "expedition_failed" in dialogic_signal:
+	if "expedition_failed" in reward_signal:
 		expedition_failed = true
-	if "expedition_heal" in dialogic_signal:
-		Player.expedition_health += int(dialogic_signal.expedition_heal)
-	if "card_pack" in dialogic_signal:
-		var card_pack = load(dialogic_signal.card_pack)
+	if "expedition_heal" in reward_signal:
+		Player.expedition_health += int(reward_signal.expedition_heal)
+	if "card_pack" in reward_signal:
+		var card_pack = load(reward_signal.card_pack)
 		var card = card_pack.cards.pick_random()
 		var toast = "Obtained " + card.id
 		var icon_path = card.icon.resource_path
 		Player.card_game_deck.append(card)
 		await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
 		display_toast(toast, "bottom", "center", icon_path)
-	if "card" in dialogic_signal:
-		var card = load(dialogic_signal.card)
+	if "card" in reward_signal:
+		var card = load(reward_signal.card)
 		var toast = "Obtained " + card.id
 		var icon_path = card.icon.resource_path
 		Player.card_game_deck.append(card)
 		await get_tree().create_timer(Constants.constants.TOAST_TIMEOUT_DURATION).timeout
 		display_toast(toast, "bottom", "center", icon_path)
-	if "start_quest" in dialogic_signal:
+	if "start_quest" in reward_signal:
 		#TODO, check for quest uniqueness?
-		Player.start_quest(dialogic_signal.start_quest)
-	if "game_over" in dialogic_signal:
+		Player.start_quest(reward_signal.start_quest)
+	if "game_over" in reward_signal:
 		%GameOverDialog.show()
 		_change_current_state(states.GAME_OVER)
-	if "unlock_perspective" in dialogic_signal:
-		Player.unlock_perspective(dialogic_signal.unlock_perspective)
+	if "unlock_perspective" in reward_signal:
+		Player.unlock_perspective(reward_signal.unlock_perspective)
 	
 func _on_timeline_started() -> void:
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
@@ -1231,74 +1286,8 @@ func _on_talent_button_pressed(talent: String):
 		talent_tree._update_rows()
 		var toast = "Gained 1 rank in %s!" %talent_data.label
 		display_toast(toast, "top")
-		
-		for stat in talent_data.get("stats", {}):
-			Player.stats[stat] += talent_data.get("stats")[stat]
-			
-		for stat in talent_data.get("max_stats", {}):
-			if Player.max_stats.get(stat):
-				Player.max_stats[stat] += talent_data.get("max_stats")[stat]
-			else:
-				Player.max_stats[stat] = talent_data.get("max_stats")[stat]
-		
-		for stat in talent_data.get("min_stats", {}):
-			if Player.min_stats.get(stat):
-				Player.min_stats[stat] += talent_data.get("min_stats")[stat]
-			else:
-				Player.min_stats[stat] = talent_data.get("min_stats")[stat]
-				
-		if talent_data.get("walks", 0):
-			Player.max_walks += talent_data.get("walks", 0)
-			Player.remaining_walks +=  talent_data.get("walks", 0)
-			
-		if talent_data.get("daily_action_limit", 0):
-			Player.daily_action_limit += talent_data.get("daily_action_limit", 0)
-			
-		if talent_data.get("card", ""):
-			_on_reward_signal({"card": talent_data.get("card")})
-	
-		if talent_data.get("card_game_starting_status", ""):
-			for status_data in talent_data.get("card_game_starting_status", ""):
-				var status: CardGameStatusResource = load(status_data.status)
-				var status_path: String = status_data.status
-				var stacks = status_data.stacks
-				var status_name = status.status_name
-				if Player.card_game_starting_status.get(status_name):
-					Player.card_game_starting_status[status_name].stacks += stacks
-				else:
-					Player.card_game_starting_status[status_name] = {
-						"status": status_path,
-						"stacks": stacks
-					}
-			
-		if talent_data.get("remove_mandatory_daily_schedule", ""):
-			var schedule = Player.mandatory_daily_schedule_list
-			var schedule_to_remove = talent_data["remove_mandatory_daily_schedule"]
-			var indices_to_remove = []
-			for i in range(schedule.size()):
-				if schedule[i].get("action_name") == schedule_to_remove:
-					indices_to_remove.append(i)
-			indices_to_remove.reverse()
-			for i in indices_to_remove:
-				Player.mandatory_daily_schedule_list.remove_at(i)
-		if talent_data.get("add_mandatory_daily_schedule"):
-			var schedule_to_add = talent_data.get("add_mandatory_daily_schedule")
-			Player.mandatory_daily_schedule_list.append(schedule_to_add)
-			
-		if talent_data.get("dumpling_action_bonus", {}):
-			for action in talent_data.dumpling_action_bonus:
-				var action_bonus = talent_data.dumpling_action_bonus[action]
-				if !Player.dumpling_stats.action_bonuses.get(action):
-					Player.dumpling_stats.action_bonuses[action] = {}
-				for stat in action_bonus:
-					if !Player.dumpling_stats.action_bonuses[action].get(stat):
-						Player.dumpling_stats.action_bonuses[action][stat] = action_bonus[stat]
-					else:
-						Player.dumpling_stats.action_bonuses[action][stat] += action_bonus[stat]
-						
-		if talent_data.get("dumpling_action_per_day", 0):
-			Player.dumpling_stats.action_per_day += talent_data.dumpling_action_per_day
-			Player.dumpling_stats.remaining_actions += talent_data.dumpling_action_per_day
+		await get_tree().create_timer(.1).timeout
+		_on_reward_signal(talent_data)
 
 func _on_play_ending_button_pressed():
 	if popup.is_visible_in_tree():

@@ -746,12 +746,7 @@ script = ExtResource("25_7vaom")
 
 [node name="Stats" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
 texture_filter = 4
-layout_mode = 2
-size_flags_horizontal = 3
-text = "StatLabel"
-
-[node name="Stats2" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Stats/Stats"]
-texture_filter = 4
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "StatLabel"
@@ -1252,7 +1247,6 @@ text = "Save
 "
 
 [node name="EndingButton" type="TextureButton" parent="RightMenuContainer/MenuPanel/VBoxContainer" groups=["ActionButton", "Button"]]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

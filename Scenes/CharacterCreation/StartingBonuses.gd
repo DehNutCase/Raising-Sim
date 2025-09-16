@@ -5,19 +5,11 @@ var text: String
 
 func _ready() -> void:
 	visibility_changed.connect(display_stats)
-#TODO, make the parent not disable tabs until class change card is read
+	
 func display_stats():
-	#TODO, rework class change card
-	if Player.background_inventory.get_item_with_prototype_id("class_change_card") or Player.background_inventory.get_item_with_prototype_id("class_change_card_witch"):
-		get_parent().tabs_visible = true
-	else:
-		get_parent().tabs_visible = false
-		
-	#TODO, rewrite this via table and cell [table={number}]{cells}[/table]
-	#[cell padding=32,0,32,0]{text}[/cell]
+	text = "[table=2][cell padding=32,0,32,0]New Game Bonus Stats:[/cell][cell padding=32,0,32,0][/cell]"
 	var font_size = Config.get_config("CustomSettings", "FontSize")
-	text = "[table=2][cell padding=32,0,32,0]Stats:[/cell][cell padding=32,0,32,0][/cell]"
-	for stat in Player.display_stats:
+	for stat in Player.new_game_plus_bonuses.get("stats", {}):
 		var label = stat
 		if ("label" in Constants.stats[stat]):
 			label = Constants.stats[stat]["label"]
@@ -32,6 +24,7 @@ func display_stats():
 			if Player.calculate_max_stat(stat):
 				max = " / " + str(Player.calculate_max_stat(stat))
 			text += "[cell padding=32,0,32,0]" + label + ": " + str(Player.stats[stat]) + max + "[/cell]"
-	text += "[/table]"
+	
+	text += "[/table]\n"
 	label.clear()
 	label.append_text(text)

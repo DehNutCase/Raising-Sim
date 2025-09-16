@@ -244,20 +244,6 @@ func calculate_ending(final_ending: bool = false):
 			Dialogic.start(timeline)
 		#TODO, delete game on pressed, currently disabled for dev work
 		#delete_game()
-		#TODO, update new game plus bonuses from talents, items, etc.
-		for talent in talent_tree:
-			var bonuses = Constants.talents[talent].get("new_game_plus_bonuses")
-			if !bonuses:
-				continue
-			
-			var stat_bonuses = bonuses.get("stats", {})
-			for bonus in stat_bonuses:
-				update_new_game_plus_bonus("stats", bonus, stat_bonuses[bonus])
-			
-			var talent_bonuses = bonuses.get("talents", {})
-			for bonus in talent_bonuses:
-				update_new_game_plus_bonus("stats", bonus, talent_bonuses[bonus])
-			
 
 	return [int(score), highest_ending_info.label, highest_ending]
 
@@ -326,6 +312,8 @@ func save_game():
 		ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
 	else:
 		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
+		
+	save_new_game_plus_bonuses()
 
 func load_game():
 	var save_file
@@ -355,6 +343,8 @@ func load_game():
 		Player[resource_array].clear()
 		for path in data[resource_array]:
 			Player[resource_array].append(ResourceLoader.load(path))
+			
+	load_new_game_plus_bonuses()
 	
 func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
@@ -488,7 +478,6 @@ func update_new_game_plus_bonus(category: String, bonus: String, value: int) -> 
 		new_game_plus_bonuses[category][bonus] += value
 	else:
 		new_game_plus_bonuses[category][bonus] = value
-	save_new_game_plus_bonuses()
 
 func load_demo():
 	var save_file

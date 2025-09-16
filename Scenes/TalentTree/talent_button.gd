@@ -125,9 +125,9 @@ func _on_talent_texture_pressed():
 		return
 		
 	var talent_data = Constants.talents.get(talent)
-	if Player.stats.talent_point <  talent_data.cost:
+	if Player.stats.talent_points <  talent_data.cost:
 		var talent_points_needed = tier * 5 - Player.talent_points_spent
-		var toast = "You can't afford this talent! (It costs %d talent points and you only have %d.)" % [talent_data.cost, Player.stats.talent_point]
+		var toast = "You can't afford this talent! (It costs %d talent points and you only have %d.)" % [talent_data.cost, Player.stats.talent_points]
 		Player.display_toast(toast)
 		return
 		
