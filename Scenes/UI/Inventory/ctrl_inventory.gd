@@ -88,7 +88,7 @@ func _on_list_item_clicked(index: int, at_position: Vector2, mouse_button_index:
 
 func make_tooltip(item):
 	var tooltip = item.get_property("name", "")
-	if tooltip: tooltip += "\n"
+	if tooltip: tooltip += "\n\n"
 	tooltip += item.get_property("description", "Tooltip Error")
 	if tooltip: tooltip += "\n"
 	var daily_stats:Dictionary = item.get_property("daily_stats", {})

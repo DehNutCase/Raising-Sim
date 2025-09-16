@@ -104,7 +104,7 @@ func start_battle() -> void:
 
 
 func start_turn(first_turn=false) -> void:
-	card_game_player.start_turn(first_turn)
+	await card_game_player.start_turn(first_turn)
 	var draw_amount = card_game_player.cards_per_turn
 	if Player.card_game_player.active_status.get("Skill"):
 		draw_amount = draw_amount + Player.card_game_player.active_status.get("Skill").stacks
@@ -224,7 +224,10 @@ func play_live2d_animation(model: String, motion: String, duration: float) -> vo
 	cubism_model.assets = model
 	cubism_model.anim_motion = motion
 	cubism_container.show()
+	cubism_model.playback_process_mode = GDCubismUserModel.IDLE
 	await get_tree().create_timer(duration).timeout
+	#Stop playback once animation is hidden so that you don't waste GPU time
+	cubism_model.playback_process_mode = GDCubismUserModel.MANUAL
 	cubism_container.hide()
 
 func update_mana_labels():

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://d0me0g4p8kkw"]
+
+[ext_resource type="Texture2D" uid="uid://140u3byh66ss" path="res://Art/Mori no oku no kakurezato/CardGame/element02_04.png" id="1_8ep0v"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_7lrke"]
+[ext_resource type="AudioStream" uid="uid://c72id1lm5t2gg" path="res://SFX/Tom Music/Spells/Firebuff 1.wav" id="3_c36rs"]
+[ext_resource type="Resource" uid="uid://da1yfjsfxcvdq" path="res://Scenes/CardGame/Status/stored_energy.tres" id="4_s7mqo"]
+
+[resource]
+script = ExtResource("2_7lrke")
+id = "Agile Invocation"
+type = 1
+target = 1
+cost = 2
+effect_amount = 20
+bonus_effect = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 100
+start_sound_effect = ExtResource("3_c36rs")
+second_target = 0
+second_type = 5
+second_effect_amount = 1
+second_bonus_effect = 0
+third_target = 0
+third_type = 4
+third_effect_amount = 1
+third_bonus_effect = 0
+third_status = ExtResource("4_s7mqo")
+icon = ExtResource("1_8ep0v")

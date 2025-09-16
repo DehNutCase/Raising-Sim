@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://bauon8hu41jtp"]
+
+[ext_resource type="Texture2D" uid="uid://ponasn8mkndn" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element05_01.png" id="1_un81u"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_oh1dv"]
+[ext_resource type="Resource" uid="uid://da1yfjsfxcvdq" path="res://Scenes/CardGame/Status/stored_energy.tres" id="3_wws2o"]
+[ext_resource type="AudioStream" uid="uid://c6ajx5f5v87dm" path="res://SFX/Tom Music/Spells/Fireball 1.wav" id="4_x31on"]
+
+[resource]
+script = ExtResource("2_oh1dv")
+id = "Lightning Bolt"
+type = 1
+target = 1
+cost = 3
+effect_amount = 50
+bonus_effect = 0
+enemy_attack_type = 1
+multi_hit_amount = 0
+animation = ""
+price = 500
+start_sound_effect = ExtResource("4_x31on")
+second_target = 0
+second_type = 4
+second_effect_amount = 1
+second_bonus_effect = 0
+second_status = ExtResource("3_wws2o")
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+third_bonus_effect = 0
+icon = ExtResource("1_un81u")

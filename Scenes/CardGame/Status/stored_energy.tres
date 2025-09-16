@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardGameStatusResource" load_steps=3 format=3 uid="uid://da1yfjsfxcvdq"]
+
+[ext_resource type="Script" path="res://Scenes/CardGame/Status/card_game_status_resource.gd" id="1_cd4qt"]
+[ext_resource type="Texture2D" uid="uid://b4cukwq5uo3jo" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element05_02.png" id="2_pnw1o"]
+
+[resource]
+script = ExtResource("1_cd4qt")
+status_icon = ExtResource("2_pnw1o")
+status_name = "Stored Energy"
+status_tooltip = "Stored Energy. At the start of turn, becomes [color=yellow]X[/color] Agility."
+status_decay = 2
+NegativeStatus = true

@@ -134,7 +134,16 @@ func start_turn(first_turn = false) -> void:
 		if status.stacks == 0:
 			status.status_display.queue_free()
 			active_status.erase("Burn")
+		
 	decay_status(CardGameStatusResource.DecayType.START_OF_TURN)
+	
+	if active_status.get("Stored Energy"):
+		var status = active_status.get("Stored Energy")
+		var agility = load("res://Scenes/CardGame/Status/agility.tres")
+		apply_status(agility, status.stacks)
+
+		status.status_display.queue_free()
+		active_status.erase("Stored Energy")
 	#Code to implement big potato effect
 	var relic_list: ItemList = get_parent().relic_item_list
 	var relic_count = relic_list.item_count
@@ -229,7 +238,7 @@ func start_first_turn() -> void:
 		status_display.tooltip_text = status.status_tooltip
 		
 func apply_status(status_resource: CardGameStatusResource, effect_amount: int, user = self) -> void:
-	if active_status.get("Resistance") and (status_resource.NegativeStatus or effect_amount < 0):
+	if active_status.get("Resistance") and ((status_resource.NegativeStatus and effect_amount > 0) or (!status_resource.NegativeStatus and effect_amount < 0)):
 		active_status["Resistance"].stacks -= 1
 		active_status["Resistance"].status_display.stack_label.text = str(active_status["Resistance"].stacks)
 		if active_status["Resistance"].stacks == 0:

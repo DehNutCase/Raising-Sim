@@ -48,7 +48,7 @@ func display_courses():
 		var desc = Constants.courses[course_name][lesson_name].get("description")
 		var tooltip = lesson_name
 		if desc:
-			tooltip += "\n" + desc
+			tooltip += "\n\n" + desc
 		set_item_tooltip(item_count-1, tooltip)
 	if item_count:
 		get_tree().call_group("CourseDetails", "display_stats", get_item_metadata(0))

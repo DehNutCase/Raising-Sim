@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://f474xn1lyea4"]
+
+[ext_resource type="Texture2D" uid="uid://cka0n6x3abuc5" path="res://Art/Mori no oku no kakurezato/CardGame/sphere02_02.png" id="1_bwmld"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_opcoo"]
+[ext_resource type="AudioStream" uid="uid://dhexj5ph2eif6" path="res://SFX/Shapeforms/Arcane/Arcane Beacon.wav" id="3_bdty8"]
+[ext_resource type="Resource" uid="uid://da1yfjsfxcvdq" path="res://Scenes/CardGame/Status/stored_energy.tres" id="4_pm0eb"]
+
+[resource]
+script = ExtResource("2_opcoo")
+id = "Agile Ritual"
+type = 6
+target = 0
+cost = 1
+effect_amount = 1
+bonus_effect = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 100
+start_sound_effect = ExtResource("3_bdty8")
+second_target = 0
+second_type = 5
+second_effect_amount = 1
+second_bonus_effect = 0
+third_target = 0
+third_type = 4
+third_effect_amount = 1
+third_bonus_effect = 0
+third_status = ExtResource("4_pm0eb")
+icon = ExtResource("1_bwmld")

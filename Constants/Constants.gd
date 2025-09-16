@@ -911,6 +911,25 @@ const courses = {
 			"card": "res://Scenes/CardGame/Characters/Mao/Cards/fireball.tres",
 			"background": "res://Art/Background/Background material shop/bg027a.jpg",
 		},
+		'Introduction to Agile Spellcasting (Agile Ritual)': {
+			'stats': {
+				'experience': 100,
+				'gold': -250,
+				'magic': 2,
+				'max_mp': 2,
+				'scholarship': 2,
+				'agility': 5,
+				'stress': 10,
+			},
+			'required_progress': 15000,
+			'skill':{
+				'id': 'agile_spellcaster',
+			},
+			"description": "A simple introduction to agile spellcasting.\nA very useful class for those having trouble handling speedy enemies.",
+			"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/sphere02_02.png",
+			"card": "res://Scenes/CardGame/Characters/Mao/Cards/agile_ritual.tres",
+			"background": "res://Art/Background/Background material shop/bg016a.jpg",
+		},
 		'Artillerist Training (Meteor)': {
 			'stats': {
 					'experience': 200,

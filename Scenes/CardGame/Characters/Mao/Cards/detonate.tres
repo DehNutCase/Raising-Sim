@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bhnauj5mkri3b"]
+
+[ext_resource type="Texture2D" uid="uid://bummb80fw4cv3" path="res://Art/Mori no oku no kakurezato/CardGame/plasma01_02.png" id="1_gvlp7"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_6dtn7"]
+[ext_resource type="AudioStream" uid="uid://bo47vxc8o86ar" path="res://SFX/Tom Music/Spells/Firespray 1.wav" id="3_jwmot"]
+
+[resource]
+script = ExtResource("2_6dtn7")
+id = "Detonate"
+type = 1
+target = 1
+cost = 9
+effect_amount = 150
+bonus_effect = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = "{\"model\": \"res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json\", \"animation\": \"_2\", \"duration\": 2.0,}"
+price = 1000
+start_sound_effect = ExtResource("3_jwmot")
+second_target = 2
+second_type = 1
+second_effect_amount = 100
+second_bonus_effect = 0
+third_target = 3
+third_type = 1
+third_effect_amount = 50
+third_bonus_effect = 0
+icon = ExtResource("1_gvlp7")

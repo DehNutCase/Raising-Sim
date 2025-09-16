@@ -71,7 +71,7 @@ func display_actions():
 		var desc = Constants[mandatory_action.action_type][mandatory_action.action_name].get("description")
 		var tooltip = mandatory_action.action_name
 		if desc:\
-			tooltip += "\n" + desc
+			tooltip += "\n\n" + desc
 		set_item_tooltip(item_count-1, tooltip)
 	
 	for action in Player.daily_schedule_list:
@@ -86,7 +86,7 @@ func display_actions():
 		var desc = Constants[action.action_type][action.action_name].get("description")
 		var tooltip = action.action_name
 		if desc:\
-			tooltip += "\n" + desc
+			tooltip += "\n\n" + desc
 		set_item_tooltip(item_count-1, tooltip)
 	
 

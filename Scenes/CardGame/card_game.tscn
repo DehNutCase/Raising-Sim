@@ -1,13 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=24 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
-[ext_resource type="PackedScene" uid="uid://lcmukph0b1ku" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/overlord_card_game.tscn" id="2_vriuv"]
+[ext_resource type="PackedScene" uid="uid://cdhjbtjmwe27v" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn" id="2_oisxy"]
+[ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="3_26lwe"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="4_3opov"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
-[ext_resource type="Resource" uid="uid://c117i1qkv5feb" path="res://Scenes/CardGame/Characters/Mao/Cards/doodle.tres" id="7_grfbv"]
 [ext_resource type="StyleBox" uid="uid://dbhg2yav7ap6u" path="res://Art/Themes/ThemeComponents/DefaultButtonNormal.tres" id="8_q06d8"]
 [ext_resource type="StyleBox" uid="uid://c7r2jxhbcch2g" path="res://Art/Themes/ThemeComponents/DefaultButtonHover.tres" id="9_4y1vj"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="9_cpfh3"]
@@ -16,9 +16,15 @@
 [ext_resource type="StyleBox" uid="uid://k5d5xj0eovxl" path="res://Art/Themes/ThemeComponents/DefaultButtonPressed.tres" id="10_gnlme"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="10_nnwkb"]
 [ext_resource type="StyleBox" uid="uid://jy8bapewhgwe" path="res://Art/Themes/ThemeComponents/DefaultButtonDisabledTexture.tres" id="11_8jwc3"]
-[ext_resource type="Resource" uid="uid://c7rmtmb83u3yg" path="res://Scenes/CardGame/Characters/Mao/Cards/sleight_of_hand.tres" id="11_mvfoe"]
+[ext_resource type="Resource" uid="uid://caltw50egsl4e" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_casting.tres" id="11_w62d3"]
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
+[ext_resource type="Resource" uid="uid://bhnauj5mkri3b" path="res://Scenes/CardGame/Characters/Mao/Cards/detonate.tres" id="12_u1u0p"]
 [ext_resource type="StyleBox" uid="uid://oajujgbhe6pk" path="res://Art/Themes/ThemeComponents/DefaultButtonFocus.tres" id="12_y7e5o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sdoch"]
+font_size = 28
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
 size = Vector2(1600, 650)
@@ -34,8 +40,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b07j")
-card_game_level = ExtResource("2_vriuv")
+card_game_level = ExtResource("2_oisxy")
 metadata/_edit_lock_ = true
+
+[node name="FPS" type="Label" parent="."]
+z_index = 4
+texture_filter = 4
+offset_left = 1450.0
+offset_top = 100.0
+offset_right = 1498.0
+offset_bottom = 139.0
+text = "FPS"
+label_settings = SubResource("LabelSettings_sdoch")
+script = ExtResource("3_26lwe")
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -112,7 +129,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("11_mvfoe"), ExtResource("7_grfbv")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("11_w62d3"), ExtResource("12_u1u0p")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]
@@ -173,7 +190,6 @@ disable_3d = true
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(768, 768)
-render_target_update_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

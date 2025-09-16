@@ -114,6 +114,14 @@
 		"stats": "{}",
 		"combat_skill" : "fireball"
 	},
+	"agile_spellcaster": {
+		"daily_stats": "{\n\"experience\": 1\n}",
+		"description": "You learned the basics of agile spellcasting. Now there's no need to fear thieves or Teru! (Assuming you don't draw a brick hand.)",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/sphere02_02.png",
+		"monthly_stats": "{\n\"agility\": 1\n}",
+		"name": "Agile Spellcaster",
+		"stats": "{}",
+	},
 	"meteor": {
 		"daily_stats": "{\n\"magic\": 1\n}",
 		"description": "Learned how to cast meteor in combat. \nShould they really be teaching something like this in school?",
