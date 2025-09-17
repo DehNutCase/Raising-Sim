@@ -184,6 +184,11 @@ func process_day():
 	if day == 0:
 		#don't do actions day 1
 		action_list = []
+		#Do first day stuff day 0
+		if Player.new_game_plus_bonuses:
+			var stat_bonuses = Player.new_game_plus_bonuses.get("stats", {})
+			for stat in stat_bonuses:
+				Player.stats[stat] += stat_bonuses[stat]
 	var i = 0
 	#TODO, set state to not ready
 	for action in action_list:
@@ -943,6 +948,7 @@ func _on_inventory_item_added(item:InventoryItem):
 	if day != 0:
 		display_toast(toast, "bottom", "center", icon_path)
 	
+	
 	for stat in item.get_property("stats", {}):
 		Player.stats[stat] += item.get_property("stats")[stat]
 		
@@ -957,6 +963,10 @@ func _on_inventory_item_added(item:InventoryItem):
 			Player.min_stats[stat] += item.get_property("min_stats")[stat]
 		else:
 			Player.min_stats[stat] = item.get_property("min_stats")[stat]
+	
+	var new_game_bonuses = item.get_property("new_game_plus_bonuses", {})
+	for stat in new_game_bonuses.stats:
+		Player.update_new_game_plus_bonus("stats", stat, new_game_bonuses.stats[stat])
 	
 	for flag in item.get_property("flags", {}):
 		var value = item.get_property("flags")[flag]

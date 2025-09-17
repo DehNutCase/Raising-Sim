@@ -2,7 +2,7 @@
 extends Node
 
 #List of variables to save, update when adding new variables
-@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "daily_action_limit", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "skill_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree", "talent_points_spent", "card_game_starting_status", "dumpling_stats"]
+@export var save_list = ["inventories", "starting_items", "day", "max_walks", "remaining_walks", "daily_action_limit", "event_flags", "location_flags", "rest_flags", "job_flags", "lesson_flags", "proficiencies", "player_class", "label", "combat_skills", "live2d_active", "live2d_mode", "enemies", "tower_level", "stats", "max_stats", "min_stats", "experience", "experience_total", "experience_required", "class_change_class", "active_mission", "unlocked_missions", "course_list", "course_progress", "courses_completed", "current_elective", "daily_schedule_list", "mandatory_daily_schedule_list", "card_game_deck", "bedtime_event_number", "active_quests", "completed_quests", "talent_tree", "talent_points_spent", "card_game_starting_status", "dumpling_stats"]
 @export var inventory: Inventory
 @export var background_inventory: Inventory
 @export var skill_inventory: Inventory
@@ -22,8 +22,7 @@ extends Node
 @export var lesson_flags = {}
 @export var job_flags = {}
 @export var location_flags = {}
-enum followup_attacks {NO_FOLLOWUP, BASIC_ATTACK, ADVANCED_ATTACK}
-@export var skill_flags = {"followup_attacks": followup_attacks.NO_FOLLOWUP}
+
 @export var proficiencies = {}
 @export var player_class:String = "ink_mage"
 @export var label = "Mao"
@@ -350,6 +349,8 @@ func delete_game():
 	DirAccess.remove_absolute("user://Saves/save.json")
 	#Remove old class change card as well when deleting.
 	DirAccess.remove_absolute("user://Saves/class_change_card.json")
+	if new_game_plus_bonuses:
+		save_new_game_plus_bonuses()
 	#TODO, fix save issue if we return to main menu
 	#OS.set_restart_on_exit(true)
 	#get_tree().quit()

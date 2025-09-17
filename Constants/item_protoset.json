@@ -75,6 +75,15 @@
 		"stats": "{}",
 		"walks": 1
 	},
+	"gem_of_fortune": {
+		"description": "It's a money gem! Just having this makes you have more money every month, somehow.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem05_04.png",
+		"limit": 1,
+		"name": "Gem of Fortune",
+		"price": 10000,
+		"monthly_stats": "{\n\"gold\": 1000\n}",
+		"new_game_plus_bonuses": "{\"stats\": {\"gold\": 1000}}",
+	},
 	"health_potion": {
 		"combat_item": "health_potion",
 		"daily_stats": "{}",

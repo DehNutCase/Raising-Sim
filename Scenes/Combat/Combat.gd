@@ -460,6 +460,7 @@ func rand_weighted(weights) -> int:
 	return 0
 
 func process_followups() -> void:
+	return #deprecated
 	#Always use int when using enums, sometimes godot changes them to floats
 	match int(player_combat_copy.skill_flags.followup_attacks):
 		player_combat_copy.followup_attacks.NO_FOLLOWUP:
