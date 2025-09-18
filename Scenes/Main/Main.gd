@@ -87,7 +87,7 @@ func _ready():
 		#if OS.has_feature("demo"):
 			#Player.load_demo()
 		#else:
-		Player.load_game()
+		Player.load_game(Player.new_game)
 	Player.save_loaded = true
 	
 	#Load font size from settings
@@ -965,7 +965,7 @@ func _on_inventory_item_added(item:InventoryItem):
 			Player.min_stats[stat] = item.get_property("min_stats")[stat]
 	
 	var new_game_bonuses = item.get_property("new_game_plus_bonuses", {})
-	for stat in new_game_bonuses.stats:
+	for stat in new_game_bonuses.get("stats", {}):
 		Player.update_new_game_plus_bonus("stats", stat, new_game_bonuses.stats[stat])
 	
 	for flag in item.get_property("flags", {}):

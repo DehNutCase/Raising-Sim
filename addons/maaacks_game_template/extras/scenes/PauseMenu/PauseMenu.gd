@@ -71,6 +71,9 @@ func _on_confirm_restart_confirmed():
 	InGameMenuController.close_menu()
 
 func _on_confirm_main_menu_confirmed():
+	Player.save_loaded = false
+	for inventory in Player.inventories:
+		Player[inventory].clear()
 	SceneLoader.load_scene(main_menu_scene)
 	InGameMenuController.close_menu()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

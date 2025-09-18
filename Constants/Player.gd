@@ -1,4 +1,3 @@
-
 extends Node
 
 #List of variables to save, update when adding new variables
@@ -57,6 +56,8 @@ enum live2d_modes {LIVE2D, VIDEO}
 
 #TODO, remove class_change_card from class change rework
 var class_change_card #variable to hold loaded class change, *do not save*
+
+var new_game:bool = false #Use this to start a new game after returning to main menu
 
 @export var live2d_mode = live2d_modes.LIVE2D:
 	set(value):
@@ -188,6 +189,8 @@ func _ready():
 	for stat in base_stats:
 		if !(stat in stats):
 			stats[stat] = base_stats[stat]
+	save_game(true)
+	load_new_game_plus_bonuses()
 
 func level_up() -> void:
 	stats["level"] += 1
@@ -288,14 +291,15 @@ func find_most_proficient_job() -> String :
 func set_dialogic_temporary_flag(flag:String) -> void:
 	dialogic_temporary_flags[flag] = true
 
-func save_game():
+func save_game(new_game:bool = false):
 	var save_data = {}
 	for data in save_list:
 		save_data[data] = self[data]
 
 	#serialize inventories
 	for inv in inventories:
-		save_data[inv] = self[inv].serialize()
+		if self[inv]:
+			save_data[inv] = self[inv].serialize()
 	
 	#serialize resource arrays
 	for resource_array in resource_arrays:
@@ -305,18 +309,30 @@ func save_game():
 		
 	var save_file
 	DirAccess.make_dir_recursive_absolute("user://Saves")
-	save_file = FileAccess.open("user://Saves/save.json", FileAccess.WRITE)
+	if !new_game:
+		save_file = FileAccess.open("user://Saves/save.json", FileAccess.WRITE)
+		save_new_game_plus_bonuses()
+	else:
+		save_file = FileAccess.open("user://Saves/new_game_save.json", FileAccess.WRITE)
+		
+	if new_game:
+		save_file.store_line(JSON.stringify(save_data))
+		return
+	
 	if save_file:
 		save_file.store_line(JSON.stringify(save_data))
 		ToastParty.show({"text": "Game Saved!", "gravity": "top", "direction": "center"})
+		self.new_game = false
 	else:
 		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
-		
-	save_new_game_plus_bonuses()
+	
 
-func load_game():
+func load_game(new_game:bool =false):
 	var save_file
-	save_file = FileAccess.open("user://Saves/save.json", FileAccess.READ)
+	if !new_game:
+		save_file = FileAccess.open("user://Saves/save.json", FileAccess.READ)
+	else:
+		save_file =FileAccess.open("user://Saves/new_game_save.json", FileAccess.READ)
 	if !save_file:
 		return
 	var json_string = save_file.get_line()
@@ -334,9 +350,10 @@ func load_game():
 			continue
 		Player[variable] = data[variable]
 	
-	for inv in data.inventories:
-		if !self[inv].deserialize(data[inv]):
-			printerr("failed to deserialize inventory during load_game")
+	for inv in data.get("inventories"):
+		if data.get(inv):
+			if !self[inv].deserialize(data.get(inv)):
+				printerr("failed to deserialize inventory during load_game")
 	
 	for resource_array in resource_arrays:
 		Player[resource_array].clear()
@@ -351,6 +368,7 @@ func delete_game():
 	DirAccess.remove_absolute("user://Saves/class_change_card.json")
 	if new_game_plus_bonuses:
 		save_new_game_plus_bonuses()
+	new_game = true
 	#TODO, fix save issue if we return to main menu
 	#OS.set_restart_on_exit(true)
 	#get_tree().quit()
