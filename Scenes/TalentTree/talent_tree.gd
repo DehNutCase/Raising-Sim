@@ -35,7 +35,7 @@ func _update_rows() -> void:
 		for talent in Constants.talents:
 			if i == Constants.talents[talent].tier:
 				if talent in current_children.keys():
-					current_children[talent].pop_back()
+					current_children[talent].pop_back().update_labels()
 					if !current_children[talent]:
 						current_children.erase(talent)
 					continue
