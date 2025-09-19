@@ -252,7 +252,7 @@ func _make_custom_tooltip(for_text):
 
 func discard() -> void:
 	if current_state == States.SPELLBOOK:
-		queue_free()
+		#queue_free()
 		return
 	Player.card_game_player.discard.append(card)
 	enter_state(States.DISCARD)

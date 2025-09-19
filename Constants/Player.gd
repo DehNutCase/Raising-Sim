@@ -217,7 +217,6 @@ func set_deck(flag: String) -> void:
 	
 #Helper function to calculate ending type and score
 func calculate_ending(final_ending: bool = false):
-	#Player.event_flags["ending_reached"] = true
 	var score = 0
 	for stat in stats:
 		if "value" in Constants.stats[stat]:
@@ -244,8 +243,9 @@ func calculate_ending(final_ending: bool = false):
 		var timeline = highest_ending_info.get("timeline")
 		if timeline:
 			Dialogic.start(timeline)
-		#TODO, delete game on pressed, currently disabled for dev work
-		#delete_game()
+		await Dialogic.timeline_ended
+		delete_game()
+		SceneLoader.load_scene("res://Scenes/GameTemplate/Menus/MainMenu/MainMenu.tscn")
 
 	return [int(score), highest_ending_info.label, highest_ending]
 

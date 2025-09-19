@@ -25,6 +25,7 @@ func update_buttons():
 		add_child(button)
 		button.card_ui.card = card
 		button.card_ui.current_state = button.card_ui.States.SPELLBOOK
+		button.card_ui.set_deferred("disabled", true)
 		button.tooltip_text = button.card_ui.tooltip_text
 
 	for key in current_children.keys():
