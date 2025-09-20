@@ -1,6 +1,6 @@
 @tool
 @icon("res://addons/gloot/images/icon_ctrl_inventory.svg")
-class_name CtrlInventory
+class_name CtrlInventoryOLD #unused
 extends ItemList
 ## Control node for displaying inventories.
 ##

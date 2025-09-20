@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxls6uoaomnmo"]
 
-[ext_resource type="Script" path="res://Scenes/CharacterCreation/StartingBonuses.gd" id="1_n0mdj"]
+[ext_resource type="Script" path="res://Scenes/Legacies/StartingBonuses.gd" id="1_3448k"]
 
-[node name="CharacterCreation" type="Control"]
+[node name="Legacies" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_vertical = 2
 [node name="Starting Bonuses" type="MarginContainer" parent="TabContainer" groups=["StatBars"]]
 layout_mode = 2
 mouse_filter = 2
-script = ExtResource("1_n0mdj")
+script = ExtResource("1_3448k")
 
 [node name="Stats" type="RichTextLabel" parent="TabContainer/Starting Bonuses"]
 texture_filter = 4

@@ -11,7 +11,7 @@ func _ready() -> void:
 	visibility_changed.connect(update_display)
 
 func update_display() -> void:
-	var calculated_ending: Array = Player.calculate_ending()
+	var calculated_ending: Array = await Player.calculate_ending()
 	ending = calculated_ending[2]
 	score = calculated_ending[0]
 	

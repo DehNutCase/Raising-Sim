@@ -8,6 +8,7 @@ const NO_VERSION_NAME : String = "0.0.0"
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
 @export var perspectives_packed_scene : PackedScene
+@export var legacies_packed_scene : PackedScene
 @export_group("Version")
 ## Displays the value of `application/config/version`, set in project settings.
 @export var show_version : bool = true
@@ -18,6 +19,7 @@ var options_scene
 var credits_scene
 var sub_menu
 var perspectives_scene
+var legacies_scene
 
 func load_scene(scene_path : String):
 	SceneLoader.load_scene(scene_path)
@@ -82,12 +84,20 @@ func _setup_options():
 		%OptionsContainer.call_deferred("add_child", options_scene)
 		
 func _setup_perspectives():
-	if options_packed_scene == null:
+	if perspectives_packed_scene == null:
 		%PerspectivesButton.hide()
 	else:
 		perspectives_scene = perspectives_packed_scene.instantiate()
 		perspectives_scene.hide()
 		%OptionsContainer.call_deferred("add_child", perspectives_scene)
+
+func _setup_legacies():
+	if legacies_packed_scene == null:
+		%legaciesButton.hide()
+	else:
+		legacies_scene = legacies_packed_scene.instantiate()
+		legacies_scene.hide()
+		%OptionsContainer.call_deferred("add_child", legacies_scene)
 		
 func _setup_credits():
 	if credits_packed_scene == null:
@@ -103,6 +113,7 @@ func _ready():
 	_setup_for_web()
 	_setup_version_name()
 	_setup_perspectives()
+	_setup_legacies()
 	_setup_options()
 	_setup_credits()
 	_setup_play()
@@ -123,6 +134,9 @@ func _on_options_button_pressed():
 func _on_perspectives_button_pressed():
 	_open_sub_menu(perspectives_scene)
 	
+func _on_legacies_button_pressed():
+	_open_sub_menu(legacies_scene)
+	
 func _on_credits_button_pressed():
 	_open_sub_menu(credits_scene)
 	credits_scene.reset()
@@ -139,3 +153,5 @@ func _on_back_button_pressed():
 	
 func _play_button_sound() -> void:
 	Player.play_ui_sound("blop")
+
+
