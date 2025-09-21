@@ -281,7 +281,7 @@ func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 			status.stacks -= 1
 			status.status_display.stack_label.text = str(status.stacks)
 			if status.stacks == 0:
-				if status.status_display.is_instance_valid():
+				if is_instance_valid(status.status_display):
 					status.status_display.queue_free()
 				active_status.erase(status_name)
 	

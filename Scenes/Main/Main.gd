@@ -199,7 +199,8 @@ func process_day():
 			await (get_tree().create_timer(4).timeout)
 		else:
 			await get_tree().create_timer(1).timeout
-		i+=1
+		if i < 3:
+			i+=1
 	
 	background_transition(Constants.constants.TIMES_OF_DAY[i])
 	
@@ -243,11 +244,11 @@ func process_day():
 	
 	for item in item_deletion_queue:
 		inventory.inventory.remove_item(item)
-	
+
 	for talent in Player.talent_tree:
 		var talent_data = Constants.talents.get(talent)
 		for stat in talent_data.get("daily_stats", {}):
-			var stacks = talent_data.daily_stats[stat]
+			var stacks = Player.talent_tree.get(talent)
 			Player.stats[stat] += talent_data.get("daily_stats")[stat] * stacks
 	
 	for stat in Player.stats:

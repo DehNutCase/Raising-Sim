@@ -178,6 +178,7 @@ func gain_experience(amount: int) -> void:
 	growth_data.append([experience, experience_required])
 	emit_signal("experience_gained", growth_data)
 	if Player.stats.level > starting_level:
+		await get_tree().create_timer(.1).timeout
 		display_toast("Leveled up from %d to %d!" % [starting_level, Player.stats.level])
 	
 # Called when the node enters the scene tree for the first time.
@@ -528,8 +529,6 @@ func calculate_max_stat(stat_name:String) -> int:
 		var max_value = Constants.stats[stat_name].max
 		if stat_name in Player.max_stats:
 			max_value += Player.max_stats[stat_name]
-		else:
-			Player.max_stats[stat_name] = 0
 		return max_value
 	else:
 		return 0
@@ -539,8 +538,6 @@ func calculate_min_stat(stat_name:String):
 		var min_value = Constants.stats[stat_name].min
 		if stat_name in Player.min_stats:
 			min_value += Player.min_stats[stat_name]
-		else:
-			Player.min_stats[stat_name] = 0
 		return min_value
 	else:
 		printerr("tried to find min_stat of a stat without min")

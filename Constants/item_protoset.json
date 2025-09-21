@@ -167,7 +167,7 @@
 		"price": 500,
 		"stats": "{}",
 		"special_type": "card_pack",
-		"card_pack": "res://Scenes/CardGame/Card/CardPacks/fireball_card_pack.tres",
+		"card_pack": "res://Scenes/CardGame/Card/CardPacks/agile_card_pack.tres",
 	},
 	"meteor_card_pack": {
 		"daily_stats": "{}",
