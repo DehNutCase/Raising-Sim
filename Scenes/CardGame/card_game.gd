@@ -217,8 +217,6 @@ func exit_combat() -> void:
 	Player.card_game_player = CardGamePlayer.new()
 	get_tree().call_group("Main", "exit_card_game")
 	queue_free()
-	#TODO, modify for new card game scene
-	#SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
 
 func play_live2d_animation(model: String, motion: String, duration: float) -> void:
 	cubism_model.assets = model

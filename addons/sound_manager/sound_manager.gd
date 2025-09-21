@@ -10,7 +10,7 @@ var ui_sound_effects: SoundEffectsPlayer = SoundEffectsPlayer.new(["UI", "Interf
 #Using ambient sounds for voice
 #var ambient_sounds: AmbientSoundsPlayer = AmbientSoundsPlayer.new(["Sounds", "SFX"], 1)
 var ambient_sounds: AmbientSoundsPlayer = AmbientSoundsPlayer.new(["Voice"], 1)
-var music: MusicPlayer = MusicPlayer.new(["Music"], 2)
+var music: MusicPlayer = MusicPlayer.new(["Music"], 1)
 
 var sound_process_mode: ProcessMode:
 	set(value):

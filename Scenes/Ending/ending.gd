@@ -38,12 +38,9 @@ func update_display() -> void:
 			if ("icon" in Constants.stats[stat]):
 				label += " ([img=" + str(font_size) + "]" + Constants.stats[stat].icon + "[/img])"
 			if stat == "experience":
-				text += "[cell padding=0,0,64,0]" + label + ": " + str(stats[stat]) + " / " + str(Player.get_required_experience(Player.stats.level - 1)) + "[/cell]"
+				text += "[cell padding=0,0,64,0]" + label + ": " + str(stats[stat])
 			else:
-				var max = ""
-				if Player.calculate_max_stat(stat):
-					max = " / " + str(Player.calculate_max_stat(stat))
-				text += "[cell padding=0,0,64,0]" + label + ": " + str(stats[stat]) + max + "[/cell]"
+				text += "[cell padding=0,0,64,0]" + label + ": " + str(stats[stat]) + "[/cell]"
 		
 		text += "[/table]"
 		ending_text.append_text(text)

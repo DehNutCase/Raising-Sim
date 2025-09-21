@@ -835,6 +835,9 @@ func _on_reward_signal(reward_signal) -> void:
 	if "event_flags" in reward_signal:
 		for flag in reward_signal.event_flags:
 			Player.event_flags[flag] = reward_signal.event_flags[flag]
+	if "skill_flags" in reward_signal:
+		for flag in reward_signal.skill_flags:
+			Player.skill_flags[flag] = reward_signal.skill_flags[flag]
 	if "background" in reward_signal:
 		if (!Player.background_inventory.get_item_with_prototype_id(reward_signal.background)):
 			Player.background_inventory.create_and_add_item(reward_signal.background)
@@ -968,8 +971,8 @@ func _on_inventory_item_added(item:InventoryItem):
 	for stat in new_game_bonuses.get("stats", {}):
 		Player.update_new_game_plus_bonus("stats", stat, new_game_bonuses.stats[stat])
 	
-	for flag in item.get_property("flags", {}):
-		var value = item.get_property("flags")[flag]
+	for flag in item.get_property("skill_flags", {}):
+		var value = item.get_property("skill_flags")[flag]
 		if flag in Player.skill_flags:
 			if value > Player.skill_flags[flag]:
 				Player.skill_flags[flag] = value

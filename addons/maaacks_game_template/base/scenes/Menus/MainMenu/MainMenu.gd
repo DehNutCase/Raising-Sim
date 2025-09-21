@@ -92,8 +92,8 @@ func _setup_perspectives():
 		%OptionsContainer.call_deferred("add_child", perspectives_scene)
 
 func _setup_legacies():
-	if legacies_packed_scene == null:
-		%legaciesButton.hide()
+	if legacies_packed_scene == null or !Player.new_game_plus_bonuses:
+		%LegaciesButton.hide()
 	else:
 		legacies_scene = legacies_packed_scene.instantiate()
 		legacies_scene.hide()

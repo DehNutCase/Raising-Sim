@@ -3209,7 +3209,7 @@ const perspectives = {
 		"unlock": true,
 		"label": "Vanishing Point Perspective",
 		"timeline": "VanishingPointPerspective",
-		"icon": "res://Art/Background/Background material shop/bg005e.jpg",
+		"icon": "res://Art/Background/Background material shop/bg005a.jpg",
 	},
 	"remedial_lessons": {
 		"label": "The Perspective of Remedial Lessons",

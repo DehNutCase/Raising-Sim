@@ -51,7 +51,7 @@
 	"basic_combat_training":{
 		"daily_stats": "{\n\"max_hp\": 1,\n\"max_mp\": 1\n}",
 		"description": "Unlocks basic follow up attacks. (Excess action points are used to perform basic attacks.).",
-		"flags": "{\n\"followup_attacks\": 1\n}",
+		"skill_flags": "{\n\"followup_attacks\": 1\n}",
 		"image": "",
 		"name": "Basic Combat Training",
 		"stats": "{}"
@@ -134,7 +134,7 @@
 	"intermediate_combat_training": {
 		"daily_stats": "{\n\"attack\": 1,\n\"max_hp\": 1\n}",
 		"description": "Unlocks advanced follow up attacks. (Switches targets and continues attacking if target dies.)",
-		"flags": "{\n\"followup_attacks\": 2\n}",
+		"skill_flags": "{\n\"followup_attacks\": 2\n}",
 		"image": "",
 		"name": "Intermediate Combat Training",
 		"stats": "{\n\"action_points\": 1\n}"
@@ -143,7 +143,7 @@
 		"daily_stats": "{\n\"max_mp\": 5\n}",
 		"monthly_stats": "{\n\"gold\": 500\n}",
 		"description": "A shiny certificate proving honorary officerhood.\nIt's almost certain her majesty signed this as a joke. Signatures from Rice and Hiyori are also present.\nUnlocks advanced follow up attacks. (Switches targets and continues attacking if target dies.)",
-		"flags": "{\n\"followup_attacks\": 2\n}",
+		"skill_flags": "{\n\"followup_attacks\": 2\n}",
 		"image": "",
 		"name": "Honorary Magic Officer",
 		"stats": "{}"

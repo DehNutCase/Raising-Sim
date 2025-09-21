@@ -230,7 +230,7 @@ func start_first_turn() -> void:
 		
 	if int(Player.stats.agility / 100):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Agility"] = {"stacks": int(Player.stats.agility / 150), "status": load("res://Scenes/CardGame/Status/agility.tres"), "status_display": status_display}
+		active_status["Agility"] = {"stacks": int(Player.stats.agility / 100), "status": load("res://Scenes/CardGame/Status/agility.tres"), "status_display": status_display}
 		var status = active_status["Agility"].status
 		%StatusBar.add_child(active_status["Agility"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -281,7 +281,8 @@ func decay_status(timing: CardGameStatusResource.DecayType) -> void:
 			status.stacks -= 1
 			status.status_display.stack_label.text = str(status.stacks)
 			if status.stacks == 0:
-				status.status_display.queue_free()
+				if status.status_display.is_instance_valid():
+					status.status_display.queue_free()
 				active_status.erase(status_name)
 	
 	if timing == CardGameStatusResource.DecayType.ONE_TURN:
