@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ys0m8m03n2sf"]
+[gd_scene load_steps=6 format=3 uid="uid://ys0m8m03n2sf"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/EncounterScenes/encounter_scene.gd" id="1_3jt2r"]
 [ext_resource type="Texture2D" uid="uid://3k0og45xrjnv" path="res://Art/Background/Background material shop/bg015a.jpg" id="2_gc1sa"]
 [ext_resource type="PackedScene" uid="uid://c1spfbw2g8f3p" path="res://Scenes/CardGame/Characters/Enemies/card_game_enemy.tscn" id="3_42l7l"]
 [ext_resource type="Resource" uid="uid://drribjeyh6g5q" path="res://Scenes/CardGame/Characters/Enemies/Oliver.tres" id="4_a313j"]
-[ext_resource type="Texture2D" uid="uid://dlkaelj0ax1d4" path="res://Characters/Oliver/Images/Goblin_02.png" id="5_4rkaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcq3b"]
 size = Vector2(400, 400)
@@ -29,9 +28,8 @@ enemy_resource = ExtResource("4_a313j")
 [node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
 shape = SubResource("RectangleShape2D_qcq3b")
 
-[node name="Sprite" parent="CardGameEnemy/VBoxContainer" index="1"]
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer/MarginContainer4" index="0"]
 custom_minimum_size = Vector2(400, 400)
-texture = ExtResource("5_4rkaj")
 
 [node name="Arrow" parent="CardGameEnemy" index="2"]
 custom_minimum_size = Vector2(500, 500)

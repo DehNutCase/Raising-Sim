@@ -26,8 +26,8 @@ enemy_resource = ExtResource("4_5qf5f")
 [node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
 scale = Vector2(2, 2)
 
-[node name="Sprite" parent="CardGameEnemy/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(300, 300)
+[node name="Sprite" parent="CardGameEnemy/VBoxContainer/MarginContainer4" index="0"]
+custom_minimum_size = Vector2(400, 400)
 
 [node name="CardGameEnemy3" parent="." instance=ExtResource("3_4qdmg")]
 position = Vector2(800, 250)
@@ -36,8 +36,8 @@ enemy_resource = ExtResource("5_tyud3")
 [node name="CollisionShape2D" parent="CardGameEnemy3" index="0"]
 scale = Vector2(2, 2)
 
-[node name="Sprite" parent="CardGameEnemy3/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(300, 300)
+[node name="Sprite" parent="CardGameEnemy3/VBoxContainer/MarginContainer4" index="0"]
+custom_minimum_size = Vector2(400, 400)
 
 [node name="CardGameEnemy4" parent="." instance=ExtResource("3_4qdmg")]
 position = Vector2(200, 200)
@@ -46,8 +46,8 @@ enemy_resource = ExtResource("4_5qf5f")
 [node name="CollisionShape2D" parent="CardGameEnemy4" index="0"]
 scale = Vector2(2, 2)
 
-[node name="Sprite" parent="CardGameEnemy4/VBoxContainer" index="1"]
-custom_minimum_size = Vector2(300, 300)
+[node name="Sprite" parent="CardGameEnemy4/VBoxContainer/MarginContainer4" index="0"]
+custom_minimum_size = Vector2(400, 400)
 
 [editable path="CardGameEnemy"]
 [editable path="CardGameEnemy3"]

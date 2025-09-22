@@ -9,4 +9,4 @@ status_icon = ExtResource("2_pnw1o")
 status_name = "Stored Energy"
 status_tooltip = "Stored Energy. At the start of turn, becomes [color=yellow]X[/color] Agility."
 status_decay = 2
-NegativeStatus = true
+NegativeStatus = false

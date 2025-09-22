@@ -32,7 +32,7 @@ enemy_resource = ExtResource("4_urflo")
 shape = SubResource("RectangleShape2D_qcq3b")
 
 [node name="Sprite" parent="CardGameEnemy/VBoxContainer/MarginContainer4" index="0"]
-custom_minimum_size = Vector2(400, 400)
+custom_minimum_size = Vector2(500, 500)
 flip_h = false
 
 [node name="Arrow" parent="CardGameEnemy" index="2"]
