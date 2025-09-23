@@ -19,4 +19,4 @@ Rice_Portrait (Normal): Since we'll be heading outside the city, I decided it wo
 do Player.play_voice("laugh")
 Mao_Portrait (Normal): Heehee. Thanks.
 [signal arg="{"location_flags": {"blessed_plains": true}}"]
-[signal arg="{"stats": {"stress": -5,"max_hp":5,"strength":5,"agility":5,}}"]
+[signal arg="{"stats": {"stress": -5,"max_hp":5,"attack":5,"agility":5,}}"]

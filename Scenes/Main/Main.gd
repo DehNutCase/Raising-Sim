@@ -653,7 +653,12 @@ func _on_action(button):
 			class_change.show()
 		"Story":
 			if Player.active_mission:
-				#Start next timeline if no combat
+				if Player.remaining_walks > 0:
+					Player.remaining_walks -= 1
+					display_stats()
+				else:
+					display_toast("No walks left!", "top")
+					return
 				if !Player.active_mission.get('combat'):
 					Dialogic.start(Player.active_mission.get('next'))
 				else:

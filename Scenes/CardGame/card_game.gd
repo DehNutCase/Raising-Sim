@@ -14,8 +14,10 @@ var enemy_scene: CardGameEncounterScene
 @onready var cubism_model: GDCubismUserModel = %CubismModel
 @onready var cubism_container: PanelContainer = %CubismContainer
 
-@onready var inventory_item_list: ItemList = %InventoryItemList
+@onready var relic_button: TextureButton = %RelicButton
 @onready var relic_item_list: ItemList = %RelicItemList
+@onready var inventory_button: TextureButton = %InventoryButton
+@onready var inventory_item_list: ItemList = %InventoryItemList
 
 @onready var flee_button = %FleeButton
 
@@ -43,7 +45,9 @@ func _ready():
 			inventory_item_list.set_item_tooltip(index, item_info.description)
 			inventory_item_list.set_item_icon(index, load(item_info.icon))
 		inventory_item_list.item_clicked.connect(_on_item_press)
-			
+		if inventory_item_list.item_count:
+			inventory_button.show()
+		
 		for item in Player.background_inventory._items:
 			if item.get_property("relic", {}):
 				card_game_player.relics.append(item.get_property("relic", {}))
@@ -54,6 +58,8 @@ func _ready():
 			relic_item_list.set_item_tooltip(index, item_info.description)
 			relic_item_list.set_item_icon(index, load(item_info.icon))
 		relic_item_list.item_clicked.connect(_on_relic_press)
+		if relic_item_list.item_count:
+			relic_button.show()
 		
 	var buttons = get_tree().get_nodes_in_group("Button")
 	for button in buttons:
@@ -283,7 +289,9 @@ func _on_relic_press(index: int, mouse_position, mouse_button):
 	var name = relic_item_list.get_item_metadata(index).name.to_lower()
 
 	var relic = Constants.relics[name]
-	var card: CardResource = load(relic.card)
+	var card: CardResource = null
+	if relic.get("card"):
+		card = load(relic.card)
 	
 	if card:
 		if card_game_player.mana < card.cost:
