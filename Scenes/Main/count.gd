@@ -44,7 +44,7 @@ func display_stats():
 		progress_bar.value = Player.stats[stat]
 		if Constants.stats[stat]:
 			if Constants.stats[stat].get('max'):
-				progress_bar.max_value = Constants.stats[stat].get('max')
+				progress_bar.max_value = Player.calculate_max_stat(stat)
 		if "emoji" in (Constants.stats[stat]):
 			emoji.text = Constants.stats[stat].emoji
 		else:
