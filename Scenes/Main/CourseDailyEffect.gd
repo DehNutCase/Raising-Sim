@@ -15,4 +15,9 @@ func display_stats(metadata: Variant):
 				if (course_daily_stats[stat] > 0):
 					tooltip += "+"
 				tooltip += str(course_daily_stats[stat]) + " " + Constants.stats[stat].label
-		add_text(tooltip)
+		append_text(tooltip)
+		
+func display_default_text():
+	clear()
+	var tooltip = "This is where you decide what classes you're taking when you go to school. Each class takes a certain amount of time to complete, and once completed, you'll take the next class on the list."
+	append_text(tooltip)

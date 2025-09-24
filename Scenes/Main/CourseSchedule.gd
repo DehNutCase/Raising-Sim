@@ -55,6 +55,7 @@ func display_courses():
 
 func update_buttons():
 	display_courses()
+	get_tree().call_group("CourseDetails", "display_default_text")
 
 func display_stats():
 	display_courses()

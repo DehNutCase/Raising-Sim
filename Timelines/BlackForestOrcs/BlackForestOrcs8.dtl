@@ -12,15 +12,16 @@ Rice_Portrait (Normal): (I wonder if it's because they never lost the knowledge 
 Rice_Portrait (Normal): (Well, deductions like this don't really matter. A simple scanning spell would provide more accurate information, even if it's something of a faux pas to do so.)
 Oliver_Portrait (Happy): Oliver is pleased by your awe. Now that you know your place, Dignified Oliver will lead you to pops.
 update Mao (Normal)
+update Oliver [ mirrored="false"]
 [background arg="res://Art/Background/Background material shop/bg024a.jpg" fade="2.0" transition="Push Left"]
 join Chief (Normal) 4 [animation="Slide In Right" length="2"]
 [signal arg="{"sound_effect": "footsteps"}"]
 [wait time="1.5" hide_text="false"]
-update Oliver (Normal)
 Oliver_Portrait (Normal): Pops, pops! Weak human girls are here to pay tribute!
 Chief_portrait (Normal): This place looks good for this year's Vote, so let's host it here.
 update Chief [ mirrored="true"]
 Chief_portrait (Normal): Ah. What did you need, Oliver?
+update Oliver (Normal) [ mirrored="true"]
 update Mao (Excited)
 do Player.play_voice("amazing")
 Mao_Portrait (Excited): Wow! Your hat is even bigger than her majesty's! That must mean you're an emperor!

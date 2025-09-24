@@ -92,6 +92,7 @@ func display_actions():
 
 func update_buttons():
 	display_actions()
+	get_tree().call_group("ActionDetails", "display_default_text")
 
 func display_stats():
 	display_actions()

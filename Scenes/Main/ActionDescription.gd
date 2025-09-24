@@ -12,3 +12,8 @@ func display_stats(metadata: Variant):
 	if Constants[action_type].get(action_name):
 		var desc = Constants[action_type][action_name].get("description")
 		if desc: add_text(desc)
+		
+func display_default_text():
+	clear()
+	var tooltip = "This is where you set your schedule for the day. Some actions are mandatory and will be done first, but you can freely adjust the rest of your schedule."
+	append_text(tooltip)
