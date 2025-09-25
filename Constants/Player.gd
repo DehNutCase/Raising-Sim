@@ -335,9 +335,11 @@ func load_game(new_game:bool =false):
 	if !new_game:
 		save_file = FileAccess.open("user://Saves/save.json", FileAccess.READ)
 	else:
-		save_file =FileAccess.open("user://Saves/new_game_save.json", FileAccess.READ)
+		save_file = FileAccess.open("user://Saves/new_game_save.json", FileAccess.READ)
 	if !save_file:
-		return
+		#TODO, check if this works properly, load the new game save if there's no save
+		save_file = FileAccess.open("user://Saves/new_game_save.json", FileAccess.READ)
+		#return
 	var json_string = save_file.get_line()
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
