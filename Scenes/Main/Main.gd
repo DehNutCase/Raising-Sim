@@ -11,7 +11,7 @@ extends Control
 
 @onready var card_game_panel = %CardGamePanel
 
-@onready var day_label = $Ui/Calendar/VBoxContainer/DayLabel
+@onready var day_label = %Calendar.day_label
 
 @onready var menu_panel = $Ui/MenuPanel
 @onready var lessons = $Ui/MenuPanel/MarginContainer/Lessons

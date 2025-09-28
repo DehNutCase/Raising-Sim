@@ -1,9 +1,8 @@
-[gd_scene load_steps=96 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=94 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="2_h7wcs"]
-[ext_resource type="Script" path="res://Scenes/Main/DayLabel.gd" id="5_3yben"]
 [ext_resource type="Texture2D" uid="uid://sjmioxscvkib" path="res://Art/Background/Background material shop/bg007a.bmp" id="5_iokpw"]
 [ext_resource type="Script" path="res://Scenes/Main/PlayerInventory.gd" id="6_cueot"]
 [ext_resource type="Shader" path="res://Art/Shaders/fade_shader.gdshader" id="6_y87ud"]
@@ -101,11 +100,6 @@ shader_parameter/previous_background = ExtResource("5_iokpw")
 shader_parameter/next_background = ExtResource("7_n8nyx")
 shader_parameter/wipe_texture = ExtResource("8_waya3")
 
-[sub_resource type="LabelSettings" id="LabelSettings_k8ogb"]
-font_size = 22
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
 viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
 
@@ -172,6 +166,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 
 [node name="Calendar" parent="Ui" instance=ExtResource("15_pdmo5")]
+unique_name_in_owner = true
 offset_bottom = 150.0
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="Ui"]
@@ -230,21 +225,6 @@ texture_pressed = ExtResource("13_u4gi8")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("12_n64mh")
-
-[node name="DayLabelContainer" type="MarginContainer" parent="Ui"]
-visible = false
-offset_right = 119.0
-offset_bottom = 64.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="DayLabel" type="Label" parent="Ui/DayLabelContainer"]
-layout_mode = 2
-text = "DayLabel"
-label_settings = SubResource("LabelSettings_k8ogb")
-script = ExtResource("5_3yben")
 
 [node name="PlayerControl" type="Control" parent="Ui"]
 layout_mode = 3
