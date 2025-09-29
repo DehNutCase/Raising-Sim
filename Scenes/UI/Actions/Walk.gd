@@ -33,7 +33,11 @@ func update_buttons():
 		if key in current_children:
 			continue
 		var button = load("res://Scenes/UI/Actions/walk_button.tscn").instantiate()
-		add_child(button)
+		Player.background_thread.start(self.call_deferred.bind("add_child", button))
+		await Player.background_thread.wait_to_finish()
+		if !button.is_node_ready():
+			await button.ready
+
 		button.walk_name = key
 		if 'day' in locations[key]:
 			button.day = locations[key].day

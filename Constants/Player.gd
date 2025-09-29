@@ -152,11 +152,13 @@ signal experience_gained(growth_data)
 
 @export var experience = 0
 @export var experience_total = 0
-@export var experience_required = 100
+@export var experience_required = 200
 
 @export var perspectives = {}
 
 @export var new_game_plus_bonuses = {}
+
+var background_thread := Thread.new()
 
 func get_required_experience(l) -> int:
 	return int(pow(1.1, l) * 200)

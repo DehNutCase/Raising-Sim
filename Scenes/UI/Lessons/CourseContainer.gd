@@ -18,7 +18,12 @@ func update_buttons():
 			continue
 		
 		var button = load("res://Scenes/UI/Actions/course_button.tscn").instantiate()
-		add_child(button)
+		
+		Player.background_thread.start(self.call_deferred.bind("add_child", button))
+		await Player.background_thread.wait_to_finish()
+		if !button.is_node_ready():
+			await button.ready
+		
 		self.get_child(i).lesson_name = lesson
 		self.get_child(i).course_name = course
 		if "label" in courses[lesson]:

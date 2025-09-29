@@ -12,6 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 func check_requirements() -> void:
+	#Day is an requirement
 	if day and !(Player.day == day):
 		queue_free()
 	 

@@ -6,7 +6,8 @@ func _ready():
 #Load perspectives file here? (where to save perspectives)
 #save whenever new perspective is added
 func update_buttons():
-	await load_perspectives()
+	Player.background_thread.start(load_perspectives)
+	await Player.background_thread.wait_to_finish()
 	
 	var current_children:Dictionary = {}
 	for node in get_children():
@@ -23,8 +24,13 @@ func update_buttons():
 			continue
 			
 		var perspective_data = Constants.perspectives[perspective]
-		var button : PerspectivesButton = load("res://Scenes/GameTemplate/Menus/Perspectives/perspectives_button.tscn").instantiate()
-		add_child(button)
+		
+		var button:PerspectivesButton = load("res://Scenes/GameTemplate/Menus/Perspectives/perspectives_button.tscn").instantiate()
+		Player.background_thread.start(self.call_deferred.bind("add_child", button))
+		await Player.background_thread.wait_to_finish()
+		if !button.is_node_ready():
+			await button.ready
+		
 		button.update_label(perspective_data.label)
 		button.update_icon(load(perspective_data.icon))
 		button.timeline = perspective_data.timeline

@@ -2,7 +2,6 @@ extends GridContainer
 
 var locations = Constants.locations
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	visibility_changed.connect(call_deferred.bind("update_buttons"))
 
@@ -20,9 +19,13 @@ func update_buttons():
 			if !current_children[card.id]:
 				current_children.erase(card.id)
 			continue
-		
-		var button: CardButton = load("res://Scenes/UI/Actions/card_button.tscn").instantiate()
-		add_child(button)
+			
+		var button:CardButton = load("res://Scenes/UI/Actions/card_button.tscn").instantiate()
+		Player.background_thread.start(self.call_deferred.bind("add_child", button))
+		await Player.background_thread.wait_to_finish()
+		if !button.is_node_ready():
+			await button.ready
+
 		button.card_ui.card = card
 		button.card_ui.current_state = button.card_ui.States.SPELLBOOK
 		button.card_ui.set_deferred("disabled", true)
@@ -32,3 +35,4 @@ func update_buttons():
 		for node in current_children[key]:
 			node.queue_free()
 		current_children.erase(key)
+

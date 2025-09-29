@@ -4,12 +4,17 @@ extends ScrollContainer
 @onready var talent_rows = %TalentRows
 @onready var talent_point_display:TalentPointDisplay = %TalentPointDisplay
 var rows = []
+var is_updating := false
 
 func _ready() -> void:
 	visibility_changed.connect(call_deferred.bind("_update_rows"))
 
 #Use modulate to signify disabled talent choices
 func _update_rows() -> void:
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	talent_point_display.update_label()
 	
 	var current_children = {}
@@ -41,7 +46,14 @@ func _update_rows() -> void:
 					continue
 				var talent_button: TalentButton = load("res://Scenes/TalentTree/talent_button.tscn").instantiate()
 				talent_button.talent = talent
-				row.add_child(talent_button)
+				
+				Player.background_thread.start(row.call_deferred.bind("add_child", talent_button))
+				await Player.background_thread.wait_to_finish()
+				if !talent_button.is_node_ready():
+					await talent_button.ready
+	
+	is_updating = false
+	
 	for key in current_children.keys():
 		for node in current_children[key]:
 			node.queue_free()
