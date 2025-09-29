@@ -3,7 +3,7 @@ extends ItemList
 @onready var plan_label = $PlanLabel
 
 func _ready():
-	visibility_changed.connect(update_buttons)
+	visibility_changed.connect(call_deferred.bind("update_buttons"))
 	
 #TODO, add tooltip
 #TODO, last clicked description should be displayed, add course with different button

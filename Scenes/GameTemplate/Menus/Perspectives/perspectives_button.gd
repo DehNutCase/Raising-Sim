@@ -9,8 +9,7 @@ signal pressed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visibility_changed.connect(check_requirements)
-	pass # Replace with function body.
+	visibility_changed.connect(call_deferred.bind("check_requirements"))
 
 func check_requirements() -> void:
 	#Check requirements here, and blank & disable if not met

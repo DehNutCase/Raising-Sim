@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3mgjutggxhxq"
-path="res://.godot/imported/talk_window02_01.png-0d31f68d78702018a86998079bbbd9e5.ctex"
+uid="uid://dcxonqmfbxs1j"
+path="res://.godot/imported/sg_menu_icon002.png-52b4c593e656f580de9a4bde9e6a4f9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/Mori no oku no kakurezato/Edited/talk_window02_01.png"
-dest_files=["res://.godot/imported/talk_window02_01.png-0d31f68d78702018a86998079bbbd9e5.ctex"]
+source_file="res://Art/UI/Mori no oku no kakurezato/sg_menu_icon002.png"
+dest_files=["res://.godot/imported/sg_menu_icon002.png-52b4c593e656f580de9a4bde9e6a4f9b.ctex"]
 
 [params]
 

@@ -6,7 +6,7 @@ extends ScrollContainer
 var rows = []
 
 func _ready() -> void:
-	visibility_changed.connect(_update_rows)
+	visibility_changed.connect(call_deferred.bind("_update_rows"))
 
 #Use modulate to signify disabled talent choices
 func _update_rows() -> void:

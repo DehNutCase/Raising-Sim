@@ -176,8 +176,8 @@ var training_stats = {
 var FAST_TOAST_TIMEOUT_DURATION = Constants.constants.FAST_TOAST_TIMEOUT_DURATION
 func _ready() -> void:
 	update_display()
-	visibility_changed.connect(update_display)
-		
+	visibility_changed.connect(call_deferred.bind("update_display"))
+	
 	var buttons = get_tree().get_nodes_in_group("DumplingActionButton")
 	for button in buttons:
 		button.pressed.connect(_on_button_pressed.bind(button))

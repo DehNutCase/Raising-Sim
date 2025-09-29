@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
-[ext_resource type="Texture2D" uid="uid://c3mgjutggxhxq" path="res://Art/UI/Mori no oku no kakurezato/Edited/talk_window02_01.png" id="6_773jk"]
+[ext_resource type="Texture2D" uid="uid://ct20s5nfksfet" path="res://Art/UI/Mori no oku no kakurezato/Edited/talk_window02_01_EDITED_non_transparent.png" id="6_773jk"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
 [ext_resource type="StyleBox" uid="uid://dbhg2yav7ap6u" path="res://Art/Themes/ThemeComponents/DefaultButtonNormal.tres" id="8_q06d8"]
 [ext_resource type="StyleBox" uid="uid://c7r2jxhbcch2g" path="res://Art/Themes/ThemeComponents/DefaultButtonHover.tres" id="9_4y1vj"]

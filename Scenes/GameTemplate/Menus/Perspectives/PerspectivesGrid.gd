@@ -1,7 +1,7 @@
 extends GridContainer
 #TODO, add sound manager to main menu or else make perspective timelines use self contained sounds
 func _ready():
-	visibility_changed.connect(update_buttons)
+	visibility_changed.connect(call_deferred.bind("update_buttons"))
 	
 #Load perspectives file here? (where to save perspectives)
 #save whenever new perspective is added

@@ -4,7 +4,7 @@ var text: String
 @onready var label = $Stats
 
 func _ready() -> void:
-	visibility_changed.connect(display_stats)
+	visibility_changed.connect(call_deferred.bind("display_stats"))
 #TODO, make the parent not disable tabs until class change card is read
 func display_stats():
 	#TODO, rework class change card

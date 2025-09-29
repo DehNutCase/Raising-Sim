@@ -7,7 +7,7 @@ extends MarginContainer
 var last_quest: String
 
 func _ready() -> void:
-	visibility_changed.connect(update_quests)
+	visibility_changed.connect(call_deferred.bind("update_quests"))
 
 func update_quests() -> void:
 	#TODO, only do this for quests in player.active_quests

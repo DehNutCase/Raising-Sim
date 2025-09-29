@@ -8,7 +8,7 @@ var score = 0
 
 func _ready() -> void:
 	update_display()
-	visibility_changed.connect(update_display)
+	visibility_changed.connect(call_deferred.bind("update_display"))
 
 func update_display() -> void:
 	var calculated_ending: Array = await Player.calculate_ending()
