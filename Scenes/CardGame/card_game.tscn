@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cdhjbtjmwe27v" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/good_student_final_exam.tscn" id="2_oisxy"]
 [ext_resource type="Script" path="res://Scenes/Main/FPS.gd" id="3_26lwe"]
 [ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_uds7l"]
-[ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="4_3opov"]
 [ext_resource type="PackedScene" uid="uid://cbxyyse5qjiur" path="res://Scenes/CardGame/Characters/Mao/card_game_player.tscn" id="5_xa8th"]
 [ext_resource type="Theme" uid="uid://c0ta5vb0hl611" path="res://Art/Themes/VideoBackgroundTheme.tres" id="6_6gfs0"]
+[ext_resource type="Texture2D" uid="uid://c3mgjutggxhxq" path="res://Art/UI/Mori no oku no kakurezato/Edited/talk_window02_01.png" id="6_773jk"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
 [ext_resource type="StyleBox" uid="uid://dbhg2yav7ap6u" path="res://Art/Themes/ThemeComponents/DefaultButtonNormal.tres" id="8_q06d8"]
 [ext_resource type="StyleBox" uid="uid://c7r2jxhbcch2g" path="res://Art/Themes/ThemeComponents/DefaultButtonHover.tres" id="9_4y1vj"]
@@ -73,10 +73,11 @@ metadata/_edit_lock_ = true
 [node name="HandBackground" type="TextureRect" parent="."]
 layout_mode = 2
 offset_left = -160.0
-offset_top = 665.0
+offset_top = 620.0
 offset_right = 1760.0
-offset_bottom = 1745.0
-texture = ExtResource("4_3opov")
+offset_bottom = 1700.0
+expand_mode = 1
+stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="BottomUiMargin" type="MarginContainer" parent="HandBackground"]
@@ -93,6 +94,12 @@ offset_bottom = -745.0
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_lock_ = true
+
+[node name="BottomUiTexture" type="TextureRect" parent="HandBackground/BottomUiMargin"]
+layout_mode = 2
+texture = ExtResource("6_773jk")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="HandBackground/BottomUiMargin"]
 layout_mode = 2
