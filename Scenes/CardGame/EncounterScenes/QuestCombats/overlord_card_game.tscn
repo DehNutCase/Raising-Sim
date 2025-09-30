@@ -33,7 +33,7 @@ background_music = ExtResource("4_p5cc3")
 metadata/_edit_lock_ = true
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("5_4oetr")]
-position = Vector2(500, 300)
+position = Vector2(500, 250)
 enemy_resource = ExtResource("6_vuyxj")
 
 [node name="CollisionShape2D" parent="CardGameEnemy" index="0"]
@@ -46,7 +46,7 @@ z_index = 1
 theme_override_constants/margin_bottom = -50
 
 [node name="Sprite" parent="CardGameEnemy/VBoxContainer/MarginContainer4" index="0"]
-custom_minimum_size = Vector2(600, 600)
+custom_minimum_size = Vector2(500, 500)
 texture = ExtResource("7_xekfa")
 flip_h = false
 
