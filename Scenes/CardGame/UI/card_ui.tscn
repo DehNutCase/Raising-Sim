@@ -6,30 +6,20 @@
 [ext_resource type="Theme" uid="uid://c0vtvronru7hd" path="res://Art/Themes/CardTextLabelTheme.tres" id="4_6q1sy"]
 [ext_resource type="Theme" uid="uid://bnlcgnbtphivy" path="res://Art/Themes/CardNameLabelTheme.tres" id="4_caqnm"]
 [ext_resource type="StyleBox" uid="uid://chw2w6ur351d1" path="res://Art/Themes/ThemeComponents/CardPanel.tres" id="4_rywkp"]
+[ext_resource type="Texture2D" uid="uid://duqvjoikadk3i" path="res://Art/UI/Mori no oku no kakurezato/item_chara03.png" id="5_254eg"]
 [ext_resource type="Texture2D" uid="uid://c8mageotyv3bm" path="res://Art/Mori no oku no kakurezato/CardGame/shot.png" id="5_nomf6"]
 [ext_resource type="Texture2D" uid="uid://brmujmc45ux45" path="res://Art/Mori no oku no kakurezato/CardGame/sphere02_03.png" id="6_cckm6"]
-[ext_resource type="Texture2D" uid="uid://brrkku70nlxtl" path="res://Art/UI/UI_Mobile_By_VerzatileDev/UI_MobileIndivudals_rect1-21-8-0-9-0.png" id="6_ost5g"]
+[ext_resource type="Texture2D" uid="uid://bb81vfknq1hw6" path="res://Art/UI/Mori no oku no kakurezato/item_window04.png" id="6_qc37o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
 size = Vector2(180, 270)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wfqd"]
-texture = ExtResource("6_ost5g")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-
 [node name="CardUI" type="Control" groups=["CardGameCardUI"]]
-custom_minimum_size = Vector2(180, 270)
+custom_minimum_size = Vector2(200, 350)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1420.0
-offset_bottom = -630.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 350.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
@@ -48,6 +38,7 @@ position = Vector2(90, 135)
 shape = SubResource("RectangleShape2D_78q6f")
 
 [node name="CardBackground" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,35 +48,47 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("4_rywkp")
 
-[node name="Frame" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("5_254eg")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Frame" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="CardIcon" type="TextureRect" parent="Frame"]
-unique_name_in_owner = true
+[node name="IconBackground" type="TextureRect" parent="Frame"]
 layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_qc37o")
+expand_mode = 5
+
+[node name="CardIcon" type="TextureRect" parent="Frame/IconBackground"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 2
 texture = ExtResource("5_nomf6")
 expand_mode = 3
 stretch_mode = 5
-
-[node name="IconBackground" type="Panel" parent="Frame/CardIcon"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_5wfqd")
 
 [node name="MarginContainer" type="MarginContainer" parent="Frame"]
 layout_mode = 2
@@ -114,6 +117,8 @@ layout_mode = 1
 anchors_preset = -1
 offset_left = -5.0
 offset_top = -5.0
+offset_right = 25.0
+offset_bottom = 25.0
 mouse_filter = 2
 texture = ExtResource("6_cckm6")
 expand_mode = 5

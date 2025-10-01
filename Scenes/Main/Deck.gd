@@ -34,7 +34,7 @@ func update_buttons():
 
 		button.card_ui.card = card
 		button.card_ui.current_state = button.card_ui.States.SPELLBOOK
-		button.card_ui.set_deferred("disabled", true)
+		button.card_ui.collision.disabled = true
 		button.tooltip_text = button.card_ui.tooltip_text
 
 	for key in current_children.keys():
