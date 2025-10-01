@@ -173,6 +173,8 @@ var training_stats = {
 @onready var sta_label: Label = %StaLabel
 @onready var spd_label: Label = %SpdLabel
 
+var is_updating := false
+
 var FAST_TOAST_TIMEOUT_DURATION = Constants.constants.FAST_TOAST_TIMEOUT_DURATION
 func _ready() -> void:
 	update_display()
@@ -184,6 +186,10 @@ func _ready() -> void:
 		
 #TODO, disable button if action used already today, and also based on actions left
 func update_display() -> void:
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	actions_label.text = str(Player.dumpling_stats.remaining_actions)
 	
 	var buttons = get_tree().get_nodes_in_group("DumplingActionButton")
@@ -211,6 +217,7 @@ func update_display() -> void:
 	str_label.text = "Strength: %d" %Player.dumpling_stats.stats.strength
 	sta_label.text = "Stamina: %d" %Player.dumpling_stats.stats.stamina
 	spd_label.text = "Speed: %d" %Player.dumpling_stats.stats.speed
+	is_updating = false
 
 func _on_button_pressed(button: Button) -> void:
 	if Player.dumpling_stats.remaining_actions > 0:

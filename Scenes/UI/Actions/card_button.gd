@@ -2,6 +2,7 @@ class_name CardButton
 extends MarginContainer
 
 @onready var card_ui:CardUI = %CardUI
+@onready var button:Button = %Button
 
 func _on_button_pressed():
 	Player.play_ui_sound("bouncy_blop")

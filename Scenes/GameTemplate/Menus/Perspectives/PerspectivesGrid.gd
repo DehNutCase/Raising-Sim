@@ -1,11 +1,16 @@
 extends GridContainer
 #TODO, add sound manager to main menu or else make perspective timelines use self contained sounds
+var is_updating := false
 func _ready():
 	visibility_changed.connect(call_deferred.bind("update_buttons"))
 	
 #Load perspectives file here? (where to save perspectives)
 #save whenever new perspective is added
 func update_buttons():
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	Player.background_thread.start(load_perspectives)
 	await Player.background_thread.wait_to_finish()
 	
@@ -40,6 +45,7 @@ func update_buttons():
 		for node in current_children[key]:
 			node.queue_free()
 		current_children.erase(key)
+	is_updating = false
 		
 
 func load_perspectives() -> void:

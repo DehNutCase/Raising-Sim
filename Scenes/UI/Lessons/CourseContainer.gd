@@ -3,11 +3,17 @@ extends GridContainer
 var courses
 var course = "Core"
 
+var is_updating := false
+
 func _ready():
 	courses = Constants.courses[course]
 	visibility_changed.connect(call_deferred.bind("update_buttons"))
 	
 func update_buttons():
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	var i = 0
 	for node in get_children():
 		remove_child(node)
@@ -31,3 +37,4 @@ func update_buttons():
 		else:
 			self.get_child(i).update_label(lesson)
 		i += 1
+	is_updating = false

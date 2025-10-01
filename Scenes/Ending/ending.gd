@@ -6,11 +6,17 @@ extends Control
 var ending = ""
 var score = 0
 
+var is_updating := false
+
 func _ready() -> void:
 	update_display()
 	visibility_changed.connect(call_deferred.bind("update_display"))
 
 func update_display() -> void:
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	var calculated_ending: Array = await Player.calculate_ending()
 	ending = calculated_ending[2]
 	score = calculated_ending[0]
@@ -44,6 +50,7 @@ func update_display() -> void:
 		
 		text += "[/table]"
 		ending_text.append_text(text)
+	is_updating = false
 
 func _on_play_ending_button_pressed():
 	get_tree().call_group("Main", "_on_play_ending_button_pressed")

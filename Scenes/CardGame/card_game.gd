@@ -20,6 +20,12 @@ var enemy_scene: CardGameEncounterScene
 @onready var inventory_item_list: ItemList = %InventoryItemList
 
 @onready var flee_button = %FleeButton
+@onready var end_turn_button = %EndTurnButton
+
+@onready var draw_pile_button = %DrawPileButton
+@onready var discard_pile_button = %DiscardPileButton
+@onready var card_pile_panel = %CardPilePanel
+@onready var card_pile_display = %CardPileDisplay
 
 func _ready():
 	Player.play_song("battle")
@@ -67,11 +73,16 @@ func _ready():
 		
 	start_battle()
 
+func _process(delta):
+	draw_pile_button.text = str(Player.card_game_player.draw_pile.size())
+	discard_pile_button.text = str(Player.card_game_player.discard.size())
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		var visible = inventory_item_list.visible or relic_item_list.visible
+		var visible = inventory_item_list.visible or relic_item_list.visible or card_pile_panel.visible
 		inventory_item_list.hide()
 		relic_item_list.hide()
+		card_pile_panel.hide()
 		if visible:
 			Player.play_ui_sound("cancel_blop")
 			get_viewport().set_input_as_handled()
@@ -181,6 +192,7 @@ func check_victory() -> void:
 	if won:
 		if state != states.DEFEAT and Player.card_game_player.health >= 0:
 			state = states.VICTORY
+			end_turn_button.disabled = true
 			flee_button.custom_minimum_size = Vector2(240,70)
 			hand.hide()
 			flee_button.text = "Leave"
@@ -188,6 +200,7 @@ func check_victory() -> void:
 func check_defeat() -> void:
 	if Player.card_game_player.health <= 0 and state != states.DEFEAT:
 		state = states.DEFEAT
+		end_turn_button.disabled = true
 		flee_button.text = "Leave"
 		flee_button.custom_minimum_size = Vector2(240,70)
 		hand.hide()
@@ -321,3 +334,11 @@ func _on_relic_button_pressed():
 	
 func _play_button_sound() -> void:
 	Player.play_ui_sound("blop")
+
+func _on_draw_pile_button_pressed():
+	card_pile_panel.visible = !card_pile_panel.visible
+	card_pile_display.update_buttons("draw_pile")
+
+func _on_discard_pile_button_pressed():
+	card_pile_panel.visible = !card_pile_panel.visible
+	card_pile_display.update_buttons("discard")

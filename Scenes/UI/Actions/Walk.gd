@@ -2,11 +2,16 @@ extends GridContainer
 
 var locations = Constants.locations
 
+var is_updating := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visibility_changed.connect(call_deferred.bind("update_buttons"))
 
 func update_buttons():
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	var current_children = {}
 	for node in get_children():
 		if node.walk_name in current_children:
@@ -48,3 +53,4 @@ func update_buttons():
 		if "icon" in locations[key]:
 			button.update_icon(load(locations[key].icon))
 		current_children[key] = [button]
+	is_updating = false

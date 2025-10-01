@@ -10,11 +10,11 @@
 
 [resource]
 script = ExtResource("4_p4egf")
-id = "Dumpling Counterspell"
+id = "Morgan's Counterspell"
 type = 8
 target = 0
 cost = 0
-effect_amount = 10
+effect_amount = 5
 bonus_effect = 0
 enemy_attack_type = 1
 multi_hit_amount = 0

@@ -2,11 +2,16 @@ extends Control
 
 @onready var protoset:JSON = preload("res://Constants/item_protoset.json")
 
+var is_updating := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visibility_changed.connect(call_deferred.bind("update_buttons"))
 
 func update_buttons():
+	if is_updating:
+		return
+	else:
+		is_updating = true
 	var current_children = {}
 	for node in get_children():
 		if node.item.get_title() in current_children:
@@ -43,3 +48,4 @@ func update_buttons():
 		button.item = item
 		button.update_labels()
 		current_children[item.get_title()] = [button]
+	is_updating = false

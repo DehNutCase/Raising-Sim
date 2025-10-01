@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=26 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://lcmukph0b1ku" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/overlord_card_game.tscn" id="2_67f33"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ct20s5nfksfet" path="res://Art/UI/Mori no oku no kakurezato/Edited/talk_window02_01_EDITED_non_transparent.png" id="6_773jk"]
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="6_lujsi"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="7_28t0y"]
+[ext_resource type="Texture2D" uid="uid://dcxonqmfbxs1j" path="res://Art/UI/Mori no oku no kakurezato/sg_menu_icon002.png" id="8_5md6b"]
 [ext_resource type="Texture2D" uid="uid://bnosxft7l3ha7" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Caracter.png" id="9_cpfh3"]
+[ext_resource type="Texture2D" uid="uid://uefc2dqa3eu3" path="res://Art/UI/Mori no oku no kakurezato/Edited/sg_menu_icon002_grayscale.png" id="9_lwxr0"]
 [ext_resource type="Texture2D" uid="uid://dmw23dy3x7xiy" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Backpack.png" id="9_wrxuv"]
 [ext_resource type="Texture2D" uid="uid://bl2icsbl8w5m0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Caracter.png" id="10_fvy2a"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="10_nnwkb"]
@@ -18,6 +20,8 @@
 [ext_resource type="Resource" uid="uid://caltw50egsl4e" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_casting.tres" id="11_w62d3"]
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
 [ext_resource type="Resource" uid="uid://bhnauj5mkri3b" path="res://Scenes/CardGame/Characters/Mao/Cards/detonate.tres" id="12_u1u0p"]
+[ext_resource type="Script" path="res://Scenes/CardGame/CardPile.gd" id="21_f7ttb"]
+[ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="22_5v7ks"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sdoch"]
 font_size = 28
@@ -68,17 +72,51 @@ grow_vertical = 0
 texture = ExtResource("3_uds7l")
 metadata/_edit_lock_ = true
 
-[node name="HandBackground" type="TextureRect" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 520.0
+offset_right = 1600.0
+offset_bottom = 959.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-offset_left = -160.0
-offset_top = 620.0
-offset_right = 1760.0
-offset_bottom = 1700.0
+
+[node name="DrawPileButton" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("6_lujsi")
+text = "9"
+icon = ExtResource("8_5md6b")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DiscardPileButton" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Button"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("6_lujsi")
+text = "9"
+icon = ExtResource("9_lwxr0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HandBackground" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1600, 335)
+layout_mode = 2
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="BottomUiMargin" type="MarginContainer" parent="HandBackground"]
+[node name="BottomUiMargin" type="MarginContainer" parent="VBoxContainer/HandBackground"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -86,32 +124,32 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -800.0
-offset_top = -1080.0
+offset_top = -335.0
 offset_right = 800.0
-offset_bottom = -745.0
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_lock_ = true
 
-[node name="BottomUiTexture" type="TextureRect" parent="HandBackground/BottomUiMargin"]
+[node name="BottomUiTexture" type="TextureRect" parent="VBoxContainer/HandBackground/BottomUiMargin"]
 layout_mode = 2
 texture = ExtResource("6_773jk")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="HandBackground/BottomUiMargin"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HandBackground/BottomUiMargin"]
 layout_mode = 2
 theme_override_constants/margin_top = 35
 metadata/_edit_lock_ = true
 
-[node name="Hand" type="HBoxContainer" parent="HandBackground/BottomUiMargin/MarginContainer"]
+[node name="Hand" type="HBoxContainer" parent="VBoxContainer/HandBackground/BottomUiMargin/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1600, 300)
 layout_mode = 2
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="EndTurnButton" type="Button" parent="HandBackground/BottomUiMargin" groups=["Button"]]
+[node name="EndTurnButton" type="Button" parent="VBoxContainer/HandBackground/BottomUiMargin" groups=["Button"]]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -148,13 +186,8 @@ anchor_right = 1.0
 offset_left = -1000.0
 offset_bottom = 600.0
 grow_horizontal = 0
+mouse_filter = 2
 metadata/_edit_lock_ = true
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 1479.0
-offset_right = 1537.0
-offset_bottom = 40.0
 
 [node name="FleeButton" type="Button" parent="." groups=["Button"]]
 unique_name_in_owner = true
@@ -211,28 +244,36 @@ offset_bottom = 100.0
 layout_mode = 2
 
 [node name="TopMenuButtons" type="HBoxContainer" parent="MarginContainer/TopMenuBar"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+size_flags_horizontal = 0
 alignment = 1
 
 [node name="RelicButton" type="TextureButton" parent="MarginContainer/TopMenuBar/TopMenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture_normal = ExtResource("9_cpfh3")
 texture_pressed = ExtResource("10_fvy2a")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="InventoryButton" type="TextureButton" parent="MarginContainer/TopMenuBar/TopMenuButtons" groups=["Button"]]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture_normal = ExtResource("9_wrxuv")
 texture_pressed = ExtResource("10_nnwkb")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="InventoryItemList" type="ItemList" parent="MarginContainer/TopMenuBar/TopMenuButtons"]
 unique_name_in_owner = true
 visible = false
 clip_contents = false
-custom_minimum_size = Vector2(1200, 0)
+custom_minimum_size = Vector2(1300, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -246,7 +287,7 @@ script = ExtResource("12_dhls8")
 unique_name_in_owner = true
 visible = false
 clip_contents = false
-custom_minimum_size = Vector2(1200, 0)
+custom_minimum_size = Vector2(1300, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -256,7 +297,54 @@ icon_mode = 0
 icon_scale = 0.5
 script = ExtResource("12_dhls8")
 
-[connection signal="pressed" from="HandBackground/BottomUiMargin/EndTurnButton" to="." method="end_turn"]
+[node name="CardPilePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1400, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -300.0
+offset_right = 650.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CardPilePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CardPilePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="CardPileDisplay" type="GridContainer" parent="CardPilePanel/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 6
+script = ExtResource("21_f7ttb")
+
+[node name="Button" type="Button" parent="CardPilePanel/MarginContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("6_lujsi")
+icon = ExtResource("22_5v7ks")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DrawPileButton" to="." method="_on_draw_pile_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DiscardPileButton" to="." method="_on_discard_pile_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HandBackground/BottomUiMargin/EndTurnButton" to="." method="end_turn"]
 [connection signal="pressed" from="FleeButton" to="." method="exit_combat"]
 [connection signal="pressed" from="MarginContainer/TopMenuBar/TopMenuButtons/RelicButton" to="." method="_on_relic_button_pressed"]
 [connection signal="pressed" from="MarginContainer/TopMenuBar/TopMenuButtons/InventoryButton" to="." method="_on_inventory_button_pressed"]
