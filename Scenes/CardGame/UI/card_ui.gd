@@ -132,7 +132,7 @@ func _update_mana_label():
 		cost_label.append_text("[center][color=white]" + str(card.cost) + "[/color][/center]")
 	
 func _create_tooltip() -> String:
-	var tooltip = "[center][color=Turquoise]%s[/color][/center]\n" %card.id
+	var tooltip = "[center][color=YELLOW]%s[/color][/center]\n" %card.id
 	
 	for i in range(3):
 		var this_type
