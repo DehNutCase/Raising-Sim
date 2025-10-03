@@ -1369,12 +1369,13 @@ unique_name_in_owner = true
 transparent_bg = true
 title = "Game Over"
 initial_position = 1
-size = Vector2i(473, 125)
+size = Vector2i(473, 187)
 min_size = Vector2i(300, 100)
 ok_button_text = "Load Save"
-dialog_text = "Would you like to restart?"
+dialog_text = "Would you like to delete your save and restart?"
 dialog_close_on_escape = false
-cancel_button_text = "Restart"
+dialog_autowrap = true
+cancel_button_text = "Delete and Restart"
 
 [connection signal="pressed" from="Ui/MarginContainer/HBoxContainer/PauseMenuButton" to="." method="_on_pause_menu_button_pressed"]
 [connection signal="toggled" from="Ui/MarginContainer/HBoxContainer/VolumeButton" to="." method="_on_volume_button_toggled"]

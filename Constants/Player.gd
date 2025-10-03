@@ -305,14 +305,13 @@ func save_game(new_game:bool = false):
 	for inv in inventories:
 		if self[inv]:
 			save_data[inv] = self[inv].serialize()
-	
 	#serialize resource arrays
 	for resource_array in resource_arrays:
 		save_data[resource_array] = []
 		for resource:Resource in self[resource_array]:
 			save_data[resource_array].append(resource.resource_path)
 		
-	var save_file
+	var save_file:FileAccess
 	DirAccess.make_dir_recursive_absolute("user://Saves")
 	if !new_game:
 		save_file = FileAccess.open("user://Saves/save.json", FileAccess.WRITE)
@@ -321,6 +320,9 @@ func save_game(new_game:bool = false):
 		save_file = FileAccess.open("user://Saves/new_game_save.json", FileAccess.WRITE)
 		
 	if new_game:
+		if !save_file:
+			printerr("New game save file failed to save!")
+			return
 		save_file.store_line(JSON.stringify(save_data))
 		return
 	
@@ -332,7 +334,7 @@ func save_game(new_game:bool = false):
 		ToastParty.show({"text": "Game failed to save!", "gravity": "top", "direction": "center"})
 	
 
-func load_game(new_game:bool =false):
+func load_game(new_game:bool = false):
 	var save_file
 	if !new_game:
 		save_file = FileAccess.open("user://Saves/save.json", FileAccess.READ)

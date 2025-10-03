@@ -1320,10 +1320,14 @@ func _on_play_ending_button_pressed():
 
 func _on_game_over_dialog_canceled():
 	Player.delete_game()
+	for inventory_name in Player.inventories:
+		Player[inventory_name].clear()
 	Player.save_loaded = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn", false, true)
 
 func _on_game_over_dialog_confirmed():
+	for inventory_name in Player.inventories:
+		Player[inventory_name].clear()
 	Player.new_game = false
 	Player.save_loaded = false
 	SceneLoader.load_scene("res://Scenes/Main/Main.tscn", false, true)
