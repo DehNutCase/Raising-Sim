@@ -17,5 +17,5 @@ update Mao (Normal)
 do Player.play_voice("boom")
 Mao_Portrait (Normal): Boom!
 Rice_Portrait (Normal): ...I suppose I better go inform her majesty that you exploded.
-[signal arg="{"game_over": true}"]
 Mao_Portrait (Normal): Into tiny pieces!
+[signal arg="{"game_over": true}"]

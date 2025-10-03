@@ -1319,13 +1319,14 @@ func _on_play_ending_button_pressed():
 		Player.calculate_ending(true)
 
 func _on_game_over_dialog_canceled():
-	await Player.delete_game()
-	await OS.set_restart_on_exit(true)
-	get_tree().quit()
+	Player.delete_game()
+	Player.save_loaded = false
+	SceneLoader.load_scene("res://Scenes/Main/Main.tscn", false, true)
 
 func _on_game_over_dialog_confirmed():
+	Player.new_game = false
 	Player.save_loaded = false
-	SceneLoader.load_scene("res://Scenes/Main/Main.tscn")
+	SceneLoader.load_scene("res://Scenes/Main/Main.tscn", false, true)
 
 func _play_button_sound() -> void:
 	Player.play_ui_sound("blop")

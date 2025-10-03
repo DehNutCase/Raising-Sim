@@ -1366,6 +1366,7 @@ pause_menu_packed = ExtResource("29_h0pyo")
 
 [node name="GameOverDialog" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
+transparent_bg = true
 title = "Game Over"
 initial_position = 1
 size = Vector2i(473, 125)

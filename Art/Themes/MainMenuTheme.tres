@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://ca6asxvhlbu51"]
 
+[ext_resource type="StyleBox" uid="uid://cu7faxd3lanv5" path="res://Art/Themes/ThemeComponents/GameOverDialogPopupBackground.tres" id="1_7urri"]
 [ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
 [ext_resource type="StyleBox" uid="uid://ca05p6m8lph5q" path="res://Art/Themes/ThemeComponents/WindowBackground.tres" id="1_olt2s"]
 [ext_resource type="StyleBox" uid="uid://cx3l1vv7823x4" path="res://Art/Themes/ThemeComponents/MainMenuButton_Normal.tres" id="2_o15uc"]
@@ -31,6 +32,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iuln8"]
 
+[sub_resource type="ImageTexture" id="ImageTexture_cxitl"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_tpht0"]
+
 [sub_resource type="FontVariation" id="FontVariation_u3uuf"]
 fallbacks = Array[Font]([ExtResource("11_jquc4")])
 base_font = ExtResource("10_vd05d")
@@ -42,7 +47,7 @@ variation_opentype = {
 [resource]
 default_font = SubResource("FontVariation_u3uuf")
 default_font_size = 32
-AcceptDialog/styles/panel = ExtResource("1_olt2s")
+AcceptDialog/styles/panel = ExtResource("1_7urri")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.0745098, 0.219608, 0.266667, 0.784314)
 Button/constants/outline_size = 3
@@ -95,5 +100,7 @@ Window/colors/title_color = Color(1, 1, 1, 1)
 Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
 Window/constants/close_h_offset = 0
 Window/constants/title_outline_size = 4
+Window/icons/close = SubResource("ImageTexture_cxitl")
+Window/icons/close_pressed = SubResource("ImageTexture_tpht0")
 Window/styles/embedded_border = ExtResource("1_olt2s")
 Window/styles/embedded_unfocused_border = ExtResource("1_olt2s")

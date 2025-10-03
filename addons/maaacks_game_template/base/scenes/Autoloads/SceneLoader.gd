@@ -70,11 +70,11 @@ func _check_loading_screen() -> bool:
 func reload_current_scene() -> void:
 	get_tree().reload_current_scene()
 
-func load_scene(scene_path : String, in_background : bool = false) -> void:
+func load_scene(scene_path : String, in_background : bool = false, force_load : bool = false) -> void:
 	if scene_path == null or scene_path.is_empty():
 		push_error("no path given to load")
 		return
-	if ResourceLoader.has_cached(scene_path):
+	if ResourceLoader.has_cached(scene_path) and !force_load:
 		call_deferred("emit_signal", "scene_loaded")
 		return
 	_scene_path = scene_path

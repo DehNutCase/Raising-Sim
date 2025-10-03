@@ -23,7 +23,8 @@ layout_mode = 2
 mouse_filter = 2
 script = ExtResource("1_3448k")
 
-[node name="Stats" type="RichTextLabel" parent="TabContainer/Starting Bonuses"]
+[node name="Label" type="RichTextLabel" parent="TabContainer/Starting Bonuses"]
+unique_name_in_owner = true
 texture_filter = 4
 clip_contents = false
 layout_mode = 2

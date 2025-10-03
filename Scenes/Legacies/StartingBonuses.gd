@@ -1,7 +1,7 @@
 extends MarginContainer
 
 var text: String
-@onready var label = $Stats
+@onready var label = %Label
 
 func _ready() -> void:
 	visibility_changed.connect(call_deferred.bind("display_stats"))
