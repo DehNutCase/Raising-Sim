@@ -34,8 +34,9 @@ func _ready():
 func initialize_stats() -> void:
 	max_health = int(Player.stats.max_hp/5)
 	#debug code
-	#if OS.has_feature("debug"):
-		#max_health = 5000
+	if OS.has_feature("debug") and Player.day == 0:
+		max_health = 5000
+	#END debug code
 	if Player.in_expedition:
 		health = Player.expedition_health
 	else:

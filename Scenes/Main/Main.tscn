@@ -77,13 +77,13 @@
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="62_7ii8w"]
 [ext_resource type="Texture2D" uid="uid://dnwdwoslwcp5y" path="res://Art/UI/mandinhart/More Icons/Clen booton/C_RightArrow1.png" id="62_342ff"]
 [ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="67_exeng"]
-[ext_resource type="Texture2D" uid="uid://bc0twdyjkhcdq" path="res://Art/Mori no oku no kakurezato/CardGame/alchemy05_01.png" id="69_djog0"]
 [ext_resource type="Theme" uid="uid://bpmpi75l7q4kv" path="res://Art/Themes/DefaultButtonTheme.tres" id="73_17ulr"]
 [ext_resource type="Texture2D" uid="uid://dsa0ggh4o2mre" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Medal2.png" id="75_qch2x"]
 [ext_resource type="Texture2D" uid="uid://djeu37k768ji1" path="res://Art/It Came From The Swamp/Enemies/f_manju.png" id="76_5tlhe"]
 [ext_resource type="Texture2D" uid="uid://pbfp5dbku8m" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Medal2.png" id="76_i7we7"]
 [ext_resource type="Texture2D" uid="uid://dkr5yma1b7dy8" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/gem02_06.png" id="76_w8p4g"]
 [ext_resource type="Texture2D" uid="uid://cy4ao7j0f6jn0" path="res://Art/Background/Background material shop/Edited/bg005a_oval.png" id="80_oi3av"]
+[ext_resource type="Texture2D" uid="uid://fovaamfl8xq2" path="res://Art/UI/Mori no oku no kakurezato/sg_menu_icon002_2.png" id="82_jo5e1"]
 [ext_resource type="PackedScene" uid="uid://bulbrstb1aw0l" path="res://Scenes/Working/WorkingAnimation.tscn" id="84_ei2bw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qc06n"]
@@ -1322,7 +1322,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme = ExtResource("67_exeng")
 text = "Spellbook"
-icon = ExtResource("69_djog0")
+icon = ExtResource("82_jo5e1")
 icon_alignment = 1
 expand_icon = true
 

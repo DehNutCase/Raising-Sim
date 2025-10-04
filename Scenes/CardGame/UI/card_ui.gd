@@ -87,11 +87,12 @@ func play_card():
 	if Player.card_game_player.mana >= card.cost:
 		Player.card_game_player.mana -= card.cost
 		card.play(targets.duplicate())
-		if card.type != card.Type.POWER:
-			discard()
-		else:
+		#Send to discard pile unless the card banishes itself/the hand
+		if card.type == card.Type.REMOVE_FROM_PLAY and (card.target == card.Target.THIS_CARD or card.Target.CARDS_IN_HAND):
 			enter_state(States.DISCARD)
 			queue_free()
+		else:
+			discard()
 	else:
 		played = false
 		enter_state(States.BASE)

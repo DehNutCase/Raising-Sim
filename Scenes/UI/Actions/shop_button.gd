@@ -20,9 +20,8 @@ func _on_button_pressed():
 func update_labels():
 	texture.texture = item.get_texture();
 	button.text = "Buy: " + str(item.get_property("price", 0))
-	tooltip_text = item.get_property("name", "")
-	if tooltip_text: 
-		tooltip_text += "\n"
+	tooltip_text = "[center][color=YELLOW]" + item.get_property("name", "") + "[/color][/center]"
+	if item.get_property("name", ""): tooltip_text += "\n\n"
 	tooltip_text += item.get_property("description", "tooltip error")
 	tooltip_text += "\n"
 	

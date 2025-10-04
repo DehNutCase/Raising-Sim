@@ -12,7 +12,7 @@
 script = ExtResource("4_p4egf")
 id = "Morgan's Counterspell"
 type = 8
-target = 0
+target = 5
 cost = 0
 effect_amount = 5
 bonus_effect = 0

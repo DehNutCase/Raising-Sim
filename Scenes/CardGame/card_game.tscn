@@ -144,7 +144,7 @@ stretch_mode = 3
 layout_mode = 2
 theme_override_constants/margin_bottom = -50
 
-[node name="Hand" type="HBoxContainer" parent="VBoxContainer/HandBackground/BottomUiMargin/MarginContainer"]
+[node name="Hand" type="HBoxContainer" parent="VBoxContainer/HandBackground/BottomUiMargin/MarginContainer" groups=["CardGameHand"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1600, 0)
 layout_mode = 2

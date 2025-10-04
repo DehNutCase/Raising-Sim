@@ -1,8 +1,8 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, POWER, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL, DISPEL, WIN_DUEL}
-enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
+enum Type {NONE, ATTACK, BLOCK, REMOVE_FROM_PLAY, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL, DISPEL, WIN_DUEL}
+enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE, THIS_CARD, DRAW_PILE, DISCARD_PILE, CARDS_IN_HAND}
 enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 
@@ -44,13 +44,22 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 func is_single_target() -> bool:
 	return target == Target.SINGLE_ENEMY
 	
-func get_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Array[Node]:
+func get_targets(targets: Array[Node], effect_number:int = 0, enemy: CardGameEnemy = null) -> Array[Node]:
 	if !targets:
 		return []
-	
 	var tree := targets[0].get_tree()
+	var this_target
+	match effect_number:
+		0:
+			this_target = target
+		1:
+			this_target = second_target
+		2:
+			this_target = third_target
+		_:
+			printerr("unmatched effect_number in get_targets")
 	
-	match target:
+	match this_target:
 		Target.SELF:
 			if enemy:
 				return [enemy]
@@ -63,54 +72,16 @@ func get_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Array[Nod
 			if enemy:
 				return tree.get_nodes_in_group("CardGamePlayer")
 			return [targets[-1]]
+		Target.THIS_CARD:
+			return []
+		Target.DISCARD_PILE:
+			return []
+		Target.DRAW_PILE:
+			return []
+		Target.CARDS_IN_HAND:
+			return tree.get_first_node_in_group("CardGameHand").get_children()
 		_:
 			printerr("Unmatched target type for get_targets")
-	return []
-
-func get_second_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Array[Node]:
-	if !targets:
-		return []
-	
-	var tree := targets[0].get_tree()
-	
-	match second_target:
-		Target.SELF:
-			if enemy:
-				return [enemy]
-			return tree.get_nodes_in_group("CardGamePlayer")
-		Target.ALL_ENEMIES:
-			return tree.get_nodes_in_group("CardGameEnemies")
-		Target.EVERYONE:
-			return tree.get_nodes_in_group("CardGamePlayer") + tree.get_nodes_in_group("CardGameEnemies")
-		Target.SINGLE_ENEMY:
-			if enemy:
-				return tree.get_nodes_in_group("CardGamePlayer")
-			return [targets[-1]]
-		_:
-			printerr("Unmatched target type for get_second_targets")
-	return []
-	
-func get_third_targets(targets: Array[Node], enemy: CardGameEnemy = null) -> Array[Node]:
-	if !targets:
-		return []
-	
-	var tree := targets[0].get_tree()
-	
-	match third_target:
-		Target.SELF:
-			if enemy:
-				return [enemy]
-			return tree.get_nodes_in_group("CardGamePlayer")
-		Target.ALL_ENEMIES:
-			return tree.get_nodes_in_group("CardGameEnemies")
-		Target.EVERYONE:
-			return tree.get_nodes_in_group("CardGamePlayer") + tree.get_nodes_in_group("CardGameEnemies")
-		Target.SINGLE_ENEMY:
-			if enemy:
-				return tree.get_nodes_in_group("CardGamePlayer")
-			return [targets[-1]]
-		_:
-			printerr("Unmatched target type for get_third_targets")
 	return []
 
 func play(targets: Array[Node]) -> void:
@@ -122,27 +93,29 @@ func play(targets: Array[Node]) -> void:
 	if start_sound_effect:
 		SoundManager.play_sound(start_sound_effect)
 	
-	apply_effects(get_targets(targets), Player.card_game_player, 0)
-	apply_effects(get_second_targets(targets), Player.card_game_player, 1)
-	apply_effects(get_third_targets(targets), Player.card_game_player, 2)
+	apply_effects(get_targets(targets, 0), Player.card_game_player, 0)
+	apply_effects(get_targets(targets, 1), Player.card_game_player, 1)
+	apply_effects(get_targets(targets, 2), Player.card_game_player, 2)
 
 func enemy_play(enemy: CardGameEnemy) -> void:
 	#Impact sound here
 	if impact_sound_effect:
 		SoundManager.play_sound(impact_sound_effect)
-	apply_effects(get_targets([enemy], enemy), enemy, 0)
-	apply_effects(get_second_targets([enemy], enemy), enemy, 1)
-	apply_effects(get_third_targets([enemy], enemy), enemy, 2)
+	apply_effects(get_targets([enemy], 0, enemy), enemy, 0)
+	apply_effects(get_targets([enemy], 1, enemy), enemy, 1)
+	apply_effects(get_targets([enemy], 2, enemy), enemy, 2)
 
 func apply_effects(targets: Array[Node], user, effect_number) -> void:
 	var this_type
 	var this_amount
 	var this_status
+	var this_target
 	match effect_number:
 		0:
 			this_type = type
 			this_amount = effect_amount
 			this_status = status
+			this_target = target
 			
 			match bonus_effect:
 				BonusEffectType.NONE:
@@ -159,6 +132,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_type = second_type
 			this_amount = second_effect_amount
 			this_status = second_status
+			this_target = second_target
 			
 			match second_bonus_effect:
 				BonusEffectType.NONE:
@@ -175,6 +149,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_type = third_type
 			this_amount = third_effect_amount
 			this_status = third_status
+			this_target = third_target
 			
 			match third_bonus_effect:
 				BonusEffectType.NONE:
@@ -201,8 +176,8 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			apply_draw(targets, this_amount, user)
 		Type.MANA:
 			apply_mana(targets, this_amount, user)
-		Type.POWER:
-			pass #POWER is currently only used to make sure a card is one use only
+		Type.REMOVE_FROM_PLAY:
+			apply_remove_from_play(targets, this_target, user)
 		Type.NONE:
 			pass #used when a card doesn't have all effect slots filled
 		Type.GOLD:
@@ -253,6 +228,22 @@ func apply_status(targets: Array[Node], effect_amount, user, status) -> void:
 func apply_mana(targets: Array[Node], effect_amount, user) -> void:
 	Player.card_game_player.mana += effect_amount
 
+func apply_remove_from_play(targets: Array[Node], this_target, user) -> void:
+	#Targets is irrelevant unless it's CARDS_IN_HAND
+	match this_target:
+		Target.CARDS_IN_HAND:
+			for card_ui:CardUI in targets:
+				card_ui.enter_state(card_ui.States.DISCARD)
+				card_ui.queue_free()
+		Target.DISCARD_PILE:
+			Player.card_game_player.discard.clear()
+		Target.DRAW_PILE:
+			Player.card_game_player.draw_pile.clear()
+		Target.THIS_CARD:
+			pass #removing the card from play is handled in card_ui instead
+		_:
+			printerr("Failed to match this_target in apply_remove_from_play")
+	
 func apply_gold(targets: Array[Node], effect_amount, user) -> void:
 	Player.stats.gold += effect_amount
 	var plus = "+"
@@ -267,6 +258,7 @@ func apply_gold(targets: Array[Node], effect_amount, user) -> void:
 func apply_add_card(targets: Array[Node], effect_amount, user) -> void:
 	for i in range(effect_amount):
 		Player.card_game_player.draw_pile.append(card_to_add)
+	Player.card_game_player.draw_pile.shuffle()
 
 func apply_heal(targets: Array[Node], effect_amount, user) -> void:
 	for target in targets:

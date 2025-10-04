@@ -3,6 +3,20 @@ extends GridContainer
 var locations = Constants.locations
 var is_updating := false
 
+var previous_list := "draw_pile"
+var previous_size:int = 0
+
+func _process(delta):
+	var current_size = 0
+	match previous_list:
+		"draw_pile":
+			current_size = int(%DrawPileButton.text)
+		"discard":
+			current_size = int(%DiscardPileButton.text)
+	if current_size != previous_size:
+		update_buttons(previous_list)
+	previous_size = current_size
+
 func update_buttons(card_list:String = "draw_pile"):
 	if is_updating:
 		return
@@ -47,4 +61,5 @@ func update_buttons(card_list:String = "draw_pile"):
 			node.queue_free()
 		current_children.erase(key)
 	is_updating = false
+	previous_list = card_list
 
