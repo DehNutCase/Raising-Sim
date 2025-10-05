@@ -29,6 +29,7 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 @export var second_effect_amount: int
 @export var second_bonus_effect: BonusEffectType
 @export var second_status: CardGameStatusResource
+@export var second_card_to_add: CardResource
 
 @export_group("Third Effect Attributes")
 @export var third_target: Target
@@ -36,6 +37,7 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 @export var third_effect_amount: int
 @export var third_bonus_effect: BonusEffectType
 @export var third_status: CardGameStatusResource
+@export var third_card_to_add: CardResource
 
 @export_group("Card Visuals")
 @export var icon: Texture
@@ -110,12 +112,15 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 	var this_amount
 	var this_status
 	var this_target
+	var this_card_to_add
+	
 	match effect_number:
 		0:
 			this_type = type
 			this_amount = effect_amount
 			this_status = status
 			this_target = target
+			this_card_to_add = card_to_add
 			
 			match bonus_effect:
 				BonusEffectType.NONE:
@@ -133,6 +138,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_amount = second_effect_amount
 			this_status = second_status
 			this_target = second_target
+			this_card_to_add = second_card_to_add
 			
 			match second_bonus_effect:
 				BonusEffectType.NONE:
@@ -150,6 +156,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_amount = third_effect_amount
 			this_status = third_status
 			this_target = third_target
+			this_card_to_add = third_card_to_add
 			
 			match third_bonus_effect:
 				BonusEffectType.NONE:
@@ -183,7 +190,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 		Type.GOLD:
 			apply_gold(targets, this_amount, user)
 		Type.ADD_CARD:
-			apply_add_card(targets, this_amount, user)
+			apply_add_card(targets, this_amount, user, this_card_to_add, this_target)
 		Type.HEAL:
 			apply_heal(targets, this_amount, user)
 		Type.DISPEL:
@@ -255,10 +262,21 @@ func apply_gold(targets: Array[Node], effect_amount, user) -> void:
 		"direction": "center",               # left or center or right
 	})
 	
-func apply_add_card(targets: Array[Node], effect_amount, user) -> void:
-	for i in range(effect_amount):
-		Player.card_game_player.draw_pile.append(card_to_add)
-	Player.card_game_player.draw_pile.shuffle()
+func apply_add_card(targets: Array[Node], effect_amount, user, this_card_to_add, target) -> void:
+	match target:
+		Target.DRAW_PILE:
+			for i in range(effect_amount):
+				Player.card_game_player.draw_pile.append(this_card_to_add)
+			Player.card_game_player.draw_pile.shuffle()
+		Target.DISCARD_PILE:
+			for i in range(effect_amount):
+				Player.card_game_player.discard.append(this_card_to_add)
+		Target.CARDS_IN_HAND:
+			var tree = Player.get_tree()
+			var card_game = tree.get_first_node_in_group("CardGameMainNode")
+			for i in range(effect_amount):
+				card_game.add_card(this_card_to_add)
+				await tree.create_timer(.05).timeout
 
 func apply_heal(targets: Array[Node], effect_amount, user) -> void:
 	for target in targets:

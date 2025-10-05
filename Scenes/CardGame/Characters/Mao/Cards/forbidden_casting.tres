@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://bm1hs0di233yq"]
+
+[ext_resource type="Texture2D" uid="uid://dn4xj0vec3jji" path="res://Art/Mori no oku no kakurezato/CardGame/Edited/cube02_05_Chained.png" id="1_3by4h"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_4sij7"]
+[ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_r5pve"]
+
+[resource]
+script = ExtResource("2_4sij7")
+id = "Forbidden Casting"
+type = 5
+target = 0
+cost = 3
+effect_amount = 10
+bonus_effect = 0
+enemy_attack_type = 0
+multi_hit_amount = null
+animation = null
+price = 1000
+start_sound_effect = ExtResource("3_r5pve")
+second_target = 5
+second_type = 3
+second_effect_amount = 0
+second_bonus_effect = 0
+third_target = 6
+third_type = 3
+third_effect_amount = 0
+third_bonus_effect = 0
+icon = ExtResource("1_3by4h")

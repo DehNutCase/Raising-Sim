@@ -1,7 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dgjgitu0vi1jl"]
 
-[ext_resource type="Texture2D" uid="uid://du0as0t2k3eb6" path="res://Art/UI/Mori no oku no kakurezato/background01.png" id="1_xv1p2"]
+[ext_resource type="Texture2D" uid="uid://ke17ee4ow7re" path="res://Art/UI/Mori no oku no kakurezato/item_deco01.png" id="1_ugy5e"]
 
 [resource]
-texture = ExtResource("1_xv1p2")
-modulate_color = Color(0.392157, 0.392157, 0.392157, 1)
+texture = ExtResource("1_ugy5e")

@@ -3409,6 +3409,16 @@ const talents = {
 		"description": "You got a part time job painting figurines. It's mysterious how hand painted figurines can make money even though it's trivial to mass produce them with magical automation.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/figure01_01.png",
 	},
+	"consecutive_bonks" = {
+		"label": "Secret Technique: Seven Consecutive Bonks!",
+		"tier": 2,
+		"cost": 3,
+		"max_stacks": 1,
+		"daily_stats": {"attack": 5,},
+		"card": "res://Scenes/CardGame/Characters/Mao/Cards/consecutive_bonks.tres",
+		"description": "You locked yourself in your room for seven days and nights to develop a super duper secret technique! Now everyone will tremble in fear whenever you wave your wand around!\n\nRice's Evaluation: 'In terms of power level, a reasonable argument could be made for banning the card from competitive play. As an attack, the card is nothing special, but it's an excellent ritual spell.",
+		"icon": "res://Art/Mori no oku no kakurezato/CardGame/Edited/multi_attack.png",
+	},
 	"low_maintainence_dumpling" = {
 		"label": "Low Maintainence Dumpling",
 		"tier": 3,

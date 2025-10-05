@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=34 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://lcmukph0b1ku" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/overlord_card_game.tscn" id="2_67f33"]
@@ -18,8 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://cpflrlaai3j71" path="res://Art/UI/Mori no oku no kakurezato/menu_button02.png" id="11_c5vrd"]
 [ext_resource type="Texture2D" uid="uid://b506gid4y8dmw" path="res://Art/UI/Mori no oku no kakurezato/menu_button01.png" id="11_iokvy"]
 [ext_resource type="Resource" uid="uid://caltw50egsl4e" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_casting.tres" id="11_w62d3"]
+[ext_resource type="Resource" uid="uid://b46opqusteu15" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_bonk.tres" id="12_d6ntp"]
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
 [ext_resource type="Resource" uid="uid://bhnauj5mkri3b" path="res://Scenes/CardGame/Characters/Mao/Cards/detonate.tres" id="12_u1u0p"]
+[ext_resource type="Resource" uid="uid://bm1hs0di233yq" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_casting.tres" id="13_kk18i"]
+[ext_resource type="Resource" uid="uid://bgrq5k4eqkxsc" path="res://Scenes/CardGame/Characters/Mao/Cards/consecutive_bonks.tres" id="13_pmcrt"]
+[ext_resource type="Resource" uid="uid://dkt6uu2mjf51p" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_fireball.tres" id="14_20fsw"]
+[ext_resource type="Resource" uid="uid://6wjs0vw5ofku" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_invocation.tres" id="15_7hg0q"]
+[ext_resource type="Resource" uid="uid://b1kopyrgnmqtl" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_lightning.tres" id="16_qdyyh"]
+[ext_resource type="Resource" uid="uid://do6xxq65jla4u" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_ritual.tres" id="17_kyxqn"]
+[ext_resource type="Resource" uid="uid://b51o4twhsj7ds" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_utopia.tres" id="18_64co5"]
 [ext_resource type="Script" path="res://Scenes/CardGame/CardPile.gd" id="21_f7ttb"]
 [ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="22_5v7ks"]
 
@@ -176,7 +184,7 @@ metadata/_edit_lock_ = true
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
 position = Vector2(160, 180)
-deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("11_w62d3"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p"), ExtResource("12_u1u0p")])
+deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("11_w62d3"), ExtResource("12_d6ntp"), ExtResource("13_kk18i"), ExtResource("14_20fsw"), ExtResource("15_7hg0q"), ExtResource("16_qdyyh"), ExtResource("17_kyxqn"), ExtResource("18_64co5"), ExtResource("13_pmcrt"), ExtResource("12_u1u0p")])
 metadata/_edit_lock_ = true
 
 [node name="EnemiesContainer" type="Control" parent="."]

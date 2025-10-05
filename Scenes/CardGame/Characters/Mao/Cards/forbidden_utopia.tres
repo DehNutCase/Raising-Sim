@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://b51o4twhsj7ds"]
+
+[ext_resource type="Texture2D" uid="uid://baf6l030o8140" path="res://Art/Mori no oku no kakurezato/CardGame/Edited/element07_03_Chained.png" id="1_gvt0v"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_r6flj"]
+[ext_resource type="AudioStream" uid="uid://c8cj28wlcodt3" path="res://SFX/Shapeforms/Arcane/Activate Glyph Forcefield.wav" id="3_mq2tt"]
+[ext_resource type="Resource" uid="uid://bxnta4qv8mqb3" path="res://Scenes/CardGame/Status/invulnerable.tres" id="4_skvvn"]
+
+[resource]
+script = ExtResource("2_r6flj")
+id = "Forbidden Utopia"
+type = 4
+target = 0
+cost = 3
+effect_amount = 1
+bonus_effect = 0
+status = ExtResource("4_skvvn")
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 2500
+start_sound_effect = ExtResource("3_mq2tt")
+second_target = 7
+second_type = 3
+second_effect_amount = 0
+second_bonus_effect = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+third_bonus_effect = 0
+icon = ExtResource("1_gvt0v")

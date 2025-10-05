@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=4 format=3 uid="uid://b46opqusteu15"]
+
+[ext_resource type="Texture2D" uid="uid://bx3u07650h0oc" path="res://Art/Mori no oku no kakurezato/CardGame/Edited/attack_Chained.png" id="1_qw6vo"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_g63et"]
+[ext_resource type="AudioStream" uid="uid://csih83ojfiqvc" path="res://SFX/Shapeforms/Hit and Punch/WHOOSH_ARM_SWING_01.wav" id="3_2tohc"]
+
+[resource]
+script = ExtResource("2_g63et")
+id = "Forbidden Bonk"
+type = 1
+target = 1
+cost = 3
+effect_amount = 250
+bonus_effect = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 500
+start_sound_effect = ExtResource("3_2tohc")
+second_target = 7
+second_type = 3
+second_effect_amount = 0
+second_bonus_effect = 0
+third_target = 0
+third_type = 0
+third_effect_amount = 0
+third_bonus_effect = 0
+icon = ExtResource("1_qw6vo")

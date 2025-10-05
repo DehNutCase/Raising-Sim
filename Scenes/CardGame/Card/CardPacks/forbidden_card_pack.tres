@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=7 format=3 uid="uid://bowdk8hhlsxbr"]
+
+[ext_resource type="Resource" uid="uid://bauon8hu41jtp" path="res://Scenes/CardGame/Characters/Mao/Cards/lightning_bolt.tres" id="1_b4ydp"]
+[ext_resource type="Resource" uid="uid://d0me0g4p8kkw" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_invocation.tres" id="2_lbnbe"]
+[ext_resource type="Resource" uid="uid://f474xn1lyea4" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_ritual.tres" id="3_pextg"]
+[ext_resource type="Resource" uid="uid://bhnauj5mkri3b" path="res://Scenes/CardGame/Characters/Mao/Cards/detonate.tres" id="4_b8ld2"]
+[ext_resource type="Resource" uid="uid://caltw50egsl4e" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_casting.tres" id="5_ku6iq"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="6_0ug13"]
+
+[resource]
+script = ExtResource("6_0ug13")
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_b4ydp"), ExtResource("1_b4ydp"), ExtResource("2_lbnbe"), ExtResource("3_pextg"), ExtResource("3_pextg"), ExtResource("4_b8ld2"), ExtResource("5_ku6iq"), ExtResource("5_ku6iq")])

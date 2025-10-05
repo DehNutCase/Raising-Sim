@@ -88,7 +88,26 @@ func play_card():
 		Player.card_game_player.mana -= card.cost
 		card.play(targets.duplicate())
 		#Send to discard pile unless the card banishes itself/the hand
-		if card.type == card.Type.REMOVE_FROM_PLAY and (card.target == card.Target.THIS_CARD or card.Target.CARDS_IN_HAND):
+		var banishes_self = false
+		for i in range(3): #range based on amount of effects a card could have
+			var this_type
+			var this_target
+			match i:
+				0:
+					this_type = card.type
+					this_target = card.target
+				1:
+					this_type = card.second_type
+					this_target = card.second_target
+				2:
+					this_type = card.third_type
+					this_target = card.third_target
+				_:
+					printerr("play_card self banish effect_number failed to match")
+			if this_type == card.Type.REMOVE_FROM_PLAY and (this_target == card.Target.THIS_CARD or this_target == card.Target.CARDS_IN_HAND):
+				banishes_self = true
+				break
+		if banishes_self:
 			enter_state(States.DISCARD)
 			queue_free()
 		else:
@@ -141,6 +160,7 @@ func _create_tooltip() -> String:
 		var this_status
 		var this_target
 		var this_bonus_effect
+		var this_card_to_add
 		match i:
 			0:
 				this_type = card.type
@@ -148,18 +168,21 @@ func _create_tooltip() -> String:
 				this_status = card.status
 				this_target = card.target
 				this_bonus_effect = card.bonus_effect
+				this_card_to_add = card.card_to_add
 			1:
 				this_type = card.second_type
 				this_amount = card.second_effect_amount
 				this_status = card.second_status
 				this_target = card.second_target
 				this_bonus_effect = card.second_bonus_effect
+				this_card_to_add = card.second_card_to_add
 			2:
 				this_type = card.third_type
 				this_amount = card.third_effect_amount
 				this_status = card.third_status
 				this_target = card.third_target
 				this_bonus_effect = card.third_bonus_effect
+				this_card_to_add = card.third_card_to_add
 			_:
 				printerr("_create_tooltip effect_number failed to match")
 				
@@ -202,16 +225,36 @@ func _create_tooltip() -> String:
 					card.Target.EVERYONE:
 						tooltip += "Everyone gains [color=yellow]%d[/color] %s." %[this_amount, this_status.status_name]
 			card.Type.DRAW:
-						tooltip += "Draw [color=green]%d[/color] card(s)." % this_amount
+				tooltip += "Draw [color=green]%d[/color] card(s)." % this_amount
 			card.Type.MANA:
-						tooltip += "Gain [color=blue]%d[/color] mana." % this_amount
+				tooltip += "Gain [color=blue]%d[/color] mana." % this_amount
 			#NOTE, power should always be the first effect, doesn't do anything.
-			card.Type.POWER:
-						tooltip += "Once per duel."
+			card.Type.REMOVE_FROM_PLAY:
+				var target_label:String = ""
+				match this_target:
+					card.Target.THIS_CARD:
+						target_label = "this card"
+					card.Target.DRAW_PILE:
+						target_label = "your deck"
+					card.Target.DISCARD_PILE:
+						target_label = "your discard pile"
+					card.Target.CARDS_IN_HAND:
+						target_label = "your hand"
+					_:
+						printerr("card.target failed to match for card.Type.REMOVE_FROM_PLAY")
+				tooltip += "Remove %s from play." %target_label
 			card.Type.GOLD:
-						tooltip += "Gain [color=yellow]%d[/color] gold." % this_amount
+				tooltip += "Gain [color=yellow]%d[/color] gold." % this_amount
 			card.Type.ADD_CARD:
-						tooltip += "Add [color=blue]%d[/color] [color=green]%s[/color] into your draw pile." % [this_amount, card.card_to_add.id]
+				var target_label:String = ""
+				match this_target:
+					card.Target.DRAW_PILE:
+						target_label = "your deck"
+					card.Target.DISCARD_PILE:
+						target_label = "your discard pile"
+					card.Target.CARDS_IN_HAND:
+						target_label = "your hand"
+				tooltip += "Add [color=blue]%d[/color] [color=green]%s[/color] to %s." % [this_amount, this_card_to_add.id, target_label]
 			card.Type.DISPEL:
 				match this_target:
 					card.Target.SELF:

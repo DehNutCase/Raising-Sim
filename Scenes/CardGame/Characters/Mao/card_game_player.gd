@@ -43,8 +43,8 @@ func initialize_stats() -> void:
 		health = max_health
 	#Note, give mao block based on defense every turn
 	max_mana = int(Player.stats.max_mp/150 + 2)
-	#if OS.has_feature("debug"):
-		#max_mana = 5000
+	if OS.has_feature("debug") and Player.day == 0:
+		max_mana = 5000
 	mana = max_mana
 	draw_pile = []
 	discard = []

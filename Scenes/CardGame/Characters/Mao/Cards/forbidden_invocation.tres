@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://6wjs0vw5ofku"]
+
+[ext_resource type="Texture2D" uid="uid://c3ucfsnni1rkr" path="res://Art/Mori no oku no kakurezato/CardGame/Edited/element02_05_Chained.png" id="1_5gsh1"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_mywkf"]
+[ext_resource type="AudioStream" uid="uid://c72id1lm5t2gg" path="res://SFX/Tom Music/Spells/Firebuff 1.wav" id="3_d3ype"]
+[ext_resource type="Resource" uid="uid://dwkmsyvr4kwx1" path="res://Scenes/CardGame/Status/vulnerable.tres" id="4_r4pct"]
+
+[resource]
+script = ExtResource("2_mywkf")
+id = "Forbidden Invocation"
+type = 4
+target = 3
+cost = 4
+effect_amount = 10
+bonus_effect = 0
+status = ExtResource("4_r4pct")
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 1000
+start_sound_effect = ExtResource("3_d3ype")
+second_target = 3
+second_type = 1
+second_effect_amount = 50
+second_bonus_effect = 0
+third_target = 4
+third_type = 3
+third_effect_amount = 0
+third_bonus_effect = 0
+icon = ExtResource("1_5gsh1")
