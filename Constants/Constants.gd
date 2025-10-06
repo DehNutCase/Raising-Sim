@@ -2662,7 +2662,7 @@ const quests = {
 				"scholarship": 100,
 				},
 		},
-		"description": "A student's job is to study. Let's get 100 scholarship in a week.",
+		"description": "A student's job is to study. Let's get 100 scholarship in a week.\n\nTime Limit: Day 7",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2684,7 +2684,7 @@ const quests = {
 				"scholarship": 300,
 				},
 		},
-		"description": "A student's job is to study. Let's get 300 scholarship before the middle of the month.",
+		"description": "A student's job is to study. Let's get 300 scholarship before the middle of the month.\n\nTime Limit: Day 14",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2706,7 +2706,7 @@ const quests = {
 				"scholarship": 600,
 				},
 		},
-		"description": "A student's job is to study. Let's get 600 scholarship before the 21st.",
+		"description": "A student's job is to study. Let's get 600 scholarship.\n\nTime Limit: Day 21",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2728,7 +2728,7 @@ const quests = {
 				"scholarship": 800,
 				},
 		},
-		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and pass the finals.",
+		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and pass the finals.\n\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2852,7 +2852,7 @@ const quests = {
 			"tower_level": 20,
 			"stats": {"scholarship": 600},
 		},
-		"description": "Now that you have some magic cards, it's time to turn evil! Get your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game. Yes, this is definitely how to become an evil overlord, it's a method approved by her majesty!\n\nTime Limit: Day 30",
+		"description": "Now that you have some magic cards, it's time to turn evil!\n\nGet your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game.\n\nYes, this is definitely how to become an evil overlord. It's a method approved by her majesty!\n\nTime Limit: Day 30",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
