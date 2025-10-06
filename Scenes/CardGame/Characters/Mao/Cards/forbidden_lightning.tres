@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://b1kopyrgnmqtl"]
 
-[ext_resource type="Texture2D" uid="uid://ponasn8mkndn" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element05_01.png" id="1_chdgj"]
+[ext_resource type="Texture2D" uid="uid://df6iabrg3pn0" path="res://Art/Mori no oku no kakurezato/CardGame/Edited/element05_03_Chained.png" id="1_3samk"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_v5hi6"]
 [ext_resource type="Resource" uid="uid://da1yfjsfxcvdq" path="res://Scenes/CardGame/Status/stored_energy.tres" id="3_vshs4"]
 [ext_resource type="AudioStream" uid="uid://c6ajx5f5v87dm" path="res://SFX/Tom Music/Spells/Fireball 1.wav" id="4_x6lld"]
@@ -27,4 +27,4 @@ third_target = 6
 third_type = 3
 third_effect_amount = 0
 third_bonus_effect = 0
-icon = ExtResource("1_chdgj")
+icon = ExtResource("1_3samk")

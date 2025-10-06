@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=5 format=3 uid="uid://bgrq5k4eqkxsc"]
+
+[ext_resource type="Texture2D" uid="uid://cw5yldpicgja" path="res://Art/Mori no oku no kakurezato/CardGame/Edited/multi_attack.png" id="1_0d6kt"]
+[ext_resource type="Script" path="res://Scenes/CardGame/Card/card_resource.gd" id="2_r8rtg"]
+[ext_resource type="AudioStream" uid="uid://d223p2c85nnpk" path="res://Voice/Sakura An/Misc/Keep it up.wav" id="3_18j71"]
+[ext_resource type="Resource" uid="uid://chg2wxd3luc4p" path="res://Scenes/CardGame/Characters/Mao/Cards/bonk.tres" id="3_iexo4"]
+
+[resource]
+script = ExtResource("2_r8rtg")
+id = "Secret Technique: Seven Consecutive Bonks!"
+type = 1
+target = 1
+cost = 1
+effect_amount = 8
+bonus_effect = 0
+enemy_attack_type = 0
+multi_hit_amount = 0
+animation = ""
+price = 10
+start_sound_effect = ExtResource("3_18j71")
+second_target = 7
+second_type = 8
+second_effect_amount = 6
+second_bonus_effect = 0
+second_card_to_add = ExtResource("3_iexo4")
+third_target = 0
+third_type = 6
+third_effect_amount = 6
+third_bonus_effect = 0
+icon = ExtResource("1_0d6kt")

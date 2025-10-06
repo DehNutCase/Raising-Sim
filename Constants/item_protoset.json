@@ -193,4 +193,16 @@
 		"special_type": "card_pack",
 		"card_pack": "res://Scenes/CardGame/Card/CardPacks/color_card_pack.tres",
 	},
+	"forbidden_card_pack": {
+		"daily_stats": "{}",
+		"talent": "forbidden_card_pack",
+		"description": "A card pack filled with forbidden spells. Not everything in the pack is banned from competitive play, but it's not like it matters either way. One of the perks of working her majesty is that ban lists are more like suggestions than actual rules.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/sphere02_01_Chained.png",
+		"limit": 10,
+		"name": "Forbidden Card Pack",
+		"price": 5000,
+		"stats": "{}",
+		"special_type": "card_pack",
+		"card_pack": "res://Scenes/CardGame/Card/CardPacks/forbidden_card_pack.tres",
+	},
 }

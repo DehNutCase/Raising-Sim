@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=7 format=3 uid="uid://bowdk8hhlsxbr"]
+[gd_resource type="Resource" script_class="Deck" load_steps=9 format=3 uid="uid://bowdk8hhlsxbr"]
 
-[ext_resource type="Resource" uid="uid://bauon8hu41jtp" path="res://Scenes/CardGame/Characters/Mao/Cards/lightning_bolt.tres" id="1_b4ydp"]
-[ext_resource type="Resource" uid="uid://d0me0g4p8kkw" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_invocation.tres" id="2_lbnbe"]
-[ext_resource type="Resource" uid="uid://f474xn1lyea4" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_ritual.tres" id="3_pextg"]
-[ext_resource type="Resource" uid="uid://bhnauj5mkri3b" path="res://Scenes/CardGame/Characters/Mao/Cards/detonate.tres" id="4_b8ld2"]
-[ext_resource type="Resource" uid="uid://caltw50egsl4e" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_casting.tres" id="5_ku6iq"]
+[ext_resource type="Resource" uid="uid://b51o4twhsj7ds" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_utopia.tres" id="1_yg6wu"]
+[ext_resource type="Resource" uid="uid://b46opqusteu15" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_bonk.tres" id="2_s8m5o"]
+[ext_resource type="Resource" uid="uid://bm1hs0di233yq" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_casting.tres" id="3_dj5du"]
+[ext_resource type="Resource" uid="uid://dkt6uu2mjf51p" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_fireball.tres" id="4_8etdh"]
+[ext_resource type="Resource" uid="uid://6wjs0vw5ofku" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_invocation.tres" id="5_uwuop"]
 [ext_resource type="Script" path="res://Scenes/CardGame/Card/Deck.gd" id="6_0ug13"]
+[ext_resource type="Resource" uid="uid://b1kopyrgnmqtl" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_lightning.tres" id="6_ubgd3"]
+[ext_resource type="Resource" uid="uid://do6xxq65jla4u" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_ritual.tres" id="7_wj21y"]
 
 [resource]
 script = ExtResource("6_0ug13")
-cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_b4ydp"), ExtResource("1_b4ydp"), ExtResource("2_lbnbe"), ExtResource("3_pextg"), ExtResource("3_pextg"), ExtResource("4_b8ld2"), ExtResource("5_ku6iq"), ExtResource("5_ku6iq")])
+cards = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("1_yg6wu"), ExtResource("2_s8m5o"), ExtResource("2_s8m5o"), ExtResource("2_s8m5o"), ExtResource("3_dj5du"), ExtResource("3_dj5du"), ExtResource("4_8etdh"), ExtResource("4_8etdh"), ExtResource("5_uwuop"), ExtResource("5_uwuop"), ExtResource("6_ubgd3"), ExtResource("6_ubgd3"), ExtResource("7_wj21y"), ExtResource("7_wj21y")])

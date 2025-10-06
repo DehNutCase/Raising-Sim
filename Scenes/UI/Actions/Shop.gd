@@ -31,6 +31,13 @@ func update_buttons():
 					node.queue_free()
 				current_children.erase(item.get_title())
 			continue
+			
+		if "talent" in item_data and !(item_data.talent in Player.talent_tree):
+			if item.get_title() in current_children.keys():
+				for node in current_children[item.get_title()]:
+					node.queue_free()
+				current_children.erase(item.get_title())
+			continue
 
 		if "limit" in item_data:
 			var amount_item = len(Player.inventory.get_items_with_prototype_id(id))

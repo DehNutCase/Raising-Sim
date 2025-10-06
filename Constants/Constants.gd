@@ -3494,6 +3494,17 @@ const talents = {
 		"description": "By unlocking the power of Anger, you get stronger whenever you get hit! It's awfully stressful to be angry, though.\n\nStart with an additional 3 stacks of Anger during duels.",
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element21_01.png",
 	},
+	"forbidden_card_pack" = {
+		"label": "Forbidden Card Pack",
+		"tier": 0,
+		"cost": 3,
+		"max_stacks": 1,
+		"daily_stats": {"magic": 5, "scholarship":5,},
+		"max_stats": {"magic": 50, "scholarship": 50,},
+		"card": "res://Scenes/CardGame/Characters/Mao/Cards/forbidden_ritual.tres",
+		"description": "After bothering her majesty for a few days, she finally relented and taught you some super duper forbidden spells. Unlocks a new card pack in the shop.\n\nNot nearly as dangerous as it sounds.",
+		"icon": "res://Art/Mori no oku no kakurezato/CardGame/Edited/sphere02_01_Chained.png",
+	},
 	"holy_sword_liberation" = {
 		"label": "Holy Sword (Liberation)",
 		"tier": 5, 
