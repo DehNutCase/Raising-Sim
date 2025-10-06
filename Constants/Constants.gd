@@ -3496,7 +3496,7 @@ const talents = {
 	},
 	"forbidden_card_pack" = {
 		"label": "Forbidden Card Pack",
-		"tier": 0,
+		"tier": 4,
 		"cost": 3,
 		"max_stacks": 1,
 		"daily_stats": {"magic": 5, "scholarship":5,},
