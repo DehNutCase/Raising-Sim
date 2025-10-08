@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgduepcisex0h"]
+[gd_scene load_steps=10 format=3 uid="uid://cgduepcisex0h"]
 
 [ext_resource type="Script" path="res://Art/Dialogic/CustomVisualNovelStyleFastForward/OverlayHistory/history_layer.gd" id="1_4mqm3"]
 [ext_resource type="PackedScene" uid="uid://cuoywrmvda1yg" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.tscn" id="2_x1xgk"]
 [ext_resource type="Theme" uid="uid://bpmpi75l7q4kv" path="res://Art/Themes/DefaultButtonTheme.tres" id="3_kyyx0"]
-[ext_resource type="Texture2D" uid="uid://0tq2ptiphuep" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_RightArrow3.png" id="3_nrdnd"]
 [ext_resource type="Script" path="res://Art/Dialogic/CustomVisualNovelStyleFastForward/OverlayHistory/AutoSkip.gd" id="3_pc3tq"]
-[ext_resource type="Texture2D" uid="uid://c3jj7xm78tnoa" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_RightArrow3.png" id="4_6em7s"]
+[ext_resource type="Texture2D" uid="uid://tv17peomthqw" path="res://Art/UI/Mori no oku no kakurezato/talk_icon03_1.png" id="4_vpsb1"]
+[ext_resource type="Texture2D" uid="uid://b3kooym37elys" path="res://Art/UI/Mori no oku no kakurezato/talk_icon03_3.png" id="5_rbul0"]
+[ext_resource type="Texture2D" uid="uid://bmkhcfvt01b2m" path="res://Art/UI/Mori no oku no kakurezato/talk_icon05_1.png" id="6_3l1ok"]
+[ext_resource type="Texture2D" uid="uid://bgid5bfgcmvc8" path="res://Art/UI/Mori no oku no kakurezato/talk_icon05_3.png" id="7_dgms3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hdvb"]
 content_margin_left = 10.0
@@ -57,7 +59,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ShowHistory" type="Button" parent="."]
+[node name="ShowHistory" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -70,7 +72,10 @@ grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_kyyx0")
-text = "History"
+texture_normal = ExtResource("4_vpsb1")
+texture_pressed = ExtResource("5_rbul0")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="AutoSkip" type="TextureButton" parent="."]
 layout_mode = 1
@@ -83,8 +88,8 @@ offset_right = -107.0
 offset_bottom = 48.0
 grow_horizontal = 0
 toggle_mode = true
-texture_normal = ExtResource("3_nrdnd")
-texture_pressed = ExtResource("4_6em7s")
+texture_normal = ExtResource("6_3l1ok")
+texture_pressed = ExtResource("7_dgms3")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("3_pc3tq")

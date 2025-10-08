@@ -1,10 +1,10 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://6stps2itb27m"]
 
-[ext_resource type="Texture2D" uid="uid://bhnen6cn1eq0k" path="res://Art/UI/UI_Mobile_By_VerzatileDev/UI_MobileIndivudals_g966_green.png" id="1_7kgka"]
+[ext_resource type="Texture2D" uid="uid://b506gid4y8dmw" path="res://Art/UI/Mori no oku no kakurezato/menu_button01.png" id="1_5qxpn"]
 
 [resource]
-content_margin_left = 6.0
+content_margin_left = 12.0
 content_margin_top = 6.0
-content_margin_right = 6.0
+content_margin_right = 12.0
 content_margin_bottom = 6.0
-texture = ExtResource("1_7kgka")
+texture = ExtResource("1_5qxpn")
