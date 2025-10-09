@@ -3625,7 +3625,7 @@ const endings = {
 			"events": ["artist"],
 		},
 		"description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
-		"timeline": "",
+		"timeline": "res://Art/NovelAI/1girl, painting (action), detailed style, texture brush, canvas (object), s-1496003425.png",
 	},
 	"meteor_fanatic": {
 		"points": 500,
@@ -3640,14 +3640,47 @@ const endings = {
 		},
 		"description": "Art is a meteor! In pursuit of the biggest bang, you rushed to learn how to summon flaming rocks from the sky. It's a little concerning that they teach spells like this in school.",
 		"timeline": "",
+		"image": "res://Art/NovelAI/1girl, spell casting, wand, fireball, detailed style, texture brush s-673135830.png",
+	},
+	"aspiring_idol": {
+		"points": 500,
+		"label": "Aspiring Idol",
+		"requirements": {
+			"stats": {
+				"art": 1000,
+				"scholarship": 500,
+				"speed": 500,
+			},
+			"lessons_completed": [], #TODO, add singing lessons
+		},
+		"description": "After telling her majesty you wanted to be an idol, she ended up scheduling you for a concert tour during summer break.",
+		"timeline": "",
+		"image": "res://Art/NovelAI/1girl, dutch angle, posing, figure skating, skating rink, stage light, sparkle s-593087485.png",
+	},
+	"knight_apprentice": {
+		"points": 500,
+		"label": "Knight Apprentice",
+		"requirements": {
+			"stats": {
+				"max_hp": 800,
+				"attack": 800,
+				"defense": 800,
+				"speed": 500,
+			},
+			"lessons_completed": [], #TODO, add knight apprentice lessons
+		},
+		"description": "You decided to go to Tara for summer break! It's quite cold even in the summer, but that just means you get to play out of season snowball fights.",
+		"timeline": "",
+		"image": "res://Art/NovelAI/1girl, knight armor, sword raised, fantasy castle, cloudy sky, detailed style, t s-1157204154.png",
 	},
 	"oddly_ordinary": {
 		"points": 50,
 		"label": "Oddly Ordinary",
 		"requirements": {
 		},
-		"description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending.",
+		"description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending. You ended up spending summer break in the palace.",
 		#TODO, update ending timeline,
-		"timeline": "EndingTimeline",
+		"timeline": "EndingTimeline", #Don't use EndingTimeline
+		"image": "res://Art/NovelAI/1girl, three quarter view, scenery, maid, sitting, wooden chair, hands on lap, s-3799695398.png",
 	},
 }
