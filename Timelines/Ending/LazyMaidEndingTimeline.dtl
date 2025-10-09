@@ -1,0 +1,5 @@
+[background arg="res://Art/NovelAI/1girl, three quarter view, scenery, sitting, wooden chair, hands on lap, slouch s-2216653560.png" fade="0.0"]
+do Player.play_song("sleep")
+[history action="clear"]
+Rice_Portrait (Normal): Is it alright to let her be?
+Morgan_Portrait (Grin): Good morning, Mao. Would you like me to read your fortune?

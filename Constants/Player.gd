@@ -153,7 +153,7 @@ signal experience_gained(growth_data)
 
 @export var experience = 0
 @export var experience_total = 0
-@export var experience_required = 200
+@export var experience_required = Constants.constants.BASE_EXP_REQUIRED
 
 @export var perspectives = {}
 
@@ -162,7 +162,7 @@ signal experience_gained(growth_data)
 var background_thread := Thread.new()
 
 func get_required_experience(l) -> int:
-	return int(pow(1.1, l) * 200)
+	return int(pow(1.1, l) * Constants.constants.BASE_EXP_REQUIRED)
 
 func gain_experience(amount: int) -> void:
 	var starting_level = Player.stats.level

@@ -1134,6 +1134,7 @@ const constants = {
 	'TIMES_OF_DAY' = ['morning', 'afternoon', 'night', 'bedtime'],
 	'TALENT_TIERS' = 11,
 	'BASE_COURSE_PROGRESS' = 1000,
+	'BASE_EXP_REQUIRED' = 100,
 	'JOB_EVENT_ODDS' = 40, #The percentage chance of triggering a job event
 	'BEDTIME_EVENT_ODDS' = 20,
 	'TOAST_TIMEOUT_DURATION' = .5,
@@ -3673,14 +3674,13 @@ const endings = {
 		"timeline": "",
 		"image": "res://Art/NovelAI/1girl, knight armor, sword raised, fantasy castle, cloudy sky, detailed style, t s-1157204154.png",
 	},
-	"oddly_ordinary": {
+	"lazy_maid": {
 		"points": 50,
-		"label": "Oddly Ordinary",
+		"label": "Lazy Maid",
 		"requirements": {
 		},
 		"description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending. You ended up spending summer break in the palace.",
-		#TODO, update ending timeline,
-		"timeline": "EndingTimeline", #Don't use EndingTimeline
+		"timeline": "LazyMaidEndingTimeline",
 		"image": "res://Art/NovelAI/1girl, three quarter view, scenery, maid, sitting, wooden chair, hands on lap, s-3799695398.png",
 	},
 }

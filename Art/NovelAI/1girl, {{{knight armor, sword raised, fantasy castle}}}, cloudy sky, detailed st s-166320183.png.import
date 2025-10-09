@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gw34tbf6p2l0"
-path="res://.godot/imported/1girl, painting (action), detailed style, texture brush, canvas (object), s-1496003425.png-1cef2794549d3d9035f2576dfd32ba00.ctex"
+uid="uid://tsg1l4n0f815"
+path="res://.godot/imported/1girl, {{{knight armor, sword raised, fantasy castle}}}, cloudy sky, detailed st s-166320183.png-d1399c096e6ba3d008ba9137b93eeef1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/NovelAI/1girl, painting (action), detailed style, texture brush, canvas (object), s-1496003425.png"
-dest_files=["res://.godot/imported/1girl, painting (action), detailed style, texture brush, canvas (object), s-1496003425.png-1cef2794549d3d9035f2576dfd32ba00.ctex"]
+source_file="res://Art/NovelAI/1girl, {{{knight armor, sword raised, fantasy castle}}}, cloudy sky, detailed st s-166320183.png"
+dest_files=["res://.godot/imported/1girl, {{{knight armor, sword raised, fantasy castle}}}, cloudy sky, detailed st s-166320183.png-d1399c096e6ba3d008ba9137b93eeef1.ctex"]
 
 [params]
 
