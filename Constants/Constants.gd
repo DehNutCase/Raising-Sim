@@ -3562,8 +3562,9 @@ const endings = {
 			"events": ["overlord_combat_success"], 
 		},
 		"timeline": "",
-		"description": "You managed to defeat her majesty in a children's card game, that makes you the new Queen of Albion! (Not really.) Although her majesty didn't fight you seriously, it's still an amazing achievement.\n\nYou can probably ask for a county or two on the basis of this achievement.",
+		"description": "You managed to defeat her majesty in a children's card game, that makes you the new Queen of Albion! (Not really.) Although her majesty didn't fight you seriously, it's still an amazing achievement.\n\nYou could probably ask for a county or two on the basis of this achievement.",
 		#TODO, add a new game bonus of starting with a territory to manage
+		"image": "res://Art/NovelAI/1girl, armchair, 1.2__figure four sitting__, from below, princess, looking down, s-1698261205.png",
 	},
 	"scholarly_ink_mage": {
 		"points": 1000,
@@ -3576,7 +3577,25 @@ const endings = {
 			},
 			"courses_completed": ["Core", "Ink Mage"]
 		},
+		"events": ["good_student_final_exam"],
 		"timeline": "ScholarlyInkMageEnding",
+		"description": "After completing your studies, you decided to stay at the academy to teach. It makes you feel a little proud to see Stella seriously taking notes when you're lecturing.",
+		"image": "res://Art/NovelAI/1girl, teaching, chalkboard, detailed style, texture brush, magician's academy, s-1131794432.png",
+	},
+	"assistant_professor": {
+		"points": 500,
+		"label": "Assistant Professor",
+		"requirements": {
+			"stats": {
+				"max_mp": 300,
+				"magic": 300,
+				"scholarship": 500,
+			},
+			"courses_completed": ["Core"]
+		},
+		"timeline": "", #TODO add timeline
+		"description": "You somehow got a job as an assistant professor at the academy. It's actually not because of nepotism, surprisingly enough.",
+		"image": "res://Art/NovelAI/1girl, teaching, chalkboard, detailed style, game cg, chibi, disgustingly adora s-1574729292.png",
 	},
 	"budding_scholar": {
 		"points": 500,
@@ -3589,6 +3608,8 @@ const endings = {
 			"events": ["good_student_final_exam"], #Flag from timeline after defeating final exam
 		},
 		"timeline": "",
+		"description": "You're working hard at your studies every day. In fact, you actually got an invitation to work as an assistant professor at the academy, but you turned it down. You still need to work harder to become a great scholar, but this is a good start.",
+		"image": "res://Art/NovelAI/1girl, detailed style, game cg, studying, library, book, disgustingly adorable, s-1946646752.png",
 	},
 	"beginner_climber": {
 		"points": 250,
@@ -3606,6 +3627,19 @@ const endings = {
 		},
 		"timeline": "",
 	},
+	"artist": {
+		"points": 1000,
+		"label": "Artist",
+		"requirements": {
+			"stats": {
+				"art": 800,
+			},
+			"events": ["artist"],
+		},
+		"description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
+		"timeline": "",
+		"image": "res://Art/NovelAI/1girl, painting (action), detailed style, texture brush, canvas (object), holdin s-3169556590.png",
+	},
 	"beginner_artist": {
 		"points": 100,
 		"label": "Beginner Artist",
@@ -3615,18 +3649,7 @@ const endings = {
 			},
 		},
 		"timeline": "",
-	},
-	"artist": {
-		"points": 500,
-		"label": "Artist",
-		"requirements": {
-			"stats": {
-				"art": 800,
-			},
-			"events": ["artist"],
-		},
-		"description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
-		"timeline": "res://Art/NovelAI/1girl, painting (action), detailed style, texture brush, canvas (object), s-1496003425.png",
+		"image": "res://Art/NovelAI/1girl, painting (action), detailed style, canvas (object), holding paintbrush, d s-591359757.png",
 	},
 	"meteor_fanatic": {
 		"points": 500,
