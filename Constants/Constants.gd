@@ -2593,40 +2593,6 @@ const player_classes = {
 	},
 }
 
-const ending_cards = {
-	#stats = ["max_hp", "max_mp", "attack", "magic", "skill", "agility", "defense", "resistance", "art", "scholarship"],
-	"basic_dumpling": {
-		"stats": {
-			"max_hp": 10,
-			"max_mp": 10,
-			"attack": 10,
-			"magic": 10,
-			"skill": 10,
-			"agility": 10,
-			"defense": 10,
-			"resistance": 10,
-			"art": 10,
-			"scholarship": 10,
-		},
-		"description": "You are a basic Dumpling. Although weak and small, you are well rounded and pleasant to be around. Be careful not to get nibbled on.",
-	},
-	"teru": {
-		"stats": {
-			"max_hp": 10,
-			"max_mp": 10,
-			"attack": 10,
-			"magic": 10,
-			"skill": 10,
-			"agility": 10,
-			"defense": 10,
-			"resistance": 10,
-			"art": 10,
-			"scholarship": 10,
-		},
-		"description": "You are a Teru. Lively and cheerful with ex",
-	}
-}
-
 const missions = {
 	"black_forest_orcs": {
 		"description": "There's a small tribe of orcs living in the Black Forest. Her majesty ordered you to either incorporate them into the kingdom or drive them out.\n\nAlthough the use of force is authorized, going in spells blazing would be the opposite of her majesty's intent. The orcs are valuable human resources.\n\nEncounter Level: 10\nThe wild Dumplings hanging out in the Blessed Plains are a bigger threat. Speaking of Dumplings, the head maid would like you to stop nibbling on the cleaning Dumplings.",
