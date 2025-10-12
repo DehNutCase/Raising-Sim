@@ -2,4 +2,11 @@
 do Player.play_song("sleep")
 [history action="clear"]
 Rice_Portrait (Normal): Is it alright to let her be?
-Morgan_Portrait (Grin): Good morning, Mao. Would you like me to read your fortune?
+Morgan_Portrait (Grin): Why wouldn't it?
+Rice_Portrait (Normal): Don't you sign her paycheck?
+Morgan_Portrait (Grin): She's on her break right now.
+Morgan_Portrait (Grin): Even if she wasn't, I'm not the kind of person who thinks everyone except me should work hard.
+Rice_Portrait (Normal): It's a waste of her talents for you to coddle her like this.
+Morgan_Portrait (Grin): Then let it be wasted.
+Morgan_Portrait (Grin): Of course, you could always try nagging her. She looks up to you, you know?
+Rice_Portrait (Normal): I'll think about it.

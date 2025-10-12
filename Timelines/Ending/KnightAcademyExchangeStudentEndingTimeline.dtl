@@ -1,0 +1,23 @@
+[background arg="res://Art/NovelAI/1girl, {{{knight armor, sword raised, fantasy castle}}}, cloudy sky, detailed st s-166320183.png" fade="0.0"]
+do Player.play_song("upcoming_battle")
+[history action="clear"]
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Excited): Rice look! Rice look! Am I cool or what?
+Rice_Portrait (Normal): If you say so.
+do Player.play_voice("baka")
+Mao_Portrait (Angry): It's fine to praise me sometimes, you know?
+Rice_Portrait (Normal): You certainly worked hard up to now, but isn't that something you would know better than I do?
+do Player.play_voice("proud")
+Mao_Portrait (Smile): Umu! I did a great job!
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): So do you know any fun places we can go? Tara's your hometown, right?
+Rice_Portrait (Normal): I'm not sure you would enjoy my idea of fun, and you don't have permission to enter the Royal Academy in any case.
+Rice_Portrait (Normal): We can try applying for an entry pass to the Tower of Light, I suppose. Assuming you aren't sick of climbing towers by now.
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Excited): Dungeons! Towers! Dumplings!
+Rice_Portrait (Normal): I should mention that the Tower of Light is rather different from the tower you're used to. Don't expect cute enemies in there.
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Aww...
+Rice_Portrait (Normal): In any case, we should head to Nightgale Academy before we do anything else, you should finish your transfer procedures.
+do Player.play_voice("yes_enthusiastic")
+Mao_Portrait (Normal): Yes mom! Teehee.

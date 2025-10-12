@@ -3521,6 +3521,7 @@ const talents = {
 }
 
 const endings = {
+	#Use Player.unlock_perspective to unlock endings, so that everything is in the same place
 	"overlord": {
 		"points": 2550,
 		"label": "Overlord",
@@ -3647,9 +3648,9 @@ const endings = {
 		"timeline": "",
 		"image": "res://Art/NovelAI/1girl, dutch angle, posing, figure skating, skating rink, stage light, sparkle s-593087485.png",
 	},
-	"knight_apprentice": {
-		"points": 500,
-		"label": "Knight Apprentice",
+	"knight_academy_exchange_student": {
+		"points": 1000,
+		"label": "Knight Academy Exchange Student",
 		"requirements": {
 			"stats": {
 				"max_hp": 800,
@@ -3658,10 +3659,26 @@ const endings = {
 				"speed": 500,
 			},
 			"lessons_completed": [], #TODO, add knight apprentice lessons
+			"talents": ["holy_sword_liberation"],
 		},
-		"description": "You decided to go to Tara for summer break! It's quite cold even in the summer, but that just means you get to play out of season snowball fights.",
-		"timeline": "",
+		"description": "You decided to go to Tara for summer break! It's quite cold even in the summer, but that just means you get to play out of season snowball fights.\n\nTara's Royal Academy is a famous institution for training knights. You won't be going there, since the admissions requirements are extremely strict, but even the lesser known academies in Tara are quite amazing.",
+		"timeline": "KnightAcademyExchangeStudentEndingTimeline",
 		"image": "res://Art/NovelAI/1girl, knight armor, sword raised, fantasy castle, cloudy sky, detailed style, t s-1157204154.png",
+	},
+	"trainee_knight": {
+		"points": 500,
+		"label": "Trainee Knight",
+		"requirements": {
+			"stats": {
+				"max_hp": 400,
+				"attack": 500,
+				"defense": 400,
+				"speed": 250,
+			},
+		},
+		"description": "After hearing some stories about Rice and her knight errant days from her majesty, you decided to search for a quest! You don't really know how to swing a sword, and your armor is more decorative than functional, but quests are about having fun.\n\nIt's actually surprisingly hard to find a decent quest in Albion. Her majesty is rather good at her job, despite how she usually acts. Nonetheless, wandering around Albion is a fun way to spend summer break.",
+		"timeline": "TraineeKnightEndingTimeline",
+		"image": "res://Art/NovelAI/1girl, {{{knight armor, sword raised, gauntlets, }}} fantasy castle, cloudy sky, s-3906498853.png",
 	},
 	"lazy_maid": {
 		"points": 50,

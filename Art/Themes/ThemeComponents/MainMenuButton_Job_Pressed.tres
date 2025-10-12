@@ -8,4 +8,3 @@ content_margin_top = 12.0
 content_margin_right = 12.0
 content_margin_bottom = 6.0
 texture = ExtResource("1_i8hyc")
-modulate_color = Color(0.843184, 0.843184, 0.843184, 1)

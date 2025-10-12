@@ -1,0 +1,23 @@
+[background arg="res://Art/NovelAI/1girl, {{{knight armor, sword raised, gauntlets, }}} fantasy castle, cloudy sky, s-3906498853.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("happy")
+Mao_Portrait (Smile): ~Lalala, going on an adventure.~
+do Player.play_voice("laugh")
+Mao_Portrait (Smile): ~Doot doot doot, going on an adventure.~
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): Hey, Rice, how do you normally find quests?
+Rice_Portrait (Normal): Quests?
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): You know, like how you always run into incognito princesses being kidnapped by bandits, or villages being exorted by evil dragons, thing like that.
+Rice_Portrait (Normal): I believe you're mixing me up with someone else. My life wasn't that exciting.
+do Player.play_voice("eh_no_way")
+Mao_Portrait (Normal): You can't fool me! Her majesty told me stories about you!
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): And everyone we meet acts like you're a big deal.
+Rice_Portrait (Normal): Being a 'big deal' and living an exciting life aren't necessarily correlated.
+Rice_Portrait (Normal): Regarding the stories her majesty tells you, you should bear in mind that she rather enjoys looking for trouble whenever she isn't busy.
+Rice_Portrait (Normal): That is to say, it's more likely I was cleaning up after her in those stories of hers.
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): Oh, so I should ask her majesty about finding quests?
+Rice_Portrait (Normal): Please don't.

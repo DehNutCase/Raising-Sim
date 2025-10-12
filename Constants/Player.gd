@@ -276,6 +276,10 @@ func check_ending_requirements(ending: String) -> bool:
 	var tower_level_requirements = requirements.get("tower_level", 0)
 	if !Player.tower_level >= tower_level_requirements:
 		return false
+	var talent_requirements = requirements.get("talents", [])
+	for talent in talent_requirements:
+		if !talent in Player.talent_tree:
+			return false
 	return true
 
 #TODO, put descriptions for each job in the constants file and return it
