@@ -4,7 +4,7 @@ do Player.play_song("cheerful")
 do Player.play_voice("happy")
 Mao_Portrait (Smile): ~Lalala, going on an adventure.~
 do Player.play_voice("laugh")
-Mao_Portrait (Smile): ~Doot doot doot, going on an adventure.~
+Mao_Portrait (Smile): ~Doot doot doot, finding trouble.~
 do Player.play_voice("hmm")
 Mao_Portrait (Normal): Hey, Rice, how do you normally find quests?
 Rice_Portrait (Normal): Quests?
@@ -16,7 +16,7 @@ Mao_Portrait (Normal): You can't fool me! Her majesty told me stories about you!
 do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): And everyone we meet acts like you're a big deal.
 Rice_Portrait (Normal): Being a 'big deal' and living an exciting life aren't necessarily correlated.
-Rice_Portrait (Normal): Regarding the stories her majesty tells you, you should bear in mind that she rather enjoys looking for trouble whenever she isn't busy.
+Rice_Portrait (Normal): Regarding the stories her majesty tells you, you should bear in mind that she rather enjoys making trouble whenever she isn't busy.
 Rice_Portrait (Normal): That is to say, it's more likely I was cleaning up after her in those stories of hers.
 do Player.play_voice("hmm")
 Mao_Portrait (Normal): Oh, so I should ask her majesty about finding quests?

@@ -1,1 +1,34 @@
-#TODO not started
+[background arg="res://Art/NovelAI/1girl, teaching, chalkboard, detailed style, texture brush, magician's academy, s-1131794432.png" fade="0.0"]
+do Player.play_song("sea_adventure")
+[history action="clear"]
+Stella_Portrait (Frown): *Taking notes*
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Victoria wanted me to ask you if there's anything special about Mao's class. Is there? 🤔🤔🤔]
+Stella_Portrait (Sigh): *Mutes phone*
+Stella_Portrait (Frown): *Continues taking notes*
+Lilian_Portrait (Grin): [Why aren't you answering? Wait, do you have me on mute?🫪🫢]🫪
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Take this!🔔🔔🔔🫪]🫪
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Did you know that if you pay enough money, you can use the high priority channels for your messages?💷🧐💷🫪]🫪
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Hah!😉🫪]🫪
+do Player.play_voice("un_yeah")
+Mao_Portrait (Angry): You may leave class to answer that.
+do Player.play_sound_effect("footsteps")
+Stella_Portrait (Frown): Sorry, professor.
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [Don't message me in class, it's rude.]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [You know Mao doesn't mind.🥳She's nice.🫠🫪]🫪
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [All the more reason to be polite to her. And I note that you don't mind that it's also rude to me.]
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [If you insist on hearing an interim report, her ideas on spellcard production are quite interesting.]
+do Player.play_sound_effect("ping")
+Stella_Portrait (Frown): [You might want to take the class yourself, since it's not my speciality.]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Hah, sure.🥳🫪]🫪
+do Player.play_sound_effect("footsteps")
+Stella_Portrait (Frown): (Sorry about that, professor.)
+Mao_Portrait (Angry): *Waves at her to sit down*

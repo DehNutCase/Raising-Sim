@@ -3645,8 +3645,8 @@ const endings = {
 			"lessons_completed": [], #TODO, add singing lessons
 		},
 		"description": "After telling her majesty you wanted to be an idol, she ended up scheduling you for a concert tour during summer break.",
-		"timeline": "",
-		"image": "res://Art/NovelAI/1girl, dutch angle, posing, figure skating, skating rink, stage light, sparkle s-593087485.png",
+		"timeline": "AspiringIdolEndingTimeline",
+		"image": "res://Art/NovelAI/1girl, dutch angle, posing, figure skating, skating rink, sparkle, masterpiec s-2886606358.png",
 	},
 	"knight_academy_exchange_student": {
 		"points": 1000,

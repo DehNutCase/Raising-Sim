@@ -1,0 +1,26 @@
+[background arg="res://Art/NovelAI/1girl, dutch angle, posing, figure skating, skating rink, sparkle, masterpiec s-2886606358.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("laugh")
+Mao_Portrait (Smile): Thanks for coming to my concert, everyone!
+Morgan_Portrait (Grin): (I'm surprised you brought light sticks.)
+Rice_Portrait (Normal): (If necessary, I'm perfectly capable of minding the time, place, and occasion.)
+Morgan_Portrait (Grin): (So this is 'necessary' to you? Fufufu.)
+Rice_Portrait (Normal): (...Leaving that aside, I'm surprised you got her such a large venue. Aren't you worried she'd be nervous?)
+Morgan_Portrait (Grin): (Why would I be worried? I'm not the one who'd be embarassed if this flops.)
+Rice_Portrait (Normal): (I see.)
+do Player.play_song("summer")
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Smile): Umu! Let's start the music!
+Mao_Portrait (Smile): ♫♪♫♪♫
+Rice_Portrait (Normal): (Please don't do that.)
+Morgan_Portrait (Grin): (Hmm? I haven't done anything yet.)
+Rice_Portrait (Normal): (You were about to. Why don't you just wave a light stick like everyone else? You can have one of my spares.)
+Morgan_Portrait (Grin): (Fufufu. Sure.)
+Hiyori_Portrait (Normal): (I've been meaning to ask, but how did you manage to get so many people here? Mao's completely unknown, isn't she?)
+Morgan_Portrait (Grin): (Ah, you might already know this, but did you known I'm the Queen of Albion?)
+Hiyori_Portrait (Normal): (Mom...)
+Morgan_Portrait (Laugh): (Fufufu. Well, in this case I didn't need to do much.)
+Morgan_Portrait (Grin): (It's true she's unknown as a singer, but her artworks are rather widely circulated.)
+Hiyori_Portrait (Normal): (Does it really work like that?)
+Morgan_Portrait (Grin): (It just works.)
