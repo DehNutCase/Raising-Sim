@@ -3619,7 +3619,7 @@ const endings = {
 		"image": "res://Art/NovelAI/1girl, painting (action), detailed style, canvas (object), holding paintbrush, d s-591359757.png",
 	},
 	"meteor_fanatic": {
-		"points": 500,
+		"points": 1000,
 		"label": "Meteor Fanatic",
 		"requirements": {
 			"stats": {
@@ -3630,8 +3630,23 @@ const endings = {
 			"lessons_completed": ["Artillerist Training (Meteor)"],
 		},
 		"description": "Art is a meteor! In pursuit of the biggest bang, you rushed to learn how to summon flaming rocks from the sky. It's a little concerning that they teach spells like this in school.",
-		"timeline": "",
-		"image": "res://Art/NovelAI/1girl, spell casting, wand, fireball, detailed style, texture brush s-673135830.png",
+		"timeline": "MeteorFanaticEndingTimeline",
+		"image": "res://Art/NovelAI/1girl, spell casting, fireball, detailed style, texture brush, fantasy castle, g s-4283241966.png",
+	},
+	"meteor_apprentice": {
+		"points": 500,
+		"label": "Meteor Apprentice",
+		"requirements": {
+			"stats": {
+				"attack": 300,
+				"magic": 500,
+				"max_mp": 500,
+			},
+			"lessons_completed": ["Artillerist Training (Meteor)"],
+		},
+		"description": "Although you learned how to summon meteors, you still feel like they don't make a big enough boom. After getting permission from her majesty, you set out on a journey to discover 'the biggest boom,' or something like that.",
+		"timeline": "MeteorApprenticeEndingTimeline",
+		"image": "res://Art/NovelAI/1girl, spell casting, fireball, detailed style, texture brush, fantasy castle, g s-4283241966.png",
 	},
 	"aspiring_idol": {
 		"points": 500,

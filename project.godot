@@ -31,10 +31,10 @@ ToastParty="*res://addons/toastparty/toast-autoload.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
 SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
 Player="*res://Constants/Player.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
 ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
 ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -119,12 +119,14 @@ directories/dtl_directory={
 "Acolyte0": "res://Timelines/JobEvents/Acolyte0.dtl",
 "Acolyte1": "res://Timelines/JobEvents/Acolyte1.dtl",
 "AfterClassChange": "res://Timelines/Idea/AfterClassChange.dtl",
+"AspiringIdolEndingTimeline": "res://Timelines/Ending/AspiringIdolEndingTimeline.dtl",
 "BankruptPerspective": "res://Timelines/Perspectives/BankruptPerspective.dtl",
 "Bedtime0": "res://Timelines/Bedtime/Bedtime0.dtl",
 "Bedtime1": "res://Timelines/Bedtime/Bedtime1.dtl",
 "Bedtime2": "res://Timelines/Bedtime/Bedtime2.dtl",
 "Bedtime3": "res://Timelines/Bedtime/Bedtime3.dtl",
 "BedtimeFirst": "res://Timelines/Bedtime/BedtimeFirst.dtl",
+"BeginnerArtistEndingTimeline": "res://Timelines/Ending/BeginnerArtistEndingTimeline.dtl",
 "BlackForestOrcs/BlackForestOrcs0": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/BlackForestOrcs/BlackForestOrcs0.dtl",
 "BlackForestOrcs/BlackForestOrcs1": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/BlackForestOrcs/BlackForestOrcs1.dtl",
 "BlackForestOrcs/BlackForestOrcs10": "res://android/build/assetPacks/installTime/src/main/assets/Timelines/BlackForestOrcs/BlackForestOrcs10.dtl",
@@ -238,6 +240,8 @@ directories/dtl_directory={
 "MagecraftEducationFirst": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationFirst.dtl",
 "MagecraftEducationMiddle": "res://Timelines/ActionEvents/Core/Basics of Magecraft/MagecraftEducationMiddle.dtl",
 "MagicLessonPerspective": "res://Timelines/Perspectives/MagicLessonPerspective.dtl",
+"MeteorApprenticeEndingTimeline": "res://Timelines/Ending/MeteorApprenticeEndingTimeline.dtl",
+"MeteorFanaticEndingTimeline": "res://Timelines/Ending/MeteorFanaticEndingTimeline.dtl",
 "MischievousTutoring": "res://Timelines/DayEvents/Random/MischievousTutoring.dtl",
 "MissionRoom": "res://Timelines/TriggeredEvents/MissionRoom.dtl",
 "NewYearsShrine": "res://Timelines/WalkEvents/EventWalks/NewYearsShrine.dtl",

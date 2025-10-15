@@ -1,0 +1,16 @@
+[background arg="res://Art/NovelAI/1girl, detailed style, fantasy castle, game cg, disgustingly adorable, chibi, cl s-3293239114.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("happy")
+Mao_Portrait (Normal): One! Two! One! Two!
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): By the way, why did you tell me to practice water magic if I'm trying to summon meteors?
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): I get fire magic, since they're basically related, but what's the water for?
+Rice_Portrait (Normal): The biggest limiting factor for advanced spells like meteor is how much mana you can access at once. Since you don't have a problem with your actual mana capacity, what's left is throughput and control.
+Rice_Portrait (Normal): Nobody wants you burning everything down, so we're working on control.
+do Player.play_voice("i_see")
+Mao_Portrait (Normal): Am I doing a good job, then?
+Rice_Portrait (Normal): Sure.
+do Player.play_voice("proud")
+Mao_Portrait (Smile): Umu!

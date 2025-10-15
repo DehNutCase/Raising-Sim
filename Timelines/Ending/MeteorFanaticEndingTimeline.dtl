@@ -1,0 +1,25 @@
+[background arg="res://Art/NovelAI/1girl, spell casting, fireball, detailed style, texture brush, fantasy castle, g s-4283241966.png" fade="0.0"]
+do Player.play_song("upcoming_battle")
+[history action="clear"]
+do Player.play_voice("proud")
+Mao_Portrait (Normal): Behold!
+Rice_Portrait (Normal): Try not to do too much collateral damage, at least.
+do Player.play_voice("happy")
+Mao_Portrait (Normal): I'm sure whoever owns this place has insurance! Teehee.
+Rice_Portrait (Normal): Mao.
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Fineee...
+Rice_Portrait (Normal): If you wanted to practice spells, wouldn't the facilities in the capital have been better?
+do Player.play_voice("happy")
+Mao_Portrait (Normal): I can't surprise her majesty that way!
+Rice_Portrait (Normal): You are aware that I report to her, yes?
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Please don't?
+Rice_Portrait (Normal): It's better not to hold unrealistic expectations.
+do Player.play_voice("baka")
+Mao_Portrait (Angry): Meanie! Dummy! Doodoo head!
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): By the way, do you know any good restaurants nearby?
+Rice_Portrait (Normal): I don't know if they'd be to your taste, but I do know of a few.
+do Player.play_voice("looks_delicious")
+Mao_Portrait (Normal): Ehehehe. *Drools*
