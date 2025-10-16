@@ -1,0 +1,24 @@
+[background arg="res://Art/NovelAI/1girl, painting (action), detailed style, texture brush, canvas (object), holdin s-3169556590.png" fade="0.0"]
+do Player.play_song("sea_adventure")
+[history action="clear"]
+do Player.play_voice("un_yeah")
+Mao_Portrait (Smile): Almost done, I can't wait to show this to Rice later.
+Rice_Portrait (Normal): Considering the fact I was here the whole time, I'm not quite sure what you mean by 'later'.
+do Player.play_voice("huh!?")
+Mao_Portrait (Surprised): Ack! Don't look! I'm not ready yet!
+Rice_Portrait (Normal): I believe it's a little too late to make that particular request.
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Uguu...
+Rice_Portrait (Normal): Her majesty would be quite happy to see your new painting when it's done.
+do Player.play_voice("eh_no_way")
+Mao_Portrait (Normal): Eh... Her majesty is a bit...
+do Player.play_voice("sigh")
+Mao_Portrait (Sad): I'm getting worried about the way she's holding on to all my old paintings. It feels like she's planning something, you know?
+Rice_Portrait (Normal): That's not necessarily a bad thing for you.
+do Player.play_voice("eh_no_way")
+Mao_Portrait (Sad): It's not all bad, but her sense of humor is a bit... you know...
+do Player.play_voice("proud")
+Mao_Portrait (Smile): Umu! Finished! You can behold now.
+Rice_Portrait (Normal): I believe I've mentioned this before, but I don't really have an eye for this kind of thing.
+do Player.play_voice("happy")
+Mao_Portrait (Smile): That's fine, just take a look. Teehee.

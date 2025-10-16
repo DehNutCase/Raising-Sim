@@ -1,0 +1,15 @@
+[background arg="res://Art/NovelAI/1girl, detailed style, game cg, studying, library, book, disgustingly adorable, s-1946646752.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+Mao_Portrait (Normal): *Studying seriously*
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Are you free to hang out later? I found a great dessert bar. 🎉🥳🎉]
+do Player.play_sound_effect("ping")
+Mao_Portrait (Normal): [🥳Sure!🥳 When are we going?]
+Mao_Portrait (Normal): *Studying less seriously*
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Whenever's fine, but Victoria's classes are finishing soon, so if we wait a bit we can all go together.🥰🥰🥰]
+do Player.play_sound_effect("ping")
+Mao_Portrait (Normal): [Umu!🫡]
+Mao_Portrait (Normal): *Fidgeting while studying*
+Rice_Portrait (Normal): (It's a little surprising how she manages to get good grades despite studying like this.)

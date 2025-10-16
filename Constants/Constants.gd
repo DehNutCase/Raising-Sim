@@ -3572,9 +3572,8 @@ const endings = {
 				"scholarship": 1000,
 			},
 			"courses_completed": ["Core"],
-			"events": ["good_student_final_exam"], #Flag from timeline after defeating final exam
 		},
-		"timeline": "",
+		"timeline": "BuddingScholarEndingTimeline",
 		"description": "You're working hard at your studies every day. In fact, you actually got an invitation to work as an assistant professor at the academy, but you turned it down. You still need to work harder to become a great scholar, but this is a good start.",
 		"image": "res://Art/NovelAI/1girl, detailed style, game cg, studying, library, book, disgustingly adorable, s-1946646752.png",
 	},
@@ -3604,18 +3603,19 @@ const endings = {
 			"events": ["artist"],
 		},
 		"description": "An artist certified by her majesty herself. Naturally, you're somewhat famous, and the palace has a few of your pieces on display. Strangely, your most famous work is a doodle you did back when you were just starting out. It's more than a little embarrassing.",
-		"timeline": "",
+		"timeline": "ArtistEndingTimeline",
 		"image": "res://Art/NovelAI/1girl, painting (action), detailed style, texture brush, canvas (object), holdin s-3169556590.png",
 	},
 	"beginner_artist": {
-		"points": 100,
+		"points": 250,
 		"label": "Beginner Artist",
 		"requirements": {
 			"stats": {
 				"art": 400,
 			},
 		},
-		"timeline": "",
+		"description": "An aspiring artist. Your paintings are quite good already, but you aren't quite satisfied with yourself. Also, the way her majesty has been collecting everything you make is getting a little concerning.",
+		"timeline": "BeginnerArtistEndingTimeline",
 		"image": "res://Art/NovelAI/1girl, painting (action), detailed style, canvas (object), holding paintbrush, d s-591359757.png",
 	},
 	"meteor_fanatic": {

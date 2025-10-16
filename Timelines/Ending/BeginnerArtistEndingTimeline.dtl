@@ -1,0 +1,31 @@
+[background arg="res://Art/NovelAI/1girl, painting (action), detailed style, canvas (object), holding paintbrush, d s-591359757.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("happy")
+Mao_Portrait (Normal): Rice! Rice! Do you think this looks good?
+Rice_Portrait (Normal): I'm afraid I don't really have an eye for this kind of thing. But it looks fine to me.
+Hiyori_Portrait (Normal): It looks a bit simple compared to what you usually draw, I think?
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): I wanted to try something cute this time.
+do Player.play_voice("hate")
+Mao_Portrait (Angry): And don't tell her majesty about this, okay? Her collection is getting really scary.
+Hiyori_Portrait (Normal): Most people would be honored to have mom collecting their paintings, you know?
+do Player.play_voice("baka")
+Mao_Portrait (Angry): Hiyori!
+Hiyori_Portrait (Normal): Well, I promise not to tell her. Is that alright?
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): Rice?
+Rice_Portrait (Normal): I believe her majesty already knows.
+Rice_Portrait (Normal): If it makes you feel better, I won't tell her unless she asks.
+do Player.play_voice("sure")
+Mao_Portrait (Normal): I'll take it.
+do Player.play_voice("proud")
+Mao_Portrait (Normal): I think I'll do a portrait next. Rice, do you want to model for me?
+Rice_Portrait (Normal): I'll pass.
+Hiyori_Portrait (Normal): What about me?
+do Player.play_voice("really?")
+Mao_Portrait (Surprised): Isn't there a law against painting you or something?
+Hiyori_Portrait (Normal): This is the first time I've heard something like that. Rice?
+Rice_Portrait (Normal): There isn't.
+do Player.play_voice("amazing")
+Mao_Portrait (Smile): Umu! Portrait time!
