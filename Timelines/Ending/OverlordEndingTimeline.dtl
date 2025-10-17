@@ -1,0 +1,22 @@
+[background arg="res://Art/NovelAI/1girl, armchair, 1.2__figure four sitting__, from below, princess, looking down, s-1698261205.png" fade="0.0"]
+do Player.play_song("upcoming_battle")
+[history action="clear"]
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): This pose is a little uncomfortable.
+do Player.play_voice("sigh")
+Mao_Portrait (Sad): At least the cushions are really soft.
+Mao_Portrait (Angry): *Slaps herself*
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Angry): Focus, Mao! Sitting in the big chair means you have to be serious!
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): ...My face hurts. I thought frowning used less muscles than smiling? Why am I getting cramps?
+Rice_Portrait (Normal): If you're planning to be serious about this, why not go take a look at the administrative department?
+Rice_Portrait (Normal): Not that you should do any paperwork yourself, but you could at least get familiar with what running a country is about.
+do Player.play_voice("huh?")
+Mao_Portrait (Normal): Isn't being a queen about being a figurehead?
+Rice_Portrait (Normal): Were you planning to pose like this for the whole day?
+do Player.play_voice("yes_enthusiastic")
+Mao_Portrait (Excited): It's my job! And it's cool!
+Rice_Portrait (Normal): I see. Well, just to be clear, nobody is forcing you to sit in that chair for the whole day, so feel free to take breaks.
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): Umu!

@@ -620,7 +620,7 @@ var voices = {
 	"thank_you_polite": load("res://Voice/Sakura An/Misc/Thank you polite.wav"),
 	"keep_it_up": load("res://Voice/Sakura An/Misc/Keep it up.wav"),
 	"un_yeah": load("res://Voice/Sakura An/Misc/Un (yeah).wav"),
-	"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"),
+	"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"), #yata
 	"yes_enthusiastic": load("res://Voice/Sakura An/Misc/Yes(Enthusiastic).wav"),
 	"yes_reluctant": load("res://Voice/Sakura An/Misc/Yes(Reluctant).wav"),
 	"oh!": load("res://Voice/Sakura An/Misc/Oh!.wav"),
@@ -642,6 +642,7 @@ var voices = {
 	"sorry": load("res://Voice/Sakura An/Misc/Sorry.wav"),
 	"sorry_polite": load("res://Voice/Sakura An/Misc/Sorry polite.wav"),
 	"eh_no_way": load("res://Voice/Sakura An/Misc/Uh...(No way).wav"),
+	"that_was_close": load("res://Voice/Sakura An/Misc/That was close.wav"),
 	
 	"looks_delicious": load("res://Voice/Sakura An/Misc/Looks Delicious!.wav"),
 	"huh?": load("res://Voice/Sakura An/Misc/huh？.wav"),

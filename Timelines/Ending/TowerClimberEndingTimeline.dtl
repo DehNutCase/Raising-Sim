@@ -1,0 +1,28 @@
+[background arg="res://Art/NovelAI/1girl, tarot cards, magical girl, magic circle, location, fantasy castle, rabbit s-424586530.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("happy")
+Mao_Portrait (Normal): My turn, draw!
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): Let's see, with this hand I should play the rituals first so I have space to add more Bonks to my hand.
+do Player.play_voice("proud")
+Mao_Portrait (Normal): Umu! Secret Technique: Seven Consecutive Bonks!
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Excited): Bonk! Bonk! Bonk! Bonk! Bonk! Bonk!
+Rice_Portrait (Normal): That was six, not seven.
+do Player.play_voice("happy")
+Mao_Portrait (Normal): I bonked once to start everything, silly!
+Rice_Portrait (Normal): I see.
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Excited): Now to play the draw spells!
+do Player.play_voice("happy")
+Mao_Portrait (Excited): More rituals! More draw spells! More Bonks! Yay!
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Why do I keep drawing Bonks? I can't keep playing if I only draw Bonks...
+do Player.play_voice("sigh")
+Mao_Portrait (Sad): I have to end my turn here...
+Rice_Portrait (Normal): Have you considered using spells to remove the Bonks from your discard pile before casting draw spells?
+do Player.play_voice("laugh")
+Mao_Portrait (Normal): I can't bonk people if I don't draw my Bonks, silly!
+Rice_Portrait (Normal): (Considering she has a spell to stuff six of them into her hand, I don't get her insistence on hard drawing them.)
+Rice_Portrait (Normal): (Well, this is ignoring the fact she insists on casting all her Bonks in the first place...)

@@ -1,0 +1,25 @@
+[background arg="res://Art/NovelAI/1girl, tarot cards, magical girl, magic circle, chibi, disgustingly adorable, lo s-125060136.png" fade="0.0"]
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("happy")
+Mao_Portrait (Normal): My turn, draw!
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Aww...
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Normal): Let's try that again! My turn, draw!
+do Player.play_voice("yay!")
+Mao_Portrait (Smile): Umu!
+do Player.play_voice("keep_it_up")
+Mao_Portrait (Normal): One more time. My turn, draw!
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Aww...
+Rice_Portrait (Normal): If you don't mind me asking, what are you doing?
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): I'm building up my bond with my deck!
+Rice_Portrait (Normal): Bond?
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): You know, the heart of the cards, the power of friendship, the ace up my sleeve.
+Rice_Portrait (Normal): That last one is called cheating.
+do Player.play_voice("baka")
+Mao_Portrait (Normal): It's a figure of speech! Anyway, by practicing like this, I can draw the cards I want easier.
+Rice_Portrait (Normal): (I wonder if I should tell her that's not how it works, and she should work on deckbuilding fundamentals instead.)

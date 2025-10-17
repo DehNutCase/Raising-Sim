@@ -3528,7 +3528,7 @@ const endings = {
 		"requirements": {
 			"events": ["overlord_combat_success"], 
 		},
-		"timeline": "",
+		"timeline": "OverlordEndingTimeline",
 		"description": "You managed to defeat her majesty in a children's card game, that makes you the new Queen of Albion! (Not really.) Although her majesty didn't fight you seriously, it's still an amazing achievement.\n\nYou could probably ask for a county or two on the basis of this achievement.",
 		#TODO, add a new game bonus of starting with a territory to manage
 		"image": "res://Art/NovelAI/1girl, armchair, 1.2__figure four sitting__, from below, princess, looking down, s-1698261205.png",
@@ -3545,7 +3545,7 @@ const endings = {
 			"courses_completed": ["Core", "Ink Mage"]
 		},
 		"events": ["good_student_final_exam"],
-		"timeline": "ScholarlyInkMageEnding",
+		"timeline": "ScholarlyInkMageEndingTimeline",
 		"description": "After completing your studies, you decided to stay at the academy to teach. It makes you feel a little proud to see Stella seriously taking notes when you're lecturing.",
 		"image": "res://Art/NovelAI/1girl, teaching, chalkboard, detailed style, texture brush, magician's academy, s-1131794432.png",
 	},
@@ -3560,7 +3560,7 @@ const endings = {
 			},
 			"courses_completed": ["Core"]
 		},
-		"timeline": "", #TODO add timeline
+		"timeline": "AssistantProfessorEndingTimeline",
 		"description": "You somehow got a job as an assistant professor at the academy. It's actually not because of nepotism, surprisingly enough.",
 		"image": "res://Art/NovelAI/1girl, teaching, chalkboard, detailed style, game cg, chibi, disgustingly adora s-1574729292.png",
 	},
@@ -3577,21 +3577,25 @@ const endings = {
 		"description": "You're working hard at your studies every day. In fact, you actually got an invitation to work as an assistant professor at the academy, but you turned it down. You still need to work harder to become a great scholar, but this is a good start.",
 		"image": "res://Art/NovelAI/1girl, detailed style, game cg, studying, library, book, disgustingly adorable, s-1946646752.png",
 	},
+	"tower_climber": {
+		"points": 450,
+		"label": "Tower Climber",
+		"requirements": {
+			"tower_level": 21,
+		},
+		"description": "You finished climbing the tower! At least, all the levels Rice would let you climb. At this point, you're one of the better duelists of your generation.\n\nUnfortunately, you don't really have a chance to play in tournaments since her majesty insists on making you the 'Designated Winner!' whenever you compete. With big posters everywhere telling everyone that you're supposed to win and the whole thing is rigged or something.\n\nIn fact, she only does this when you're using banned spells in your deck, but you never noticed.",
+		"timeline": "TowerClimberEndingTimeline",
+		"image": "res://Art/NovelAI/1girl, tarot cards, magical girl, magic circle, location, fantasy castle, rabbit s-424586530.png",
+	},
 	"beginner_climber": {
 		"points": 250,
 		"label": "Beginner Climber",
 		"requirements": {
 			"tower_level": 10,
 		},
-		"timeline": "",
-	},
-	"tower_climber": {
-		"points": 450,
-		"label": "Tower Climber",
-		"requirements": {
-			"tower_level": 20,
-		},
-		"timeline": "",
+		"description": "You got really into tower climbing (aka dueling), but you aren't very good at it. After asking permission from her majesty, you went on a journey to become a better duelist.",
+		"timeline": "BeginnerClimberEndingTimeline",
+		"image": "res://Art/NovelAI/1girl, tarot cards, magical girl, magic circle, chibi, disgustingly adorable, lo s-125060136.png",
 	},
 	"artist": {
 		"points": 1000,
