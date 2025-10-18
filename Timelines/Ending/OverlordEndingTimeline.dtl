@@ -10,6 +10,7 @@ do Player.play_voice("keep_it_up")
 Mao_Portrait (Angry): Focus, Mao! Sitting in the big chair means you have to be serious!
 do Player.play_voice("disappointed")
 Mao_Portrait (Sad): ...My face hurts. I thought frowning used less muscles than smiling? Why am I getting cramps?
+Rice_Portrait (Normal): (It's the other way around, not that it matters.)
 Rice_Portrait (Normal): If you're planning to be serious about this, why not go take a look at the administrative department?
 Rice_Portrait (Normal): Not that you should do any paperwork yourself, but you could at least get familiar with what running a country is about.
 do Player.play_voice("huh?")

@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cymgqsk1ufky1"]
+
+[ext_resource type="Texture2D" uid="uid://cssumsmclu8jc" path="res://Art/UI/Mori no oku no kakurezato/Edited/sp_menu_button01_resized.png" id="1_m5bvh"]
+
+[resource]
+content_margin_left = 12.0
+content_margin_top = 8.0
+content_margin_right = 12.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_m5bvh")

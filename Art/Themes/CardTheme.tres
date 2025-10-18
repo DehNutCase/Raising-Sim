@@ -1,9 +1,0 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://be8f6c8dfpryk"]
-
-[ext_resource type="Texture2D" uid="uid://d1cy4q5cjav7f" path="res://Art/UI/Mori no oku no kakurezato/window01.png" id="1_ialo6"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvkvy"]
-texture = ExtResource("1_ialo6")
-
-[resource]
-Panel/styles/panel = SubResource("StyleBoxTexture_rvkvy")
