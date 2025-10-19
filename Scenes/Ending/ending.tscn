@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://di5h8hcjdudlh"]
+[gd_scene load_steps=4 format=3 uid="uid://di5h8hcjdudlh"]
 
 [ext_resource type="Script" path="res://Scenes/Ending/ending.gd" id="1_qx5ms"]
+[ext_resource type="Texture2D" uid="uid://cvi8i71lp2y23" path="res://Art/UI/Mori no oku no kakurezato/battle_chara01.png" id="2_kkq4f"]
+[ext_resource type="Texture2D" uid="uid://cqrswrxhi1hfq" path="res://Art/NovelAI/1girl, armchair, 1.2__figure four sitting__, from below, princess, looking down, s-1698261205.png" id="2_r7wvx"]
 
 [node name="Ending" type="Control"]
 layout_mode = 3
@@ -35,5 +37,21 @@ offset_top = -34.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Play Ending"
+
+[node name="EndingImageHolderTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 324)
+offset_right = 611.0
+offset_bottom = 324.0
+texture = ExtResource("2_kkq4f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="EndingImage" type="Polygon2D" parent="EndingImageHolderTexture"]
+unique_name_in_owner = true
+texture = ExtResource("2_r7wvx")
+texture_offset = Vector2(30, -30)
+texture_scale = Vector2(3.5, 3.5)
+polygon = PackedVector2Array(127, 280, -5, 149, 127, 18, 259, 149)
 
 [connection signal="pressed" from="PlayEndingButton" to="." method="_on_play_ending_button_pressed"]
