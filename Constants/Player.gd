@@ -222,7 +222,7 @@ func set_deck(flag: String) -> void:
 	card_game_deck = load(flag).cards.duplicate()
 	
 #Helper function to calculate ending type and score
-func calculate_ending(final_ending: bool = false):
+func calculate_ending():
 	var score = 0
 	for stat in stats:
 		if "value" in Constants.stats[stat]:
@@ -242,18 +242,16 @@ func calculate_ending(final_ending: bool = false):
 			var ending_score = Constants.endings[ending].points
 			if ending_score > highest_ending_score:
 				highest_ending = ending
-				
-	var highest_ending_info = Constants.endings[highest_ending]
 	
-	if final_ending:
-		var timeline = highest_ending_info.get("timeline")
-		if timeline:
-			Dialogic.start(timeline)
-		await Dialogic.timeline_ended
-		delete_game()
-		SceneLoader.load_scene("res://Scenes/GameTemplate/Menus/MainMenu/MainMenu.tscn")
+	var highest_ending_info = Constants.endings[highest_ending]
+	return [int(score), highest_ending_info.label, highest_ending, endings_reached]
 
-	return [int(score), highest_ending_info.label, highest_ending]
+func play_ending_timeline(ending:String):
+	var ending_info = Constants.endings[ending]
+	var timeline = ending_info.get("timeline")
+	if timeline:
+		Dialogic.start_timeline(timeline)
+	await Dialogic.timeline_ended
 
 func check_ending_requirements(ending: String) -> bool:
 	var requirements = Constants.endings[ending].requirements

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgffn7f7rdaqa"
-path="res://.godot/imported/sg_notice01.png-b03ba4c7d00f0ad8ae244a6a18ad63f2.ctex"
+uid="uid://rhrkagwmpcqh"
+path="res://.godot/imported/shop_popup05.png-f1e14e399f69818c8a633a3d4ef31db3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/Mori no oku no kakurezato/sg_notice01.png"
-dest_files=["res://.godot/imported/sg_notice01.png-b03ba4c7d00f0ad8ae244a6a18ad63f2.ctex"]
+source_file="res://Art/UI/Mori no oku no kakurezato/shop_popup05.png"
+dest_files=["res://.godot/imported/shop_popup05.png-f1e14e399f69818c8a633a3d4ef31db3.ctex"]
 
 [params]
 

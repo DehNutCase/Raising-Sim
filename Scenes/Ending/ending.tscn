@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://di5h8hcjdudlh"]
+[gd_scene load_steps=7 format=3 uid="uid://di5h8hcjdudlh"]
 
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_g07gx"]
 [ext_resource type="Script" path="res://Scenes/Ending/ending.gd" id="1_qx5ms"]
 [ext_resource type="Texture2D" uid="uid://baxaeup27skxy" path="res://Art/NovelAI/1girl, dutch angle, posing, figure skating, skating rink, sparkle, masterpiec s-2886606358.png" id="3_3pprh"]
 [ext_resource type="Texture2D" uid="uid://b50r6papflqbj" path="res://Art/UI/Mori no oku no kakurezato/Edited/battle_chara01_width_edited.png" id="3_m6nop"]
 [ext_resource type="Script" path="res://Scenes/Ending/EndingSelectButton.gd" id="5_picx1"]
+[ext_resource type="Texture2D" uid="uid://rhrkagwmpcqh" path="res://Art/UI/Mori no oku no kakurezato/shop_popup05.png" id="5_ww05l"]
 
 [node name="Ending" type="Control"]
 layout_mode = 3
@@ -19,18 +20,25 @@ theme = ExtResource("1_g07gx")
 script = ExtResource("1_qx5ms")
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -449.5
-offset_right = 449.5
-offset_bottom = 328.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="EndingImageHolderTexture" type="TextureRect" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EndingImageHolderTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/CenterContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(611, 324)
 layout_mode = 2
@@ -39,7 +47,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
-[node name="EndingImage" type="Polygon2D" parent="VBoxContainer/EndingImageHolderTexture"]
+[node name="EndingImage" type="Polygon2D" parent="ScrollContainer/VBoxContainer/CenterContainer/EndingImageHolderTexture"]
 unique_name_in_owner = true
 texture = ExtResource("3_3pprh")
 texture_offset = Vector2(45, -30)
@@ -47,7 +55,7 @@ texture_scale = Vector2(3.5, 3.5)
 polygon = PackedVector2Array(127, 280, -5, 149, 127, 18, 259, 149)
 metadata/_edit_lock_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/EndingImageHolderTexture"]
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer/VBoxContainer/CenterContainer/EndingImageHolderTexture"]
 layout_mode = 0
 offset_left = 260.0
 offset_top = 153.0
@@ -55,17 +63,27 @@ offset_right = 521.0
 offset_bottom = 291.0
 metadata/_edit_lock_ = true
 
-[node name="EndingSelectButton" type="MenuButton" parent="VBoxContainer/EndingImageHolderTexture/CenterContainer"]
+[node name="EndingSelectButton" type="MenuButton" parent="ScrollContainer/VBoxContainer/CenterContainer/EndingImageHolderTexture/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-text = "TEST"
-item_count = 1
-popup/item_0/text = "END"
-popup/item_0/id = 0
+toggle_mode = false
+action_mode = 1
+text = "Endings"
+icon = ExtResource("5_ww05l")
+alignment = 0
+clip_text = true
+icon_alignment = 2
+expand_icon = true
 script = ExtResource("5_picx1")
 
-[node name="EndingText" type="RichTextLabel" parent="VBoxContainer"]
+[node name="EndingText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
+clip_contents = false
 layout_mode = 2
+size_flags_vertical = 3
+fit_content = true
+scroll_active = false
 metadata/_edit_lock_ = true
 
 [node name="PlayEndingButton" type="Button" parent="." groups=["Button"]]

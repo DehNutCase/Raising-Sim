@@ -3650,7 +3650,7 @@ const endings = {
 		},
 		"description": "Although you learned how to summon meteors, you still feel like they don't make a big enough boom. After getting permission from her majesty, you set out on a journey to discover 'the biggest boom,' or something like that.",
 		"timeline": "MeteorApprenticeEndingTimeline",
-		"image": "res://Art/NovelAI/1girl, spell casting, fireball, detailed style, texture brush, fantasy castle, g s-4283241966.png",
+		"image": "res://Art/NovelAI/1girl, detailed style, fantasy castle, game cg, disgustingly adorable, chibi, cl s-3293239114.png",
 	},
 	"aspiring_idol": {
 		"points": 500,
@@ -3682,7 +3682,7 @@ const endings = {
 		},
 		"description": "You decided to go to Tara for summer break! It's quite cold even in the summer, but that just means you get to play out of season snowball fights.\n\nTara's Royal Academy is a famous institution for training knights. You won't be going there, since the admissions requirements are extremely strict, but even the lesser known academies in Tara are quite amazing.",
 		"timeline": "KnightAcademyExchangeStudentEndingTimeline",
-		"image": "res://Art/NovelAI/1girl, knight armor, sword raised, fantasy castle, cloudy sky, detailed style, t s-1157204154.png",
+		"image": "res://Art/NovelAI/1girl, {{{knight armor, sword raised, fantasy castle}}}, cloudy sky, detailed st s-166320183.png",
 	},
 	"trainee_knight": {
 		"points": 500,
@@ -3706,6 +3706,6 @@ const endings = {
 		},
 		"description": "An ending for those who did nothing of note. Not exactly a bad thing, but it's an ordinary ending. You ended up spending summer break in the palace.",
 		"timeline": "LazyMaidEndingTimeline",
-		"image": "res://Art/NovelAI/1girl, three quarter view, scenery, maid, sitting, wooden chair, hands on lap, s-3799695398.png",
+		"image": "res://Art/NovelAI/1girl, three quarter view, scenery, sitting, wooden chair, hands on lap, slouch s-2216653560.png",
 	},
 }

@@ -7,7 +7,7 @@ do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Professor Drake isn't here today, so we can end class early once we're done.
 do Player.play_voice("lets_go")
 Mao_Portrait (Normal): First of all, please remember the dates for the midterms and finals, we won't have any quizzes or other exams except those two, so remember them!
-do Player.play_voice("keep_it_up")
+do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): They're super duper important!
 do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): If you can't make it to class on those days, please let us know as soon as possible and we'll schedule make up exams.
