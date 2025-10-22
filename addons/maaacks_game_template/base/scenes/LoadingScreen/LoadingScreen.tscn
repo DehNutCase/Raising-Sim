@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd0jbh4metflb"]
+[gd_scene load_steps=3 format=3 uid="uid://cd0jbh4metflb"]
 
 [ext_resource type="Script" path="res://addons/maaacks_game_template/base/scenes/LoadingScreen/LoadingScreen.gd" id="1_gbk34"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="2_c68tp"]
-[ext_resource type="LabelSettings" uid="uid://do4j8mhc6qeqr" path="res://Art/Fonts/LabelSettings.tres" id="3_4bphh"]
 
 [node name="LoadingScreen" type="CanvasLayer"]
 process_mode = 3
@@ -59,7 +58,6 @@ theme_override_constants/separation = 50
 unique_name_in_owner = true
 layout_mode = 2
 text = "Loading..."
-label_settings = ExtResource("3_4bphh")
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer"]

@@ -1,7 +1,22 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dlhcpidg6dmi8"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dlhcpidg6dmi8"]
 
 [ext_resource type="StyleBox" uid="uid://bx3avxxgv8s8y" path="res://Art/Themes/ThemeComponents/TalentTreeStyleBox.tres" id="1_71od6"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ou1um"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_saioh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1s6fh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agkxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmsad"]
+
 [resource]
+Button/styles/disabled = SubResource("StyleBoxEmpty_ou1um")
+Button/styles/focus = SubResource("StyleBoxEmpty_saioh")
+Button/styles/hover = SubResource("StyleBoxEmpty_1s6fh")
+Button/styles/normal = SubResource("StyleBoxEmpty_agkxw")
+Button/styles/pressed = SubResource("StyleBoxEmpty_hmsad")
 PanelContainer/styles/panel = ExtResource("1_71od6")
 VBoxContainer/constants/separation = 16

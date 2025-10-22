@@ -156,6 +156,7 @@ signal experience_gained(growth_data)
 @export var experience_required = Constants.constants.BASE_EXP_REQUIRED
 
 @export var perspectives = {}
+@export var endings = {}
 
 @export var new_game_plus_bonuses = {}
 
@@ -386,7 +387,7 @@ func delete_game():
 	#get_tree().quit()
 	
 func save_perspectives() -> void:
-	var save_data = perspectives
+	var save_data = {"perspectives": perspectives, "endings": endings,}
 	var save_file
 	DirAccess.make_dir_recursive_absolute("user://Saves")
 	save_file = FileAccess.open("user://Saves/perspectives_save.json", FileAccess.WRITE)
@@ -407,10 +408,15 @@ func load_perspectives() -> void:
 		printerr("load_perspectives JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 		return
 	var data = json.get_data()
-	perspectives = data
+	perspectives = data.get("perspectives", {})
+	endings = data.get("endings", {})
 
 func unlock_perspective(perspective: String) -> void:
 	perspectives[perspective] = true
+	save_perspectives()
+
+func unlock_ending(ending: String) -> void:
+	endings[ending] = true
 	save_perspectives()
 
 func save_class_change_card(class_change_name:String):

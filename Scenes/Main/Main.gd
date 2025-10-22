@@ -1308,15 +1308,21 @@ func _on_talent_button_pressed(talent: String):
 		await get_tree().create_timer(.1).timeout
 		_on_reward_signal(talent_data)
 
-func _on_play_ending_button_pressed():
+func _on_play_ending_button_pressed(ending=null):
+	if !ending:
+		printerr("No ending for _on_play_ending_button_pressed")
+		return
 	if popup.is_visible_in_tree():
 		return
-	popup.set_text("Are you sure? (Playing the ending will delete the current save)") 
+	popup.set_text("Watch the ending scene?") 
 	popup.show()
 	
 	var play_ending = await popup.button_clicked
 	if play_ending:
-		Player.calculate_ending(true)
+		#TODO, synch with ending's ending
+		#Currently doesn't play the selected ending
+		Player.unlock_ending(ending)
+		Player.play_ending_timeline(ending)
 
 func _on_game_over_dialog_canceled():
 	Player.delete_game()
