@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://sei4olt0fg8o" path="res://Art/UI/Mori no oku no kakurezato/Edited/menu_button04_size_edited.png" id="1_sokft"]
 
 [resource]
-content_margin_left = 18.0
+content_margin_left = 24.0
 content_margin_top = 12.0
-content_margin_right = 18.0
+content_margin_right = 24.0
 content_margin_bottom = 6.0
 texture = ExtResource("1_sokft")
 region_rect = Rect2(20, 0, 455, 105)

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b506gid4y8dmw" path="res://Art/UI/Mori no oku no kakurezato/menu_button01.png" id="1_ss6tc"]
 
 [resource]
-content_margin_left = 18.0
+content_margin_left = 24.0
 content_margin_top = 6.0
-content_margin_right = 18.0
+content_margin_right = 24.0
 content_margin_bottom = 6.0
 texture = ExtResource("1_ss6tc")

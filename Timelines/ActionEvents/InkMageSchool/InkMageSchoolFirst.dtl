@@ -20,7 +20,7 @@ Mao_Portrait (Normal): I hope she feels better soon.
 join Victoria (Frown) 4 [animation="Slide In Right" length="2" mirrored="true"]
 update Mao 1 [ move_time="1"]
 do Player.play_voice("happy")
-Mao_Portrait (Normal): Walking to class~. Walking to class~.
+Mao_Portrait (Normal): Walking to class♫. Walking to class♫.
 update Victoria (Frown)
 Victoria_Portrait (Frown): There's no need to be so formal with me at this point.
 Victoria_Portrait (Frown): Ah. Please leave me alone for a while, I'll see you in class.
@@ -54,7 +54,7 @@ do Player.play_voice("un_yeah")
 Mao_Portrait (Normal): Well she likes you a lot!
 Victoria_Portrait (Frown): (This girl is surprisingly difficult to talk to. I should leave before I get a headache.)
 Victoria_Portrait (Frown): I'll just say my piece and we can both be on our way. Things are quite peaceful right now, and I believe it's everyone's opinion that it should stay that way.
-Victoria_Portrait (Frown): Sometimes, doing nothing at all is the best choice.
+Victoria_Portrait (Frown): That is to say, there's nothing wrong with not doing anything.
 [signal arg="{"sound_effect": "footsteps"}"]
 update Victoria 4 [ mirrored="true" move_time="2"]
 update Mao [animation="Tada" length="1"]

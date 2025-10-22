@@ -3515,7 +3515,7 @@ const talents = {
 		"new_game_plus_bonuses": {
 			"stats": {"talent_points": 5,}
 		},
-		"description": "The ability to teleport from where you are to where you are. It's a very advanced spell. Definitely. Cough.\n\nIf you reach the ending with this talent unlocked, you'll start with additional talent points in future games.",
+		"description": "The ability to teleport from where you are to where you are. It's a very advanced spell. Definitely. Cough.\n\nYou start a new game with additional talent points.",
 		"icon": "res://Art/KikariStore/Resized/e1a.png",
 	},
 }
