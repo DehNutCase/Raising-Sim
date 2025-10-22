@@ -4,7 +4,7 @@
 		"description": "An employee of the royal family. Unconditional access to part time jobs and academy classes. Monthly salary of 1000g.",
 		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/crown01_01.png",
 		"monthly_stats": "{\n\"gold\": 1000\n}",
-		"name": "Roya Backing",
+		"name": "Royal Backing",
 		"stats": "{}",
 	},
 	"ink_mage": {
