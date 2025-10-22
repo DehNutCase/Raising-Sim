@@ -23,7 +23,7 @@ do Player.play_voice("happy")
 Mao_Portrait (Normal): Walking to class♫. Walking to class♫.
 update Victoria (Frown)
 Victoria_Portrait (Frown): There's no need to be so formal with me at this point.
-Victoria_Portrait (Frown): Ah. Please leave me alone for a while, I'll see you in class.
+Victoria_Portrait (Frown): Ah. Please go on ahead, I'll see you in class.
 [signal arg="{"sound_effect": "footsteps"}"]
 update Victoria 3 [ mirrored="false" move_time="2"]
 Victoria_Portrait (Frown): Miss Mao, I believe? May I have a moment?

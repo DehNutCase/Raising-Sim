@@ -47,7 +47,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="CompleteQuestButton" type="Button" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="CompleteQuestButton" type="Button" parent="CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -56,4 +62,4 @@ disabled = true
 text = "Complete Quest"
 
 [connection signal="item_clicked" from="HBoxContainer/PanelContainer/QuestList" to="." method="_on_quest_list_item_clicked"]
-[connection signal="pressed" from="CompleteQuestButton" to="." method="_on_complete_quest_button_pressed"]
+[connection signal="pressed" from="CenterContainer/CompleteQuestButton" to="." method="_on_complete_quest_button_pressed"]

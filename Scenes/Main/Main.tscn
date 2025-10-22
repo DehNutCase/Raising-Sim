@@ -28,7 +28,6 @@
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/Courses.gd" id="23_kxw1b"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
-[ext_resource type="Texture2D" uid="uid://c8pwpm2tkgmmu" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g995.png" id="25_dofej"]
 [ext_resource type="Script" path="res://Scenes/Main/CourseSchedule.gd" id="25_ge7ht"]
 [ext_resource type="Theme" uid="uid://0yntxwkhwndv" path="res://Art/Themes/CourseScheduleTheme.tres" id="25_ntj3d"]
 [ext_resource type="PackedScene" uid="uid://bulj0juk270wj" path="res://Scenes/Dialogic/DialogicViewport.tscn" id="26_25225"]
@@ -48,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://q84u4t3lxanj" path="res://Scenes/UI/Popup/Popup.tscn" id="43_ck6uc"]
 [ext_resource type="PackedScene" uid="uid://di5h8hcjdudlh" path="res://Scenes/Ending/ending.tscn" id="43_ymd8e"]
 [ext_resource type="Script" path="res://Scenes/Main/Deck.gd" id="44_3cuex"]
+[ext_resource type="Texture2D" uid="uid://dw5ntd2m3uejy" path="res://Art/UI/UI_Mobile_By_VerzatileDev/Mobile_UI_Indivudually/UI_MobileIndivudals_g996.png" id="44_3hcil"]
 [ext_resource type="Texture2D" uid="uid://ftrly7krq5wf" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_ShoppingCart.png" id="45_03wx0"]
 [ext_resource type="Texture2D" uid="uid://dkqjjjb8c2ysi" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Book.png" id="45_34myw"]
 [ext_resource type="Texture2D" uid="uid://dd2eidg8uwsw2" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Book.png" id="46_oupw1"]
@@ -491,7 +491,7 @@ expand = true
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
 clip_contents = true
-custom_minimum_size = Vector2(1300, 600)
+custom_minimum_size = Vector2(1300, 650)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -506,8 +506,7 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Ui/MenuPanel"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_top = 30
 
 [node name="Lessons" type="VBoxContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
@@ -795,7 +794,7 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="TalentTree" parent="Ui/MenuPanel" instance=ExtResource("42_ya2xs")]
+[node name="TalentTree" parent="Ui/MenuPanel/MarginContainer" instance=ExtResource("42_ya2xs")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -810,7 +809,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_in7em")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_80aij")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_en1ia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_apv3e")
-icon = ExtResource("25_dofej")
+icon = ExtResource("44_3hcil")
 icon_alignment = 2
 vertical_icon_alignment = 0
 expand_icon = true
