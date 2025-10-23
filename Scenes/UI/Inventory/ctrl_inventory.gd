@@ -86,65 +86,11 @@ func _on_list_item_clicked(index: int, at_position: Vector2, mouse_button_index:
 	var tooltip = make_tooltip(item)
 	inventory_item_clicked.emit(tooltip)
 
-func make_tooltip(item):
-	var tooltip = "[center][color=YELLOW]" + item.get_property("name", "") + "[/color][/center]"
-	if item.get_property("name", ""): tooltip += "\n\n"
-	tooltip += item.get_property("description", "Tooltip Error")
-	if tooltip: tooltip += "\n"
-	var daily_stats:Dictionary = item.get_property("daily_stats", {})
-	if (!daily_stats.keys().is_empty()):
-		tooltip += "\nDaily Stats:"
-		for stat in daily_stats.keys():
-			tooltip += " "
-			if (daily_stats[stat] > 0):
-				tooltip += "+"
-			tooltip += str(daily_stats[stat]) + " " + Constants.stats[stat].label
-	
-	var stats:Dictionary = item.get_property("stats", {})
-	if (!stats.keys().is_empty()):
-		tooltip += "\nStats:"
-		for stat in stats.keys():
-			tooltip += " "
-			if (stats[stat] > 0):
-				tooltip += "+"
-			tooltip += str(stats[stat]) + " " + Constants.stats[stat].label
-			
-	var monthly_stats:Dictionary = item.get_property("monthly_stats", {})
-	if (!monthly_stats.keys().is_empty()):
-		tooltip += "\nMonthly Stats:"
-		for stat in monthly_stats.keys():
-			tooltip += " "
-			if (monthly_stats[stat] > 0):
-				tooltip += "+"
-			tooltip += str(monthly_stats[stat]) + " " + Constants.stats[stat].label
-	
-	var max_stats:Dictionary = item.get_property("max_stats", {})
-	if (!max_stats.keys().is_empty()):
-		tooltip += "\nMax Stats:"
-		for stat in max_stats.keys():
-			tooltip += " "
-			if (max_stats[stat] > 0):
-				tooltip += "+"
-			tooltip += str(max_stats[stat]) + " " + Constants.stats[stat].label
-	
-	var min_stats:Dictionary = item.get_property("min_stats", {})
-	if (!min_stats.keys().is_empty()):
-		tooltip += "\nMin Stats:"
-		for stat in min_stats.keys():
-			tooltip += " "
-			if (min_stats[stat] > 0):
-				tooltip += "+"
-			tooltip += str(min_stats[stat]) + " " + Constants.stats[stat].label
-
-	var level_up_stats:Dictionary = item.get_property("level_up_stats", {})
-	if (!level_up_stats.keys().is_empty()):
-		tooltip += "\nLevel Up Stats:"
-		for stat in level_up_stats.keys():
-			tooltip += " "
-			if (level_up_stats[stat] > 0):
-				tooltip += "+"
-			tooltip += str(level_up_stats[stat]) + " " + Constants.stats[stat].label
-	return tooltip
+func make_tooltip(item:InventoryItem):
+	var item_data = {}
+	for key in item.get_properties():
+		item_data[key] = item.get_property(key)
+	return Player.make_stat_tooltip(item_data)
 	
 func _on_list_item_selected(index: int) -> void:
 	inventory_item_selected.emit(_get_inventory_item(index))

@@ -564,6 +564,128 @@ func make_custom_tooltip(text: String) -> Control:
 	rich_text_label.parse_bbcode("[center]" + text + "[/center]")
 	return custom_tooltip
 
+func make_stat_tooltip(data:Dictionary) -> String:
+	data = data.duplicate(true)
+	if !data.get("name"):
+		data.name = data.get("label", "")
+	var tooltip = "[center][color=YELLOW]" + data.name + "[/color][/center]"
+	if data.name: tooltip += "\n\n"
+	tooltip += data.get("description", "Tooltip Error")
+	if tooltip: tooltip += "\n"
+	var daily_stats:Dictionary = data.get("daily_stats", {})
+	if (!daily_stats.keys().is_empty()):
+		tooltip += "\nDaily Stats:"
+		var first = true
+		for stat in daily_stats.keys():
+			if !first:
+				tooltip += ","
+			else:
+				first = false
+			tooltip += " "
+			if (daily_stats[stat] > 0):
+				tooltip += "+"
+			var emoji = ""
+			if Constants.stats[stat].get("emoji"):
+				emoji = Constants.stats[stat].get("emoji")
+			else:
+				emoji = " " + Constants.stats[stat].label
+			tooltip += str(daily_stats[stat]) + emoji
+	
+	var stats:Dictionary = data.get("stats", {})
+	if (!stats.keys().is_empty()):
+		tooltip += "\nStats:"
+		var first = true
+		for stat in stats.keys():
+			if !first:
+				tooltip += ","
+			else:
+				first = false
+			tooltip += " "
+			if (stats[stat] > 0):
+				tooltip += "+"
+			var emoji = ""
+			if Constants.stats[stat].get("emoji"):
+				emoji = Constants.stats[stat].get("emoji")
+			else:
+				emoji = " " + Constants.stats[stat].label
+			tooltip += str(stats[stat]) + emoji
+			
+	var monthly_stats:Dictionary = data.get("monthly_stats", {})
+	if (!monthly_stats.keys().is_empty()):
+		tooltip += "\nMonthly Stats:"
+		var first = true
+		for stat in monthly_stats.keys():
+			if !first:
+				tooltip += ","
+			else:
+				first = false
+			tooltip += " "
+			if (monthly_stats[stat] > 0):
+				tooltip += "+"
+			var emoji = ""
+			if Constants.stats[stat].get("emoji"):
+				emoji = Constants.stats[stat].get("emoji")
+			else:
+				emoji = " " + Constants.stats[stat].label
+			tooltip += str(monthly_stats[stat]) + emoji
+	
+	var max_stats:Dictionary = data.get("max_stats", {})
+	if (!max_stats.keys().is_empty()):
+		tooltip += "\nMax Stats:"
+		var first = true
+		for stat in max_stats.keys():
+			if !first:
+				tooltip += ","
+			else:
+				first = false
+			tooltip += " "
+			if (max_stats[stat] > 0):
+				tooltip += "+"
+			var emoji = ""
+			if Constants.stats[stat].get("emoji"):
+				emoji = Constants.stats[stat].get("emoji")
+			else:
+				emoji = " " + Constants.stats[stat].label
+			tooltip += str(max_stats[stat]) + emoji
+	
+	var min_stats:Dictionary = data.get("min_stats", {})
+	if (!min_stats.keys().is_empty()):
+		tooltip += "\nMin Stats:"
+		var first = true
+		for stat in min_stats.keys():
+			if !first:
+				tooltip += ","
+			else:
+				first = false
+			tooltip += " "
+			if (min_stats[stat] > 0):
+				tooltip += "+"
+			var emoji = ""
+			if Constants.stats[stat].get("emoji"):
+				emoji = Constants.stats[stat].get("emoji")
+			else:
+				emoji = " " + Constants.stats[stat].label
+			tooltip += str(min_stats[stat]) + emoji
+
+	var level_up_stats:Dictionary = data.get("level_up_stats", {})
+	if (!level_up_stats.keys().is_empty()):
+		tooltip += "\nLevel Up Stats:"
+		var first = true
+		for stat in level_up_stats.keys():
+			if !first:
+				tooltip += ","
+			else:
+				first = false
+			tooltip += " "
+			if (level_up_stats[stat] > 0):
+				tooltip += "+"
+			var emoji = ""
+			if Constants.stats[stat].get("emoji"):
+				emoji = Constants.stats[stat].get("emoji")
+			else:
+				emoji = " " + Constants.stats[stat].label
+			tooltip += str(level_up_stats[stat]) + emoji
+	return tooltip
 
 #Helper function for shaking things
 func shake(target: Node, strength: float, duration: float = 0.2) -> void:
