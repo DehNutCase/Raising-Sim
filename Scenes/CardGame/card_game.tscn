@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://l5x5rktt2y2y"]
+[gd_scene load_steps=33 format=3 uid="uid://l5x5rktt2y2y"]
 
 [ext_resource type="Script" path="res://Scenes/CardGame/card_game.gd" id="1_3b07j"]
 [ext_resource type="PackedScene" uid="uid://lcmukph0b1ku" path="res://Scenes/CardGame/EncounterScenes/QuestCombats/overlord_card_game.tscn" id="2_67f33"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bl2icsbl8w5m0" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Caracter.png" id="10_fvy2a"]
 [ext_resource type="Texture2D" uid="uid://d334vuyo27n0j" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Backpack.png" id="10_nnwkb"]
 [ext_resource type="Texture2D" uid="uid://cpflrlaai3j71" path="res://Art/UI/Mori no oku no kakurezato/menu_button02.png" id="11_c5vrd"]
-[ext_resource type="Texture2D" uid="uid://b506gid4y8dmw" path="res://Art/UI/Mori no oku no kakurezato/menu_button01.png" id="11_iokvy"]
 [ext_resource type="Resource" uid="uid://caltw50egsl4e" path="res://Scenes/CardGame/Characters/Mao/Cards/agile_casting.tres" id="11_w62d3"]
 [ext_resource type="Resource" uid="uid://b46opqusteu15" path="res://Scenes/CardGame/Characters/Mao/Cards/forbidden_bonk.tres" id="12_d6ntp"]
 [ext_resource type="Script" path="res://Scenes/CardGame/InventoryItemList.gd" id="12_dhls8"]
@@ -183,7 +182,7 @@ metadata/_edit_lock_ = true
 
 [node name="CardGamePlayer" parent="." instance=ExtResource("5_xa8th")]
 unique_name_in_owner = true
-position = Vector2(160, 180)
+position = Vector2(268, 180)
 deck = Array[Resource("res://Scenes/CardGame/Card/card_resource.gd")]([ExtResource("11_w62d3"), ExtResource("12_d6ntp"), ExtResource("13_kk18i"), ExtResource("14_20fsw"), ExtResource("15_7hg0q"), ExtResource("16_qdyyh"), ExtResource("17_kyxqn"), ExtResource("18_64co5"), ExtResource("13_pmcrt"), ExtResource("12_u1u0p")])
 metadata/_edit_lock_ = true
 
@@ -210,9 +209,7 @@ anchor_right = 1.0
 offset_left = -120.0
 offset_bottom = 35.0
 grow_horizontal = 0
-theme = ExtResource("6_lujsi")
 text = "Flee"
-icon = ExtResource("11_iokvy")
 icon_alignment = 1
 expand_icon = true
 
