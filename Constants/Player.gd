@@ -251,7 +251,7 @@ func play_ending_timeline(ending:String):
 	var ending_info = Constants.endings[ending]
 	var timeline = ending_info.get("timeline")
 	if timeline:
-		Dialogic.start_timeline(timeline)
+		Dialogic.start(timeline)
 	await Dialogic.timeline_ended
 
 func check_ending_requirements(ending: String) -> bool:
