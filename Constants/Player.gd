@@ -572,6 +572,11 @@ func make_stat_tooltip(data:Dictionary) -> String:
 	if data.name: tooltip += "\n\n"
 	tooltip += data.get("description", "Tooltip Error")
 	if tooltip: tooltip += "\n"
+	tooltip += stat_tooltip_helper(data)
+	return tooltip
+
+func stat_tooltip_helper(data:Dictionary) -> String:
+	var tooltip:String = ""
 	var daily_stats:Dictionary = data.get("daily_stats", {})
 	if (!daily_stats.keys().is_empty()):
 		tooltip += "\nDaily Stats:"
@@ -686,7 +691,6 @@ func make_stat_tooltip(data:Dictionary) -> String:
 				emoji = " " + Constants.stats[stat].label
 			tooltip += str(level_up_stats[stat]) + emoji
 	return tooltip
-
 #Helper function for shaking things
 func shake(target: Node, strength: float, duration: float = 0.2) -> void:
 	if not target:

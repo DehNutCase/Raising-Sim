@@ -1,7 +1,7 @@
 class_name CardResource
 extends Resource
 
-enum Type {NONE, ATTACK, BLOCK, REMOVE_FROM_PLAY, STATUS, DRAW, MANA, GOLD, ADD_CARD, HEAL, DISPEL, WIN_DUEL}
+enum Type {NONE, ATTACK, BLOCK, REMOVE_FROM_PLAY, STATUS, DRAW, MANA, STATS, ADD_CARD, HEAL, DISPEL, WIN_DUEL}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE, THIS_CARD, DRAW_PILE, DISCARD_PILE, CARDS_IN_HAND}
 enum EnemyAttackType {MELEE, RANGED, ANIMATION}
 enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
@@ -22,6 +22,7 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 @export var card_to_add: CardResource
 @export var start_sound_effect: AudioStreamWAV
 @export var impact_sound_effect: AudioStreamWAV
+@export_multiline var stats: Dictionary
 
 @export_group("Second Effect Attributes")
 @export var second_target: Target
@@ -30,6 +31,7 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 @export var second_bonus_effect: BonusEffectType
 @export var second_status: CardGameStatusResource
 @export var second_card_to_add: CardResource
+@export_multiline var second_stats: Dictionary
 
 @export_group("Third Effect Attributes")
 @export var third_target: Target
@@ -38,6 +40,7 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 @export var third_bonus_effect: BonusEffectType
 @export var third_status: CardGameStatusResource
 @export var third_card_to_add: CardResource
+@export_multiline var third_stats: Dictionary
 
 @export_group("Card Visuals")
 @export var icon: Texture
@@ -113,6 +116,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 	var this_status
 	var this_target
 	var this_card_to_add
+	var this_stats
 	
 	match effect_number:
 		0:
@@ -121,6 +125,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_status = status
 			this_target = target
 			this_card_to_add = card_to_add
+			this_stats = stats
 			
 			match bonus_effect:
 				BonusEffectType.NONE:
@@ -139,6 +144,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_status = second_status
 			this_target = second_target
 			this_card_to_add = second_card_to_add
+			this_stats = second_stats
 			
 			match second_bonus_effect:
 				BonusEffectType.NONE:
@@ -157,6 +163,7 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			this_status = third_status
 			this_target = third_target
 			this_card_to_add = third_card_to_add
+			this_stats = third_stats
 			
 			match third_bonus_effect:
 				BonusEffectType.NONE:
@@ -187,8 +194,8 @@ func apply_effects(targets: Array[Node], user, effect_number) -> void:
 			apply_remove_from_play(targets, this_target, user)
 		Type.NONE:
 			pass #used when a card doesn't have all effect slots filled
-		Type.GOLD:
-			apply_gold(targets, this_amount, user)
+		Type.STATS:
+			apply_stats(targets, this_stats, user)
 		Type.ADD_CARD:
 			apply_add_card(targets, this_amount, user, this_card_to_add, this_target)
 		Type.HEAL:
@@ -251,16 +258,21 @@ func apply_remove_from_play(targets: Array[Node], this_target, user) -> void:
 		_:
 			printerr("Failed to match this_target in apply_remove_from_play")
 	
-func apply_gold(targets: Array[Node], effect_amount, user) -> void:
-	Player.stats.gold += effect_amount
-	var plus = "+"
-	if (effect_amount < 0):
-		plus = ""
-	ToastParty.show({
-		"text": plus + "%d 🪙" %effect_amount,           # Text (emojis can be used)
-		"gravity": "top",                   # top or bottom
-		"direction": "center",               # left or center or right
-	})
+func apply_stats(targets: Array[Node], stats, user) -> void:
+	if targets[0]:
+		targets[0].get_tree().call_group("Main", "process_stats", stats)
+	else:
+		printerr("no targets[0] in apply_stats")
+	#
+	#Player.stats.gold += effect_amount
+	#var plus = "+"
+	#if (effect_amount < 0):
+		#plus = ""
+	#ToastParty.show({
+		#"text": plus + "%d 🪙" %effect_amount,           # Text (emojis can be used)
+		#"gravity": "top",                   # top or bottom
+		#"direction": "center",               # left or center or right
+	#})
 	
 func apply_add_card(targets: Array[Node], effect_amount, user, this_card_to_add, target) -> void:
 	match target:

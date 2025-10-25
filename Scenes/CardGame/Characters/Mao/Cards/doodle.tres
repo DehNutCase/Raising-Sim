@@ -17,12 +17,18 @@ multi_hit_amount = 0
 animation = ""
 price = 1000
 start_sound_effect = ExtResource("3_4mdeq")
+stats = {}
 second_target = 0
 second_type = 7
-second_effect_amount = 50
+second_effect_amount = 0
 second_bonus_effect = 0
+second_stats = {
+"art": 1,
+"gold": 50
+}
 third_target = 0
 third_type = 0
 third_effect_amount = 0
 third_bonus_effect = 0
+third_stats = {}
 icon = ExtResource("1_gg1jq")

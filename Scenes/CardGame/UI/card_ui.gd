@@ -161,6 +161,7 @@ func _create_tooltip() -> String:
 		var this_target
 		var this_bonus_effect
 		var this_card_to_add
+		var this_stats
 		match i:
 			0:
 				this_type = card.type
@@ -169,6 +170,7 @@ func _create_tooltip() -> String:
 				this_target = card.target
 				this_bonus_effect = card.bonus_effect
 				this_card_to_add = card.card_to_add
+				this_stats = card.stats
 			1:
 				this_type = card.second_type
 				this_amount = card.second_effect_amount
@@ -176,6 +178,7 @@ func _create_tooltip() -> String:
 				this_target = card.second_target
 				this_bonus_effect = card.second_bonus_effect
 				this_card_to_add = card.second_card_to_add
+				this_stats = card.second_stats
 			2:
 				this_type = card.third_type
 				this_amount = card.third_effect_amount
@@ -183,6 +186,7 @@ func _create_tooltip() -> String:
 				this_target = card.third_target
 				this_bonus_effect = card.third_bonus_effect
 				this_card_to_add = card.third_card_to_add
+				this_stats = card.third_stats
 			_:
 				printerr("_create_tooltip effect_number failed to match")
 				
@@ -243,8 +247,8 @@ func _create_tooltip() -> String:
 					_:
 						printerr("card.target failed to match for card.Type.REMOVE_FROM_PLAY")
 				tooltip += "Remove %s from play." %target_label
-			card.Type.GOLD:
-				tooltip += "Gain [color=yellow]%d[/color] gold." % this_amount
+			card.Type.STATS:
+				tooltip += Player.stat_tooltip_helper({"stats": this_stats})
 			card.Type.ADD_CARD:
 				var target_label:String = ""
 				match this_target:
