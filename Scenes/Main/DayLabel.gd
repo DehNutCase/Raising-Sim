@@ -14,5 +14,5 @@ func display_day(day: int):
 	var date: int = day % days_in_month + 1
 	#Don't display year for now
 	#text = " Year: %s \n Season: %s \n Day: %s" % [year, seasons[season], date]
-	text = " Season: %s \n Day: %s" % [seasons[season], date]
+	text = " Season: %s \n Day: %s / 30" % [seasons[season], date]
 	Player.play_song(seasons[season])

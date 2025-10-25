@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://j644dgmwrtbg"]
+
+[ext_resource type="Texture2D" uid="uid://b506gid4y8dmw" path="res://Art/UI/Mori no oku no kakurezato/menu_button01.png" id="1_dgo5t"]
+
+[resource]
+content_margin_left = 24.0
+content_margin_top = 15.0
+content_margin_right = 24.0
+content_margin_bottom = 15.0
+texture = ExtResource("1_dgo5t")
+modulate_color = Color(1, 1, 1, 0.784314)

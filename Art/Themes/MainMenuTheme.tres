@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=28 format=3 uid="uid://ca6asxvhlbu51"]
+[gd_resource type="Theme" load_steps=29 format=3 uid="uid://ca6asxvhlbu51"]
 
 [ext_resource type="StyleBox" uid="uid://cu7faxd3lanv5" path="res://Art/Themes/ThemeComponents/GameOverDialogPopupBackground.tres" id="1_7urri"]
 [ext_resource type="StyleBox" uid="uid://sxr24kvrbpq6" path="res://Art/Themes/ThemeComponents/MainMenuButton_Disabled.tres" id="1_ggqsi"]
 [ext_resource type="StyleBox" uid="uid://ca05p6m8lph5q" path="res://Art/Themes/ThemeComponents/WindowBackground.tres" id="1_olt2s"]
 [ext_resource type="StyleBox" uid="uid://cx3l1vv7823x4" path="res://Art/Themes/ThemeComponents/MainMenuButton_Normal.tres" id="2_o15uc"]
+[ext_resource type="StyleBox" uid="uid://j644dgmwrtbg" path="res://Art/Themes/ThemeComponents/MainMenuButton_Hover.tres" id="3_dwilv"]
 [ext_resource type="StyleBox" uid="uid://bvokgy3my8xrs" path="res://Art/Themes/ThemeComponents/MainMenuButton_Job_Pressed.tres" id="3_vgx6v"]
 [ext_resource type="StyleBox" uid="uid://cfn35h6bi8ts1" path="res://Art/Themes/ThemeComponents/Button_Pressed.tres" id="3_ynwyf"]
 [ext_resource type="StyleBox" uid="uid://cgr7xbfd0q3iy" path="res://Art/Themes/ThemeComponents/SmallHighlightPanel.tres" id="5_4bo2n"]
@@ -55,7 +56,7 @@ Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 3
 Button/font_sizes/font_size = 24
 Button/styles/disabled = ExtResource("1_ggqsi")
-Button/styles/hover = ExtResource("2_o15uc")
+Button/styles/hover = ExtResource("3_dwilv")
 Button/styles/normal = ExtResource("2_o15uc")
 Button/styles/pressed = ExtResource("3_vgx6v")
 CheckBox/styles/hover_pressed = ExtResource("3_ynwyf")

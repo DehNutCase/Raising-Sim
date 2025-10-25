@@ -627,6 +627,7 @@ text = "Start Day"
 
 [node name="Shop" type="ScrollContainer" parent="Ui/MenuPanel/MarginContainer"]
 visible = false
+clip_contents = false
 layout_mode = 2
 horizontal_scroll_mode = 0
 
