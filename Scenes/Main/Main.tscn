@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=95 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -21,6 +21,7 @@
 [ext_resource type="Material" uid="uid://bw7t51yw4ntnn" path="res://Scenes/Main/TransparencyShader.tres" id="16_3c6c7"]
 [ext_resource type="PackedScene" uid="uid://do8baktjfoyyj" path="res://Scenes/Main/count.tscn" id="17_im62w"]
 [ext_resource type="VideoStream" path="res://Characters/Mao/Videos/special_01.ogv" id="18_q463u"]
+[ext_resource type="Script" path="res://addons/gloot/core/inventory.gd" id="21_n5ikq"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Walk.gd" id="21_psxgd"]
 [ext_resource type="Theme" uid="uid://ba5dcdbdgkdgu" path="res://Art/Themes/BorderlessTextTheme.tres" id="22_1jgxs"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="22_b128l"]
@@ -259,7 +260,7 @@ offset_right = 660.0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("6_cueot")
-inventory = NodePath("")
+inventory = NodePath("../PlaceholderInventory")
 
 [node name="BackgroundInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
 visible = false
@@ -276,7 +277,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("12_thnkb")
-inventory = NodePath("")
+inventory = NodePath("../PlaceholderInventory")
 
 [node name="SkillInventory" type="ItemList" parent="Ui/PlayerControl/Player" node_paths=PackedStringArray("inventory")]
 visible = false
@@ -290,7 +291,11 @@ offset_right = -310.0
 grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("13_tkqcx")
-inventory = NodePath("")
+inventory = NodePath("../PlaceholderInventory")
+
+[node name="PlaceholderInventory" type="Node" parent="Ui/PlayerControl/Player"]
+script = ExtResource("21_n5ikq")
+_serialized_format = {}
 
 [node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
 material = ExtResource("22_b128l")
@@ -550,6 +555,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="CourseDailyEffect" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer" groups=["CourseDetails"]]
+clip_contents = false
 layout_mode = 2
 theme = ExtResource("22_1jgxs")
 script = ExtResource("27_u6iqd")
@@ -563,6 +569,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="CourseProgress" type="RichTextLabel" parent="Ui/MenuPanel/MarginContainer/Lessons/HBoxContainer2/MarginContainer2" groups=["CourseDetails"]]
+clip_contents = false
 layout_mode = 2
 theme = ExtResource("22_1jgxs")
 script = ExtResource("29_7hj8f")
