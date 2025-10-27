@@ -1,4 +1,5 @@
 [gd_resource type="Theme" format=3 uid="uid://bg42c3x4ca1wd"]
 
 [resource]
-ItemList/font_sizes/font_size = 16
+ItemList/colors/font_outline_color = Color(0, 0, 0, 1)
+ItemList/constants/outline_size = 4

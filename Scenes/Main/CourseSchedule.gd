@@ -46,9 +46,17 @@ func display_courses():
 		set_item_metadata(item_count-1, course)
 		
 		var desc = Constants.courses[course_name][lesson_name].get("description")
-		var tooltip = lesson_name
+		var tooltip = "[color=YELLOW]" + lesson_name + "[/color]"
 		if desc:
 			tooltip += "\n\n" + desc
+			
+		if Constants.courses.get(course_name):
+			var course_daily_stats = Constants.courses[course_name][lesson_name].stats
+			tooltip += "\n\n"
+			if (!course_daily_stats.keys().is_empty()):
+				tooltip += "Course "
+				tooltip += Player.stat_tooltip_helper({"stats": course_daily_stats}).strip_edges()
+		
 		set_item_tooltip(item_count-1, tooltip)
 	if item_count:
 		get_tree().call_group("CourseDetails", "display_stats", get_item_metadata(0))

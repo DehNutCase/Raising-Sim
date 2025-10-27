@@ -9,12 +9,8 @@ func display_stats(metadata: Variant):
 		var course_daily_stats = Constants.courses[course_name][lesson_name].stats
 		var tooltip = ""
 		if (!course_daily_stats.keys().is_empty()):
-			tooltip += "Course Stats:"
-			for stat in course_daily_stats.keys():
-				tooltip += " "
-				if (course_daily_stats[stat] > 0):
-					tooltip += "+"
-				tooltip += str(course_daily_stats[stat]) + " " + Constants.stats[stat].label
+			tooltip += "Course "
+			tooltip += Player.stat_tooltip_helper({"stats": course_daily_stats}).strip_edges()
 		append_text(tooltip)
 		
 func display_default_text():
