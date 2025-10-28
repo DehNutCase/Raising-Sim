@@ -1,4 +1,3 @@
-@tool
 @icon("res://addons/gloot/images/icon_ctrl_inventory.svg")
 extends CtrlInventory
 

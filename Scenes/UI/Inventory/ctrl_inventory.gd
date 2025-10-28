@@ -1,4 +1,4 @@
-@tool
+#@tool #@tool causes errors
 @icon("res://addons/gloot/images/icon_ctrl_inventory.svg")
 class_name CtrlInventory
 extends ItemList
