@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=95 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -25,6 +25,7 @@
 [ext_resource type="Theme" uid="uid://ba5dcdbdgkdgu" path="res://Art/Themes/BorderlessTextTheme.tres" id="22_1jgxs"]
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="22_b128l"]
 [ext_resource type="Script" path="res://Scenes/Main/ClassChangeClassesContainer.gd" id="22_gnm4m"]
+[ext_resource type="Script" path="res://Scenes/Main/LipSynchEffect.gd" id="22_hgfq8"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/Courses.gd" id="23_kxw1b"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
@@ -468,6 +469,9 @@ transparent_bg = true
 gui_disable_input = true
 size = Vector2i(1400, 1400)
 render_target_update_mode = 4
+
+[node name="LipSynchEffect" type="GDCubismEffectCustom" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
+script = ExtResource("22_hgfq8")
 
 [node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
 visible = false
@@ -1385,6 +1389,9 @@ cancel_button_text = "Delete and Restart"
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
 [connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="cubism_init" from="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_init"]
+[connection signal="cubism_process" from="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_process"]
+[connection signal="cubism_term" from="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_term"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer/StartDay" to="." method="_on_start_day_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]
