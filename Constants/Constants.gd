@@ -3524,12 +3524,12 @@ const endings = {
 	#Use Player.unlock_perspective to unlock endings, so that everything is in the same place
 	"overlord": {
 		"points": 2550,
-		"label": "Overlord",
+		"label": "Princess For A Day",
 		"requirements": {
 			"events": ["overlord_combat_success"], 
 		},
 		"timeline": "OverlordEndingTimeline",
-		"description": "You managed to defeat her majesty in a children's card game, that makes you the new Queen of Albion! (Not really.) Although her majesty didn't fight you seriously, it's still an amazing achievement.\n\nYou could probably ask for a county or two on the basis of this achievement.",
+		"description": "You managed to defeat her majesty in a children's card game, that makes you the new Queen of Albion! (Not really.) Although her majesty didn't fight you seriously, it's still an amazing achievement.\n\nYou asked her majesty if you could sit in the big chair for a day as a reward. For some reason, she allowed it. (Perhaps her majesty wanted to take a day off?)",
 		#TODO, add a new game bonus of starting with a territory to manage
 		"image": "res://Art/NovelAI/1girl, armchair, 1.2__figure four sitting__, from below, princess, looking down, s-1698261205.png",
 	},

@@ -144,7 +144,7 @@ var dumpling_actions = {
 		},
 		"icon": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/swimring01_02.png",
 		"messages": [
-			{"toast": "%s can't to fly, but they seem to enjoy running around." %Player.dumpling_stats.name},
+			{"toast": "%s can't fly, but they seem to enjoy running around." %Player.dumpling_stats.name},
 		],
 		"is_training": true,
 	},

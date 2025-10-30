@@ -15,4 +15,6 @@ func display_day(day: int):
 	#Don't display year for now
 	#text = " Year: %s \n Season: %s \n Day: %s" % [year, seasons[season], date]
 	text = " Season: %s \n Day: %s / 30" % [seasons[season], date]
+	if OS.has_feature("demo"):
+		text = " Season: %s \n Day: %s / 20" % [seasons[season], date]
 	Player.play_song(seasons[season])
