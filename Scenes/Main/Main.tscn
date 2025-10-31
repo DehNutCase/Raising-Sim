@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=97 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -26,8 +26,10 @@
 [ext_resource type="Material" uid="uid://cvqsg8ldyvbkw" path="res://Art/Shaders/Live2DMaterial.tres" id="22_b128l"]
 [ext_resource type="Script" path="res://Scenes/Main/ClassChangeClassesContainer.gd" id="22_gnm4m"]
 [ext_resource type="Script" path="res://Scenes/Main/LipSynchEffect.gd" id="22_hgfq8"]
+[ext_resource type="Script" path="res://Scenes/Main/PlayerHitbox.gd" id="22_p3py4"]
 [ext_resource type="Script" path="res://Scenes/UI/Actions/Shop.gd" id="22_prvwr"]
 [ext_resource type="Script" path="res://Scenes/Main/Courses.gd" id="23_kxw1b"]
+[ext_resource type="Script" path="res://Scenes/Main/PlayerEyeTarget.gd" id="24_axcaa"]
 [ext_resource type="Script" path="res://Scenes/Main/StatsDisplay.gd" id="25_7vaom"]
 [ext_resource type="Script" path="res://Scenes/Main/CourseSchedule.gd" id="25_ge7ht"]
 [ext_resource type="Theme" uid="uid://0yntxwkhwndv" path="res://Art/Themes/CourseScheduleTheme.tres" id="25_ntj3d"]
@@ -102,7 +104,7 @@ shader_parameter/next_background = ExtResource("7_n8nyx")
 shader_parameter/wipe_texture = ExtResource("8_waya3")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ltday"]
-viewport_path = NodePath("Ui/PlayerControl/Player/PlayerSprite/PlayerModel")
+viewport_path = NodePath("Ui/Player/PlayerSprite/PlayerModel")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwgbm"]
 
@@ -227,28 +229,20 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("12_n64mh")
 
-[node name="PlayerControl" type="Control" parent="Ui"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="Player" type="Node2D" parent="Ui/PlayerControl" groups=["Live2DPlayer"]]
+[node name="Player" type="Node2D" parent="Ui" groups=["Live2DPlayer"]]
+unique_name_in_owner = true
 script = ExtResource("7_cp3kk")
+metadata/_edit_lock_ = true
 
-[node name="Gray" type="Sprite2D" parent="Ui/PlayerControl/Player"]
-visible = false
-position = Vector2(-376, -235)
+[node name="Gray" type="Sprite2D" parent="Ui/Player"]
+unique_name_in_owner = true
+position = Vector2(425, 666)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("27_wb2qf")
+metadata/_edit_lock_ = true
 
-[node name="PlayerInventory" type="ItemList" parent="Ui/PlayerControl/Player"]
+[node name="PlayerInventory" type="ItemList" parent="Ui/Player"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 750)
 anchors_preset = 2
@@ -261,7 +255,8 @@ grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("6_cueot")
 
-[node name="BackgroundInventory" type="ItemList" parent="Ui/PlayerControl/Player"]
+[node name="BackgroundInventory" type="ItemList" parent="Ui/Player"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 750)
 anchors_preset = 3
@@ -277,7 +272,8 @@ grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("12_thnkb")
 
-[node name="SkillInventory" type="ItemList" parent="Ui/PlayerControl/Player"]
+[node name="SkillInventory" type="ItemList" parent="Ui/Player"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(0, 750)
 anchors_preset = 2
@@ -290,13 +286,32 @@ grow_vertical = 0
 theme = ExtResource("11_rjsjm")
 script = ExtResource("13_tkqcx")
 
-[node name="PlayerSprite" type="Sprite2D" parent="Ui/PlayerControl/Player"]
+[node name="PlayerSprite" type="Sprite2D" parent="Ui/Player"]
+unique_name_in_owner = true
 material = ExtResource("22_b128l")
+position = Vector2(100, -130)
 texture = SubResource("ViewportTexture_ltday")
-offset = Vector2(0, -350)
+centered = false
 metadata/_edit_lock_ = true
 
-[node name="PlayerModel" type="GDCubismUserModel" parent="Ui/PlayerControl/Player/PlayerSprite"]
+[node name="PlayerHitbox" type="Control" parent="Ui/Player/PlayerSprite"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_p3py4")
+
+[node name="PlayerModel" type="GDCubismUserModel" parent="Ui/Player/PlayerSprite"]
 assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"
 playback_process_mode = 2
 auto_scale = false
@@ -464,16 +479,25 @@ PartArmRB = 0.0
 PartEyeBall = 1.0
 PartWandA = 1.0
 PartWandB = 1.0
+unique_name_in_owner = true
 disable_3d = true
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(1400, 1400)
 render_target_update_mode = 4
 
-[node name="LipSynchEffect" type="GDCubismEffectCustom" parent="Ui/PlayerControl/Player/PlayerSprite/PlayerModel"]
+[node name="PlayerHitArea" type="GDCubismEffectHitArea" parent="Ui/Player/PlayerSprite/PlayerModel"]
+unique_name_in_owner = true
+
+[node name="LipSynchEffect" type="GDCubismEffectCustom" parent="Ui/Player/PlayerSprite/PlayerModel"]
 script = ExtResource("22_hgfq8")
 
-[node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/PlayerControl/Player"]
+[node name="PlayerEyeTarget" type="GDCubismEffectTargetPoint" parent="Ui/Player/PlayerSprite/PlayerModel"]
+active = false
+unique_name_in_owner = true
+script = ExtResource("24_axcaa")
+
+[node name="Live2dVideoPlayer" type="VideoStreamPlayer" parent="Ui/Player"]
 visible = false
 material = ExtResource("16_3c6c7")
 clip_contents = true
@@ -491,6 +515,18 @@ grow_vertical = 0
 stream = ExtResource("18_q463u")
 autoplay = true
 expand = true
+
+[node name="PlayerControl" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="MenuPanel" type="PanelContainer" parent="Ui"]
 visible = false
@@ -1386,12 +1422,13 @@ cancel_button_text = "Delete and Restart"
 
 [connection signal="pressed" from="Ui/MarginContainer/HBoxContainer/PauseMenuButton" to="." method="_on_pause_menu_button_pressed"]
 [connection signal="toggled" from="Ui/MarginContainer/HBoxContainer/VolumeButton" to="." method="_on_volume_button_toggled"]
-[connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
-[connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
-[connection signal="inventory_item_clicked" from="Ui/PlayerControl/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
-[connection signal="cubism_init" from="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_init"]
-[connection signal="cubism_process" from="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_process"]
-[connection signal="cubism_term" from="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/PlayerControl/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_term"]
+[connection signal="inventory_item_clicked" from="Ui/Player/PlayerInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="inventory_item_clicked" from="Ui/Player/BackgroundInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="inventory_item_clicked" from="Ui/Player/SkillInventory" to="." method="_on_player_inventory_item_activated"]
+[connection signal="hit_area_entered" from="Ui/Player/PlayerSprite/PlayerModel/PlayerHitArea" to="." method="_on_gd_cubism_effect_hit_area_hit_area_entered"]
+[connection signal="cubism_init" from="Ui/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_init"]
+[connection signal="cubism_process" from="Ui/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_process"]
+[connection signal="cubism_term" from="Ui/Player/PlayerSprite/PlayerModel/LipSynchEffect" to="Ui/Player/PlayerSprite/PlayerModel/LipSynchEffect" method="_on_cubism_term"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Schedule/HBoxContainer2/MarginContainer/StartDay" to="." method="_on_start_day_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Tower/EnterTowerButton" to="." method="_on_enter_tower_button_pressed"]
 [connection signal="pressed" from="Ui/MenuPanel/MarginContainer/Class Change/DescriptionContainer/Requirements/SelectClassButton" to="." method="_on_select_class_button_pressed"]

@@ -2,7 +2,7 @@ extends Sprite2D
 
 var rotation_time:float = 0
 @export var rotation_frequency: float = 1
-@export_range(0,1) var amp: float = 2
+@export_range(0,1) var amp: float = 1
 var rotation_offset:float = 0
 
 @onready var background = %Background

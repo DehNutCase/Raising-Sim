@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://boqsh2vj4tp4g"]
+
+[ext_resource type="Texture2D" uid="uid://ot7pwhjmbxki" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/heart_01.png" id="1_mtpkn"]
+[ext_resource type="Script" path="res://Scenes/Main/FloatingHeart.gd" id="2_7ijoi"]
+
+[node name="FloatingHeart" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_mtpkn")
+script = ExtResource("2_7ijoi")

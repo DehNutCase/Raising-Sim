@@ -1,9 +1,9 @@
 extends Control
 
-@onready var player_model = $Ui/PlayerControl/Player
-@onready var inventory = $Ui/PlayerControl/Player/PlayerInventory
-@onready var background = $Ui/PlayerControl/Player/BackgroundInventory
-@onready var skills = $Ui/PlayerControl/Player/SkillInventory
+@onready var player_model = %Player
+@onready var inventory = %PlayerInventory
+@onready var background = %BackgroundInventory
+@onready var skills = %SkillInventory
 @onready var inventory_lists = [inventory, background, skills]
 @onready var dialogic_viewport = $Ui/DialogicPanel/DialogicViewportContainer/DialogicViewport
 @onready var dialogic_viewport_container = $Ui/DialogicPanel/DialogicViewportContainer
@@ -38,7 +38,7 @@ extends Control
 @onready var schedule_alert_icon = %ScheduleAlertIcon
 @onready var walk_alert_icon = %WalkAlertIcon
 
-@onready var gray_portrait = $Ui/PlayerControl/Player/Gray
+@onready var gray_portrait = %Gray
 
 @onready var deck = %Deck
 
@@ -70,6 +70,8 @@ var day: int:
 enum states {READY, DIALOGIC, BUSY, GAME_OVER}
 var current_state = states.READY
 var day_state = states.READY
+var headpatting = false
+var previous_headpat = true
 
 var selected_class_change_class: String
 var class_change_requirements_fufilled = false
@@ -140,14 +142,16 @@ func _ready():
 	if OS.has_feature("debug"):
 		#Player.active_mission = ""
 		#Player.max_walks = 100
+		#Player.remaining_walks = 100
 		#Player.tower_level = 0
 		#Player.stats.talent_points = 100
 		#Player.skill_inventory.create_and_add_item("meteor")
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
 		#Player.inventory.remove_item(item)
-		#Player.stats.max_hp = 1000
+		#Player.stats.gold = 10000
 		#print(Player.calculate_ending())
-		#Dialogic.start("Acolyte1")
+		#if day!=1:
+		#Dialogic.start("InkMageSchoolFirst")
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -173,6 +177,7 @@ func _input(event):
 				closed_something = true
 		if closed_something:
 			Player.play_ui_sound("cancel_blop")
+		
 
 func process_day():
 	_change_day_state(states.BUSY)
@@ -217,6 +222,7 @@ func process_day():
 		
 	day +=1
 	Player.remaining_walks = Player.max_walks
+	Player.headpat_counter = 0
 	
 	var items = inventory.inventory.get_items().duplicate()
 	items.append_array(background.inventory.get_items())
@@ -1393,3 +1399,53 @@ func _change_day_state(state: states) -> void:
 				button.hide()
 		_:
 			printerr("Unmatched state in _change_day_state")
+
+#id is "HitAreaHead" or "HitAreaBody"
+func _on_gd_cubism_effect_hit_area_hit_area_entered(model, id):
+	var hit_area_data = {
+		"HitAreaHead": {
+			"success_chance": .7,
+			"success_amount": -3,
+			"fail_amount": 5,
+		},
+		"HitAreaBody": {
+			"success_chance": .3,
+			"success_amount": -10,
+			"fail_amount": 5,
+		}
+	}
+	
+	var heart:FloatingHeart = load("res://Scenes/Main/FloatingHeart.tscn").instantiate()
+	Player.background_thread.start(%Ui.call_deferred.bind("add_child", heart))
+	heart.global_position = get_global_mouse_position()
+	await Player.background_thread.wait_to_finish()
+	if !heart.is_node_ready():
+		await heart.ready
+	
+	#display heart but don't change stress if recently headpatted
+	if headpatting:
+		heart.float_animation(previous_headpat)
+		return
+	else:
+		#TODO, only headpat a certain amount of times per day
+		#use Player.headpat_counter
+		#TODO, add voiceline and toast when headpatting e.x. 'ehehe, more please.' or 'Rice! Help! I think there's a ghost in my room!'
+		#Also change expression for the duration
+		headpatting = true
+		%PlayerEyeTarget.active = true
+		previous_headpat = true
+		var data = hit_area_data[id]
+		if randf() > data.success_chance:
+			previous_headpat = false
+		
+		var stat_change = {"stress": data.success_amount}
+		if previous_headpat:
+			process_stats(stat_change)
+		else:
+			stat_change.stress = data.fail_amount
+			process_stats(stat_change)
+		
+		heart.float_animation(previous_headpat)
+		await get_tree().create_timer(3).timeout
+		headpatting = false
+		%PlayerEyeTarget.active = false
