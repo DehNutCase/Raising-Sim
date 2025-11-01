@@ -131,12 +131,6 @@ func _ready():
 	else:
 		schedule_alert_icon.hide()
 		walk_alert_icon.hide()
-	
-	if (Player.stats["stress"] < 50):
-		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
-		Player.play_random_voice("greetings")
-	else:
-		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 		
 	#TODO, delete below, dev use only
 	if OS.has_feature("debug"):
@@ -161,7 +155,15 @@ func _ready():
 	for button in buttons:
 		button.connect("pressed", _play_button_sound)
 	_change_day_state(states.READY)
-	
+	ready.connect(initial_greeting)
+
+func initial_greeting():
+	await get_tree().create_timer(.5).timeout
+	if (Player.stats["stress"] < 50):
+		get_tree().call_group("Live2DPlayer", "start_motion", player_model.hat_tip_motion)
+		Player.play_random_voice("greetings")
+	else:
+		get_tree().call_group("Live2DPlayer", "start_motion", player_model.content_motion)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -1399,21 +1401,37 @@ func _change_day_state(state: states) -> void:
 				button.hide()
 		_:
 			printerr("Unmatched state in _change_day_state")
+	
+	
 
+#Currently the actual motion (group & no) isn't used, update to implement headpat motions
+#"toasts" in the format of [toast, voice, expression]
+var head_success_data = { "group": "", "no": 3, "weight": 1, "toasts": [["Hello!", "greeting0", "exp_02"], ["Ehehe. More headpats, please.", "laugh", "exp_03"],  ["This is a little embarassing... But I like it.", "really_like", "exp_06"], ["Oh boy, a friendly head patting ghost! Rice, help me catch it!", "keep_it_up", "exp_04"]]}
+
+var head_failure_data = { "group": "", "no": 3, "weight": 1, "toasts": [["Huh? A ghost? Why is a ghost patting my head?", "huh?", "exp_07"], ["Stop touching.", "hate", "exp_08"],  ["Did something touch my head?", "huh!?", "exp_05"], ["I knew it! My room is haunted! Riceeeee!", "really!?", "exp_05"]]}
+
+var body_success_data = { "group": "", "no": 3, "weight": 1, "toasts": [["Ehehe. That tickles!", "laugh", "exp_02"], ["Sorry, I'm a bit hungry right now.", "sorry_polite", "exp_06"], ["Wow, is this a massage? Teehee.", "happy", "exp_02"]]}
+
+var body_failure_data = { "group": "", "no": 3, "weight": 1, "toasts": [["Don't make me ask Rice to exorcise you, Mr. Ghost.", "baka", "exp_08"], ["Rice, did you just touch my tummy? ...You didn't?", "huh?", "exp_07"], ["Rice, aren't you supposed to guard me from stuff like this? ...Rice?", "disappointed", "exp_05"], ["Hmph. Just wait until I get her majesty to meteor proof my room. We'll see who has the last laugh.", "hate", "exp_08"],]}
+
+var hit_area_data = {
+	"HitAreaHead": {
+		"success_chance": .7,
+		"success_amount": -3,
+		"fail_amount": 5,
+		"success_data": head_success_data,
+		"failure_data": head_failure_data,
+	},
+	"HitAreaBody": {
+		"success_chance": .3,
+		"success_amount": -10,
+		"fail_amount": 5,
+		"success_data": body_success_data,
+		"failure_data": body_failure_data,
+	}
+}
 #id is "HitAreaHead" or "HitAreaBody"
 func _on_gd_cubism_effect_hit_area_hit_area_entered(model, id):
-	var hit_area_data = {
-		"HitAreaHead": {
-			"success_chance": .7,
-			"success_amount": -3,
-			"fail_amount": 5,
-		},
-		"HitAreaBody": {
-			"success_chance": .3,
-			"success_amount": -10,
-			"fail_amount": 5,
-		}
-	}
 	
 	var heart:FloatingHeart = load("res://Scenes/Main/FloatingHeart.tscn").instantiate()
 	Player.background_thread.start(%Ui.call_deferred.bind("add_child", heart))
@@ -1432,20 +1450,32 @@ func _on_gd_cubism_effect_hit_area_hit_area_entered(model, id):
 		#TODO, add voiceline and toast when headpatting e.x. 'ehehe, more please.' or 'Rice! Help! I think there's a ghost in my room!'
 		#Also change expression for the duration
 		headpatting = true
-		%PlayerEyeTarget.active = true
+		%PlayerEyeTarget.activate()
 		previous_headpat = true
 		var data = hit_area_data[id]
 		if randf() > data.success_chance:
 			previous_headpat = false
 		
-		var stat_change = {"stress": data.success_amount}
-		if previous_headpat:
-			process_stats(stat_change)
-		else:
-			stat_change.stress = data.fail_amount
-			process_stats(stat_change)
+		if Player.headpat_counter < 5:
+			Player.headpat_counter += 1
+			var stat_change = {"stress": data.success_amount}
+			if previous_headpat:
+				process_stats(stat_change)
+				#"toast_data" is in the format of [toast, voice, expression]
+				var toast_data = data.success_data.toasts.pick_random()
+			else:
+				stat_change.stress = data.fail_amount
+				process_stats(stat_change)
+		
+		var toast_data = data.success_data.toasts.pick_random()
+		if !previous_headpat:
+			toast_data = data.failure_data.toasts.pick_random()
+		display_toast(toast_data[0])
+		Player.play_voice(toast_data[1])
+		get_tree().call_group("Live2DPlayer", "start_expression", toast_data[2])
 		
 		heart.float_animation(previous_headpat)
 		await get_tree().create_timer(3).timeout
+		await %PlayerEyeTarget.deactivate()
+		await update_expressions()
 		headpatting = false
-		%PlayerEyeTarget.active = false
