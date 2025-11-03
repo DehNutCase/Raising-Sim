@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bb81vfknq1hw6" path="res://Art/UI/Mori no oku no kakurezato/item_window04.png" id="6_qc37o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78q6f"]
-size = Vector2(180, 270)
+size = Vector2(200, 350)
 
 [node name="CardUI" type="Control" groups=["CardGameCardUI"]]
 custom_minimum_size = Vector2(200, 350)
@@ -34,7 +34,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
 unique_name_in_owner = true
-position = Vector2(90, 135)
+position = Vector2(100, 175)
 shape = SubResource("RectangleShape2D_78q6f")
 
 [node name="CardBackground" type="Panel" parent="."]

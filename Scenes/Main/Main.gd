@@ -229,10 +229,15 @@ func process_day():
 	var items = inventory.inventory.get_items().duplicate()
 	items.append_array(background.inventory.get_items())
 	items.append_array(skills.inventory.get_items())
+	var total_daily_stats = {}
 	for item in items:
 		for stat in item.get_property("daily_stats", {}):
-			Player.stats[stat] += item.get_property("daily_stats")[stat]
-
+			if stat in total_daily_stats:
+				total_daily_stats[stat] += item.get_property("daily_stats")[stat]
+			else:
+				total_daily_stats[stat] = item.get_property("daily_stats")[stat]
+	if total_daily_stats:
+		process_stats(total_daily_stats, "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/weather04_01.png")
 		
 	items = inventory.inventory.get_items().duplicate()
 	var item_deletion_queue = []
@@ -713,12 +718,12 @@ func _on_close_button_pressed():
 		menu.visible = false
 	
 
-func display_toast(message, gravity = "bottom", direction = "center", icon = null):
+func display_toast(message, gravity = "bottom", direction = "center", icon_path = null):
 	ToastParty.show({
 		"text": message,           # Text (emojis can be used)
 		"gravity": gravity,                   # top or bottom
 		"direction": direction,               # left or center or right
-		"icon": icon,
+		"icon": icon_path,
 	})
 	Player.play_ui_sound("bubble")
 	
@@ -734,7 +739,8 @@ func display_toast(message, gravity = "bottom", direction = "center", icon = nul
 	})
 	"""
 
-func process_stats(stats, icon = null):
+##Increases stats (modified by scholarship, and display an icon if icon is passed)
+func process_stats(stats, icon_path = null):
 	if !stats:
 		return
 	var toast = ""
@@ -768,7 +774,7 @@ func process_stats(stats, icon = null):
 			Player.stats[stat] += stat_gain
 			toast += "[" + plus + str(stat_gain) + " " + label + "] "
 			
-	display_toast(toast, "top", "center", icon)
+	display_toast(toast, "top", "center", icon_path)
 	display_stats()
 
 func display_stats() -> void:
