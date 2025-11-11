@@ -737,15 +737,16 @@ var voices = {
 	"greeting3": load("res://Voice/Sakura An/Greetings/Good Morning.wav"),
 	"greeting4": load("res://Voice/Sakura An/Greetings/Good Morning polite.wav"),
 	"greeting5": load("res://Voice/Sakura An/Greetings/Hi Hi.wav"),
+	"bye_bye": load("res://Voice/Sakura An/Greetings/Bye Bye.wav"),
 	"damaged0": load("res://Voice/Sakura An/Battle/[Damage] Ugh!.wav"),
 	"damaged1": load("res://Voice/Sakura An/Battle/[Damage] Ugh....wav"),
 	"damaged2": load("res://Voice/Sakura An/Battle/[Damage] Ugh.wav"),
 	
 	"amazing": load("res://Voice/Sakura An/Misc/Amazing.wav"),
 	"happy": load("res://Voice/Sakura An/Misc/Happy.wav"),
+	"laugh": load("res://Voice/Sakura An/Misc/Laugh.wav"),
 	"proud": load("res://Voice/Sakura An/Misc/Proud.wav"),
 	"boom": load("res://Voice/Sakura An/Misc/Boom.wav"),
-	"laugh": load("res://Voice/Sakura An/Misc/Laugh.wav"),
 	"tada": load("res://Voice/Sakura An/Misc/Tada.wav"),
 	"thank_you": load("res://Voice/Sakura An/Misc/Thank you.wav"),
 	"thank_you_polite": load("res://Voice/Sakura An/Misc/Thank you polite.wav"),
@@ -815,7 +816,7 @@ var sound_effects = {
 	"great_success": load("res://SFX/Kronbits/Retro Success Melody 01 - sawtooth lead 1.wav"),
 	"failure": load("res://SFX/Kronbits/Retro Descending Short 14.wav"),
 	"great_failure": load("res://SFX/Kronbits/Retro Negative Melody 01 - aCustom1.wav"),
-	
+	"error": load("res://SFX/Shapeforms/Future UI/Error Triplet-5.wav"),
 }
 func play_song(song:String) -> void:
 	song = song.to_lower()

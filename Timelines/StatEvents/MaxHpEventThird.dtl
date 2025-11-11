@@ -1,0 +1,35 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Victoria (Frown) 3
+do Player.play_song("cheerful")
+[history action="clear"]
+update Victoria (Frown)
+Victoria_Portrait (Frown): Good morning.
+update Mao (Normal)
+do Player.play_voice("greeting3")
+update Mao [animation="Tada"]
+Mao_Portrait (Normal): Good morning! That means good morning!
+Victoria_Portrait (Frown): ...Yes, yes it does.
+Victoria_Portrait (Frown): To be honest, I'm not sure what kind of gift would be appropriate for this kind of situation.
+Victoria_Portrait (Frown): Cheap snacks don't feel appropriate, but something overly valuable seems incorrect as well. So, here.
+[signal arg="{"background": "key_card_victoria", "location_flags": {"cafe_private_room": true},}"]
+do Player.play_voice("huh?")
+Mao_Portrait (Normal): What's this?
+Victoria_Portrait (Frown): It's a key card for a cafe near the school, for one of the private rooms. Lilian would call it a homebase or hideout. I don't agree, but you can often find us there when we're free.
+Victoria_Portrait (Frown): The card can't be called expensive, but it's somewhat exclusive, so it should be appropriate as a gift.
+do Player.play_voice("yay!")
+update Mao [animation="Tada"]
+update Mao (Excited)
+Mao_Portrait (Excited): Oh boy! Are you inviting me to be your minion?
+update Victoria (Sweatdrop)
+Victoria_Portrait (Sweatdrop): No. No I am not.
+update Mao (Normal)
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Dating event unlocked!😍]
+do Player.play_sound_effect("ping")
+update Victoria (Frown)
+Victoria_Portrait (Frown): [Lilian.]
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [😘]
+do Player.play_voice("un_yeah")
+Mao_Portrait (Normal): Un! I'll come play when I have time.

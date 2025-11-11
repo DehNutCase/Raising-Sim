@@ -1,0 +1,30 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Victoria (Frown) 3
+do Player.play_song("cheerful")
+[history action="clear"]
+update Mao (Normal)
+do Player.play_voice("laugh")
+update Mao (Normal) [animation="Tada"]
+Mao_Portrait (Normal): Hello! Welcome to the room of the super cute me!
+update Victoria (Frown)
+Victoria_Portrait (Frown): Sure... Ahem, good morning.
+update Victoria (Frown)
+Victoria_Portrait (Frown): Good job staying healthy, Lilian asked me to bring you some snacks.
+[signal arg="{"stats": {"stress": -30,}, }"]
+update Mao (Normal) [animation="Tada"]
+do Player.play_voice("amazing")
+Mao_Portrait (Normal): Thanks!
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Give her a pat on the head!🤣🤣🤣]
+do Player.play_sound_effect("ping")
+Victoria_Portrait (Frown): [That's highly inappropriate.]
+update Victoria (Sigh)
+Victoria_Portrait (Sigh): (I still don't understand why they asked me to do this.)
+update Victoria (Frown)
+Victoria_Portrait (Frown): If you don't mind, I'll be going now.
+update Victoria [ mirrored="true"]
+leave Victoria [animation="Slide Out Right" length="2" mirrored="true"]
+update Mao (Smile)
+do Player.play_voice("bye_bye")
+Mao_Portrait (Smile): See you!

@@ -109,4 +109,12 @@
 		"name": "Class Change Card",
 		"stats": "{}",
 	},
+	"key_card_victoria": {
+		"daily_stats": "{}",
+		"description": "A key card for a private room at a certain cafe. Victoria gave it to you.",
+		"image": "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/parts03_06.png",
+		"monthly_stats": "{}",
+		"name": "Victoria's Key Card",
+		"stats": "{}",
+	},
 }

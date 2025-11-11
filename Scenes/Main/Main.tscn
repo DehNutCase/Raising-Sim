@@ -313,6 +313,7 @@ offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("22_p3py4")
+metadata/_edit_lock_ = true
 
 [node name="PlayerModel" type="GDCubismUserModel" parent="Ui/Player/PlayerSprite"]
 assets = "res://addons/gd_cubism/example/res/live2d/mao_pro_en/runtime/mao_pro.model3.json"

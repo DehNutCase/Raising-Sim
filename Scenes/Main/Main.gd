@@ -145,7 +145,8 @@ func _ready():
 		#Player.stats.gold = 10000
 		#print(Player.calculate_ending())
 		#if day!=1:
-		#Dialogic.start("InkMageSchoolFirst")
+		#var event = Constants.stats.max_hp.daily_events[500]
+		#Dialogic.start(event)
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
 		pass
@@ -553,6 +554,9 @@ func do_walk(walk_name: String) -> void:
 		var weights = []
 		var outcomes = Constants.locations[walk_name].outcomes
 		for outcome in outcomes:
+			if "background_required" in outcome:
+				if !Player.background_inventory.has_item_with_prototype_id(outcome["background_required"]):
+					continue
 			if ('weight' in outcome):
 				var weight = outcome.weight
 				if Player.inventory.get_item_with_prototype_id("lucky_clover") and 'timeline' in outcome:

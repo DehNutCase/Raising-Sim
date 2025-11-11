@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://baqeny4ivgmja"]
+
+[ext_resource type="Theme" uid="uid://cwne627km41g6" path="res://Art/Themes/ThemeComponents/Job_Buttons.tres" id="1_mc3ua"]
+[ext_resource type="Script" path="res://Scenes/GameTemplate/Menus/Perspectives/endings_button.gd" id="2_j5ok6"]
+[ext_resource type="Shader" path="res://Art/Shaders/circular_shader.gdshader" id="3_go17d"]
+[ext_resource type="Texture2D" uid="uid://bbjs0o46d2jvy" path="res://Art/Background/Background material shop/bg007c.bmp" id="4_khcck"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wc1ev"]
+shader = ExtResource("3_go17d")
+shader_parameter/corner_scale = 1.0
+
+[node name="Margin" type="MarginContainer" groups=["Job_Button"]]
+custom_minimum_size = Vector2(300, 150)
+offset_right = 44.0
+offset_bottom = 44.0
+theme = ExtResource("1_mc3ua")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("2_j5ok6")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wc1ev")
+layout_mode = 2
+icon = ExtResource("4_khcck")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Walk"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_job_button_pressed"]

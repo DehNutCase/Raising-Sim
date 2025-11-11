@@ -1026,6 +1026,12 @@ const stats = {
 		'min': 0,
 		'max': 1000,
 		'value': 1,
+		'daily_events': {
+			100: 'MaxHpEventFirst',
+			250: 'MaxHpEventSecond',
+			500: 'MaxHpEventThird',
+			1000: 'MaxHpEventFourth',
+		}
 	},
 	'max_mp' = {
 		'label': 'Mana Points',
@@ -1296,6 +1302,28 @@ const locations = {
 				'first_toasts': ["Found a pleasant looking cottage in the woods."],
 				'first_timeline': 'res://Timelines/WalkEvents/RiceHouseFirst.dtl',
 				'flag': "rice_house"
+			},],
+		"icon": "res://Art/Background/NoranekoGames/Livingroom_Day.png"
+	},
+	'cafe_private_room': {
+		"label": "Cafe",
+		'location_flag': "cafe_private_room",
+		'outcomes':
+			[{
+				'stats': {
+					'stress': -15,
+				},
+				'toasts': ["Nobody else was here, so you had a refreshing time with tea and snacks."],
+				'weight': 1,
+			},
+			{
+				'stats': {
+				},
+				'weight': 10,
+				'toasts': ["Victoria was reading a book inside the room."],
+				'timeline': '', #TODO, add timeline for victoria's dates, or make date scene
+				'background_required': 'key_card_victoria',
+				'flag': "private_room_victoria"
 			},],
 		"icon": "res://Art/Background/NoranekoGames/Livingroom_Day.png"
 	},
@@ -3383,7 +3411,7 @@ const talents = {
 		"max_stacks": 1,
 		"daily_stats": {"attack": 5,},
 		"card": "res://Scenes/CardGame/Characters/Mao/Cards/consecutive_bonks.tres",
-		"description": "You locked yourself in your room for seven days and nights to develop a super duper secret technique! Now everyone will tremble in fear whenever you wave your wand around!\n\nRice's Evaluation: 'In terms of power level, a reasonable argument could be made for banning the card from competitive play. As an attack, the card is nothing special, but it's an excellent ritual spell.",
+		"description": "You locked yourself in your room for seven days and nights to develop a super duper secret technique! Now everyone will tremble in fear whenever you wave your wand around!\n\nRice's Evaluation: 'In terms of power level, a reasonable argument could be made for banning this card from competitive play. As an attack, the card is nothing special, but it's an excellent ritual spell.",
 		"icon": "res://Art/Mori no oku no kakurezato/CardGame/Edited/multi_attack.png",
 	},
 	"low_maintainence_dumpling" = {

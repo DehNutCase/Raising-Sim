@@ -1,0 +1,26 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Victoria (Frown) 3
+do Player.play_song("cheerful")
+[history action="clear"]
+update Mao (Normal)
+do Player.play_voice("greeting3")
+update Mao (Normal) [animation="Tada"]
+Mao_Portrait (Normal): Good morning! Welcome to my room!
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): By the way, why are you in my room?
+update Victoria (Sigh)
+Victoria_Portrait (Sigh): I would like to know that myself. To be precise, I would like to know why I'm the one doing this.
+update Victoria (Frown)
+Victoria_Portrait (Frown): I'll be brief, it seems like you've been staying healthy. There's no reward, but keep it up.
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Tell her there'll be rewards in the future and that she's cute! 🥰🥰🥰]
+do Player.play_sound_effect("ping")
+Morgan_Portrait (Grin): [I'll second that.]
+update Victoria (Sigh)
+Victoria_Portrait (Sigh): (Of all the things to use a favor on...)
+update Victoria (Frown)
+Victoria_Portrait (Frown): There'll be rewards in the future, and Lilian asked me to tell you that you're cute.
+update Mao (Smile)
+do Player.play_voice("laugh")
+Mao_Portrait (Smile): Hehe, thanks!
