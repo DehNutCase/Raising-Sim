@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_m10c7")
 background = ExtResource("2_24e7w")
 victory_reward = "{\"stats\": {\"gold\": 100, \"experience\": 100}}"
+defeat_reward = "{\"timeline\": \"DumplingDungeonDefeat\"}"
 
 [node name="CardGameEnemy" parent="." instance=ExtResource("3_mmq3o")]
 position = Vector2(200, 125)

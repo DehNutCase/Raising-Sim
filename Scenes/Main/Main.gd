@@ -1,3 +1,4 @@
+class_name Main
 extends Control
 
 @onready var player_model = %Player
@@ -10,6 +11,8 @@ extends Control
 @onready var dialogic_panel = $Ui/DialogicPanel
 
 @onready var card_game_panel = %CardGamePanel
+@onready var expedition_panel = %ExpeditionPanel
+@onready var expedition_map:ExpeditionMap = %ExpeditionMap
 
 @onready var day_label = %Calendar.day_label
 
@@ -103,6 +106,7 @@ func _ready():
 	Dialogic.signal_event.connect(_on_reward_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.timeline_started.connect(_on_timeline_started)
+	expedition_map.choice_selected.connect(expedition_panel.hide)
 	for inventory_name in Player.inventories:
 		Player[inventory_name].item_added.connect(_on_inventory_item_added)
 		
@@ -137,7 +141,7 @@ func _ready():
 		#Player.active_mission = ""
 		#Player.max_walks = 100
 		#Player.remaining_walks = 100
-		#Player.tower_level = 0
+		#Player.tower_level = 11
 		#Player.stats.talent_points = 100
 		#Player.skill_inventory.create_and_add_item("meteor")
 		#var item = Player.inventory.get_item_with_prototype_id("diligent_student")
@@ -145,7 +149,7 @@ func _ready():
 		#Player.stats.gold = 10000
 		#print(Player.calculate_ending())
 		#if day!=1:
-		#var event = Constants.stats.max_hp.daily_events[500]
+		#var event = Constants.stats.max_hp.daily_events[1000]
 		#Dialogic.start(event)
 		#Player.event_flags['mission_information_event'] = true
 		#day = 1
@@ -503,29 +507,22 @@ func course_button_click(course_name:String, lesson_name:String):
 
 func do_expedition(expedition_name:String) -> void:
 	var expedition = Constants.expedition[expedition_name]
+	expedition_map.expedition_name = expedition_name
 	if !Player.event_flags.get(expedition_name + "_info"):
 		Player.event_flags[expedition_name + "_info"] = true
 		Dialogic.start(expedition.info_timeline)
 		await Dialogic.timeline_ended
 
 	var encounters = expedition.encounters_before_boss
-	Player.expedition_health = int(Player.stats.max_hp/5)
+	Player.expedition_health = int(Player.stats.max_hp/Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.max_hp)
 	expedition_failed = false
 	for i in range(encounters):
 		if expedition_failed:
 			break
-		Dialogic.start(expedition.encounter_timeline)
-		await Dialogic.timeline_ended
-		await get_tree().create_timer(.5).timeout
-		if Player.in_expedition:
-			get_tree().call_group("Live2DPlayer", "pause_live2d")
-			await card_game_finished
-			if card_game_victory:
-				Dialogic.start(expedition.victory_timeline)
-			else:
-				Dialogic.start(expedition.defeat_timeline)
-			await Dialogic.timeline_ended
+		expedition_panel.show()
+		await expedition_map.choice_finished
 	
+	#Made it to the end without losing, let's do the boss fight
 	if !expedition_failed:
 		Dialogic.start(expedition.boss_timeline)
 		await Dialogic.timeline_ended
@@ -538,6 +535,7 @@ func do_expedition(expedition_name:String) -> void:
 	if !expedition_failed:
 		Dialogic.start(expedition.finish_timeline)
 		await Dialogic.timeline_ended
+	expedition_map.expedition_name = ""
 	return
 	
 func do_rest(rest_name: String) -> void:
@@ -909,6 +907,7 @@ func _on_reward_signal(reward_signal) -> void:
 		expedition_failed = true
 	if "expedition_heal" in reward_signal:
 		Player.expedition_health += int(reward_signal.expedition_heal)
+		display_toast("Healed %d hit points!" %reward_signal.expedition_heal, "top")
 	if "card_pack" in reward_signal:
 		var card_pack = load(reward_signal.card_pack)
 		var card = card_pack.cards.pick_random()
@@ -1069,7 +1068,6 @@ func enter_card_game(encounter_path:String , in_tower = false, in_mission = fals
 	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	card_game_panel.show()
 	card_game_panel.add_child(load("res://Scenes/CardGame/card_game.tscn").instantiate())
-	#SceneLoader.load_scene("res://Scenes/CardGame/card_game.tscn")
 
 func exit_card_game() -> void:
 	get_tree().call_group("Live2DPlayer", "resume_live2d")

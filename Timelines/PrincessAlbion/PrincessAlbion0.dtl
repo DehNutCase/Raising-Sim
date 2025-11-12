@@ -10,10 +10,11 @@ join Fiona (Grin) 4 [ mirrored="true"]
 [update_position position="2" vector="Vector2(0, 150)" time="0.0"]
 [update_position position="3" vector="Vector2(0, 150)" time="0.0"]
 [update_position position="4" vector="Vector2(0, 150)" time="0.0"]
+do Player.play_song("autumn")
 [history action="clear"]
 update Mao [animation="Tada" length="1"]
 update Mao (Excited)
-[signal arg="{"random_voice": "greetings"}"]
+do Player.play_random_voice("greetings")
 Mao_Portrait (Excited): Teehee. Thanks for coming, everyone! 🎉
 Victoria_Portrait (Frown): I'm not sure why you said that, seeing how I'm the host. Then again, I'm still not entirely sure why we're holding a welcome party for you.
 update Mao (Normal)

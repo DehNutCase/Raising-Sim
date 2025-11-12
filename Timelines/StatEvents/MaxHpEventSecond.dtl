@@ -18,7 +18,7 @@ Mao_Portrait (Normal): Thanks!
 do Player.play_sound_effect("ping")
 Lilian_Portrait (Grin): [Give her a pat on the head!🤣🤣🤣]
 do Player.play_sound_effect("ping")
-Victoria_Portrait (Frown): [That's highly inappropriate.]
+Victoria_Portrait (Frown): [That'd be highly inappropriate.]
 update Victoria (Sigh)
 Victoria_Portrait (Sigh): (I still don't understand why they asked me to do this.)
 update Victoria (Frown)

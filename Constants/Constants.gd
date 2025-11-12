@@ -1167,6 +1167,17 @@ const constants = {
 	},
 	'ACTION_LABELS' = {
 		'school': 'School',
+	},
+	'CARD_GAME_STAT_CONVERSION_FACTORS' = {
+		'max_hp': 5,
+		'max_mana': 150,
+		'attack': 50,
+		'defense': 50,
+		'magic': 50,
+		'resistance': 150,
+		'agility': 100,
+		'scholarship': 150,
+		'skill': 150,
 	}
 }
 
@@ -2320,18 +2331,59 @@ const tower_levels = [
 
 const expedition = {
 	"Dumpling Dungeon":{
-		"random_encounters": ["res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_0.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_1.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_2.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_3.tscn", "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_4.tscn"],
-		"boss_fights": ["res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/BossFights/dumpling_dungeon_boss_fight.tscn"],
+		"options": [
+				{
+					'type': "combat",
+					'icon': "res://Art/It Came From The Swamp/Enemies/f_manju.png",
+					'encounter_scene': "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_0.tscn",
+					'weight': 1,
+				},
+				{
+					'type': "combat",
+					'icon': "res://Art/It Came From The Swamp/Enemies/f_manju.png",
+					'encounter_scene': "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_1.tscn",
+					'weight': 1,
+				},
+				{
+					'type': "combat",
+					'icon': "res://Art/It Came From The Swamp/Enemies/f_candle.png",
+					'encounter_scene': "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_2.tscn", 
+					'weight': 1,
+				},
+				{
+					'type': "combat",
+					'icon': "res://Art/It Came From The Swamp/Enemies/f_LunaChime.png",
+					'encounter_scene': "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_3.tscn",
+					'weight': 1,
+				},
+				{
+					'type': "combat",
+					'icon': "res://Art/It Came From The Swamp/Enemies/f_Yakimarsh.png",
+					'encounter_scene': "res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/RandomEncounters/dumpling_dungeon_4.tscn",
+					'weight': 1,
+				},
+				{
+					'type': "event",
+					'icon': "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/element52_01.png",
+					'timeline': "DumplingDungeonHealEvent",
+					'weight': 1,
+				},
+				{
+					'type': "event",
+					'icon': "res://Art/Mori no oku no kakurezato/Skill Icon/Resized/treasure04_02.png",
+					'timeline': "DumplingDungeonVictory",
+					'weight': 2,
+				},
+			],
+		"boss_fights": ["res://Scenes/CardGame/EncounterScenes/ExpeditionCombats/DumplingDungeon/BossFights/dumpling_dungeon_boss_fight.tscn",],
 		"icon": "res://Art/It Came From The Swamp/Enemies/f_manju.png",
 		"description": "Her majesty posted a dungeon delving request for a nearby dungeon. Apparently she's unsatisfied with the contents of the treasure chests inside, so she wants you to replace them with higher quality items.",
 		"stats": {},
 		"info_timeline": "DumplingDungeonInfo",
-		"encounter_timeline": "DumplingDungeonRandomEncounter",
-		"encounters_before_boss": 3,
-		"victory_timeline": "DumplingDungeonVictory",
-		"defeat_timeline": "DumplingDungeonDefeat",
-		"boss_timeline": "DumplingDungeonBoss",
+		'boss_timeline': "DumplingDungeonBoss",
+		"encounters_before_boss": 2,
 		"finish_timeline": "DumplingDungeonFinish",
+		"background": "res://Art/Background/Background material shop/bg027a.jpg",
 	}
 }
 

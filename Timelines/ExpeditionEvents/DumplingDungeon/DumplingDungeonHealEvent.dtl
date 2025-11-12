@@ -1,0 +1,34 @@
+[background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
+join Mao (Normal) 2
+[history action="clear"]
+update Mao (Normal)
+do Player.play_voice("un_yeah")
+update Mao [animation="Tada"]
+Mao_Portrait (Normal): Umu, this looks like a good place to rest!
+- Rice, I need healing!
+	Rice_Portrait (Normal): You should learn some healing spells yourself, I think, or pack some healing items.
+	update Mao (Sad)
+	update Mao [animation="Tada" length="2"]
+	do Player.play_voice("eh_no_way")
+	Mao_Portrait (Sad): Please?
+	Rice_Portrait (Normal): I wasn't saying no. Don't push yourself too hard.
+	[signal arg="{"expedition_heal": 50,}"]
+	update Mao [animation="Tada"]
+	update Mao (Normal)
+	do Player.play_voice("laugh")
+	Mao_Portrait (Normal): Teehee. That tickles!
+- Let's take a short break
+	update Mao (EyesClosed)
+	do Player.play_voice("good_night")
+	Mao_Portrait (EyesClosed): Wake me up after my nap!
+	[signal arg="{"stats": {"stress": -10},}"]
+	Rice_Portrait (Normal): It's better not to sleep in dungeons. Well, taking a break is fine.
+- Let's call it a day
+	update Mao (Normal)
+	do Player.play_voice("un_yeah")
+	Mao_Portrait (Normal): Can we buy some snacks on the way back?
+	Rice_Portrait (Normal): Is that a roundabout way of asking me to treat you? Well, I don't mind.
+	update Mao [animation="Tada" length="1"]
+	do Player.play_voice("yay!")
+	Mao_Portrait (Normal): Yay!
+	[signal arg="{"stats": {"stress": -20}, "expedition_failed": true,}"]

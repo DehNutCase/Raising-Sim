@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://dphq852upsasd"]
+[gd_scene load_steps=98 format=3 uid="uid://dphq852upsasd"]
 
 [ext_resource type="Script" path="res://Scenes/Main/Main.gd" id="1_bqq6y"]
 [ext_resource type="Theme" uid="uid://ca6asxvhlbu51" path="res://Art/Themes/MainMenuTheme.tres" id="1_tshxl"]
@@ -58,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://cerhwdink223l" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Compass.png" id="47_bd7pa"]
 [ext_resource type="Texture2D" uid="uid://b82rawoiir6r8" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Compass.png" id="48_cktde"]
 [ext_resource type="Texture2D" uid="uid://df7ev6wndct4y" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Ray.png" id="49_3mfmt"]
+[ext_resource type="PackedScene" uid="uid://tvi0qrdp20ud" path="res://Scenes/Expedition/expedition_map.tscn" id="49_wa5y8"]
 [ext_resource type="Texture2D" uid="uid://cnhmc2xefjs4w" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Ray.png" id="50_0lhdw"]
 [ext_resource type="Texture2D" uid="uid://br4cvklfovjdo" path="res://Art/UI/mandinhart/More Icons/Grass boton/G_Map.png" id="51_bx1kg"]
 [ext_resource type="Texture2D" uid="uid://cg78i5in4vfph" path="res://Art/UI/mandinhart/More Icons/gras boton pressed/GP_Map.png" id="52_pgejv"]
@@ -879,6 +880,27 @@ theme = ExtResource("1_tshxl")
 
 [node name="DialogicViewportContainer" parent="Ui/DialogicPanel" instance=ExtResource("26_25225")]
 visible = false
+layout_mode = 2
+
+[node name="ExpeditionPanel" type="PanelContainer" parent="Ui"]
+unique_name_in_owner = true
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(1300, 650)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -325.0
+offset_right = 650.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExpeditionMap" parent="Ui/ExpeditionPanel" instance=ExtResource("49_wa5y8")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="CardGamePanel" type="Control" parent="Ui"]

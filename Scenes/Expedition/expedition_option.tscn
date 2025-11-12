@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnpuh045kfsx4"]
+
+[ext_resource type="Script" path="res://Scenes/Expedition/expedition_option.gd" id="1_q5cir"]
+[ext_resource type="Texture2D" uid="uid://sxt7wpypjene" path="res://Art/Mori no oku no kakurezato/Skill Icon/Resized/treasure04_02.png" id="2_yyoh1"]
+
+[node name="ExpeditionOption" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.0
+offset_right = 24.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_q5cir")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("2_yyoh1")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

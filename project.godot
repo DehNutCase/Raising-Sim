@@ -206,6 +206,7 @@ directories/dtl_directory={
 "DumplingDungeonBoss": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonBoss.dtl",
 "DumplingDungeonDefeat": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonDefeat.dtl",
 "DumplingDungeonFinish": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonFinish.dtl",
+"DumplingDungeonHealEvent": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonHealEvent.dtl",
 "DumplingDungeonInfo": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonInfo.dtl",
 "DumplingDungeonRandomEncounter": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonRandomEncounter.dtl",
 "DumplingDungeonVictory": "res://Timelines/ExpeditionEvents/DumplingDungeon/DumplingDungeonVictory.dtl",

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://tvi0qrdp20ud"]
+
+[ext_resource type="Script" path="res://Scenes/Expedition/expedition_map.gd" id="1_o350u"]
+[ext_resource type="PackedScene" uid="uid://dojvdpihhl4np" path="res://Scenes/Expedition/expedition_row.tscn" id="2_g586a"]
+[ext_resource type="Texture2D" uid="uid://dclmn7sxf5rsw" path="res://Art/Background/Background material shop/bg027a.jpg" id="3_3i0p4"]
+
+[node name="ExpeditionMap" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o350u")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_3i0p4")
+expand_mode = 1
+
+[node name="ExpeditionRow" parent="." instance=ExtResource("2_g586a")]
+unique_name_in_owner = true
+layout_mode = 2

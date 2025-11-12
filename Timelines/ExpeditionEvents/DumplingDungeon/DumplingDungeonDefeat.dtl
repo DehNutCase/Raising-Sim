@@ -1,25 +1,10 @@
 [background arg="res://Art/Background/Background material shop/bg027a.jpg" fade="0.0"]
 join Mao (Normal) 2
 [history action="clear"]
-[signal arg="{"stats": {"stress": 10}}"]
+[signal arg="{"stats": {"stress": 10, "expedition_failed": true,}}"]
 update Mao (Sad)
-[signal arg="{"random_voice": "damaged"}"]
 do Player.play_random_voice("damaged")
 Mao_Portrait (Sad): <Owwie./Uguu./Riceeee!>
-Rice_Portrait (Normal): Hmm. Are you sure you want to keep going?
-- Let's keep going
-	Rice_Portrait (Normal): I see, I'll heal you a little, then. Don't push yourself too hard.
-	[signal arg="{"expedition_heal": 50,}"]
-	update Mao [animation="Tada" length="2"]
-	update Mao (Normal)
-	do Player.play_voice("laugh")
-	Mao_Portrait (Normal): Teehee. That tickles!
-- Let's call it a day
-	update Mao (Normal)
-	do Player.play_voice("un_yeah")
-	Mao_Portrait (Normal): Can we buy some snacks on the way back?
-	Rice_Portrait (Normal): Is that a roundabout way of asking me to treat you? Well, I don't mind.
-	update Mao [animation="Tada" length="1"]
-	do Player.play_voice("yay!")
-	Mao_Portrait (Normal): Yay!
-	[signal arg="{"stats": {"stress": -15}, "expedition_failed": true,}"]
+Rice_Portrait (Normal): Let's call it a day. I'll heal you up.
+do Player.play_voice("disappointed")
+Mao_Portrait (Sad): Okay...

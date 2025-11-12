@@ -32,7 +32,7 @@ func _ready():
 	initialize_stats()
 	
 func initialize_stats() -> void:
-	max_health = int(Player.stats.max_hp/5)
+	max_health = int(Player.stats.max_hp/Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.max_hp)
 	#debug code
 	if OS.has_feature("debug") and Player.day == 0:
 		max_health = 5000
@@ -42,7 +42,7 @@ func initialize_stats() -> void:
 	else:
 		health = max_health
 	#Note, give mao block based on defense every turn
-	max_mana = int(Player.stats.max_mp/150 + 2)
+	max_mana = int(Player.stats.max_mp/Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.max_mana + 2)
 	if OS.has_feature("debug") and Player.day == 0:
 		max_mana = 5000
 	mana = max_mana
@@ -173,36 +173,36 @@ func start_first_turn() -> void:
 	for child in children:
 		child.queue_free()
 		
-	if int(Player.stats.attack / 150):
+	if int(Player.stats.attack / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.attack):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Attack"] = {"stacks": int(Player.stats.attack / 150), "status": load("res://Scenes/CardGame/Status/attack.tres"), "status_display": status_display}
+		active_status["Attack"] = {"stacks": int(Player.stats.attack / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.attack), "status": load("res://Scenes/CardGame/Status/attack.tres"), "status_display": status_display}
 		var status = active_status["Attack"].status
 		%StatusBar.add_child(active_status["Attack"].status_display)
 		status_display.status_texture.texture = status.status_icon
 		status_display.stack_label.text = str(active_status["Attack"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-	if int(Player.stats.defense / 150):
+	if int(Player.stats.defense / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.defense):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Defense"] = {"stacks": int(Player.stats.defense / 150), "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
+		active_status["Defense"] = {"stacks": int(Player.stats.defense / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.defense), "status": load("res://Scenes/CardGame/Status/defense.tres"), "status_display": status_display}
 		var status = active_status["Defense"].status
 		%StatusBar.add_child(active_status["Defense"].status_display)
 		status_display.status_texture.texture = status.status_icon
 		status_display.stack_label.text = str(active_status["Defense"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 	
-	if int(Player.stats.scholarship / 150):
+	if int(Player.stats.scholarship / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.scholarship):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Scholarship"] = {"stacks": int(Player.stats.scholarship / 150), "status": load("res://Scenes/CardGame/Status/scholarship.tres"), "status_display": status_display}
+		active_status["Scholarship"] = {"stacks": int(Player.stats.scholarship / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.scholarship), "status": load("res://Scenes/CardGame/Status/scholarship.tres"), "status_display": status_display}
 		var status = active_status["Scholarship"].status
 		%StatusBar.add_child(active_status["Scholarship"].status_display)
 		status_display.status_texture.texture = status.status_icon
 		status_display.stack_label.text = str(active_status["Scholarship"].stacks)
 		status_display.tooltip_text = status.status_tooltip
 		
-	if int(Player.stats.skill / 150):
+	if int(Player.stats.skill / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.skill):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Skill"] = {"stacks": int(Player.stats.skill / 150), "status": load("res://Scenes/CardGame/Status/skill.tres"), "status_display": status_display}
+		active_status["Skill"] = {"stacks": int(Player.stats.skill / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.skill), "status": load("res://Scenes/CardGame/Status/skill.tres"), "status_display": status_display}
 		var status = active_status["Skill"].status
 		%StatusBar.add_child(active_status["Skill"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -210,9 +210,9 @@ func start_first_turn() -> void:
 		status_display.tooltip_text = status.status_tooltip
 
 		
-	if int(Player.stats.magic / 150):
+	if int(Player.stats.magic / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.magic):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Magic"] = {"stacks": int(Player.stats.magic / 150), "status": load("res://Scenes/CardGame/Status/magic.tres"), "status_display": status_display}
+		active_status["Magic"] = {"stacks": int(Player.stats.magic / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.magic), "status": load("res://Scenes/CardGame/Status/magic.tres"), "status_display": status_display}
 		var status = active_status["Magic"].status
 		%StatusBar.add_child(active_status["Magic"].status_display)
 		status_display.status_texture.texture = status.status_icon
@@ -220,9 +220,9 @@ func start_first_turn() -> void:
 		status_display.tooltip_text = status.status_tooltip
 
 		
-	if int(Player.stats.resistance / 150):
+	if int(Player.stats.resistance / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.resistance):
 		status_display = load("res://Scenes/CardGame/UI/card_game_status_display.tscn").instantiate()
-		active_status["Resistance"] = {"stacks": int(Player.stats.resistance / 150), "status": load("res://Scenes/CardGame/Status/resistance.tres"), "status_display": status_display}
+		active_status["Resistance"] = {"stacks": int(Player.stats.resistance / Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.resistance), "status": load("res://Scenes/CardGame/Status/resistance.tres"), "status_display": status_display}
 		var status = active_status["Resistance"].status
 		%StatusBar.add_child(active_status["Resistance"].status_display)
 		status_display.status_texture.texture = status.status_icon

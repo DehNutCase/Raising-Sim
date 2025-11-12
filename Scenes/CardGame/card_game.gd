@@ -28,6 +28,8 @@ var enemy_scene: CardGameEncounterScene
 @onready var card_pile_display = %CardPileDisplay
 
 func _ready():
+	#pause live2D because we don't need to animate it when playing cards
+	get_tree().call_group("Live2DPlayer", "pause_live2d")
 	Player.play_song("battle")
 	if Player.encounter:
 		card_game_level = load(Player.encounter)

@@ -745,6 +745,7 @@ var voices = {
 	"amazing": load("res://Voice/Sakura An/Misc/Amazing.wav"),
 	"happy": load("res://Voice/Sakura An/Misc/Happy.wav"),
 	"laugh": load("res://Voice/Sakura An/Misc/Laugh.wav"),
+	"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"), #yata
 	"proud": load("res://Voice/Sakura An/Misc/Proud.wav"),
 	"boom": load("res://Voice/Sakura An/Misc/Boom.wav"),
 	"tada": load("res://Voice/Sakura An/Misc/Tada.wav"),
@@ -752,7 +753,6 @@ var voices = {
 	"thank_you_polite": load("res://Voice/Sakura An/Misc/Thank you polite.wav"),
 	"keep_it_up": load("res://Voice/Sakura An/Misc/Keep it up.wav"),
 	"un_yeah": load("res://Voice/Sakura An/Misc/Un (yeah).wav"),
-	"yay!": load("res://Voice/Sakura An/Misc/Yay!.wav"), #yata
 	"yes_enthusiastic": load("res://Voice/Sakura An/Misc/Yes(Enthusiastic).wav"),
 	"yes_reluctant": load("res://Voice/Sakura An/Misc/Yes(Reluctant).wav"),
 	"oh!": load("res://Voice/Sakura An/Misc/Oh!.wav"),
@@ -881,3 +881,15 @@ func check_gold_below_zero() -> bool:
 		
 func _play_button_sound() -> void:
 	Player.play_ui_sound("blop")
+
+#helper function due to 4.2 lacking 4.3's weighted random chocie
+func rand_weighted(weights) -> int:
+	var weight_sum = 0
+	for weight in weights:
+		weight_sum += weight
+	var choice = randf_range(0, weight_sum)
+	for i in range(len(weights)):
+		if(choice <= weights[i]):
+			return i
+		choice -= weights[i]
+	return 0
