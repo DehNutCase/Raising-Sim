@@ -1,12 +1,13 @@
 class_name ExpeditionRow
-extends HBoxContainer
+extends GridContainer
 
 @export var number_of_options:int = 3
-@export var expedition_name:String = "Dumpling Dungeon"
+@export var expedition_name:String = ""
 
 signal option_selected
 
 func update() -> void:
+	columns = clamp(number_of_options, 0, 5)
 	for child in get_children():
 		child.queue_free()
 	for i in range(number_of_options):

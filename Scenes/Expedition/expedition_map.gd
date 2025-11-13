@@ -4,6 +4,7 @@ extends MarginContainer
 var expedition_name:String = ""
 @onready var background:TextureRect = %Background
 @onready var expedition_row: ExpeditionRow = %ExpeditionRow
+@onready var exploration_progress_label:Label = %ExplorationProgressLabel
 
 signal choice_finished
 signal choice_selected
@@ -18,6 +19,9 @@ func update() -> void:
 		return
 	var expedition_data = Constants.expedition[expedition_name]
 	background.texture = load(expedition_data.background)
+	if "number_of_options" in expedition_data:
+		expedition_row.number_of_options = expedition_data.number_of_options
+	expedition_row.expedition_name = expedition_name
 	await expedition_row.update()
 
 func process_choice(combat:String, timeline:String) -> void:
@@ -40,3 +44,6 @@ func process_choice(combat:String, timeline:String) -> void:
 		pass
 	
 	choice_finished.emit()
+
+func exploration_progress_update(current_progress:int, needed_progress:int) -> void:
+	exploration_progress_label.text = "Exploration Progress: %d / %d" % [current_progress, needed_progress]

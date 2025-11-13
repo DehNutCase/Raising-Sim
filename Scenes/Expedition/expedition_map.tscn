@@ -19,6 +19,23 @@ mouse_filter = 2
 texture = ExtResource("3_3i0p4")
 expand_mode = 1
 
-[node name="ExpeditionRow" parent="." instance=ExtResource("2_g586a")]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="ExpeditionRow" parent="CenterContainer" instance=ExtResource("2_g586a")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ExplorationProgressLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0

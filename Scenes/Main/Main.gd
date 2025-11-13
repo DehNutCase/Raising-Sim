@@ -517,6 +517,7 @@ func do_expedition(expedition_name:String) -> void:
 	Player.expedition_health = int(Player.stats.max_hp/Constants.constants.CARD_GAME_STAT_CONVERSION_FACTORS.max_hp)
 	expedition_failed = false
 	for i in range(encounters):
+		expedition_map.exploration_progress_update(i, encounters)
 		if expedition_failed:
 			break
 		expedition_panel.show()

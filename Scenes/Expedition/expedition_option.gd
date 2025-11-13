@@ -10,3 +10,4 @@ signal option_selected
 
 func _on_button_pressed():
 	option_selected.emit(combat, timeline)
+	Player.play_ui_sound("bubble")
