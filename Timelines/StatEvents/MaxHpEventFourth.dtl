@@ -1,0 +1,36 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Victoria (Frown) 3
+do Player.play_song("cheerful")
+[history action="clear"]
+update Victoria (Frown)
+Victoria_Portrait (Frown): Good morning. To be honest, you've managed quite the achievement. I'm still not quite sure why I'm the one congratulating you, but good job.
+update Mao (EyesClosed)
+do Player.play_voice("proud")
+update Mao [animation="Tada"]
+Mao_Portrait (EyesClosed): Thanks!
+do Player.play_voice("un_yeah")
+update Mao (Normal)
+Mao_Portrait (Normal): Am I good enough to be your minion now?
+update Victoria (Sweatdrop)
+Victoria_Portrait (Sweatdrop): Ahem, it was never a matter of qualifications.
+update Victoria (Frown)
+Victoria_Portrait (Frown): I simply don't think it's appropriate for you to become part of my faction.
+do Player.play_voice("disappointed")
+update Mao (Sad)
+Mao_Portrait (Sad): Aww...
+do Player.play_sound_effect("ping")
+Lilian_Portrait (Grin): [Oh dear, looks like you made Mao sad. Give her a hug to make her feel better!🥰🥰🥰]
+update Victoria (Sigh)
+Victoria_Portrait (Sigh): (I wonder if I should block her.)
+update Victoria (Frown)
+Victoria_Portrait (Frown): Leaving that aside, her majesty and Lilian asked me to bring you some snacks.
+[signal arg="{"stats": {"stress": -50,}, }"]
+update Victoria (Sigh)
+Victoria_Portrait (Sigh): (Snacks seem a bit light as a reward, but it's not like I have any ideas myself.)
+update Victoria (Frown)
+do Player.play_voice("amazing")
+update Mao (Normal)
+update Mao [animation="Tada"]
+Mao_Portrait (Normal): Yay! Let's share!
+Victoria_Portrait (Frown): ...Sure.

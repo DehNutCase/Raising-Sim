@@ -1,0 +1,38 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Lilian (Grin) 3
+do Player.play_song("cheerful")
+[history action="clear"]
+update Mao (Normal)
+do Player.play_voice("greeting3")
+update Mao [animation="Tada"]
+Mao_Portrait (Normal): Good morning! Welcome to my room!
+do Player.play_voice("hmm")
+Mao_Portrait (Normal): Am I getting a bunk mate?
+update Lilian (Grin)
+Lilian_Portrait (Grin): Hah! It's a lovely idea, but Victoria would get jealous if that happened.
+update Lilian (Grin)
+Lilian_Portrait (Grin): I'm here to congratulate you on starting the path to big explosions.
+update Mao (Excited)
+do Player.play_voice("yay!")
+update Mao [animation="Tada"]
+Mao_Portrait (Normal): Yay!🎉🥳🎉
+update Lilian (Grin)
+update Lilian [animation="Tada"]
+Lilian_Portrait (Grin): Cheers!
+update Lilian (Grin)
+Lilian_Portrait (Grin): Anyway, just remember this. Magic doesn't make big explosions, mana makes big explosions!
+do Player.play_voice("huh?")
+update Mao (Surprised)
+Mao_Portrait (Surprised): Huh? Aren't they the same thing?
+update Lilian (Grin)
+Lilian_Portrait (Grin): Nope! Oh, and hitting things hard is what makes bigger explosions.
+do Player.play_voice("wow_blank_stare")
+update Mao (Normal)
+Mao_Portrait (Normal): I see! *Completely lost*
+update Lilian (Grin)
+Lilian_Portrait (Grin): Anyway, you did a great job. I'm a bit busy today, so why don't you take this and go buy something delicious?
+[signal arg="{"stats": {"gold": 500,}, }"]
+do Player.play_voice("laugh")
+update Mao (Normal)
+Mao_Portrait (Normal): Teehee, thanks!

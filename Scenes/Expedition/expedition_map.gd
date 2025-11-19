@@ -36,9 +36,11 @@ func process_choice(combat:String, timeline:String) -> void:
 		await get_tree().create_timer(1).timeout
 		if Dialogic.current_timeline:
 			await Dialogic.timeline_ended
+			await get_tree().create_timer(1).timeout
 	elif timeline:
 		Dialogic.start(timeline)
 		await Dialogic.timeline_ended
+		await get_tree().create_timer(1).timeout
 	else:
 		printerr("Neither combat nor timeline in process_choice for ExpeditionMap")
 		pass

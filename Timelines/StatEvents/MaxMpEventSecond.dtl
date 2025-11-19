@@ -1,0 +1,58 @@
+[background arg="res://Art/Background/Background material shop/bg007a.bmp" fade="0.0"]
+join Mao (Normal) 1
+join Lilian (Grin) 3
+do Player.play_song("cheerful")
+[history action="clear"]
+do Player.play_voice("greeting3")
+update Mao [animation="Tada"]
+update Mao (Normal)
+Mao_Portrait (Normal): Good morning!
+update Lilian (Grin)
+Lilian_Portrait (Grin): Morning. I'm free today, so let's get breakfast together.
+do Player.play_voice("yay!")
+update Mao [animation="Tada"]
+Mao_Portrait (Normal): Yay! Rice, want to eat with us?
+do Player.play_voice("huh?")
+update Mao (Surprised)
+Mao_Portrait (Surprised): Rice?
+do Player.play_voice("baka")
+update Mao (Angry)
+Mao_Portrait (Angry): Meanie! Doodoo head!
+update Lilian (Grin)
+Lilian_Portrait (Grin): It's nice to see you two getting along. Don't get too mad at her, she's just doing her job.
+do Player.play_voice("sure")
+update Mao (Normal)
+Mao_Portrait (Normal): If you say so.
+do Player.play_voice("un_yeah")
+update Mao (Normal)
+Mao_Portrait (Normal): Let's go eat.
+update Lilian [ mirrored="true"]
+[background arg="res://Art/Background/NoranekoGames/Restaurant_B.png" fade="2.0" transition="Push Left"]
+update Mao 2 [ move_time="2"]
+do Player.play_voice("hmm")
+update Mao (Normal)
+Mao_Portrait (Normal): How come you knew where the cafeteria was?
+update Lilian [ mirrored="false"]
+[update_position vector="Vector2(0, 150)" time="1.0"]
+[update_position position="1" vector="Vector2(0, 150)" time="1.0"]
+[update_position position="2" vector="Vector2(0, 150)" time="1.0"]
+[update_position position="3" vector="Vector2(0, 150)" time="1.0"]
+[update_position position="4" vector="Vector2(0, 150)" time="1.0"]
+Lilian_Portrait (Grin): Didn't Victoria tell you? She used to live here, and I'm her bestest bestie.
+do Player.play_voice("really?")
+update Mao (Normal)
+Mao_Portrait (Normal): Wow, really?
+do Player.play_voice("looks_delicious")
+Mao_Portrait (Normal): *Busy eating*
+[signal arg="{"stats": {"stress": -30,}, }"]
+Rice_Portrait (Normal): I believe I should mention that Victoria's stay here was before her majesty's time.
+Rice_Portrait (Normal): From what I know, her time here wasn't exactly pleasant.
+update Lilian (Frown)
+Lilian_Portrait (Frown): Let's just leave it at that, shall we?
+Rice_Portrait (Normal): My apologies if that brought up unpleasant memories.
+update Lilian (Laugh)
+Lilian_Portrait (Laugh): Hah! You really are too serious.
+update Lilian (Grin)
+Lilian_Portrait (Grin): Are you sure you won't sit down with us? The food looks delicious.
+Rice_Portrait (Normal): Not this time.
+[update_position action="reset_all" time="0.0"]
