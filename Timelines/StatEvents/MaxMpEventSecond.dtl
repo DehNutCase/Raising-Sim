@@ -49,7 +49,7 @@ Rice_Portrait (Normal): I believe I should mention that Victoria's stay here was
 Rice_Portrait (Normal): From what I know, her time here wasn't exactly pleasant.
 update Lilian (Frown)
 Lilian_Portrait (Frown): Let's just leave it at that, shall we?
-Rice_Portrait (Normal): My apologies if that brought up unpleasant memories.
+Rice_Portrait (Normal): My apologies.
 update Lilian (Laugh)
 Lilian_Portrait (Laugh): Hah! You really are too serious.
 update Lilian (Grin)

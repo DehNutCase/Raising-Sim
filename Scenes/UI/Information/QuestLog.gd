@@ -47,6 +47,19 @@ func display_quest(quest: String) -> void:
 	quest_description.append_text("Description:" + "\n")
 	quest_description.append_text(Constants.quests[quest].description + "\n\n")
 	
+	var fail_conditions = Constants.quests[quest].get("failure_conditions")
+	if fail_conditions:
+		if fail_conditions.get("day"):
+			var day = fail_conditions.day
+			day -= 1
+			var days_in_month = Constants.constants.days_in_month
+			var month:int = ((day / (days_in_month)) % Constants.constants.months_in_year) + 1
+			var date: int = day % days_in_month + 1
+			var text = "Time Limit: Month %d, Week %s" % [month, date]
+			quest_description.append_text(text + "\n\n")
+		elif fail_conditions.get("one_day"):
+			quest_description.append_text("This quest needs to be finished before the end of the week.\n\n")
+	
 	quest_description.append_text("Requirements:")
 	var quest_requirements = Constants.quests[quest].requirements
 	if 'stats' in quest_requirements:
@@ -137,6 +150,9 @@ func check_quest_failure(quest: String):
 			if Player.day > failure_conditions.day:
 				await process_quest_failure(quest)
 				return true
+		if 'one_day' in failure_conditions:
+			process_quest_failure(quest)
+			return true
 	return false
 
 func check_quests_failure():

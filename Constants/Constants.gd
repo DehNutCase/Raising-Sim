@@ -1134,8 +1134,8 @@ const stats = {
 }
 
 const constants = {
-	'days_in_month' = 30,
-	'months_in_year' = 4,
+	'days_in_month' = 4, #we're using weeks rather than days
+	'months_in_year' = 12,
 	'seasons' = ['Spring', 'Summer', 'Autumn', 'Winter'],
 	'TIMES_OF_DAY' = ['morning', 'afternoon', 'night', 'bedtime'],
 	'TALENT_TIERS' = 11,
@@ -1178,7 +1178,8 @@ const constants = {
 		'agility': 100,
 		'scholarship': 150,
 		'skill': 150,
-	}
+	},
+	'CARD_GAME_CARD_READY_COLOR' = Color.GOLD,
 }
 
 const locations = {
@@ -2709,7 +2710,7 @@ const quests = {
 				"scholarship": 100,
 				},
 		},
-		"description": "A student's job is to study. Let's get 100 scholarship in a week.\n\nTime Limit: Day 7",
+		"description": "A student's job is to study. Let's get 100 scholarship in a week.",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2731,7 +2732,7 @@ const quests = {
 				"scholarship": 300,
 				},
 		},
-		"description": "A student's job is to study. Let's get 300 scholarship before the middle of the month.\n\nTime Limit: Day 14",
+		"description": "A student's job is to study. Let's get 300 scholarship before the middle of the month.",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2753,7 +2754,7 @@ const quests = {
 				"scholarship": 600,
 				},
 		},
-		"description": "A student's job is to study. Let's get 600 scholarship.\n\nTime Limit: Day 21",
+		"description": "A student's job is to study. Let's get 600 scholarship.",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2775,7 +2776,7 @@ const quests = {
 				"scholarship": 800,
 				},
 		},
-		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and pass the finals.\n\nTime Limit: Day 30",
+		"description": "A student's job is to study. Let's get 800 scholarship before the month ends and pass the finals.",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2795,7 +2796,7 @@ const quests = {
 		"requirements": {
 			"tower_level": 10,
 		},
-		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?\n\nTime Limit: Day 20",
+		"description": "After finally getting some magic cards to play with, you decided to climb the tower. Try climbing past floor 10 first, maybe her majesty will encourage you with a reward?",
 		"rewards": {
 			"stats": {
 				"stress": -20,
@@ -2819,7 +2820,7 @@ const quests = {
 		"requirements": {
 			"tower_level": 20,
 		},
-		"description": "The first ten floors seemed easy enough, let's keep climbing. The goal is floor 20 this time.\n\nTime Limit: Day 30",
+		"description": "The first ten floors seemed easy enough, let's keep climbing. The goal is floor 20 this time.",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2846,7 +2847,7 @@ const quests = {
 				"art": 400,
 				},
 		},
-		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\n\nTime Limit: Day 21",
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2873,7 +2874,7 @@ const quests = {
 				"art": 800,
 				},
 		},
-		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.\n\nTime Limit: Day 30",
+		"description": "Her majesty can be considered a patron of the arts, so she'll probably give you a reward for becoming a better artist.",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2899,7 +2900,7 @@ const quests = {
 			"tower_level": 20,
 			"stats": {"scholarship": 600},
 		},
-		"description": "Now that you have some magic cards, it's time to turn evil!\n\nGet your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game.\n\nYes, this is definitely how to become an evil overlord. It's a method approved by her majesty!\n\nTime Limit: Day 30",
+		"description": "Now that you have some magic cards, it's time to turn evil!\n\nGet your studies out of the way before climbing as far up the tower as you can, which should get you the strength to challenge her majesty to a children's card game.\n\nYes, this is definitely how to become an evil overlord. It's a method approved by her majesty!",
 		"rewards": {
 			"stats": {
 				"gold": 1000,
@@ -2940,7 +2941,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"super_inspiration": {
@@ -2959,7 +2960,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"potato_senses": {
@@ -2980,7 +2981,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"carpentry_request": {
@@ -3002,7 +3003,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"chores": {
@@ -3024,7 +3025,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"tutoring_request": {
@@ -3046,7 +3047,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"goos_request": {
@@ -3068,7 +3069,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"shorthanded_kitchen": {
@@ -3090,7 +3091,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"sleepyhead": {
@@ -3117,7 +3118,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"dumpling_senses": {
@@ -3141,7 +3142,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 	"pop_quiz": {
@@ -3163,7 +3164,7 @@ const quests = {
 			}
 		},
 		"failure_conditions": {
-			"day": 0,
+			"one_day": true,
 		},
 	},
 }

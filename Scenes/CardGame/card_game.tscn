@@ -36,7 +36,7 @@ outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqvk"]
-size = Vector2(1600, 650)
+size = Vector2(1600, 600)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6gfkx"]
 viewport_path = NodePath("CubismContainer/CubismTexture/CubismModel")
@@ -175,7 +175,7 @@ expand_icon = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea"]
-position = Vector2(800, 325)
+position = Vector2(800, 300)
 shape = SubResource("RectangleShape2D_yxqvk")
 debug_color = Color(0.107029, 0.26902, 0.854055, 0.419608)
 metadata/_edit_lock_ = true

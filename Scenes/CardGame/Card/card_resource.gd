@@ -48,6 +48,8 @@ enum BonusEffectType {NONE, CARDS_IN_DECK, CARDS_IN_DISCARD}
 
 func is_single_target() -> bool:
 	return target == Target.SINGLE_ENEMY
+func is_self_target() -> bool:
+	return target == Target.SELF
 	
 func get_targets(targets: Array[Node], effect_number:int = 0, enemy: CardGameEnemy = null) -> Array[Node]:
 	if !targets:

@@ -5,6 +5,7 @@ signal reparent_requested(card: CardUI)
 
 @onready var icon = %CardIcon
 @onready var cost_label: RichTextLabel = %CostLabel
+@onready var icon_background = %IconBackground
 
 @onready var collision = %CollisionShape2D
 
@@ -29,6 +30,7 @@ func enter_state(state:States) -> void:
 			pivot_offset = Vector2.ZERO
 			current_state = States.BASE
 			collision.disabled = true
+			icon_background.modulate = Color.WHITE
 			Player.play_ui_sound("discard_card")
 		States.DRAGGING:
 			collision.disabled = false
@@ -84,6 +86,7 @@ func play_card():
 	played = true
 	if targets and targets[-1] is CardGameEnemy:
 		targets[-1].arrow.hide()
+		icon_background.modulate = Color.WHITE
 	if Player.card_game_player.mana >= card.cost:
 		Player.card_game_player.mana -= card.cost
 		card.play(targets.duplicate())
@@ -120,16 +123,25 @@ func _on_area_area_entered(area: Area2D) -> void:
 	if !(area in targets):
 		if card.is_single_target() and area is CardGameEnemy:
 			area.arrow.show()
+			icon_background.modulate = Constants.constants.CARD_GAME_CARD_READY_COLOR
 			if targets and targets[-1] is CardGameEnemy:
 				targets[-1].arrow.hide()
+				icon_background.modulate = Color.WHITE
 		targets.append(area)
+	if !card.is_single_target() and !(area is CardGameEnemy) and current_state == States.DRAGGING:
+		icon_background.modulate = Constants.constants.CARD_GAME_CARD_READY_COLOR
 
 func _on_area_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 	if area is CardGameEnemy:
 		area.arrow.hide()
+		if card.is_single_target():
+			icon_background.modulate = Color.WHITE
 	if card.is_single_target() and targets and targets[-1] is CardGameEnemy:
 		targets[-1].arrow.show()
+		icon_background.modulate = Constants.constants.CARD_GAME_CARD_READY_COLOR
+	if !card.is_single_target() and !(area is CardGameEnemy):
+		icon_background.modulate = Color.WHITE
 
 func _set_card(value: CardResource) -> void:
 	if not is_node_ready():

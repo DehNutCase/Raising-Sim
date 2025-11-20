@@ -70,6 +70,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="IconBackground" type="TextureRect" parent="Frame"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("6_qc37o")
